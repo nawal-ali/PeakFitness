@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      
+      <h1>home page works!</h1>
     </>
   )
 }
