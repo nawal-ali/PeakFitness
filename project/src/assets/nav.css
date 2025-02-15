@@ -1,0 +1,10 @@
+.offcanvas {
+  background-color: #202020 !important;
+}
+.active {
+  border-left: 2px solid gray;
+  padding-left: 30px;
+}
+.custom-link-color {
+  color: #ec7e4a !important;
+}
