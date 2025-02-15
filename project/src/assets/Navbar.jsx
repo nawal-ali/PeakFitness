@@ -4,10 +4,10 @@ export default function navbar() {
     <>
       {/* fixed-top */}
       <nav
-        className="navbar navbar-dark p-3 bg-transparent position-absolute top-0 vw-100"
+        className="navbar navbar-dark p-3 bg-transparent position-absolute top-0 w-100"
         // style={{ backgroundColor: "#202020" }}
       >
-        <div className="container-fluid ">
+        <div className="container-fluid">
           <a href="#" style={{ width: "10%" }}>
             <img
               src="/logoAndText.svg"
