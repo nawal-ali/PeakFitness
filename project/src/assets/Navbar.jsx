@@ -22,13 +22,13 @@ export default function navbar() {
               placeholder="Search"
               aria-label="Search"
             />
-            <button
+            {/* <button
               className="btn rounded-pill"
               type="submit"
               style={{ backgroundColor: "#EC7E4A" }}
             >
               Search
-            </button>
+            </button> */}
           </form>
           <button
             className="navbar-toggler"
@@ -69,19 +69,19 @@ export default function navbar() {
                   placeholder="Search"
                   aria-label="Search"
                 />
-                <button
+                {/* <button
                   className="btn rounded-pill"
                   type="submit"
                   style={{ backgroundColor: "#EC7E4A" }}
                 >
                   Search
-                </button>
+                </button> */}
               </form>
-              <ul className="navbar-nav justify-content-end flex-grow-1 pe-3 ms-3">
+              <ul className="navbar-nav justify-content-end flex-grow-1 pe-3 ms-5">
                 {/* start of nav body */}
                 <li className="nav-item">
                   <a
-                    className="nav-link active fs-4 custom-link-color"
+                    className="nav-link active fs-4 custom-link-color mb-2"
                     aria-current="page"
                     href="#"
                   >
@@ -96,7 +96,7 @@ export default function navbar() {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link fs-4 custom-link-color" href="#">
+                  <a className="nav-link fs-4 custom-link-color mb-2" href="#">
                     <img
                       src="/logo/exercisesLogo.svg"
                       alt="Logo"
@@ -108,7 +108,7 @@ export default function navbar() {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link fs-4 custom-link-color" href="#">
+                  <a className="nav-link fs-4 custom-link-color mb-2" href="#">
                     <img
                       src="/logo/tipsLogo.svg"
                       alt="Logo"
@@ -133,7 +133,7 @@ export default function navbar() {
                       alt="Logo"
                       width="30"
                       height="40"
-                      className="d-inline-block align-text-top me-3"
+                      className="d-inline-block align-text-top me-3 mb-2"
                     />
                     Food Plans
                   </a>
@@ -165,7 +165,7 @@ export default function navbar() {
                       alt="Logo"
                       width="30"
                       height="40"
-                      className="d-inline-block align-text-top me-3"
+                      className="d-inline-block align-text-top me-3 mb-2"
                     />
                     Calculators
                   </a>
@@ -208,7 +208,7 @@ export default function navbar() {
                       alt="Logo"
                       width="30"
                       height="40"
-                      className="d-inline-block align-text-top me-3"
+                      className="d-inline-block align-text-top me-3 mb-2"
                     />
                     About us
                   </a>

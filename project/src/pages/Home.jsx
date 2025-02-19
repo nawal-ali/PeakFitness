@@ -1,4 +1,7 @@
 import Navbar from "../assets/Navbar";
+import Button from "../assets/Button";
+import Card from "../assets/Card";
+import "../pages/home.css";
 export default function home() {
   return (
     <>
@@ -14,9 +17,9 @@ export default function home() {
           <h1 style={{ color: "#EC7E4A", fontSize: "8rem" }}>PeakFitness</h1>
         </div>
       </div>
-      <div className="row mt-5 container-fluid">
-        <div className="col-12 col-md-6">
-          <p style={{ fontSize: "2rem" }} className="ps-4 w-75">
+      <div className="row container-fluid section-1">
+        <div className="col-12 col-md-6 ps-4">
+          <p style={{ fontSize: "2rem" }} className="mb-5">
             <span style={{ color: "#EC7E4A", fontSize: "5rem" }}>Discover</span>{" "}
             the path to your{" "}
             <span style={{ color: "#EC7E4A" }}>ideal weight</span>,{" "}
@@ -28,6 +31,42 @@ export default function home() {
             nutritional advice, and personalized support to help you achieve
             your goals and thrive every day!
           </p>
+          <Button
+            content="Let's get started"
+            customWidth="40%"
+            customPadding="2%"
+            customFontSize="1.4rem"
+          />
+        </div>
+        <div className="col-12 col-md-6 text-end">
+          <model-viewer
+            className="w-100 h-100"
+            src="/afi.glb"
+            alt="plane"
+            auto-rotate
+            camera-controls
+            ar
+          ></model-viewer>
+        </div>
+      </div>
+      <div className="angled-background">
+        <div className="mt-5 custom-card card-3">
+          <Card
+            img="/logo/calc-white-logo.svg"
+            textContent="Track your progress accurately"
+          />
+        </div>
+        <div className="mt-5 custom-card card-2">
+          <Card
+            img="/logo/food-white-logo.svg"
+            textContent="Fuel your body the right way"
+          />
+        </div>
+        <div className="mt-5 custom-card card-1">
+          <Card
+            img="/logo/gym-white-logo.svg"
+            textContent="Find the best exercises for your goals"
+          />
         </div>
       </div>
     </>
