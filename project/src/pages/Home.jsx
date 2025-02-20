@@ -1,6 +1,8 @@
 import Navbar from "../assets/Navbar";
 import Button from "../assets/Button";
 import Card from "../assets/Card";
+import Accordion from "../assets/Accordion";
+import Footer from "../assets/Footer";
 import "../pages/home.css";
 export default function home() {
   return (
@@ -13,11 +15,11 @@ export default function home() {
           className="vw-100 vh-100 object-fit-cover"
         />
         <div className="position-absolute top-50 start-50 translate-middle">
-          <h1 style={{ fontSize: "8rem" }}>Welcome to</h1>
-          <h1 style={{ color: "#EC7E4A", fontSize: "8rem" }}>PeakFitness</h1>
+          <h1 style={{ fontSize: "500%" }}>Welcome to</h1>
+          <h1 style={{ color: "#EC7E4A", fontSize: "400%" }}>PeakFitness</h1>
         </div>
       </div>
-      <div className="row container-fluid section-1">
+      <div className="row container-fluid section-1 margin-top-10 ">
         <div className="col-12 col-md-6 ps-4">
           <p style={{ fontSize: "2rem" }} className="mb-5">
             <span style={{ color: "#EC7E4A", fontSize: "5rem" }}>Discover</span>{" "}
@@ -27,20 +29,21 @@ export default function home() {
             <span style={{ color: "#EC7E4A" }}>
               sustainable, healthy lifestyle
             </span>
-            . At Pure Vitality, we’re here to guide you with fitness programs,
-            nutritional advice, and personalized support to help you achieve
-            your goals and thrive every day!
+            . At Pure Vitality, we&apos;re here to guide you with fitness
+            programs, nutritional advice, and personalized support to help you
+            achieve your goals and thrive every day!
           </p>
           <Button
             content="Let's get started"
-            customWidth="40%"
+            customWidth="70%"
             customPadding="2%"
             customFontSize="1.4rem"
           />
         </div>
-        <div className="col-12 col-md-6 text-end">
+        <div className="col-12 col-md-6 text-end mt-5 mt-md-0">
           <model-viewer
             className="w-100 h-100"
+            style={{ height: "400px", minHeight: "300px" }}
             src="/afi.glb"
             alt="plane"
             auto-rotate
@@ -49,7 +52,7 @@ export default function home() {
           ></model-viewer>
         </div>
       </div>
-      <div className="angled-background">
+      <div className="angled-background margin-top-10 ">
         <div className="mt-5 custom-card card-3">
           <Card
             img="/logo/calc-white-logo.svg"
@@ -68,6 +71,18 @@ export default function home() {
             textContent="Find the best exercises for your goals"
           />
         </div>
+      </div>
+      <div className="container-fluid margin-top-10 text-center">
+        <h1 className="mb-5">
+          {" "}
+          <span className="custom-color">Q</span>
+          <span className="fs-3">&</span>
+          <span className="custom-color">A</span>
+        </h1>
+        <Accordion />
+      </div>
+      <div className="margin-top-10">
+        <Footer />
       </div>
     </>
   );

@@ -1,8 +1,14 @@
-.section-1 {
+.margin-top-10 {
   margin-top: 10%;
 }
+.custom-bg-dark {
+  background-color: #202020;
+}
+.custom-color {
+  color: #ec7e4a;
+}
 .angled-background {
-  margin-top: 10%;
+  /* margin-top: 10%; */
   background: url("/imgs/Rectangle 97.jpg") center/cover no-repeat;
   height: 80vh; /* Adjust as needed */
   /* clip-path: polygon(0 90%, 100% 100%, 100% 10%, 0 0); */
