@@ -1,4 +1,4 @@
-import "../assets/acco.css";
+import "../accordionFolder/acco.css";
 export default function accordion() {
   return (
     <>

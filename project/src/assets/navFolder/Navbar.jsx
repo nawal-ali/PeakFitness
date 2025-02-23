@@ -1,4 +1,6 @@
-import "../assets/nav.css";
+import "../navFolder/nav.css";
+import { Link } from "react-router-dom";
+
 export default function navbar() {
   return (
     <>
@@ -8,16 +10,16 @@ export default function navbar() {
         // style={{ backgroundColor: "#202020" }}
       >
         <div className="container-fluid">
-          <a href="#" style={{ width: "10%" }}>
+          <Link to="/" style={{ width: "10%" }}>
             <img
               src="/logoAndText.svg"
               alt="main logo"
               style={{ width: "90%" }}
             />
-          </a>
+          </Link>
           <form className="d-flex w-75" role="search">
             <input
-              className="form-control me-2 w-100 rounded-pill"
+              className="form-control me-2 w-100 rounded-pill d-none d-md-block"
               type="search"
               placeholder="Search"
               aria-label="Search"
@@ -80,63 +82,58 @@ export default function navbar() {
               <ul className="navbar-nav justify-content-end flex-grow-1 pe-3 ms-5">
                 {/* start of nav body */}
                 <li className="nav-item">
-                  <a
-                    className="nav-link active fs-4 custom-link-color mb-2"
-                    aria-current="page"
-                    href="#"
-                  >
+                  <Link className="nav-link fs-4 custom-link-color mb-2" to="/">
                     <img
                       src="/logo/homeLogo.svg"
-                      alt="Logo"
                       width="30"
                       height="40"
-                      className="d-inline-block align-text-top me-3"
+                      className="me-3"
                     />
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link fs-4 custom-link-color mb-2" href="#">
+                  <Link
+                    className="nav-link fs-4 custom-link-color mb-2"
+                    to="/exercises"
+                  >
                     <img
                       src="/logo/exercisesLogo.svg"
-                      alt="Logo"
                       width="30"
                       height="40"
-                      className="d-inline-block align-text-top me-3"
+                      className="me-3"
                     />
                     Exercises
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link fs-4 custom-link-color mb-2" href="#">
+                  <Link
+                    className="nav-link fs-4 custom-link-color mb-2"
+                    to="/ProTips"
+                  >
                     <img
                       src="/logo/tipsLogo.svg"
-                      alt="Logo"
                       width="30"
                       height="40"
-                      className="d-inline-block align-text-top me-3"
+                      className="me-3"
                     />
                     Pro tips
-                  </a>
+                  </Link>
                 </li>
                 {/*--------------------- start of food plans dropdown ------------------- */}
                 <li className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle fs-4 custom-link-color"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
+                  <Link
+                    className="nav-link fs-4 custom-link-color mb-2"
+                    to="/FoodPlans"
                   >
                     <img
                       src="/logo/foodLogo.svg"
-                      alt="Logo"
                       width="30"
                       height="40"
-                      className="d-inline-block align-text-top me-3 mb-2"
+                      className="me-3"
                     />
                     Food Plans
-                  </a>
+                  </Link>
                   <ul className="dropdown-menu dropdown-menu-dark">
                     <li>
                       <a className="dropdown-item" href="#">
@@ -202,16 +199,15 @@ export default function navbar() {
                   </ul>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link fs-4 custom-link-color" href="#">
+                  <Link className="nav-link fs-4 custom-link-color" to="/about">
                     <img
                       src="/logo/aboutLogo.svg"
-                      alt="Logo"
                       width="30"
                       height="40"
-                      className="d-inline-block align-text-top me-3 mb-2"
+                      className="me-3"
                     />
                     About us
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

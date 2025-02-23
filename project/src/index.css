@@ -12,5 +12,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-
+html,
+body,
+#root {
+  height: auto;
+  min-height: 100vh;
+  /* overflow-x: hidden; Prevents horizontal scrolling */
+  overflow-y: auto; /* Enables vertical scrolling */
+}

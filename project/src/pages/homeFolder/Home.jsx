@@ -1,9 +1,9 @@
-import Navbar from "../assets/Navbar";
-import Button from "../assets/Button";
-import Card from "../assets/Card";
-import Accordion from "../assets/Accordion";
-import Footer from "../assets/Footer";
-import "../pages/home.css";
+import Navbar from "../../assets/navFolder/Navbar";
+import Button from "../../assets/Button";
+import Card from "../../assets/cardFolder/Card";
+import Accordion from "../../assets/accordionFolder/Accordion";
+import Footer from "../../assets/footerFolder/Footer";
+import "../homeFolder/home.css";
 export default function home() {
   return (
     <>
@@ -12,7 +12,7 @@ export default function home() {
         <img
           src="./imgs/Rectangle 84.png"
           alt="Rectangle 84 the top section img"
-          className="vw-100 vh-100 object-fit-cover"
+          className="vw-100 min-vh-100 object-fit-cover"
         />
         <div className="position-absolute top-50 start-50 translate-middle">
           <h1 style={{ fontSize: "500%" }}>Welcome to</h1>
