@@ -4,6 +4,8 @@ import Home from "./pages/homeFolder/Home";
 import Exercises from "./pages/exercisesFolder/Exercises";
 import Tips from "./pages/proTipsFolder/ProTips";
 import Plans from "./pages/FoodPlansFolder/FoodPlans";
+import About from "./pages/aboutFolder/About";
+import Calculators from "./pages/calcsFolder/Calculators";
 
 function App() {
   return (
@@ -16,7 +18,8 @@ function App() {
           <Route path="/exercises" element={<Exercises />} />
           <Route path="/ProTips" element={<Tips />} />
           <Route path="/FoodPlans" element={<Plans />} />
-          {/* <Route path="/about" element={<About />} /> */}
+          <Route path="/about" element={<About />} />
+          <Route path="/Calculators" element={<Calculators />} />
         </Routes>
       </Router>
 

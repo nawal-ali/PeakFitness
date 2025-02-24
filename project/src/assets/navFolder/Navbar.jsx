@@ -1,5 +1,6 @@
 import "../navFolder/nav.css";
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function navbar() {
   return (
@@ -82,7 +83,10 @@ export default function navbar() {
               <ul className="navbar-nav justify-content-end flex-grow-1 pe-3 ms-5">
                 {/* start of nav body */}
                 <li className="nav-item">
-                  <Link className="nav-link fs-4 custom-link-color mb-2" to="/">
+                  <NavLink
+                    className="nav-link fs-4 custom-link-color mb-2"
+                    to="/"
+                  >
                     <img
                       src="/logo/homeLogo.svg"
                       width="30"
@@ -90,10 +94,10 @@ export default function navbar() {
                       className="me-3"
                     />
                     Home
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link
+                  <NavLink
                     className="nav-link fs-4 custom-link-color mb-2"
                     to="/exercises"
                   >
@@ -104,10 +108,10 @@ export default function navbar() {
                       className="me-3"
                     />
                     Exercises
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link
+                  <NavLink
                     className="nav-link fs-4 custom-link-color mb-2"
                     to="/ProTips"
                   >
@@ -118,13 +122,13 @@ export default function navbar() {
                       className="me-3"
                     />
                     Pro tips
-                  </Link>
+                  </NavLink>
                 </li>
                 {/*--------------------- start of food plans dropdown ------------------- */}
                 <li className="nav-item dropdown">
-                  <Link
-                    className="nav-link fs-4 custom-link-color mb-2"
+                  <NavLink
                     to="/FoodPlans"
+                    className={"nav-link fs-4 custom-link-color"}
                   >
                     <img
                       src="/logo/foodLogo.svg"
@@ -133,7 +137,7 @@ export default function navbar() {
                       className="me-3"
                     />
                     Food Plans
-                  </Link>
+                  </NavLink>
                   <ul className="dropdown-menu dropdown-menu-dark">
                     <li>
                       <a className="dropdown-item" href="#">
@@ -199,7 +203,10 @@ export default function navbar() {
                   </ul>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link fs-4 custom-link-color" to="/about">
+                  <NavLink
+                    to="/About"
+                    className={"nav-link fs-4 custom-link-color"}
+                  >
                     <img
                       src="/logo/aboutLogo.svg"
                       width="30"
@@ -207,7 +214,7 @@ export default function navbar() {
                       className="me-3"
                     />
                     About us
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </div>

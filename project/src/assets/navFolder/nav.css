@@ -8,3 +8,10 @@
 .custom-link-color {
   color: #ec7e4a !important;
 }
+.nav-item {
+  transition: all 200ms ease-in-out;
+}
+.nav-item:hover {
+  /* border-left: 2px solid gray; */
+  padding-left: 30px;
+}

@@ -1,4 +1,5 @@
 import "../footerFolder/footer.css";
+import { Link } from "react-router-dom";
 export default function footer() {
   return (
     <>
@@ -19,12 +20,12 @@ export default function footer() {
           <div className="col-12 col-sm-6 col-md-2 mt-5">
             <h4 className="custom-color">Site sections</h4>
             <p>
-              <a
-                href="#"
+              <Link
+                to="/"
                 className="link-underline link-underline-opacity-0 link-light"
               >
                 Home
-              </a>
+              </Link>
             </p>
             <p>
               <a
@@ -35,32 +36,32 @@ export default function footer() {
               </a>
             </p>
             <p>
-              <a
-                href="#"
+              <Link
+                to="/FoodPlans"
                 className="link-underline link-underline-opacity-0 link-light"
               >
                 Food plan
-              </a>
+              </Link>
             </p>
             <p>
-              <a
-                href="#"
+              <Link
+                to="/About"
                 className="link-underline link-underline-opacity-0 link-light"
               >
                 About Us
-              </a>
+              </Link>
             </p>
           </div>
           <div className="col-12 col-sm-6 col-md-2 mt-5">
             <h4 className="custom-color">More</h4>
             <p>
               {" "}
-              <a
-                href="#"
+              <Link
+                to="/Calculators"
                 className="link-underline link-underline-opacity-0 link-light"
               >
                 Our fitness Tools
-              </a>
+              </Link>
             </p>
           </div>
           <div className="col-12 col-sm-6 col-md-2 mt-5">

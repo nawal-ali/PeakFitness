@@ -4,6 +4,7 @@ import Card from "../../assets/cardFolder/Card";
 import Accordion from "../../assets/accordionFolder/Accordion";
 import Footer from "../../assets/footerFolder/Footer";
 import "../homeFolder/home.css";
+import { Link } from "react-router-dom";
 export default function home() {
   return (
     <>
@@ -54,22 +55,37 @@ export default function home() {
       </div>
       <div className="angled-background margin-top-10 ">
         <div className="mt-5 custom-card card-3">
-          <Card
-            img="/logo/calc-white-logo.svg"
-            textContent="Track your progress accurately"
-          />
+          <Link
+            to="/Calculators"
+            className="link-underline link-underline-opacity-0"
+          >
+            <Card
+              img="/logo/calc-white-logo.svg"
+              textContent="Track your progress accurately"
+            />
+          </Link>
         </div>
         <div className="mt-5 custom-card card-2">
-          <Card
-            img="/logo/food-white-logo.svg"
-            textContent="Fuel your body the right way"
-          />
+          <Link
+            to="/FoodPlans"
+            className="link-underline link-underline-opacity-0"
+          >
+            <Card
+              img="/logo/food-white-logo.svg"
+              textContent="Fuel your body the right way"
+            />
+          </Link>
         </div>
         <div className="mt-5 custom-card card-1">
-          <Card
-            img="/logo/gym-white-logo.svg"
-            textContent="Find the best exercises for your goals"
-          />
+          <Link
+            to="/exercises"
+            className="link-underline link-underline-opacity-0"
+          >
+            <Card
+              img="/logo/gym-white-logo.svg"
+              textContent="Find the best exercises for your goals"
+            />
+          </Link>
         </div>
       </div>
       <div className="container-fluid margin-top-10 text-center">
