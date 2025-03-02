@@ -2,13 +2,14 @@ import "../navFolder/nav.css";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
-export default function navbar() {
+export default function navbar({ showSearch = true }) {
   return (
     <>
       {/* fixed-top */}
       <nav
-        className="navbar navbar-dark p-3 bg-transparent position-absolute top-0 w-100"
-        // style={{ backgroundColor: "#202020" }}
+        className="navbar navbar-dark p-4 fixed-top w-100"
+        style={{ backgroundColor: "#202020", zIndex: 1050 }}
+        // position-absolute top-0
       >
         <div className="container-fluid">
           <Link to="/" style={{ width: "10%" }}>
@@ -18,21 +19,17 @@ export default function navbar() {
               style={{ width: "90%" }}
             />
           </Link>
-          <form className="d-flex w-75" role="search">
-            <input
-              className="form-control me-2 w-100 rounded-pill d-none d-md-block"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            {/* <button
-              className="btn rounded-pill"
-              type="submit"
-              style={{ backgroundColor: "#EC7E4A" }}
-            >
-              Search
-            </button> */}
-          </form>
+          {/* Conditionally render the search bar */}
+          {showSearch && (
+            <form className="d-none d-md-flex w-75" role="search">
+              <input
+                className="form-control me-2 w-100 rounded-pill "
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+            </form>
+          )}
           <button
             className="navbar-toggler"
             type="button"
@@ -152,8 +149,23 @@ export default function navbar() {
                   </ul>
                 </li>
                 {/* -------------------- end of foodplans dropdown ----------------------- */}
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link fs-4 custom-link-color mb-2"
+                    to="/Calculators"
+                  >
+                    <img
+                      src="/logo/calcLogo.svg"
+                      alt="Logo"
+                      width="30"
+                      height="40"
+                      className="d-inline-block align-text-top me-3 mb-2"
+                    />
+                    Calculators
+                  </NavLink>
+                </li>
                 {/*--------------------- start of Calculators dropdown ------------------- */}
-                <li className="nav-item dropdown">
+                {/* <li className="nav-item dropdown">
                   <a
                     className="nav-link dropdown-toggle fs-4 custom-link-color"
                     href="#"
@@ -191,17 +203,17 @@ export default function navbar() {
                         Body fat percentage Calculator
                       </a>
                     </li>
-                    {/* <li>
+                    <li>
                       <hr className="dropdown-divider" />
                     </li>
                     <li>
                       <a className="dropdown-item" href="#">
                         Something else here
                       </a>
-                    </li> */}
-                    {/* -------------------- end of Calculators dropdown ----------------------- */}
+                    </li>
                   </ul>
-                </li>
+                </li> */}
+                {/* -------------------- end of Calculators dropdown ----------------------- */}
                 <li className="nav-item">
                   <NavLink
                     to="/About"

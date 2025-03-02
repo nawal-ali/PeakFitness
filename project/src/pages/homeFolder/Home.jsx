@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 export default function home() {
   return (
     <>
-      <div className="vw-100 position-relative">
-        <Navbar />
+      <Navbar />
+      <div className="min-vw-100 min-vh-100 position-relative">
         <img
           src="./imgs/Rectangle 84.png"
           alt="Rectangle 84 the top section img"

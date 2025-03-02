@@ -14,13 +14,13 @@ export default function card({ textContent, img }) {
           <img src={img} className="card-img-top w-25 m-auto" alt="..." />
           <div className="card-body">
             <p className="card-text fs-3 mb-5">{textContent}</p>
-            <a
-              href="#"
+            {/* href="#",link-underline link-underline-opacity-0 */}
+            <p
               style={{ color: "#EC7E4A" }}
-              className="link-underline link-underline-opacity-0 position-absolute bottom-0 start-50 translate-middle mb-3"
+              className=" position-absolute bottom-0 start-50 translate-middle mb-3"
             >
               start Now
-            </a>
+            </p>
           </div>
         </div>
       </div>

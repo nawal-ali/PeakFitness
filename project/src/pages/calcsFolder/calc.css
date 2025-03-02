@@ -1,0 +1,7 @@
+.main {
+  /* background-image: url("/imgs/image 26.png"); */
+  background-image: url("/imgs/image 26.png");
+  /* background-image: url("/imgs/footer-bg.png"); */
+  background-size: cover;
+  height: 100vh;
+}
