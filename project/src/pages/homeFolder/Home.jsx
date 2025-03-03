@@ -3,8 +3,10 @@ import Button from "../../assets/Button";
 import Card from "../../assets/cardFolder/Card";
 import Accordion from "../../assets/accordionFolder/Accordion";
 import Footer from "../../assets/footerFolder/Footer";
+import CommentCard from "../../assets/comments/CommentCard";
 import "../homeFolder/home.css";
 import { Link } from "react-router-dom";
+// import { Carousel } from "nuka-carousel";
 export default function home() {
   return (
     <>
@@ -53,40 +55,45 @@ export default function home() {
           ></model-viewer>
         </div>
       </div>
-      <div className="angled-background margin-top-10 ">
-        <div className="mt-5 custom-card card-3">
-          <Link
-            to="/Calculators"
-            className="link-underline link-underline-opacity-0"
-          >
-            <Card
-              img="/logo/calc-white-logo.svg"
-              textContent="Track your progress accurately"
-            />
-          </Link>
+      <div>
+        <div className="angled-background margin-top-10 flex-column flex-md-row">
+          <div className="mt-5 custom-card card-3">
+            <Link
+              to="/Calculators"
+              className="link-underline link-underline-opacity-0"
+            >
+              <Card
+                img="/logo/calc-white-logo.svg"
+                textContent="Track your progress accurately"
+              />
+            </Link>
+          </div>
+          <div className="mt-5 custom-card card-2">
+            <Link
+              to="/FoodPlans"
+              className="link-underline link-underline-opacity-0"
+            >
+              <Card
+                img="/logo/food-white-logo.svg"
+                textContent="Fuel your body the right way"
+              />
+            </Link>
+          </div>
+          <div className="mt-5 custom-card card-1">
+            <Link
+              to="/exercises"
+              className="link-underline link-underline-opacity-0"
+            >
+              <Card
+                img="/logo/gym-white-logo.svg"
+                textContent="Find the best exercises for your goals"
+              />
+            </Link>
+          </div>
         </div>
-        <div className="mt-5 custom-card card-2">
-          <Link
-            to="/FoodPlans"
-            className="link-underline link-underline-opacity-0"
-          >
-            <Card
-              img="/logo/food-white-logo.svg"
-              textContent="Fuel your body the right way"
-            />
-          </Link>
-        </div>
-        <div className="mt-5 custom-card card-1">
-          <Link
-            to="/exercises"
-            className="link-underline link-underline-opacity-0"
-          >
-            <Card
-              img="/logo/gym-white-logo.svg"
-              textContent="Find the best exercises for your goals"
-            />
-          </Link>
-        </div>
+      </div>
+      <div className="comments-section margin-top-10 text-center w-75 m-auto">
+        <CommentCard />
       </div>
       <div className="container-fluid margin-top-10 text-center">
         <h1 className="mb-5">
