@@ -55,7 +55,11 @@ export default function Comments() {
         <div className="carousel-wrapper pt-5 mt-5">
           <Carousel {...carouselSettings}>
             {comments.map((item) => (
-              <div key={item.id} className="card text-center mx-1 p-3">
+              <div
+                key={item.id}
+                className="card text-center mx-1 p-3 text-light"
+                style={{ backgroundColor: "#303030" }}
+              >
                 <div className="card-body">
                   <h5 className="card-title">{item.name}</h5>
                   <p className="card-text">{item.body}</p>
