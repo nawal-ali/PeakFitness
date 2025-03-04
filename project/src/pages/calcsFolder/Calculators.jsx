@@ -30,6 +30,7 @@
 // }
 
 import React, { useRef, useState, useEffect } from "react";
+import Navbar from "../../assets/navFolder/Navbar";
 import { Link } from "react-router-dom";
 import "./calc.css";
 
@@ -43,31 +44,31 @@ const Slider_C = () => {
       id: 0,
       name: "Choose Calculator",
       subtitle: "to Get Started",
-      img: "../../../../images/Slider-Main.png",
+      img: "./imgs/choose-calc-image.png",
       color: "#ec7e4a",
     },
     {
       id: 1,
       name: "Calorie",
-      img: "../../../../images/Calorie (1).png",
+      img: "./imgs/Calorie-image.png",
       color: "#ec7e4a",
     },
     {
       id: 2,
       name: "Ideal Weight",
-      img: "../../../../images/Ideal-Weight-Slider.png",
+      img: "./imgs/Ideal-Weight-image.png",
       color: "#ec7e4a",
     },
     {
       id: 3,
       name: "BMI",
-      img: "../../../../images/BMI-Slider.png",
+      img: "./imgs/BMI-image.png",
       color: "#ec7e4a",
     },
     {
       id: 4,
       name: "Body Fat",
-      img: "../../../../images/Body-Fast-Slider.png",
+      img: "./imgs/Body-Fat-image.png",
       color: "#ec7e4a",
     },
   ];
@@ -180,90 +181,29 @@ const Slider_C = () => {
   };
 
   return (
-    <div className="carousel-SC" ref={carouselRef}>
-      <img
-        src={"../../../../images/Logo-4.svg"}
-        alt="Logo"
-        className="logo-SC"
-      />
-      <>
-        <div className="arrows-SC">
-          <button id="prev" onClick={() => showSlider("prev")}>
-            {"<"}
-          </button>
-          <button id="next" onClick={() => showSlider("next")}>
-            {">"}
-          </button>
-        </div>
+    <>
+      <Navbar showSearch={false} />
+      <div className="carousel-SC" ref={carouselRef}>
+        <>
+          <div className="arrows-SC">
+            <button id="prev" onClick={() => showSlider("prev")}>
+              {"<"}
+            </button>
+            <button id="next" onClick={() => showSlider("next")}>
+              {">"}
+            </button>
+          </div>
 
-        <div className="list-SC" ref={sliderRef}>
-          {items.map((item) => (
-            <div
-              className={`item-SC ${
-                item.name === selectedItem ? "active-SC" : ""
-              }`}
-              key={item.id}
-              data-id={item.id}
-            >
-              <img src={item.img} alt={`${item.name} calculator`} />
-              <div className="content-SC">
-                <div className="title-SC">
-                  {item.id === 0 ? (
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                      }}
-                    >
-                      <span style={{ color: item.color }}>
-                        Choose Calculator
-                      </span>
-                      <span
-                        style={{
-                          color: "#fff",
-                          textWrap: "nowrap",
-                          marginRight: "-100px",
-                        }}
-                      >
-                        to Get Started
-                      </span>
-                    </div>
-                  ) : (
-                    <>
-                      {item.name}{" "}
-                      <span style={{ color: item.color }}>Calculator</span>
-                    </>
-                  )}
-                </div>
-                {item.id !== 0 && (
-                  <Link
-                    to={`/${item.name.toLowerCase().replace(" ", "-")}`}
-                    className="start-button-SC"
-                  >
-                    Let's get started
-                  </Link>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="thumbnail-SC" ref={thumbnailRef}>
-          {items
-            .filter(
-              (item) =>
-                item.id !== 0 &&
-                item.id !== items.find((i) => i.name === selectedItem)?.id
-            )
-            .map((item) => (
+          <div className="list-SC" ref={sliderRef}>
+            {items.map((item) => (
               <div
-                className="item-SC"
+                className={`item-SC ${
+                  item.name === selectedItem ? "active-SC" : ""
+                }`}
                 key={item.id}
                 data-id={item.id}
-                onClick={() => showSlider("select", item.id)}
               >
-                <img src={item.img} alt="thumbnail" />
+                <img src={item.img} alt={`${item.name} calculator`} />
                 <div className="content-SC">
                   <div className="title-SC">
                     {item.id === 0 ? (
@@ -277,7 +217,13 @@ const Slider_C = () => {
                         <span style={{ color: item.color }}>
                           Choose Calculator
                         </span>
-                        <span style={{ color: "#fff", textWrap: "nowrap" }}>
+                        <span
+                          style={{
+                            color: "#fff",
+                            textWrap: "nowrap",
+                            marginRight: "-100px",
+                          }}
+                        >
                           to Get Started
                         </span>
                       </div>
@@ -288,12 +234,65 @@ const Slider_C = () => {
                       </>
                     )}
                   </div>
+                  {item.id !== 0 && (
+                    <Link
+                      to={`/${item.name.toLowerCase().replace(" ", "-")}`}
+                      className="start-button-SC"
+                    >
+                      Let's get started
+                    </Link>
+                  )}
                 </div>
               </div>
             ))}
-        </div>
-      </>
-    </div>
+          </div>
+
+          <div className="thumbnail-SC" ref={thumbnailRef}>
+            {items
+              .filter(
+                (item) =>
+                  item.id !== 0 &&
+                  item.id !== items.find((i) => i.name === selectedItem)?.id
+              )
+              .map((item) => (
+                <div
+                  className="item-SC"
+                  key={item.id}
+                  data-id={item.id}
+                  onClick={() => showSlider("select", item.id)}
+                >
+                  <img src={item.img} alt="thumbnail" />
+                  <div className="content-SC">
+                    <div className="title-SC">
+                      {item.id === 0 ? (
+                        <div
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                          }}
+                        >
+                          <span style={{ color: item.color }}>
+                            Choose Calculator
+                          </span>
+                          <span style={{ color: "#fff", textWrap: "nowrap" }}>
+                            to Get Started
+                          </span>
+                        </div>
+                      ) : (
+                        <>
+                          {item.name}{" "}
+                          <span style={{ color: item.color }}>Calculator</span>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </>
+      </div>
+    </>
   );
 };
 
