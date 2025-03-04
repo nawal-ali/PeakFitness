@@ -1,0 +1,39 @@
+.customer-reviews-section {
+  /* position: relative; */
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+.reviews-container {
+  margin-top: 4rem;
+  display: flex;
+  align-items: end;
+  /* Contains the bubble + carousel */
+  min-height: 540px; /* Enough space for bubble & carousel */
+}
+.custom-color {
+  color: #ec7e4a;
+}
+.carousel-wrapper {
+  flex: 1 1 auto; /* Prevents flexbox from shrinking it */
+  width: 100%; /* Ensures proper width */
+}
+
+/* Orange bubble styling */
+.orange-bubble {
+  background-color: #ec7e4a;
+  border-radius: 1rem;
+}
+
+.speech-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+/* Tweak the card styling if desired */
+.card {
+  min-width: 350px;
+}
+.card:hover {
+  transform: none;
+}

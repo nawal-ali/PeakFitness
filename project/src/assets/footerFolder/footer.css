@@ -1,0 +1,25 @@
+.custom-color {
+  color: #ec7e4a;
+}
+.custom-footer {
+  position: relative;
+  background-image: url("/imgs/footer-bg.png");
+  background-size: cover;
+  overflow: hidden;
+}
+.custom-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(47, 47, 47, 0.66); /* Adjust opacity */
+  z-index: 1;
+}
+
+/* Ensure the content is above the overlay */
+.custom-footer * {
+  position: relative;
+  z-index: 2;
+}

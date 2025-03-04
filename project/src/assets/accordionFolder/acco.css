@@ -1,0 +1,26 @@
+.accordion-item {
+  border: 2px solid #ec7e4a;
+}
+.accordion-body,
+.accordion-button {
+  background-color: #202020;
+  color: aliceblue;
+  text-align: left !important;
+}
+
+.accordion-button::after {
+  filter: brightness(0) invert(1);
+}
+
+.accordion-button {
+  font-weight: bolder;
+}
+.accordion-button:not(.collapsed) {
+  background-color: #ec7e4a !important;
+  border-color: #ec7e4a;
+}
+.accordion-button:focus {
+  box-shadow: none !important; /* Removes Bootstrap's default focus shadow */
+  outline: none !important; /* Removes the outline */
+  border-color: transparent !important; /* Ensures no border appears */
+}
