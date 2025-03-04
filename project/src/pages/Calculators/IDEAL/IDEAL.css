@@ -1,0 +1,729 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Jomhuria&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Nunito Sans';
+  overflow: hidden;
+}
+
+.left-panel-I {
+  flex: 1;
+  background-color: #202020;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  transition: transform 0.6s ease-in-out;
+}
+.body-parameters-side1-I ,
+.body-parameters-side2-I {
+  color: #fff; 
+  margin-bottom: 50px;
+  font-size: 32px; 
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+.left-panel-I .small-image-I {
+  width: 130px;
+  height: 130px;
+  background-image: url('../../../../images/IDEAL.svg');
+  background-position: 75% center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;
+  margin-bottom: 10px;
+}
+
+.result-header-I {
+  margin-left: -60px;
+}
+
+.ideal-weight-title-I {
+  font-size: 50px;
+  margin-bottom: 10px;
+  z-index: 2;
+  color: #EC7E4A;
+  font-weight: bold;
+  line-height: 80px;
+}
+
+/* Left Panel - Initial State (Before Calculation) */
+.left-panel-I .bmi-buttons-I {
+  display: none;
+}
+
+/* Container for the entire calculator */
+.calorie-calculator-I {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Left Panel - After Calculation (Moves Left) */
+.calorie-calculator-I.show-results-I .left-panel-I {
+  transform: translateX(0);
+}
+
+/* Logo in the Left Panel */
+.left-panel-I .logo-I {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  z-index: 3;
+  border: none;
+}
+
+/* Background Image in the Left Panel */
+.left-panel-I .background-image-I {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/images/Ideal-weight.png);
+    background-position: 78% center;
+    background-repeat: no-repeat;
+    background-color: #000;
+    background-size: cover;
+    opacity: 50%;
+    z-index: 1;
+    filter: brightness(200%);
+}
+
+
+.title-I {
+  display: block;
+}
+
+/* Content in the Left Panel */
+.left-panel-I .content-I {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  color: white;
+  border: none;
+}
+
+/* Paragraph in the Left Panel */
+.left-panel-I .under-header-I {
+  font-size: 28px;
+  color: #fff;
+  width: 90%;
+  border: none;
+}
+
+/* Arrow in the Left Panel */
+.arrow-icon-I {
+    width: 20px; /* حجم السهم (يمكن تعديله حسب الحاجة) */
+    height: 20px; /* ارتفاع السهم */
+    margin-left: -8px; /* مسافة بين النص والسهم */
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+/* Right Panel - When Showing Results */
+.calorie-calculator-I.show-results-I .right-panel-I {
+  background-image: url('../../../../images/Ideal-weight.png');
+  background-position: 75% center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.9);
+  background-size: cover;
+  transform: translateX(0);
+  z-index: 1;
+}
+
+/* Input Section Styling */
+.input-section-I {
+  width: 65%;
+  text-align: center;
+  border: none;
+}
+
+/* Gender Selection Styling (Updated for Buttons) */
+.gender-selection-I {
+  display: flex;
+  gap: 50px;
+  position: relative;
+  z-index: 100;
+  border: none;
+  width: 100%; /* Full width of input-section to match inputs */
+}
+
+.gender-selection-I button {
+  background-color: white;
+  color: black;
+  padding: 10px 0; /* Adjust padding to match input height, keep width full */
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  flex: 1; /* Each button takes equal space, matching input width */
+  width: 100%; /* Ensure full width to match inputs */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.gender-selection-I button.active-I {
+  background-color: #EC7E4A;
+  color: white;
+  border: 2px solid #EC7E4A;
+  z-index: 1;
+}
+
+.gender-selection-I button:hover {
+  background-color: #EC7E4A;
+  color: white;
+  opacity: 1;
+  border: 2px solid #EC7E4A;
+}
+
+/* Input Group Styling */
+.input-group-I {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0;
+  border: none;
+}
+
+.input-group-I label {
+  display: block;
+  margin-bottom: 10px;
+  color: white;
+  border: none;
+}
+
+.input-group-I input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-size: 18px;
+    background-color: #fff;
+    outline: none;
+    transition: border-color 0.3sease;
+}
+
+.input-group-I input:focus {
+  border-color: #ff8c00;
+  box-shadow: 0 0 8px rgba(255, 140, 0, 0.5);
+}
+
+/* Buttons Styling */
+.ideal-buttons-I, .ideal-buttons-result-I {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-top: 30px;
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+  border: none;
+  text-wrap: nowrap;
+}
+
+.clear-btn-I,
+.calculate-btn-I {
+  flex: 1; /* يجعل كلا الزرين يأخذان نفس المساحة */
+  max-width: 180px; /* منع التمدد الزائد */
+  text-align: center;
+  position: relative;
+  z-index: 100;
+  letter-spacing: 2px;
+}
+.calculate-btn-I{
+    background-color: #EC7E4A;
+    color: white;
+    padding: 14px 40px; /* جعل الزر أكبر قليلاً */
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px; /* زوايا مستديرة */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* مسافة بين النص والسهم */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3); /* ظل */
+    transition: 0.3s ease;
+  }
+
+.calculate-btn-I:hover,
+.clear-btn-I:hover {
+  border-color: #ff8c00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
+}
+
+/* Result Section Styling */
+.result-section-I {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: #fff;
+  margin-left: -150px;
+  margin-top: 40px;
+  border: none;
+}
+
+.result-logo-I {
+  width: 165px;
+  height: 100px;
+  position: absolute;
+  top: -5px;
+  left: 20px;
+  background-image: url(/images/Logo-4.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 300;
+  border: none;
+}
+
+.result-section-I h2 {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 30px;
+  border: none;
+}
+
+.result-section-I h3 {
+  font-size: 60px;
+  text-align: left;
+  margin-left: 45px;
+  letter-spacing: 3px;
+  border: none;
+}
+
+.result-section-I p {
+  font-size: 22px;
+  border: none;
+}
+
+/* Calculate Again and Other Calculators Buttons Styling */
+.other-calculators-btn-I {
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  background-color: #EC7E4A;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.3s ease;
+}
+
+.other-calculators-btn-I:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
+}
+
+.calorie-calculator-I {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  overflow: hidden;
+}
+.left-panel-I {
+    flex: 1;
+    background-color: #202020;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transition: transform 0.6s ease-in-out;
+  }
+.right-panel-I {
+    flex: 1;
+    background-color: #202020;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transition: transform 0.6s ease-in-out;
+    z-index: 0; /* لضمان أن الخط يظهر فوق الخلفية */
+  }
+
+.calorie-calculator-I.show-results-I .left-panel-I {
+  transform: translateX(0);
+}
+
+.calorie-calculator-I.show-results-I .right-panel-I {
+  transform: translateX(0);
+}
+
+.logo-I {
+  width: 165px;
+  height: 100px;
+  position: absolute;
+  top: -125px;
+  left: -50px;
+  background-image: url(/images/Logo-4.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 300;
+  border: none;
+}
+
+/* Table */
+.ideal-table-div-I {
+  width: 75%;
+}
+
+.ideal-table-I {
+  width: 100%;
+  max-width: 400px;
+  border-collapse: collapse;
+  margin: 20px auto;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+}
+
+.ideal-table-I th {
+  padding: 9px;
+  text-transform: uppercase;
+}
+
+.ideal-table-I td {
+  padding: 10px;
+}
+
+.ideal-weight-value-I {
+  color: #EC7E4A;
+  font-weight: bold;
+}
+.ideal-table-I td , th {
+    border: 2px solid #808080;
+    background-color: transparent;
+  }
+/* Circles (unchanged) */
+.Calculator-one-circle-I::before {
+  content: "";
+  position: absolute;
+  top: -220px;
+  left: -200px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle at top center, #EC7E4A 0%, #0A1B30 80%);
+  border-radius: 50%;
+  opacity: 0.9;
+  z-index: 1;
+  border: none;
+}
+
+.Calculator-one-circle-I::after {
+  content: "";
+  position: absolute;
+  bottom: -270px;
+  left: -200px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle at top center, #EC7E4A 0%, #0A1B30 80%);
+  border-radius: 50%;
+  opacity: 0.9;
+  z-index: 1;
+  border: none;
+}
+
+.Calculator-one-circle-s1-I::before {
+  content: "";
+  position: absolute;
+  top: -210px;
+  right: -200px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle at top center, #EC7E4A 0%, #0A1B30 80%);
+  border-radius: 50%;
+  opacity: 0.9;
+  z-index: 1;
+  border: none;
+}
+
+/* .Calculator-circles-side2-I {
+  content: "";
+  position: absolute;
+  top: 100px;
+  right: 40%;
+  transform: translateX(-50%);
+  width: 365px;
+  height: 365px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  filter: blur(60px);
+  border: none;
+} */
+
+/* .Calculator-circles-side2-I::after {
+  content: "";
+  position: absolute;
+  top: 345px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 365px;
+  height: 365px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  filter: blur(60px);
+  border: none;
+} */
+
+.Calculator-circles-side2-I::before {
+  content: "";
+  position: absolute;
+  top: -400px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 365px;
+  height: 365px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  filter: blur(60px);
+  border: none;
+}
+
+.Calculator-circles-I::after {
+  content: "";
+  position: absolute;
+  top: -250px;
+  transform: translateX(-50%);
+  width: 360px;
+  height: 360px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  filter: blur(60px);
+  left: auto;
+  border: none;
+}
+.Calculator-circles-I::before {
+  /* content: ""; */
+  position: absolute;
+  top: -250px;
+  transform: translateX(-50%);
+  width: 360px;
+  height: 360px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  filter: blur(60px);
+  left: auto;
+  border: none;
+}
+.Calculator-circles-I {
+    content: "";
+    position: absolute;
+    top: -250px;
+    transform: translateX(-80%);
+    width: 360px;
+    height: 360px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 50%;
+    filter: blur(60px);
+    left: auto;
+    border: none;
+}
+
+input, select {
+  border-radius: 20px !important;
+}
+
+.clear-btn-I {
+    background-color: transparent;
+    color: white;
+    padding: 12px 24px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3sease, border-color 0.3sease;
+    margin-right: 50px;
+    border-top: 0;
+    border-left: 0;
+    /* border-right: 0; */
+}
+
+/* Animations (unchanged) */
+@keyframes slideLeft-I {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight-I {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+.left-panel-I .ideal-buttons-I {
+    display: none;
+  }
+.calorie-calculator-I.show-results-I .input-section-I {
+  animation: slideLeft-I 0.6s ease-in-out both;
+  opacity: 1 !important;
+  pointer-events: auto;
+}
+
+.calorie-calculator-I:not(.show-results-I) .input-section-I {
+  animation: slideRight-I 0.6s ease-in-out both;
+  opacity: 1 !important;
+  pointer-events: auto;
+}
+
+@keyframes fadeInUp-I {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-section-I h2,
+.result-section-I p,
+.result-section-I .calories-I,
+.result-section-I .calculate-again-I {
+  opacity: 0;
+  animation-fill-mode: both;
+  border: none;
+}
+
+.calorie-calculator-I.show-results-I .result-section-I h2 {
+  animation: fadeInUp-I 0.6s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.calorie-calculator-I.show-results-I .result-section-I p {
+  animation: fadeInUp-I 0.6s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.calorie-calculator-I.show-results-I .result-section-I .calories-I {
+  animation: fadeInUp-I 0.6s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+.calorie-calculator-I.show-results-I .result-section-I .macronutrients-I {
+  animation: fadeInUp-I 0.6s ease-out forwards;
+  animation-delay: 0.8s;
+}
+
+.calorie-calculator-I.show-results-I .result-section-I .calculate-again-I {
+  animation: fadeInUp-I 0.6s ease-out forwards;
+  animation-delay: 1s;
+}
+
+.subtext-I {
+  position: relative;
+  left: 30px;
+  margin-bottom: 0px;
+  border: none;
+}
+
+/* Media Queries (unchanged except for span styling) */
+@media (max-width: 1400px) {
+  .left-panel-I .under-header-I {
+    font-size: 20px;
+    width: 85%;
+    border: none;
+  }
+
+  .ideal-weight-title-I {
+    font-size: 48px;
+    line-height: 70px;
+    border: none;
+  }
+}
+
+@media (max-width: 1134px) {
+  .left-panel-I .under-header-I {
+    font-size: 19px;
+    width: 85%;
+    border: none;
+  }
+}
+/* Media Queries */
+@media (max-width: 1024px) {
+    .gender-selection-I {gap: 20px;justify-content: center;border: none;}  
+    .gender-selection-I button {padding: 10px 100px;font-size: 25px;}
+    .calorie-calculator-I { flex-direction: column; height: auto;  }
+    .left-panel-I, .right-panel-I { width: 100%; }
+    .calorie-calculator-I.show-results-I .left-panel-I { order: 2; border-right: none; }
+    .calorie-calculator-I.show-results-I .right-panel-I { order: 1; border-left: none; }
+    .ideal-weight-title-I { font-size: 50px; line-height: 85px; text-align: center; }
+    .left-panel-I .under-header-I { font-size: 22px; width: 70%; text-align: center; }
+    .left-panel-I .small-image-I { width: 150px; height: 150px; }
+    .input-section-I { width: 60%; }
+    .input-group-I { padding: 8px; margin: 15px 0; }
+    .input-group-I label { font-size: 25px; }
+    .logo-I { width: 270px; height: 150px; }
+    .input-group-I input { padding: 12px; font-size: 23px;  }
+    .gender-btn-I { padding: 10px 0; font-size: 25px; width: 100%; }
+    .ideal-buttons-I, .ideal-buttons-result-I { flex-direction: row; justify-content: center; gap: 30px; }
+    .clear-btn-I, .calculate-btn-I { max-width: 225px; font-size: 25px;  }
+    .result-section-I { margin-left: 0; text-align: center; }
+    .result-section-I h2 { font-size: 50px; margin-bottom: 0px; margin-left: 0px; }
+    .result-section-I h3 { font-size: 60px; margin-left: 15px; }
+    .result-logo-I { width: 270px; height: 179px; }
+    .ideal-table-I { font-size: 16px; max-width: 100%;  }
+    .ideal-table-I th, .ideal-table-I td { padding: 15px; font-size: 25px;text-wrap: nowrap; }
+    .Calculator-one-circle-I::before, .Calculator-one-circle-I::after, .Calculator-one-circle-s1-I::before, .Calculator-circles-side2-I::before { display: none; }
+    .left-panel-I .content-I, .input-section-I, .result-section-I { height: 47vh;margin-bottom: 100px;}
+    .other-calculators-btn-I { font-size: 25px;  }
+    .ideal-table-div-I {width: 100%;}
+    .result-header-I {margin-left: 0px;}
+    p {margin-top: 0;margin-bottom: 1rem;font-size: 27px;}}
+  
+  @media (max-width: 840px) {
+    .gender-btn-I { padding: 10px 0; font-size: 25px; border: 2px solid #EC7E4A; width: 100%; }
+    .ideal-table-I th, .ideal-table-I td { padding: 10px; font-size: 25px; border: 2px solid #EC7E4A; }
+    .result-section-I h2 { font-size: 50px; margin-bottom: 20px; }
+    .result-section-I h3 { font-size: 60px; margin-left: 15px; }
+    .result-logo-I { width: 240px; height: 140px; left: -5px; }
+  }
+  
+  @media (max-width: 768px) {
+    .left-panel-I .under-header-I { font-size: 20px; }
+    .ideal-weight-title-I { font-size: 60px; }
+    .gender-btn-I { padding: 10px 0; font-size: 23px; border: 2px solid #EC7E4A; width: 100%; }
+    .ideal-table-I th, .ideal-table-I td { padding: 5px; font-size: 23px; border: 2px solid #EC7E4A; }
+    .result-section-I { height: 48vh; }
+    .result-section-I h3 { font-size: 50px; }
+    .result-section-I h2 { font-size: 50px; margin-bottom: 10px; }
+    .ideal-table-div-I { width: 100%; position: relative; top: -15px; }
+    .ideal-buttons-result-I { margin-top: -20px; }
+  }

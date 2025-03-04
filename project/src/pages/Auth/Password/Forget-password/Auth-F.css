@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap');
+
+body {
+    background: linear-gradient(to bottom, rgba(34, 34, 34, 0.5), rgba(0, 0, 0, 1)), 
+                url('../../../../../images/Password-image.jpeg') center/cover no-repeat;
+    background-blend-mode: multiply;
+    font-family: 'Nunito Sans', sans-serif;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.container-FP {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    color: white;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: white;
+    font-size: 25px;
+    margin-bottom: 7px;
+    margin-left: 0px;
+}
+
+.Parag-2-FP {
+    color: #EC7E4A;
+    margin-left: 10px;
+    margin-top: 0;
+}
+
+.svg-container-FP {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.svg-container-FP img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+input {
+    padding: 12px;
+    width: 80%;
+    margin-bottom: 50px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    background-color: #fff;
+}
+
+.button-bt3-FP {
+    background: #EC7E4A;
+    color: white;
+    border: none;
+    padding: 12px 100px;
+    width: 80%;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.3);
+}
+
+.button-bt3-FP:hover {
+    background: #ff9966;
+    box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.5);
+}
+
+.message-FP {
+    color: green;
+    margin-top: 10px;
+    animation: slideIn 1s ease-in-out;
+    margin-left: -150px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.svg-container-FP {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-FP {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    width: 250px;
+    height: auto;
+}
+
+.error-message-FP {
+    color: red;
+    font-size: 14px;
+}
+
+form {
+    background-color: transparent;
+    display: flex;
+    color: #000;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    width: 80%;
+    height: auto;
+    max-width: 400px;
+    text-align: center;
+    text-wrap: nowrap;
+}

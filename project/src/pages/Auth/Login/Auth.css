@@ -1,0 +1,504 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap');
+
+* {
+    font-family: 'Nunito Sans', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #202020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    font-weight: 700;
+    margin: 0;
+    color: white;
+    font-size: 75px;
+    letter-spacing: 2px;
+}
+.Login {
+    font-weight: bold;
+    color: white;
+    margin: 20px 0;
+    font-size: 70px;
+}
+.Logoo {
+    position: relative;
+    font-size: 70px;
+    bottom: 70px;
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    font-size: 24px;
+    font-weight: 100;
+    line-height: 35px;
+    letter-spacing: 0.5px;
+    margin: 20px 0 30px ;
+    width: 70%;
+}
+
+.container {
+    background-color: #202020;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    background-color: #202020;
+    z-index: 200;
+}
+
+.sign-in-container {
+    left: 0;
+    transform: translateX(0);
+}
+
+.sign-up-container {
+    right: 0;
+    transform: translateX(100%);
+}
+
+.container.right-panel-active .sign-in-container {
+    transform: translateX(-100%);
+}
+
+.container.right-panel-active .sign-up-container {
+    transform: translateX(0);
+}
+
+.overlay-container {
+    position: absolute;
+    /* background-color: #fff; */
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+.container.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
+
+.overlay {
+    background: url('../../../images/Home.svg') no-repeat center center;
+    /* background-size: cover; */
+    /* background-color: #202020; */
+    color: #FFFFFF;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+
+.container.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+.overlay-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transition: transform 0.6s ease-in-out;
+    background: url('../../../../images/Home-cropped.png') no-repeat center center;
+    background-position: 10% center; /* زودنا القيمة لليمين */
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 10;
+    color: #fff;
+}
+
+.overlay-left {
+    left: 0;
+    transform: translateX(-20%);
+}
+
+.container.right-panel-active .overlay-left {
+    transform: translateX(0);
+}
+
+.overlay-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+    transform: translateX(20%);
+}
+
+form {
+    background-color: #202020;
+    display: flex;
+    color: #000;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    width: 80%;
+    height: auto;
+    max-width: 400px;
+    text-align: center;
+}
+
+input {
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 80%;
+    border-radius: 5px;
+}
+
+button  {
+    border-radius: 20px;
+    border: 1px solid #DBDBDB;
+    background-color: #DBDBDB;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    /* text-transform: uppercase; */
+    transition: transform 80ms ease-in;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline: none;
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    z-index: 999;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer i {
+    color: red;
+}
+
+footer a {
+    color: #3c97bf;
+    text-decoration: none;
+    
+}
+a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    font-size: 10px;
+    left: 130px;
+}
+.flex-inputs {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.flex-inputs .p-float-label {
+    flex: 1;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.form-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+button.butt-1 {
+    background-color: #EC7E4A;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 360px;
+    margin-top: 20px;
+    z-index: 110;
+}
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff; /* لون أغمق للوضوح */
+    margin: 5px 0 5px 10px;
+    text-align: left;
+    width: 100%;
+}
+.custom-input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    background: white; /* الحقل يكون أبيض */
+    color: black; /* النص يكون أسود */
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: #ccc; /* لون أوضح للـ placeholder */
+    opacity: 1; /* تأكد من ظهوره بوضوح */
+    font-size: 14px;
+    transition: all 0.3s ease;
+    z-index: 120;
+}
+
+.custom-input:focus {
+    color: black; /* تأكيد أن النص يظل أسود */
+    background: white;
+    border: 1px solid #EC7E4A; /* لون مميز عند التركيز */
+    outline: none;
+}
+
+/* button.butt-1:hover {
+    background-color: #e03d00;
+} */
+.flex-inputs {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-between;
+}
+.flex-inputs div {
+    width: 100%;
+}
+button.butt-2 {
+    background-color: #EC7E4A;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 360px;
+    margin-top: 20px;
+}
+.logo-image {
+    width: 165px;
+    height: 110px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-image: url(/images/Logo-4.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 300;
+}
+.password-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.password-container .custom-input {
+    padding-right: 45px; /* مساحة أكبر للأيقونة */
+}
+
+.password-icon {
+    position: absolute;
+    right: 20px; /* حرك الأيقونة شوية ناحية اليسار */
+    top: 45%; /* ضبط أفضل لمكانها */
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 22px; /* تكبير الأيقونة شوية */
+    color: #777;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.password-icon:hover {
+    color: #EC7E4A;
+    transform: translateY(-50%) scale(1.1); /* تكبير بسيط عند التحويم */
+}
+.login-circles {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle at top, #EC7E4A 10%, rgba(10, 27, 48, 0.9) 80%);
+    opacity: 0.8; /* لضبط الشفافية */
+}
+
+.login-circles::before {
+    content: "";
+    position: absolute;
+    top: 700px;
+    left: 20px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle at top left, #EC7E4A 10%, #72331F 50%, #0A1B30 90%);
+    border-radius: 50%;
+    opacity: 0.9;
+}
+.login-circles::after {
+    content: "";
+    position: absolute;
+    top: 240px;
+    left: 90%;
+    transform: translateX(-50%);
+    width: 380px;
+    height: 380px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    filter: blur(50px);
+}
+.signup-circles {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle at top, #EC7E4A 10%, rgba(10, 27, 48, 0.9) 80%);    border-radius: 50%;
+    opacity: 0.9;
+}
+.signup-circles::before {
+    content: "";
+    position: absolute;
+    top: 640px;
+    left: -240px;
+    width: 190px;
+    height: 190px;
+    background: radial-gradient(circle at top left, #EC7E4A 10%, #72331F 50%, #0A1B30 90%);
+    border-radius: 50%;
+    opacity: 0.4;
+}
+.signup-circles::after {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: 70%;
+    transform: translateX(-50%);
+    width: 360px;
+    height: 360px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    filter: blur(60px);
+}
+@media screen and (max-width: 650px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .form-box {
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        padding: 20px;
+    }
+
+    .toggle-box {
+        display: none; /* إخفاء اللوحة الجانبية */
+    }
+
+    .toggle-panel {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .weight-height-container {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .weight-height-container input {
+        width: calc(50% - 5px);
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    h1 {
+        font-size: 26px;
+    }
+
+    .form-box {
+        padding: 15px;
+    }
+}
