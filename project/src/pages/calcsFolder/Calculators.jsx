@@ -239,7 +239,7 @@ const Slider_C = () => {
                       to={`/${item.name.toLowerCase().replace(" ", "-")}`}
                       className="start-button-SC"
                     >
-                      Let's get started
+                      Let&apos;s get started
                     </Link>
                   )}
                 </div>

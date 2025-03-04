@@ -136,300 +136,313 @@ const BMICalculator = () => {
   const weightStatus = bmi ? getWeightStatus(parseFloat(bmi)) : "";
 
   return (
-    <div
-      className={`calorie-calculator-B ${showResults ? "show-results-B" : ""}`}
-    >
-      <div className="left-panel-B">
-        {!showResults ? (
-          <>
-            <div className="logo-B"></div>
-            <div className="background-image-B"></div>
-            <div className="content-B">
-              <div className="small-image-B"></div>
-              <h1 className="bmi-title-B">
-                <span className="title-B">BMI</span>
-                <span className="title-B">Calculator</span>
-              </h1>
-              <div className="under-header-B">
-                <p>
-                  It Helps Categorize Your Weight As Underweight, Normal,
-                  Overweight, Or Obese, Providing A Quick Assessment Of Your
-                  Health.
-                </p>
-              </div>
-            </div>
-          </>
-        ) : (
-          <form className="input-section-B" onSubmit={calculateBmi}>
-            <div className="Calculator-one-circle-B"></div>
-            <h2 className="body-parameters-side2-B">Body Parameters</h2>
-            <div className="gender-selection-B">
-              <button
-                className={gender === "male" ? "active-B" : ""}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setGender("male");
-                }}
-              >
-                Male
-              </button>
-              <button
-                className={gender === "female" ? "active-B" : ""}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setGender("female");
-                }}
-              >
-                Female
-              </button>
-            </div>
-            <div className="input-group-B">
-              <label>Age</label>
-              <input
-                type="text"
-                value={age}
-                onChange={(e) =>
-                  handleNumericInput(e.target.value, setAge, age, setAgeError)
-                }
-                placeholder="21"
-                className={`numeric-input-B ${ageError ? "error-B" : ""}`}
-                pattern="[0-9]*"
-              />
-              {ageError && <p className="error-message-B">{ageError}</p>}
-            </div>
-            <div className="flex-inputs-B">
-              <div className="input-group-B">
-                <label>Weight</label>
-                <input
-                  type="text"
-                  value={weight}
-                  onChange={(e) =>
-                    handleNumericInput(
-                      e.target.value,
-                      setWeight,
-                      weight,
-                      setWeightError
-                    )
-                  }
-                  placeholder="65kg"
-                  className={`numeric-input-B ${weightError ? "error-B" : ""}`}
-                  pattern="[0-9]*"
-                />
-                {weightError && (
-                  <p className="error-message-B weight-height-error-B">
-                    {weightError}
+    <>
+      <Navbar showSearch={false} />
+      <div
+        className={`calorie-calculator-B ${
+          showResults ? "show-results-B" : ""
+        }`}
+      >
+        <div className="left-panel-B">
+          {!showResults ? (
+            <>
+              <div className="logo-B"></div>
+              <div className="background-image-B"></div>
+              <div className="content-B">
+                <div className="small-image-B"></div>
+                <h1 className="bmi-title-B">
+                  <span className="title-B">BMI</span>
+                  <span className="title-B">Calculator</span>
+                </h1>
+                <div className="under-header-B">
+                  <p>
+                    It Helps Categorize Your Weight As Underweight, Normal,
+                    Overweight, Or Obese, Providing A Quick Assessment Of Your
+                    Health.
                   </p>
-                )}
+                </div>
+              </div>
+            </>
+          ) : (
+            <form className="input-section-B" onSubmit={calculateBmi}>
+              <div className="Calculator-one-circle-B"></div>
+              <h2 className="body-parameters-side2-B">Body Parameters</h2>
+              <div className="gender-selection-B">
+                <button
+                  className={gender === "male" ? "active-B" : ""}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setGender("male");
+                  }}
+                >
+                  Male
+                </button>
+                <button
+                  className={gender === "female" ? "active-B" : ""}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setGender("female");
+                  }}
+                >
+                  Female
+                </button>
               </div>
               <div className="input-group-B">
-                <label>Height</label>
+                <label>Age</label>
                 <input
                   type="text"
-                  value={height}
+                  value={age}
                   onChange={(e) =>
-                    handleNumericInput(
-                      e.target.value,
-                      setHeight,
-                      height,
-                      setHeightError
-                    )
+                    handleNumericInput(e.target.value, setAge, age, setAgeError)
                   }
-                  placeholder="180cm"
-                  className={`numeric-input-B ${heightError ? "error-B" : ""}`}
+                  placeholder="21"
+                  className={`numeric-input-B ${ageError ? "error-B" : ""}`}
                   pattern="[0-9]*"
                 />
-                {heightError && (
-                  <p className="error-message-B weight-height-error-B">
-                    {heightError}
-                  </p>
-                )}
+                {ageError && <p className="error-message-B">{ageError}</p>}
               </div>
-            </div>
-            <div className="bmi-buttons-B">
-              <input
-                type="button"
-                value="Clear"
-                className="clear-btn-B"
-                onClick={clearInputs}
-              />
-              <button className="calculate-btn-B" type="submit">
-                Calculate{" "}
-                <img
-                  src="../../../../images/Arrow right-white.svg"
-                  alt="Arrow"
-                  className="arrow-icon-B"
-                />
-              </button>
-            </div>
-          </form>
-        )}
-      </div>
-      <div className="right-panel-B">
-        {!showResults ? (
-          <form className="input-section-B" onSubmit={calculateBmi}>
-            <div className="Calculator-circles-B"></div>
-            <div className="Calculator-one-circle-s1-B"></div>
-            <h2 className="body-parameters-side1-B">Body Parameters</h2>
-            <div className="gender-selection-B">
-              <button
-                className={gender === "male" ? "active-B" : ""}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setGender("male");
-                }}
-              >
-                Male
-              </button>
-              <button
-                className={gender === "female" ? "active-B" : ""}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setGender("female");
-                }}
-              >
-                Female
-              </button>
-            </div>
-            <div className="input-group-B">
-              <label>Age</label>
-              <input
-                type="text"
-                value={age}
-                onChange={(e) =>
-                  handleNumericInput(e.target.value, setAge, age, setAgeError)
-                }
-                placeholder="21"
-                className={`numeric-input-B ${ageError ? "error-B" : ""}`}
-                pattern="[0-9]*"
-              />
-              {ageError && <p className="error-message-B">{ageError}</p>}
-            </div>
-            <div className="flex-inputs-B">
-              <div className="input-group-B">
-                <label>Weight</label>
+              <div className="flex-inputs-B">
+                <div className="input-group-B">
+                  <label>Weight</label>
+                  <input
+                    type="text"
+                    value={weight}
+                    onChange={(e) =>
+                      handleNumericInput(
+                        e.target.value,
+                        setWeight,
+                        weight,
+                        setWeightError
+                      )
+                    }
+                    placeholder="65kg"
+                    className={`numeric-input-B ${
+                      weightError ? "error-B" : ""
+                    }`}
+                    pattern="[0-9]*"
+                  />
+                  {weightError && (
+                    <p className="error-message-B weight-height-error-B">
+                      {weightError}
+                    </p>
+                  )}
+                </div>
+                <div className="input-group-B">
+                  <label>Height</label>
+                  <input
+                    type="text"
+                    value={height}
+                    onChange={(e) =>
+                      handleNumericInput(
+                        e.target.value,
+                        setHeight,
+                        height,
+                        setHeightError
+                      )
+                    }
+                    placeholder="180cm"
+                    className={`numeric-input-B ${
+                      heightError ? "error-B" : ""
+                    }`}
+                    pattern="[0-9]*"
+                  />
+                  {heightError && (
+                    <p className="error-message-B weight-height-error-B">
+                      {heightError}
+                    </p>
+                  )}
+                </div>
+              </div>
+              <div className="bmi-buttons-B">
                 <input
-                  type="text"
-                  value={weight}
-                  onChange={(e) =>
-                    handleNumericInput(
-                      e.target.value,
-                      setWeight,
-                      weight,
-                      setWeightError
-                    )
-                  }
-                  placeholder="65kg"
-                  className={`numeric-input-B ${weightError ? "error-B" : ""}`}
-                  pattern="[0-9]*"
+                  type="button"
+                  value="Clear"
+                  className="clear-btn-B"
+                  onClick={clearInputs}
                 />
-                {weightError && (
-                  <p className="error-message-B weight-height-error-B">
-                    {weightError}
-                  </p>
-                )}
+                <button className="calculate-btn-B" type="submit">
+                  Calculate{" "}
+                  <img
+                    src="../../../../images/Arrow right-white.svg"
+                    alt="Arrow"
+                    className="arrow-icon-B"
+                  />
+                </button>
               </div>
-              <div className="input-group-B">
-                <label>Height</label>
-                <input
-                  type="text"
-                  value={height}
-                  onChange={(e) =>
-                    handleNumericInput(
-                      e.target.value,
-                      setHeight,
-                      height,
-                      setHeightError
-                    )
-                  }
-                  placeholder="180cm"
-                  className={`numeric-input-B ${heightError ? "error-B" : ""}`}
-                  pattern="[0-9]*"
-                />
-                {heightError && (
-                  <p className="error-message-B weight-height-error-B">
-                    {heightError}
-                  </p>
-                )}
-              </div>
-            </div>
-            <div className="bmi-buttons-B">
+            </form>
+          )}
+        </div>
+        <div className="right-panel-B">
+          {!showResults ? (
+            <form className="input-section-B" onSubmit={calculateBmi}>
               <div className="Calculator-circles-B"></div>
-              <input
-                type="button"
-                value="Clear"
-                className="clear-btn-B"
-                onClick={clearInputs}
-              />
-              <button className="calculate-btn-B" type="submit">
-                Calculate{" "}
-                <img
-                  src="../../../../images/Arrow right-white.svg"
-                  alt="Arrow"
-                  className="arrow-icon-B"
+              <div className="Calculator-one-circle-s1-B"></div>
+              <h2 className="body-parameters-side1-B">Body Parameters</h2>
+              <div className="gender-selection-B">
+                <button
+                  className={gender === "male" ? "active-B" : ""}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setGender("male");
+                  }}
+                >
+                  Male
+                </button>
+                <button
+                  className={gender === "female" ? "active-B" : ""}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setGender("female");
+                  }}
+                >
+                  Female
+                </button>
+              </div>
+              <div className="input-group-B">
+                <label>Age</label>
+                <input
+                  type="text"
+                  value={age}
+                  onChange={(e) =>
+                    handleNumericInput(e.target.value, setAge, age, setAgeError)
+                  }
+                  placeholder="21"
+                  className={`numeric-input-B ${ageError ? "error-B" : ""}`}
+                  pattern="[0-9]*"
                 />
-              </button>
+                {ageError && <p className="error-message-B">{ageError}</p>}
+              </div>
+              <div className="flex-inputs-B">
+                <div className="input-group-B">
+                  <label>Weight</label>
+                  <input
+                    type="text"
+                    value={weight}
+                    onChange={(e) =>
+                      handleNumericInput(
+                        e.target.value,
+                        setWeight,
+                        weight,
+                        setWeightError
+                      )
+                    }
+                    placeholder="65kg"
+                    className={`numeric-input-B ${
+                      weightError ? "error-B" : ""
+                    }`}
+                    pattern="[0-9]*"
+                  />
+                  {weightError && (
+                    <p className="error-message-B weight-height-error-B">
+                      {weightError}
+                    </p>
+                  )}
+                </div>
+                <div className="input-group-B">
+                  <label>Height</label>
+                  <input
+                    type="text"
+                    value={height}
+                    onChange={(e) =>
+                      handleNumericInput(
+                        e.target.value,
+                        setHeight,
+                        height,
+                        setHeightError
+                      )
+                    }
+                    placeholder="180cm"
+                    className={`numeric-input-B ${
+                      heightError ? "error-B" : ""
+                    }`}
+                    pattern="[0-9]*"
+                  />
+                  {heightError && (
+                    <p className="error-message-B weight-height-error-B">
+                      {heightError}
+                    </p>
+                  )}
+                </div>
+              </div>
+              <div className="bmi-buttons-B">
+                <div className="Calculator-circles-B"></div>
+                <input
+                  type="button"
+                  value="Clear"
+                  className="clear-btn-B"
+                  onClick={clearInputs}
+                />
+                <button className="calculate-btn-B" type="submit">
+                  Calculate{" "}
+                  <img
+                    src="../../../../images/Arrow right-white.svg"
+                    alt="Arrow"
+                    className="arrow-icon-B"
+                  />
+                </button>
+              </div>
+            </form>
+          ) : (
+            <div className="result-section-B">
+              <div className="Calculator-circles-side2-B"></div>
+              <div className="result-logo-B"></div>
+              <div className="result-header-B">
+                <h2>Your Result</h2>
+                <h3 className="bmi-value-B">
+                  {bmi} kg/M<sup>2</sup>
+                </h3>
+              </div>
+              <p className="subtext-B">
+                {bmi
+                  ? `You Have A ${weightStatus} Body Weight, ${
+                      weightStatus === "Healthy" ? "Great Job!" : ""
+                    }`
+                  : ""}
+              </p>
+              <div className="bmi-table-div-B">
+                <table className="bmi-table-B">
+                  <thead>
+                    <tr>
+                      <th>BMI</th>
+                      <th>Weight Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="bmi-value-B">Below 18.5</td>
+                      <td>Underweight</td>
+                    </tr>
+                    <tr>
+                      <td className="bmi-value-B">18.5-24.9</td>
+                      <td>Healthy</td>
+                    </tr>
+                    <tr>
+                      <td className="bmi-value-B">25.0-29.9</td>
+                      <td>Overweight</td>
+                    </tr>
+                    <tr>
+                      <td className="bmi-value-B">30.0 And Above</td>
+                      <td>Obese</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="bmi-buttons-result-B">
+                <button
+                  className="calculate-btn-B"
+                  onClick={recalculateFromInputs}
+                >
+                  Calculate Again
+                </button>
+                <button className="other-calculators-btn-B">
+                  Other Calculators
+                </button>
+              </div>
             </div>
-          </form>
-        ) : (
-          <div className="result-section-B">
-            <div className="Calculator-circles-side2-B"></div>
-            <div className="result-logo-B"></div>
-            <div className="result-header-B">
-              <h2>Your Result</h2>
-              <h3 className="bmi-value-B">
-                {bmi} kg/M<sup>2</sup>
-              </h3>
-            </div>
-            <p className="subtext-B">
-              {bmi
-                ? `You Have A ${weightStatus} Body Weight, ${
-                    weightStatus === "Healthy" ? "Great Job!" : ""
-                  }`
-                : ""}
-            </p>
-            <div className="bmi-table-div-B">
-              <table className="bmi-table-B">
-                <thead>
-                  <tr>
-                    <th>BMI</th>
-                    <th>Weight Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="bmi-value-B">Below 18.5</td>
-                    <td>Underweight</td>
-                  </tr>
-                  <tr>
-                    <td className="bmi-value-B">18.5-24.9</td>
-                    <td>Healthy</td>
-                  </tr>
-                  <tr>
-                    <td className="bmi-value-B">25.0-29.9</td>
-                    <td>Overweight</td>
-                  </tr>
-                  <tr>
-                    <td className="bmi-value-B">30.0 And Above</td>
-                    <td>Obese</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div className="bmi-buttons-result-B">
-              <button
-                className="calculate-btn-B"
-                onClick={recalculateFromInputs}
-              >
-                Calculate Again
-              </button>
-              <button className="other-calculators-btn-B">
-                Other Calculators
-              </button>
-            </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
