@@ -6,6 +6,10 @@ import Tips from "./pages/proTipsFolder/ProTips";
 import Plans from "./pages/FoodPlansFolder/FoodPlans";
 import About from "./pages/aboutFolder/About";
 import Calculators from "./pages/calcsFolder/Calculators";
+import BMI from "./pages/calcsFolder/BMI/BMI";
+import BodyFat from "./pages/calcsFolder/Body-Fat/BodyFat";
+import Calorie from "./pages/calcsFolder/Calorie/Calorie";
+import Weight from "./pages/calcsFolder/Ideal-Weight/Weight";
 
 function App() {
   return (
@@ -19,6 +23,10 @@ function App() {
             <Route path="/FoodPlans" element={<Plans />} />
             <Route path="/about" element={<About />} />
             <Route path="/Calculators" element={<Calculators />} />
+            <Route path="/BMI" element={<BMI />} />
+            <Route path="/BodyFat" element={<BodyFat />} />
+            <Route path="/Calorie" element={<Calorie />} />
+            <Route path="/Weight" element={<Weight />} />
           </Routes>
         </Router>
         {/* <h1>app works!</h1> */}
