@@ -29,7 +29,7 @@
 //   );
 // }
 
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import Navbar from "../../assets/navFolder/Navbar";
 import { Link } from "react-router-dom";
 import "./calc.css";
