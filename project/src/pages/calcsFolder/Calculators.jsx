@@ -33,6 +33,7 @@ import { useRef, useState, useEffect } from "react";
 import Navbar from "../../assets/navFolder/Navbar";
 import { Link } from "react-router-dom";
 import "./calc.css";
+// import { path } from "framer-motion/client";
 
 const Slider_C = () => {
   const carouselRef = useRef(null);
@@ -52,24 +53,28 @@ const Slider_C = () => {
       name: "Calorie",
       img: "./imgs/Calorie-image.png",
       color: "#ec7e4a",
+      path: "/Calorie",
     },
     {
       id: 2,
       name: "Ideal Weight",
       img: "./imgs/Ideal-Weight-image.png",
       color: "#ec7e4a",
+      path: "/Weight",
     },
     {
       id: 3,
       name: "BMI",
       img: "./imgs/BMI-image.png",
       color: "#ec7e4a",
+      path: "/BMI",
     },
     {
       id: 4,
       name: "Body Fat",
       img: "./imgs/Body-Fat-image.png",
       color: "#ec7e4a",
+      path: "/BodyFat",
     },
   ];
 
@@ -235,10 +240,7 @@ const Slider_C = () => {
                     )}
                   </div>
                   {item.id !== 0 && (
-                    <Link
-                      to={`/${item.name.toLowerCase().replace(" ", "-")}`}
-                      className="start-button-SC"
-                    >
+                    <Link to={`/${item.path}`} className="start-button-SC">
                       Let&apos;s get started
                     </Link>
                   )}

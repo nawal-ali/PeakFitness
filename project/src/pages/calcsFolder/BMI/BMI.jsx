@@ -16,7 +16,7 @@
 // }
 
 import { useState, useEffect } from "react";
-// import Navbar from "../../../assets/navFolder/Navbar";
+import Navbar from "../../../assets/navFolder/Navbar";
 import "./bmi.css";
 
 const BMICalculator = () => {
@@ -106,9 +106,9 @@ const BMICalculator = () => {
     }
   };
 
-  const resetForm = () => {
-    recalculateFromInputs();
-  };
+  // const resetForm = () => {
+  //   recalculateFromInputs();
+  // };
 
   const clearInputs = () => {
     setGender("");
