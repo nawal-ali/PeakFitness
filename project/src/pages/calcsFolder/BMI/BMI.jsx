@@ -263,7 +263,7 @@ const BMICalculator = () => {
                 <button className="calculate-btn-B" type="submit">
                   Calculate{" "}
                   <img
-                    src="../../../../images/Arrow right-white.svg"
+                    src="./imgs/Arrow right-white.svg"
                     alt="Arrow"
                     className="arrow-icon-B"
                   />
@@ -375,7 +375,7 @@ const BMICalculator = () => {
                 <button className="calculate-btn-B" type="submit">
                   Calculate{" "}
                   <img
-                    src="../../../../images/Arrow right-white.svg"
+                    src="./imgs/Arrow right-white.svg"
                     alt="Arrow"
                     className="arrow-icon-B"
                   />
