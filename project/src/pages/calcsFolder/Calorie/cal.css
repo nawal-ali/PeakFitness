@@ -7,7 +7,9 @@ body, html {
   font-family: 'Nunito Sans';
   overflow: hidden;
 } */
-
+body {
+  padding-right: 0;
+}
 .calorie-calculator-C {
   display: flex;
   width: 100vw;

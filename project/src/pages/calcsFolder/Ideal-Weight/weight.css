@@ -7,7 +7,9 @@ body, html {
   font-family: 'Nunito Sans';
   overflow: hidden;
 } */
-
+body {
+  padding-right: 0;
+}
 .left-panel-I {
   flex: 1;
   background-color: #202020;
