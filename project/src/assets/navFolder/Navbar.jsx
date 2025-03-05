@@ -2,13 +2,18 @@ import "../navFolder/nav.css";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
-export default function navbar({ showSearch = true }) {
+export default function navbar({ showSearch = true, showBackground = true }) {
   return (
     <>
       {/* fixed-top */}
       <nav
         className="navbar navbar-dark p-4 fixed-top w-100"
-        style={{ backgroundColor: "#202020", zIndex: 1050 }}
+        style={
+          showBackground
+            ? { backgroundColor: "#202020", zIndex: 1050 }
+            : { zIndex: 1050 }
+        }
+
         // position-absolute top-0
       >
         <div className="container-fluid">

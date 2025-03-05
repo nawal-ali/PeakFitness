@@ -137,7 +137,7 @@ const BMICalculator = () => {
 
   return (
     <>
-      <Navbar showSearch={false} />
+      <Navbar showSearch={false} showBackground={false} />
       <div
         className={`calorie-calculator-B ${
           showResults ? "show-results-B" : ""
@@ -263,7 +263,7 @@ const BMICalculator = () => {
                 <button className="calculate-btn-B" type="submit">
                   Calculate{" "}
                   <img
-                    src="./imgs/Arrow right-white.svg"
+                    src="./logo/Arrow right-white.svg"
                     alt="Arrow"
                     className="arrow-icon-B"
                   />
@@ -375,7 +375,7 @@ const BMICalculator = () => {
                 <button className="calculate-btn-B" type="submit">
                   Calculate{" "}
                   <img
-                    src="./imgs/Arrow right-white.svg"
+                    src="./logo/Arrow right-white.svg"
                     alt="Arrow"
                     className="arrow-icon-B"
                   />
