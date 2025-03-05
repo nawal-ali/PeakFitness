@@ -14,7 +14,7 @@
 //   );
 // }
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "../../../assets/navFolder/Navbar";
 import "./cal.css";
 
@@ -177,9 +177,9 @@ const CalorieCalculator = () => {
     }, 50);
   };
 
-  const resetForm = () => {
-    recalculateFromInputs();
-  };
+  // const resetForm = () => {
+  //   recalculateFromInputs();
+  // };
 
   const clearInputs = () => {
     setGender("");
@@ -196,429 +196,444 @@ const CalorieCalculator = () => {
   };
 
   return (
-    <div
-      className={`calorie-calculator-C ${showResults ? "show-results-C" : ""}`}
-    >
-      <div className="left-panel-C">
-        {!showResults ? (
-          <>
-            <div className="logo-C"></div>
-            <div className="background-image-C"></div>
-            <div className="content-C">
-              <div className="small-image-C"></div>
-              <h1>
-                Calorie <br /> Calculator
-              </h1>
-              <p className="under-header-C">
-                Calculate Optimal Macronutrient Ratios For Your Body
-              </p>
-              <p className="under-header-C">
-                Enter Your Age, Weight, And Activity Level
-              </p>
-            </div>
-          </>
-        ) : (
-          <form className="input-section-C" onSubmit={calculateCalories}>
-            <div className="Calculator-one-circle-C"></div>
-            <h2 className="body-parameters-side2-C">Body Parameters</h2>
-            <div className="gender-selection-C">
-              <button
-                className={gender === "male" ? "active-C" : ""}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setGender("male");
-                }}
-              >
-                Male
-              </button>
-              <button
-                className={gender === "female" ? "active-C" : ""}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setGender("female");
-                }}
-              >
-                Female
-              </button>
-            </div>
-            <div className="input-group-C">
-              <label>Age</label>
-              <input
-                type="text"
-                value={age}
-                onChange={(e) =>
-                  handleNumericInput(e.target.value, setAge, age, setAgeError)
-                }
-                placeholder="21"
-                className={`numeric-input-C ${ageError ? "error-C" : ""}`}
-                pattern="[0-9]*"
-              />
-              {ageError && <p className="error-message-C">{ageError}</p>}
-            </div>
-            <div className="flex-inputs-C">
-              <div className="input-group-C">
-                <label>Weight</label>
-                <input
-                  type="text"
-                  value={weight}
-                  onChange={(e) =>
-                    handleNumericInput(
-                      e.target.value,
-                      setWeight,
-                      weight,
-                      setWeightError
-                    )
-                  }
-                  placeholder="65kg"
-                  className={`numeric-input-C ${weightError ? "error-C" : ""}`}
-                  pattern="[0-9]*"
-                />
-                {weightError && (
-                  <p className="error-message-C weight-height-error-C">
-                    {weightError}
-                  </p>
-                )}
+    <>
+      <Navbar showSearch={false} showBackground={false} />
+      <div
+        className={`calorie-calculator-C ${
+          showResults ? "show-results-C" : ""
+        }`}
+      >
+        <div className="left-panel-C">
+          {!showResults ? (
+            <>
+              <div className="logo-C"></div>
+              <div className="background-image-C"></div>
+              <div className="content-C">
+                <div className="small-image-C"></div>
+                <h1>
+                  Calorie <br /> Calculator
+                </h1>
+                <p className="under-header-C">
+                  Calculate Optimal Macronutrient Ratios For Your Body
+                </p>
+                <p className="under-header-C">
+                  Enter Your Age, Weight, And Activity Level
+                </p>
+              </div>
+            </>
+          ) : (
+            <form className="input-section-C" onSubmit={calculateCalories}>
+              <div className="Calculator-one-circle-C"></div>
+              <h2 className="body-parameters-side2-C">Body Parameters</h2>
+              <div className="gender-selection-C">
+                <button
+                  className={gender === "male" ? "active-C" : ""}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setGender("male");
+                  }}
+                >
+                  Male
+                </button>
+                <button
+                  className={gender === "female" ? "active-C" : ""}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setGender("female");
+                  }}
+                >
+                  Female
+                </button>
               </div>
               <div className="input-group-C">
-                <label>Height</label>
+                <label>Age</label>
                 <input
                   type="text"
-                  value={height}
+                  value={age}
                   onChange={(e) =>
-                    handleNumericInput(
-                      e.target.value,
-                      setHeight,
-                      height,
-                      setHeightError
-                    )
+                    handleNumericInput(e.target.value, setAge, age, setAgeError)
                   }
-                  placeholder="180cm"
-                  className={`numeric-input-C ${heightError ? "error-C" : ""}`}
+                  placeholder="21"
+                  className={`numeric-input-C ${ageError ? "error-C" : ""}`}
                   pattern="[0-9]*"
                 />
-                {heightError && (
-                  <p className="error-message-C weight-height-error-C">
-                    {heightError}
-                  </p>
-                )}
+                {ageError && <p className="error-message-C">{ageError}</p>}
               </div>
-            </div>
-            <div className="activity-slider-C">
-              <label>Activity Level</label>
-              <div className="slider-track-C">
-                <div className="slider-dot-container-C">
-                  <button
-                    className={`slider-dot-C ${
-                      activityLevel === "low" ? "active-C" : ""
+              <div className="flex-inputs-C">
+                <div className="input-group-C">
+                  <label>Weight</label>
+                  <input
+                    type="text"
+                    value={weight}
+                    onChange={(e) =>
+                      handleNumericInput(
+                        e.target.value,
+                        setWeight,
+                        weight,
+                        setWeightError
+                      )
+                    }
+                    placeholder="65kg"
+                    className={`numeric-input-C ${
+                      weightError ? "error-C" : ""
                     }`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setActivityLevel("low");
-                    }}
-                  ></button>
-                  <span className="slider-label-C">LOW</span>
+                    pattern="[0-9]*"
+                  />
+                  {weightError && (
+                    <p className="error-message-C weight-height-error-C">
+                      {weightError}
+                    </p>
+                  )}
                 </div>
-                <div className="slider-line-C"></div>
-                <div className="slider-dot-container-C">
-                  <button
-                    className={`slider-dot-C ${
-                      activityLevel === "middle" ? "active-C" : ""
+                <div className="input-group-C">
+                  <label>Height</label>
+                  <input
+                    type="text"
+                    value={height}
+                    onChange={(e) =>
+                      handleNumericInput(
+                        e.target.value,
+                        setHeight,
+                        height,
+                        setHeightError
+                      )
+                    }
+                    placeholder="180cm"
+                    className={`numeric-input-C ${
+                      heightError ? "error-C" : ""
                     }`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setActivityLevel("middle");
-                    }}
-                  ></button>
-                  <span className="slider-label-C">MIDDLE</span>
-                </div>
-                <div className="slider-line-C"></div>
-                <div className="slider-dot-container-C">
-                  <button
-                    className={`slider-dot-C ${
-                      activityLevel === "high" ? "active-C" : ""
-                    }`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setActivityLevel("high");
-                    }}
-                  ></button>
-                  <span className="slider-label-C">HIGH</span>
-                </div>
-                <div className="slider-line-C"></div>
-                <div className="slider-dot-container-C">
-                  <button
-                    className={`slider-dot-C ${
-                      activityLevel === "very-high" ? "active-C" : ""
-                    }`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setActivityLevel("very-high");
-                    }}
-                  ></button>
-                  <span className="slider-label-C">VERY HIGH</span>
+                    pattern="[0-9]*"
+                  />
+                  {heightError && (
+                    <p className="error-message-C weight-height-error-C">
+                      {heightError}
+                    </p>
+                  )}
                 </div>
               </div>
-            </div>
-            <div className="buttons-C">
-              <input
-                type="button"
-                value="Clear"
-                className="clear-btn-C"
-                onClick={clearInputs}
-              />
-              <button className="calculate-btn-C" type="submit">
-                Calculate{" "}
-                <img
-                  src="./logo/Arrow right-white.svg"
-                  alt="Arrow"
-                  className="arrow-icon-C"
-                />
-              </button>
-            </div>
-          </form>
-        )}
-      </div>
-      <div className="right-panel-C">
-        {!showResults ? (
-          <form className="input-section-C" onSubmit={calculateCalories}>
-            <div className="Calculator-circles-C"></div>
-            <h2 className="body-parameters-side1-C">Body Parameters</h2>
-            <div className="gender-selection-C">
-              <button
-                className={gender === "male" ? "active-C" : ""}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setGender("male");
-                }}
-              >
-                Male
-              </button>
-              <button
-                className={gender === "female" ? "active-C" : ""}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setGender("female");
-                }}
-              >
-                Female
-              </button>
-            </div>
-            <div className="input-group-C">
-              <label>Age</label>
-              <input
-                type="text"
-                value={age}
-                onChange={(e) =>
-                  handleNumericInput(e.target.value, setAge, age, setAgeError)
-                }
-                placeholder="21"
-                className={`numeric-input-C ${ageError ? "error-C" : ""}`}
-                pattern="[0-9]*"
-              />
-              {ageError && <p className="error-message-C">{ageError}</p>}
-            </div>
-            <div className="flex-inputs-C">
-              <div className="input-group-C">
-                <label>Weight</label>
+              <div className="activity-slider-C">
+                <label>Activity Level</label>
+                <div className="slider-track-C">
+                  <div className="slider-dot-container-C">
+                    <button
+                      className={`slider-dot-C ${
+                        activityLevel === "low" ? "active-C" : ""
+                      }`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setActivityLevel("low");
+                      }}
+                    ></button>
+                    <span className="slider-label-C">LOW</span>
+                  </div>
+                  <div className="slider-line-C"></div>
+                  <div className="slider-dot-container-C">
+                    <button
+                      className={`slider-dot-C ${
+                        activityLevel === "middle" ? "active-C" : ""
+                      }`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setActivityLevel("middle");
+                      }}
+                    ></button>
+                    <span className="slider-label-C">MIDDLE</span>
+                  </div>
+                  <div className="slider-line-C"></div>
+                  <div className="slider-dot-container-C">
+                    <button
+                      className={`slider-dot-C ${
+                        activityLevel === "high" ? "active-C" : ""
+                      }`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setActivityLevel("high");
+                      }}
+                    ></button>
+                    <span className="slider-label-C">HIGH</span>
+                  </div>
+                  <div className="slider-line-C"></div>
+                  <div className="slider-dot-container-C">
+                    <button
+                      className={`slider-dot-C ${
+                        activityLevel === "very-high" ? "active-C" : ""
+                      }`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setActivityLevel("very-high");
+                      }}
+                    ></button>
+                    <span className="slider-label-C">VERY HIGH</span>
+                  </div>
+                </div>
+              </div>
+              <div className="buttons-C">
                 <input
-                  type="text"
-                  value={weight}
-                  onChange={(e) =>
-                    handleNumericInput(
-                      e.target.value,
-                      setWeight,
-                      weight,
-                      setWeightError
-                    )
-                  }
-                  placeholder="65kg"
-                  className={`numeric-input-C ${weightError ? "error-C" : ""}`}
-                  pattern="[0-9]*"
+                  type="button"
+                  value="Clear"
+                  className="clear-btn-C"
+                  onClick={clearInputs}
                 />
-                {weightError && (
-                  <p className="error-message-C weight-height-error-C">
-                    {weightError}
-                  </p>
-                )}
+                <button className="calculate-btn-C" type="submit">
+                  Calculate{" "}
+                  <img
+                    src="./logo/Arrow right-white.svg"
+                    alt="Arrow"
+                    className="arrow-icon-C"
+                  />
+                </button>
               </div>
-              <div className="input-group-C">
-                <label>Height</label>
-                <input
-                  type="text"
-                  value={height}
-                  onChange={(e) =>
-                    handleNumericInput(
-                      e.target.value,
-                      setHeight,
-                      height,
-                      setHeightError
-                    )
-                  }
-                  placeholder="180cm"
-                  className={`numeric-input-C ${heightError ? "error-C" : ""}`}
-                  pattern="[0-9]*"
-                />
-                {heightError && (
-                  <p className="error-message-C weight-height-error-C">
-                    {heightError}
-                  </p>
-                )}
-              </div>
-            </div>
-            <div className="activity-slider-C">
-              <label>Activity Level</label>
-              <div className="slider-track-C">
-                <div className="slider-dot-container-C">
-                  <button
-                    className={`slider-dot-C ${
-                      activityLevel === "low" ? "active-C" : ""
-                    }`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setActivityLevel("low");
-                    }}
-                  ></button>
-                  <span className="slider-label-C">LOW</span>
-                </div>
-                <div className="slider-line-C"></div>
-                <div className="slider-dot-container-C">
-                  <button
-                    className={`slider-dot-C ${
-                      activityLevel === "middle" ? "active-C" : ""
-                    }`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setActivityLevel("middle");
-                    }}
-                  ></button>
-                  <span className="slider-label-C">MIDDLE</span>
-                </div>
-                <div className="slider-line-C"></div>
-                <div className="slider-dot-container-C">
-                  <button
-                    className={`slider-dot-C ${
-                      activityLevel === "high" ? "active-C" : ""
-                    }`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setActivityLevel("high");
-                    }}
-                  ></button>
-                  <span className="slider-label-C">HIGH</span>
-                </div>
-                <div className="slider-line-C"></div>
-                <div className="slider-dot-container-C">
-                  <button
-                    className={`slider-dot-C ${
-                      activityLevel === "very-high" ? "active-C" : ""
-                    }`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setActivityLevel("very-high");
-                    }}
-                  ></button>
-                  <span className="slider-label-C">VERY HIGH</span>
-                </div>
-              </div>
-            </div>
-            <div className="buttons-C">
+            </form>
+          )}
+        </div>
+        <div className="right-panel-C">
+          {!showResults ? (
+            <form className="input-section-C" onSubmit={calculateCalories}>
               <div className="Calculator-circles-C"></div>
-              <input
-                type="button"
-                value="Clear"
-                className="clear-btn-C"
-                onClick={clearInputs}
-              />
-              <button className="calculate-btn-C" type="submit">
-                Calculate{" "}
-                <img
-                  src="./logo/Arrow right-white.svg"
-                  alt="Arrow"
-                  className="arrow-icon-C"
+              <h2 className="body-parameters-side1-C">Body Parameters</h2>
+              <div className="gender-selection-C">
+                <button
+                  className={gender === "male" ? "active-C" : ""}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setGender("male");
+                  }}
+                >
+                  Male
+                </button>
+                <button
+                  className={gender === "female" ? "active-C" : ""}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setGender("female");
+                  }}
+                >
+                  Female
+                </button>
+              </div>
+              <div className="input-group-C">
+                <label>Age</label>
+                <input
+                  type="text"
+                  value={age}
+                  onChange={(e) =>
+                    handleNumericInput(e.target.value, setAge, age, setAgeError)
+                  }
+                  placeholder="21"
+                  className={`numeric-input-C ${ageError ? "error-C" : ""}`}
+                  pattern="[0-9]*"
                 />
-              </button>
-            </div>
-          </form>
-        ) : (
-          <div className="result-section-C">
-            <div className="Calculator-circles-side2-C"></div>
-            <div className="logo-C"></div>
-            <div className="result-header-C">
-              <h2>Your Result</h2>
-              <p className="calories-C">
-                <span className="calorie-value-C">{calories}</span> Kcal
-              </p>
-              <p className="subtext-C">Suggested Amount of Calories Per Day</p>
-            </div>
-            <div className="macronutrients-C">
-              <div className="macro-item-C">
-                <span className="macro-label-C">Carbohydrates:</span>
-                <span className="macro-value-C">
-                  {carbs}g<span className="macro-percentage-C">/ 50%</span>
-                </span>
+                {ageError && <p className="error-message-C">{ageError}</p>}
               </div>
-              <div className="macro-item-C">
-                <span className="macro-label-C">Protein:</span>
-                <span className="macro-value-C">
-                  {protein}g<span className="macro-percentage-C">/ 20%</span>
-                </span>
+              <div className="flex-inputs-C">
+                <div className="input-group-C">
+                  <label>Weight</label>
+                  <input
+                    type="text"
+                    value={weight}
+                    onChange={(e) =>
+                      handleNumericInput(
+                        e.target.value,
+                        setWeight,
+                        weight,
+                        setWeightError
+                      )
+                    }
+                    placeholder="65kg"
+                    className={`numeric-input-C ${
+                      weightError ? "error-C" : ""
+                    }`}
+                    pattern="[0-9]*"
+                  />
+                  {weightError && (
+                    <p className="error-message-C weight-height-error-C">
+                      {weightError}
+                    </p>
+                  )}
+                </div>
+                <div className="input-group-C">
+                  <label>Height</label>
+                  <input
+                    type="text"
+                    value={height}
+                    onChange={(e) =>
+                      handleNumericInput(
+                        e.target.value,
+                        setHeight,
+                        height,
+                        setHeightError
+                      )
+                    }
+                    placeholder="180cm"
+                    className={`numeric-input-C ${
+                      heightError ? "error-C" : ""
+                    }`}
+                    pattern="[0-9]*"
+                  />
+                  {heightError && (
+                    <p className="error-message-C weight-height-error-C">
+                      {heightError}
+                    </p>
+                  )}
+                </div>
               </div>
-              <div className="macro-item-C">
-                <span className="macro-label-C">Fat:</span>
-                <span className="macro-value-C">
-                  {fats}g<span className="macro-percentage-C">/ 30%</span>
-                </span>
+              <div className="activity-slider-C">
+                <label>Activity Level</label>
+                <div className="slider-track-C">
+                  <div className="slider-dot-container-C">
+                    <button
+                      className={`slider-dot-C ${
+                        activityLevel === "low" ? "active-C" : ""
+                      }`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setActivityLevel("low");
+                      }}
+                    ></button>
+                    <span className="slider-label-C">LOW</span>
+                  </div>
+                  <div className="slider-line-C"></div>
+                  <div className="slider-dot-container-C">
+                    <button
+                      className={`slider-dot-C ${
+                        activityLevel === "middle" ? "active-C" : ""
+                      }`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setActivityLevel("middle");
+                      }}
+                    ></button>
+                    <span className="slider-label-C">MIDDLE</span>
+                  </div>
+                  <div className="slider-line-C"></div>
+                  <div className="slider-dot-container-C">
+                    <button
+                      className={`slider-dot-C ${
+                        activityLevel === "high" ? "active-C" : ""
+                      }`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setActivityLevel("high");
+                      }}
+                    ></button>
+                    <span className="slider-label-C">HIGH</span>
+                  </div>
+                  <div className="slider-line-C"></div>
+                  <div className="slider-dot-container-C">
+                    <button
+                      className={`slider-dot-C ${
+                        activityLevel === "very-high" ? "active-C" : ""
+                      }`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setActivityLevel("very-high");
+                      }}
+                    ></button>
+                    <span className="slider-label-C">VERY HIGH</span>
+                  </div>
+                </div>
+              </div>
+              <div className="buttons-C">
+                <div className="Calculator-circles-C"></div>
+                <input
+                  type="button"
+                  value="Clear"
+                  className="clear-btn-C"
+                  onClick={clearInputs}
+                />
+                <button className="calculate-btn-C" type="submit">
+                  Calculate{" "}
+                  <img
+                    src="./logo/Arrow right-white.svg"
+                    alt="Arrow"
+                    className="arrow-icon-C"
+                  />
+                </button>
+              </div>
+            </form>
+          ) : (
+            <div className="result-section-C">
+              <div className="Calculator-circles-side2-C"></div>
+              <div className="logo-C"></div>
+              <div className="result-header-C">
+                <h2>Your Result</h2>
+                <p className="calories-C">
+                  <span className="calorie-value-C">{calories}</span> Kcal
+                </p>
+                <p className="subtext-C">
+                  Suggested Amount of Calories Per Day
+                </p>
+              </div>
+              <div className="macronutrients-C">
+                <div className="macro-item-C">
+                  <span className="macro-label-C">Carbohydrates:</span>
+                  <span className="macro-value-C">
+                    {carbs}g<span className="macro-percentage-C">/ 50%</span>
+                  </span>
+                </div>
+                <div className="macro-item-C">
+                  <span className="macro-label-C">Protein:</span>
+                  <span className="macro-value-C">
+                    {protein}g<span className="macro-percentage-C">/ 20%</span>
+                  </span>
+                </div>
+                <div className="macro-item-C">
+                  <span className="macro-label-C">Fat:</span>
+                  <span className="macro-value-C">
+                    {fats}g<span className="macro-percentage-C">/ 30%</span>
+                  </span>
+                </div>
+              </div>
+              <div className="meals-toggle-C">
+                <button
+                  className={meals === "Per Day" ? "active-C" : ""}
+                  onClick={() => setMeals("Per Day")}
+                >
+                  Per Day
+                </button>
+                <button
+                  className={meals === "3 Meals" ? "active-C" : ""}
+                  onClick={() => setMeals("3 Meals")}
+                >
+                  3 Meals
+                </button>
+                <button
+                  className={meals === "4 Meals" ? "active-C" : ""}
+                  onClick={() => setMeals("4 Meals")}
+                >
+                  4 Meals
+                </button>
+              </div>
+              {meals === "Per Day" ? (
+                <p>
+                  Calories per day:{" "}
+                  <span className="calorie-value-C">{calories}</span> Kcal
+                </p>
+              ) : (
+                <p>
+                  Calories per meal:{" "}
+                  <span className="calorie-value-C">
+                    {Math.round(calories / (meals === "3 Meals" ? 3 : 4))}
+                  </span>{" "}
+                  Kcal
+                </p>
+              )}
+              <div className="result-buttons-C">
+                <button
+                  className="calculate-btn-C"
+                  onClick={recalculateFromInputs}
+                >
+                  Calculate Again
+                </button>
+                <button className="other-calculators-btn-C">
+                  Other Calculators
+                </button>
               </div>
             </div>
-            <div className="meals-toggle-C">
-              <button
-                className={meals === "Per Day" ? "active-C" : ""}
-                onClick={() => setMeals("Per Day")}
-              >
-                Per Day
-              </button>
-              <button
-                className={meals === "3 Meals" ? "active-C" : ""}
-                onClick={() => setMeals("3 Meals")}
-              >
-                3 Meals
-              </button>
-              <button
-                className={meals === "4 Meals" ? "active-C" : ""}
-                onClick={() => setMeals("4 Meals")}
-              >
-                4 Meals
-              </button>
-            </div>
-            {meals === "Per Day" ? (
-              <p>
-                Calories per day:{" "}
-                <span className="calorie-value-C">{calories}</span> Kcal
-              </p>
-            ) : (
-              <p>
-                Calories per meal:{" "}
-                <span className="calorie-value-C">
-                  {Math.round(calories / (meals === "3 Meals" ? 3 : 4))}
-                </span>{" "}
-                Kcal
-              </p>
-            )}
-            <div className="result-buttons-C">
-              <button
-                className="calculate-btn-C"
-                onClick={recalculateFromInputs}
-              >
-                Calculate Again
-              </button>
-              <button className="other-calculators-btn-C">
-                Other Calculators
-              </button>
-            </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

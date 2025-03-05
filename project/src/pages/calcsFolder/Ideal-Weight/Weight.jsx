@@ -15,7 +15,8 @@
 // }
 
 import { useState, useEffect } from "react";
-import "./IDEAL.css";
+import Navbar from "../../../assets/navFolder/Navbar";
+import "./weight.css";
 
 const IdealCalculator = () => {
   const [gender, setGender] = useState(() => {
@@ -198,247 +199,258 @@ const IdealCalculator = () => {
   };
 
   return (
-    <div
-      className={`calorie-calculator-I ${showResults ? "show-results-I" : ""}`}
-    >
-      <div className="left-panel-I">
-        {!showResults ? (
-          <>
-            <div className="logo-I"></div>
-            <div className="background-image-I"></div>
-            <div className="content-I">
-              <div className="small-image-I"></div>
-              <h1 className="ideal-weight-title-I">
-                <span className="title-I">Ideal Weight</span>
-                <span className="title-I">Calculator</span>
-              </h1>
-              <div className="under-header-I">
-                <p>
-                  It Helps Determine Your Ideal Body Weight Ranges Based On
-                  Popular Formulas Like Robinson, Miller, Devine, And Hamwi.
-                </p>
+    <>
+      <Navbar showSearch={false} showBackground={false} />
+      <div
+        className={`calorie-calculator-I ${
+          showResults ? "show-results-I" : ""
+        }`}
+      >
+        <div className="left-panel-I">
+          {!showResults ? (
+            <>
+              <div className="logo-I"></div>
+              <div className="background-image-I"></div>
+              <div className="content-I">
+                <div className="small-image-I"></div>
+                <h1 className="ideal-weight-title-I">
+                  <span className="title-I">Ideal Weight</span>
+                  <span className="title-I">Calculator</span>
+                </h1>
+                <div className="under-header-I">
+                  <p>
+                    It Helps Determine Your Ideal Body Weight Ranges Based On
+                    Popular Formulas Like Robinson, Miller, Devine, And Hamwi.
+                  </p>
+                </div>
+              </div>
+            </>
+          ) : (
+            <form className="input-section-I" onSubmit={calculateIdealWeight}>
+              <div className="Calculator-one-circle-I"></div>
+              <h2 className="body-parameters-side2-I">Body Parameters</h2>
+              <div className="gender-selection-I">
+                <button
+                  className={`gender-btn-I ${
+                    gender === "male" ? "active-I" : ""
+                  }`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setGender("male");
+                  }}
+                >
+                  Male
+                </button>
+                <button
+                  className={`gender-btn-I ${
+                    gender === "female" ? "active-I" : ""
+                  }`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setGender("female");
+                  }}
+                >
+                  Female
+                </button>
+              </div>
+              <div className="input-group-I">
+                <label>Age</label>
+                <input
+                  type="text"
+                  value={age}
+                  onChange={(e) =>
+                    handleNumericInput(e.target.value, setAge, age, setAgeError)
+                  }
+                  placeholder="21"
+                  className={`numeric-input-I ${ageError ? "error-I" : ""}`}
+                  pattern="[0-9]*"
+                />
+                {ageError && <p className="error-message-I">{ageError}</p>}
+              </div>
+              <div className="input-group-I">
+                <label>Height</label>
+                <input
+                  type="text"
+                  value={height}
+                  onChange={(e) =>
+                    handleNumericInput(
+                      e.target.value,
+                      setHeight,
+                      height,
+                      setHeightError
+                    )
+                  }
+                  placeholder="180cm"
+                  className={`numeric-input-I ${heightError ? "error-I" : ""}`}
+                  pattern="[0-9]*"
+                />
+                {heightError && (
+                  <p className="error-message-I">{heightError}</p>
+                )}
+              </div>
+              <div className="ideal-buttons-I">
+                <input
+                  type="button"
+                  value="Clear"
+                  className="clear-btn-I"
+                  onClick={clearInputs}
+                />
+                <button className="calculate-btn-I" type="submit">
+                  Calculate{" "}
+                  <img
+                    src="./logo/Arrow right-white.svg"
+                    alt="Arrow"
+                    className="arrow-icon-I"
+                  />
+                </button>
+              </div>
+            </form>
+          )}
+        </div>
+        <div className="right-panel-I">
+          {!showResults ? (
+            <form className="input-section-I" onSubmit={calculateIdealWeight}>
+              <div className="Calculator-circles-I"></div>
+              <div className="Calculator-one-circle-s1-I"></div>
+              <h2 className="body-parameters-side1-I">Body Parameters</h2>
+              <div className="gender-selection-I">
+                <button
+                  className={`gender-btn-I ${
+                    gender === "male" ? "active-I" : ""
+                  }`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setGender("male");
+                  }}
+                >
+                  Male
+                </button>
+                <button
+                  className={`gender-btn-I ${
+                    gender === "female" ? "active-I" : ""
+                  }`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setGender("female");
+                  }}
+                >
+                  Female
+                </button>
+              </div>
+              <div className="input-group-I">
+                <label>Age</label>
+                <input
+                  type="text"
+                  value={age}
+                  onChange={(e) =>
+                    handleNumericInput(e.target.value, setAge, age, setAgeError)
+                  }
+                  placeholder="21"
+                  className={`numeric-input-I ${ageError ? "error-I" : ""}`}
+                  pattern="[0-9]*"
+                />
+                {ageError && <p className="error-message-I">{ageError}</p>}
+              </div>
+              <div className="input-group-I">
+                <label>Height</label>
+                <input
+                  type="text"
+                  value={height}
+                  onChange={(e) =>
+                    handleNumericInput(
+                      e.target.value,
+                      setHeight,
+                      height,
+                      setHeightError
+                    )
+                  }
+                  placeholder="180cm"
+                  className={`numeric-input-I ${heightError ? "error-I" : ""}`}
+                  pattern="[0-9]*"
+                />
+                {heightError && (
+                  <p className="error-message-I">{heightError}</p>
+                )}
+              </div>
+              <div className="ideal-buttons-I">
+                <div className="Calculator-circles-I"></div>
+                <input
+                  type="button"
+                  value="Clear"
+                  className="clear-btn-I"
+                  onClick={clearInputs}
+                />
+                <button className="calculate-btn-I" type="submit">
+                  Calculate{" "}
+                  <img
+                    src="./logo/Arrow right-white.svg"
+                    alt="Arrow"
+                    className="arrow-icon-I"
+                  />
+                </button>
+              </div>
+            </form>
+          ) : (
+            <div className="result-section-I">
+              <div className="Calculator-circles-side2-I"></div>
+              <div className="result-logo-I"></div>
+              <div className="result-header-I">
+                <h2>Your Result</h2>
+                <h3 className="ideal-weight-value-I">≈{idealWeight}kg</h3>
+              </div>
+              <p className="subtext-I">
+                The ideal weight based on popular formulas:
+              </p>
+              <div className="ideal-table-div-I">
+                <table className="ideal-table-I">
+                  <thead>
+                    <tr>
+                      <th className="ideal-weight-value-I">Formula</th>
+                      <th>Ideal Weight</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="ideal-weight-value-I">Robinson (1983)</td>
+                      <td>{formulaWeights?.robinson} kg</td>
+                    </tr>
+                    <tr>
+                      <td className="ideal-weight-value-I">Miller (1983)</td>
+                      <td>{formulaWeights?.miller} kg</td>
+                    </tr>
+                    <tr>
+                      <td className="ideal-weight-value-I">Devine (1974)</td>
+                      <td>{formulaWeights?.devine} kg</td>
+                    </tr>
+                    <tr>
+                      <td className="ideal-weight-value-I">Hamwi (1964)</td>
+                      <td>{formulaWeights?.hamwi} kg</td>
+                    </tr>
+                    <tr>
+                      <td className="ideal-weight-value-I">
+                        Healthy BMI Range
+                      </td>
+                      <td>{formulaWeights?.bmiRange} kg</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="ideal-buttons-result-I">
+                <button
+                  className="calculate-btn-I"
+                  onClick={recalculateFromInputs}
+                >
+                  Calculate Again
+                </button>
+                <button className="other-calculators-btn-I">
+                  Other Calculators
+                </button>
               </div>
             </div>
-          </>
-        ) : (
-          <form className="input-section-I" onSubmit={calculateIdealWeight}>
-            <div className="Calculator-one-circle-I"></div>
-            <h2 className="body-parameters-side2-I">Body Parameters</h2>
-            <div className="gender-selection-I">
-              <button
-                className={`gender-btn-I ${
-                  gender === "male" ? "active-I" : ""
-                }`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setGender("male");
-                }}
-              >
-                Male
-              </button>
-              <button
-                className={`gender-btn-I ${
-                  gender === "female" ? "active-I" : ""
-                }`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setGender("female");
-                }}
-              >
-                Female
-              </button>
-            </div>
-            <div className="input-group-I">
-              <label>Age</label>
-              <input
-                type="text"
-                value={age}
-                onChange={(e) =>
-                  handleNumericInput(e.target.value, setAge, age, setAgeError)
-                }
-                placeholder="21"
-                className={`numeric-input-I ${ageError ? "error-I" : ""}`}
-                pattern="[0-9]*"
-              />
-              {ageError && <p className="error-message-I">{ageError}</p>}
-            </div>
-            <div className="input-group-I">
-              <label>Height</label>
-              <input
-                type="text"
-                value={height}
-                onChange={(e) =>
-                  handleNumericInput(
-                    e.target.value,
-                    setHeight,
-                    height,
-                    setHeightError
-                  )
-                }
-                placeholder="180cm"
-                className={`numeric-input-I ${heightError ? "error-I" : ""}`}
-                pattern="[0-9]*"
-              />
-              {heightError && <p className="error-message-I">{heightError}</p>}
-            </div>
-            <div className="ideal-buttons-I">
-              <input
-                type="button"
-                value="Clear"
-                className="clear-btn-I"
-                onClick={clearInputs}
-              />
-              <button className="calculate-btn-I" type="submit">
-                Calculate{" "}
-                <img
-                  src="../../../../images/Arrow right-white.svg"
-                  alt="Arrow"
-                  className="arrow-icon-I"
-                />
-              </button>
-            </div>
-          </form>
-        )}
+          )}
+        </div>
       </div>
-      <div className="right-panel-I">
-        {!showResults ? (
-          <form className="input-section-I" onSubmit={calculateIdealWeight}>
-            <div className="Calculator-circles-I"></div>
-            <div className="Calculator-one-circle-s1-I"></div>
-            <h2 className="body-parameters-side1-I">Body Parameters</h2>
-            <div className="gender-selection-I">
-              <button
-                className={`gender-btn-I ${
-                  gender === "male" ? "active-I" : ""
-                }`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setGender("male");
-                }}
-              >
-                Male
-              </button>
-              <button
-                className={`gender-btn-I ${
-                  gender === "female" ? "active-I" : ""
-                }`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setGender("female");
-                }}
-              >
-                Female
-              </button>
-            </div>
-            <div className="input-group-I">
-              <label>Age</label>
-              <input
-                type="text"
-                value={age}
-                onChange={(e) =>
-                  handleNumericInput(e.target.value, setAge, age, setAgeError)
-                }
-                placeholder="21"
-                className={`numeric-input-I ${ageError ? "error-I" : ""}`}
-                pattern="[0-9]*"
-              />
-              {ageError && <p className="error-message-I">{ageError}</p>}
-            </div>
-            <div className="input-group-I">
-              <label>Height</label>
-              <input
-                type="text"
-                value={height}
-                onChange={(e) =>
-                  handleNumericInput(
-                    e.target.value,
-                    setHeight,
-                    height,
-                    setHeightError
-                  )
-                }
-                placeholder="180cm"
-                className={`numeric-input-I ${heightError ? "error-I" : ""}`}
-                pattern="[0-9]*"
-              />
-              {heightError && <p className="error-message-I">{heightError}</p>}
-            </div>
-            <div className="ideal-buttons-I">
-              <div className="Calculator-circles-I"></div>
-              <input
-                type="button"
-                value="Clear"
-                className="clear-btn-I"
-                onClick={clearInputs}
-              />
-              <button className="calculate-btn-I" type="submit">
-                Calculate{" "}
-                <img
-                  src="../../../../images/Arrow right-white.svg"
-                  alt="Arrow"
-                  className="arrow-icon-I"
-                />
-              </button>
-            </div>
-          </form>
-        ) : (
-          <div className="result-section-I">
-            <div className="Calculator-circles-side2-I"></div>
-            <div className="result-logo-I"></div>
-            <div className="result-header-I">
-              <h2>Your Result</h2>
-              <h3 className="ideal-weight-value-I">≈{idealWeight}kg</h3>
-            </div>
-            <p className="subtext-I">
-              The ideal weight based on popular formulas:
-            </p>
-            <div className="ideal-table-div-I">
-              <table className="ideal-table-I">
-                <thead>
-                  <tr>
-                    <th className="ideal-weight-value-I">Formula</th>
-                    <th>Ideal Weight</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="ideal-weight-value-I">Robinson (1983)</td>
-                    <td>{formulaWeights?.robinson} kg</td>
-                  </tr>
-                  <tr>
-                    <td className="ideal-weight-value-I">Miller (1983)</td>
-                    <td>{formulaWeights?.miller} kg</td>
-                  </tr>
-                  <tr>
-                    <td className="ideal-weight-value-I">Devine (1974)</td>
-                    <td>{formulaWeights?.devine} kg</td>
-                  </tr>
-                  <tr>
-                    <td className="ideal-weight-value-I">Hamwi (1964)</td>
-                    <td>{formulaWeights?.hamwi} kg</td>
-                  </tr>
-                  <tr>
-                    <td className="ideal-weight-value-I">Healthy BMI Range</td>
-                    <td>{formulaWeights?.bmiRange} kg</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div className="ideal-buttons-result-I">
-              <button
-                className="calculate-btn-I"
-                onClick={recalculateFromInputs}
-              >
-                Calculate Again
-              </button>
-              <button className="other-calculators-btn-I">
-                Other Calculators
-              </button>
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
+    </>
   );
 };
 
