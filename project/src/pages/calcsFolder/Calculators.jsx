@@ -187,7 +187,7 @@ const Slider_C = () => {
 
   return (
     <>
-      <Navbar showSearch={false} />
+      <Navbar showSearch={false} showBackground={false} />
       <div className="carousel-SC" ref={carouselRef}>
         <>
           <div className="arrows-SC">
@@ -240,7 +240,7 @@ const Slider_C = () => {
                     )}
                   </div>
                   {item.id !== 0 && (
-                    <Link to={`/${item.path}`} className="start-button-SC">
+                    <Link to={item.path} className="start-button-SC">
                       Let&apos;s get started
                     </Link>
                   )}

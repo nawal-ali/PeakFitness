@@ -245,395 +245,410 @@ const BodyFatCalc = () => {
   };
 
   return (
-    <div
-      className={`calorie-calculator-F ${showResults ? "show-results-F" : ""}`}
-    >
+    <>
       <Navbar showSearch={false} showBackground={false} />
-      <div className="left-panel-F">
-        {!showResults ? (
-          <>
-            <div className="logo-F"></div>
-            <div className="background-image-F"></div>
-            <div className="content-F">
-              <div className="small-image-F"></div>
-              <h1 className="bmi-title-F">
-                <span className="title-F">Body Fat</span>
-                <span className="title-F">Calculator</span>
-              </h1>
-              <div className="under-header-F">
-                <p>
-                  It Estimates The Percentage Of Fat In Your Body Based On
-                  Factors Like Weight, Height, Age, Gender, Neck And Waist.
-                </p>
-              </div>
-            </div>
-          </>
-        ) : (
-          <form className="input-section-F" onSubmit={calculateBodyFat}>
-            <div className="Calculator-one-circle-F"></div>
-            <h2 className="body-parameters-side2-F">Body Parameters</h2>
-            <div className="gender-selection-F">
-              <button
-                className={gender === "male" ? "active-F" : ""}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setGender("male");
-                }}
-              >
-                Male
-              </button>
-              <button
-                className={gender === "female" ? "active-F" : ""}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setGender("female");
-                }}
-              >
-                Female
-              </button>
-            </div>
-            <div className="input-group-F">
-              <label>Age</label>
-              <input
-                type="text"
-                value={age}
-                onChange={(e) =>
-                  handleNumericInput(e.target.value, setAge, age, setAgeError)
-                }
-                placeholder="21"
-                className={`numeric-input-F ${ageError ? "error-F" : ""}`}
-                pattern="[0-9]*"
-              />
-              {ageError && <p className="error-message-F">{ageError}</p>}
-            </div>
-            <div className="flex-inputs-F">
-              <div className="input-group-F">
-                <label>Weight</label>
-                <input
-                  type="text"
-                  value={weight}
-                  onChange={(e) =>
-                    handleNumericInput(
-                      e.target.value,
-                      setWeight,
-                      weight,
-                      setWeightError
-                    )
-                  }
-                  placeholder="65kg"
-                  className={`numeric-input-F ${weightError ? "error-F" : ""}`}
-                  pattern="[0-9]*"
-                />
-                {weightError && (
-                  <p className="error-message-F weight-height-error-F">
-                    {weightError}
+
+      <div
+        className={`calorie-calculator-F ${
+          showResults ? "show-results-F" : ""
+        }`}
+      >
+        <div className="left-panel-F">
+          {!showResults ? (
+            <>
+              {/* <div className="logo-F"></div> */}
+              <div className="background-image-F"></div>
+              <div className="content-F">
+                <div className="small-image-F"></div>
+                <h1 className="bmi-title-F">
+                  <span className="title-F">Body Fat</span>
+                  <span className="title-F">Calculator</span>
+                </h1>
+                <div className="under-header-F">
+                  <p>
+                    It Estimates The Percentage Of Fat In Your Body Based On
+                    Factors Like Weight, Height, Age, Gender, Neck And Waist.
                   </p>
-                )}
+                </div>
+              </div>
+            </>
+          ) : (
+            <form className="input-section-F" onSubmit={calculateBodyFat}>
+              <div className="Calculator-one-circle-F"></div>
+              <h2 className="body-parameters-side2-F">Body Parameters</h2>
+              <div className="gender-selection-F">
+                <button
+                  className={gender === "male" ? "active-F" : ""}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setGender("male");
+                  }}
+                >
+                  Male
+                </button>
+                <button
+                  className={gender === "female" ? "active-F" : ""}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setGender("female");
+                  }}
+                >
+                  Female
+                </button>
               </div>
               <div className="input-group-F">
-                <label>Height</label>
+                <label>Age</label>
                 <input
                   type="text"
-                  value={height}
+                  value={age}
                   onChange={(e) =>
-                    handleNumericInput(
-                      e.target.value,
-                      setHeight,
-                      height,
-                      setHeightError
-                    )
+                    handleNumericInput(e.target.value, setAge, age, setAgeError)
                   }
-                  placeholder="180cm"
-                  className={`numeric-input-F ${heightError ? "error-F" : ""}`}
+                  placeholder="21"
+                  className={`numeric-input-F ${ageError ? "error-F" : ""}`}
                   pattern="[0-9]*"
                 />
-                {heightError && (
-                  <p className="error-message-F weight-height-error-F">
-                    {heightError}
-                  </p>
-                )}
+                {ageError && <p className="error-message-F">{ageError}</p>}
               </div>
-            </div>
-            <div className="flex-inputs-F">
-              <div className="input-group-F">
-                <label>Neck</label>
+              <div className="flex-inputs-F">
+                <div className="input-group-F">
+                  <label>Weight</label>
+                  <input
+                    type="text"
+                    value={weight}
+                    onChange={(e) =>
+                      handleNumericInput(
+                        e.target.value,
+                        setWeight,
+                        weight,
+                        setWeightError
+                      )
+                    }
+                    placeholder="65kg"
+                    className={`numeric-input-F ${
+                      weightError ? "error-F" : ""
+                    }`}
+                    pattern="[0-9]*"
+                  />
+                  {weightError && (
+                    <p className="error-message-F weight-height-error-F">
+                      {weightError}
+                    </p>
+                  )}
+                </div>
+                <div className="input-group-F">
+                  <label>Height</label>
+                  <input
+                    type="text"
+                    value={height}
+                    onChange={(e) =>
+                      handleNumericInput(
+                        e.target.value,
+                        setHeight,
+                        height,
+                        setHeightError
+                      )
+                    }
+                    placeholder="180cm"
+                    className={`numeric-input-F ${
+                      heightError ? "error-F" : ""
+                    }`}
+                    pattern="[0-9]*"
+                  />
+                  {heightError && (
+                    <p className="error-message-F weight-height-error-F">
+                      {heightError}
+                    </p>
+                  )}
+                </div>
+              </div>
+              <div className="flex-inputs-F">
+                <div className="input-group-F">
+                  <label>Neck</label>
+                  <input
+                    type="text"
+                    value={neck}
+                    onChange={(e) =>
+                      handleNumericInput(
+                        e.target.value,
+                        setNeck,
+                        neck,
+                        setNeckError
+                      )
+                    }
+                    placeholder="40cm"
+                    className={`numeric-input-F ${neckError ? "error-F" : ""}`}
+                    pattern="[0-9]*"
+                  />
+                  {neckError && (
+                    <p className="error-message-F weight-height-error-F">
+                      {neckError}
+                    </p>
+                  )}
+                </div>
+                <div className="input-group-F">
+                  <label>Waist</label>
+                  <input
+                    type="text"
+                    value={waist}
+                    onChange={(e) =>
+                      handleNumericInput(
+                        e.target.value,
+                        setWaist,
+                        waist,
+                        setWaistError
+                      )
+                    }
+                    placeholder="94cm"
+                    className={`numeric-input-F ${waistError ? "error-F" : ""}`}
+                    pattern="[0-9]*"
+                  />
+                  {waistError && (
+                    <p className="error-message-F weight-height-error-F">
+                      {waistError}
+                    </p>
+                  )}
+                </div>
+              </div>
+              <div className="bmi-buttons-F">
                 <input
-                  type="text"
-                  value={neck}
-                  onChange={(e) =>
-                    handleNumericInput(
-                      e.target.value,
-                      setNeck,
-                      neck,
-                      setNeckError
-                    )
-                  }
-                  placeholder="40cm"
-                  className={`numeric-input-F ${neckError ? "error-F" : ""}`}
-                  pattern="[0-9]*"
+                  type="button"
+                  value="Clear"
+                  className="clear-btn-F"
+                  onClick={clearInputs}
                 />
-                {neckError && (
-                  <p className="error-message-F weight-height-error-F">
-                    {neckError}
-                  </p>
-                )}
+                <button className="calculate-btn-F" type="submit">
+                  Calculate{" "}
+                  <img
+                    src="./logo/Arrow right-white.svg"
+                    alt="Arrow"
+                    className="arrow-icon-F"
+                  />
+                </button>
               </div>
-              <div className="input-group-F">
-                <label>Waist</label>
-                <input
-                  type="text"
-                  value={waist}
-                  onChange={(e) =>
-                    handleNumericInput(
-                      e.target.value,
-                      setWaist,
-                      waist,
-                      setWaistError
-                    )
-                  }
-                  placeholder="94cm"
-                  className={`numeric-input-F ${waistError ? "error-F" : ""}`}
-                  pattern="[0-9]*"
-                />
-                {waistError && (
-                  <p className="error-message-F weight-height-error-F">
-                    {waistError}
-                  </p>
-                )}
-              </div>
-            </div>
-            <div className="bmi-buttons-F">
-              <input
-                type="button"
-                value="Clear"
-                className="clear-btn-F"
-                onClick={clearInputs}
-              />
-              <button className="calculate-btn-F" type="submit">
-                Calculate{" "}
-                <img
-                  src="../../../../images/Arrow right-white.svg"
-                  alt="Arrow"
-                  className="arrow-icon-F"
-                />
-              </button>
-            </div>
-          </form>
-        )}
-      </div>
-      <div className="right-panel-F">
-        {!showResults ? (
-          <form className="input-section-F" onSubmit={calculateBodyFat}>
-            <div className="Calculator-circles-F"></div>
-            <div className="Calculator-one-circle-s1-F"></div>
-            <h2 className="body-parameters-side1-F">Body Parameters</h2>
-            <div className="gender-selection-F">
-              <button
-                className={gender === "male" ? "active-F" : ""}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setGender("male");
-                }}
-              >
-                Male
-              </button>
-              <button
-                className={gender === "female" ? "active-F" : ""}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setGender("female");
-                }}
-              >
-                Female
-              </button>
-            </div>
-            <div className="input-group-F">
-              <label>Age</label>
-              <input
-                type="text"
-                value={age}
-                onChange={(e) =>
-                  handleNumericInput(e.target.value, setAge, age, setAgeError)
-                }
-                placeholder="21"
-                className={`numeric-input-F ${ageError ? "error-F" : ""}`}
-                pattern="[0-9]*"
-              />
-              {ageError && <p className="error-message-F">{ageError}</p>}
-            </div>
-            <div className="flex-inputs-F">
-              <div className="input-group-F">
-                <label>Weight</label>
-                <input
-                  type="text"
-                  value={weight}
-                  onChange={(e) =>
-                    handleNumericInput(
-                      e.target.value,
-                      setWeight,
-                      weight,
-                      setWeightError
-                    )
-                  }
-                  placeholder="65kg"
-                  className={`numeric-input-F ${weightError ? "error-F" : ""}`}
-                  pattern="[0-9]*"
-                />
-                {weightError && (
-                  <p className="error-message-F weight-height-error-F">
-                    {weightError}
-                  </p>
-                )}
-              </div>
-              <div className="input-group-F">
-                <label>Height</label>
-                <input
-                  type="text"
-                  value={height}
-                  onChange={(e) =>
-                    handleNumericInput(
-                      e.target.value,
-                      setHeight,
-                      height,
-                      setHeightError
-                    )
-                  }
-                  placeholder="180cm"
-                  className={`numeric-input-F ${heightError ? "error-F" : ""}`}
-                  pattern="[0-9]*"
-                />
-                {heightError && (
-                  <p className="error-message-F weight-height-error-F">
-                    {heightError}
-                  </p>
-                )}
-              </div>
-            </div>
-            <div className="flex-inputs-F">
-              <div className="input-group-F">
-                <label>Neck</label>
-                <input
-                  type="text"
-                  value={neck}
-                  onChange={(e) =>
-                    handleNumericInput(
-                      e.target.value,
-                      setNeck,
-                      neck,
-                      setNeckError
-                    )
-                  }
-                  placeholder="40cm"
-                  className={`numeric-input-F ${neckError ? "error-F" : ""}`}
-                  pattern="[0-9]*"
-                />
-                {neckError && (
-                  <p className="error-message-F weight-height-error-F">
-                    {neckError}
-                  </p>
-                )}
-              </div>
-              <div className="input-group-F">
-                <label>Waist</label>
-                <input
-                  type="text"
-                  value={waist}
-                  onChange={(e) =>
-                    handleNumericInput(
-                      e.target.value,
-                      setWaist,
-                      waist,
-                      setWaistError
-                    )
-                  }
-                  placeholder="94cm"
-                  className={`numeric-input-F ${waistError ? "error-F" : ""}`}
-                  pattern="[0-9]*"
-                />
-                {waistError && (
-                  <p className="error-message-F weight-height-error-F">
-                    {waistError}
-                  </p>
-                )}
-              </div>
-            </div>
-            <div className="bmi-buttons-F">
+            </form>
+          )}
+        </div>
+        <div className="right-panel-F">
+          {!showResults ? (
+            <form className="input-section-F" onSubmit={calculateBodyFat}>
               <div className="Calculator-circles-F"></div>
-              <input
-                type="button"
-                value="Clear"
-                className="clear-btn-F"
-                onClick={clearInputs}
-              />
-              <button className="calculate-btn-F" type="submit">
-                Calculate{" "}
-                <img
-                  src="../../../../images/Arrow right-white.svg"
-                  alt="Arrow"
-                  className="arrow-icon-F"
+              <div className="Calculator-one-circle-s1-F"></div>
+              <h2 className="body-parameters-side1-F">Body Parameters</h2>
+              <div className="gender-selection-F">
+                <button
+                  className={gender === "male" ? "active-F" : ""}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setGender("male");
+                  }}
+                >
+                  Male
+                </button>
+                <button
+                  className={gender === "female" ? "active-F" : ""}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setGender("female");
+                  }}
+                >
+                  Female
+                </button>
+              </div>
+              <div className="input-group-F">
+                <label>Age</label>
+                <input
+                  type="text"
+                  value={age}
+                  onChange={(e) =>
+                    handleNumericInput(e.target.value, setAge, age, setAgeError)
+                  }
+                  placeholder="21"
+                  className={`numeric-input-F ${ageError ? "error-F" : ""}`}
+                  pattern="[0-9]*"
                 />
-              </button>
+                {ageError && <p className="error-message-F">{ageError}</p>}
+              </div>
+              <div className="flex-inputs-F">
+                <div className="input-group-F">
+                  <label>Weight</label>
+                  <input
+                    type="text"
+                    value={weight}
+                    onChange={(e) =>
+                      handleNumericInput(
+                        e.target.value,
+                        setWeight,
+                        weight,
+                        setWeightError
+                      )
+                    }
+                    placeholder="65kg"
+                    className={`numeric-input-F ${
+                      weightError ? "error-F" : ""
+                    }`}
+                    pattern="[0-9]*"
+                  />
+                  {weightError && (
+                    <p className="error-message-F weight-height-error-F">
+                      {weightError}
+                    </p>
+                  )}
+                </div>
+                <div className="input-group-F">
+                  <label>Height</label>
+                  <input
+                    type="text"
+                    value={height}
+                    onChange={(e) =>
+                      handleNumericInput(
+                        e.target.value,
+                        setHeight,
+                        height,
+                        setHeightError
+                      )
+                    }
+                    placeholder="180cm"
+                    className={`numeric-input-F ${
+                      heightError ? "error-F" : ""
+                    }`}
+                    pattern="[0-9]*"
+                  />
+                  {heightError && (
+                    <p className="error-message-F weight-height-error-F">
+                      {heightError}
+                    </p>
+                  )}
+                </div>
+              </div>
+              <div className="flex-inputs-F">
+                <div className="input-group-F">
+                  <label>Neck</label>
+                  <input
+                    type="text"
+                    value={neck}
+                    onChange={(e) =>
+                      handleNumericInput(
+                        e.target.value,
+                        setNeck,
+                        neck,
+                        setNeckError
+                      )
+                    }
+                    placeholder="40cm"
+                    className={`numeric-input-F ${neckError ? "error-F" : ""}`}
+                    pattern="[0-9]*"
+                  />
+                  {neckError && (
+                    <p className="error-message-F weight-height-error-F">
+                      {neckError}
+                    </p>
+                  )}
+                </div>
+                <div className="input-group-F">
+                  <label>Waist</label>
+                  <input
+                    type="text"
+                    value={waist}
+                    onChange={(e) =>
+                      handleNumericInput(
+                        e.target.value,
+                        setWaist,
+                        waist,
+                        setWaistError
+                      )
+                    }
+                    placeholder="94cm"
+                    className={`numeric-input-F ${waistError ? "error-F" : ""}`}
+                    pattern="[0-9]*"
+                  />
+                  {waistError && (
+                    <p className="error-message-F weight-height-error-F">
+                      {waistError}
+                    </p>
+                  )}
+                </div>
+              </div>
+              <div className="bmi-buttons-F">
+                <div className="Calculator-circles-F"></div>
+                <input
+                  type="button"
+                  value="Clear"
+                  className="clear-btn-F"
+                  onClick={clearInputs}
+                />
+                <button className="calculate-btn-F" type="submit">
+                  Calculate{" "}
+                  <img
+                    src="./logo/Arrow right-white.svg"
+                    alt="Arrow"
+                    className="arrow-icon-F"
+                  />
+                </button>
+              </div>
+            </form>
+          ) : (
+            <div className="result-section-F">
+              <div className="Calculator-circles-side2-F"></div>
+              <div className="result-logo-F"></div>
+              <div className="result-header-F">
+                <h2>Your Result</h2>
+                <h3 className="bmi-value-F">
+                  Fat: {bodyFatResults?.bodyFatPercentage}%
+                </h3>
+              </div>
+              <div className="bmi-table-div-F">
+                <table className="bmi-table-F">
+                  <tbody>
+                    <tr>
+                      <td className="bmi-value-F">
+                        Body Fat (U.S. Navy Method)
+                      </td>
+                      <td>{bodyFatResults?.bodyFatPercentage}%</td>
+                    </tr>
+                    <tr>
+                      <td className="bmi-value-F">Body Fat Category</td>
+                      <td>{bodyFatResults?.bodyFatCategory}</td>
+                    </tr>
+                    <tr>
+                      <td className="bmi-value-F">Body Fat Mass</td>
+                      <td>{bodyFatResults?.bodyFatMass} kg</td>
+                    </tr>
+                    <tr>
+                      <td className="bmi-value-F">Lean Body Mass</td>
+                      <td>{bodyFatResults?.leanBodyMass} kg</td>
+                    </tr>
+                    <tr>
+                      <td className="bmi-value-F">
+                        Ideal Body Fat For Given Age (Jackson & Pollock)
+                      </td>
+                      <td>{bodyFatResults?.idealBodyFat}%</td>
+                    </tr>
+                    <tr>
+                      <td className="bmi-value-F">
+                        Body Fat To Lose To Reach Ideal
+                      </td>
+                      <td>{bodyFatResults?.bodyFatToLose} kg</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="bmi-buttons-result-F">
+                <button
+                  className="calculate-btn-F"
+                  onClick={recalculateFromInputs}
+                >
+                  Calculate Again
+                </button>
+                <button className="other-calculators-btn-F">
+                  Other Calculators
+                </button>
+              </div>
             </div>
-          </form>
-        ) : (
-          <div className="result-section-F">
-            <div className="Calculator-circles-side2-F"></div>
-            <div className="result-logo-F"></div>
-            <div className="result-header-F">
-              <h2>Your Result</h2>
-              <h3 className="bmi-value-F">
-                Fat: {bodyFatResults?.bodyFatPercentage}%
-              </h3>
-            </div>
-            <div className="bmi-table-div-F">
-              <table className="bmi-table-F">
-                <tbody>
-                  <tr>
-                    <td className="bmi-value-F">Body Fat (U.S. Navy Method)</td>
-                    <td>{bodyFatResults?.bodyFatPercentage}%</td>
-                  </tr>
-                  <tr>
-                    <td className="bmi-value-F">Body Fat Category</td>
-                    <td>{bodyFatResults?.bodyFatCategory}</td>
-                  </tr>
-                  <tr>
-                    <td className="bmi-value-F">Body Fat Mass</td>
-                    <td>{bodyFatResults?.bodyFatMass} kg</td>
-                  </tr>
-                  <tr>
-                    <td className="bmi-value-F">Lean Body Mass</td>
-                    <td>{bodyFatResults?.leanBodyMass} kg</td>
-                  </tr>
-                  <tr>
-                    <td className="bmi-value-F">
-                      Ideal Body Fat For Given Age (Jackson & Pollock)
-                    </td>
-                    <td>{bodyFatResults?.idealBodyFat}%</td>
-                  </tr>
-                  <tr>
-                    <td className="bmi-value-F">
-                      Body Fat To Lose To Reach Ideal
-                    </td>
-                    <td>{bodyFatResults?.bodyFatToLose} kg</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div className="bmi-buttons-result-F">
-              <button
-                className="calculate-btn-F"
-                onClick={recalculateFromInputs}
-              >
-                Calculate Again
-              </button>
-              <button className="other-calculators-btn-F">
-                Other Calculators
-              </button>
-            </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
