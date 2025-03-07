@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  background-color: #1a1a1a; /* Dark background */
+  color: #fff; /* White text */
+  background-image: url('path-to-logo-image.png'); /* استبدل بمسار الصورة الفعلي للوجو */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-position: top left; /* وضع اللوجو في الأعلى على اليسار */
+  background-size: contain; /* يضمن أن اللوجو لن يتجاوز حجمه الأصلي */
+  height: 100vh; /* يشغل الشاشة كاملة */
+  overflow: hidden; /* لمنع التمرير غير المرغوب */
+}
+
+.logo {
+  background-image: url(/images/Logo-4.svg);
+  position: absolute;
+  top: 3%;
+  z-index: 1000;
+  width: 500px;
+  height: 175px;
+  background-repeat: no-repeat;
+  left: 1%;
+  background-size: cover;
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-image: url(/images/Food-Plan-W-G.png);
+  background-size: contain;
+  background-position: right;
+}
+
+/* Left Panel */
+.left-panel {
+  width: 35%;
+  height: 75vh;
+  padding: 20px;
+  background-image: url(/images/Weight-Gain.png);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 17%;
+  left: 4%;
+  z-index: 1;
+}
+
+.left-panel h1 {
+  font-size: 180px;
+  margin-bottom: 20px;
+  text-align: left;
+  margin-top: 50px;
+  margin-left: 20px;
+}
+
+.button-row {
+  display: flex;
+  gap: 140px;
+  margin-bottom: 30px;
+  width: 90%;
+}
+
+.nav-button {
+  flex: 1;
+  padding: 5px;
+  background-color: transparent;
+  border: 4px solid #ec7e4a;
+  margin-bottom: 20px;
+  border-radius: 40px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 3.5px;
+}
+
+.nav-button:hover {
+  background-color: #ec7e4a; /* Orange background on hover */
+}
+
+.nav-button.active {
+  background-color: #ec7e4a;
+  border: 4px solid white;
+}
+
+.full-width {
+  width: 95%;
+  padding: 5px 0px;
+  margin-top: 40px;
+  background-color: transparent;
+  border: 4px solid #ec7e4a;
+  border-radius: 40px;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  margin-left: 30px;
+  letter-spacing: 3.5px;
+}
+
+/* Right Panel */
+.right-panel {
+  flex: 1;
+  padding: 40px;
+  overflow-y: scroll;
+  margin-left: 50%;
+  height: 78%;
+  margin-top: 7%;
+  max-width: 40%;
+}
+
+.right-panel h2 {
+  font-size: 130px;
+  margin-bottom: 20px;
+}
+
+.right-panel ol {
+  list-style-position: inside;
+  font-size: 18px;
+}
+
+.right-panel ul {
+  list-style-type: disc; /* تنسيق القائمة غير المرقمة */
+  font-size: 40px; /* نفس حجم النص في li */
+  padding-left: 20px; /* مسافة من اليسار */
+}
+
+/* إزالة النقطة ومحاذاة لليسار لعناصر معينة */
+.right-panel ul li.no-bullet-left {
+  list-style-type: none; /* إزالة النقطة */
+  margin-left: -20px; /* محاذاة لليسار بنفس مقدار padding-left للقائمة */
+}
+
+/* إزالة النقطة من عنصر معين */
+.right-panel ul li.no-bullet {
+  list-style-type: none; /* إزالة النقطة */
+}
+
+/* إزالة الرقم ولون أبيض لعنصر معين */
+.right-panel ol li.no-number-white {
+  list-style-type: none; /* إزالة الرقم */
+  color: #ec7e4a; /* لون أبيض */
+  margin-left: 0; /* محاذاة لليسار */
+}
+
+/* تقليل المسافات بين السطور لعناصر الوجبات */
+.right-panel ul li.meal-item {
+  margin-bottom: 5px; /* تقليل المسافة بين السطور */
+}
+
+/* تلوين النقاط في القائمة غير المرقمة */
+.right-panel ul li::marker {
+  color: #ec7e4a; /* لون النقاط */
+}
+
+.right-panel li {
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+
+.highlight {
+  color: #ec7e4a; /* Orange highlight for text */
+  font-size: 40px;
+}
+
+.horizontal-line {
+  width: 55%;
+  height: 3px;
+  background-color: #ec7e4a;
+  border: none;
+  z-index: 2;
+  color: #ec7e4a;
+  margin: 30px 16px;
+}
+
+/* Custom Scrollbar */
+.right-panel::-webkit-scrollbar {
+  width: 10px; /* عرض شريط التمرير */
+}
+
+.right-panel::-webkit-scrollbar-track {
+  background: #80808075; /* خلفية الشريط */
+  margin-top: 200px; /* طول المسار */
+}
+
+.right-panel::-webkit-scrollbar-thumb {
+  background-color: #ec7e4a; /* لون الزر البرتقالي */
+  border-radius: 10px; /* زوايا مستديرة */
+  min-height: 71px; /* طول الـ thumb */
+}
+
+.right-panel::-webkit-scrollbar-thumb:hover {
+  background-color: #c1653a; /* لون عند التمرير */
+}
+
+/* Media Query */
+@media (max-width: 2491px) {
+  .full-width { font-size: 35px; }
+  .nav-button { font-size: 35px; }
+  .left-panel h1 { font-size: 144px; }
+}
+
+/* Table Styles */
+.carb-table,
+.prot-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 40px;
+}
+
+.carb-table th,
+.carb-table td,
+.prot-table th,
+.prot-table td {
+  border: 2px solid #ec7e4a;
+  padding: 15px;
+  text-align: center; /* محاذاة النصوص في المنتصف كما في الصورة */
+}
+
+.carb-table th,
+.prot-table th {
+  background-color: #ec7e4a;
+  color: #fff;
+  font-weight: bold;
+}
+
+.carb-table td,
+.prot-table td {
+  color: #fff;
+}
+
+.carb-table tr:nth-child(even),
+.prot-table tr:nth-child(even) {
+  background-color: #2a2a2a; /* لون خلفية أفتح قليلاً للصفوف الزوجية */
+}
+
+.table-title {
+  font-size: 50px;
+  color: #ec7e4a;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
