@@ -17,11 +17,11 @@ export default function navbar({ showSearch = true, showBackground = true }) {
         // position-absolute top-0
       >
         <div className="container-fluid">
-          <Link to="/" style={{ width: "10%" }}>
+          <Link to="/" style={{ width: "10rem" }}>
             <img
               src="/logoAndText.svg"
               alt="main logo"
-              style={{ width: "90%" }}
+              style={{ width: "100%" }}
             />
           </Link>
           {/* Conditionally render the search bar */}

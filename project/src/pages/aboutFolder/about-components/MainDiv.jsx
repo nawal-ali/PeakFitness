@@ -16,7 +16,7 @@ export default function MainDiv() {
       {/* position-absolute top-50 start-50 translate-middle */}
       <div
         className=" vw-100 vh-100  d-flex justify-content-center align-items-center"
-        style={{ backgroundColor: "#0000009c" }}
+        style={{ backgroundColor: "#000000c2" }}
       >
         <div>
           <p style={{ fontSize: "6rem" }} className="text-center">

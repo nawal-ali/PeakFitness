@@ -18,7 +18,11 @@ export default function about() {
       </div>
       <div className="row" style={{ width: "90%", margin: "6% auto" }}>
         <div className="col-12 col-md-6">
-          <img src="./imgs/our-story.png" alt="" className="w-100 rounded" />
+          <img
+            src="./imgs/our-story.png"
+            alt=""
+            className="w-100 rounded mb-4 mb-md-0"
+          />
         </div>
         <div className="col-12 col-md-6">
           <h1 style={{ color: "#EC7E4A" }}>OUR STORY</h1>
