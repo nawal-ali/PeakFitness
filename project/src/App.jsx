@@ -13,10 +13,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import ForgetPassword from "./pages/Auth/Password/Forget-password/Forget";
 // import NewPassword from "./pages/Auth/Password/New-Password/New";
 // import BodyFatCalc from "./pages/Calculators/BodyFat Calculator/Fat";
-// import Slider_FP from "./pages/Food-Plan/Slider-FP";
+import Slider_FP from "./pages/Food-Plan/Slider/Slider-FP";
 import WeightGain from "./pages/Food-Plan/Weight-Gain/weight-Gain-FP";
+// import test_FOFO from "./pages/Food-Plan/test/test_FOFO";
 function App() {
   return (
+    // <test_FOFO/>
     // <Router>
     //   <Routes>
     //     <Route path="/login" element={<AuthForm />} />
@@ -43,7 +45,13 @@ function App() {
     // <Slider_PT/>
     // <Slider_C/>
     // <Slider_FP/>
-    <WeightGain/>
+    <Router>
+    <Routes>
+      <Route path="/" element={<Slider_FP />} />
+      <Route path="/weight-gain-details" element={<WeightGain />} />
+    </Routes>
+  </Router>
+    // <WeightGain/>
     // <CalorieCalculator/>
     // <AuthForm/>
   );

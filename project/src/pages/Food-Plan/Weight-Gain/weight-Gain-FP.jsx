@@ -51,7 +51,7 @@ const WeightGain = () => {
         'Snack On Nuts And Dried Fruits To Increase Your Calorie Intake.',
         'Exercise Regularly To Enhance Muscle Mass And Promote Healthy Weight Gain.',
         'Choose energy-dense and nutrient-dense foods instead of empty-calorie foods. Nutrients include carbohydrates, protein, healthy fats, and fiber, which are good for healthy digestion but not calories, and vitamins and minerals. We list below the most important sources of each nutrient and the calorie per 100 grams.',
-        'Carbohydrate is one of the important sources of energy, providing 4 calories per gram.',
+        // 'Carbohydrate is one of the important sources of energy, providing 4 calories per gram.',
       ],
     },
     'Healthy Fats': {

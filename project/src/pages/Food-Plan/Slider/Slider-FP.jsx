@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Slider-FP.css';
 
 const Slider_FP = () => {
   const [selectedItem, setSelectedItem] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false); // حالة للتحكم في الانميشن
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const navigate = useNavigate();
 
   const items = [
     {
@@ -15,7 +18,6 @@ const Slider_FP = () => {
       thumbnailImg: '../../../images/Weight-gain.png',
       backgroundImage: '../../../images/Food-Plan-W-G.png'
     },
-    
     {
       id: 1,
       name: 'Weight Loss',
@@ -26,28 +28,31 @@ const Slider_FP = () => {
       backgroundImage: '../../../images/Food-Plan-W-L.png'
     },
     {
-      
       id: 2,
       name: 'Muscle Gain',
-      quote: '"Gain Muscle Boost Strength,',
-      description: 'And Transform Your Physque Wlth Science-Backed Strategies"',
+      quote: '"Gain Muscle Boost Strength"',
+      description: 'And Transform Your Physique With Science-Backed Strategies"',
       color: '#7e4aec',
       thumbnailImg: '../../../images/Muscle-gain.png',
       backgroundImage: '../../../images/Food-Plan-M-G.png'
     }
   ];
 
-  // تحديث عنوان الصفحة بناءً على العنصر المختار
   useEffect(() => {
     document.title = items[selectedItem].name;
   }, [selectedItem]);
 
-  // التحكم في الانميشن عند تغيير العنصر
   useEffect(() => {
-    setIsAnimating(true); // بدء الانميشن
-    const timer = setTimeout(() => setIsAnimating(false), 2000); // إعادة تعيين بعد 2 ثانية (مدة الانميشن الكلية)
-    return () => clearTimeout(timer); // تنظيف التايمر عند إلغاء الـ Effect
+    setIsAnimating(true);
+    const timer = setTimeout(() => setIsAnimating(false), 2000);
+    return () => clearTimeout(timer);
   }, [selectedItem]);
+
+  useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleNext = () => {
     setSelectedItem((selectedItem + 1) % items.length);
@@ -57,22 +62,30 @@ const Slider_FP = () => {
     setSelectedItem((selectedItem - 1 + items.length) % items.length);
   };
 
+  const handleReadMore = () => {
+    if (selectedItem === 0) { 
+      navigate("/weight-gain-details");
+    }
+  };
+
   const handleDotClick = (index) => {
     setSelectedItem(index);
   };
 
-  const currentItem = items[selectedItem]; // الحصول على العنصر الحالي
+  const currentItem = items[selectedItem];
 
   return (
-    <div className="carousel-PT" style={{ backgroundImage: `url(${currentItem.backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center'  }}>
-      {/* اللوجو الثابت فوق الكاروسيل */}
-      <img src="../../../images/logo-4.svg" alt="Logo" className="logo" /> {/* استبدل مسار اللوجو بالمسار الصحيح */}
+    <div className="carousel-PT" style={{ backgroundImage: `url(${currentItem.backgroundImage})` }}>
+      <img src="../../../images/logo-4.svg" alt="Logo" className="logo-FP" />
       
       <div className="content-overlay">
         <div className={`title-PT ${isAnimating ? 'animate' : ''}`}>{currentItem.name}</div>
         <div className={`quote-PT ${isAnimating ? 'animate' : ''}`}>{currentItem.quote}</div>
         <div className={`description-PT ${isAnimating ? 'animate' : ''}`}>{currentItem.description}</div>
-        <button className={`read-more-btn ${isAnimating ? 'animate' : ''}`}>Read more</button>
+        
+        <button className={`read-more-btn ${isAnimating ? 'animate' : ''}`} onClick={handleReadMore}>
+          Read more
+        </button>
       </div>
       
       <div className="slider-container">
@@ -80,20 +93,34 @@ const Slider_FP = () => {
           {items.map((item, index) => {
             let position = (index - selectedItem + items.length) % items.length;
             let transformValue = '';
+            let isActive = index === selectedItem;
 
-            if (position === 0) {
-              transformValue = `translateX(0) scale(1)`;
-            } else if (position === 1) {
-              transformValue = `translateX(200px) scale(0.6)`;
-            } else if (position === 2) {
-              transformValue = `translateX(-200px) scale(0.6)`;
+            // Adjust position based on screen width
+            if (screenWidth >= 2500) {
+              if (position === 0) {
+                transformValue = `translateX(0) scale(1)`;
+              } else if (position === 1) {
+                transformValue = `translateX(550px) scale(0.6)`;
+              } else if (position === 2) {
+                transformValue = `translateX(-550px) scale(0.6)`;
+              } else {
+                transformValue = `translateX(${position > 1 ? '1100px' : '-1100px'}) scale(0)`;
+              }
             } else {
-              transformValue = `translateX(${position > 1 ? '400px' : '-400px'}) scale(0) opacity(0)`;
+              if (position === 0) {
+                transformValue = `translateX(0) scale(1)`;
+              } else if (position === 1) {
+                transformValue = `translateX(200px) scale(0.6)`;
+              } else if (position === 2) {
+                transformValue = `translateX(-200px) scale(0.6)`;
+              } else {
+                transformValue = `translateX(${position > 1 ? '600px' : '-600px'}) scale(0)`;
+              }
             }
 
             return (
               <div
-                className={`item-PT ${index === selectedItem ? 'active-PT' : ''}`}
+                className={`item-PT ${isActive ? 'active-PT' : ''}`}
                 key={item.id}
                 style={{
                   transform: transformValue,
@@ -106,16 +133,18 @@ const Slider_FP = () => {
                   <div className="thumbnail-counter">{String(index + 1).padStart(2, '0')}</div>
                 </div>
                 <img src={item.thumbnailImg} alt={item.name} className="thumbnail-img" />
+                {isActive && (
+                  <div className="arrows-PT">
+                    <button onClick={handlePrev}>‹</button>
+                    <button onClick={handleNext}>›</button>
+                  </div>
+                )}
               </div>
             );
           })}
         </div>
       </div>
 
-      <div className="arrows-PT">
-        <button onClick={handlePrev}>‹</button>
-        <button onClick={handleNext}>›</button>
-      </div>
       <div className="dots-PT">
         {items.map((_, index) => (
           <span
