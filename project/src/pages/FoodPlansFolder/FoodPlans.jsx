@@ -5,6 +5,7 @@ export default function plans() {
       <div className="vw-100 position-relative">
         <Navbar />
       </div>
+      
     </>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Navbar from "../../assets/navFolder/Navbar";
 import './Slider-FP.css';
 
 const Slider_FP = () => {
@@ -96,6 +97,7 @@ const Slider_FP = () => {
   const currentItem = items[selectedItem];
 
   return (
+            
     <div className={`carousel-PT carousel-PT-SFP`} style={{ backgroundImage: `url(${currentItem.backgroundImage})` }}>
       <img src="../../../images/logo-4.svg" alt="Logo" className={`logo-FP logo-FP-SFP`} />
       
@@ -200,6 +202,7 @@ const Slider_FP = () => {
         ))}
       </div>
     </div>
+    
   );
 };
 
