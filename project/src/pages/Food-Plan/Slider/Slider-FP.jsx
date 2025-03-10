@@ -85,7 +85,9 @@ const Slider_FP = () => {
 
       // بعد 4 ثواني (2 ثانية للإخفاء + 1 ثانية للشمال + 1 ثانية للـ scale(0))، ننتقل للصفحة
       setTimeout(() => {
-        navigate("/weight-gain-details");
+        console.log("Navigating to /weight-gain-details");
+        navigate("/weight-gain-details", { replace: false });
+        console.log("Navigation completed");
       }, 4000); // الانتقال بعد 4 ثواني
     }
   };
@@ -105,7 +107,11 @@ const Slider_FP = () => {
         <div className={`quote-PT ${isAnimating ? 'animate' : ''}`}>{currentItem.quote}</div>
         <div className={`description-PT ${isAnimating ? 'animate' : ''}`}>{currentItem.description}</div>
         
-        <button className={`read-more-btn ${isAnimating ? 'animate' : ''}`} onClick={handleReadMore}>
+        <button
+          type="button" // Prevent form submission behavior
+          className={`read-more-btn ${isAnimating ? 'animate' : ''}`}
+          onClick={handleReadMore}
+        >
           Read more
         </button>
       </div>
@@ -145,11 +151,11 @@ const Slider_FP = () => {
               console.log("isReadMoreClicked is true, isActive:", isActive);
               if (isActive) {
                 if (scaleZero) {
-                  transformValue = `translateX(-150%) translateY(15%) scale(0)`; // التصغير لـ 0 بعد الحركة للشمال
+                  transformValue = `translateX(-160%) translateY(5%) scaleX(1) scaleY(1.15)`; // التصغير لـ 0 بعد الحركة للشمال
                 } else if (moveLeft) {
-                  transformValue = `translateX(-150%) translateY(15%) scale(1)`; // الحركة للشمال
+                  transformValue = `translateX(-160%) translateY(5%) scaleX(1) scaleY(1.15)`; // الحركة للشمال
                 } else {
-                  transformValue = `translateX(0) translateY(15%) scale(1.1)`; // التكبير وتحريك لفوق فقط
+                  transformValue = `translateX(0) translateY(5%) scaleX(1) scaleY(1.15)`; // التكبير وتحريك لفوق فقط
                 }
               } else {
                 transformValue = `translateX(${position === 1 ? '200px' : '-200px'}) scale(0)`; // الـ items اللي مش active تصغر
