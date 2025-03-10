@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Weight-Gain-FP.css'; // Import the CSS file
 
 const WeightGain = () => {
   const [activeSection, setActiveSection] = useState('General Tips'); // الحالة الافتراضية
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Trigger animations when the component mounts
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // العبارات التي نريد تسليط الضوء عليها في General Tips
   const highlightedPhrases = [
@@ -384,7 +390,7 @@ const WeightGain = () => {
   };
 
   return (
-    <div className="main-content">
+    <div className={`main-content ${isMounted ? 'mounted' : ''}`}>
       <div className="logo"></div>
       <aside className="left-panel">
         <h1>Weight Gain</h1>

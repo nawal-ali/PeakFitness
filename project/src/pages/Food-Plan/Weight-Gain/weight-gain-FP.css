@@ -30,6 +30,7 @@ body {
   background-repeat: no-repeat;
   left: 1%;
   background-size: cover;
+  opacity: 0; /* Start invisible */
 }
 
 /* Main Content */
@@ -42,6 +43,62 @@ body {
   background-image: url(/images/Food-Plan-W-G.png);
   background-size: contain;
   background-position: right;
+  opacity: 0; /* Start invisible */
+}
+
+/* Animation Trigger */
+.main-content.mounted {
+  opacity: 1; /* Ensure container becomes visible to allow child animations */
+}
+
+/* Left Panel Animation */
+.main-content.mounted .left-panel {
+  opacity: 0;
+  transform: scale(0.8); /* Start smaller */
+  animation: scaleIn 0.8s ease-out forwards; /* Scale and fade in */
+}
+
+/* Buttons Animation */
+.main-content.mounted .button-row .nav-button,
+.main-content.mounted .nav-button.full-width {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+  animation-delay: 0.4s; /* Delay buttons slightly after left panel */
+}
+
+/* Right Panel Animation */
+.main-content.mounted .right-panel {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+  animation-delay: 0.8s; /* Delay right panel after buttons */
+}
+
+/* Logo Animation */
+.main-content.mounted .logo {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+  animation-delay: 0.2s; /* Logo appears slightly after left panel */
+}
+
+/* Keyframes */
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Left Panel */

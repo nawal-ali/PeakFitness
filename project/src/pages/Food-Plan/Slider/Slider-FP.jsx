@@ -6,6 +6,9 @@ const Slider_FP = () => {
   const [selectedItem, setSelectedItem] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [isReadMoreClicked, setIsReadMoreClicked] = useState(false); // حالة للتحكم في انيميشن الإخفاء
+  const [moveLeft, setMoveLeft] = useState(false); // حالة للحركة للشمال
+  const [scaleZero, setScaleZero] = useState(false); // حالة جديدة لتقليص الحجم إلى 0
   const navigate = useNavigate();
 
   const items = [
@@ -63,8 +66,27 @@ const Slider_FP = () => {
   };
 
   const handleReadMore = () => {
-    if (selectedItem === 0) { 
-      navigate("/weight-gain-details");
+    console.log("Read More clicked, selectedItem:", selectedItem);
+    if (selectedItem === 0) { // فقط لـ Weight Gain
+      setIsReadMoreClicked(true); // تفعيل حالة انيميشن الإخفاء
+      console.log("isReadMoreClicked set to true");
+
+      // بعد 2 ثانية (لما العناصر تختفي)، نحرك الـ active item للشمال
+      setTimeout(() => {
+        setMoveLeft(true);
+        console.log("moveLeft set to true");
+      }, 2000);
+
+      // بعد 3 ثواني (2 ثانية للإخفاء + 1 ثانية للحركة للشمال)، نصغر الحجم لـ 0
+      setTimeout(() => {
+        setScaleZero(true);
+        console.log("scaleZero set to true");
+      }, 3000);
+
+      // بعد 4 ثواني (2 ثانية للإخفاء + 1 ثانية للشمال + 1 ثانية للـ scale(0))، ننتقل للصفحة
+      setTimeout(() => {
+        navigate("/weight-gain-details");
+      }, 4000); // الانتقال بعد 4 ثواني
     }
   };
 
@@ -78,7 +100,7 @@ const Slider_FP = () => {
     <div className="carousel-PT" style={{ backgroundImage: `url(${currentItem.backgroundImage})` }}>
       <img src="../../../images/logo-4.svg" alt="Logo" className="logo-FP" />
       
-      <div className="content-overlay">
+      <div className={`content-overlay ${isReadMoreClicked ? 'hide' : ''}`}>
         <div className={`title-PT ${isAnimating ? 'animate' : ''}`}>{currentItem.name}</div>
         <div className={`quote-PT ${isAnimating ? 'animate' : ''}`}>{currentItem.quote}</div>
         <div className={`description-PT ${isAnimating ? 'animate' : ''}`}>{currentItem.description}</div>
@@ -118,6 +140,27 @@ const Slider_FP = () => {
               }
             }
 
+            // لما يضغط على Read More
+            if (isReadMoreClicked) {
+              console.log("isReadMoreClicked is true, isActive:", isActive);
+              if (isActive) {
+                if (scaleZero) {
+                  transformValue = `translateX(-150%) translateY(15%) scale(0)`; // التصغير لـ 0 بعد الحركة للشمال
+                } else if (moveLeft) {
+                  transformValue = `translateX(-150%) translateY(15%) scale(1)`; // الحركة للشمال
+                } else {
+                  transformValue = `translateX(0) translateY(15%) scale(1.1)`; // التكبير وتحريك لفوق فقط
+                }
+              } else {
+                transformValue = `translateX(${position === 1 ? '200px' : '-200px'}) scale(0)`; // الـ items اللي مش active تصغر
+              }
+            }
+
+            // نغير الـ transition بناءً على الحالة
+            const transitionValue = isReadMoreClicked
+              ? (scaleZero ? 'transform 1s ease 0s' : moveLeft ? 'transform 1s ease 0s' : 'transform 2s ease 0s')
+              : 'transform 0.5s ease, opacity 0.5s ease';
+
             return (
               <div
                 className={`item-PT ${isActive ? 'active-PT' : ''}`}
@@ -126,15 +169,17 @@ const Slider_FP = () => {
                   transform: transformValue,
                   opacity: position <= 2 ? (position === 0 ? 1 : 0.6) : 0,
                   zIndex: position === 0 ? 10 : position === 1 ? 5 : position === 2 ? 5 : 0,
-                  transition: 'transform 0.5s ease, opacity 0.5s ease',
+                  transition: transitionValue,
                 }}
               >
                 <div className="content-PT">
-                  <div className="thumbnail-counter">{String(index + 1).padStart(2, '0')}</div>
+                  <div className={`thumbnail-counter ${isReadMoreClicked ? 'hide' : ''}`}>
+                    {String(index + 1).padStart(2, '0')}
+                  </div>
                 </div>
                 <img src={item.thumbnailImg} alt={item.name} className="thumbnail-img" />
                 {isActive && (
-                  <div className="arrows-PT">
+                  <div className={`arrows-PT ${isReadMoreClicked ? 'hide' : ''}`}>
                     <button onClick={handlePrev}>‹</button>
                     <button onClick={handleNext}>›</button>
                   </div>
@@ -145,7 +190,7 @@ const Slider_FP = () => {
         </div>
       </div>
 
-      <div className="dots-PT">
+      <div className={`dots-PT ${isReadMoreClicked ? 'hide' : ''}`}>
         {items.map((_, index) => (
           <span
             key={index}
