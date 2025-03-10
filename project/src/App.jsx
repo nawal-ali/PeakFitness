@@ -10,6 +10,7 @@ import BMI from "./pages/calcsFolder/BMI/BMI";
 import BodyFat from "./pages/calcsFolder/Body-Fat/BodyFat";
 import Calorie from "./pages/calcsFolder/Calorie/Calorie";
 import Weight from "./pages/calcsFolder/Ideal-Weight/Weight";
+import Slider_FP from "./pages/Food-Plan/Slider-FP/Slider-FP";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/BodyFat" element={<BodyFat />} />
             <Route path="/Calorie" element={<Calorie />} />
             <Route path="/Weight" element={<Weight />} />
+            <Route path="/FoodPlanSlider" element={<Slider_FP/>}/>
           </Routes>
         </Router>
         {/* <h1>app works!</h1> */}
