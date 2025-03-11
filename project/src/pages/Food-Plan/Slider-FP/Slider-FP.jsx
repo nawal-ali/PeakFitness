@@ -18,7 +18,7 @@ const Slider_FP = () => {
       quote: '"Gain Weight, Stay Strong!"',
       description: 'Explore Key Strategies To Increase Your Weight While Staying Healthy And Active',
       color: '#ec7e4a',
-      thumbnailImg: '/public/imgs/images/Weight-gain.png',
+      thumbnailImg: '/public/imgs/Weight-gain.png',
       backgroundImage: '/public/imgs/Food-Plan-W-G.png'
     },
     {
@@ -98,7 +98,7 @@ const Slider_FP = () => {
   return (
             
     <div className={`carousel-PT carousel-PT-SFP`} style={{ backgroundImage: `url(${currentItem.backgroundImage})` }}>
-      <img src="/public/imgs/logo-4.svg" alt="Logo" className={`logo-FP logo-FP-SFP`} />
+      <img src="/public/logo/logo-4.svg" alt="Logo" className={`logo-FP logo-FP-SFP`} />
       
       <div className={`content-overlay content-overlay-SFP ${isReadMoreClicked ? 'hide hide-SFP' : ''}`}>
         <div className={`title-PT title-PT-SFP ${isAnimating ? 'animate animate-SFP' : ''}`}>{currentItem.name}</div>
