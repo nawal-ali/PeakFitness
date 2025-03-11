@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from "../../assets/navFolder/Navbar";
 import './Slider-FP.css';
 
 const Slider_FP = () => {
@@ -19,8 +18,8 @@ const Slider_FP = () => {
       quote: '"Gain Weight, Stay Strong!"',
       description: 'Explore Key Strategies To Increase Your Weight While Staying Healthy And Active',
       color: '#ec7e4a',
-      thumbnailImg: '../../../images/Weight-gain.png',
-      backgroundImage: '../../../images/Food-Plan-W-G.png'
+      thumbnailImg: '/public/imgs/images/Weight-gain.png',
+      backgroundImage: '/public/imgs/Food-Plan-W-G.png'
     },
     {
       id: 1,
@@ -28,8 +27,8 @@ const Slider_FP = () => {
       quote: '"Smart Strategies For Shedding Extra Pounds"',
       description: 'Practical Advice TO Help You Reach Your Ideal Weight',
       color: '#4aec7e',
-      thumbnailImg: '../../../images/Weight-loss.png',
-      backgroundImage: '../../../images/Food-Plan-W-L.png'
+      thumbnailImg: '/public/imgs/Weight-loss.png',
+      backgroundImage: '/public/imgs/Food-Plan-W-L.png'
     },
     {
       id: 2,
@@ -37,8 +36,8 @@ const Slider_FP = () => {
       quote: '"Gain Muscle Boost Strength"',
       description: 'And Transform Your Physique With Science-Backed Strategies"',
       color: '#7e4aec',
-      thumbnailImg: '../../../images/Muscle-gain.png',
-      backgroundImage: '../../../images/Food-Plan-M-G.png'
+      thumbnailImg: '/public/imgs/Muscle-gain.png',
+      backgroundImage: '/public/imgs/Food-Plan-M-G.png'
     }
   ];
 
@@ -99,7 +98,7 @@ const Slider_FP = () => {
   return (
             
     <div className={`carousel-PT carousel-PT-SFP`} style={{ backgroundImage: `url(${currentItem.backgroundImage})` }}>
-      <img src="../../../images/logo-4.svg" alt="Logo" className={`logo-FP logo-FP-SFP`} />
+      <img src="/public/imgs/logo-4.svg" alt="Logo" className={`logo-FP logo-FP-SFP`} />
       
       <div className={`content-overlay content-overlay-SFP ${isReadMoreClicked ? 'hide hide-SFP' : ''}`}>
         <div className={`title-PT title-PT-SFP ${isAnimating ? 'animate animate-SFP' : ''}`}>{currentItem.name}</div>

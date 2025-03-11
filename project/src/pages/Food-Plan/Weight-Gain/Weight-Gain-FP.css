@@ -9,15 +9,6 @@
 
 body {
   font-family: 'Nunito Sans', sans-serif;
-  background-color: #1a1a1a; /* Dark background */
-  color: #fff; /* White text */
-  background-image: url('path-to-logo-image.png'); /* استبدل بمسار الصورة الفعلي للوجو */
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-position: top left; /* وضع اللوجو في الأعلى على اليسار */
-  background-size: contain; /* يضمن أن اللوجو لن يتجاوز حجمه الأصلي */
-  height: 100vh; /* يشغل الشاشة كاملة */
-  overflow: hidden; /* لمنع التمرير غير المرغوب */
 }
 
 .logo.logo-WG {
