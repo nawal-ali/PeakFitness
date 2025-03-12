@@ -436,8 +436,8 @@ body {
 .Calculator-one-circle-s1-B::before {
   content: "";
   position: absolute;
-  top: -140px;
-  left: -220px;
+  top: -180px;
+  right: -175px;
   width: 160px;
   height: 160px;
   background: radial-gradient(circle at top center, #ec7e4a 0%, #0a1b30 80%);
