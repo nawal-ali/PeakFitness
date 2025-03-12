@@ -276,7 +276,7 @@ const BodyFatCalc = () => {
           ) : (
             <form className="input-section-F" onSubmit={calculateBodyFat}>
               <div className="Calculator-one-circle-F"></div>
-              <h2 className="body-parameters-side2-F">Body Parameters</h2>
+              <h2 className="Fat-parameters-side2-F">Body Parameters</h2>
               <div className="gender-selection-F">
                 <button
                   className={gender === "male" ? "active-F" : ""}
@@ -435,7 +435,7 @@ const BodyFatCalc = () => {
             <form className="input-section-F" onSubmit={calculateBodyFat}>
               <div className="Calculator-circles-F"></div>
               <div className="Calculator-one-circle-s1-F"></div>
-              <h2 className="body-parameters-side1-F">Body Parameters</h2>
+              <h2 className="Fat-parameters-side1-F">Body Parameters</h2>
               <div className="gender-selection-F">
                 <button
                   className={gender === "male" ? "active-F" : ""}

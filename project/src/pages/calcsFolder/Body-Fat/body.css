@@ -16,8 +16,8 @@ body {
 }
 
 .left-panel-F .small-image-F {
-  width: 130px;
-  height: 130px;
+  width: 110px;
+  height: 110px;
   background-image: url("/public/logo/Fat.svg");
   background-position: 75% center;
   background-repeat: no-repeat;
@@ -71,7 +71,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("./imgs/fat.png");
+  background-image: url("/public/imgs/Fat.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -124,22 +124,19 @@ body {
 }
 
 .gender-selection-F {
+  margin-bottom: 15px;
   display: flex;
-  gap: 50px;
-  position: relative;
-  justify-content: center;
-  z-index: 100;
-  width: 100%;
+  gap: 30px;
 }
 
 .gender-selection-F button {
   background-color: white;
   color: black;
   border: none;
-  padding: 10px 0;
-  border-radius: 20px;
+  padding: 6px 0;
+  border-radius: 50px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 25px;
   font-weight: bold;
   transition: background-color 0.3s ease;
   flex: 1;
@@ -150,7 +147,6 @@ body {
 .gender-selection-F button.active-F {
   background-color: #ec7e4a;
   color: white;
-  border: 2px solid #ec7e4a;
   z-index: 1;
 }
 
@@ -158,14 +154,10 @@ body {
   background-color: #ec7e4a;
   color: white;
   opacity: 1;
-  border: 2px solid #ec7e4a;
 }
 
 .input-group-F {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
+  text-align: left;
   width: 100%;
   padding: 10px;
   margin: 20px 0;
@@ -175,6 +167,8 @@ body {
   display: block;
   margin-bottom: 10px;
   color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
 .input-group-F input {
@@ -548,7 +542,6 @@ body {
   gap: 30px;
   width: 100%;
   justify-content: space-between;
-  position: relative;
 }
 
 .flex-inputs-F div {
@@ -565,6 +558,7 @@ body {
   margin-right: 50px;
   border-top: 0;
   border-left: 0;
+  border-radius: 30px;
 }
 
 .error-message-F {
@@ -597,13 +591,14 @@ body {
   background-size: cover;
 }
 
-.body-parameters-side1-F,
-.body-parameters-side2-F {
+.Fat-parameters-side1-F,
+.Fat-parameters-side2-F {
   color: #fff;
-  margin-bottom: 50px;
-  font-size: 24px;
+  margin-bottom: 30px;
+  font-size: 40px;
   font-weight: bold;
   letter-spacing: 1.5px;
+  margin-top: 20px;
 }
 
 @keyframes slideLeft {
@@ -830,8 +825,9 @@ body {
   }
 
   .gender-selection-F {
-    gap: 20px;
-    justify-content: center;
+  margin-bottom: 15px;
+  display: flex;
+  gap: 30px;
   }
 
   .gender-selection-F button {
