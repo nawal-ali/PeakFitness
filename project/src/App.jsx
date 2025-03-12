@@ -10,8 +10,8 @@ import BMI from "./pages/calcsFolder/BMI/BMI";
 import BodyFat from "./pages/calcsFolder/Body-Fat/BodyFat";
 import Calorie from "./pages/calcsFolder/Calorie/Calorie";
 import Weight from "./pages/calcsFolder/Ideal-Weight/Weight";
-import Slider_FP from "./pages/FoodPlansFolder/Slider-FP/Slider-FP";
-import WeightGain from "./pages/FoodPlansFolder/Weight-Gain/Weight-Gain-FP"
+// import Slider_FP from "./pages/FoodPlansFolder/Slider-FP/Slider-FP";
+import WeightGain from "./pages/FoodPlansFolder/Weight-Gain/Weight-Gain-FP";
 function App() {
   return (
     <>
@@ -28,8 +28,8 @@ function App() {
             <Route path="/BodyFat" element={<BodyFat />} />
             <Route path="/Calorie" element={<Calorie />} />
             <Route path="/Weight" element={<Weight />} />
-            <Route path="/FoodPlanSlider" element={<Slider_FP/>}/>
-            <Route path="/weight-gain-details" element={<WeightGain/>}/>
+            {/* <Route path="/FoodPlanSlider" element={<Slider_FP/>}/> */}
+            <Route path="/weight-gain-details" element={<WeightGain />} />
           </Routes>
         </Router>
         {/* <h1>app works!</h1> */}
