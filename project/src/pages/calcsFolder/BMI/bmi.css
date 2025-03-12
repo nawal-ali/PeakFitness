@@ -1,16 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Jomhuria&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
-/* body,
-html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: "Nunito Sans";
-  overflow: hidden;
-} */
 body {
   padding-right: 0;
 }
+
 .left-panel-B {
   flex: 1;
   background-color: #202020;
@@ -24,14 +17,13 @@ body {
 }
 
 .left-panel-B .small-image-B {
-  width: 130px;
-  height: 130px;
+  width: 110px;
+  height: 110px;
   background-image: url("./logo/BMI.svg");
   background-position: 75% center;
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 2;
-  margin-bottom: 10px;
 }
 
 .result-header-B {
@@ -80,15 +72,20 @@ body {
   width: 100%;
   height: 100%;
   background-image: url("./imgs/BMI.png");
-  background-position: 78% center;
   background-repeat: no-repeat;
-  background-color: #000;
   background-size: cover;
   opacity: 90%;
   z-index: 1;
   filter: brightness(60%);
 }
-
+.Arrow-right-B {
+  width: 35px;
+  height: 35px;
+  background-image: url("../../../../public/imgs/Arrow-right.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;
+}
 .title-B {
   display: block;
 }
@@ -106,14 +103,11 @@ body {
 }
 
 .left-panel-B .under-header-B {
-  font-size: 28px;
+  font-size: 25px;
   color: #fff;
-  width: 90%;
+  width: 80%;
+  margin: 20px 0;
 }
-
-/* .p1-B {
-  لم يتم تعريف .p1 في الكود الأصلي، لذا إذا كنت تحتاجه، أضف تعريفًا
-} */
 
 .left-panel-B .arrow-B {
   font-size: 24px;
@@ -134,22 +128,19 @@ body {
 }
 
 .gender-selection-B {
+  margin-bottom: 15px;
   display: flex;
-      gap: 50px;
-      position: relative;
-      justify-content: center;
-      z-index: 100;
-      width: 100%;
+  gap: 30px;
 }
 
 .gender-selection-B button {
   background-color: white;
   color: black;
   border: none;
-  padding: 10px 0;
-  border-radius: 20px;
+  padding: 6px 0;
+  border-radius: 50px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 25px;
   font-weight: bold;
   transition: background-color 0.3s ease;
   flex: 1;
@@ -160,7 +151,6 @@ body {
 .gender-selection-B button.active-B {
   background-color: #ec7e4a;
   color: white;
-  border: 2px solid #ec7e4a;
   z-index: 1;
 }
 
@@ -171,32 +161,31 @@ body {
 }
 
 .input-group-B {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
+  text-align: left;
   width: 100%;
   padding: 10px;
   margin: 20px 0;
+  position: relative;
 }
 
 .input-group-B label {
   display: block;
   margin-bottom: 10px;
   color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
 .input-group-B input {
   width: 100%;
-  padding: 8px;
+  padding: 13px 20px;
   border: 2px solid #fff;
-  border-radius: 25px;
+  border-radius: 30px;
   font-size: 16px;
   box-sizing: border-box;
   background-color: #fff;
   color: #000;
   outline: none;
-  z-index: 100;
 }
 
 .input-group-B input:focus {
@@ -204,35 +193,23 @@ body {
   box-shadow: 0 0 8px rgba(255, 140, 0, 0.5);
 }
 
-/* .bmi-buttons-B {
-} */
-
 .bmi-buttons-result-B,
 .bmi-buttons-B {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 25px;
+  gap: 30px;
   margin-top: 30px;
-  width: 100%;
+  width: 95%;
   border: none;
   text-wrap: nowrap;
 }
-
-/* .bmi-buttons-result-B {
-} */
 
 .clear-btn-B,
 .calculate-btn-B {
   flex: 1;
   max-width: 180px;
   text-align: center;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: 0.3s ease;
   position: relative;
   z-index: 100;
   letter-spacing: 2px;
@@ -301,7 +278,6 @@ body {
   font-weight: bold;
   border: none;
   border-radius: 30px;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -314,6 +290,7 @@ body {
   background-color: #444;
   color: white;
 }
+
 .clear-btn-B:hover,
 .calculate-btn-B:hover,
 .other-calculators-btn-B:hover {
@@ -390,25 +367,32 @@ body {
   opacity: 0;
   animation: tableDraw 0.5s ease-out forwards 0s;
 }
+
 .bmi-table-B tr {
   opacity: 0;
   animation: rowFadeIn 0.5s ease-out forwards;
 }
+
 .bmi-table-B tr:nth-child(1) {
   animation-delay: 0.6s;
 }
+
 .bmi-table-B tr:nth-child(2) {
   animation-delay: 1.1s;
 }
+
 .bmi-table-B tr:nth-child(3) {
   animation-delay: 1.6s;
 }
+
 .bmi-table-B tr:nth-child(4) {
   animation-delay: 2.1s;
 }
+
 .bmi-table-B tr:nth-child(5) {
   animation-delay: 2.6s;
 }
+
 .bmi-table-B tr:nth-child(6) {
   animation-delay: 3.1s;
 }
@@ -422,7 +406,8 @@ body {
 .bmi-table-B td {
   border: 2px solid #808080;
   background-color: transparent;
-  padding: 10px 10px;}
+  padding: 10px 10px;
+}
 
 .bmi-value-B {
   color: #ec7e4a;
@@ -437,21 +422,29 @@ body {
 
 .Calculator-circles-S1-B::before,
 .Calculator-circles-S1-B::after {
-  content: "";position: absolute;
+  content: "";
+  position: absolute;
   transform: translateX(-50%);
-  width: 360px;height: 360px;
+  width: 360px;
+  height: 360px;
   background: rgba(255, 255, 255, 0.12);
-  border-radius: 50%;filter: blur(60px);
+  border-radius: 50%;
+  filter: blur(60px);
 }
 .Calculator-circles-S1-B::before {top: 80%;left: 120%;}
 .Calculator-circles-S1-B::after {top: -200px;left: -165px;}
-
-
-
-
-
-
-
+.Calculator-one-circle-s1-B::before {
+  content: "";
+  position: absolute;
+  top: -140px;
+  left: -220px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle at top center, #ec7e4a 0%, #0a1b30 80%);
+  border-radius: 50%;
+  opacity: 0.9;
+  z-index: 1;
+}
 .flex-inputs-B {
   display: flex;
   gap: 30px;
@@ -463,16 +456,12 @@ body {
   width: 100%;
 }
 
-input,
-select {
-  border-radius: 20px !important;
-}
-
 .clear-btn-B {
   background-color: transparent;
   color: white;
   padding: 12px 24px;
   font-size: 20px;
+  border-radius: 20px;
   font-weight: bold;
   transition: 0.3s ease, border-color 0.3s ease;
   margin-right: 50px;
@@ -483,10 +472,11 @@ select {
 .BMI-parameters-side1-B,
 .BMI-parameters-side2-B {
   color: #fff;
-  margin-bottom: 50px;
-  font-size: 30px;
+  margin-bottom: 30px;
+  font-size: 40px;
   font-weight: bold;
   letter-spacing: 1.5px;
+  margin-top: 20px;
 }
 
 .error-message-B {
@@ -494,16 +484,10 @@ select {
   font-size: 12px;
   margin-top: 5px;
   text-align: left;
-}
-
-.error-message-B.weight-height-error-B {
-  color: #ff0000;
-  font-size: 12px;
   position: absolute;
-  bottom: -25px;
-  left: 10;
-  margin: 0;
-  width: 100%;
+  top: 100%;
+  left: 10px;
+  z-index: 2;
 }
 
 .numeric-input-B.error-B {
@@ -568,6 +552,7 @@ select {
     transform: translateY(0);
   }
 }
+
 @keyframes tableDraw {
   from {
     opacity: 0;
@@ -579,73 +564,102 @@ select {
   }
 }
 
+@keyframes rowFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* تعديل الـ Animation للـ Result Section */
 .calorie-calculator-B.show-results-B .result-section-B h2 {
   animation: fadeInUp 0.6s ease-out forwards;
   animation-delay: 0.2s;
   opacity: 0;
 }
 
-.calorie-calculator-B.show-results-B .result-section-B p {
+.calorie-calculator-B.show-results-B .result-section-B h3 {
   animation: fadeInUp 0.6s ease-out forwards;
-  animation-delay: 0.4s;
+  animation-delay: 0.4s; /* بعد h2 بـ 0.2 ثانية */
   opacity: 0;
 }
 
-.calorie-calculator-B.show-results-B .result-section-B .calories-B {
+.calorie-calculator-B.show-results-B .result-section-B .subtext-B {
   animation: fadeInUp 0.6s ease-out forwards;
-  animation-delay: 0.6s;
+  animation-delay: 0.6s; /* بعد h3 بـ 0.2 ثانية */
   opacity: 0;
 }
 
-.calorie-calculator-B.show-results-B .result-section-B .macronutrients-B {
+.calorie-calculator-B.show-results-B .result-section-B .bmi-table-div-B {
+  /* الجدول هيفضل زي ما هو بالـ animation بتاعه */
+}
+
+.calorie-calculator-B.show-results-B .result-section-B .bmi-buttons-result-B {
   animation: fadeInUp 0.6s ease-out forwards;
-  animation-delay: 0.8s;
+  animation-delay: 0.8s; /* بعد الـ subtext بـ 0.2 ثانية */
   opacity: 0;
 }
 
-.calorie-calculator-B.show-results-B .result-section-B .calculate-again-B {
-  animation: fadeInUp 0.6s ease-out forwards;
-  animation-delay: 1s;
-  opacity: 0;
-}
-
+/* ضمان إن العناصر تبدأ مخفية */
 .result-section-B h2,
-.result-section-B p,
-.result-section-B .calories-B,
-.result-section-B .calculate-again-B {
+.result-section-B h3,
+.result-section-B .subtext-B,
+.result-section-B .bmi-buttons-result-B {
   opacity: 0;
   animation-fill-mode: both;
-}
-
-.calorie-calculator-B.show-results-B .result-section-B h2 {
-  animation: fadeInUp 0.6s ease-out forwards;
-  animation-delay: 0.2s;
-}
-
-.calorie-calculator-B.show-results-B .result-section-B p {
-  animation: fadeInUp 0.6s ease-out forwards;
-  animation-delay: 0.4s;
-}
-
-.calorie-calculator-B.show-results-B .result-section-B .calories-B {
-  animation: fadeInUp 0.6s ease-out forwards;
-  animation-delay: 0.6s;
-}
-
-.calorie-calculator-B.show-results-B .result-section-B .macronutrients-B {
-  animation: fadeInUp 0.6s ease-out forwards;
-  animation-delay: 0.8s;
-}
-
-.calorie-calculator-B.show-results-B .result-section-B .calculate-again-B {
-  animation: fadeInUp 0.6s ease-out forwards;
-  animation-delay: 1s;
 }
 
 .subtext-B {
   position: relative;
   left: 30px;
   margin-bottom: 0px;
+}
+
+.popup-overlay-B {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-B {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 90%;
+}
+
+.popup-B p {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.popup-close-btn-B {
+  background-color: #ec7e4a;
+  color: white;
+  padding: 10px 80px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.popup-close-btn-B:hover {
+  background-color: #ff8c00;
 }
 
 @media (max-width: 1400px) {
@@ -671,7 +685,6 @@ select {
     font-size: 18px;
     width: 90%;
   }
-
   .left-panel-B .small-image-B {
     width: 120px;
     height: 120px;
@@ -683,138 +696,103 @@ select {
     flex-direction: column;
     height: auto;
   }
-
   .left-panel-B,
   .right-panel-B {
     width: 100%;
     padding: 20px;
   }
-
   .calorie-calculator-B.show-results-B .left-panel-B {
     order: 2;
   }
-
   .calorie-calculator-B.show-results-B .right-panel-B {
     order: 1;
   }
-
   .bmi-title-B {
     font-size: 42px;
     line-height: 55px;
     text-align: center;
   }
-
   .left-panel-B .under-header-B {
     font-size: 22px;
     width: 70%;
     text-align: center;
   }
-
   .left-panel-B .small-image-B {
     width: 150px;
     height: 150px;
   }
-
   .input-section-B {
     width: 60%;
     text-align: center;
   }
-
   .input-group-B {
     padding: 8px;
     margin: 15px 0;
   }
-
   .input-group-B label {
     display: block;
     margin-bottom: 10px;
     color: white;
     font-size: 25px;
   }
-
-  .body-parameters-side1-B,
-  .body-parameters-side2-B {
-    color: #fff;
-    margin-bottom: 30px;
-    font-size: 40px;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-    margin-top: 20px;
-  }
-
   .logo-B {
     width: 270px;
     height: 150px;
   }
-
   .input-group-B input {
     padding: 12px;
     font-size: 23px;
   }
-
   .gender-selection-B {
     gap: 20px;
     justify-content: center;
   }
-
   .gender-selection-B button {
     padding: 10px 100px;
     font-size: 25px;
   }
-
   .bmi-buttons-B {
     flex-direction: row;
     justify-content: center;
     gap: 30px;
   }
-
   .clear-btn-B,
   .calculate-btn-B {
     max-width: 225px;
     font-size: 25px;
   }
-
-  .error-message-B.weight-height-error-B {
-    bottom: -35px;
+  .error-message-B {
     font-size: 19px;
   }
-
   .result-section-B {
     margin-left: 0;
     text-align: center;
   }
-
   .result-section-B h2 {
     font-size: 55px;
     margin-bottom: 20px;
   }
-
   .bmi-table-div-B {
     width: 100%;
   }
-
   .result-section-B h3 {
     font-size: 65px;
     margin-left: 15px;
   }
-
   .result-logo-B {
     width: 270px;
     height: 179px;
   }
-
   .bmi-table-B {
     font-size: 16px;
     max-width: 100%;
   }
-
   .bmi-table-B th,
   .bmi-table-B td,
   .result-section-B p {
     padding: 15px;
     font-size: 25px;
   }
-
   .Calculator-one-circle-B::before,
   .Calculator-one-circle-B::after,
   .Calculator-circles-side2-B,
@@ -822,24 +800,19 @@ select {
   .Calculator-circles-side2-B::after {
     display: none;
   }
-
   .left-panel-B .content-B {
     height: 50vh;
   }
-
   .input-section-B {
     height: 50vh;
   }
-
   .result-section-B {
     height: 55vh;
   }
-
   .bmi-title-B {
     font-size: 65px;
     line-height: 80px;
   }
-
   .other-calculators-btn-B {
     font-size: 25px;
   }
@@ -857,36 +830,29 @@ select {
     order: 1;
     padding: 5px;
   }
-
   .bmi-buttons-result-B {
     margin-top: 10px;
   }
-
   .left-panel-B .content-B {
     height: 45vh;
   }
-
   .gender-selection-B button {
     padding: 10px 75px;
   }
-
   .bmi-table-B th,
   .bmi-table-B td,
   .result-section-B p {
     padding: 10px;
     font-size: 25px;
   }
-
   .result-section-B h2 {
     font-size: 50px;
     margin-bottom: 20px;
   }
-
   .result-section-B h3 {
     font-size: 60px;
     margin-left: 15px;
   }
-
   .result-logo-B {
     width: 240px;
     height: 140px;
@@ -898,54 +864,43 @@ select {
   .left-panel-B .under-header-B {
     font-size: 20px;
   }
-
   .bmi-title-B {
     font-size: 60px;
   }
-
   .left-panel-B .content-B {
     height: 40vh;
   }
-
   .input-section-B {
     height: 60vh;
   }
-
   .bmi-buttons-result-B,
   .bmi-buttons-B {
     margin-top: 10px;
   }
-
   .gender-selection-B button {
     padding: 10px 70px;
   }
-
   .bmi-table-B th,
   .bmi-table-B td,
   .result-section-B p {
     padding: 5px;
     font-size: 23px;
   }
-
   .result-section-B {
     height: 48vh;
   }
-
   .result-section-B h3 {
     font-size: 50px;
   }
-
   .result-section-B h2 {
     font-size: 50px;
     margin-bottom: 10px;
   }
-
   .bmi-table-div-B {
     width: 100%;
     position: relative;
     top: -15px;
   }
-
   .bmi-buttons-result-B {
     margin-top: -20px;
   }

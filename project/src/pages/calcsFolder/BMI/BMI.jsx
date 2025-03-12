@@ -1,22 +1,5 @@
-// import Navbar from "../../../assets/navFolder/Navbar";
-// import "./bmi.css";
-
-// export default function BMI() {
-//   return (
-//     <>
-//       <Navbar />
-
-//       {/* write all code within this div because nav has fixed position
-//        and content will be placed bahind it if it does not have margin top */}
-//       <div style={{ marginTop: "9%" }}>
-//         <p className="text">bmi works</p>
-//       </div>
-//     </>
-//   );
-// }
-
 import { useState, useEffect } from "react";
-import { Link } from 'react-router-dom'; // 
+import { Link } from 'react-router-dom';
 import Navbar from "../../../assets/navFolder/Navbar";
 import "./bmi.css";
 
@@ -42,10 +25,11 @@ const BMICalculator = () => {
   });
   const [bmi, setBmi] = useState(null);
   const [showResults, setShowResults] = useState(false);
-
   const [ageError, setAgeError] = useState("");
   const [weightError, setWeightError] = useState("");
   const [heightError, setHeightError] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupMessage, setPopupMessage] = useState("");
 
   useEffect(() => {
     localStorage.setItem("gender", gender);
@@ -74,18 +58,18 @@ const BMICalculator = () => {
   const calculateBmi = (e) => {
     e.preventDefault();
     if (!gender) {
-      alert("Please select a gender before calculating.");
+      setPopupMessage("Please select a gender before calculating.");
+      setShowPopup(true);
       return;
     }
     if (!age || !height || !weight) {
-      alert("Please fill in all fields before calculating.");
+      setPopupMessage("Please fill in all fields before calculating.");
+      setShowPopup(true);
       return;
     }
 
     const heightInMeters = height / 100;
-    const calculatedBmi = (weight / (heightInMeters * heightInMeters)).toFixed(
-      1
-    );
+    const calculatedBmi = (weight / (heightInMeters * heightInMeters)).toFixed(1);
 
     setBmi(calculatedBmi);
     setShowResults(true);
@@ -94,22 +78,14 @@ const BMICalculator = () => {
   const recalculateFromInputs = () => {
     if (age && height && weight && gender) {
       const heightInMeters = height / 100;
-      const calculatedBmi = (
-        weight /
-        (heightInMeters * heightInMeters)
-      ).toFixed(1);
+      const calculatedBmi = (weight / (heightInMeters * heightInMeters)).toFixed(1);
 
       setBmi(calculatedBmi);
     } else {
-      alert(
-        "Please fill in all fields, including gender, before recalculating."
-      );
+      setPopupMessage("Please fill in all fields, including gender, before recalculating.");
+      setShowPopup(true);
     }
   };
-
-  // const resetForm = () => {
-  //   recalculateFromInputs();
-  // };
 
   const clearInputs = () => {
     setGender("");
@@ -139,11 +115,7 @@ const BMICalculator = () => {
   return (
     <>
       <Navbar showSearch={false} showBackground={false} />
-      <div
-        className={`calorie-calculator-B ${
-          showResults ? "show-results-B" : ""
-        }`}
-      >
+      <div className={`calorie-calculator-B ${showResults ? "show-results-B" : ""}`}>
         <div className="left-panel-B">
           {!showResults ? (
             <>
@@ -162,12 +134,13 @@ const BMICalculator = () => {
                     Health.
                   </p>
                 </div>
+                <div className="Arrow-right-B"></div>
               </div>
             </>
           ) : (
             <form className="input-section-B" onSubmit={calculateBmi}>
               <div className="Calculator-one-circle-B"></div>
-              <h2 className="body-parameters-side2-B">Body Parameters</h2>
+              <h2 className="BMI-parameters-side2-B">Body Parameters</h2>
               <div className="gender-selection-B">
                 <button
                   className={gender === "male" ? "active-B" : ""}
@@ -217,16 +190,10 @@ const BMICalculator = () => {
                       )
                     }
                     placeholder="65kg"
-                    className={`numeric-input-B ${
-                      weightError ? "error-B" : ""
-                    }`}
+                    className={`numeric-input-B ${weightError ? "error-B" : ""}`}
                     pattern="[0-9]*"
                   />
-                  {weightError && (
-                    <p className="error-message-B weight-height-error-B">
-                      {weightError}
-                    </p>
-                  )}
+                  {weightError && <p className="error-message-B">{weightError}</p>}
                 </div>
                 <div className="input-group-B">
                   <label>Height</label>
@@ -242,16 +209,10 @@ const BMICalculator = () => {
                       )
                     }
                     placeholder="180cm"
-                    className={`numeric-input-B ${
-                      heightError ? "error-B" : ""
-                    }`}
+                    className={`numeric-input-B ${heightError ? "error-B" : ""}`}
                     pattern="[0-9]*"
                   />
-                  {heightError && (
-                    <p className="error-message-B weight-height-error-B">
-                      {heightError}
-                    </p>
-                  )}
+                  {heightError && <p className="error-message-B">{heightError}</p>}
                 </div>
               </div>
               <div className="bmi-buttons-B">
@@ -276,7 +237,7 @@ const BMICalculator = () => {
         <div className="right-panel-B">
           {!showResults ? (
             <form className="input-section-B" onSubmit={calculateBmi}>
-              <div className=".Calculator-circles-S1-B"></div>
+              <div className="Calculator-circles-S1-B"></div>
               <div className="Calculator-one-circle-s1-B"></div>
               <h2 className="BMI-parameters-side1-B">Body Parameters</h2>
               <div className="gender-selection-B">
@@ -315,7 +276,7 @@ const BMICalculator = () => {
               </div>
               <div className="flex-inputs-B">
                 <div className="input-group-B">
-                  <label>Weight</label>
+                  <label>weight</label>
                   <input
                     type="text"
                     value={weight}
@@ -328,19 +289,13 @@ const BMICalculator = () => {
                       )
                     }
                     placeholder="65kg"
-                    className={`numeric-input-B ${
-                      weightError ? "error-B" : ""
-                    }`}
+                    className={`numeric-input-B ${weightError ? "error-B" : ""}`}
                     pattern="[0-9]*"
                   />
-                  {weightError && (
-                    <p className="error-message-B weight-height-error-B">
-                      {weightError}
-                    </p>
-                  )}
+                  {weightError && <p className="error-message-B">{weightError}</p>}
                 </div>
                 <div className="input-group-B">
-                  <label>Height</label>
+                  <label>height</label>
                   <input
                     type="text"
                     value={height}
@@ -353,16 +308,10 @@ const BMICalculator = () => {
                       )
                     }
                     placeholder="180cm"
-                    className={`numeric-input-B ${
-                      heightError ? "error-B" : ""
-                    }`}
+                    className={`numeric-input-B ${heightError ? "error-B" : ""}`}
                     pattern="[0-9]*"
                   />
-                  {heightError && (
-                    <p className="error-message-B weight-height-error-B">
-                      {heightError}
-                    </p>
-                  )}
+                  {heightError && <p className="error-message-B">{heightError}</p>}
                 </div>
               </div>
               <div className="bmi-buttons-B">
@@ -435,7 +384,7 @@ const BMICalculator = () => {
                 >
                   Calculate Again
                 </button>
-                <Link to="/Calculators"> {/* التعديل هنا: استخدمنا Link */}
+                <Link to="/Calculators">
                   <button className="other-calculators-btn-B">
                     Other Calculators
                   </button>
@@ -445,6 +394,20 @@ const BMICalculator = () => {
           )}
         </div>
       </div>
+
+      {showPopup && (
+        <div className="popup-overlay-B">
+          <div className="popup-B">
+            <p>{popupMessage}</p>
+            <button
+              className="popup-close-btn-B"
+              onClick={() => setShowPopup(false)}
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 };
