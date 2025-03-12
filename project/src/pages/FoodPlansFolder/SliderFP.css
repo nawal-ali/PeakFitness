@@ -16,13 +16,13 @@ body {
   background-size: cover;
 }
 
-.carousel-PT.carousel-PT-SFP .logo-FP.logo-FP-SFP {
+/* .carousel-PT.carousel-PT-SFP .logo-FP.logo-FP-SFP {
   position: absolute;
   top: 25px;
   left: 25px;
   width: 450px;
   z-index: 30;
-}
+} */
 
 /* content overlay */
 .carousel-PT.carousel-PT-SFP .content-overlay.content-overlay-SFP {

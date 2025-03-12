@@ -10,9 +10,8 @@ import BMI from "./pages/calcsFolder/BMI/BMI";
 import BodyFat from "./pages/calcsFolder/Body-Fat/BodyFat";
 import Calorie from "./pages/calcsFolder/Calorie/Calorie";
 import Weight from "./pages/calcsFolder/Ideal-Weight/Weight";
-import Slider_FP from "./pages/Food-Plan/Slider-FP/Slider-FP";
-import WeightGain from "./pages/Food-Plan/Weight-Gain/weight-Gain-FP";
-
+import Slider_FP from "./pages/FoodPlansFolder/Slider-FP/Slider-FP";
+import WeightGain from "./pages/FoodPlansFolder/Weight-Gain/Weight-Gain-FP"
 function App() {
   return (
     <>

@@ -18,7 +18,7 @@ body {
 .left-panel-F .small-image-F {
   width: 130px;
   height: 130px;
-  background-image: url("./logo/fat.svg");
+  background-image: url("/public/logo/Fat.svg");
   background-position: 75% center;
   background-repeat: no-repeat;
   background-size: cover;
