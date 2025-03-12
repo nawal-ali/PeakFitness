@@ -1,21 +1,5 @@
-// import Navbar from "../../../assets/navFolder/Navbar";
-// import "./weight.css";
-
-// export default function Weight() {
-//   return (
-//     <>
-//       <Navbar />
-//       {/* write all code within this div because nav has fixed position
-//        and content will be placed bahind it if it does not have margin top */}
-//       <div style={{ marginTop: "9%" }}>
-//         <p>Weight works</p>
-//       </div>
-//     </>
-//   );
-// }
-
 import { useState, useEffect } from "react";
-import { Link } from 'react-router-dom'; // 
+import { Link } from "react-router-dom";
 import Navbar from "../../../assets/navFolder/Navbar";
 import "./weight.css";
 
@@ -33,12 +17,14 @@ const IdealCalculator = () => {
     const parsedHeight = parseInt(savedHeight) || "";
     return parsedHeight >= 0 ? parsedHeight.toString() : "";
   });
-  const [idealWeight, setIdealWeight] = useState(null); // Average ideal weight
-  const [formulaWeights, setFormulaWeights] = useState(null); // Individual formula weights
+  const [idealWeight, setIdealWeight] = useState(null);
+  const [formulaWeights, setFormulaWeights] = useState(null);
   const [showResults, setShowResults] = useState(false);
   const [bmiRange, setBmiRange] = useState(null);
   const [ageError, setAgeError] = useState("");
   const [heightError, setHeightError] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupMessage, setPopupMessage] = useState("");
 
   useEffect(() => {
     localStorage.setItem("gender", gender);
@@ -52,7 +38,6 @@ const IdealCalculator = () => {
       errorSetter("");
       return;
     }
-
     const numericValue = parseInt(value);
     if (isNaN(numericValue) || numericValue < 0) {
       errorSetter("Please enter a positive number.");
@@ -66,11 +51,13 @@ const IdealCalculator = () => {
   const calculateIdealWeight = (e) => {
     e.preventDefault();
     if (!gender) {
-      alert("Please select a gender before calculating.");
+      setPopupMessage("Please select a gender before calculating.");
+      setShowPopup(true);
       return;
     }
     if (!height) {
-      alert("Please enter your height before calculating.");
+      setPopupMessage("Please enter your height before calculating.");
+      setShowPopup(true);
       return;
     }
 
@@ -80,24 +67,22 @@ const IdealCalculator = () => {
     let robinson, miller, devine, hamwi;
 
     if (gender === "male") {
-      robinson = 52 + 1.9 * (heightInInches - 60); // Convert lbs to kg
-      miller = 56.2 + 1.41 * (heightInInches - 60); // Convert lbs to kg
-      devine = 50 + 2.3 * (heightInInches - 60); // Already in kg
-      hamwi = 48 + 2.7 * (heightInInches - 60); // Already in kg
+      robinson = 52 + 1.9 * (heightInInches - 60);
+      miller = 56.2 + 1.41 * (heightInInches - 60);
+      devine = 50 + 2.3 * (heightInInches - 60);
+      hamwi = 48 + 2.7 * (heightInInches - 60);
     } else {
-      robinson = 49 + 1.7 * (heightInInches - 60); // Convert lbs to kg
-      miller = 53.1 + 1.36 * (heightInInches - 60); // Convert lbs to kg
-      devine = 45.5 + 2.3 * (heightInInches - 60); // Already in kg
-      hamwi = 45.5 + 2.2 * (heightInInches - 60); // Already in kg
+      robinson = 49 + 1.7 * (heightInInches - 60);
+      miller = 53.1 + 1.36 * (heightInInches - 60);
+      devine = 45.5 + 2.3 * (heightInInches - 60);
+      hamwi = 45.5 + 2.2 * (heightInInches - 60);
     }
 
-    // Round to 1 decimal place
     robinson = robinson.toFixed(1);
     miller = miller.toFixed(1);
     devine = devine.toFixed(1);
     hamwi = hamwi.toFixed(1);
 
-    // Average in kg
     const averageIdealWeight = (
       (parseFloat(robinson) +
         parseFloat(miller) +
@@ -105,12 +90,8 @@ const IdealCalculator = () => {
         parseFloat(hamwi)) /
       4
     ).toFixed(1);
-    const minHealthyWeight = (18.5 * heightInMeters * heightInMeters).toFixed(
-      1
-    );
-    const maxHealthyWeight = (24.9 * heightInMeters * heightInMeters).toFixed(
-      1
-    );
+    const minHealthyWeight = (18.5 * heightInMeters * heightInMeters).toFixed(1);
+    const maxHealthyWeight = (24.9 * heightInMeters * heightInMeters).toFixed(1);
     const bmiRangeText = `${minHealthyWeight} - ${maxHealthyWeight} kg`;
 
     setIdealWeight(averageIdealWeight);
@@ -126,65 +107,56 @@ const IdealCalculator = () => {
   };
 
   const recalculateFromInputs = () => {
-    if (height && gender) {
-      const heightInCm = parseInt(height);
-      const heightInMeters = heightInCm / 100;
-      const heightInInches = heightInCm / 2.54;
-
-      let robinson, miller, devine, hamwi;
-
-      if (gender === "male") {
-        robinson = 52 + 1.9 * (heightInInches - 60);
-        miller = 56.2 + 1.41 * (heightInInches - 60);
-        devine = 50 + 2.3 * (heightInInches - 60);
-        hamwi = 48 + 2.7 * (heightInInches - 60);
-      } else {
-        robinson = 49 + 1.7 * (heightInInches - 60);
-        miller = 53.1 + 1.36 * (heightInInches - 60);
-        devine = 45.5 + 2.3 * (heightInInches - 60);
-        hamwi = 45.5 + 2.2 * (heightInInches - 60);
-      }
-
-      robinson = robinson.toFixed(1);
-      miller = miller.toFixed(1);
-      devine = devine.toFixed(1);
-      hamwi = hamwi.toFixed(1);
-
-      const averageIdealWeight = (
-        (parseFloat(robinson) +
-          parseFloat(miller) +
-          parseFloat(devine) +
-          parseFloat(hamwi)) /
-        4
-      ).toFixed(1);
-      const minHealthyWeight = (18.5 * heightInMeters * heightInMeters).toFixed(
-        1
-      );
-      const maxHealthyWeight = (24.9 * heightInMeters * heightInMeters).toFixed(
-        1
-      );
-      const bmiRangeText = `${minHealthyWeight} - ${maxHealthyWeight} kg`;
-
-      setIdealWeight(averageIdealWeight);
-      setFormulaWeights({
-        robinson,
-        miller,
-        devine,
-        hamwi,
-        bmiRange: bmiRangeText,
-      });
-      setBmiRange(bmiRangeText);
-      setShowResults(true);
-    } else {
-      alert(
-        "Please fill in all fields, including gender, before recalculating."
-      );
+    if (!height || !gender) {
+      setPopupMessage("Please fill in all fields, including gender, before recalculating.");
+      setShowPopup(true);
+      return;
     }
-  };
 
-  // const resetForm = () => {
-  //   recalculateFromInputs();
-  // };
+    const heightInCm = parseInt(height);
+    const heightInMeters = heightInCm / 100;
+    const heightInInches = heightInCm / 2.54;
+    let robinson, miller, devine, hamwi;
+
+    if (gender === "male") {
+      robinson = 52 + 1.9 * (heightInInches - 60);
+      miller = 56.2 + 1.41 * (heightInInches - 60);
+      devine = 50 + 2.3 * (heightInInches - 60);
+      hamwi = 48 + 2.7 * (heightInInches - 60);
+    } else {
+      robinson = 49 + 1.7 * (heightInInches - 60);
+      miller = 53.1 + 1.36 * (heightInInches - 60);
+      devine = 45.5 + 2.3 * (heightInInches - 60);
+      hamwi = 45.5 + 2.2 * (heightInInches - 60);
+    }
+
+    robinson = robinson.toFixed(1);
+    miller = miller.toFixed(1);
+    devine = devine.toFixed(1);
+    hamwi = hamwi.toFixed(1);
+
+    const averageIdealWeight = (
+      (parseFloat(robinson) +
+        parseFloat(miller) +
+        parseFloat(devine) +
+        parseFloat(hamwi)) /
+      4
+    ).toFixed(1);
+    const minHealthyWeight = (18.5 * heightInMeters * heightInMeters).toFixed(1);
+    const maxHealthyWeight = (24.9 * heightInMeters * heightInMeters).toFixed(1);
+    const bmiRangeText = `${minHealthyWeight} - ${maxHealthyWeight} kg`;
+
+    setIdealWeight(averageIdealWeight);
+    setFormulaWeights({
+      robinson,
+      miller,
+      devine,
+      hamwi,
+      bmiRange: bmiRangeText,
+    });
+    setBmiRange(bmiRangeText);
+    setShowResults(true);
+  };
 
   const clearInputs = () => {
     setGender("");
@@ -220,16 +192,17 @@ const IdealCalculator = () => {
                 </h1>
                 <div className="under-header-I">
                   <p>
-                    It Helps Determine Your Ideal Body Weight Ranges Based On
-                    Popular Formulas Like Robinson, Miller, Devine, And Hamwi.
+                    It Computes Ideal Body Weight Ranges Based On
+                    Height, Gender, And Age.
                   </p>
                 </div>
+                <div className="Arrow-right-I"></div>
               </div>
             </>
           ) : (
             <form className="input-section-I" onSubmit={calculateIdealWeight}>
               <div className="Calculator-one-circle-I"></div>
-              <h2 className="body-parameters-side2-I">Body Parameters</h2>
+              <h2 className="Ideal-parameters-side2-I">Body Parameters</h2>
               <div className="gender-selection-I">
                 <button
                   className={`gender-btn-I ${
@@ -311,9 +284,9 @@ const IdealCalculator = () => {
         <div className="right-panel-I">
           {!showResults ? (
             <form className="input-section-I" onSubmit={calculateIdealWeight}>
-              <div className="Calculator-circles-I"></div>
+              <div className="Calculator-circles-S1-I"></div>
               <div className="Calculator-one-circle-s1-I"></div>
-              <h2 className="body-parameters-side1-I">Body Parameters</h2>
+              <h2 className="Ideal-parameters-side1-I">Body Parameters</h2>
               <div className="gender-selection-I">
                 <button
                   className={`gender-btn-I ${
@@ -393,7 +366,7 @@ const IdealCalculator = () => {
             </form>
           ) : (
             <div className="result-section-I">
-              <div className="Calculator-circles-side2-I"></div>
+              <div className="Calculator-circles-S2-I"></div>
               <div className="result-logo-I"></div>
               <div className="result-header-I">
                 <h2>Your Result</h2>
@@ -428,10 +401,8 @@ const IdealCalculator = () => {
                       <td>{formulaWeights?.hamwi} kg</td>
                     </tr>
                     <tr>
-                      <td className="ideal-weight-value-I">
-                        Healthy BMI Range
-                      </td>
-                      <td>{formulaWeights?.bmiRange} kg</td>
+                      <td className="ideal-weight-value-I">Healthy BMI Range</td>
+                      <td>{formulaWeights?.bmiRange}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -443,7 +414,7 @@ const IdealCalculator = () => {
                 >
                   Calculate Again
                 </button>
-                <Link to="/Calculators"> {/* التعديل هنا: استخدمنا Link */}
+                <Link to="/Calculators">
                   <button className="other-calculators-btn-B">
                     Other Calculators
                   </button>
@@ -453,6 +424,20 @@ const IdealCalculator = () => {
           )}
         </div>
       </div>
+
+      {showPopup && (
+        <div className="popup-overlay-I">
+          <div className="popup-I">
+            <p>{popupMessage}</p>
+            <button
+              className="popup-close-btn-I"
+              onClick={() => setShowPopup(false)}
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 };

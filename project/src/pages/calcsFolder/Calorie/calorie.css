@@ -4,7 +4,9 @@
 body {
   padding-right: 0;
 }
-
+input::-webkit-input-placeholder {
+  letter-spacing: 1px;
+  }
 .calorie-calculator-C {
   display: flex;
   width: 100vw;
@@ -190,9 +192,9 @@ body {
 
 .input-group-C input {
   width: 100%;
-  padding: 8px;
+  padding: 13px 20px;
   border: 2px solid #fff;
-  border-radius: 25px;
+  border-radius: 30px;
   font-size: 16px;
   box-sizing: border-box;
   background-color: #fff;
@@ -577,7 +579,7 @@ p.calories-C {
   height: 360px;
   background: rgba(255, 255, 255, 0.12);
   border-radius: 50%;
-  filter: blur(60px);
+  filter: blur(120px);
 }
 
 .Calculator-circles-S1-C::before { top: 80%; left: 120%; }
@@ -609,10 +611,6 @@ p.calories-C {
   width: 100%;
 }
 
-input,
-select {
-  border-radius: 20px !important;
-}
 
 .clear-btn-C {
   background-color: transparent;
