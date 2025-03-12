@@ -15,6 +15,7 @@
 // }
 
 import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom'; // 
 import Navbar from "../../../assets/navFolder/Navbar";
 import "./weight.css";
 
@@ -442,9 +443,11 @@ const IdealCalculator = () => {
                 >
                   Calculate Again
                 </button>
-                <button className="other-calculators-btn-I">
-                  Other Calculators
-                </button>
+                <Link to="/Calculators"> {/* التعديل هنا: استخدمنا Link */}
+                  <button className="other-calculators-btn-B">
+                    Other Calculators
+                  </button>
+                </Link>
               </div>
             </div>
           )}

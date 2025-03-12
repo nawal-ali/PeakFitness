@@ -16,6 +16,7 @@
 // }
 
 import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom'; // 
 import Navbar from "../../../assets/navFolder/Navbar";
 import "./bmi.css";
 
@@ -275,9 +276,9 @@ const BMICalculator = () => {
         <div className="right-panel-B">
           {!showResults ? (
             <form className="input-section-B" onSubmit={calculateBmi}>
-              <div className="Calculator-circles-B"></div>
+              <div className=".Calculator-circles-S1-B"></div>
               <div className="Calculator-one-circle-s1-B"></div>
-              <h2 className="body-parameters-side1-B">Body Parameters</h2>
+              <h2 className="BMI-parameters-side1-B">Body Parameters</h2>
               <div className="gender-selection-B">
                 <button
                   className={gender === "male" ? "active-B" : ""}
@@ -434,9 +435,11 @@ const BMICalculator = () => {
                 >
                   Calculate Again
                 </button>
-                <button className="other-calculators-btn-B">
-                  Other Calculators
-                </button>
+                <Link to="/Calculators"> {/* التعديل هنا: استخدمنا Link */}
+                  <button className="other-calculators-btn-B">
+                    Other Calculators
+                  </button>
+                </Link>
               </div>
             </div>
           )}

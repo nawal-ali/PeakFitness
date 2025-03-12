@@ -15,6 +15,7 @@
 // }
 
 import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom'; // 
 import Navbar from "../../../assets/navFolder/Navbar";
 import "./body.css";
 
@@ -296,7 +297,7 @@ const BodyFatCalc = () => {
                   Female
                 </button>
               </div>
-              <div className="input-group-F">
+              <div className="input-group-F">  {/*-F Fat*/}
                 <label>Age</label>
                 <input
                   type="text"
@@ -640,9 +641,11 @@ const BodyFatCalc = () => {
                 >
                   Calculate Again
                 </button>
-                <button className="other-calculators-btn-F">
-                  Other Calculators
-                </button>
+                <Link to="/Calculators"> {/* التعديل هنا: استخدمنا Link */}
+                  <button className="other-calculators-btn-B">
+                    Other Calculators
+                  </button>
+                </Link>
               </div>
             </div>
           )}

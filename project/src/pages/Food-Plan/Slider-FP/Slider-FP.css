@@ -34,7 +34,7 @@ body {
   text-align: left;
   max-width: 401px;
   z-index: 20;
-  transition: opacity 2s ease; /* إخفاء في 2 ثانية */
+  transition: opacity 0.5s ease; /* إخفاء في 2 ثانية */
 }
 
 /* animations for content */
@@ -47,7 +47,7 @@ body {
 }
 
 .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP.animate.animate-SFP {
-  animation: fadeIn 1s ease-out forwards;
+  animation: fadeIn 1s ease-out  forwards;
 }
 
 .carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP.animate.animate-SFP {
@@ -55,11 +55,11 @@ body {
 }
 
 .carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP.animate.animate-SFP {
-  animation: fadeIn 1s ease-out 1s forwards;
+  animation: fadeIn 1s ease-out 0.5s forwards;
 }
 
 .carousel-PT.carousel-PT-SFP .read-more-btn.read-more-btn-SFP.animate.animate-SFP {
-  animation: fadeIn 1s ease-out 1.5s forwards;
+  animation: fadeIn 1s ease-out 0.5s forwards;
 }
 
 /* تنسيق title */
@@ -164,7 +164,7 @@ body {
   height: 100%;
   object-fit: cover;
   filter: grayscale(100%) brightness(70%);
-  transition: all 1s ease;
+  transition: all 0.5s ease;
 }
 
 /* thumbnail counter */
@@ -173,7 +173,7 @@ body {
   color: white;
   font-weight: bold;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-  transition: opacity 2s ease; /* إخفاء في 2 ثانية */
+  transition: opacity 0.5s ease; /* إخفاء في 2 ثانية */
   z-index: 15;
   position: absolute;
   bottom: 25px;
@@ -190,7 +190,7 @@ body {
   justify-content: space-between;
   z-index: 15;
   transform: translateY(-50%);
-  transition: opacity 2s ease; /* إخفاء في 2 ثانية */
+  transition: opacity 0.5s ease; /* إخفاء في 2 ثانية */
 }
 
 .carousel-PT.carousel-PT-SFP .arrows-PT.arrows-PT-SFP button {
@@ -230,7 +230,7 @@ body {
   display: flex;
   gap: 10px;
   z-index: 10;
-  transition: opacity 2s ease; /* إخفاء في 2 ثانية */
+  transition: opacity 0.5s ease; /* إخفاء في 2 ثانية */
 }
 
 .carousel-PT.carousel-PT-SFP .dot.dot-SFP {
@@ -342,5 +342,5 @@ body {
 /* Hide class for overlay, arrows, dots, and counter */
 .hide.hide-SFP {
   opacity: 0;
-  transition: opacity 2s ease; /* إخفاء في 2 ثانية */
+  transition: opacity 0.5s ease; /* إخفاء في 2 ثانية */
 }

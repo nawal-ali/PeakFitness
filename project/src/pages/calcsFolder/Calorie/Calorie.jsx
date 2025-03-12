@@ -15,8 +15,9 @@
 // }
 
 import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom'; // 
 import Navbar from "../../../assets/navFolder/Navbar";
-import "./cal.css";
+import "./calorie.css";
 
 const CalorieCalculator = () => {
   const [gender, setGender] = useState(() => {
@@ -167,20 +168,6 @@ const CalorieCalculator = () => {
     }
   };
 
-  const handleCalculateAgain = () => {
-    const calorieCalculator = document.querySelector(".calorie-calculator-C");
-    calorieCalculator.classList.add("restart-animation-C");
-
-    setTimeout(() => {
-      calorieCalculator.classList.remove("restart-animation-C");
-      recalculateFromInputs();
-    }, 50);
-  };
-
-  // const resetForm = () => {
-  //   recalculateFromInputs();
-  // };
-
   const clearInputs = () => {
     setGender("");
     setAge("");
@@ -210,21 +197,22 @@ const CalorieCalculator = () => {
               <div className="background-image-C"></div>
               <div className="content-C">
                 <div className="small-image-C"></div>
-                <h1>
-                  Calorie <br /> Calculator
+                <h1 className="Calorie-title-C">
+                  <span className="title-C">Calorie</span>
+                  <span className="title-C">Calculator</span>
                 </h1>
                 <p className="under-header-C">
                   Calculate Optimal Macronutrient Ratios For Your Body
-                </p>
-                <p className="under-header-C">
                   Enter Your Age, Weight, And Activity Level
                 </p>
+                <div className="Arrow-right-C"> 
+                </div>
               </div>
             </>
           ) : (
             <form className="input-section-C" onSubmit={calculateCalories}>
               <div className="Calculator-one-circle-C"></div>
-              <h2 className="body-parameters-side2-C">Body Parameters</h2>
+              <h2 className="Calorie-parameters-side2-C">Body Parameters</h2>
               <div className="gender-selection-C">
                 <button
                   className={gender === "male" ? "active-C" : ""}
@@ -245,7 +233,7 @@ const CalorieCalculator = () => {
                   Female
                 </button>
               </div>
-              <div className="input-group-C">
+              <div className="input-group-C"> {/*-C Calorie*/ }
                 <label>Age</label>
                 <input
                   type="text"
@@ -367,7 +355,7 @@ const CalorieCalculator = () => {
                   </div>
                 </div>
               </div>
-              <div className="buttons-C">
+              <div className="Calorie-buttons-Result-C">
                 <input
                   type="button"
                   value="Clear"
@@ -389,8 +377,8 @@ const CalorieCalculator = () => {
         <div className="right-panel-C">
           {!showResults ? (
             <form className="input-section-C" onSubmit={calculateCalories}>
-              <div className="Calculator-circles-C"></div>
-              <h2 className="body-parameters-side1-C">Body Parameters</h2>
+              <div className="Calculator-circles-S1-C"></div>{/*Side1-Calorie*/}
+              <h2 className="Calorie-parameters-side1-C">Body Parameters</h2>
               <div className="gender-selection-C">
                 <button
                   className={gender === "male" ? "active-C" : ""}
@@ -533,7 +521,7 @@ const CalorieCalculator = () => {
                   </div>
                 </div>
               </div>
-              <div className="buttons-C">
+              <div className="Calorie-buttons-C">
                 <div className="Calculator-circles-C"></div>
                 <input
                   type="button"
@@ -554,7 +542,7 @@ const CalorieCalculator = () => {
           ) : (
             <div className="result-section-C">
               <div className="Calculator-circles-side2-C"></div>
-              <div className="logo-C"></div>
+              <div className="result-logo-C"></div>
               <div className="result-header-C">
                 <h2>Your Result</h2>
                 <p className="calories-C">
@@ -618,16 +606,19 @@ const CalorieCalculator = () => {
                   Kcal
                 </p>
               )}
-              <div className="result-buttons-C">
+              <div className="calorie-buttons-Result-C">
                 <button
                   className="calculate-btn-C"
                   onClick={recalculateFromInputs}
                 >
                   Calculate Again
                 </button>
-                <button className="other-calculators-btn-C">
-                  Other Calculators
-                </button>
+
+                <Link to="/Calculators"> {/* التعديل هنا: استخدمنا Link */}
+                  <button className="other-calculators-btn-B">
+                    Other Calculators
+                  </button>
+                </Link>
               </div>
             </div>
           )}

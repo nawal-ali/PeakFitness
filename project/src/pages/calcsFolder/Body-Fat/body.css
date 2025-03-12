@@ -1,13 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Jomhuria&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
-/* body,
-html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: "Nunito Sans";
-  overflow: hidden;
-} */
 body {
   padding-right: 0;
 }
@@ -313,10 +305,6 @@ body {
   transition: 0.3s ease;
 }
 
-.reset-btn-F {
-  background-color: #444;
-  color: white;
-}
 
 .calculate-btn-F:hover,
 .clear-btn-F:hover,

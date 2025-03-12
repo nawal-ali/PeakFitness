@@ -74,18 +74,18 @@ const Slider_FP = () => {
       setTimeout(() => {
         setMoveLeft(true);
         console.log("moveLeft set to true");
-      }, 2000);
+      }, 1000);
 
       setTimeout(() => {
         setScaleZero(true);
         console.log("scaleZero set to true");
-      }, 3000);
+      }, 1000);
 
       setTimeout(() => {
         console.log("Navigating to /weight-gain-details");
         navigate("/weight-gain-details", { replace: false });
         console.log("Navigation completed");
-      }, 4000);
+      }, 2500);
     }
   };
 
