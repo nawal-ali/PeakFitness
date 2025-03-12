@@ -16,7 +16,7 @@ body {
 
 .Calorie-title-C {
   font-size: 50px;
-  margin-bottom: 10px;
+  margin-bottom: -10px;
   z-index: 2;
   color: #ec7e4a;
   font-weight: bold;
@@ -26,6 +26,7 @@ body {
 
 .title-C {
   display: block;
+  line-height: 80px;
 }
 
 .left-panel-C {
@@ -82,24 +83,26 @@ body {
   text-align: center;
   color: white;
   z-index: 2;
+  margin-bottom: -20px;
 }
 
 .left-panel-C .small-image-C {
-  width: 130px;
-  height: 130px;
+  width: 110px;
+  height: 110px;
   background-position: 75% center;
   background-image: url("./logo/KCAL.svg");
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 2;
-  margin-bottom: 10px;
+  margin-bottom: -5px;
 }
 
 .left-panel-C .under-header-C {
-  font-size: 28px;
+  font-size: 25px;
   color: #fff;
   z-index: 2;
-  width: 102%;
+  width: 90%;
+  margin-bottom: 50px;
 }
 
 .left-panel-C .arrow-C {
@@ -141,18 +144,16 @@ body {
   background-color: white;
   color: black;
   border: none;
-  padding: 10px 0;
-  border-radius: 20px;
+  padding: 6px 0;
+  border-radius: 50px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 25px;
   font-weight: bold;
   transition: background-color 0.3s ease;
   flex: 1;
   width: 100%;
   box-sizing: border-box;
 }
-
-
 
 .gender-selection-C button.active-C {
   background-color: #ec7e4a;
@@ -167,10 +168,7 @@ body {
 }
 
 .input-group-C {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
+  text-align: left;
   width: 100%;
   padding: 10px;
   margin: 20px 0;
@@ -182,10 +180,12 @@ body {
   text-align: center;
 }
 
-.input-group-C label {
+.input-group-C label,.activity-slider-C label {
   display: block;
   margin-bottom: 10px;
   color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
 .input-group-C input {
@@ -209,14 +209,9 @@ body {
   margin-bottom: 15px;
   text-align: left;
   margin-top: 30px;
+  margin-left: 10px;
 }
 
-.activity-slider-C label {
-  display: block;
-  margin-bottom: 10px;
-  color: white;
-  font-weight: bold;
-}
 
 .slider-track-C {
   display: flex;
@@ -473,6 +468,37 @@ p.calories-C {
   text-align: center;
   font-size: 16px;
   font-weight: bold;
+  opacity: 0; /* Start hidden */
+  transform: translateX(-20px); /* Start slightly to the left */
+}
+
+.show-results-C .meals-toggle-C button {
+  animation: slideInToggle 0.5s ease-out forwards; /* 0.5s duration per button */
+}
+
+/* Staggered delays for each meals-toggle button */
+.show-results-C .meals-toggle-C button:nth-child(1) {
+  animation-delay: 0s; /* "Per Day" starts immediately */
+}
+
+.show-results-C .meals-toggle-C button:nth-child(2) {
+  animation-delay: 0.5s; /* "3 Meals" starts after 0.5s */
+}
+
+.show-results-C .meals-toggle-C button:nth-child(3) {
+  animation-delay: 1s; /* "4 Meals" starts after 1s */
+}
+
+/* Define the slideInToggle animation */
+@keyframes slideInToggle {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px); /* Start left */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* End at normal position */
+  }
 }
 
 .meals-toggle-C button.active-C {
@@ -482,6 +508,7 @@ p.calories-C {
 
 .meals-toggle-C button:hover {
   opacity: 0.9;
+  background-color: rgba(236, 126, 75, 0.3);
 }
 
 .calorie-calculator-C {
@@ -536,12 +563,13 @@ p.calories-C {
   background-position: center;
   z-index: 300;
 }
-/*Circles*/
+
+/* Circles */
 .Calculator-circles-S1-C::before,
-.Calculator-circles-S1-C::after ,
+.Calculator-circles-S1-C::after,
 .Calculator-circles-side2-C,
 .Calculator-circles-side2-C::after,
-.Calculator-circles-side2-C::before{
+.Calculator-circles-side2-C::before {
   content: "";
   position: absolute;
   transform: translateX(-50%);
@@ -551,12 +579,24 @@ p.calories-C {
   border-radius: 50%;
   filter: blur(60px);
 }
-.Calculator-circles-S1-C::before {top: 80%;left: 120%;}
-.Calculator-circles-S1-C::after {top: -200px;left: -165px;}
-.Calculator-circles-side2-C {top: 100px;right: 25%;}
-.Calculator-circles-side2-C::after {top: 345px;left: 50%;}
-.Calculator-circles-side2-C::before {top: -400px;left: 50%;}
-.Calculator-one-circle-C::before {content: "";position: absolute;top: -165px;left: -150px;width: 160px;height: 160px;background: radial-gradient(circle at top center, #ec7e4a 0%, #0a1b30 80%);border-radius: 50%;opacity: 0.9;z-index: 1;}
+
+.Calculator-circles-S1-C::before { top: 80%; left: 120%; }
+.Calculator-circles-S1-C::after { top: -200px; left: -165px; }
+.Calculator-circles-side2-C { top: 100px; right: 25%; }
+.Calculator-circles-side2-C::after { top: 345px; left: 50%; }
+.Calculator-circles-side2-C::before { top: -400px; left: 50%; }
+.Calculator-one-circle-C::before {
+  content: "";
+  position: absolute;
+  top: -140px;
+  left: -220px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle at top center, #ec7e4a 0%, #0a1b30 80%);
+  border-radius: 50%;
+  opacity: 0.9;
+  z-index: 1;
+}
 
 .flex-inputs-C {
   display: flex;
@@ -619,16 +659,14 @@ select {
   font-size: 12px;
   margin-top: 5px;
   text-align: left;
+  position: absolute; /* Changed to absolute */
+  top: 100%; /* Position it directly below the input */
+  left: 10px; /* Align with the padding of the input-group-C */
+  z-index: 2; /* Ensure it appears above other elements */
 }
 
 .error-message-C.weight-height-error-C {
-  color: #ff0000;
-  font-size: 12px;
-  position: absolute;
-  bottom: -40px;
-  left: 0;
-  margin: 0;
-  width: 100%;
+  display: none; /* Deprecated, no longer needed */
 }
 
 .numeric-input-C.error-C {
@@ -644,40 +682,7 @@ select {
   background-size: cover;
 }
 
-.Calorie-buttons-Result-C {
-  display: none;
-}
 
-.meals-toggle-C button {
-  padding: 5px 10px;
-  border-radius: 20px;
-  outline: none;
-  margin-left: 40px;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.5);
-  color: #fff;
-  margin-bottom: 10px;
-  cursor: pointer;
-  width: 100px;
-  text-align: center;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-}
-
-.meals-toggle-C button.active-C {
-  background-color: rgba(236, 126, 75, 0.3);
-  color: white;
-}
-
-.meals-toggle-C button:not(.active-C) {
-  background-color: #8888;
-  color: #fff;
-}
-
-.meals-toggle-C button:hover {
-  opacity: 0.9;
-  background-color: rgba(236, 126, 75, 0.3);
-}
 
 @keyframes slideLeft {
   from {
@@ -767,6 +772,7 @@ select {
   position: relative;
   left: 30px;
 }
+
 .Arrow-right-C {
   width: 35px;
   height: 35px;
@@ -775,6 +781,69 @@ select {
   background-size: cover;
   z-index: 2;
 }
-.navbar-toggler {
-  border: none;
+
+.calorie-calculator-C.show-results-C .input-section-C .Calorie-buttons-Result-C {
+  display: none;
 }
+.popup-overlay-C {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-C {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 90%;
+}
+
+.popup-C p {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.popup-close-btn-C {
+  background-color: #ec7e4a;
+  color: white;
+  padding: 10px 80px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.popup-close-btn-C:hover {
+  background-color: #ff8c00;
+}
+/* ... (keep all other existing styles unchanged) ... */
+
+/* Ensure the input group is a positioning context */
+.input-group-C {
+  text-align: left;
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0;
+  position: relative; /* Added to make it the reference for absolute positioning */
+}
+
+/* Style for error messages to overlay without pushing content */
+
+
+/* Remove the weight-height-error-C class since we don't need it anymore */
+
+
+/* ... (keep all other existing styles unchanged) ... */
