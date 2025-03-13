@@ -1,29 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500&display=swap");
 
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Nunito Sans', sans-serif;
-}
-
-body {
-  font-family: 'Nunito Sans', sans-serif;
-} */
-
-/* .logo.logo-WG {
-  background-image: url('/public/logo/Logo-4.svg');
-  position: absolute;
-  top: 3%;
-  z-index: 1000;
-  width: 500px;
-  height: 175px;
-  background-repeat: no-repeat;
-  left: 1%;
-  background-size: cover;
-  opacity: 0; Start invisible
-} */
-
 /* Main Content */
 .main-content.main-content-WG {
   display: flex;
@@ -60,13 +36,6 @@ body {
   animation-delay: 1.5s; /* Delay right panel after buttons */
 }
 
-/* Logo Animation */
-.main-content.main-content-WG.mounted.mounted-WG .logo.logo-WG {
-  opacity: 1;
-  /* animation: fadeIn 0.6s ease-out forwards;
-  animation-delay: 0.2s;  */
-}
-
 /* Keyframes */
 @keyframes scaleIn {
   0% {
@@ -90,7 +59,7 @@ body {
 
 /* Left Panel */
 .left-panel.left-panel-WG {
-  width: 30%;
+  width: 33%;
   height: 75vh;
   /* padding: 20px; */
   background-image: url("/public/imgs/Weight-Gain.png");
@@ -105,7 +74,7 @@ body {
 
 .left-panel.left-panel-WG h1 {
   font-size: 5rem !important;
-  margin-bottom: 9%;
+  margin-bottom: 5%;
   text-align: left;
   /* margin-top: 50px; */
   /* margin-left: 20px; */
@@ -116,26 +85,26 @@ body {
 
 .button-row.button-row-WG {
   display: flex;
-  gap: 6%;
-  margin-bottom: 4%;
+  gap: 10%;
+  margin-bottom: 10%;
   width: 100%;
 }
 
 .nav-button.nav-button-WG {
   flex: 1;
-  /* padding: 5px; */
+  padding: 5px 2px;
   background-color: transparent;
-  border: 4px solid #ec7e4a;
+  border: 2px solid #ec7e4a;
   /* margin-bottom: 20px; */
   border-radius: 40px;
   color: #fff;
-  font-size: 1.3rem !important;
+  font-size: 1.2rem !important;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s;
   text-align: center;
   /* width: 100%; */
-  letter-spacing: 3.5px;
+  letter-spacing: 1.5px;
 }
 
 .nav-button.nav-button-WG:hover {
@@ -148,20 +117,21 @@ body {
 }
 
 .full-width.full-width-WG {
-  width: 100%;
-  /* padding: 5px 0px; */
+  width: 110%;
+  /* padding: 5px 12px; */
   /* margin-top: 40px; */
-  margin-bottom: 4%;
+  margin-bottom: 6%;
   background-color: transparent;
-  border: 4px solid #ec7e4a;
+  border: 2px solid #ec7e4a;
   border-radius: 40px;
   color: #fff;
-  font-size: 1.3rem !important;
+  font-size: 1.2rem !important;
   cursor: pointer;
   transition: background-color 0.3s;
   text-align: center;
-  /* margin-left: 30px; */
-  letter-spacing: 3.5px;
+  margin-left: -20px;
+  letter-spacing: 1.5px;
+  text-wrap: nowrap;
 }
 
 /* Right Panel */
@@ -171,13 +141,15 @@ body {
   overflow-y: scroll;
   margin-left: 40%;
   height: 78%;
-  margin-top: 7%;
+  margin-top: 3%;
   max-width: 70%;
 }
-
+ol li::marker {
+  content: counter(list-item) "- "; /* الرقم مع شرطة ومسافة */
+}
 .right-panel.right-panel-WG h2 {
   font-size: 5rem;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 
 .right-panel.right-panel-WG ol {
@@ -220,13 +192,13 @@ body {
 }
 
 .right-panel.right-panel-WG li {
-  margin-bottom: 8%;
-  font-size: 1.4rem;
+  margin-bottom: 1%;
+  font-size: 1.5rem;
 }
 
 .highlight.highlight-WG {
   color: #ec7e4a; /* Orange highlight for text */
-  font-size: 1.9rem;
+  font-size: 1.5rem;
 }
 
 .horizontal-line.horizontal-line-WG {

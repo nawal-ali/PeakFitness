@@ -25,7 +25,7 @@ const Slider_FP = () => {
       id: 1,
       name: "Weight Loss",
       quote: '"Smart Strategies For Shedding Extra Pounds"',
-      description: "Practical Advice TO Help You Reach Your Ideal Weight",
+      description: "Practical Advice TO Help You Reach Your Ideal Weight.",
       color: "#4aec7e",
       thumbnailImg: "/public/imgs/Weight-loss.png",
       backgroundImage: "/public/imgs/Food-Plan-W-L.png",
@@ -163,9 +163,9 @@ const Slider_FP = () => {
                 if (position === 0) {
                   transformValue = `translateX(0) scale(1)`;
                 } else if (position === 1) {
-                  transformValue = `translateX(200px) scale(0.6)`;
+                  transformValue = `translateX(280px) scale(0.5)`;
                 } else if (position === 2) {
-                  transformValue = `translateX(-200px) scale(0.6)`;
+                  transformValue = `translateX(-280px) scale(0.5)`;
                 } else {
                   transformValue = `translateX(${
                     position > 1 ? "600px" : "-600px"
@@ -177,11 +177,11 @@ const Slider_FP = () => {
                 console.log("isReadMoreClicked is true, isActive:", isActive);
                 if (isActive) {
                   if (scaleZero) {
-                    transformValue = `translateX(-160%) translateY(5%) scaleX(1) scaleY(1.15)`;
+                    transformValue = `translateX(-160%) translateY(5%) scaleX(1.15) scaleY(1.25)`;
                   } else if (moveLeft) {
-                    transformValue = `translateX(-160%) translateY(5%) scaleX(1) scaleY(1.15)`;
+                    transformValue = `translateX(-160%) translateY(5%) scaleX(1.15) scaleY(1.25)`;
                   } else {
-                    transformValue = `translateX(0) translateY(5%) scaleX(1) scaleY(1.15)`;
+                    transformValue = `translateX(0) translateY(5%) scaleX(1.15) scaleY(1.25)`;
                   }
                 } else {
                   transformValue = `translateX(${
