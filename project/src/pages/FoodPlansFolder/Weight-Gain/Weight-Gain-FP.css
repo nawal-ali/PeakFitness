@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500&display=swap");
 
 /* * {
   margin: 0;
@@ -11,7 +11,7 @@ body {
   font-family: 'Nunito Sans', sans-serif;
 } */
 
-.logo.logo-WG {
+/* .logo.logo-WG {
   background-image: url('/public/logo/Logo-4.svg');
   position: absolute;
   top: 3%;
@@ -21,8 +21,8 @@ body {
   background-repeat: no-repeat;
   left: 1%;
   background-size: cover;
-  opacity: 0; /* Start invisible */
-}
+  opacity: 0; Start invisible
+} */
 
 /* Main Content */
 .main-content.main-content-WG {
@@ -31,7 +31,7 @@ body {
   height: 100vh;
   width: 100vw;
   position: relative;
-  background-image: url('/public/imgs/Food-Plan-W-G.png');
+  background-image: url("/public/imgs/Food-Plan-W-G.png");
   background-size: cover;
   background-position: right;
   opacity: 0; /* Start invisible */
@@ -43,8 +43,11 @@ body {
 }
 
 /* Buttons Animation */
-.main-content.main-content-WG.mounted.mounted-WG .button-row.button-row-WG .nav-button.nav-button-WG,
-.main-content.main-content-WG.mounted.mounted-WG .nav-button.nav-button-WG.full-width.full-width-WG {
+.main-content.main-content-WG.mounted.mounted-WG
+  .button-row.button-row-WG
+  .nav-button.nav-button-WG,
+.main-content.main-content-WG.mounted.mounted-WG
+  .nav-button.nav-button-WG.full-width.full-width-WG {
   opacity: 0;
   animation: fadeIn 0.6s ease-out forwards;
   animation-delay: 0.8s; /* Delay buttons slightly after left panel */
@@ -89,22 +92,23 @@ body {
 .left-panel.left-panel-WG {
   width: 30%;
   height: 75vh;
-  padding: 20px;
-  background-image: url('/public/imgs/Weight-Gain.png');
+  /* padding: 20px; */
+  background-image: url("/public/imgs/Weight-Gain.png");
   background-size: cover;
   background-position: center;
   position: absolute;
+  padding: 3%;
   top: 17%;
   left: 4%;
   z-index: 1;
 }
 
 .left-panel.left-panel-WG h1 {
-  font-size: 180px;
-  margin-bottom: 20px;
+  font-size: 5rem !important;
+  margin-bottom: 9%;
   text-align: left;
-  margin-top: 50px;
-  margin-left: 20px;
+  /* margin-top: 50px; */
+  /* margin-left: 20px; */
   opacity: 0;
   animation: fadeIn 1s ease-out forwards;
   animation-delay: 0.2s; /* Logo appears slightly after left panel */
@@ -112,25 +116,25 @@ body {
 
 .button-row.button-row-WG {
   display: flex;
-  gap: 140px;
-  margin-bottom: 30px;
-  width: 90%;
+  gap: 6%;
+  margin-bottom: 4%;
+  width: 100%;
 }
 
 .nav-button.nav-button-WG {
   flex: 1;
-  padding: 5px;
+  /* padding: 5px; */
   background-color: transparent;
   border: 4px solid #ec7e4a;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   border-radius: 40px;
   color: #fff;
-  font-size: 40px;
+  font-size: 1.3rem !important;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s;
   text-align: center;
-  width: 100%;
+  /* width: 100%; */
   letter-spacing: 3.5px;
 }
 
@@ -140,21 +144,23 @@ body {
 
 .nav-button.nav-button-WG.active.active-WG {
   background-color: #ec7e4a;
+  padding-left: 0;
 }
 
 .full-width.full-width-WG {
-  width: 95%;
-  padding: 5px 0px;
-  margin-top: 40px;
+  width: 100%;
+  /* padding: 5px 0px; */
+  /* margin-top: 40px; */
+  margin-bottom: 4%;
   background-color: transparent;
   border: 4px solid #ec7e4a;
   border-radius: 40px;
   color: #fff;
-  font-size: 40px;
+  font-size: 1.3rem !important;
   cursor: pointer;
   transition: background-color 0.3s;
   text-align: center;
-  margin-left: 30px;
+  /* margin-left: 30px; */
   letter-spacing: 3.5px;
 }
 
@@ -163,15 +169,15 @@ body {
   flex: 1;
   padding: 40px;
   overflow-y: scroll;
-  margin-left: 50%;
+  margin-left: 40%;
   height: 78%;
   margin-top: 7%;
-  max-width: 40%;
+  max-width: 70%;
 }
 
 .right-panel.right-panel-WG h2 {
-  font-size: 130px;
-  margin-bottom: 20px;
+  font-size: 5rem;
+  margin-bottom: 10%;
 }
 
 .right-panel.right-panel-WG ol {
@@ -182,7 +188,7 @@ body {
 .right-panel.right-panel-WG ul {
   list-style-type: disc; /* تنسيق القائمة غير المرقمة */
   font-size: 40px; /* نفس حجم النص في li */
-  padding-left: 20px; /* مسافة من اليسار */
+  /* padding-left: 20px; مسافة من اليسار */
 }
 
 /* إزالة النقطة ومحاذاة لليسار لعناصر معينة */
@@ -214,13 +220,13 @@ body {
 }
 
 .right-panel.right-panel-WG li {
-  margin-bottom: 20px;
-  font-size: 40px;
+  margin-bottom: 8%;
+  font-size: 1.4rem;
 }
 
 .highlight.highlight-WG {
   color: #ec7e4a; /* Orange highlight for text */
-  font-size: 40px;
+  font-size: 1.9rem;
 }
 
 .horizontal-line.horizontal-line-WG {
@@ -240,7 +246,7 @@ body {
 
 .right-panel.right-panel-WG::-webkit-scrollbar-track {
   background: #80808075; /* خلفية الشريط */
-  margin-top: 200px; /* طول المسار */
+  margin-top: 0; /* طول المسار */
 }
 
 .right-panel.right-panel-WG::-webkit-scrollbar-thumb {
@@ -254,11 +260,17 @@ body {
 }
 
 /* Media Query */
-@media (max-width: 2491px) {
-  .full-width.full-width-WG { font-size: 35px; }
-  .nav-button.nav-button-WG { font-size: 35px; }
-  .left-panel.left-panel-WG h1 { font-size: 144px; }
-}
+/* @media (max-width: 2491px) {
+  .full-width.full-width-WG {
+    font-size: 35px;
+  }
+  .nav-button.nav-button-WG {
+    font-size: 35px;
+  }
+  .left-panel.left-panel-WG h1 {
+    font-size: 144px;
+  }
+} */
 
 /* Table Styles */
 .carb-table.carb-table-WG,
@@ -266,7 +278,7 @@ body {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
-  font-size: 40px;
+  font-size: 1.4rem;
 }
 
 .carb-table.carb-table-WG th,
@@ -296,7 +308,7 @@ body {
 }
 
 .table-title.table-title-WG {
-  font-size: 50px;
+  font-size: 3rem;
   color: #ec7e4a;
   margin-top: 30px;
   margin-bottom: 10px;

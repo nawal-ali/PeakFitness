@@ -28,8 +28,8 @@ function App() {
             <Route path="/BodyFat" element={<BodyFat />} />
             <Route path="/Calorie" element={<Calorie />} />
             <Route path="/Weight" element={<Weight />} />
-            <Route path="/FoodPlanSlider" element={<Slider_FP/>}/>
-            <Route path="/weight-gain-details" element={<WeightGain/>}/>
+            {/* <Route path="/FoodPlanSlider" element={<Slider_FP/>}/> */}
+            <Route path="/weight-gain-details" element={<WeightGain />} />
           </Routes>
         </Router>
         {/* <h1>app works!</h1> */}
