@@ -177,11 +177,11 @@ const Slider_FP = () => {
                 console.log("isReadMoreClicked is true, isActive:", isActive);
                 if (isActive) {
                   if (scaleZero) {
-                    transformValue = `translateX(-160%) translateY(5%) scaleX(1.15) scaleY(1.25)`;
+                    transformValue = `translateX(-160%) translateY(5%) scaleX(1.25) scaleY(1.8)`;
                   } else if (moveLeft) {
-                    transformValue = `translateX(-160%) translateY(5%) scaleX(1.15) scaleY(1.25)`;
+                    transformValue = `translateX(-160%) translateY(5%) scaleX(1.25) scaleY(1.8)`;
                   } else {
-                    transformValue = `translateX(0) translateY(5%) scaleX(1.15) scaleY(1.25)`;
+                    transformValue = `translateX(0) translateY(5%) scaleX(1.25) scaleY(1.8)`;
                   }
                 } else {
                   transformValue = `translateX(${

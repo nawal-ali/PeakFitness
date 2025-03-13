@@ -787,7 +787,7 @@ body {
 }
 
 
-@media (max-width: 1400px) {
+/* @media (max-width: 1400px) {
   .left-panel-F .under-header-F {
     font-size: 20px;
     width: 85%;
@@ -796,17 +796,32 @@ body {
     font-size: 48px;
     line-height: 70px;
   }
-}
-
+} */
+/* 
 @media (max-width: 1134px) {
   .left-panel-F .under-header-F {
     font-size: 19px;
     width: 85%;
   }
-}
-
+} */
 
 @media (max-width: 1024px) {
+  .Calculator-one-circle-F::before,
+  .Calculator-one-circle-s1-F::before,
+  .Calculator-one-circle-F::after,
+  .Calculator-circles-F,.Calculator-circles-side2-F::before,
+  .Calculator-circles-side2-F::after {display: none;}
+  .input-section-F {justify-content: flex-end;}
+  .input-group-F {margin: 10px 0;}
+  .fat-buttons-F{gap:0px;}
+  .calculate-btn-F{padding: 14px 20px;}
+  .error-message-F {font-size: 10px;margin-top: 0px;}
+  .under {font-size: 21px;}
+  .left-panel-F .under-header-F {width: 95%;}
+  .result-section-F {margin-left: -5%;}
+  .fat-buttons-result-F {margin-top: 5px;gap: 30px;}
+}
+/* @media (max-width: 1024px) {
 .Calculator-one-circle-F::before,
 .Calculator-one-circle-s1-F::before,
 .Calculator-one-circle-F::after,
@@ -838,7 +853,7 @@ body {
 .result-section-F {height: 44vh;}
 .fat-title-F {font-size: 65px;line-height: 80px;}
 .other-calculators-btn-F {font-size: 25px;}
-}
+} */
 
 @media (max-width: 970px) {
   .result-logo-F {
