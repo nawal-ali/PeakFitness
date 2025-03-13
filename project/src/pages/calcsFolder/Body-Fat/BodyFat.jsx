@@ -15,6 +15,7 @@
 // }
 
 import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom'; // 
 import Navbar from "../../../assets/navFolder/Navbar";
 import "./body.css";
 
@@ -275,7 +276,7 @@ const BodyFatCalc = () => {
           ) : (
             <form className="input-section-F" onSubmit={calculateBodyFat}>
               <div className="Calculator-one-circle-F"></div>
-              <h2 className="body-parameters-side2-F">Body Parameters</h2>
+              <h2 className="Fat-parameters-side2-F">Body Parameters</h2>
               <div className="gender-selection-F">
                 <button
                   className={gender === "male" ? "active-F" : ""}
@@ -296,7 +297,7 @@ const BodyFatCalc = () => {
                   Female
                 </button>
               </div>
-              <div className="input-group-F">
+              <div className="input-group-F">  {/*-F Fat*/}
                 <label>Age</label>
                 <input
                   type="text"
@@ -434,7 +435,7 @@ const BodyFatCalc = () => {
             <form className="input-section-F" onSubmit={calculateBodyFat}>
               <div className="Calculator-circles-F"></div>
               <div className="Calculator-one-circle-s1-F"></div>
-              <h2 className="body-parameters-side1-F">Body Parameters</h2>
+              <h2 className="Fat-parameters-side1-F">Body Parameters</h2>
               <div className="gender-selection-F">
                 <button
                   className={gender === "male" ? "active-F" : ""}
@@ -640,9 +641,11 @@ const BodyFatCalc = () => {
                 >
                   Calculate Again
                 </button>
-                <button className="other-calculators-btn-F">
-                  Other Calculators
-                </button>
+                <Link to="/Calculators"> {/* التعديل هنا: استخدمنا Link */}
+                  <button className="other-calculators-btn-B">
+                    Other Calculators
+                  </button>
+                </Link>
               </div>
             </div>
           )}
