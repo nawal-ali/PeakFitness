@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Jomhuria&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    margin: 0;
+    background-color: #000;
+    color: #eee;
+    font-size: 12px;
+    font-family: 'Nunito Sans';
+}
+
+a {
+    text-decoration: none;
+}
+
+/* carousel */
+.carousel-PT {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    background-color: #242323;;
+}
+
+.carousel-PT .list-PT .item-PT {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0 0 0 0;
+    background-color: #242323;;
+    transition: transform 0.2s ease;
+}
+
+.carousel-PT .list-PT .item-PT img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    filter: brightness(100%);
+}
+
+.carousel-PT .list-PT .item-PT .content-PT {
+    position: absolute;
+    top: 30%;
+    width: 1140px;
+    max-width: 80%;
+    left: 6%;
+    padding-right: 30%;
+    box-sizing: border-box;
+    color: #fff;
+    text-shadow: 0 5px 10px #0004;
+}
+
+.carousel-PT .list-PT .item-PT .author-PT {
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+
+.carousel-PT .list-PT .item-PT .title-PT,
+.carousel-PT .list-PT .item-PT .topic-PT {
+    font-size: 62px;
+    font-weight: bold;
+    line-height: 1.3em;
+    width: 50%;
+}
+
+.carousel-PT .list-PT .item-PT .topic-PT {
+    color: #ec7e4a;
+}
+
+.carousel-PT .list-PT .item-PT .buttons-PT {
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 40px;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.carousel-PT .list-PT .item-PT .buttons-PT button {
+    border: none;
+    background-color: #eee;
+    letter-spacing: 3px;
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.carousel-PT .list-PT .item-PT .buttons-PT button:nth-child(2) {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #eee;
+}
+
+/* thumbnail */
+.carousel-PT .thumbnail-PT {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+
+.carousel-PT .thumbnail-PT .item-PT {
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    box-shadow: -25px 15px 6px rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+}
+
+.carousel-PT .thumbnail-PT .item-PT:hover {
+    transform: scale(1.1);
+}
+
+.carousel-PT .thumbnail-PT .item-PT img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    filter: brightness(100%);
+    transform: translateX(-10px);
+}
+
+.carousel-PT .thumbnail-PT .item-PT .content-PT {
+    color: #fff;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+
+.carousel-PT .thumbnail-PT .item-PT .content-PT .title-PT {
+    font-weight: 500;
+    text-align: left;
+    text-wrap: wrap;
+    font-size: 23px;
+}
+
+.carousel-PT .thumbnail-PT .item-PT .content-PT .description-PT {
+    font-weight: 300;
+}
+
+/* arrows */
+.carousel-PT .arrows-PT {
+    position: absolute;
+    top: 75%;
+    right: 72%;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.carousel-PT .arrows-PT button {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: white solid;
+    color: #fff;
+    font-weight: bold;
+    transition: .5s;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.carousel-PT .arrows-PT button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Logo Styles */
+.logo-PT {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 250px;
+    height: auto;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Hide logo during transitions */
+.carousel-PT.next-PT .logo-PT,
+.carousel-PT.prev-PT .logo-PT {
+    opacity: 0;
+}
+
+/* animations */
+.carousel-PT .list-PT .item-PT:nth-child(1) {
+    z-index: 1;
+}
+
+.carousel-PT .list-PT .item-PT:nth-child(1) .content-PT .author-PT,
+.carousel-PT .list-PT .item-PT:nth-child(1) .content-PT .title-PT,
+.carousel-PT .list-PT .item-PT:nth-child(1) .content-PT .topic-PT,
+.carousel-PT .list-PT .item-PT:nth-child(1) .content-PT .des-PT,
+.carousel-PT .list-PT .item-PT:nth-child(1) .content-PT {
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s 1s linear 1 forwards;
+}
+
+@keyframes showContent {
+    to {
+        transform: translateY(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+.carousel-PT .list-PT .item-PT:nth-child(1) .content-PT .title-PT,
+.carousel-PT .list-PT .item-PT:nth-child(1) .content-PT .start-button-PT.start-button-hidden-PT {
+    animation-delay: 1.2s !important;
+}
+
+.carousel-PT .list-PT .item-PT:nth-child(1) .content-PT .topic-PT {
+    animation-delay: 1.4s !important;
+}
+
+.carousel-PT .list-PT .item-PT:nth-child(1) .content-PT .des-PT {
+    animation-delay: 1.6s !important;
+}
+
+.carousel-PT .list-PT .item-PT:nth-child(1) .content-PT .buttons-PT {
+    animation-delay: 1.8s !important;
+}
+
+.carousel-PT.next-PT .list-PT .item-PT:nth-child(1) img {
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 30px;
+    animation: showImage .5s linear 1 forwards;
+}
+
+@keyframes showImage {
+    to {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+.carousel-PT.next-PT .thumbnail-PT .item-PT:nth-last-child(1) {
+    overflow: hidden;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+
+.carousel-PT.prev-PT .list-PT .item-PT img {
+    z-index: 100;
+}
+
+@keyframes showThumbnail {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+}
+
+.carousel-PT.next-PT .thumbnail-PT {
+    animation: effectNext .5s linear 1 forwards;
+}
+
+@keyframes effectNext {
+    from {
+        transform: translateX(150px);
+    }
+}
+
+.carousel-PT.prev-PT .list-PT .item-PT:nth-child(2) {
+    z-index: 2;
+}
+
+.carousel-PT.prev-PT .list-PT .item-PT:nth-child(2) img {
+    animation: outFrame 0.5s linear 1 forwards;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+@keyframes outFrame {
+    to {
+        width: 150px;
+        height: 220px;
+        bottom: 50px;
+        left: 50%;
+        border-radius: 20px;
+    }
+}
+
+.carousel-PT.prev-PT .thumbnail-PT .item-PT:nth-child(1) {
+    overflow: hidden;
+    opacity: 0;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+
+.carousel-PT.next-PT .arrows-PT button,
+.carousel-PT.prev-PT .arrows-PT button {
+    pointer-events: none;
+}
+
+.carousel-PT.prev-PT .list-PT .item-PT:nth-child(2) .content-PT .author-PT,
+.carousel-PT.prev-PT .list-PT .item-PT:nth-child(2) .content-PT .title-PT,
+.carousel-PT.prev-PT .list-PT .item-PT:nth-child(2) .content-PT .topic-PT,
+.carousel-PT.prev-PT .list-PT .item-PT:nth-child(2) .content-PT .des-PT,
+.carousel-PT.prev-PT .list-PT .item-PT:nth-child(2) .content-PT .buttons-PT {
+    animation: contentOut 1s linear 1 forwards;
+}
+
+@keyframes contentOut {
+    to {
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 678px) {
+    .carousel-PT .list-PT .item-PT .content-PT {
+        padding-right: 0;
+    }
+    .carousel-PT .list-PT .item-PT .content-PT .title-PT {
+        font-size: 30px;
+    }
+}
+
+/* Button Styles */
+.start-button-PT {
+    margin: 20px 0px 0 !important;
+    padding: 10px 50px !important;
+    background-color: #ec7e4a !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 20px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    display: inline-block !important;
+    transition: background-color 0.3sease, opacity 0.5sease, transform 0.5sease !important;
+    transform: translateY(50px) !important;
+    z-index: 10 !important;
+}
+
+.start-button-PT:hover {
+    background-color: #e05c2c !important;
+}
+
+.carousel-PT .list-PT .item-PT.active-PT .start-button-PT {
+    display: block !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    filter: blur(0) !important;
+    animation: showButton 0.5s 1.2s linear 1 forwards !important;
+}
+
+/* Hide button in thumbnails completely */
+.carousel-PT .thumbnail-PT .item-PT .start-button-PT,
+.carousel-PT .thumbnail-PT .item-PT .start-button-PT.start-button-hidden-PT {
+    display: none !important;
+}
+
+@keyframes showButton {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+        filter: blur(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* Ensure the button behaves naturally within the content div in list */
+.carousel-PT .list-PT .item-PT .content-PT .start-button-PT {
+    position: static !important;
+    transform: none !important;
+}
+
+/* Add these styles to ensure the button and text animate together */
+.carousel-PT .list-PT .item-PT.active-PT .content-PT .title-PT,
+.carousel-PT .list-PT .item-PT.active-PT .content-PT .start-button-PT {
+    opacity: 0;
+    transform: translateY(50px);
+    filter: blur(20px);
+    animation: showContent 0.5s 1s linear 1 forwards;
+}
+
+.carousel-PT .list-PT .item-PT.active-PT .content-PT .title-PT {
+    animation-delay: 1.2s !important;
+}
+
+.carousel-PT .list-PT .item-PT.active-PT .content-PT .start-button-PT {
+    animation-delay: 1.4s !important;
+}
+
+/* Hide button in thumbnails */
+.carousel-PT .thumbnail-PT .item-PT .start-button-PT {
+    display: none !important;
+}
+
+/* تنسيق الفقرة في شاشة Choose */
+.carousel-PT .choose-screen-PT .content-PT .choose-description-PT {
+    color: #fff;
+    font-size: 1.5em;
+    margin-top: 10px;
+    font-weight: 300;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-PT .next-PT .thumbnail-PT .item-PT,
+.carousel-PT .prev-PT .thumbnail-PT .item-PT {
+    animation-duration: 0.2s;
+}
+
+.carousel-PT .next-PT .arrows-PT button,
+.carousel-PT .prev-PT .arrows-PT button {
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.title-PT {
+    display: flex;
+    flex-direction: column;
+}
+
+.title-PT span {
+    line-height: 1.2;
+}
+.reset-PT {
+    transition: all 0.5s ease;
+    transform: translateX(0); /* أو أي انيميشن بيتناسب مع تصميمك */
+  }

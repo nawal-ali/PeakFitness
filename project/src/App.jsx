@@ -13,9 +13,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import ForgetPassword from "./pages/Auth/Password/Forget-password/Forget";
 // import NewPassword from "./pages/Auth/Password/New-Password/New";
 // import BodyFatCalc from "./pages/Calculators/BodyFat Calculator/Fat";
-import Slider_FP from "./pages/Food-Plan/Slider/Slider-FP";
-import WeightGain from "./pages/Food-Plan/Weight-Gain/weight-Gain-FP";
+// import Slider_FP from "./pages/Food-Plan/Slider/Slider-FP";
+// import WeightGain from "./pages/Food-Plan/Weight-Gain/weight-Gain-FP";
+// import Slider_C from "./pages/calcsFolder/Calculators";
 // import test_FOFO from "./pages/Food-Plan/test/test_FOFO";
+import Slider_Calc from "./pages/Calculators/Slider/Slider-2";
 function App() {
   return (
     // <test_FOFO/>
@@ -44,13 +46,14 @@ function App() {
     // </Router>
     // <Slider_PT/>
     // <Slider_C/>
+    <Slider_Calc/>
     // <Slider_FP/>
-    <Router>
-    <Routes>
-      <Route path="/" element={<Slider_FP />} />
-      <Route path="/weight-gain-details" element={<WeightGain />} />
-    </Routes>
-  </Router>
+  //   <Router>
+  //   <Routes>
+  //     <Route path="/" element={<Slider_PT />} />
+  //     <Route path="/Calc" element={<Slider_C />} />
+  //   </Routes>
+  // </Router>
     // <WeightGain/>
     // <CalorieCalculator/>
     // <AuthForm/>
