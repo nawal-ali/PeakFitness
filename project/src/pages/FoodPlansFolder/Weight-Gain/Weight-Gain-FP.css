@@ -296,7 +296,6 @@ ol li::marker {
     margin: 20% 0;
   }
 }
-
 @media (max-width: 550px) {
   .main-content.main-content-WG {
     flex-direction: column;

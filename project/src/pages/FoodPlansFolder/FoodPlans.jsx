@@ -2,6 +2,7 @@ import Navbar from "../../assets/navFolder/Navbar";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./SliderFP.css";
+
 const Slider_FP = () => {
   const [selectedItem, setSelectedItem] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -10,6 +11,7 @@ const Slider_FP = () => {
   const [moveLeft, setMoveLeft] = useState(false);
   const [scaleZero, setScaleZero] = useState(false);
   const navigate = useNavigate();
+
   const items = [
     {
       id: 0,
@@ -20,6 +22,7 @@ const Slider_FP = () => {
       color: "#ec7e4a",
       thumbnailImg: "/public/imgs/Weight-gain.png",
       backgroundImage: "/public/imgs/Food-Plan-W-G.png",
+      link: "/weight-gain-details",
     },
     {
       id: 1,
@@ -29,6 +32,7 @@ const Slider_FP = () => {
       color: "#4aec7e",
       thumbnailImg: "/public/imgs/Weight-loss.png",
       backgroundImage: "/public/imgs/Food-Plan-W-L.png",
+      link: "/weight-loss-details",
     },
     {
       id: 2,
@@ -39,8 +43,10 @@ const Slider_FP = () => {
       color: "#7e4aec",
       thumbnailImg: "/public/imgs/Muscle-gain.png",
       backgroundImage: "/public/imgs/Food-Plan-M-G.png",
+      link: "/muscle-gain-details",
     },
   ];
+
   useEffect(() => {
     document.title = items[selectedItem].name;
   }, [selectedItem]);
@@ -58,35 +64,35 @@ const Slider_FP = () => {
   }, []);
 
   const handleNext = () => {
-    setSelectedItem((selectedItem + 1) % items.length);
+    setSelectedItem((prev) => (prev + 1) % items.length);
   };
 
   const handlePrev = () => {
-    setSelectedItem((selectedItem - 1 + items.length) % items.length);
+    setSelectedItem((prev) => (prev - 1 + items.length) % items.length);
   };
 
   const handleReadMore = () => {
-    console.log("Read More clicked, selectedItem:", selectedItem);
-    if (selectedItem === 0) {
-      setIsReadMoreClicked(true);
-      console.log("isReadMoreClicked set to true");
+    const currentIndex = selectedItem; // نأخد القيمة الحالية عشان نضمن إنها مش بتتغير
+    console.log("Read More clicked, selectedItem:", currentIndex);
+    setIsReadMoreClicked(true);
+    console.log("isReadMoreClicked set to true");
 
-      setTimeout(() => {
-        setMoveLeft(true);
-        console.log("moveLeft set to true");
-      }, 1000);
+    setTimeout(() => {
+      setMoveLeft(true);
+      console.log("moveLeft set to true");
+    }, 1000);
 
-      setTimeout(() => {
-        setScaleZero(true);
-        console.log("scaleZero set to true");
-      }, 1000);
+    setTimeout(() => {
+      setScaleZero(true);
+      console.log("scaleZero set to true");
+    }, 1000);
 
-      setTimeout(() => {
-        console.log("Navigating to /weight-gain-details");
-        navigate("/weight-gain-details", { replace: false });
-        console.log("Navigation completed");
-      }, 2500);
-    }
+    setTimeout(() => {
+      const currentLink = items[currentIndex].link;
+      console.log(`Navigating to ${currentLink}`);
+      navigate(currentLink, { replace: false });
+      console.log("Navigation completed");
+    }, 2500);
   };
 
   const handleDotClick = (index) => {
@@ -177,11 +183,11 @@ const Slider_FP = () => {
                 console.log("isReadMoreClicked is true, isActive:", isActive);
                 if (isActive) {
                   if (scaleZero) {
-                    transformValue = `translateX(-160%) translateY(5%) scaleX(1.25) scaleY(1.8)`;
+                    transformValue = `translateX(-160%) translateY(5%) scaleX(1.45) scaleY(1.8)`;
                   } else if (moveLeft) {
-                    transformValue = `translateX(-160%) translateY(5%) scaleX(1.25) scaleY(1.8)`;
+                    transformValue = `translateX(-160%) translateY(5%) scaleX(1.45) scaleY(1.8)`;
                   } else {
-                    transformValue = `translateX(0) translateY(5%) scaleX(1.25) scaleY(1.8)`;
+                    transformValue = `translateX(0) translateY(5%) scaleX(1.45) scaleY(1.8)`;
                   }
                 } else {
                   transformValue = `translateX(${
@@ -267,4 +273,5 @@ const Slider_FP = () => {
     </>
   );
 };
+
 export default Slider_FP;

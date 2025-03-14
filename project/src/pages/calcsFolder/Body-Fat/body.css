@@ -820,6 +820,7 @@ body {
   .left-panel-F .under-header-F {width: 95%;}
   .result-section-F {margin-left: -5%;}
   .fat-buttons-result-F {margin-top: 5px;gap: 30px;}
+  .Fat-parameters-side1-F, .Fat-parameters-side2-F {font-size: 35px;}
 }
 /* @media (max-width: 1024px) {
 .Calculator-one-circle-F::before,

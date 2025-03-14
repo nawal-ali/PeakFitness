@@ -75,15 +75,6 @@ body {
 }
 
 /* Logo in the Left Panel */
-.left-panel-I .logo-I {
-  position: absolute;
-  top: 5px;
-  left: 15px;
-  font-size: 24px;
-  font-weight: bold;
-  z-index: 3;
-  border: none;
-}
 
 /* Background Image in the Left Panel */
 .left-panel-I .background-image-I {
@@ -292,20 +283,6 @@ body {
   border: none;
 }
 
-.result-logo-I {
-  width: 165px;
-  height: 100px;
-  position: absolute;
-  top: -5px;
-  left: 20px;
-  /* background-image: url(/images/Logo-4.svg); */
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 300;
-  border: none;
-}
-
 .result-section-I h2 {
   font-size: 50px;
   font-weight: bold;
@@ -383,19 +360,6 @@ body {
   transform: translateX(0);
 }
 
-.logo-I {
-  width: 165px;
-  height: 100px;
-  position: absolute;
-  top: -125px;
-  left: -50px;
-  /* background-image: url(/images/Logo-4.svg); */
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 300;
-  border: none;
-}
 
 /* Table */
 .ideal-table-div-I {
@@ -608,10 +572,7 @@ th {
 }
 
 .subtext-I {
-  position: relative;
-  left: 30px;
   margin-bottom: 0px;
-  border: none;
 }
 /* Error Message Styling */
 .error-message-I {
@@ -749,222 +710,42 @@ th {
   animation: fadeInUp-I 0.6s ease-out forwards;
   animation-delay: 2s; /* الأزرار تظهر أخيرًا بعد 2 ثانية */
 }
-
-/* Media Queries (unchanged except for span styling) */
-@media (max-width: 1400px) {
-  .left-panel-I .under-header-I {
-    font-size: 20px;
-    width: 85%;
-    border: none;
-  }
-
-  .ideal-weight-title-I {
-    font-size: 48px;
-    line-height: 70px;
-    border: none;
-  }
-}
-
-@media (max-width: 1134px) {
-  .left-panel-I .under-header-I {
-    font-size: 19px;
-    width: 85%;
-    border: none;
-  }
-}
 /* Media Queries */
 @media (max-width: 1024px) {
-  .gender-selection-I {
-    gap: 20px;
-    justify-content: center;
-    border: none;
-  }
-  .gender-selection-I button {
-    padding: 10px 100px;
-    font-size: 25px;
-  }
-  .calorie-calculator-I {
-    flex-direction: column;
-    height: auto;
-  }
-  .left-panel-I,
-  .right-panel-I {
-    width: 100%;
-  }
-  .calorie-calculator-I.show-results-I .left-panel-I {
-    order: 2;
-    border-right: none;
-  }
-  .calorie-calculator-I.show-results-I .right-panel-I {
-    order: 1;
-    border-left: none;
-  }
-  .ideal-weight-title-I {
-    font-size: 50px;
-    line-height: 85px;
-    text-align: center;
-  }
-  .left-panel-I .under-header-I {
-    font-size: 22px;
-    width: 70%;
-    text-align: center;
-  }
-  .left-panel-I .small-image-I {
-    width: 150px;
-    height: 150px;
-  }
-  .input-section-I {
-    width: 60%;
-  }
-  .input-group-I {
-    padding: 8px;
-    margin: 15px 0;
-  }
-  .input-group-I label {
-    font-size: 25px;
-  }
-  .logo-I {
-    width: 270px;
-    height: 150px;
-  }
-  .input-group-I input {
-    padding: 12px;
-    font-size: 23px;
-  }
-  .gender-btn-I {
-    padding: 10px 0;
-    font-size: 25px;
-    width: 100%;
-  }
-  .ideal-buttons-I,
-  .ideal-buttons-result-I {
-    flex-direction: row;
-    justify-content: center;
-    gap: 30px;
-  }
-  .clear-btn-I,
-  .calculate-btn-I {
-    max-width: 225px;
-    font-size: 25px;
-  }
-  .result-section-I {
-    margin-left: 0;
-    text-align: center;
-  }
-  .result-section-I h2 {
-    font-size: 50px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-  }
-  .result-section-I h3 {
-    font-size: 60px;
-    margin-left: 15px;
-  }
-  .result-logo-I {
-    width: 270px;
-    height: 179px;
-  }
-  .ideal-table-I {
-    font-size: 16px;
-    max-width: 100%;
-  }
-  .ideal-table-I th,
-  .ideal-table-I td {
-    padding: 15px;
-    font-size: 25px;
-    text-wrap: nowrap;
-  }
-  .Calculator-one-circle-I::before,
-  .Calculator-one-circle-I::after,
-  .Calculator-one-circle-s1-I::before,
-  .Calculator-circles-side2-I::before {
-    display: none;
-  }
-  .left-panel-I .content-I,
-  .input-section-I,
-  .result-section-I {
-    height: 47vh;
-    margin-bottom: 100px;
-  }
-  .other-calculators-btn-I {
-    font-size: 25px;
-  }
-  .ideal-table-div-I {
-    width: 100%;
-  }
-  .result-header-I {
-    margin-left: 0px;
-  }
-  p {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    font-size: 27px;
-  }
+  .Calculator-one-circle-s1-I::before,.Calculator-circles-S1-I::after,.Calculator-one-circle-I::before,.Calculator-one-circle-I::after,.Calculator-circles-S1-I::before,.Calculator-circles-S2-I::after,.Calculator-circles-S2-I::before  {display: none;}
+  .left-panel-I .small-image-I {width: 110px;height: 110px;}
+  .gender-selection-I {gap: 20px;width: 110%;}
+  .left-panel-I .under-header-I {font-size: 21px;width: 92%;}
+  .ideal-weight-title-I {font-size: 50px;}
+  .Ideal-parameters-side1-I, .Ideal-parameters-side2-I {font-size: 30px;text-wrap: nowrap;}
+  .other-calculators-btn-B ,.clear-btn-I, .calculate-btn-I {font-size: 17px;}
+  .ideal-buttons-I, .ideal-buttons-result-I {margin-top: 15px;}
+  .other-calculators-btn-B, .clear-btn-I, .calculate-btn-I {padding: 14px 20px;}
+  .input-group-I {margin: 30px 0;width: 110%;}
+  .ideal-buttons-I {gap: 0px;width: 110%;}
+  .ideal-buttons-result-I {gap: 50px;}
+  .clear-btn-I {max-width: 120px;font-size: 18px;margin-right: 20px;}
+  .result-section-I {margin-left: 0;}
+  .result-section-I h2 {margin-bottom: 0px;margin-left: 0px;}
+  .result-section-I h3 {margin-left: 15px;}
+  .ideal-table-I th,.ideal-table-I td {font-size: 20px;}
+  .ideal-table-div-I {width: 100%;}
+  .result-section-I p {font-size: 20px;}
 }
-
-@media (max-width: 840px) {
-  .gender-btn-I {
-    padding: 10px 0;
-    font-size: 25px;
-    border: 2px solid #ec7e4a;
-    width: 100%;
-  }
-  .ideal-table-I th,
-  .ideal-table-I td {
-    padding: 10px;
-    font-size: 25px;
-    border: 2px solid #ec7e4a;
-  }
-  .result-section-I h2 {
-    font-size: 50px;
-    margin-bottom: 20px;
-  }
-  .result-section-I h3 {
-    font-size: 60px;
-    margin-left: 15px;
-  }
-  .result-logo-I {
-    width: 240px;
-    height: 140px;
-    left: -5px;
-  }
+@media (max-width:885px) {
+  .left-panel-I .under-header-I {width: 108%;}
+  .ideal-table-div-I {width: 91%;}
+  .result-section-I h2 {font-size: 45px;}
+  .result-section-I h3 {font-size: 55px;}
+  .ideal-buttons-result-I {gap: 46px;}
 }
-
-@media (max-width: 768px) {
-  .left-panel-I .under-header-I {
-    font-size: 20px;
-  }
-  .ideal-weight-title-I {
-    font-size: 60px;
-  }
-  .gender-btn-I {
-    padding: 10px 0;
-    font-size: 23px;
-    border: 2px solid #ec7e4a;
-    width: 100%;
-  }
-  .ideal-table-I th,
-  .ideal-table-I td {
-    padding: 5px;
-    font-size: 23px;
-    border: 2px solid #ec7e4a;
-  }
-  .result-section-I {
-    height: 48vh;
-  }
-  .result-section-I h3 {
-    font-size: 50px;
-  }
-  .result-section-I h2 {
-    font-size: 50px;
-    margin-bottom: 10px;
-  }
-  .ideal-table-div-I {
-    width: 100%;
-    position: relative;
-    top: -15px;
-  }
-  .ideal-buttons-result-I {
-    margin-top: -20px;
-  }
+@media (max-width:800px) {
+  .calorie-calculator-I {flex-direction: column;}
+  .left-panel-I .content-I {height: 40vh;}
+  .ideal-weight-title-I {font-size: 40px;}
+  .left-panel-I .under-header-I {width: 60%;}
+  .input-group-I {margin: 0px 0;width: 90%;}
+  .gender-selection-I {width: 90%;}
+  .left-panel-I .small-image-I {width: 90px;height: 90px;}
+  .Arrow-right-I {margin-top: 20px;}
 }
