@@ -1,39 +1,7 @@
-// import Navbar from "../../assets/navFolder/Navbar";
-// import "./calc.css";
-// import { Link } from "react-router-dom";
-
-// export default function Calculators() {
-//   return (
-//     <>
-//       <Navbar showSearch={false} />
-//       {/* if u want to keep the search bar just delete  showSearch={false}*/}
-
-//       {/* write all code within this div because nav has fixed position
-//        and content will be placed bahind it if it does not have margin top */}
-//       <div style={{ marginTop: "9%" }}>
-//         {/* here are all the calulators routes */}
-//         <Link to="/BMI">
-//           <button style={{ backgroundColor: "red" }}>to BMI</button>
-//         </Link>
-//         <Link to="/BodyFat">
-//           <button style={{ backgroundColor: "red" }}>to body fat</button>
-//         </Link>
-//         <Link to="/Calorie">
-//           <button style={{ backgroundColor: "red" }}>to Calorie</button>
-//         </Link>
-//         <Link to="/Weight">
-//           <button style={{ backgroundColor: "red" }}>to weight</button>
-//         </Link>
-//       </div>
-//     </>
-//   );
-// }
-
 import { useRef, useState, useEffect } from "react";
 import Navbar from "../../assets/navFolder/Navbar";
 import { Link } from "react-router-dom";
 import "./calc.css";
-// import { path } from "framer-motion/client";
 
 const Slider_C = () => {
   const carouselRef = useRef(null);
@@ -41,53 +9,23 @@ const Slider_C = () => {
   const thumbnailRef = useRef(null);
 
   const items = [
-    {
-      id: 0,
-      name: "Choose Calculator",
-      subtitle: "to Get Started",
-      img: "./imgs/choose-calc-image.png",
-      color: "#ec7e4a",
-    },
-    {
-      id: 1,
-      name: "Calorie",
-      img: "./imgs/Calorie-image.png",
-      color: "#ec7e4a",
-      path: "/Calorie",
-    },
-    {
-      id: 2,
-      name: "Ideal Weight",
-      img: "./imgs/Ideal-Weight-image.png",
-      color: "#ec7e4a",
-      path: "/Weight",
-    },
-    {
-      id: 3,
-      name: "BMI",
-      img: "./imgs/BMI-image.png",
-      color: "#ec7e4a",
-      path: "/BMI",
-    },
-    {
-      id: 4,
-      name: "Body Fat",
-      img: "./imgs/Body-Fat-image.png",
-      color: "#ec7e4a",
-      path: "/BodyFat",
-    },
+    { id: 0, name: "Choose Calculator", subtitle: "to Get Started", img: "./imgs/choose-calc-image.png", color: "#ec7e4a" },
+    { id: 1, name: "Calorie", img: "./imgs/Calorie-image.png", color: "#ec7e4a", path: "/Calorie" },
+    { id: 2, name: "Ideal Weight", img: "./imgs/Ideal-Weight-image.png", color: "#ec7e4a", path: "/Weight" },
+    { id: 3, name: "BMI", img: "./imgs/BMI-image.png", color: "#ec7e4a", path: "/BMI" },
+    { id: 4, name: "Body Fat", img: "./imgs/Body-Fat-image.png", color: "#ec7e4a", path: "/BodyFat" },
   ];
 
   const [selectedItem, setSelectedItem] = useState(items[0].name);
   const [showChoose, setShowChoose] = useState(true);
+  const [isLastItem, setIsLastItem] = useState(false);
 
   useEffect(() => {
     setSelectedItem(items[0].name);
   }, []);
 
   const showSlider = (type, index = null) => {
-    if (!sliderRef.current || !thumbnailRef.current || !carouselRef.current)
-      return;
+    if (!sliderRef.current || !thumbnailRef.current || !carouselRef.current) return;
 
     const sliderItems = Array.from(sliderRef.current.children);
     let thumbnailItems = Array.from(thumbnailRef.current.children);
@@ -104,9 +42,20 @@ const Slider_C = () => {
         const firstThumbnail = thumbnailItems.shift();
         thumbnailRef.current.appendChild(firstThumbnail);
       }
+
       carouselRef.current.classList.add("next-SC");
       setTimeout(() => {
         carouselRef.current.classList.remove("next-SC");
+        const currentFirstItem = sliderRef.current.children[0];
+        const currentId = parseInt(currentFirstItem.dataset.id);
+        if (currentId === items[items.length - 1].id) {
+          setIsLastItem(true);
+        } else if (isLastItem) {
+          setIsLastItem(false);
+          resetToFirst();
+        } else {
+          setIsLastItem(false);
+        }
       }, 500);
     } else if (type === "prev") {
       const lastItem = sliderItems.pop();
@@ -119,6 +68,7 @@ const Slider_C = () => {
       carouselRef.current.classList.add("prev-SC");
       setTimeout(() => {
         carouselRef.current.classList.remove("prev-SC");
+        setIsLastItem(false);
       }, 500);
     } else if (type === "select" && index !== null) {
       const selectedItemElement = sliderItems.find(
@@ -157,7 +107,7 @@ const Slider_C = () => {
         titleDiv.innerText = item.name;
 
         const span = document.createElement("span");
-        span.style.color = item.color;
+        span.style.color = item.color; // اللون هنا للـ thumbnails فقط
         span.innerText = " Calculator";
         titleDiv.appendChild(span);
 
@@ -179,6 +129,57 @@ const Slider_C = () => {
       }, 500);
       setSelectedItem(items[index].name);
     }
+  };
+
+  const resetToFirst = () => {
+    if (!sliderRef.current || !thumbnailRef.current || !carouselRef.current) return;
+
+    const sliderItems = Array.from(sliderRef.current.children);
+    const thumbnailItems = Array.from(thumbnailRef.current.children);
+
+    const orderedSliderItems = items.map((item) =>
+      sliderItems.find((sliderItem) => parseInt(sliderItem.dataset.id) === item.id)
+    );
+    sliderRef.current.innerHTML = "";
+    orderedSliderItems.forEach((item) => sliderRef.current.appendChild(item));
+
+    const filteredItems = items.filter(
+      (item) => item.id !== 0 && item.id !== items.find((i) => i.name === selectedItem)?.id
+    );
+    thumbnailRef.current.innerHTML = "";
+
+    filteredItems.forEach((item) => {
+      const thumbDiv = document.createElement("div");
+      thumbDiv.className = "item-SC";
+      thumbDiv.setAttribute("data-id", item.id);
+      thumbDiv.onclick = () => showSlider("select", item.id);
+
+      const img = document.createElement("img");
+      img.src = item.img;
+      img.alt = "thumbnail";
+
+      const contentDiv = document.createElement("div");
+      contentDiv.className = "content-SC";
+
+      const titleDiv = document.createElement("div");
+      titleDiv.className = "title-SC";
+      titleDiv.innerText = item.name;
+
+      const span = document.createElement("span");
+      span.style.color = item.color; // اللون هنا للـ thumbnails فقط
+      span.innerText = " Calculator";
+      titleDiv.appendChild(span);
+
+      contentDiv.appendChild(titleDiv);
+      thumbDiv.appendChild(img);
+      thumbDiv.appendChild(contentDiv);
+      thumbnailRef.current.appendChild(thumbDiv);
+    });
+
+    carouselRef.current.classList.add("reset-SC");
+    setTimeout(() => {
+      carouselRef.current.classList.remove("reset-SC");
+    }, 500);
   };
 
   const handleStartClick = (itemName) => {
@@ -226,7 +227,7 @@ const Slider_C = () => {
                           style={{
                             color: "#fff",
                             textWrap: "nowrap",
-                            marginRight: "-100px",
+                            marginRight: "-160px",
                           }}
                         >
                           to Get Started
@@ -234,14 +235,13 @@ const Slider_C = () => {
                       </div>
                     ) : (
                       <>
-                        {item.name}{" "}
-                        <span style={{ color: item.color }}>Calculator</span>
+                        {item.name} <span>Calculator</span> {/* بدون لون متغير هنا */}
                       </>
                     )}
                   </div>
                   {item.id !== 0 && (
                     <Link to={item.path} className="start-button-SC">
-                      Let&apos;s get started
+                      Let's get started
                     </Link>
                   )}
                 </div>
@@ -266,27 +266,8 @@ const Slider_C = () => {
                   <img src={item.img} alt="thumbnail" />
                   <div className="content-SC">
                     <div className="title-SC">
-                      {item.id === 0 ? (
-                        <div
-                          style={{
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "center",
-                          }}
-                        >
-                          <span style={{ color: item.color }}>
-                            Choose Calculator
-                          </span>
-                          <span style={{ color: "#fff", textWrap: "nowrap" }}>
-                            to Get Started
-                          </span>
-                        </div>
-                      ) : (
-                        <>
-                          {item.name}{" "}
-                          <span style={{ color: item.color }}>Calculator</span>
-                        </>
-                      )}
+                      {item.name}{" "}
+                      <span style={{ color: item.color }}>Calculator</span> {/* اللون هنا للـ thumbnails */}
                     </div>
                   </div>
                 </div>

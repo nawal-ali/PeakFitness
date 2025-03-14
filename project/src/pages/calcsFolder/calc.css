@@ -22,22 +22,21 @@ a {
   height: 100%;
   position: absolute;
   inset: 0 0 0 0;
-  background-color: #808080;
+  background-color: #191919;
   transition: transform 0.2s ease;
 }
 
 .carousel-SC .list-SC .item-SC img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  opacity: 0.8;
-  filter: brightness(60%);
-  background-color: #000;
+  /* object-fit: cover; */
+  /* opacity: 0.8; */
+  /* filter: brightness(60%); */
 }
 
 .carousel-SC .list-SC .item-SC .content-SC {
   position: absolute;
-  top: 30%;
+  top: 20%;
   width: 1140px;
   max-width: 80%;
   left: 6%;
@@ -54,7 +53,7 @@ a {
 
 .carousel-SC .list-SC .item-SC .title-SC,
 .carousel-SC .list-SC .item-SC .topic-SC {
-  font-size: 62px;
+  font-size: 75px;
   font-weight: bold;
   line-height: 1.3em;
   width: 50%;
@@ -95,7 +94,7 @@ a {
   width: max-content;
   z-index: 100;
   display: flex;
-  gap: 20px;
+  gap: 35px;
 }
 
 .carousel-SC .thumbnail-SC .item-SC {
@@ -105,8 +104,10 @@ a {
   position: relative;
   transition: transform 0.2s ease;
   cursor: pointer;
-  box-shadow: -25px 15px 6px rgba(0, 0, 0, 0.8);
+  box-shadow: -25px 25px 6px rgba(0, 0, 0, 0.9);
   border-radius: 20px;
+  background-color: #191919;
+  overflow: hidden;
 }
 
 .carousel-SC .thumbnail-SC .item-SC:hover {
@@ -114,12 +115,19 @@ a {
 }
 
 .carousel-SC .thumbnail-SC .item-SC img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 20px;
-  filter: brightness(50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    filter: brightness(160%);
+    /* transform: translateX(-60px); */
+}
+
+.carousel-SC .thumbnail-SC .item-SC[data-id="1"] img {
   transform: translateX(-10px);
+  transition: all 0.3s ease;
+  width: 200%;
+  filter: brightness(200%);
 }
 
 .carousel-SC .thumbnail-SC .item-SC .content-SC {
@@ -145,7 +153,7 @@ a {
 .carousel-SC .arrows-SC {
   position: absolute;
   top: 75%;
-  right: 65%;
+  right: 71%;
   z-index: 100;
   width: 300px;
   max-width: 30%;
@@ -318,19 +326,19 @@ a {
 
 /* Button Styles */
 .start-button-SC {
-  margin: 20px 50px 0 !important;
-  padding: 10px 20px !important;
-  background-color: #ec7e4a !important; /* غيرت اللون هنا لـ #ec7e4a */
-  color: #fff !important;
-  border: none !important;
-  border-radius: 20px !important;
-  font-size: 16px !important;
-  font-weight: 500 !important;
-  cursor: pointer !important;
-  display: inline-block !important;
+  margin: 50px 20px 0;
+  padding: 5px 20px;
+  background-color: #ec7e4a;
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  font-size: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-block;
   transition: background-color 0.3s ease, opacity 0.5s ease, transform 0.5s ease !important;
-  transform: translateY(50px) !important;
-  z-index: 10 !important;
+  transform: translateY(50px);
+  z-index: 10;
 }
 .clear-btn-F:hover,
 .start-button-SC:hover {
