@@ -8,6 +8,7 @@ a {
   text-decoration: none;
 }
 
+
 /* carousel */
 .carousel-SC {
   height: 100vh;
@@ -33,7 +34,41 @@ a {
   /* opacity: 0.8; */
   /* filter: brightness(60%); */
 }
+/* للسلايدر الرئيسي */
+.choose-calc-container-SC {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
 
+.choose-calc-text-SC {
+  color: #ec7e4a; /* اللون بتاع item.color، ممكن تخليه ديناميكي لو عايزة بطريقة تانية */
+}
+
+.get-started-text-SC {
+  color: #fff;
+  white-space: nowrap; /* بدل textWrap: "nowrap" */
+  margin-right: -160px;
+}
+
+/* للـ thumbnails */
+.thumbnail-span-SC {
+  color: #ec7e4a; /* اللون بتاع item.color، هنا بيكون ثابت لكن لو عايزاه ديناميكي شوفي الملاحظة تحت */
+}
+
+/* لو عايزة تحافظي على اللون الديناميكي في الـ thumbnails */
+.thumbnail-SC .item-SC[data-id="1"] .thumbnail-span-SC {
+  color: #ec7e4a; /* Calorie */
+}
+.thumbnail-SC .item-SC[data-id="2"] .thumbnail-span-SC {
+  color: #ec7e4a; /* Ideal Weight */
+}
+.thumbnail-SC .item-SC[data-id="3"] .thumbnail-span-SC {
+  color: #ec7e4a; /* BMI */
+}
+.thumbnail-SC .item-SC[data-id="4"] .thumbnail-span-SC {
+  color: #ec7e4a; /* Body Fat */
+}
 .carousel-SC .list-SC .item-SC .content-SC {
   position: absolute;
   top: 20%;
@@ -441,4 +476,67 @@ a {
 .carousel-SC.next-SC .logo-SC,
 .carousel-SC.prev-SC .logo-SC {
   opacity: 0;
+}
+@media (max-width: 1200px) {
+  .carousel-SC .list-SC .item-SC .content-SC {
+    /* text-align: center; */
+    padding: 0 10%;
+  }
+
+  .carousel-SC .thumbnail-SC {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .carousel-SC .thumbnail-SC .item-SC {
+    width: 130px;
+    height: 190px;
+  }
+
+  .carousel-SC .arrows-SC {
+    max-width: 300px;
+    justify-content: center;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+/*IPads*/
+@media (max-width: 1024px) {
+.carousel-SC .list-SC .item-SC .title-SC {}
+.carousel-SC .thumbnail-SC {bottom: 55%;}
+.carousel-SC .thumbnail-SC .item-SC {width: 120px;height: 180px;}
+.carousel-SC .arrows-SC {top: 40%; right: 79%;}
+.carousel-SC .list-SC .item-SC .content-SC {top: 10%;left: 0%;}
+.carousel-SC .list-SC .item-SC img {height: 50%;}
+}
+@media (max-width: 768px) {.carousel-SC .list-SC .item-SC .content-SC {padding: 0 5%;}
+.carousel-SC .list-SC .item-SC .title-SC {font-size: clamp(20px, 5vw, 40px);}
+.carousel-SC .thumbnail-SC .item-SC {width: 100px;height: 150px;}
+.carousel-SC .arrows-SC {bottom: 30px;}}
+/*Phones*/
+@media (max-width: 480px) {
+  .carousel-SC .list-SC .item-SC .content-SC {padding: 0 10px;position: absolute;top: 15%;}
+  .carousel-SC .thumbnail-SC {gap: 35px;bottom: 30%;left: 14%;width: 100%;}
+  .carousel-SC .thumbnail-SC .item-SC {width: 140px;height: 140px;}
+  .carousel-SC .arrows-SC {top: -55%;width: 200px;left: 30%;}
+  .carousel-SC .list-SC .item-SC img {object-fit: cover;}
+  .carousel-SC .arrows-SC button {width: 50px;height: 50px}
+  .start-button-SC {width: 70%;margin: 25px 20px 0;}
+  .carousel-SC .list-SC .item-SC img {width: 100%;height: 50%;}
+}
+@media (max-width:415px) {
+  .carousel-SC .thumbnail-SC {bottom: 27%;}
+.start-button-SC {width: 70%;font-size: 20px;}
+.carousel-SC  .item-SC[data-id="1"] img {  transform: translateX(10px);  width: 160%;}
+}
+@media (max-width:391px) {
+  .carousel-SC .thumbnail-SC {bottom: 22%;}
+  .start-button-SC {width: 70%;font-size: 20px;}
+  .carousel-SC  .item-SC[data-id="1"] img {  transform: translateX(10px);  width: 160%;}
+}
+@media (max-width:376px) {
+  .carousel-SC .thumbnail-SC {bottom: 8%;left: 10%;}
+  .start-button-SC {width: 70%;font-size: 20px;}
+  .carousel-SC  .item-SC[data-id="1"] img {  transform: translateX(10px);  width: 160%;}
+  .carousel-SC .arrows-SC {left: 25%;}
 }

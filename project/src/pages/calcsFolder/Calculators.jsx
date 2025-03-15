@@ -107,7 +107,7 @@ const Slider_C = () => {
         titleDiv.innerText = item.name;
 
         const span = document.createElement("span");
-        span.style.color = item.color; // اللون هنا للـ thumbnails فقط
+        span.className = "thumbnail-span-SC";
         span.innerText = " Calculator";
         titleDiv.appendChild(span);
 
@@ -166,7 +166,7 @@ const Slider_C = () => {
       titleDiv.innerText = item.name;
 
       const span = document.createElement("span");
-      span.style.color = item.color; // اللون هنا للـ thumbnails فقط
+      span.className = "thumbnail-span-SC";
       span.innerText = " Calculator";
       titleDiv.appendChild(span);
 
@@ -213,29 +213,17 @@ const Slider_C = () => {
                 <div className="content-SC">
                   <div className="title-SC">
                     {item.id === 0 ? (
-                      <div
-                        style={{
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "center",
-                        }}
-                      >
-                        <span style={{ color: item.color }}>
+                      <div className="choose-calc-container-SC">
+                        <span className="choose-calc-text-SC">
                           Choose Calculator
                         </span>
-                        <span
-                          style={{
-                            color: "#fff",
-                            textWrap: "nowrap",
-                            marginRight: "-160px",
-                          }}
-                        >
+                        <span className="get-started-text-SC">
                           to Get Started
                         </span>
                       </div>
                     ) : (
                       <>
-                        {item.name} <span>Calculator</span> {/* بدون لون متغير هنا */}
+                        {item.name} <span>Calculator</span>
                       </>
                     )}
                   </div>
@@ -257,20 +245,25 @@ const Slider_C = () => {
                   item.id !== items.find((i) => i.name === selectedItem)?.id
               )
               .map((item) => (
-                <div
-                  className="item-SC"
+                <Link
+                  to={item.path} // ربط الـ thumbnail بـ path بتاع العنصر
                   key={item.id}
+                  className="item-SC"
                   data-id={item.id}
-                  onClick={() => showSlider("select", item.id)}
+                  onClick={(e) => {
+                    e.preventDefault(); // لمنع التنقل المباشر لو عايزة السلايدر يتحرك أولاً
+                    showSlider("select", item.id); // تحريك السلايدر
+                    setTimeout(() => window.location.href = item.path, 500); // التنقل بعد الأنيميشن
+                  }}
                 >
                   <img src={item.img} alt="thumbnail" />
                   <div className="content-SC">
                     <div className="title-SC">
                       {item.name}{" "}
-                      <span style={{ color: item.color }}>Calculator</span> {/* اللون هنا للـ thumbnails */}
+                      <span className="thumbnail-span-SC">Calculator</span>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
           </div>
         </>
