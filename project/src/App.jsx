@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import CalorieAuthPanels from "./pages/Calculators/Calorie Calculator/Calorie";
 // import BMRCalculator from "./pages/Calculators/BMI Calculator/BMI";
-// import AuthForm from "./pages/Auth/Login/Login"; 
-// import ForgetPassword from "./pages/Auth/Password/Forget-password/Forget";
+import AuthForm from "./pages/Auth/Login/Login"; 
+import ForgetPassword from "./pages/Auth/Password/Forget-password/Forget";
 // import Carousel from "./pages/Calculators/Slider/slider";
 // import CalorieCalculator from "./pages/Calculators/Calorie Calculator/Calorie";
 // import IdealWeightCalculator from "./pages/Calculators/IDEAL/IDEAL";
@@ -17,17 +17,17 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import WeightGain from "./pages/Food-Plan/Weight-Gain/weight-Gain-FP";
 // import Slider_C from "./pages/calcsFolder/Calculators";
 // import test_FOFO from "./pages/Food-Plan/test/test_FOFO";
-import Slider_Calc from "./pages/Calculators/Slider/Slider-2";
+// import Slider_Calc from "./pages/Calculators/Slider/Slider-2";
 function App() {
   return (
     // <test_FOFO/>
-    // <Router>
-    //   <Routes>
-    //     <Route path="/login" element={<AuthForm />} />
-    //     <Route path="/Forget-password" element={<ForgetPassword/>} />
-    //     {/* <Route path="/Calorie" element={<CalorieAuthPanels/>} /> */}
-    //   </Routes>
-    //  </Router>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<AuthForm />} />
+        <Route path="/Forget-password" element={<ForgetPassword/>} />
+        {/* <Route path="/Calorie" element={<CalorieAuthPanels/>} /> */}
+      </Routes>
+      </Router>
     // <CalorieAuthPanels/>
     // <BMRCalculator/>
     // <IdealWeightCalculator/>
@@ -46,7 +46,7 @@ function App() {
     // </Router>
     // <Slider_PT/>
     // <Slider_C/>
-    <Slider_Calc/>
+    // <Slider_Calc/>
     // <Slider_FP/>
   //   <Router>
   //   <Routes>
