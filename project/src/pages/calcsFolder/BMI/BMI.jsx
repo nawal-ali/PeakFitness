@@ -119,7 +119,7 @@ const BMICalculator = () => {
         <div className="left-panel-B">
           {!showResults ? (
             <>
-              <div className="logo-B"></div>
+              {/* <div className="logo-B"></div> */}
               <div className="background-image-B"></div>
               <div className="content-B">
                 <div className="small-image-B"></div>
@@ -335,13 +335,12 @@ const BMICalculator = () => {
           ) : (
             <div className="result-section-B">
               <div className="Calculator-circles-side2-B"></div>
-              <div className="result-logo-B"></div>
+              {/* <div className="result-logo-B"></div> */}
               <div className="result-header-B">
                 <h2>Your Result</h2>
                 <h3 className="bmi-value-B">
                   {bmi} kg/M<sup>2</sup>
                 </h3>
-              </div>
               <p className="subtext-B">
                 {bmi
                   ? `You Have A ${weightStatus} Body Weight, ${
@@ -349,6 +348,7 @@ const BMICalculator = () => {
                     }`
                   : ""}
               </p>
+              </div>
               <div className="bmi-table-div-B">
                 <table className="bmi-table-B">
                   <thead>
