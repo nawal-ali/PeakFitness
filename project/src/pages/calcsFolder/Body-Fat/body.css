@@ -151,6 +151,8 @@ body {
   background-color: #fff;
   color: #000;
   outline: none;
+  margin-bottom: 0.9rem;
+
 }
 
 .input-group-F input:focus {
@@ -271,7 +273,6 @@ body {
   padding: 20px;
   transition: transform 0.6s ease-in-out;
   position: relative;
-  padding-top: 8%;
   padding-bottom: 8%;
 }
 
@@ -502,22 +503,6 @@ body {
   padding-bottom: 2%;
 }
 
-.error-message-F {
-  color: #ff0000;
-  font-size: 12px;
-  margin-top: 5px;
-  text-align: left;
-}
-
-.error-message-F.weight-height-error-F {
-  color: #ff0000;
-  font-size: 12px;
-  position: absolute;
-  bottom: -25px;
-  left: 10px;
-  margin: 0;
-  width: 100%;
-}
 
 .numeric-input-F.error-F {
   border: 2px solid #ff8c00;
@@ -712,13 +697,12 @@ body {
   position: relative;
 }
 
+
 .error-message-F {
   color: #ff0000;
   font-size: 12px;
-  margin-top: 5px;
   text-align: left;
   position: absolute;
-  top: 100%;
   left: 10px;
   z-index: 2;
 }
@@ -751,11 +735,18 @@ body {
   .under {font-size: 21px;}
   .left-panel-F .under-header-F {width: 95%;}
   .fat-buttons-result-F {margin-top: 5px;gap: 30px;}
+  .input-section-F {padding-top: 0% !important;}
+}
+@media (max-width:913px) {
+  .input-group-F input {margin-bottom: 0rem;}
+  .error-message-F {font-size: 10px;margin-top: 5px;}
+  .fat-buttons-result-F, .fat-buttons-F {margin-top: 20px;}
+  .popup-F {position: absolute;top: 20%;}
 }
 @media (min-width:1000px) {
   .result-section-F {padding-top: 8%;}
   .clear-btn-F {margin-right: 0px;}
-  .input-section-F {padding-top: 16%;}
+  .input-section-F {padding-top: 13%;}
   .left-panel-F .under-header-F {font-size: 21px;}
   .calculate-btn-F {padding: 10px 24px}
 }
