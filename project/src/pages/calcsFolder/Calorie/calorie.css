@@ -10,10 +10,8 @@ input::-webkit-input-placeholder {
 .calorie-calculator-C {
   display: flex;
   width: 100vw;
-  height: 100vh;
   background-color: #fff;
   overflow: hidden;
-  position: relative;
 }
 
 .Calorie-title-C {
@@ -25,12 +23,13 @@ input::-webkit-input-placeholder {
   line-height: 65px;
   font-family: "Poppins";
 }
-
+.Pargraph-calories-per-meal-C{
+  text-align: center !important;
+}
 .title-C {
   display: block;
   line-height: 80px;
 }
-
 .left-panel-C {
   flex: 1;
   background-color: #202020;
@@ -39,9 +38,10 @@ input::-webkit-input-placeholder {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  position: relative;
   transition: transform 0.6s ease-in-out;
+  position: relative;
 }
+
 
 .left-panel-C .buttons-C {
   display: none;
@@ -49,15 +49,6 @@ input::-webkit-input-placeholder {
 
 .calorie-calculator-C.show-results-C .left-panel-C {
   transform: translateX(-100%);
-}
-
-.left-panel-C .logo-C {
-  position: absolute;
-  top: 5px;
-  left: 15px;
-  font-size: 24px;
-  font-weight: bold;
-  z-index: 3;
 }
 
 .left-panel-C .background-image-C {
@@ -75,17 +66,20 @@ input::-webkit-input-placeholder {
   z-index: 1;
   filter: brightness(40%);
 }
-
+.result-section-C{
+  padding-top: 15%;
+  padding-bottom: 10%;
+}
 .left-panel-C .content-C {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  /* height: 100vh; */
   text-align: center;
   color: white;
   z-index: 2;
-  margin-bottom: -20px;
+  /* margin-bottom: -20px; */
 }
 
 .left-panel-C .small-image-C {
@@ -114,16 +108,6 @@ input::-webkit-input-placeholder {
   z-index: 2;
 }
 
-.right-panel-C {
-  flex: 1;
-  background-color: #202020;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  transition: transform 0.6s ease-in-out;
-}
 
 .calorie-calculator-C.show-results-C .right-panel-C {
   background-image: url("./imgs/Calorie.png");
@@ -169,17 +153,12 @@ input::-webkit-input-placeholder {
   opacity: 1;
 }
 
-.input-group-C {
-  text-align: left;
-  width: 100%;
-  padding: 10px;
-  margin: 20px 0;
-}
-
 .input-section-C {
   width: 100%;
   max-width: 450px;
   text-align: center;
+  padding-top:10% ;
+  padding-bottom:12% ;
 }
 
 .input-group-C label,.activity-slider-C label {
@@ -192,7 +171,7 @@ input::-webkit-input-placeholder {
 
 .input-group-C input {
   width: 100%;
-  padding: 8px;
+  padding:  0.8rem;
   border: 2px solid #fff;
   border-radius: 25px;
   font-size: 16px;
@@ -201,6 +180,13 @@ input::-webkit-input-placeholder {
   color: #000;
   outline: none;
 }
+.input-group-C {
+  text-align: left;
+  width: 100%;
+  padding: 10px;
+  position: relative; /* Added to make it the reference for absolute positioning */
+}
+
 
 .input-group-C input:focus {
   border-color: #ff8c00;
@@ -208,7 +194,7 @@ input::-webkit-input-placeholder {
 }
 
 .activity-slider-C {
-  margin-bottom: 15px;
+  margin-bottom: 2.5rem;
   text-align: left;
   margin-top: 30px;
   margin-left: 10px;
@@ -311,27 +297,12 @@ input::-webkit-input-placeholder {
 }
 
 .result-section-C {
-  text-align: center;
+  text-align: left;
   color: #fff !important;
-  position: absolute;
-  left: 60px;
-}
-
-.result-section-C .result-logo-C {
-  width: 150px;
-  height: auto;
-  margin-bottom: 20px;
-}
-
-.result-header-C {
-  position: relative;
-  top: -20px;
-  left: -30px;
 }
 
 p.calories-C {
   font-size: 50px !important;
-  margin-left: 25px;
   font-weight: bold;
   letter-spacing: 3px;
 }
@@ -343,10 +314,9 @@ p.calories-C {
 }
 
 .result-section-C h2 {
-  font-size: 28px;
+  font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 25px;
-  margin-left: -280px;
 }
 
 .result-section-C p {
@@ -517,21 +487,12 @@ p.calories-C {
   display: flex;
   flex-direction: row;
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   background-color: #fff;
   overflow: hidden;
 }
 
-.left-panel-C {
-  flex: 1;
-  background-color: #202020;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  transition: transform 0.6s ease-in-out;
-}
+
 
 .right-panel-C {
   flex: 1;
@@ -540,7 +501,7 @@ p.calories-C {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 0rem 2rem;
   transition: transform 0.6s ease-in-out;
   z-index: 0;
 }
@@ -553,18 +514,6 @@ p.calories-C {
   transform: translateX(0);
 }
 
-.logo-C {
-  width: 165px;
-  height: 100px;
-  position: absolute;
-  top: -125px;
-  left: -50px;
-  background-image: url(/images/Logo-4.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 300;
-}
 
 /* Circles */
 .Calculator-circles-S1-C::before,
@@ -767,10 +716,10 @@ p.calories-C {
   animation-fill-mode: both;
 }
 
-.subtext-C {
+/* .subtext-C {
   position: relative;
   left: 30px;
-}
+} */
 
 .Arrow-right-C {
   width: 35px;
@@ -789,7 +738,7 @@ p.calories-C {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
@@ -828,21 +777,69 @@ p.calories-C {
 .popup-close-btn-C:hover {
   background-color: #ff8c00;
 }
-/* ... (keep all other existing styles unchanged) ... */
 
-/* Ensure the input group is a positioning context */
-.input-group-C {
-  text-align: left;
-  width: 100%;
-  padding: 10px;
-  margin: 20px 0;
-  position: relative; /* Added to make it the reference for absolute positioning */
+@media (max-width:1025px) {
+  .left-panel-C .under-header-C {font-size: 22px;}
+  
 }
-
-/* Style for error messages to overlay without pushing content */
-
-
-/* Remove the weight-height-error-C class since we don't need it anymore */
-
-
-/* ... (keep all other existing styles unchanged) ... */
+@media (max-width:913px) {
+  .left-panel-C .under-header-C {font-size: 1.2rem;}
+  .slider-track-C {width: 100%;}
+  .slider-line-C {left: 1rem;width: 88%;}
+}
+@media (max-width:821px) {
+  .Calculator-circles-S1-C::before, 
+  .Calculator-circles-S1-C::after, 
+  .Calculator-circles-side2-C, 
+  .Calculator-circles-side2-C::after, 
+  .Calculator-circles-side2-C::before {display: none;}
+  .calorie-calculator-C {flex-direction: column;}
+  .left-panel-C .background-image-C {background-size: auto;}
+  .left-panel-C .content-C {padding-top: 10%;padding-bottom: 20%;}
+  .right-panel-C {padding-bottom: 55%;}
+  .Pargraph-calories-per-meal-C{text-align: center;}
+  .calorie-buttons-Result-C, .Calorie-buttons-C {margin-top: 0px;}
+}
+@media (max-width: 769px) {
+  .right-panel-C {padding-bottom: 40%;}
+}
+@media (max-width: 541px) {
+  .right-panel-C {padding-bottom: 5%;}
+}
+@media (max-width:431px) {
+  .left-panel-C .content-C {padding-top: 30%;}
+  .left-panel-C .content-C {padding-bottom: 45%;}
+  .right-panel-C {padding-bottom: 45%;}
+  .calorie-buttons-Result-C, .Calorie-buttons-C {margin-top: 0px;flex-direction: column;}
+  .clear-btn-C {margin-right: 0px;}.calorie-buttons-Result-C, .Calorie-buttons-C {gap: 2rem;}
+  .slider-track-C {width: 100%;}.slider-line-C {left: 1rem;}
+  .left-panel-C .under-header-C {font-size: 1.2rem;width: 95%;}
+  .result-section-C {width: 100%;}.macronutrients-C {width: 100%;}
+  .meals-toggle-C button {margin-left: 15px;}
+  .Pargraph-calories-per-meal-C{text-align: center;}
+  .calculate-btn-C , .other-calculators-btn-C {padding: 10px 20px;}
+  .input-section-C {padding-bottom: 25%;}
+  .result-section-C {padding-top: 15%;padding-bottom: 25%;}
+}
+@media (max-width: 361px) {
+  .left-panel-C .under-header-C {font-size: 1.1rem;}
+  .left-panel-C .content-C {padding-bottom: 60%;}
+  .right-panel-C {padding-bottom: 10%;}
+  .slider-line-C {width: 80%;}
+  .meals-toggle-C button {margin-left: 0px;}
+  .calorie-buttons-Result-C, .Calorie-buttons-C {gap: 1.5rem;}
+  .Calorie-parameters-side2-C, .Calorie-parameters-side1-C {font-size: 30px;}
+}
+@media (max-width:391px) {
+  .slider-line-C {width: 81%;}
+}
+@media (max-width:376px) {
+  .result-section-C {padding-bottom: 0%;}
+  .right-panel-C {padding-bottom: 0%;}
+  .left-panel-C .content-C {padding-top: 30%;padding-bottom: 20%;}
+}
+@media (max-width:345px) {
+  .result-section-C {padding-bottom: 25%;}
+  .left-panel-C .content-C {padding-top: 35%;padding-bottom: 25%;}
+  .right-panel-C {padding-bottom: 50%;}
+}

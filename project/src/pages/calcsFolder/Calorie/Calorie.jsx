@@ -188,7 +188,7 @@ const CalorieCalculator = () => {
         <div className="left-panel-C">
           {!showResults ? (
             <>
-              <div className="logo-C"></div>
+              {/* <div className="logo-C"></div> */}
               <div className="background-image-C"></div>
               <div className="content-C">
                 <div className="small-image-C"></div>
@@ -512,7 +512,7 @@ const CalorieCalculator = () => {
           ) : (
             <div className="result-section-C">
               <div className="Calculator-circles-side2-C"></div>
-              <div className="result-logo-C"></div>
+              {/* <div className="result-logo-C"></div> */}
               <div className="result-header-C">
                 <h2>Your Result</h2>
                 <p className="calories-C">
@@ -568,7 +568,7 @@ const CalorieCalculator = () => {
                   <span className="calorie-value-C">{calories}</span> Kcal
                 </p>
               ) : (
-                <p>
+                <p className="Pargraph-calories-per-meal-C">
                   Calories per meal:{" "}
                   <span className="calorie-value-C">
                     {Math.round(calories / (meals === "3 Meals" ? 3 : 4))}
