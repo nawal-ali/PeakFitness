@@ -182,7 +182,7 @@ const IdealCalculator = () => {
         <div className="left-panel-I">
           {!showResults ? (
             <>
-              <div className="logo-I"></div>
+              {/* <div className="logo-I"></div> */}
               <div className="background-image-I"></div>
               <div className="content-I">
                 <div className="small-image-I"></div>
@@ -367,7 +367,7 @@ const IdealCalculator = () => {
           ) : (
             <div className="result-section-I">
               <div className="Calculator-circles-S2-I"></div>
-              <div className="result-logo-I"></div>
+              {/* <div className="result-logo-I"></div> */}
               <div className="result-header-I">
                 <h2>Your Result</h2>
                 <h3 className="ideal-weight-value-I">≈{idealWeight}kg</h3>

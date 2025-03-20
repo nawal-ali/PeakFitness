@@ -1,12 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Jomhuria&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-/* 
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: 'Nunito Sans';
-  overflow: hidden;
-} */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Jomhuria&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"); 
+
 body {
   padding-right: 0;
 }
@@ -63,7 +56,7 @@ body {
 .calorie-calculator-I {
   display: flex;
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   background-color: #fff;
   overflow: hidden;
   position: relative;
@@ -103,7 +96,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  /* height: 100vh; */
   text-align: center;
   color: white;
   z-index: 2;
@@ -231,7 +224,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 50px;
-  margin-top: 40px;
+  /* margin-top: 40px; */
   width: 100%;
   border: none;
   text-wrap: nowrap;
@@ -278,8 +271,8 @@ body {
   flex-direction: column;
   text-align: center;
   color: #fff;
-  margin-left: -150px;
-  margin-top: 40px;
+  /* margin-left: -150px;
+  margin-top: 40px; */
   border: none;
 }
 
@@ -287,14 +280,14 @@ body {
   font-size: 50px;
   font-weight: bold;
   text-align: left;
-  margin-left: 30px;
+  /* margin-left: 30px; */
   border: none;
 }
 
 .result-section-I h3 {
   font-size: 60px;
   text-align: left;
-  margin-left: 45px;
+  /* margin-left: 45px; */
   letter-spacing: 3px;
   border: none;
 }
@@ -322,14 +315,6 @@ body {
   box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
 }
 
-.calorie-calculator-I {
-  display: flex;
-  flex-direction: row;
-  width: 100vw;
-  height: 100vh;
-  background-color: #fff;
-  overflow: hidden;
-}
 .left-panel-I {
   flex: 1;
   background-color: #202020;
@@ -349,7 +334,10 @@ body {
   justify-content: center;
   padding: 20px;
   transition: transform 0.6s ease-in-out;
+  padding-bottom: 8.5%;
+  padding-top: 6%;
   z-index: 0; /* لضمان أن الخط يظهر فوق الخلفية */
+  padding-bottom: 10.5%;
 }
 
 .calorie-calculator-I.show-results-I .left-panel-I {
@@ -363,7 +351,7 @@ body {
 
 /* Table */
 .ideal-table-div-I {
-  width: 75%;
+  width: 100%;
 }
 
 .ideal-table-I {
@@ -711,41 +699,130 @@ th {
   animation-delay: 2s; /* الأزرار تظهر أخيرًا بعد 2 ثانية */
 }
 /* Media Queries */
-@media (max-width: 1024px) {
+
+@media (max-width: 1025px) {
   .Calculator-one-circle-s1-I::before,.Calculator-circles-S1-I::after,.Calculator-one-circle-I::before,.Calculator-one-circle-I::after,.Calculator-circles-S1-I::before,.Calculator-circles-S2-I::after,.Calculator-circles-S2-I::before  {display: none;}
   .left-panel-I .small-image-I {width: 110px;height: 110px;}
-  .gender-selection-I {gap: 20px;width: 110%;}
-  .left-panel-I .under-header-I {font-size: 21px;width: 92%;}
+  .gender-selection-I {gap: 2rem;width: 100%;}
+  .left-panel-I .under-header-I {font-size: 21px;width: 60%;}
   .ideal-weight-title-I {font-size: 50px;}
   .Ideal-parameters-side1-I, .Ideal-parameters-side2-I {font-size: 30px;text-wrap: nowrap;}
   .other-calculators-btn-B ,.clear-btn-I, .calculate-btn-I {font-size: 17px;}
-  .ideal-buttons-I, .ideal-buttons-result-I {margin-top: 15px;}
-  .other-calculators-btn-B, .clear-btn-I, .calculate-btn-I {padding: 14px 20px;}
-  .input-group-I {margin: 30px 0;width: 110%;}
-  .ideal-buttons-I {gap: 0px;width: 110%;}
-  .ideal-buttons-result-I {gap: 50px;}
-  .clear-btn-I {max-width: 120px;font-size: 18px;margin-right: 20px;}
-  .result-section-I {margin-left: 0;}
-  .result-section-I h2 {margin-bottom: 0px;margin-left: 0px;}
-  .result-section-I h3 {margin-left: 15px;}
-  .ideal-table-I th,.ideal-table-I td {font-size: 20px;}
+  .ideal-buttons-I, .ideal-buttons-result-I {margin-top: 15px; gap: 0;}
+  .other-calculators-btn-B, .clear-btn-I, .calculate-btn-I {padding: 10px 10px;}
+  .input-group-I {margin: 1rem 0 !important;}
   .ideal-table-div-I {width: 100%;}
   .result-section-I p {font-size: 20px;}
+  .right-panel-I {padding-top: 15% ;}
+  .input-section-I {width: 80%;}
+  .ideal-buttons-result-I {margin-top: 15px;gap: 2rem;}
+  .clear-btn-I {max-width: 6rem;}
+}
+@media (min-width:1000px) {
+  .result-section-I {padding-top: 0.5%;}
 }
 @media (max-width:885px) {
-  .left-panel-I .under-header-I {width: 108%;}
+  .calorie-calculator-I {
+    flex-direction: column;
+}
+  .left-panel-I .under-header-I {width: 60%;}
   .ideal-table-div-I {width: 91%;}
   .result-section-I h2 {font-size: 45px;}
   .result-section-I h3 {font-size: 55px;}
   .ideal-buttons-result-I {gap: 46px;}
+  .input-section-I {
+    width: 65%!important;
+}
+.left-panel-I{
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+}
+
+
+@media (max-width:854px) {
+  .right-panel-I {padding-top: 15%;padding-bottom: 75% !important;}
+  .result-section-I {padding-top: 15%;padding-bottom: 5% !important;}
+  .input-section-I {width: 65%;}.left-panel-I {padding-top: 10%;padding-bottom: 15%;}
+}
+@media (max-width:851px) {
+  .right-panel-I {padding-top: 15%;padding-bottom: 5% !important;}
+
+}
+@media (max-width: 821px) {
+  .right-panel-I {padding-bottom: 65% !important;}
+  .left-panel-I {padding-top: 20%;padding-bottom: 20%;}
+  .ideal-buttons-I {gap: 0px;width: 100%;}
+  .ideal-buttons-I {gap: 1.2rem;width: 100%;margin-top: 1.5rem;}
+  .right-panel-I {padding-top: 25% !important;}
+  .input-section-I {width: 65% !important;}
 }
 @media (max-width:800px) {
   .calorie-calculator-I {flex-direction: column;}
-  .left-panel-I .content-I {height: 40vh;}
   .ideal-weight-title-I {font-size: 40px;}
   .left-panel-I .under-header-I {width: 60%;}
-  .input-group-I {margin: 0px 0;width: 90%;}
-  .gender-selection-I {width: 90%;}
+  .input-group-I {margin: 0px 0;width: 100%;}
+  .gender-selection-I {width: 100%;}
   .left-panel-I .small-image-I {width: 90px;height: 90px;}
   .Arrow-right-I {margin-top: 20px;}
 }
+@media(max-width:769px){
+  .right-panel-I {padding-bottom: 50% !important;}
+  .right-panel-I {padding-top: 20% !important;}
+  .input-section-I {width: 66% !important;}
+}
+@media (max-width:767px) {
+  .right-panel-I {padding-top: 15%;padding-bottom: 5% !important;}
+}
+
+@media (max-width:550px) {
+  .ideal-table-I {width: 80%;}
+  .result-header-I {margin-left: 0px;}
+  .result-section-I p {font-size: 1rem;}
+  .ideal-buttons-I, .ideal-buttons-result-I {flex-direction: column;gap: 1rem;width: 100%;}
+  .input-section-I {width: 100%;}.clear-btn-I {max-width: 120px;font-size: 18px;margin:auto;}
+  .input-group-I {width: 100%;}.gender-selection-I {width: 100%;}
+  .gender-selection-I button {padding: 2px 0;}
+  .left-panel-I .under-header-I {width: 100%;}
+  .left-panel-I {padding-top: 20%;}
+  .right-panel-I {padding-bottom: 20% !important;}
+  .ideal-table-div-I {width: 125%;}
+}
+@media (max-width: 431px) {
+  .right-panel-I {padding-bottom: 65% !important;}
+  .left-panel-I {padding-top: 28%;padding-bottom: 28%;}
+  .input-section-I {width: 80% !important;}
+}
+@media (max-width:429px) {
+  .right-panel-I {padding-top: 15%;padding-bottom: 5% !important;}
+
+}
+@media (max-width: 415px) {
+  .right-panel-I {padding-bottom: 60% !important;}
+}
+@media (max-width:411px) {
+  .right-panel-I {padding-top: 15%;padding-bottom: 5% !important;}
+
+}
+@media (max-width: 361px) {
+  .right-panel-I {padding-bottom: 25% !important;}
+}
+@media (max-width: 376px) {
+  .right-panel-I {padding-bottom: 10% !important;}
+}
+@media (max-width: 391px) {
+  .right-panel-I {padding-bottom: 55% !important;}
+}
+@media (max-width: 376px) {
+  .right-panel-I {padding-bottom: 10% !important;}
+}
+@media (max-width: 361px) {
+  .right-panel-I {padding-bottom: 25% !important;}
+}
+@media (max-width: 345px) {
+  .right-panel-I {padding-bottom: 70% !important;}
+  .input-section-I {width: 90% !important;}
+}
+
+
+
