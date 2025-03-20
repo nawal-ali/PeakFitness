@@ -188,7 +188,6 @@ const CalorieCalculator = () => {
         <div className="left-panel-C">
           {!showResults ? (
             <>
-              {/* <div className="logo-C"></div> */}
               <div className="background-image-C"></div>
               <div className="content-C">
                 <div className="small-image-C"></div>

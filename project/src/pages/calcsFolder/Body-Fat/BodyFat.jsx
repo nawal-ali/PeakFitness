@@ -559,7 +559,6 @@ const BodyFatCalc = () => {
           ) : (
             <div className="result-section-F">
               <div className="Calculator-circles-side2-F"></div>
-              <div className="result-logo-F"></div>
               <div className="result-header-F">
                 <h2>Your Result</h2>
                 <h3 className="fat-value-F">
