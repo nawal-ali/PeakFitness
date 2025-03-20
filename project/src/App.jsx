@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import CalorieAuthPanels from "./pages/Calculators/Calorie Calculator/Calorie";
 // import BMRCalculator from "./pages/Calculators/BMI Calculator/BMI";
-import AuthForm from "./pages/Auth/Login/Login"; 
+// import AuthForm from "./pages/Auth/Login/Login"; 
 import ForgetPassword from "./pages/Auth/Password/Forget-password/Forget";
 // import Carousel from "./pages/Calculators/Slider/slider";
 // import CalorieCalculator from "./pages/Calculators/Calorie Calculator/Calorie";
@@ -23,7 +23,7 @@ function App() {
     // <test_FOFO/>
     <Router>
       <Routes>
-        <Route path="/login" element={<AuthForm />} />
+        {/* <Route path="/login" element={<AuthForm />} /> */}
         <Route path="/Forget-password" element={<ForgetPassword/>} />
         {/* <Route path="/Calorie" element={<CalorieAuthPanels/>} /> */}
       </Routes>

@@ -135,7 +135,7 @@ const AuthForm = () => {
 
     return (
         <div className="container" id="container" ref={containerRef}>
-            <div className="form-container sign-up-container">
+            <div className="form-container-sign-up-container">
                 <div className="signup-circles"></div>
                 <form onSubmit={handleSignUpSubmit}>
                     <h1 className="Login">Sign Up</h1>
@@ -296,7 +296,7 @@ const AuthForm = () => {
                 </form>
             </div>
 
-            <div className="form-container sign-in-container">
+            <div className="form-container-sign-in-container">
                 <div className="login-circles"></div>
                 <form onSubmit={handleSignInSubmit}>
                     <h1 className="Logoo">Login</h1>

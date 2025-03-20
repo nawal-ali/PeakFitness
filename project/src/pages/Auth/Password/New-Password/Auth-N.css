@@ -35,13 +35,6 @@ h2 {
     white-space: nowrap;
 }
 
-p {
-    color: white;
-    font-size: 22px;
-    margin: 20px 0px;
-    margin-right: 120px;
-    text-wrap: nowrap;
-}
 
 .svg-container-NP {
     display: flex;

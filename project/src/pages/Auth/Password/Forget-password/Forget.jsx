@@ -1,56 +1,86 @@
 import React, { useState } from "react";
-import   "./Auth-F.css"; // يفترض أن يتم تعديل اسم الملف إلى Auth-FP.css إذا لزم الأمر
-import logo from "../../../../../images/Logo-4.svg";
-import lockIcon from "../../../../../images/Lock.svg";
+import "./Auth-F.css";
 
 const ForgetPassword = () => {
     const [email, setEmail] = useState("");
-    const [messageVisible, setMessageVisible] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [modalMessage, setModalMessage] = useState(""); // State for modal message
+    const [showModal, setShowModal] = useState(false); // State to show/hide modal
+
+    // Email validation regex
+    const validateEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (email.trim() !== "") {
-            setMessageVisible(true);
+        setIsSubmitted(true); // Mark form as submitted
+
+        if (email.trim() === "") {
+            setModalMessage("Please enter an email.");
+            setShowModal(true);
+        } else if (!validateEmail(email)) {
+            setModalMessage("Please enter a valid email format.");
+            setShowModal(true);
         } else {
-            setMessageVisible(false);
+            setModalMessage("Check your email for the reset link.");
+            setShowModal(true);
+            setEmail(""); // Optional: Clear input after success
+            setIsSubmitted(false); // Reset submission state
         }
     };
 
+    const closeModal = () => {
+        setShowModal(false);
+        setModalMessage("");
+    };
+
     return (
-        <div className="container-FP">
-            <img src={logo} alt="Logo" className="logo-FP" />
-            <div className="svg-container-FP">
-                <img src={lockIcon} alt="Reset Password Icon" />
+        <div className="Main-container-Auth-FP">
+            <img src="../../../../../images/Logo-4.svg" alt="Logo" className="logo-Auth-FP" />
+            <div className="container-Auth-FP">
+                <form onSubmit={handleSubmit} className="forgot-password-box-Auth-FP">
+                    <div className="svg-container-Auth-FP">
+                        <img src="../../../../../images/Lock.svg" alt="Reset Password Icon" />
+                    </div>
+                    <h2 className="header-Auth-F">Forgot Password</h2>
+                    <div className="Under-header-Auth-FP">
+                        <p>Please enter your <span className="Span-Auth-FP">email</span></p>
+                        <p className="Parag-2-Auth-FP"></p>
+                    </div>
+                    <div className="input-container-Auth-FP">
+                        <input
+                            className="input-Auth-FP"
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="*******@gmail.com"
+                        />
+                        <input
+                            className="submit-Auth-FP"
+                            type="submit"
+                            id="resetPassword"
+                            name="resetPassword"
+                            value="Reset Password"
+                        />
+                    </div>
+                </form>
             </div>
-            
-            <form onSubmit={handleSubmit} className="forgot-password-box-FP">
-                <h2>Forgot Password</h2>
-                <p>Please enter your </p>
-                <p className="Parag-2-FP">email or mobile number</p>
 
-                <input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
-                    value={email} 
-                    onChange={(e) => setEmail(e.target.value)} 
-                    placeholder="email or mobile number" 
-                    required 
-                />
-
-                <input 
-                    type="submit" 
-                    id="resetPassword" 
-                    name="resetPassword" 
-                    value="Reset Password" 
-                    className="button-bt3-FP" 
-                />
-
-                {messageVisible && <p className="message-FP">Check your email for the reset link.</p>}
-                {!messageVisible && email.trim() === "" && (
-                    <p className="error-message-FP">Please enter a valid email.</p>
-                )}
-            </form>
+            {/* Modal Popup */}
+            {showModal && (
+                <div className="modal-overlay-Auth-FP">
+                    <div className="modal-content-Auth-FP">
+                        <p>{modalMessage}</p>
+                        <button className="modal-close-btn-Auth-FP" onClick={closeModal}>
+                            OK
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
