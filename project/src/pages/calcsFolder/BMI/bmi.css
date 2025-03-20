@@ -94,7 +94,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   text-align: center;
   color: white;
 }
@@ -219,36 +218,16 @@ body {
   flex-direction: column;
   text-align: center;
   color: #fff;
-  /* padding-bottom: 5%; */
-  /* align-self: start; */
-  /* margin-left: -150px; */
-  /* margin-top: 40px; */
 }
-
-/* .result-logo-B {
-  width: 165px;
-  height: 100px;
-  position: absolute;
-  top: -5px;
-  left: 20px;
-  background-image: url(/images/Logo-4.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 300;
-} */
-
 .result-section-B h2 {
   font-size: 50px;
   font-weight: bold;
   text-align: left;
-  /* margin-left: 30px; */
 }
 
 .result-section-B h3 {
   font-size: 60px;
   text-align: left;
-  /* margin-left: 45px; */
   letter-spacing: 3px;
 }
 
@@ -328,19 +307,6 @@ body {
   transform: translateX(0);
 }
 
-.logo-B {
-  width: 165px;
-  height: 100px;
-  position: absolute;
-  top: -125px;
-  left: -50px;
-  background-image: url(/images/Logo-4.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 300;
-}
-
 .bmi-table-div-B {
   width: 75%;
 }
@@ -395,7 +361,6 @@ body {
 .bmi-table-B td {
   border: 2px solid #808080;
   background-color: transparent;
-  padding: 10px 10px;
 }
 
 .bmi-value-B {
@@ -407,6 +372,8 @@ body {
 .bmi-table-B th {
   border: 2px solid #808080;
   background-color: transparent;
+  padding: 1rem;
+
 }
 
 .Calculator-circles-S1-B::before,
@@ -518,6 +485,7 @@ body {
 .input-section-B {
   width: 65%;
   text-align: center;
+  padding-bottom: 3%;
 }
 
 .calorie-calculator-B.show-results-B .input-section-B {
@@ -651,260 +619,19 @@ body {
 .popup-close-btn-B:hover {
   background-color: #ff8c00;
 }
-
-/* @media (max-width: 1400px) {
-  .left-panel-B .under-header-B {
-    font-size: 20px;
-    width: 85%;
-  }
-  .bmi-title-B {
-    font-size: 48px;
-    line-height: 70px;
-  }
-} */
-
-/* @media (max-width: 1134px) {
-  .left-panel-B .under-header-B {
-    font-size: 19px;
-    width: 85%;
-  }
-} */
-
-/* @media (max-width: 1024px) {
-  .left-panel-B .under-header-B {
-    font-size: 18px;
-    width: 90%;
-  }
-  .left-panel-B .small-image-B {
-    width: 120px;
-    height: 120px;
-  }
-} */
-
-/* @media (max-width: 1024px) {
-  .calorie-calculator-B {
-    flex-direction: column;
-    height: auto;
-  }
-  .left-panel-B,
+@media (min-width:1000px) {
   .right-panel-B {
-    width: 100%;
-    padding: 20px;
-  }
-  .calorie-calculator-B.show-results-B .left-panel-B {
-    order: 2;
-  }
-  .calorie-calculator-B.show-results-B .right-panel-B {
-    order: 1;
-  }
-  .bmi-title-B {
-    font-size: 42px;
-    line-height: 55px;
-    text-align: center;
-  }
-  .left-panel-B .under-header-B {
-    font-size: 22px;
-    width: 70%;
-    text-align: center;
-  }
-  .left-panel-B .small-image-B {
-    width: 150px;
-    height: 150px;
-  }
-  .input-section-B {
-    width: 60%;
-    text-align: center;
-  }
-  .input-group-B {
-    padding: 8px;
-    margin: 15px 0;
-  }
-  .input-group-B label {
-    display: block;
-    margin-bottom: 10px;
-    color: white;
-    font-size: 25px;
-  }
-  .logo-B {
-    width: 270px;
-    height: 150px;
-  }
-  .input-group-B input {
-    padding: 12px;
-    font-size: 23px;
-  }
-  .gender-selection-B {
-    gap: 20px;
-    justify-content: center;
-  }
-  .gender-selection-B button {
-    padding: 10px 100px;
-    font-size: 25px;
-  }
-  .bmi-buttons-B {
-    flex-direction: row;
-    justify-content: center;
-    gap: 30px;
-  }
-  .clear-btn-B,
-  .calculate-btn-B {
-    max-width: 225px;
-    font-size: 25px;
-  }
-  .error-message-B {
-    font-size: 19px;
-  }
-  .result-section-B {
-    margin-left: 0;
-    text-align: center;
-  }
-  .result-section-B h2 {
-    font-size: 55px;
-    margin-bottom: 20px;
+    padding-bottom: 3%;
+    padding-top: 11%;
   }
   .bmi-table-div-B {
     width: 100%;
-  }
-  .result-section-B h3 {
-    font-size: 65px;
-    margin-left: 15px;
-  }
-  .result-logo-B {
-    width: 270px;
-    height: 179px;
-  }
-  .bmi-table-B {
-    font-size: 16px;
-    max-width: 100%;
-  }
-  .bmi-table-B th,
-  .bmi-table-B td,
-  .result-section-B p {
-    padding: 15px;
-    font-size: 25px;
-  }
-  .Calculator-one-circle-B::before,
-  .Calculator-one-circle-B::after,
-  .Calculator-circles-side2-B,
-  .Calculator-circles-side2-B::before,
-  .Calculator-circles-side2-B::after {
-    display: none;
-  }
-  .left-panel-B .content-B {
-    height: 50vh;
-  }
-  .input-section-B {
-    height: 50vh;
-  }
-  .result-section-B {
-    height: 55vh;
-  }
-  .bmi-title-B {
-    font-size: 65px;
-    line-height: 80px;
-  }
-  .other-calculators-btn-B {
-    font-size: 25px;
-  }
-} */
-
-/* @media (max-width: 970px) {
-  .result-logo-B {
-    width: 226px;
-    height: 179px;
-  }
-} */
-
-/* @media (max-width: 840px) {
-  .calorie-calculator-B.show-results-B .right-panel-B {
-    order: 1;
-    padding: 5px;
-  }
-  .bmi-buttons-result-B {
-    margin-top: 10px;
-  }
-  .left-panel-B .content-B {
-    height: 45vh;
-  }
-  .gender-selection-B button {
-    padding: 10px 75px;
-  }
-  .bmi-table-B th,
-  .bmi-table-B td,
-  .result-section-B p {
-    padding: 10px;
-    font-size: 25px;
-  }
-  .result-section-B h2 {
-    font-size: 50px;
-    margin-bottom: 20px;
-  }
-  .result-section-B h3 {
-    font-size: 60px;
-    margin-left: 15px;
-  }
-  .result-logo-B {
-    width: 240px;
-    height: 140px;
-    left: -5px;
-  }
-} */
-
-/* @media (max-width: 768px) {
-  .left-panel-B .under-header-B {
-    font-size: 20px;
-  }
-  .bmi-title-B {
-    font-size: 60px;
-  }
-  .left-panel-B .content-B {
-    height: 40vh;
-  }
-  .input-section-B {
-    height: 60vh;
-  }
-  .bmi-buttons-result-B,
-  .bmi-buttons-B {
-    margin-top: 10px;
-  }
-  .gender-selection-B button {
-    padding: 10px 70px;
-  }
-  .bmi-table-B th,
-  .bmi-table-B td,
-  .result-section-B p {
-    padding: 5px;
-    font-size: 23px;
-  }
-  .result-section-B {
-    height: 48vh;
-  }
-  .result-section-B h3 {
-    font-size: 50px;
-  }
-  .result-section-B h2 {
-    font-size: 50px;
-    margin-bottom: 10px;
-  }
-  .bmi-table-div-B {
-    width: 100%;
-    position: relative;
-    top: -15px;
-  }
-  .bmi-buttons-result-B {
-    margin-top: -20px;
-  }
-} */
-@media (max-width:500px) {
-  .gender-selection-B button {
-    padding: 5% 15%;
 }
-  
 }
-.result-header-B {
-  /* margin-left: -60px; */
-  text-align: left;
-  width: 100%;
+@media (max-width:1025px) {
+  .left-panel-B .under-header-B {font-size: 1.4rem;width: 80%;}
+  .input-section-B {width: 85%;}
+  .right-panel-B {padding-bottom: 10% }
 }
 @media (max-width:920px) {
   .gender-selection-B {
@@ -921,75 +648,76 @@ body {
 .input-section-B {
   width: 100%;}
 }
-@media (max-width:710px) {
-.calorie-calculator-B {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
+@media (max-width:913px) {
+  .right-panel-B {padding-bottom: 15%;padding-top: 10%;}
+  .left-panel-B .under-header-B {font-size: 1.2rem;}
+  .input-section-B {width: 85%;}
 }
-.result-section-B {
-  width: 100%;
-}
-.result-header-B {
-  text-align: center;
-  width: 100%;
-}
-.result-header-B h3 ,.result-header-B h2 {
-  text-align: center;
-  width: 100%;
-}
-.result-header-B h2 {
-  letter-spacing: 7px;
-}
-.left-panel-B {
+@media (max-width: 821px) {
+  .calorie-calculator-B {flex-direction: column;}
+  .right-panel-B {padding-bottom: 65%; padding-top: 15%;}
+  .input-section-B {width: 65%;}
+  .left-panel-B {padding-top: 15%;padding-bottom: 15%;}
+  .clear-btn-B {max-width: 120px;}
+  .bmi-table-div-B {width: 100%;}
+  .bmi-table-B td, .bmi-table-B th {padding: 1rem;}
 
-  padding: 15%;
 }
+@media (max-width: 796px) {
+  .right-panel-B {padding-bottom: 50%;}
+
+}
+@media (max-width: 541px) {
+  .right-panel-B {padding-bottom: 20%;}
+  .bmi-buttons-result-B, .bmi-buttons-B {flex-direction: column;}
+  .left-panel-B {padding-top: 20%;padding-bottom: 15%;}
+  .clear-btn-B {margin-right: 0px;}
+}
+@media (max-width:500px) {
+  .gender-selection-B button {padding: 5% 15%;}
+  .result-header-B {text-align: left;width: 100%;}
 }
 @media (max-width:431px) {
-  .right-panel-B {
-    padding-bottom: 65%;
+  .right-panel-B {padding-bottom: 65%;}
+  .gender-selection-B button {padding: 1% 10%;}
+  .bmi-buttons-result-B, .bmi-buttons-B {flex-direction: column;}
+  .clear-btn-B {margin-right: 0px;}
+  .left-panel-B .under-header-B {font-size: 21px;}
+  .input-section-B {width: 100%;}
+  .left-panel-B .under-header-B {font-size: 1.1rem;width: 100%;}
+  .left-panel-B {padding-top: 30%;}
+  .left-panel-B .under-header-B {font-size: 1rem !important;}
 }
-.gender-selection-B button {
-  padding: 1% 10%;
-}
-.bmi-buttons-result-B, .bmi-buttons-B {
+@media (max-width: 415px) {
+  .result-header-B h2 {letter-spacing: 6px;}
+  .result-section-B h3 {font-size: 3.7rem;}
+  .left-panel-B {padding-top: 35%;}
 
-  flex-direction: column;
 }
-.clear-btn-B {
-  margin-right: 0px;
-
-}
-.left-panel-B .under-header-B {
-  font-size: 21px;
-}
+@media (max-width:413px) {
+  .input-section-B {width: 100%;}
+  .result-section-B h3 {font-size: 3.7rem;}
+  .result-section-B h2 {font-size: 2.9rem;}
+  .left-panel-B {padding-top: 26%;padding-bottom: 30%;}
+  .left-panel-B .under-header-B {font-size: 18px !important;width: 100%;}
 }
 @media (max-width: 391px) {
-  .result-header-B {
-    text-wrap: nowrap;
+  .result-header-B {text-wrap: nowrap;}
+  .result-header-B h3 , .result-header-B h2{font-size: 2rem;}
+  .left-panel-B .under-header-B {font-size: 1.2rem;}
 }
-.result-header-B h3 , .result-header-B h2{
-  font-size: 2rem;
-}
-.left-panel-B .under-header-B {
-  font-size: 1.2rem;
-}
-}
-@media (min-width:1000px) {
-  .right-panel-B {
-    padding-bottom: 3%;
-    padding-top: 10%;
-  }
-  .bmi-table-div-B {
-    width: 100%;
-}
-/* .right-panel-B {
-  padding-bottom: ;
-} */
+@media (max-width: 376px) {
+  .right-panel-B {padding-bottom: 10%;}
+  .left-panel-B {padding-top: 30%;}
+  .result-section-B h3 {font-size: 3rem;}
 }
 @media (max-width:361px) {
-  .result-section-B p {
-    font-size: 20px;
+  .result-section-B p {font-size: 20px;}
+  .right-panel-B {padding-bottom: 25%;}
+  .left-panel-B .under-header-B {font-size: 15px !important;}
+  .right-panel-B {padding-bottom: 25% !important;}
 }
+@media (max-width:345px) {
+  .result-section-B {padding-bottom: 55%;}
+  .right-panel-B {padding-bottom: 65% !important;}
 }
