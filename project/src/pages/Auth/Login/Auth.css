@@ -1,105 +1,196 @@
-/* تنسيقات موجودة بالفعل */
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap');
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
 
 * {
     font-family: 'Nunito Sans', sans-serif;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
-
-body {
-    background: #202020;
+.SignUp-Form-Auth-Main , .SignIn-Form-Auth-Main { /*Forms*/
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Montserrat', sans-serif;
-    height: 100vh;
-    margin: 0;
+    width: 60%;
+    margin-top: 0.5rem;
+    text-align: right;
+    position: relative; /*To ignore Cirlces*/
+    margin-bottom: 8rem;
 }
+.SignUp-Form-Auth-Main{
+    margin-bottom: 3.5rem;
 
-h1 {
+}
+.SignUp-Form-Auth-Main label ,.SignIn-Form-Auth-Main label { /*Forms Labels*/
+        display: block;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #fff;
+        margin: 10px 0;
+        text-align: left;
+        width: 100%;
+        letter-spacing: 1.5px;
+}
+/*SignUp h1*/
+.Header1-Auth-Main ,.Header-1-Auth-Main 
+{ /*Login h1*/
     font-weight: 700;
     margin: 0;
     color: white;
-    font-size: 75px;
+    font-size: 5.5rem;
     letter-spacing: 2px;
-}
-.Login {
-    font-weight: bold;
-    color: white;
-    margin: 20px 0;
-    font-size: 70px;
-}
-.Logoo {
-    position: relative;
-    font-size: 70px;
-    bottom: 70px;
-}
-
-/* h2 {
     text-align: center;
-} */
-
-/* p {
-    font-size: 24px;
-    font-weight: 100;
-    line-height: 35px;
-    letter-spacing: 0.5px;
-    margin: 20px 0 30px;
-    width: 70%;
-} */
-
-.container {
+    margin-bottom: 15%;
+}
+.SignIn-button-Auth-Main,.SignUp-button-Auth-Main { /*Signin under forget passsword*/
+    background-color: #EC7E4A;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-top: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    box-shadow:inset 0px 5px 10px rgba(255, 255, 255, 0.505);
+}
+.ghost-Auth-Main {
+    padding: 10px 50px;
+    border-radius: 30px;
+    border: none;
+}
+input::placeholder {
+    color: #ccc;
+    opacity: 1;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    z-index: 120;
+    letter-spacing: 3px;
+}
+.container-Auth-Main {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
     background-color: #202020;
     border-radius: 10px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     position: relative;
     overflow: hidden;
-    width: 100vw;
-    height: 100vh;
-    max-width: 100%;
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
-
-.form-container {
+.form-container-Auth-Main {
     position: absolute;
-    top: 0;
     width: 50%;
-    height: 100%;
     transition: all 0.6s ease-in-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    background-color: #202020;
     z-index: 200;
 }
-
-.sign-in-container {
+.sign-in-container-Auth-Main {
     left: 0;
     transform: translateX(0);
 }
-
-.sign-up-container {
+.sign-up-container-Auth-Main { /*All Side */
     right: 0;
     transform: translateX(100%);
 }
+.signup-circles-Auth-Main {
+    content: "";
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    background: radial-gradient(circle at top, #EC7E4A 10%, rgba(10, 27, 48, 0.9) 80%);
+    border-radius: 50%;
+    width: 12rem;
+    height: 12rem;
+    opacity: 0.8;
+}
+.signup-circles-Auth-Main::before {
+    content: "";
+    position: absolute;
+    top: 330%;
+    right: 120%;
+    width: 18rem;
+    height: 18rem;
+    background: radial-gradient(circle at top left, #EC7E4A 10%, #72331F 50%, #0A1B30 90%);
+    border-radius: 50%;
+    opacity: 0.4;
+}
+.signup-circles-Auth-Main::after {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: 70%;
+    transform: translateX(-50%);
+    width: 360px;
+    height: 360px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    filter: blur(60px);
+}
+.overlay-panel-Auth-Main {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+    width: 50%;
+    transition: transform 0.6s ease-in-out;
+    background: url('../../../../images/Home.png') no-repeat center center;
+    background-position: 10% center;
+    background-size: cover;
+}
+.custom-input-Auth-Main {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 5px 0 15px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    background: white;
+    color: black;
+    font-size: 16px;
+    margin-bottom: 5%;
+}
+.Forget-Auth-anchor {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.7rem;
+    align-self: flex-end;
+    letter-spacing: 1px;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 100;
+}
+.password-container-Auth-Main {
+    position: relative;
+    width: 100%;
+}
+.password-icon-Auth-Main {
+    position: absolute;
+    right: 20px;
+    top: 40%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 22px;
+    color: #808080;
+    transition: color 0.3s, transform 0.2s;
+}
+/*----------------------*/
 
-.container.right-panel-active .sign-in-container {
+
+
+
+.container-Auth-Main.right-panel-active-Auth-Main .sign-in-container-Auth-Main {
     transform: translateX(-100%);
 }
 
-.container.right-panel-active .sign-up-container {
+.container-Auth-Main.right-panel-active-Auth-Main .sign-up-container-Auth-Main {
     transform: translateX(0);
 }
 
-.overlay-container {
+.overlay-container-Auth-Main {
     position: absolute;
-    top: 0;
     left: 50%;
     width: 50%;
     height: 100%;
@@ -108,11 +199,11 @@ h1 {
     z-index: 100;
 }
 
-.container.right-panel-active .overlay-container {
+.container-Auth-Main.right-panel-active-Auth-Main .overlay-container-Auth-Main {
     transform: translateX(-100%);
 }
 
-.overlay {
+.overlay-Auth-Main {
     background: url('../../../images/Home.png') no-repeat center center;
     color: #FFFFFF;
     position: relative;
@@ -123,50 +214,50 @@ h1 {
     transition: transform 0.6s ease-in-out;
 }
 
-.container.right-panel-active .overlay {
+.container-Auth-Main.right-panel-active-Auth-Main .overlay-Auth-Main {
     transform: translateX(50%);
 }
 
-.overlay-panel {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
-    text-align: center;
-    top: 0;
-    height: 100%;
-    width: 50%;
-    transition: transform 0.6s ease-in-out;
-    background: url('../../../../images/Home.png') no-repeat center center;
-    background-position: 10% center;
-    background-size: cover;
-    background-attachment: fixed;
-    z-index: 10;
-    color: #fff;
-}
 
-.overlay-left {
+
+.overlay-left-Auth-Main {
     left: 0;
     transform: translateX(-20%);
 }
+.overlay-left-Auth-Main h1 {
+    font-weight: bold;
+    font-size: 4rem;
+}
+.overlay-left-Auth-Main p{
+   width: 55%;
+   margin: 4% 0;
+   font-size: 1.9rem;
+}
+.overlay-right-Auth-Main h1 {
+    font-weight: bold;
+    font-size: 4rem;
+}
+.overlay-right-Auth-Main p {
+    margin: 4% 0;
+    width: 60%;
+    font-size: 1.9rem;
+}
 
-.container.right-panel-active .overlay-left {
+.container-Auth-Main.right-panel-active-Auth-Main .overlay-left-Auth-Main {
     transform: translateX(0);
 }
 
-.overlay-right {
+.overlay-right-Auth-Main {
     right: 0;
     transform: translateX(0);
 }
 
-.container.right-panel-active .overlay-right {
+.container-Auth-Main.right-panel-active-Auth-Main .overlay-right-Auth-Main {
     transform: translateX(20%);
 }
 
-.form-container-sign-in-container,
-.form-container-sign-up-container {
+.form-container-sign-in-container-Auth-Main,
+.form-container-sign-up-container-Auth-Main {
     background-color: #202020;
     display: flex;
     color: #000;
@@ -179,27 +270,6 @@ h1 {
     max-width: 400px;
     text-align: center;
 }
-
-/* input {
-    background-color: #eee;
-    border: none;
-    padding: 12px 15px;
-    margin: 8px 0;
-    width: 80%;
-    border-radius: 5px;
-} */
-
-/* button {
-    border-radius: 20px;
-    border: 1px solid #DBDBDB;
-    background-color: #DBDBDB;
-    color: black;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 12px 45px;
-    letter-spacing: 1px;
-    transition: transform 80ms ease-in;
-} */
 
 button:active {
     transform: scale(0.95);
@@ -234,26 +304,9 @@ footer a {
     text-decoration: none;
 }
 
-a {
-    color: #fff;
-    text-decoration: none;
-    position: relative;
-    font-size: 10px;
-    left: 130px;
-}
 
-.flex-inputs {
-    display: flex;
-    gap: 10px;
-    width: 100%;
-    justify-content: space-between;
-}
 
-.flex-inputs .p-float-label {
-    flex: 1;
-}
-
-.form-container {
+.form-container-Auth-Main {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -261,324 +314,340 @@ a {
     height: 100%;
 }
 
-.form-title {
+.form-title-Auth-Main {
     font-size: 36px;
     font-weight: bold;
     color: #fff;
     margin-bottom: 20px;
 }
 
-button.butt-1 {
-    background-color: #EC7E4A;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 15px;
-    transition: background-color 0.3s;
-    width: 100%;
-    max-width: 360px;
-    margin-top: 20px;
-    z-index: 110;
-}
 
-label {
-    display: block;
-    font-size: 14px;
-    font-weight: bold;
-    color: #fff;
-    margin: 5px 0 5px 10px;
-    text-align: left;
-    width: 100%;
-}
 
-.custom-input {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0 15px;
-    box-sizing: border-box;
-    border-radius: 25px;
-    border: 1px solid #ccc;
-    background: white;
-    color: black;
-    font-size: 16px;
-}
-
-input::placeholder {
-    color: #ccc;
-    opacity: 1;
-    font-size: 14px;
-    transition: all 0.3s ease;
-    z-index: 120;
-}
-
-.custom-input:focus {
+.custom-input-Auth-Main:focus {
     color: black;
     background: white;
     border: 1px solid #EC7E4A;
     outline: none;
 }
-
-.flex-inputs {
-    display: flex;
-    gap: 10px;
-    width: 100%;
-    justify-content: space-between;
-}
-
-.flex-inputs div {
-    width: 100%;
-}
-
-button.butt-2 {
-    background-color: #EC7E4A;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 15px;
-    transition: background-color 0.3s;
-    width: 100%;
-    max-width: 360px;
-    margin-top: 20px;
-}
-
-.password-container {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.password-container .custom-input {
+.password-container-Auth-Main .custom-input-Auth-Main {
     padding-right: 45px;
 }
 
-.password-icon {
-    position: absolute;
-    right: 20px;
-    top: 45%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    font-size: 22px;
-    color: #777;
-    transition: color 0.3s, transform 0.2s;
-}
 
-.password-icon:hover {
+
+.password-icon-Auth-Main:hover {
     color: #EC7E4A;
     transform: translateY(-50%) scale(1.1);
 }
 
-.login-circles {
+.login-circles-Auth-Main {
     position: absolute;
-    top: -50px;
+    top: -10%;
     left: -50px;
-    width: 150px;
-    height: 150px;
+    width: 12rem;
+    height: 12rem;
     border-radius: 50%;
-    background: radial-gradient(circle at top, #EC7E4A 10%, rgba(10, 27, 48, 0.9) 80%);
+    background: radial-gradient(circle at top, #ec7d4aa3 35%, rgba(10, 27, 48, 0.7) 75%);
     opacity: 0.8;
+    left: -10%;
 }
 
-.login-circles::before {
+.login-circles-Auth-Main::before {
     content: "";
     position: absolute;
-    top: 700px;
-    left: 20px;
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle at top left, #EC7E4A 10%, #72331F 50%, #0A1B30 90%);
+    top: 360%;
+    width: 12rem;
+    height: 12rem;
+    background: radial-gradient(circle at top left, #ec7d4a 35%, #72321f95 70%, #0A1B30 90%);
     border-radius: 50%;
     opacity: 0.9;
 }
 
-.login-circles::after {
+.login-circles-Auth-Main::after {
     content: "";
     position: absolute;
-    top: 240px;
+    top: 150%;
     left: 90%;
     transform: translateX(-50%);
-    width: 380px;
-    height: 380px;
+    width: 23.75rem;
+    height: 23.75rem;
     background: rgba(255, 255, 255, 0.12);
     border-radius: 50%;
     filter: blur(50px);
 }
-
-.signup-circles {
-    content: "";
-    position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle at top, #EC7E4A 10%, rgba(10, 27, 48, 0.9) 80%);
-    border-radius: 50%;
-    opacity: 0.9;
-}
-
-.signup-circles::before {
-    content: "";
-    position: absolute;
-    top: 640px;
-    left: -240px;
-    width: 190px;
-    height: 190px;
-    background: radial-gradient(circle at top left, #EC7E4A 10%, #72331F 50%, #0A1B30 90%);
-    border-radius: 50%;
-    opacity: 0.4;
-}
-
-.signup-circles::after {
-    content: "";
-    position: absolute;
-    top: -100px;
-    right: 70%;
-    transform: translateX(-50%);
-    width: 360px;
-    height: 360px;
-    background: rgba(255, 255, 255, 0.12);
-    border-radius: 50%;
-    filter: blur(60px);
-}
-
-@media screen and (max-width: 650px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    .form-box {
-        width: 90%;
-        max-width: 400px;
-        height: auto;
-        padding: 20px;
-    }
-
-    .toggle-box {
-        display: none;
-    }
-
-    .toggle-panel {
-        width: 100%;
-        text-align: center;
-        padding: 20px;
-    }
-
-    .weight-height-container {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .weight-height-container input {
-        width: calc(50% - 5px);
-    }
-
-    button {
-        width: 100%;
-        padding: 12px;
-        font-size: 18px;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    h1 {
-        font-size: 26px;
-    }
-
-    .form-box {
-        padding: 15px;
-    }
-}
-
-.custom-input.input-error {
+.custom-input-Auth-Main.input-error-Auth-Main {
     border: 1px solid #ff4d4f;
     background-color: #fff5f5;
 }
-
-.error-message {
+.error-message-Auth-Main {
     display: flex;
     align-items: center;
     gap: 5px;
     color: #ff4d4f;
     font-size: 12px;
-    margin-top: 5px;
     opacity: 0;
     animation: fadeIn 0.3s ease forwards;
+    align-self: flex-start;
+    margin-top: -0.5rem;
 }
-
 @keyframes fadeIn {
     to {
         opacity: 1;
     }
 }
-
-.error-message span {
+.error-message-Auth-Main span {
     font-family: 'Arial', sans-serif;
     font-weight: 400;
 }
-
-.error-message box-icon {
-    vertical-align: middle;
-}
-
-.butt-1, .butt-2 {
+.butt-1-Auth-Main, .butt-2-Auth-Main {
     transition: background-color 0.3s ease;
 }
-
-/* تنسيقات جديدة لرسالة متطلبات كلمة المرور */
-.password-hint-popup {
+/* Password hint popup */
+.password-hint-popup-Auth-Main {
     position: absolute;
     top: 100%;
-    left: 0;
-    background-color: #f9e6e6;
-    color: #333;
-    padding: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #212121eb;
+    color: #fff;
+    padding: 15px;
     border-radius: 4px;
-    font-size: 12px;
+    font-size: 0.8rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     opacity: 0;
     animation: fadeIn 0.3s ease forwards;
     z-index: 10;
-    width: 200px;
+    width: 100%;
 }
 
-.password-hint-popup h4 {
+.password-hint-popup-Auth-Main h4 {
     margin: 0 0 5px;
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: bold;
     color: #ff4d4f;
+    text-align: center;
 }
 
-.password-hint-popup ul {
+.password-hint-popup-Auth-Main ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.password-hint-popup li {
+.password-hint-popup-Auth-Main li {
     display: flex;
     align-items: center;
     gap: 5px;
     margin-bottom: 3px;
 }
 
-.password-hint-popup li.met {
-    color: #00cc00;
+/* .password-hint-popup-Auth-Main li.met-Auth-Main {
+    color: #EC7E4A;
+} */
+ @media (max-width:1025px) {
+    .form-container-Auth-Main {height: 60%;}
+    .overlay-panel-Auth-Main {height: 55%;}
+    .overlay-right-Auth-Main p {width: 70%;font-size: 1.6rem;}
+    .overlay-left-Auth-Main p {width: 70%;font-size: 1.6rem;}
+    .Header-1-Auth-Main {margin: 0;font-size: 4.8rem;margin-bottom: 10%;}
+    .SignUp-Form-Auth-Main, .SignIn-Form-Auth-Main {width: 60%;margin-top: -7.5rem;}
+    .password-hint-popup-Auth-Main {padding: 5px 15px;font-size: 0.7rem; width: 100%;}
+    .password-hint-popup-Auth-Main h4 {margin: 0 0 5px;font-size: 0.8rem;}
+    .password-icon-Auth-Main {top: 45%;}
+    
+ }
+ @media (max-width: 821px) {
+    .form-container-Auth-Main {height: 70%;}
+    .Header-1-Auth-Main {margin: 0;font-size: 3.9rem;margin-bottom: 10%;}
+    .overlay-panel-Auth-Main {height: 60%;}
+    .overlay-right-Auth-Main h1 {font-size: 3rem;}
+    .overlay-right-Auth-Main p {width: 90%;font-size: 1.5rem;}
+    .overlay-left-Auth-Main h1 {font-size: 3rem;}
+    .overlay-left-Auth-Main p {width: 80%;font-size: 1.5rem;}
+    .signup-circles-Auth-Main::before {right: 50%;}
 }
+@media (max-width:769px) {
+    .SignUp-Form-Auth-Main, .SignIn-Form-Auth-Main {margin-top: 0rem;}
+    .overlay-panel-Auth-Main {height: 70%;}
+    .Header-1-Auth-Main {margin: 0;font-size: 3.5rem;margin-bottom: 10%;}
+    .error-message-Auth-Main {font-size: 11px;}
+    .Forget-Auth-anchor {margin-top: 0rem;}
+}
+/* Media Query for 431px and below */
+/* Media Query for 431px and below */
+@media (max-width:431px) {
+    .login-circles-Auth-Main,.signup-circles-Auth-Main {display: none;}
+}
+@media (max-width: 431px) {
+    /* Main container adjustments */
+    .container-Auth-Main {
+        min-height: 100vh; /* Full viewport height */
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+        overflow-y: auto; /* Allow scrolling */
+        position: relative;
+        background: rgba(0, 0, 0, 0.5); /* Add a dark overlay to improve readability */
+    }
 
-/* تنسيق إضافي لضمان ظهور الأيقونات */
-box-icon {
-    display: inline-block; /* تأكد من أن الأيقونات تظهر كعناصر مضمنة */
-    vertical-align: middle; /* محاذاة العناصر بشكل صحيح */
-    width: 1em;
-    height: 1em;
-    fill: currentColor; /* لون الأيقونة يعتمد على اللون المحدد */
+    /* Form containers (Sign Up and Sign In) */
+    .form-container-Auth-Main {
+        position: absolute; /* Keep absolute for animation */
+        width: 100%; /* Full width */
+        height: 100%; /* Full height for each form */
+        transition: all 0.6s ease-in-out; /* Same animation timing */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 200; /* Keep z-index */
+    }
+
+    .sign-in-container-Auth-Main {
+        top: 0; /* Start at the top */
+        transform: translateY(0); /* Default state (changed from translateX) */
+        left: 0; /* Reset horizontal positioning */
+    }
+
+    .sign-up-container-Auth-Main {
+        top: 0; /* Start at the top */
+        transform: translateY(100%); /* Initially off-screen below (changed from translateX) */
+        right: 0; /* Reset horizontal positioning */
+    }
+
+    /* Overlay container */
+    .overlay-container-Auth-Main {
+        position: absolute;
+        top: 0; /* Position at the top (changed from left) */
+        width: 100%; /* Full width (changed from 50%) */
+        height: 100%; /* Full height */
+        overflow: hidden;
+        transition: transform 0.6s ease-in-out; /* Same animation timing */
+        z-index: 100;
+    }
+
+    .overlay-Auth-Main {
+        top: 0; /* Reset vertical positioning (changed from left) */
+        width: 100%; /* Full width (changed from 200%) */
+        height: 200%; /* Double height for vertical sliding (changed from width) */
+        transform: translateY(0); /* Default state (changed from translateX) */
+        background: url('../../../images/Home.png') no-repeat center center;
+        background-size: cover;
+        background-position: center;
+        color: #FFFFFF;
+    }
+
+    /* Overlay panels */
+    .overlay-panel-Auth-Main {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        height: 50%; /* Each panel takes half the height (changed from 100%) */
+        width: 100%; /* Full width (changed from 50%) */
+        transition: transform 0.6s ease-in-out; /* Same animation timing */
+        background: rgba(0, 0, 0, 0.7); /* Add semi-transparent background for readability */
+    }
+
+    .overlay-left-Auth-Main {
+        top: 0; /* Top half (changed from left) */
+        transform: translateY(-20%); /* Slight offset for effect (changed from translateX) */
+    }
+
+    .overlay-right-Auth-Main {
+        top: 50%; /* Bottom half (changed from right) */
+        transform: translateY(0); /* Default state (changed from translateX) */
+    }
+
+    /* Active state (when Sign Up is clicked) */
+    .container-Auth-Main.right-panel-active-Auth-Main .sign-in-container-Auth-Main {
+        transform: translateY(-100%); /* Slide up out of view (changed from translateX) */
+    }
+
+    .container-Auth-Main.right-panel-active-Auth-Main .sign-up-container-Auth-Main {
+        transform: translateY(0); /* Slide up to top (changed from translateX) */
+    }
+
+    .container-Auth-Main.right-panel-active-Auth-Main .overlay-container-Auth-Main {
+        transform: translateY(0); /* Stay in place (changed from translateX) */
+    }
+
+    .container-Auth-Main.right-panel-active-Auth-Main .overlay-Auth-Main {
+        transform: translateY(50%); /* Slide overlay up to show right panel (changed from translateX) */
+    }
+
+    .container-Auth-Main.right-panel-active-Auth-Main .overlay-left-Auth-Main {
+        transform: translateY(0); /* Reset offset (changed from translateX) */
+    }
+
+    .container-Auth-Main.right-panel-active-Auth-Main .overlay-right-Auth-Main {
+        transform: translateY(20%); /* Slight offset for effect (changed from translateX) */
+    }
+
+    /* Form and content adjustments */
+    .SignUp-Form-Auth-Main, .SignIn-Form-Auth-Main {
+        width: 90%; /* Wider form for readability */
+        margin-top: 0; /* Reset margins */
+        margin-bottom: 2rem;
+        background: rgba(32, 32, 32, 0.9); /* Semi-transparent background to match screenshot */
+        padding: 20px;
+        border-radius: 10px;
+        position: relative;
+        z-index: 3; /* Ensure form is above everything */
+    }
+
+    .Header-1-Auth-Main, .Header1-Auth-Main {
+        font-size: 2.5rem; /* Smaller heading to fit */
+        margin-bottom: 1rem;
+    }
+
+    .overlay-right-Auth-Main h1,
+    .overlay-left-Auth-Main h1 {
+        font-weight: bold;
+        font-size: 2rem; /* Smaller heading to fit */
+    }
+
+    .overlay-right-Auth-Main p,
+    .overlay-left-Auth-Main p {
+        font-size: 1rem; /* Smaller text */
+        width: 90%; /* Wider text block */
+        margin: 0.5rem 0;
+    }
+
+    .ghost-Auth-Main {
+        font-size: 1rem; /* Smaller button text */
+        padding: 8 |px 30px;
+        background: #EC7E4A; /* Match the button color in the screenshot */
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+    }
+
+    .password-hint-popup-Auth-Main {
+        width: 90%; /* Adjust popup width */
+        font-size: 0.7rem;
+    }
+
+    /* Circles adjustments (already hidden, but adjust if needed) */
+    .signup-circles-Auth-Main,
+    .login-circles-Auth-Main {
+        display: none; /* Keep hidden as per your current setup */
+    }
+
+    /* Sign Up and Sign In buttons */
+    .SignUp-button-Auth-Main, .SignIn-button-Auth-Main {
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+
+    /* Adjust input fields */
+    .custom-input-Auth-Main {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .password-icon-Auth-Main {
+        top: 50%; /* Center vertically */
+        right: 15px;
+    }
 }

@@ -1,8 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import { InputText } from "primereact/inputtext";
-import "./Auth.css";  
-import "boxicons"; // تأكد من أن هذا الاستيراد يعمل
+import "./Auth.css";
 
 const AuthForm = () => {
     const containerRef = useRef(null);
@@ -13,8 +12,6 @@ const AuthForm = () => {
         username: '',
         email: '',
         password: '',
-        weight: '',
-        height: ''
     });
     const [signUpErrors, setSignUpErrors] = useState({});
 
@@ -25,7 +22,6 @@ const AuthForm = () => {
     const [signInErrors, setSignInErrors] = useState({});
 
     const [showPassword, setShowPassword] = useState(false);
-
     const [showSignUpPasswordHint, setShowSignUpPasswordHint] = useState(false);
 
     const [signUpPasswordRequirements, setSignUpPasswordRequirements] = useState({
@@ -41,13 +37,15 @@ const AuthForm = () => {
     };
 
     const checkPasswordRequirements = (password, setRequirements) => {
-        setRequirements({
+        const requirements = {
             length: password.length >= 8,
             number: /\d/.test(password),
             lowercase: /[a-z]/.test(password),
             uppercase: /[A-Z]/.test(password),
             special: /[!@#$%^&*(),.?":{}|<>]/.test(password)
-        });
+        };
+        setRequirements(requirements);
+        return requirements; // Return the requirements for checking
     };
 
     const validateSignUp = () => {
@@ -64,12 +62,6 @@ const AuthForm = () => {
         if (!passwordRegex.test(signUpData.password)) {
             errors.password = "Password does not meet requirements";
         }
-        if (isNaN(signUpData.weight) || signUpData.weight <= 0) {
-            errors.weight = "Weight must be a positive number";
-        }
-        if (isNaN(signUpData.height) || signUpData.height <= 0) {
-            errors.height = "Height must be a positive number";
-        }
 
         setSignUpErrors(errors);
         return Object.keys(errors).length === 0;
@@ -85,8 +77,6 @@ const AuthForm = () => {
         if (!signInData.password) {
             errors.password = "Password is required";
         }
-        // لسة مفيش Database، فمش هنشيك قوة الـ Password هنا
-        // التحقق من الـ Password هيصير لما نوصل للـ Backend
 
         setSignInErrors(errors);
         return Object.keys(errors).length === 0;
@@ -95,7 +85,7 @@ const AuthForm = () => {
     const handleSignUpSubmit = (e) => {
         e.preventDefault();
         if (validateSignUp()) {
-            const sanitizedData = signUpData; // بدل الـ sanitizeData
+            const sanitizedData = signUpData;
             console.log("Sign Up Data:", sanitizedData);
         }
     };
@@ -103,10 +93,8 @@ const AuthForm = () => {
     const handleSignInSubmit = (e) => {
         e.preventDefault();
         if (validateSignIn()) {
-            const sanitizedData = signInData; // بدل الـ sanitizeData
+            const sanitizedData = signInData;
             console.log("Sign In Data:", sanitizedData);
-            // هنا هيتم التحقق من الـ Database لما نضيف الـ Backend
-            // دلوقتي بس بنظهر الـ Data في الـ Console
         }
     };
 
@@ -116,131 +104,136 @@ const AuthForm = () => {
         const signInButton = signInButtonRef.current;
 
         signUpButton.addEventListener('click', () => {
-            container.classList.add("right-panel-active");
+            container.classList.add("right-panel-active-Auth-Main");
         });
 
         signInButton.addEventListener('click', () => {
-            container.classList.remove("right-panel-active");
+            container.classList.remove("right-panel-active-Auth-Main");
         });
 
         return () => {
             signUpButton.removeEventListener('click', () => {
-                container.classList.add("right-panel-active");
+                container.classList.add("right-panel-active-Auth-Main");
             });
             signInButton.removeEventListener('click', () => {
-                container.classList.remove("right-panel-active");
+                container.classList.remove("right-panel-active-Auth-Main");
             });
         };
     }, []);
 
     return (
-        <div className="container" id="container" ref={containerRef}>
-            <div className="form-container-sign-up-container">
-                <div className="signup-circles"></div>
-                <form onSubmit={handleSignUpSubmit}>
-                    <h1 className="Login">Sign Up</h1>
+        <div className="container-Auth-Main" id="container" ref={containerRef}>
+            <div className="form-container-Auth-Main sign-up-container-Auth-Main">
+                <div className="signup-circles-Auth-Main"></div>
+                <form onSubmit={handleSignUpSubmit} className='SignUp-Form-Auth-Main'>
+                    <h1 className="Header-1-Auth-Main">Sign Up</h1>
 
-                    <label htmlFor="username">Name</label>
+                    <label htmlFor="Username">Username</label>
                     <InputText 
-                        id="username" 
+                        id="Username" 
                         value={signUpData.username} 
-                        onChange={(e) => setSignUpData({ ...signUpData, username: e.target.value })} 
-                        className={`custom-input ${signUpErrors.username ? 'input-error' : ''}`} 
+                        onChange={(e) => {
+                            const value = e.target.value;
+                            setSignUpData({ ...signUpData, username: value });
+                            if (signUpErrors.username) {
+                                setSignUpErrors((prev) => ({ ...prev, username: '' }));
+                            }
+                        }} 
+                        className={`custom-input-Auth-Main ${signUpErrors.username ? 'input-error-Auth-Main' : ''}`} 
                         placeholder='Full name' 
                         maxLength={50}
                     />
                     {signUpErrors.username && (
-                        <div className="error-message">
-                            <box-icon type='solid' name='error-circle' size='sm' color='#ff4d4f'></box-icon>
+                        <div className="error-message-Auth-Main">
+                            <i className="bx bxs-error-circle" style={{ fontSize: '16px', color: '#ff4d4f' }}></i>
                             <span>{signUpErrors.username}</span>
                         </div>
                     )}
 
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email-signup">Email</label>
                     <InputText 
-                        id="email" 
+                        id="email-signup" 
                         value={signUpData.email} 
-                        onChange={(e) => setSignUpData({ ...signUpData, email: e.target.value })} 
-                        className={`custom-input ${signUpErrors.email ? 'input-error' : ''}`} 
+                        onChange={(e) => {
+                            const value = e.target.value;
+                            setSignUpData({ ...signUpData, email: value });
+                            if (signUpErrors.email) {
+                                setSignUpErrors((prev) => ({ ...prev, email: '' }));
+                            }
+                        }} 
+                        className={`custom-input-Auth-Main ${signUpErrors.email ? 'input-error-Auth-Main' : ''}`} 
                         placeholder='*******@gmail.com'
                         maxLength={100}
                     />
                     {signUpErrors.email && (
-                        <div className="error-message">
-                            <box-icon type='solid' name='error-circle' size='sm' color='#ff4d4f'></box-icon>
+                        <div className="error-message-Auth-Main">
+                            <i className="bx bxs-error-circle" style={{ fontSize: '16px', color: '#ff4d4f' }}></i>
                             <span>{signUpErrors.email}</span>
                         </div>
                     )}
 
-                    <label htmlFor="password">Password</label>
-                    <div className="password-container">
+                    <label htmlFor="password-signup">Password</label>
+                    <div className="password-container-Auth-Main">
                         <InputText 
-                            id="password" 
+                            id="password-signup" 
                             type={showPassword ? "text" : "password"} 
                             value={signUpData.password} 
                             onChange={(e) => {
                                 const password = e.target.value;
                                 setSignUpData({ ...signUpData, password });
-                                setShowSignUpPasswordHint(password.length > 0);
-                                checkPasswordRequirements(password, setSignUpPasswordRequirements);
+                                const requirements = checkPasswordRequirements(password, setSignUpPasswordRequirements);
+                                // Show hint if password is not empty and not all requirements are met
+                                const allRequirementsMet = Object.values(requirements).every(req => req);
+                                setShowSignUpPasswordHint(password.length > 0 && !allRequirementsMet);
+                                if (signUpErrors.password) {
+                                    setSignUpErrors((prev) => ({ ...prev, password: '' }));
+                                }
                             }}
-                            className={`custom-input ${signUpErrors.password ? 'input-error' : ''}`} 
+                            onBlur={() => setShowSignUpPasswordHint(false)} // Hide hint when focus is lost
+                            className={`custom-input-Auth-Main ${signUpErrors.password ? 'input-error-Auth-Main' : ''}`} 
                             placeholder='●●●●●●' 
-                            style={{ letterSpacing: "3px" }}
                             maxLength={50}
                         />
-                        <box-icon 
-                            type='solid' 
-                            name={showPassword ? 'show' : 'low-vision'} 
-                            className="password-icon" 
+                        <i 
+                            className={`bx ${showPassword ? 'bx-show' : 'bx-low-vision'} password-icon-Auth-Main`} 
                             onClick={togglePasswordVisibility}
                         />
                         {showSignUpPasswordHint && (
-                            <div className="password-hint-popup">
+                            <div className="password-hint-popup-Auth-Main">
                                 <h4>Password should be:</h4>
                                 <ul>
-                                    <li className={signUpPasswordRequirements.length ? 'met' : ''}>
-                                        <box-icon 
-                                            type='solid' 
-                                            name={signUpPasswordRequirements.length ? 'check' : 'x'} 
-                                            size='sm' 
-                                            color={signUpPasswordRequirements.length ? '#00cc00' : '#ff4d4f'}
+                                    <li className={signUpPasswordRequirements.length ? 'met-Auth-Main' : ''}>
+                                        <i 
+                                            className={`bx ${signUpPasswordRequirements.length ? 'bx-check' : 'bx-x'}`} 
+                                            style={{ fontSize: '16px', color: signUpPasswordRequirements.length ? '#00cc00' : '#ff4d4f' }}
                                         />
                                         At least 8 characters long
                                     </li>
-                                    <li className={signUpPasswordRequirements.number ? 'met' : ''}>
-                                        <box-icon 
-                                            type='solid' 
-                                            name={signUpPasswordRequirements.number ? 'check' : 'x'} 
-                                            size='sm' 
-                                            color={signUpPasswordRequirements.number ? '#00cc00' : '#ff4d4f'}
+                                    <li className={signUpPasswordRequirements.number ? 'met-Auth-Main' : ''}>
+                                        <i 
+                                            className={`bx ${signUpPasswordRequirements.number ? 'bx-check' : 'bx-x'}`} 
+                                            style={{ fontSize: '16px', color: signUpPasswordRequirements.number ? '#00cc00' : '#ff4d4f' }}
                                         />
                                         At least 1 number
                                     </li>
-                                    <li className={signUpPasswordRequirements.lowercase ? 'met' : ''}>
-                                        <box-icon 
-                                            type='solid' 
-                                            name={signUpPasswordRequirements.lowercase ? 'check' : 'x'} 
-                                            size='sm' 
-                                            color={signUpPasswordRequirements.lowercase ? '#00cc00' : '#ff4d4f'}
+                                    <li className={signUpPasswordRequirements.lowercase ? 'met-Auth-Main' : ''}>
+                                        <i 
+                                            className={`bx ${signUpPasswordRequirements.lowercase ? 'bx-check' : 'bx-x'}`} 
+                                            style={{ fontSize: '16px', color: signUpPasswordRequirements.lowercase ? '#00cc00' : '#ff4d4f' }}
                                         />
                                         At least 1 lowercase letter
                                     </li>
-                                    <li className={signUpPasswordRequirements.uppercase ? 'met' : ''}>
-                                        <box-icon 
-                                            type='solid' 
-                                            name={signUpPasswordRequirements.uppercase ? 'check' : 'x'} 
-                                            size='sm' 
-                                            color={signUpPasswordRequirements.uppercase ? '#00cc00' : '#ff4d4f'}
+                                    <li className={signUpPasswordRequirements.uppercase ? 'met-Auth-Main' : ''}>
+                                        <i 
+                                            className={`bx ${signUpPasswordRequirements.uppercase ? 'bx-check' : 'bx-x'}`} 
+                                            style={{ fontSize: '16px', color: signUpPasswordRequirements.uppercase ? '#00cc00' : '#ff4d4f' }}
                                         />
                                         At least 1 uppercase letter
                                     </li>
-                                    <li className={signUpPasswordRequirements.special ? 'met' : ''}>
-                                        <box-icon 
-                                            type='solid' 
-                                            name={signUpPasswordRequirements.special ? 'check' : 'x'} 
-                                            size='sm' 
-                                            color={signUpPasswordRequirements.special ? '#00cc00' : '#ff4d4f'}
+                                    <li className={signUpPasswordRequirements.special ? 'met-Auth-Main' : ''}>
+                                        <i 
+                                            className={`bx ${signUpPasswordRequirements.special ? 'bx-check' : 'bx-x'}`} 
+                                            style={{ fontSize: '16px', color: signUpPasswordRequirements.special ? '#00cc00' : '#ff4d4f' }}
                                         />
                                         At least 1 special symbol
                                     </li>
@@ -249,121 +242,89 @@ const AuthForm = () => {
                         )}
                     </div>
                     {signUpErrors.password && (
-                        <div className="error-message">
-                            <box-icon type='solid' name='error-circle' size='sm' color='#ff4d4f'></box-icon>
+                        <div className="error-message-Auth-Main">
+                            <i className="bx bxs-error-circle" style={{ fontSize: '16px', color: '#ff4d4f' }}></i>
                             <span>{signUpErrors.password}</span>
                         </div>
                     )}
-
-                    <div className="flex-inputs">
-                        <div>
-                            <label htmlFor="weight">Weight</label>
-                            <InputText 
-                                id="weight" 
-                                value={signUpData.weight} 
-                                onChange={(e) => setSignUpData({ ...signUpData, weight: e.target.value })} 
-                                className={`custom-input ${signUpErrors.weight ? 'input-error' : ''}`} 
-                                placeholder='65kg'
-                                maxLength={5}
-                            />
-                            {signUpErrors.weight && (
-                                <div className="error-message">
-                                    <box-icon type='solid' name='error-circle' size='sm' color='#ff4d4f'></box-icon>
-                                    <span>{signUpErrors.weight}</span>
-                                </div>
-                            )}
-                        </div>
-                        <div>
-                            <label htmlFor="height">Height</label>
-                            <InputText 
-                                id="height" 
-                                value={signUpData.height} 
-                                onChange={(e) => setSignUpData({ ...signUpData, height: e.target.value })} 
-                                className={`custom-input ${signUpErrors.height ? 'input-error' : ''}`} 
-                                placeholder='180cm'
-                                maxLength={5}
-                            />
-                            {signUpErrors.height && (
-                                <div className="error-message">
-                                    <box-icon type='solid' name='error-circle' size='sm' color='#ff4d4f'></box-icon>
-                                    <span>{signUpErrors.height}</span>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-
-                    <button className='butt-1' type="submit">Sign Up</button>
+                    <button className='SignUp-button-Auth-Main' type="submit">Sign Up</button>
                 </form>
             </div>
 
-            <div className="form-container-sign-in-container">
-                <div className="login-circles"></div>
-                <form onSubmit={handleSignInSubmit}>
-                    <h1 className="Logoo">Login</h1>
+            <div className="form-container-Auth-Main sign-in-container-Auth-Main">
+                <div className="login-circles-Auth-Main"></div>
+                <form onSubmit={handleSignInSubmit} className='SignIn-Form-Auth-Main'>
+                    <h1 className="Header1-Auth-Main">Login</h1>
 
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email-login">Email</label>
                     <InputText 
-                        id="email" 
+                        id="email-login" 
                         value={signInData.email} 
-                        onChange={(e) => setSignInData({ ...signInData, email: e.target.value })} 
-                        className={`custom-input ${signInErrors.email ? 'input-error' : ''}`} 
+                        onChange={(e) => {
+                            const value = e.target.value;
+                            setSignInData({ ...signInData, email: value });
+                            if (signInErrors.email) {
+                                setSignInErrors((prev) => ({ ...prev, email: '' }));
+                            }
+                        }} 
+                        className={`custom-input-Auth-Main ${signInErrors.email ? 'input-error-Auth-Main' : ''}`} 
                         placeholder='*******@gmail.com'
                         maxLength={100}
                     />
                     {signInErrors.email && (
-                        <div className="error-message">
-                            <box-icon type='solid' name='error-circle' size='sm' color='#ff4d4f'></box-icon>
+                        <div className="error-message-Auth-Main">
+                            <i className="bx bxs-error-circle" style={{ fontSize: '16px', color: '#ff4d4f' }}></i>
                             <span>{signInErrors.email}</span>
                         </div>
                     )}
 
-                    <label htmlFor="password">Password</label>
-                    <div className="password-container">
+                    <label htmlFor="password-login">Password</label>
+                    <div className="password-container-Auth-Main">
                         <InputText 
-                            id="password" 
+                            id="password-login" 
                             type={showPassword ? "text" : "password"} 
                             value={signInData.password} 
                             onChange={(e) => {
                                 const password = e.target.value;
                                 setSignInData({ ...signInData, password });
+                                if (signInErrors.password) {
+                                    setSignInErrors((prev) => ({ ...prev, password: '' }));
+                                }
                             }}
-                            className={`custom-input ${signInErrors.password ? 'input-error' : ''}`} 
+                            className={`custom-input-Auth-Main ${signInErrors.password ? 'input-error-Auth-Main' : ''}`} 
                             placeholder='●●●●●●' 
-                            style={{ letterSpacing: "3px" }}
                             maxLength={50}
                         />
-                        <box-icon 
-                            type='solid' 
-                            name={showPassword ? 'show' : 'low-vision'} 
-                            className="password-icon" 
+                        <i 
+                            className={`bx ${showPassword ? 'bx-show' : 'bx-low-vision'} password-icon-Auth-Main`} 
                             onClick={togglePasswordVisibility}
                         />
                     </div>
                     {signInErrors.password && (
-                        <div className="error-message">
-                            <box-icon type='solid' name='error-circle' size='sm' color='#ff4d4f'></box-icon>
+                        <div className="error-message-Auth-Main">
+                            <i className="bx bxs-error-circle" style={{ fontSize: '16px', color: '#ff4d4f' }}></i>
                             <span>{signInErrors.password}</span>
                         </div>
                     )}
 
-                    <Link to="/Forget-password">Forget your password?</Link>
-                    <button className='butt-2' type="submit">Sign In</button>
+                    <Link to="/Forget-password" className='Forget-Auth-anchor'>Forget password?</Link>
+                    <button className='SignIn-button-Auth-Main' type="submit">Sign In</button>
                 </form>
             </div>
 
-            <div className="overlay-container">
-                <div className="overlay">
-                    <div className="overlay-panel overlay-left">
+            <div className="overlay-container-Auth-Main">
+                <div className="overlay-Auth-Main">
+                    <div className="overlay-panel-Auth-Main overlay-left-Auth-Main">
+                        <h1>Create Account</h1>
+                        <p>To keep connected with us, please login with your personal info </p>
+                        <p>Already have an account?</p>
+                        <button className="ghost-Auth-Main" id="signIn" ref={signInButtonRef}>Login</button>
+                    </div>
+                    <div className="overlay-panel-Auth-Main overlay-right-Auth-Main">
                         <h1>Welcome Back!</h1>
                         <p>Enter your personal details and start your journey with us</p>
-                        <p>Already have an account?</p>
-                        <button className="ghost" id="signIn" ref={signInButtonRef}>Sign In</button>
-                    </div>
-                    <div className="overlay-panel overlay-right">
-                        <h1 style={{ fontSize: "60px" }}>Create Account</h1>
-                        <p>To keep connected with us, please login with your personal info</p>
                         <p>New Here ?</p>
-                        <button className="ghost" id="signUp" ref={signUpButtonRef}>Sign Up</button>
+                        <button className="ghost-Auth-Main" id="signUp" ref={signUpButtonRef}>Sign Up</button>
                     </div>
                 </div>
             </div>
