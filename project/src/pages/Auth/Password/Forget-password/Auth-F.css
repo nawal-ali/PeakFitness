@@ -35,7 +35,7 @@
 }
 
 /* Header and text styling */
-.header-Auth-F {
+.header-Auth-FP {
     font-size: 2.9rem; /* Slightly larger header */
     color: #fff;
     margin-bottom: 25px;
@@ -54,17 +54,12 @@
 }
 
 /* SVG container */
-.svg-container-Auth-FP {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
 
 .svg-container-Auth-FP img {
     width: 180px; /* Slightly larger icon */
     height: 180px;
     object-fit: contain;
+    margin-bottom: 2rem;
 }
 
 /* Adjusted input container */
@@ -108,18 +103,6 @@
     box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.5);
 }
 
-/* Message and error styling */
-.message-Auth-FP {
-    color: green;
-    margin-top: 15px;
-    animation: slideIn 1s ease-in-out;
-    font-size: 16px; /* Slightly larger */
-}
-
-.error-message-Auth-FP {
-    color: red;
-    font-size: 16px; /* Slightly larger */
-}
 
 /* Logo styling */
 .logo-Auth-FP {

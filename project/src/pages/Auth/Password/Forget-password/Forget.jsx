@@ -44,10 +44,9 @@ const ForgetPassword = () => {
                     <div className="svg-container-Auth-FP">
                         <img src="../../../../../images/Lock.svg" alt="Reset Password Icon" />
                     </div>
-                    <h2 className="header-Auth-F">Forgot Password</h2>
+                    <h2 className="header-Auth-FP">Forgot Password</h2>
                     <div className="Under-header-Auth-FP">
                         <p>Please enter your <span className="Span-Auth-FP">email</span></p>
-                        <p className="Parag-2-Auth-FP"></p>
                     </div>
                     <div className="input-container-Auth-FP">
                         <input
