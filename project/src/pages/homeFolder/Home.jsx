@@ -6,7 +6,7 @@ import Footer from "../../assets/footerFolder/Footer";
 // import CommentCard from "../../assets/comments/CommentCard";
 import "../homeFolder/home.css";
 import { Link } from "react-router-dom";
-// import { Carousel } from "nuka-carousel";
+import UncontrolledExample from "../../assets/carousel/Carousel ";
 export default function home() {
   return (
     <>
@@ -54,6 +54,9 @@ export default function home() {
             ar
           ></model-viewer>
         </div>
+      </div>
+      <div style={{ marginTop: "20%" }}>
+        <UncontrolledExample />
       </div>
       <div>
         <div className="angled-background margin-top-10 flex-column flex-md-row">
