@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function footer() {
   return (
     <>
-      <div className="custom-footer p-5 rounded-top-circle">
+      <div className="custom-footer p-5 pb-0 rounded-top-circle">
         <div className="row pt-5 mt-0 mt-md-5 ">
           <div className="col-12 col-sm-6 col-md-3 col-lg-4 mt-5 p-sm-5 p-md-0">
             <div>
@@ -71,6 +71,9 @@ export default function footer() {
             <h4 className="custom-color">Share Us</h4>
           </div>
         </div>
+        <p className="text-center mt-5">
+          © 2024 Pure Vitality, Inc. All Rights Reserved
+        </p>
       </div>
     </>
   );
