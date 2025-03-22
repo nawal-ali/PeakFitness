@@ -17,7 +17,7 @@ export default function footer() {
               every day!
             </p>
           </div>
-          <div className="col-12 col-sm-6 col-md-2 mt-5">
+          <div className="col-6 col-md-2 mt-5">
             <h4 className="custom-color">Site sections</h4>
             <p>
               <Link
@@ -52,7 +52,7 @@ export default function footer() {
               </Link>
             </p>
           </div>
-          <div className="col-12 col-sm-6 col-md-2 mt-5">
+          <div className="col-6  col-md-2 mt-5">
             <h4 className="custom-color">More</h4>
             <p>
               {" "}
@@ -64,10 +64,10 @@ export default function footer() {
               </Link>
             </p>
           </div>
-          <div className="col-12 col-sm-6 col-md-2 mt-5">
+          <div className="col-6 col-md-2 mt-5">
             <h4 className="custom-color">Contact Us</h4>
           </div>
-          <div className="col-12 col-sm-6 col-md-2 mt-5">
+          <div className="col-6 col-md-2 mt-5">
             <h4 className="custom-color">Share Us</h4>
           </div>
         </div>
