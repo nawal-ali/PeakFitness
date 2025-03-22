@@ -88,7 +88,7 @@ a {
 
 .carousel-SC .list-SC .item-SC .title-SC,
 .carousel-SC .list-SC .item-SC .topic-SC {
-  font-size: 75px;
+  font-size: 65px;
   font-weight: bold;
   line-height: 1.3em;
   width: 50%;
@@ -188,7 +188,7 @@ a {
 .carousel-SC .arrows-SC {
   position: absolute;
   top: 75%;
-  right: 71%;
+  right: 82%;
   z-index: 100;
   max-width: 35%;
   display: flex;
@@ -360,7 +360,7 @@ a {
 
 /* Button Styles */
 .start-button-SC {
-  margin: 50px 20px 0;
+  margin: 20px 20px 0;
   padding: 5px 20px;
   background-color: #ec7e4a;
   color: #fff;
@@ -476,7 +476,7 @@ a {
 .carousel-SC.prev-SC .logo-SC {
   opacity: 0;
 }
-@media (min-width:1000px){
+@media (max-width:1250px){
   .carousel-SC .arrows-SC {right: 79%;top: 65%;}
 
 }
@@ -534,7 +534,7 @@ a {
   .carousel-SC .list-SC .item-SC .content-SC {top: 12%;}
   .carousel-SC .thumbnail-SC {top: 40%;left: 60%;}
   .carousel-SC .arrows-SC {top: 55%;}
-  .carousel-SC .list-SC .item-SC img {object-fit: cover;}
+  .carousel-SC .list-SC .item-SC img {object-fit: cover;height: 72%;}
   .carousel-SC .arrows-SC {right: 60%;}
   .carousel-SC .list-SC .item-SC .content-SC .title-SC {font-size: 40px;}
   .start-button-SC {margin: 20px 0px 0px;}
