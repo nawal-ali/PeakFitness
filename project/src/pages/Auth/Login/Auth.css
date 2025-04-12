@@ -43,7 +43,7 @@
     font-size: 5.5rem;
     letter-spacing: 2px;
     text-align: center;
-    margin-bottom: 15%;
+    margin-bottom: 10%;
 }
 
 /* Sign In and Sign Up Buttons */
@@ -433,8 +433,8 @@ footer a {
 /* Password hint popup */
 .password-hint-popup-Auth-Main {
     position: absolute;
-    top: 100%;
-    left: 50%;
+    top: 85%;
+    left: 0%;
     transform: translate(-50%);
     background-color: #212121eb;
     color: #fff;
@@ -600,7 +600,8 @@ footer a {
     .form-container-Auth-Main {
         position: absolute;
         width: 100%;
-        height: 100%;
+        height: 50%; /* Reduce height to make space for the overlay panel */
+        top: 0; /* Position at the top */
         transition: all 0.6s ease-in-out;
         display: flex;
         justify-content: center;
@@ -623,9 +624,9 @@ footer a {
     /* Overlay container */
     .overlay-container-Auth-Main {
         position: absolute;
-        top: 0;
+        top: 50%; /* Start below the form */
         width: 100%;
-        height: 100%;
+        height: 50%; /* Take up the bottom half */
         overflow: hidden;
         transition: transform 0.6s ease-in-out;
         z-index: 100;
@@ -634,7 +635,7 @@ footer a {
     .overlay-Auth-Main {
         top: 0;
         width: 100%;
-        height: 200%;
+        height: 200%; /* Double height for sliding */
         transform: translateY(0);
         background: url('../../../images/Home.png') no-repeat center center;
         background-size: cover;
@@ -650,7 +651,7 @@ footer a {
         justify-content: center;
         flex-direction: column;
         text-align: center;
-        height: 50%;
+        height: 100%; /* Full height of the overlay container */
         width: 100%;
         transition: transform 0.6s ease-in-out;
         background: rgba(0, 0, 0, 0.7);
@@ -658,11 +659,11 @@ footer a {
 
     .overlay-left-Auth-Main {
         top: 0;
-        transform: translateY(-20%);
+        transform: translateY(0); /* No offset, show directly */
     }
 
     .overlay-right-Auth-Main {
-        top: 50%;
+        top: 100%; /* Position below for sliding */
         transform: translateY(0);
     }
 
@@ -680,7 +681,7 @@ footer a {
     }
 
     .container-Auth-Main.right-panel-active-Auth-Main .overlay-Auth-Main {
-        transform: translateY(50%);
+        transform: translateY(-50%); /* Slide up to show the right panel */
     }
 
     .container-Auth-Main.right-panel-active-Auth-Main .overlay-left-Auth-Main {
@@ -688,18 +689,18 @@ footer a {
     }
 
     .container-Auth-Main.right-panel-active-Auth-Main .overlay-right-Auth-Main {
-        transform: translateY(20%);
+        transform: translateY(0);
     }
 
     /* Form and content adjustments */
     .SignUp-Form-Auth-Main, .SignIn-Form-Auth-Main {
-        width: 95%; /* Slightly wider for better spacing */
-        max-width: 350px; /* Prevent the form from becoming too wide on larger mobile screens */
+        width: 100%;
+        /* max-width: 350px; */
         margin: 0 auto;
         margin-top: 0;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem; /* Reduced to fit both form and panel */
         background: rgba(32, 32, 32, 0.9);
-        padding: 25px; /* Slightly more padding for breathing room */
+        padding: 4rem;
         border-radius: 10px;
         position: relative;
         z-index: 3;
@@ -711,45 +712,45 @@ footer a {
 
     /* Labels */
     .SignUp-Form-Auth-Main label, .SignIn-Form-Auth-Main label {
-        font-size: 0.9rem; /* Slightly smaller for mobile */
-        margin: 8px 0; /* Adjust margin for better spacing */
+        font-size: 0.9rem;
+        margin: 8px 0;
     }
 
     /* Input fields */
     .custom-input-Auth-Main {
         font-size: 14px;
-        padding: 10px 15px; /* Adjusted padding for better proportionality */
-        margin: 5px 0 10px; /* Reduced bottom margin */
+        padding: 10px 15px;
+        margin: 5px 0 10px;
     }
 
     /* Error messages */
     .error-message-Auth-Main {
-        font-size: 11px; /* Slightly smaller for mobile */
-        align-self: center; /* Center the error messages */
-        margin-top: -8px; /* Adjust spacing */
-        margin-bottom: 8px; /* Add some space below */
+        font-size: 11px;
+        align-self: center;
+        margin-top: -8px;
+        margin-bottom: 8px;
     }
 
     .Header-1-Auth-Main, .Header1-Auth-Main {
-        font-size: 2.2rem; /* Slightly smaller for mobile */
-        margin-bottom: 1.5rem; /* Adjusted for better spacing */
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
     }
 
     .overlay-right-Auth-Main h1,
     .overlay-left-Auth-Main h1 {
         font-weight: bold;
-        font-size: 1.8rem; /* Smaller for mobile */
+        font-size: 1.8rem;
     }
 
     .overlay-right-Auth-Main p,
     .overlay-left-Auth-Main p {
-        font-size: 0.9rem; /* Smaller for mobile */
+        font-size: 0.9rem;
         width: 90%;
         margin: 0.5rem 0;
     }
 
     .ghost-Auth-Main {
-        font-size: 0.9rem; /* Smaller for mobile */
+        font-size: 0.9rem;
         padding: 8px 30px;
         background: #EC7E4A;
         color: #fff;
@@ -760,18 +761,18 @@ footer a {
     .password-hint-popup-Auth-Main {
         width: 90%;
         font-size: 0.7rem;
-        padding: 10px; /* Adjusted padding for mobile */
+        padding: 10px;
     }
 
     /* Sign Up and Sign In buttons */
     .SignUp-button-Auth-Main, .SignIn-button-Auth-Main {
-        font-size: 1.1rem; /* Slightly smaller for mobile */
-        padding: 12px; /* Adjusted padding for better proportionality */
+        font-size: 1.1rem;
+        padding: 12px;
     }
 
     .password-icon-Auth-Main {
         top: 50%;
         right: 15px;
-        font-size: 20px; /* Slightly smaller for mobile */
+        font-size: 20px;
     }
 }
