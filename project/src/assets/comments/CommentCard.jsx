@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import { div } from "framer-motion/client";
 import { Carousel } from "nuka-carousel";
 import "../comments/comments.css";
 
@@ -73,24 +72,3 @@ export default function Comments() {
     </section>
   );
 }
-
-// import { motion } from "framer-motion";
-// export default function CommentCard({ id, name, email, body }) {
-//   return (
-//     <>
-//       <div className="card w-25 text-center">
-//         <div className="card-body">
-//           {/* <img src={postId} alt={name} className="profile-img" /> */}
-//           <h5 className="card-title">{name} hi</h5>
-//           {/* <div className="stars">
-//             {"★".repeat(stars)}
-//             {"☆".repeat(5 - stars)}
-//           </div> */}
-//           <p>{id}</p>
-//           <p className="card-text">{body} body</p>
-//           <p className="card-text">{email} email</p>
-//         </div>
-//       </div>
-//     </>
-//   );
-// }

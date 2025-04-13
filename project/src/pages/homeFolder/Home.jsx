@@ -3,7 +3,7 @@ import Button from "../../assets/Button";
 import Card from "../../assets/cardFolder/Card";
 import Accordion from "../../assets/accordionFolder/Accordion";
 import Footer from "../../assets/footerFolder/Footer";
-// import CommentCard from "../../assets/comments/CommentCard";
+import CommentCard from "../../assets/comments/CommentCard";
 import "../homeFolder/home.css";
 import { Link } from "react-router-dom";
 import UncontrolledExample from "../../assets/carousel/Carousel ";
@@ -96,7 +96,7 @@ export default function home() {
         </div>
       </div>
       <div className="comments-section margin-top-10 text-center w-75 m-auto">
-        {/* <CommentCard /> */}
+        <CommentCard />
       </div>
       <div className="container-fluid margin-top-10 text-center">
         <h1 className="mb-5">
