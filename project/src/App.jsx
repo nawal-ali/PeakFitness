@@ -14,6 +14,9 @@ import Slider_FP from "./pages/FoodPlansFolder/FoodPlans";
 import WeightGain from "./pages/FoodPlansFolder/Weight-Gain/Weight-Gain-FP"
 import WeightLoss from "./pages/FoodPlansFolder/Weight-Loss/Weight-Loss-FP"
 import MuscleGain from "./pages/FoodPlansFolder/Muscle-Gain/Muscle-Gain-FP";
+import AuthForm from "./pages/Auth/Login/Login";
+import ForgetPassword from "./pages/Auth/Password/Forget password/Auth-F";
+import NewPassword from "./pages/Auth/Password/New Password/Auth-N";
 // import MuscleGain from "./pages/FoodPlansFolder/Muscle-Gain/Muscle-Gain-FP";
 // import WeightLoss from "./pages/FoodPlansFolder/Weight-Loss/Weight-Loss-FP";
 function App() {
@@ -23,6 +26,9 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/AuthForm" element={<AuthForm/>} />
+            <Route path="/ForgetPassword" element={<ForgetPassword/>} />
+            <Route path="/NewPassword" element={<NewPassword/>} />
             <Route path="/exercises" element={<Exercises />} />
             <Route path="/ProTips" element={<Tips />} />
             <Route path="/FoodPlans" element={<Plans />} />
