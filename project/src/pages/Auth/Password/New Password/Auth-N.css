@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: center;
     background: linear-gradient(to bottom, rgba(109, 109, 109, 0.6), rgb(27, 23, 23) 65%), 
-                url('../../../../../images/Password-image.jpeg') center/cover no-repeat;
+                url('/public/imgs/Password-image.jpeg') center/cover no-repeat;
     width: 100vw;
     padding-top: 3.5%;
     padding-bottom: 2%;

@@ -159,7 +159,7 @@ input::placeholder {
     height: 100%;
     width: 50%;
     transition: transform 0.6s ease-in-out;
-    background: url('../../../../images/Home.png') no-repeat center center;
+    background: url('/public/imgs/Home.png') no-repeat center center;
     background-position: 10% center;
     background-size: cover;
 }
