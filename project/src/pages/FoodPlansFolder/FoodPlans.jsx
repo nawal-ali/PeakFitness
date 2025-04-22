@@ -32,7 +32,7 @@ const Slider_FP = () => {
       color: "#4aec7e",
       thumbnailImg: "/public/imgs/Weight-loss.png",
       backgroundImage: "/public/imgs/Food-Plan-W-L.png",
-      link: "/weight-loss-details",
+      link: "/weight-loss-details", // Correct link for Weight Loss
     },
     {
       id: 2,
@@ -72,7 +72,7 @@ const Slider_FP = () => {
   };
 
   const handleReadMore = () => {
-    const currentIndex = selectedItem; // نأخد القيمة الحالية عشان نضمن إنها مش بتتغير
+    const currentIndex = selectedItem;
     console.log("Read More clicked, selectedItem:", currentIndex);
     setIsReadMoreClicked(true);
     console.log("isReadMoreClicked set to true");

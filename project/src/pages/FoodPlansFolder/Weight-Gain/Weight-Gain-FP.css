@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500&display=swap");
-
 /* Main Content */
 .main-content.main-content-WG {
   display: flex;
@@ -153,8 +152,8 @@
 }
 
 .right-panel.right-panel-WG h2 {
-  font-size: 5rem;
-  margin-bottom: 5%;
+  font-size: 4.5rem;
+  /* margin-bottom: 5%; */
 }
 
 .right-panel.right-panel-WG ol {
@@ -192,12 +191,12 @@
 }
 
 /* تلوين النقاط في القائمة غير المرقمة */
-.right-panel.right-panel-WG ul li::marker {
-  color: #ec7e4a; /* لون النقاط */
-}
+/* .right-panel.right-panel-WG ul li::marker {
+
+} */
 
 .right-panel.right-panel-WG li {
-  margin-bottom: 8%;
+  margin-bottom: 4%;
   font-size: 1.4rem;
 }
 
@@ -207,13 +206,14 @@
 }
 
 .horizontal-line.horizontal-line-WG {
-  width: 55%;
+  width: 50%;
   height: 3px;
   background-color: #ec7e4a;
   border: none;
   z-index: 2;
   color: #ec7e4a;
-  margin: 30px 16px;
+  margin: 15px 16px;
+  margin-bottom: 3rem;
 }
 ol li::marker {
   content: counter(list-item) "- "; /* الرقم مع شرطة ومسافة */
@@ -274,10 +274,13 @@ ol li::marker {
 }
 
 .table-title.table-title-WG {
-  font-size: 3rem;
-  color: #ec7e4a;
+  font-size: 2.5rem;
+  /* color: #ec7e4a; */
   margin-top: 30px;
   margin-bottom: 10px;
+}
+.protein-phrase {
+  font-size: 1.7rem;
 }
 
 @media (max-width: 950px) {

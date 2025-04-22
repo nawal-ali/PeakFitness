@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500&display=swap");
+/* Main Content */
+.main-content.main-content-MG {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("/public/imgs/Food-Plan-M-G.png");
+  background-size: cover;
+  background-position: right;
+  opacity: 0; /* Start invisible */
+}
+
+/* Animation Trigger */
+.main-content.main-content-MG.mounted.mounted-MG {
+  opacity: 1; /* Ensure container becomes visible to allow child animations */
+}
+
+/* Buttons Animation */
+.main-content.main-content-MG.mounted.mounted-MG
+  .button-row.button-row-MG
+  .nav-button.nav-button-MG,
+.main-content.main-content-MG.mounted.mounted-MG
+  .nav-button.nav-button-MG.full-width.full-width-MG {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+  animation-delay: 0.8s; /* Delay buttons slightly after left panel */
+}
+
+/* Right Panel Animation */
+.main-content.main-content-MG.mounted.mounted-MG .right-panel.right-panel-MG {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+  animation-delay: 1.5s; /* Delay right panel after buttons */
+}
+
+/* Logo Animation */
+.main-content.main-content-MG.mounted.mounted-MG {
+  opacity: 1;
+}
+
+/* Keyframes */
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Left Panel */
+.left-panel.left-panel-MG {
+  width: 40%;
+  height: 100%;
+  background-image: url("/public/imgs/Muscle-Gain.png");
+  background-size: cover;
+  background-position: center;
+  padding: 3%;
+  z-index: 1;
+}
+
+.left-panel.left-panel-MG h1 {
+  font-size: 5rem !important;
+  margin: 10% 0 15% 0;
+  text-align: left;
+  opacity: 0;
+  width: 70%;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.2s; /* Logo appears slightly after left panel */
+}
+
+.button-row.button-row-MG {
+  display: flex;
+  gap: 6%;
+  margin-bottom: 10%;
+  width: 100%;
+}
+
+.nav-button.nav-button-MG {
+  flex: 1;
+  padding: 5px 2px;
+  background-color: transparent;
+  border: 2px solid #ec7e4a;
+  border-radius: 40px;
+  color: #fff;
+  font-size: 1.2rem !important;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  letter-spacing: 1.5px;
+}
+
+.nav-button.nav-button-MG:hover {
+  background-color: #ec7e4a; /* Orange background on hover */
+}
+
+.nav-button.nav-button-MG.active.active-MG {
+  background-color: #ec7e4a;
+  padding-left: 0;
+}
+
+.full-width.full-width-MG {
+  width: 110%;
+  margin-bottom: 6%;
+  background-color: transparent;
+  border: 2px solid #ec7e4a;
+  border-radius: 40px;
+  color: #fff;
+  font-size: 1.2rem !important;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  margin-left: -20px;
+  letter-spacing: 1.5px;
+}
+
+/* Right Panel */
+.right-panel.right-panel-MG {
+  flex: 1;
+  padding: 40px;
+  overflow-y: scroll;
+  height: 78%;
+  margin-top: 5%;
+  max-width: 70%;
+}
+
+.right-panel.right-panel-MG h2 {
+  font-size: 4.5rem;
+}
+
+.right-panel.right-panel-MG ol {
+  list-style-position: inside;
+  font-size: 18px;
+}
+
+.right-panel.right-panel-MG ul {
+  list-style-type: disc;
+  font-size: 40px;
+}
+
+/* Remove bullet and align left for specific items */
+.right-panel.right-panel-MG ul li.no-bullet-left.no-bullet-left-MG {
+  list-style-type: none;
+  margin-left: -20px;
+}
+
+/* Remove bullet for specific item */
+.right-panel.right-panel-MG ul li.no-bullet.no-bullet-MG {
+  list-style-type: none;
+}
+
+/* Remove number and set orange color for specific item */
+.right-panel.right-panel-MG ol li.no-number-white.no-number-white-MG {
+  list-style-type: none;
+  color: #ec7e4a;
+  margin-left: 0;
+}
+
+/* Reduce line spacing for meal items */
+.right-panel.right-panel-MG ul li.meal-item.meal-item-MG {
+  margin-bottom: 5px;
+}
+
+.right-panel.right-panel-MG li {
+  margin-bottom: 4%;
+  font-size: 1.4rem;
+}
+
+.highlight.highlight-MG {
+  color: #ec7e4a;
+  font-size: 1.9rem;
+}
+
+.horizontal-line.horizontal-line-MG {
+  width: 50%;
+  height: 3px;
+  background-color: #ec7e4a;
+  border: none;
+  z-index: 2;
+  color: #ec7e4a;
+  margin: 15px 16px;
+  margin-bottom: 3rem;
+}
+
+ol li::marker {
+  content: counter(list-item) "- ";
+}
+
+/* Custom Scrollbar */
+.right-panel.right-panel-MG::-webkit-scrollbar {
+  width: 10px;
+}
+
+.right-panel.right-panel-MG::-webkit-scrollbar-track {
+  background: #80808075;
+  margin-top: 0;
+}
+
+.right-panel.right-panel-MG::-webkit-scrollbar-thumb {
+  background-color: #ec7e4a;
+  border-radius: 10px;
+  min-height: 71px;
+}
+
+.right-panel.right-panel-MG::-webkit-scrollbar-thumb:hover {
+  background-color: #c1653a;
+}
+
+/* Table Styles */
+.carb-table.carb-table-MG,
+.prot-table.prot-table-MG {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 1.4rem;
+}
+
+.carb-table.carb-table-MG th,
+.carb-table.carb-table-MG td,
+.prot-table.prot-table-MG th,
+.prot-table.prot-table-MG td {
+  border: 2px solid #ec7e4a;
+  padding: 15px;
+  text-align: center;
+}
+
+.carb-table.carb-table-MG th,
+.prot-table.prot-table-MG th {
+  background-color: #ec7e4a;
+  color: #fff;
+  font-weight: bold;
+}
+
+.carb-table.carb-table-MG td,
+.prot-table.prot-table-MG td {
+  color: #fff;
+}
+
+.carb-table.carb-table-MG tr:nth-child(even),
+.prot-table.prot-table-MG tr:nth-child(even) {
+  background-color: #2a2a2a;
+}
+
+.table-title.table-title-MG {
+  font-size: 2.5rem;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.protein-phrase {
+  font-size: 1.7rem;
+}
+
+@media (max-width: 950px) {
+  .button-row.button-row-MG {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  .nav-button.nav-button-MG {
+    margin-bottom: 6%;
+  }
+  .right-panel.right-panel-MG h2 {
+    font-size: 4rem;
+  }
+  .left-panel.left-panel-MG h1 {
+    font-size: 3rem !important;
+    margin: 20% 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .main-content.main-content-MG {
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  .left-panel.left-panel-MG {
+    margin-top: 20%;
+    width: 100%;
+  }
+  .left-panel.left-panel-MG h1 {
+    font-size: 5rem !important;
+    margin: 10% 0;
+  }
+  .right-panel.right-panel-MG {
+    width: 100% !important;
+    padding: 0;
+    max-width: 100%;
+  }
+  .right-panel.right-panel-MG h2 {
+    font-size: 4rem;
+  }
+  .highlight.highlight-MG {
+    font-size: 1.6rem;
+  }
+  .right-panel.right-panel-MG::-webkit-scrollbar {
+    display: none;
+  }
+  .right-panel.right-panel-MG li {
+    width: 100%;
+  }
+  .right-panel.right-panel-MG h2 {
+    margin-left: 5%;
+  }
+  .button-row.button-row-MG {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  .nav-button.nav-button-MG {
+    margin-bottom: 6%;
+  }
+}

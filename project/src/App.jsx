@@ -12,6 +12,8 @@ import Calorie from "./pages/calcsFolder/Calorie/Calorie";
 import Weight from "./pages/calcsFolder/Ideal-Weight/Weight";
 import Slider_FP from "./pages/FoodPlansFolder/FoodPlans";
 import WeightGain from "./pages/FoodPlansFolder/Weight-Gain/Weight-Gain-FP"
+import WeightLoss from "./pages/FoodPlansFolder/Weight-Loss/Weight-Loss-FP"
+import MuscleGain from "./pages/FoodPlansFolder/Muscle-Gain/Muscle-Gain-FP";
 // import MuscleGain from "./pages/FoodPlansFolder/Muscle-Gain/Muscle-Gain-FP";
 // import WeightLoss from "./pages/FoodPlansFolder/Weight-Loss/Weight-Loss-FP";
 function App() {
@@ -32,6 +34,9 @@ function App() {
             <Route path="/Weight" element={<Weight />} />
             <Route path="/FoodPlanSlider" element={<Slider_FP/>}/>
             <Route path="/weight-gain-details" element={<WeightGain />} />
+            <Route path="/weight-loss-details" element={<WeightLoss />} />
+            <Route path="/muscle-gain-details" element={<MuscleGain />} />
+            
             {/* <Route path="/weight-loss-details" element={<WeightLoss />} />
             <Route path="/Muslce-gain-details" element={<MuscleGain />} /> */}
           </Routes>

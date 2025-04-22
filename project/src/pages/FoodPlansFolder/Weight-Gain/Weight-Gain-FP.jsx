@@ -58,23 +58,16 @@ const WeightGain = () => {
         "Snack On Nuts And Dried Fruits To Increase Your Calorie Intake.",
         "Exercise Regularly To Enhance Muscle Mass And Promote Healthy Weight Gain.",
         "Choose energy-dense and nutrient-dense foods instead of empty-calorie foods. Nutrients include carbohydrates, protein, healthy fats, and fiber, which are good for healthy digestion but not calories, and vitamins and minerals. We list below the most important sources of each nutrient and the calorie per 100 grams.",
-        // 'Carbohydrate is one of the important sources of energy, providing 4 calories per gram.',
       ],
     },
     "Healthy Fats": {
       title: "Healthy Fats",
       items: [
-        "Incorporate avocados into your diet for a rich source of monounsaturated fats.",
-        "Add olive oil to your meals for heart-healthy fats and antioxidants.",
-        "Eat a handful of almonds or walnuts daily for omega-3 fatty acids.",
-        "Include fatty fish like salmon or mackerel for essential omega-3s.",
-        "Use coconut oil in moderation for medium-chain triglycerides (MCTs).",
-        "Spread nut butter (like peanut or almond butter) on toast or fruits.",
-        "Enjoy chia seeds or flaxseeds in smoothies or yogurt for healthy fats.",
-        "Opt for dark chocolate (70% cocoa or higher) as a treat with healthy fats.",
-        "Cook with ghee or clarified butter for a source of butyrate.",
-        "Add sunflower seeds to salads for a boost of polyunsaturated fats.",
-        "Fats Contain 9 Calories Per Gram And Help With Healthy Weight Gain.",
+        "Use oils in cooking: Add olive oil or avocado oil to salads and meals.",
+        "Incorporate nuts and seeds into snacks: Enjoy a handful of nuts or sprinkle chia seeds on yogurt or oatmeal.",
+        "Enjoy nut butters: Have them as a snack with toast or fruit.",
+        "Eat fatty fish twice a week: Improve your omega-3 intake with salmon, mackerel, or tuna.",
+        "Add avocado to your meals: Use it in salads or as a sandwich filling.",
       ],
     },
     Protein: {
@@ -95,7 +88,6 @@ const WeightGain = () => {
     Carbohydrates: {
       title: "Carbohydrates",
       items: [
-        "Tips For Choosing Carbohydrates:",
         "Opt For Complex Carbohydrates: Choose Foods Like Oats, Brown Rice, And Quinoa, As They Provide Long-Lasting Energy And Help Maintain Stable Blood Sugar Levels.",
         "Don't Neglect Fiber: Whole Foods Such As Fruits, Vegetables, And Whole Grains Contain Carbohydrates Along With Fiber, Which Supports Digestion.",
         "Enjoy Natural Sources Of Sugar: Use Honey And Dried Fruits Instead Of Refined Sugars, Which Offer Little Nutritional Value.",
@@ -230,6 +222,21 @@ const WeightGain = () => {
         </ol>
       );
     }
+    if (section === "Healthy Fats") {
+      return (
+        <ol className="healthy-fats-list">
+          {items.map((item, index) => {
+            const [highlightPart, rest] = item.split(": ");
+            return (
+              <li key={index}>
+                <span className={`highlight highlight-WG`}>{highlightPart}:</span>{" "}
+                {rest}
+              </li>
+            );
+          })}
+        </ol>
+      );
+    }
     if (section === "Protein") {
       return (
         <>
@@ -331,23 +338,18 @@ const WeightGain = () => {
     if (section === "Carbohydrates") {
       return (
         <>
+          <div className="protein-phrase">Tips For Choosing Carbohydrates:</div>
           <ul>
             {items.map((item, index) => {
-              if (item === "Tips For Choosing Carbohydrates:") {
-                return (
-                  <li
-                    key={index}
-                    className={`no-bullet-left no-bullet-left-WG`}
-                  >
-                    {renderTextWithHighlight(item, section)}
-                  </li>
-                );
-              }
               return (
                 <li key={index}>{renderTextWithHighlight(item, section)}</li>
               );
             })}
           </ul>
+          {/* Render "Tips For Choosing Carbohydrates:" and protein-phrase together */}
+          <div className="protein-phrase">
+            Protein is essential for muscle building and provides 4 calories per gram. 
+          </div>
           {/* جدول الكربوهيدرات */}
           <h3 className={`table-title table-title-WG`}>
             Carbohydrate Content in Common Foods
@@ -430,7 +432,6 @@ const WeightGain = () => {
           isMounted ? "mounted mounted-WG" : ""
         }`}
       >
-        {/* <div className={`logo logo-WG`}></div> */}
         <aside className={`left-panel left-panel-WG`}>
           <h1>Weight Gain</h1>
           <div className={`button-row button-row-WG`}>
