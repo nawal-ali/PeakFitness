@@ -38,11 +38,11 @@ const ForgetPassword = () => {
 
     return (
         <div className="Main-container-Auth-FP">
-            <img src="../../../../../images/Logo-4.svg" alt="Logo" className="logo-Auth-FP" />
+            <img src="/public/imgs/Logo-4.svg" alt="Logo" className="logo-Auth-FP" />
             <div className="container-Auth-FP">
                 <form onSubmit={handleSubmit} className="forgot-password-box-Auth-FP">
                     <div className="svg-container-Auth-FP">
-                        <img src="../../../../../images/Lock.svg" alt="Reset Password Icon" />
+                        <img src="/public/imgs/Lock.svg" alt="Reset Password Icon" />
                     </div>
                     <h2 className="header-Auth-FP">Forgot Password</h2>
                     <div className="Under-header-Auth-FP">

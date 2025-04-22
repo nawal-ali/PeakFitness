@@ -61,11 +61,11 @@ const NewPassword = () => {
 
     return (
         <div className="Main-container-Auth-NFP">
-            <img src="/images/Logo-4.svg" alt="Logo" className="logo-NP" />
+            <img src="/public/imgs/Logo-4.svg" alt="Logo" className="logo-NP" />
             <div className="container-NP">
                 <form onSubmit={handleSubmit} className="new-password-box-NP" noValidate>
                     <div className="svg-container-NP">
-                        <img src="/images/Key.svg" alt="Key Icon" className="Logo-Key" />
+                        <img src="/public/imgs/Key.svg" alt="Key Icon" className="Logo-Key" />
                     </div>
                     <h2 className="header-Auth-FPN">Create New Password</h2>
                     <div className="Under-header-Auth-FPN">
