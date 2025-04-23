@@ -4,12 +4,15 @@ import Card from "../../assets/cardFolder/Card";
 import Accordion from "../../assets/accordionFolder/Accordion";
 import Footer from "../../assets/footerFolder/Footer";
 import CommentCard from "../../assets/comments/CommentCard";
+import ToTop from "../../assets/toTopBtn/toTop";
 import "../homeFolder/home.css";
 import { Link } from "react-router-dom";
 import UncontrolledExample from "../../assets/carousel/Carousel ";
+
 export default function home() {
   return (
     <>
+      <ToTop />
       <Navbar />
       <div className="min-vw-100 min-vh-100 position-relative">
         <img

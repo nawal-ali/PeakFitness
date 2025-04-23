@@ -1,0 +1,23 @@
+.to-top-button {
+  position: fixed;
+  bottom: -100px;
+  right: 2rem;
+  transition: bottom 0.3s ease-in-out;
+  z-index: 1000;
+  transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.to-top-button.visible {
+  bottom: 2rem;
+  opacity: 1;
+}
+
+.to-top-button.hidden {
+  bottom: -100px;
+}
+
+/* Style the button directly */
+.to-top-button button {
+  padding: 0.75rem 1rem;
+}
