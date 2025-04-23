@@ -7,7 +7,7 @@ export default function navbar({ showSearch = true, showBackground = true }) {
     <>
       {/* fixed-top */}
       <nav
-        className="navbar navbar-dark p-4 fixed-top w-100"
+        className="navbar navbar-dark p-4  w-100"
         style={
           showBackground
             ? { backgroundColor: "#202020", zIndex: 1050 }
