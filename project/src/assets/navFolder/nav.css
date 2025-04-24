@@ -1,17 +1,33 @@
 .offcanvas {
   background-color: #202020 !important;
+  z-index: 5000 !important;
+  color: white !important;
+  height: 100vmax !important;
 }
-.active {
-  border-left: 2px solid gray;
-  padding-left: 30px;
+.offcanvas-backdrop {
+  z-index: 1055 !important;
+}
+.navbar-nav .nav-item .nav-link.active {
+  border-bottom: 1px solid white !important;
 }
 .custom-link-color {
-  color: #ec7e4a !important;
+  color: white !important;
 }
 .nav-item {
-  transition: all 200ms ease-in-out;
+  transition: all 400ms ease-in-out;
 }
-.nav-item:hover {
-  /* border-left: 2px solid gray; */
-  padding-left: 30px;
+.nav-item .nav-link:hover {
+  color: brown !important;
+}
+.navbar {
+  transition: transform 0.3s ease-in-out;
+  z-index: 1040;
+}
+
+.nav-visible {
+  transform: translateY(0);
+}
+
+.nav-hidden {
+  transform: translateY(-100%);
 }

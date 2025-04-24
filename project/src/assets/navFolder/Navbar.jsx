@@ -1,31 +1,54 @@
 import "../navFolder/nav.css";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
+// eslint-disable-next-line react/prop-types
+//{ showSearch = true, showBackground = true }
+export default function Navbar() {
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
 
-export default function navbar({ showSearch = true, showBackground = true }) {
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+
+      // Show navbar when scrolling up, hide when scrolling down
+      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+
+      // Always show navbar at top of page
+      if (currentScrollPos < 10) {
+        setVisible(true);
+      }
+
+      setPrevScrollPos(currentScrollPos);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos]);
+
   return (
     <>
-      {/* fixed-top */}
       <nav
-        className="navbar navbar-dark p-4  w-100"
-        style={
-          showBackground
-            ? { backgroundColor: "#202020", zIndex: 1050 }
-            : { zIndex: 1050 }
-        }
-
-        // position-absolute top-0
+        className={`navbar navbar-dark navbar-expand-xl p-4 fixed-top w-100 ${
+          visible ? "nav-visible" : "nav-hidden"
+        }`}
+        style={{ backgroundColor: "#5f150e", zIndex: 1050 }}
+        // style={
+        //   showBackground
+        //     ? { backgroundColor: "#5f150e", zIndex: 1050 }
+        //     : { zIndex: 1050 }
+        // }
       >
-        <div className="container-fluid">
-          <Link to="/" style={{ width: "10%" }}>
+        <div className="container-fluid d-flex justify-content-between">
+          <Link to="/" className="navbar-brand">
             <img
               src="/logoAndText.svg"
               alt="main logo"
-              style={{ width: "100%" }}
+              style={{ width: "50%" }}
             />
           </Link>
           {/* Conditionally render the search bar */}
-          {showSearch && (
+          {/* {showSearch && (
             <form className="d-none d-md-flex w-75" role="search">
               <input
                 className="form-control me-2 w-100 rounded-pill "
@@ -34,7 +57,7 @@ export default function navbar({ showSearch = true, showBackground = true }) {
                 aria-label="Search"
               />
             </form>
-          )}
+          )} */}
           <button
             className="navbar-toggler"
             type="button"
@@ -67,61 +90,46 @@ export default function navbar({ showSearch = true, showBackground = true }) {
               ></button>
             </div>
             <div className="offcanvas-body">
-              <form className="d-flex mt-3 mb-3" role="search">
-                <input
-                  className="form-control me-2 rounded-pill"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                {/* <button
-                  className="btn rounded-pill"
-                  type="submit"
-                  style={{ backgroundColor: "#EC7E4A" }}
-                >
-                  Search
-                </button> */}
-              </form>
-              <ul className="navbar-nav justify-content-end flex-grow-1 pe-3 ms-5">
+              <ul className="navbar-nav flex-grow-1 pe-3">
                 {/* start of nav body */}
                 <li className="nav-item">
                   <NavLink
-                    className="nav-link fs-4 custom-link-color mb-2"
+                    className="nav-link fs-5 custom-link-color mb-2 mx-1"
                     to="/"
                   >
                     <img
                       src="/logo/homeLogo.svg"
                       width="30"
                       height="40"
-                      className="me-3"
+                      className="me-1"
                     />
                     Home
                   </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink
-                    className="nav-link fs-4 custom-link-color mb-2"
+                    className="nav-link fs-5 custom-link-color mb-2 mx-1"
                     to="/exercises"
                   >
                     <img
                       src="/logo/exercisesLogo.svg"
                       width="30"
                       height="40"
-                      className="me-3"
+                      className="me-1"
                     />
                     Exercises
                   </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink
-                    className="nav-link fs-4 custom-link-color mb-2"
+                    className="nav-link fs-5 custom-link-color mb-2 mx-1"
                     to="/ProTips"
                   >
                     <img
                       src="/logo/tipsLogo.svg"
                       width="30"
                       height="40"
-                      className="me-3"
+                      className="me-1"
                     />
                     Pro tips
                   </NavLink>
@@ -130,31 +138,58 @@ export default function navbar({ showSearch = true, showBackground = true }) {
                 <li className="nav-item dropdown">
                   <NavLink
                     to="/FoodPlans"
-                    className={"nav-link fs-4 custom-link-color"}
+                    className={
+                      "nav-link dropdown-toggle fs-5 custom-link-color mx-1"
+                    }
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
                   >
                     <img
                       src="/logo/foodLogo.svg"
                       width="30"
                       height="40"
-                      className="me-3"
+                      className="me-1"
                     />
                     Food Plans
                   </NavLink>
                   <ul className="dropdown-menu dropdown-menu-dark">
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <NavLink
+                        className="dropdown-item"
+                        to="/weight-loss-details"
+                      >
                         Weight loss
-                      </a>
+                      </NavLink>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <NavLink
+                        className="dropdown-item"
+                        to="/weight-gain-details"
+                      >
                         Gain weight
-                      </a>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        className="dropdown-item"
+                        to="/muscle-gain-details"
+                      >
+                        Gain muscle
+                      </NavLink>
+                    </li>
+                    <li>
+                      <hr className="dropdown-divider" />
+                    </li>
+                    <li>
+                      <NavLink className="dropdown-item" to="/FoodPlans">
+                        all plans
+                      </NavLink>
                     </li>
                   </ul>
                 </li>
                 {/* -------------------- end of foodplans dropdown ----------------------- */}
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <NavLink
                     className="nav-link fs-4 custom-link-color mb-2"
                     to="/Calculators"
@@ -168,12 +203,12 @@ export default function navbar({ showSearch = true, showBackground = true }) {
                     />
                     Calculators
                   </NavLink>
-                </li>
+                </li> */}
                 {/*--------------------- start of Calculators dropdown ------------------- */}
-                {/* <li className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle fs-4 custom-link-color"
-                    href="#"
+                <li className="nav-item dropdown">
+                  <NavLink
+                    to="/Calculators"
+                    className="nav-link dropdown-toggle fs-5 custom-link-color mx-1"
                     role="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -186,43 +221,43 @@ export default function navbar({ showSearch = true, showBackground = true }) {
                       className="d-inline-block align-text-top me-3 mb-2"
                     />
                     Calculators
-                  </a>
+                  </NavLink>
                   <ul className="dropdown-menu dropdown-menu-dark">
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <NavLink className="dropdown-item" to="/Calorie">
                         Calorie Calculator
-                      </a>
+                      </NavLink>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <NavLink className="dropdown-item" to="/BMI">
                         BMI Calculator
-                      </a>
+                      </NavLink>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <NavLink className="dropdown-item" to="/Weight">
                         Ideal Weight Calculator
-                      </a>
+                      </NavLink>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <NavLink className="dropdown-item" to="/BodyFat">
                         Body fat percentage Calculator
-                      </a>
+                      </NavLink>
                     </li>
                     <li>
                       <hr className="dropdown-divider" />
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
-                        Something else here
-                      </a>
+                      <NavLink className="dropdown-item" to="/Calculators">
+                        all calculators
+                      </NavLink>
                     </li>
                   </ul>
-                </li> */}
+                </li>
                 {/* -------------------- end of Calculators dropdown ----------------------- */}
                 <li className="nav-item">
                   <NavLink
                     to="/About"
-                    className={"nav-link fs-4 custom-link-color"}
+                    className={"nav-link fs-5 custom-link-color mb-2 mx-1"}
                   >
                     <img
                       src="/logo/aboutLogo.svg"
@@ -234,6 +269,14 @@ export default function navbar({ showSearch = true, showBackground = true }) {
                   </NavLink>
                 </li>
               </ul>
+              <form className="d-flex mt-3 mb-3" role="search">
+                <input
+                  className="form-control me-2 rounded-pill"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+              </form>
             </div>
           </div>
         </div>
