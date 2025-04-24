@@ -22,17 +22,17 @@ export default function home() {
         />
         <div className="position-absolute top-50 start-50 translate-middle">
           <h1 style={{ fontSize: "500%" }}>Welcome to</h1>
-          <h1 style={{ color: "#EC7E4A", fontSize: "400%" }}>PeakFitness</h1>
+          <h1 style={{ color: "#751a12", fontSize: "400%" }}>PeakFitness</h1>
         </div>
       </div>
       <div className="row container-fluid section-1 margin-top-10 ">
         <div className="col-12 col-md-6 ps-4">
           <p style={{ fontSize: "2rem" }} className="mb-5">
-            <span style={{ color: "#EC7E4A", fontSize: "5rem" }}>Discover</span>{" "}
+            <span style={{ color: "#9C2C1A", fontSize: "5rem" }}>Discover</span>{" "}
             the path to your{" "}
-            <span style={{ color: "#EC7E4A" }}>ideal weight</span>,{" "}
-            <span style={{ color: "#EC7E4A" }}>better health</span>, and a{" "}
-            <span style={{ color: "#EC7E4A" }}>
+            <span style={{ color: "#9C2C1A" }}>ideal weight</span>,{" "}
+            <span style={{ color: "#9C2C1A" }}>better health</span>, and a{" "}
+            <span style={{ color: "#9C2C1A" }}>
               sustainable, healthy lifestyle
             </span>
             . At Pure Vitality, we&apos;re here to guide you with fitness
