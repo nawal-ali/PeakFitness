@@ -32,14 +32,14 @@ export default function Navbar() {
         className={`navbar navbar-dark navbar-expand-xl p-4 fixed-top w-100 ${
           visible ? "nav-visible" : "nav-hidden"
         }`}
-        style={{ backgroundColor: "#5f150e", zIndex: 1050 }}
+        style={{ backgroundColor: "#000000", zIndex: 1050 }}
         // style={
         //   showBackground
         //     ? { backgroundColor: "#5f150e", zIndex: 1050 }
         //     : { zIndex: 1050 }
         // }
       >
-        <div className=" d-flex justify-content-between">
+        <div className=" d-flex justify-content-around align-items-center w-100">
           <Link to="/" className="navbar-brand">
             <img
               src="/logoAndText.svg"
@@ -90,19 +90,19 @@ export default function Navbar() {
               ></button>
             </div>
             <div className="offcanvas-body">
-              <ul className="navbar-nav flex-grow-1 pe-3">
+              <ul className="navbar-nav flex-grow-1">
                 {/* start of nav body */}
                 <li className="nav-item">
                   <NavLink
                     className="nav-link fs-5 custom-link-color mb-2 mx-1"
                     to="/"
                   >
-                    <img
+                    {/* <img
                       src="/logo/homeLogo.svg"
                       width="30"
                       height="40"
                       className="me-1"
-                    />
+                    /> */}
                     Home
                   </NavLink>
                 </li>
@@ -111,12 +111,12 @@ export default function Navbar() {
                     className="nav-link fs-5 custom-link-color mb-2 mx-1"
                     to="/exercises"
                   >
-                    <img
+                    {/* <img
                       src="/logo/exercisesLogo.svg"
                       width="30"
                       height="40"
                       className="me-1"
-                    />
+                    /> */}
                     Exercises
                   </NavLink>
                 </li>
@@ -125,12 +125,12 @@ export default function Navbar() {
                     className="nav-link fs-5 custom-link-color mb-2 mx-1"
                     to="/ProTips"
                   >
-                    <img
+                    {/* <img
                       src="/logo/tipsLogo.svg"
                       width="30"
                       height="40"
                       className="me-1"
-                    />
+                    /> */}
                     Pro tips
                   </NavLink>
                 </li>
@@ -145,12 +145,12 @@ export default function Navbar() {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    <img
+                    {/* <img
                       src="/logo/foodLogo.svg"
                       width="30"
                       height="40"
                       className="me-1"
-                    />
+                    /> */}
                     Food Plans
                   </NavLink>
                   <ul className="dropdown-menu dropdown-menu-dark">
@@ -213,13 +213,13 @@ export default function Navbar() {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    <img
+                    {/* <img
                       src="/logo/calcLogo.svg"
                       alt="Logo"
                       width="30"
                       height="40"
                       className="d-inline-block align-text-top me-3 mb-2"
-                    />
+                    /> */}
                     Calculators
                   </NavLink>
                   <ul className="dropdown-menu dropdown-menu-dark">
@@ -259,24 +259,26 @@ export default function Navbar() {
                     to="/About"
                     className={"nav-link fs-5 custom-link-color mb-2 mx-1"}
                   >
-                    <img
+                    {/* <img
                       src="/logo/aboutLogo.svg"
                       width="30"
                       height="40"
                       className="me-3"
-                    />
+                    /> */}
                     About us
                   </NavLink>
                 </li>
               </ul>
-              <form className="d-flex mt-3 mb-3" role="search">
+              <button className="btn btn-dark me-3 px-4">Login</button>
+              <button className="btn btn-light me-3 px-4">Sign Up</button>
+              {/* <form className="d-flex mt-3 mb-3" role="search">
                 <input
                   className="form-control me-2 rounded-pill"
                   type="search"
                   placeholder="Search"
                   aria-label="Search"
                 />
-              </form>
+              </form> */}
             </div>
           </div>
         </div>
