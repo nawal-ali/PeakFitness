@@ -87,27 +87,27 @@ const MuscleGain = () => {
     "Healthy Fats": {
       title: "Healthy Fats",
       items: [
-"Healthy fats play a crucial role in muscle building, hormone production, and overall health. They help support testosterone levels, reduce inflammation, and provide long-lasting energy for intense workouts.",
-"🔥 Benefits of Healthy Fats for Muscle Growth:",
-"✅ Boosts Testosterone: Essential for muscle protein synthesis and strength gains.",
-"✅ Provides Energy: Keeps you fueled during workouts and throughout the day.",
-"✅ Supports Recovery: Reduces muscle inflammation and promotes faster recovery.",
-"✅ Improves Nutrient Absorption: Helps your body absorb fat-soluble vitamins (A, D, E, K).",
-"🥜  Best Sources of Healthy Fats:",
-"🥑  Avocados – Rich in monounsaturated fats and fiber.",
-"🥜  Nuts (Almonds, Walnuts, Cashews) – Packed with omega-3s and protein.",
-"🫒  Olive Oil – A great source of heart-healthy fats.",
-"🐟  Fatty Fish (Salmon, Tuna, Mackerel) – High in omega-3 fatty acids.",
-"🥚  Egg Yolks – Provide essential fats and micronutrients.",
-"🌰  Chia & Flaxseeds – Loaded with omega-3s and fiber.",
-"🥥  Coconut Oil – Contains MCTs for quick energy.",
-"💡How to Include Healthy Fats in Your Diet?",
-"✔️ Add avocados to your meals.",
-"✔️ Cook with olive oil instead of processed oils.",
-"✔️ Snack on nuts and seeds for a nutrient boost.",
-"✔️ Eat fatty fish 2-3 times per week.",
-"✔️ Include whole eggs in your breakfast.", 
-     ],
+        "Healthy fats play a crucial role in muscle building, hormone production, and overall health. They help support testosterone levels, reduce inflammation, and provide long-lasting energy for intense workouts.",
+        "🔥 Benefits of Healthy Fats for Muscle Growth:",
+        "✅ Boosts Testosterone: Essential for muscle protein synthesis and strength gains.",
+        "✅ Provides Energy: Keeps you fueled during workouts and throughout the day.",
+        "✅ Supports Recovery: Reduces muscle inflammation and promotes faster recovery.",
+        "✅ Improves Nutrient Absorption: Helps your body absorb fat-soluble vitamins (A, D, E, K).",
+        "🥜 Best Sources of Healthy Fats:",
+        "🥑 Avocados – Rich in monounsaturated fats and fiber.",
+        "🥜 Nuts (Almonds, Walnuts, Cashews) – Packed with omega-3s and protein.",
+        "🫒 Olive Oil – A great source of heart-healthy fats.",
+        "🐟 Fatty Fish (Salmon, Tuna, Mackerel) – High in omega-3 fatty acids.",
+        "🥚 Egg Yolks – Provide essential fats and micronutrients.",
+        "🌰 Chia & Flaxseeds – Loaded with omega-3s and fiber.",
+        "🥥 Coconut Oil – Contains MCTs for quick energy.",
+        "💡 How to Include Healthy Fats in Your Diet?",
+        "✔️ Add avocados to your meals.",
+        "✔️ Cook with olive oil instead of processed oils.",
+        "✔️ Snack on nuts and seeds for a nutrient boost.",
+        "✔️ Eat fatty fish 2-3 times per week.",
+        "✔️ Include whole eggs in your breakfast.",
+      ],
     },
     "Carbohydrates": {
       title: "Carbohydrates",
@@ -251,6 +251,15 @@ const MuscleGain = () => {
         </ul>
       );
     }
+    if (section === "Healthy Fats") {
+      return (
+        <div>
+          {items.map((item, index) => (
+            <p key={index}>{item}</p>
+          ))}
+        </div>
+      );
+    }
     return (
       <ol>
         {items.map((item, index) => (
@@ -290,7 +299,7 @@ const MuscleGain = () => {
             </button>
           </div>
           <div className={`button-row button-row-MG`}>
-          <button
+            <button
               className={`nav-button nav-button-MG ${
                 activeSection === "Protein" ? "active active-MG" : ""
               }`}
@@ -306,7 +315,6 @@ const MuscleGain = () => {
             >
               Microonutrients
             </button>
-
           </div>
           <div className={`button-row button-row-MG`}>
             <button
