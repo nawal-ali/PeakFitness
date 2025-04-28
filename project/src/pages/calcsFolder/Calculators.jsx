@@ -9,11 +9,41 @@ const Slider_C = () => {
   const thumbnailRef = useRef(null);
 
   const items = [
-    { id: 0, name: "Choose Calculator", subtitle: "to Get Started", img: "./imgs/choose-calc-image.png", color: "#ec7e4a" },
-    { id: 1, name: "Calorie", img: "./imgs/Calorie-image.png", color: "#ec7e4a", path: "/Calorie" },
-    { id: 2, name: "Ideal Weight", img: "./imgs/Ideal-Weight-image.png", color: "#ec7e4a", path: "/Weight" },
-    { id: 3, name: "BMI", img: "./imgs/BMI-image.png", color: "#ec7e4a", path: "/BMI" },
-    { id: 4, name: "Body Fat", img: "./imgs/Body-Fat-image.png", color: "#ec7e4a", path: "/BodyFat" },
+    {
+      id: 0,
+      name: "Choose Calculator",
+      subtitle: "to Get Started",
+      img: "./imgs/choose-calc-image.png",
+      color: "#ec7e4a",
+    },
+    {
+      id: 1,
+      name: "Calorie",
+      img: "./imgs/Calorie-image.png",
+      color: "#ec7e4a",
+      path: "/Calorie",
+    },
+    {
+      id: 2,
+      name: "Ideal Weight",
+      img: "./imgs/Ideal-Weight-image.png",
+      color: "#ec7e4a",
+      path: "/Weight",
+    },
+    {
+      id: 3,
+      name: "BMI",
+      img: "./imgs/BMI-image.png",
+      color: "#ec7e4a",
+      path: "/BMI",
+    },
+    {
+      id: 4,
+      name: "Body Fat",
+      img: "./imgs/Body-Fat-image.png",
+      color: "#ec7e4a",
+      path: "/BodyFat",
+    },
   ];
 
   const [selectedItem, setSelectedItem] = useState(items[0].name);
@@ -25,7 +55,8 @@ const Slider_C = () => {
   }, []);
 
   const showSlider = (type, index = null) => {
-    if (!sliderRef.current || !thumbnailRef.current || !carouselRef.current) return;
+    if (!sliderRef.current || !thumbnailRef.current || !carouselRef.current)
+      return;
 
     const sliderItems = Array.from(sliderRef.current.children);
     let thumbnailItems = Array.from(thumbnailRef.current.children);
@@ -132,19 +163,24 @@ const Slider_C = () => {
   };
 
   const resetToFirst = () => {
-    if (!sliderRef.current || !thumbnailRef.current || !carouselRef.current) return;
+    if (!sliderRef.current || !thumbnailRef.current || !carouselRef.current)
+      return;
 
     const sliderItems = Array.from(sliderRef.current.children);
     const thumbnailItems = Array.from(thumbnailRef.current.children);
 
     const orderedSliderItems = items.map((item) =>
-      sliderItems.find((sliderItem) => parseInt(sliderItem.dataset.id) === item.id)
+      sliderItems.find(
+        (sliderItem) => parseInt(sliderItem.dataset.id) === item.id
+      )
     );
     sliderRef.current.innerHTML = "";
     orderedSliderItems.forEach((item) => sliderRef.current.appendChild(item));
 
     const filteredItems = items.filter(
-      (item) => item.id !== 0 && item.id !== items.find((i) => i.name === selectedItem)?.id
+      (item) =>
+        item.id !== 0 &&
+        item.id !== items.find((i) => i.name === selectedItem)?.id
     );
     thumbnailRef.current.innerHTML = "";
 
@@ -229,7 +265,7 @@ const Slider_C = () => {
                   </div>
                   {item.id !== 0 && (
                     <Link to={item.path} className="start-button-SC">
-                      Let's get started
+                      Let&aposs get started
                     </Link>
                   )}
                 </div>
@@ -253,7 +289,7 @@ const Slider_C = () => {
                   onClick={(e) => {
                     e.preventDefault(); // لمنع التنقل المباشر لو عايزة السلايدر يتحرك أولاً
                     showSlider("select", item.id); // تحريك السلايدر
-                    setTimeout(() => window.location.href = item.path, 500); // التنقل بعد الأنيميشن
+                    setTimeout(() => (window.location.href = item.path), 500); // التنقل بعد الأنيميشن
                   }}
                 >
                   <img src={item.img} alt="thumbnail" />
