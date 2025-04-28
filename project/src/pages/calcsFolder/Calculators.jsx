@@ -224,85 +224,88 @@ const Slider_C = () => {
 
   return (
     <>
-      <Navbar showSearch={false} showBackground={false} />
-      <div className="carousel-SC" ref={carouselRef}>
-        <>
-          <div className="arrows-SC">
-            <button id="prev" onClick={() => showSlider("prev")}>
-              {"<"}
-            </button>
-            <button id="next" onClick={() => showSlider("next")}>
-              {">"}
-            </button>
-          </div>
-
-          <div className="list-SC" ref={sliderRef}>
-            {items.map((item) => (
-              <div
-                className={`item-SC ${
-                  item.name === selectedItem ? "active-SC" : ""
-                }`}
-                key={item.id}
-                data-id={item.id}
-              >
-                <img src={item.img} alt={`${item.name} calculator`} />
-                <div className="content-SC">
-                  <div className="title-SC">
-                    {item.id === 0 ? (
-                      <div className="choose-calc-container-SC">
-                        <span className="choose-calc-text-SC">
-                          Choose Calculator
-                        </span>
-                        <span className="get-started-text-SC">
-                          to Get Started
-                        </span>
-                      </div>
-                    ) : (
-                      <>
-                        {item.name} <span>Calculator</span>
-                      </>
-                    )}
-                  </div>
-                  {item.id !== 0 && (
-                    <Link to={item.path} className="start-button-SC">
-                      Let&aposs get started
-                    </Link>
+      {/* showSearch={false} showBackground={false}  */}
+      <Navbar />
+      <div className="carousel-SC position-relative" ref={carouselRef}>
+        <div
+          className="position-absolute w-100 h-100 top-0 start-0"
+          style={{ backgroundColor: "#0000006b", zIndex: "2" }}
+        >
+          {" "}
+        </div>
+        <div className="arrows-SC">
+          <button id="prev" onClick={() => showSlider("prev")}>
+            {"<"}
+          </button>
+          <button id="next" onClick={() => showSlider("next")}>
+            {">"}
+          </button>
+        </div>
+        <div className="list-SC" ref={sliderRef}>
+          {items.map((item) => (
+            <div
+              className={`item-SC ${
+                item.name === selectedItem ? "active-SC" : ""
+              }`}
+              key={item.id}
+              data-id={item.id}
+            >
+              <img src={item.img} alt={`${item.name} calculator`} />
+              <div className="content-SC">
+                <div className="title-SC">
+                  {item.id === 0 ? (
+                    <div className="choose-calc-container-SC">
+                      <span className="choose-calc-text-SC">
+                        Choose Calculator
+                      </span>
+                      <span className="get-started-text-SC">
+                        to Get Started
+                      </span>
+                    </div>
+                  ) : (
+                    <>
+                      {item.name} <span>Calculator</span>
+                    </>
                   )}
                 </div>
+                {item.id !== 0 && (
+                  <Link to={item.path} className="start-button-SC">
+                    Let&aposs get started
+                  </Link>
+                )}
               </div>
-            ))}
-          </div>
-
-          <div className="thumbnail-SC" ref={thumbnailRef}>
-            {items
-              .filter(
-                (item) =>
-                  item.id !== 0 &&
-                  item.id !== items.find((i) => i.name === selectedItem)?.id
-              )
-              .map((item) => (
-                <Link
-                  to={item.path} // ربط الـ thumbnail بـ path بتاع العنصر
-                  key={item.id}
-                  className="item-SC"
-                  data-id={item.id}
-                  onClick={(e) => {
-                    e.preventDefault(); // لمنع التنقل المباشر لو عايزة السلايدر يتحرك أولاً
-                    showSlider("select", item.id); // تحريك السلايدر
-                    setTimeout(() => (window.location.href = item.path), 500); // التنقل بعد الأنيميشن
-                  }}
-                >
-                  <img src={item.img} alt="thumbnail" />
-                  <div className="content-SC">
-                    <div className="title-SC">
-                      {item.name}{" "}
-                      <span className="thumbnail-span-SC">Calculator</span>
-                    </div>
+            </div>
+          ))}
+        </div>
+        <div className="thumbnail-SC" ref={thumbnailRef}>
+          {items
+            .filter(
+              (item) =>
+                item.id !== 0 &&
+                item.id !== items.find((i) => i.name === selectedItem)?.id
+            )
+            .map((item) => (
+              <Link
+                to={item.path} // ربط الـ thumbnail بـ path بتاع العنصر
+                key={item.id}
+                className="item-SC"
+                data-id={item.id}
+                onClick={(e) => {
+                  e.preventDefault(); // لمنع التنقل المباشر لو عايزة السلايدر يتحرك أولاً
+                  showSlider("select", item.id); // تحريك السلايدر
+                  setTimeout(() => (window.location.href = item.path), 500); // التنقل بعد الأنيميشن
+                }}
+              >
+                <img src={item.img} alt="thumbnail" />
+                <div className="content-SC">
+                  <div className="title-SC">
+                    {item.name}{" "}
+                    <span className="thumbnail-span-SC">Calculator</span>
                   </div>
-                </Link>
-              ))}
-          </div>
-        </>
+                </div>
+              </Link>
+            ))}
+        </div>
       </div>
     </>
   );

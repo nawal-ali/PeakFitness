@@ -44,28 +44,28 @@ a {
 }
 
 .get-started-text-SC {
-  color: #CB8778;
+  color: #cb8778;
   white-space: nowrap; /* بدل textWrap: "nowrap" */
   /* margin-right: -160px; */
 }
 
 /* للـ thumbnails */
 .thumbnail-span-SC {
-  color: #CB8778; /* اللون بتاع item.color، هنا بيكون ثابت لكن لو عايزاه ديناميكي شوفي الملاحظة تحت */
+  color: #cb8778; /* اللون بتاع item.color، هنا بيكون ثابت لكن لو عايزاه ديناميكي شوفي الملاحظة تحت */
 }
 
 /* لو عايزة تحافظي على اللون الديناميكي في الـ thumbnails */
 .thumbnail-SC .item-SC[data-id="1"] .thumbnail-span-SC {
-  color: #CB8778; /* Calorie */
+  color: #cb8778; /* Calorie */
 }
 .thumbnail-SC .item-SC[data-id="2"] .thumbnail-span-SC {
-  color: #CB8778; /* Ideal Weight */
+  color: #cb8778; /* Ideal Weight */
 }
 .thumbnail-SC .item-SC[data-id="3"] .thumbnail-span-SC {
-  color: #CB8778; /* BMI */
+  color: #cb8778; /* BMI */
 }
 .thumbnail-SC .item-SC[data-id="4"] .thumbnail-span-SC {
-  color: #CB8778; /* Body Fat */
+  color: #cb8778; /* Body Fat */
 }
 .carousel-SC .list-SC .item-SC .content-SC {
   position: absolute;
@@ -93,7 +93,7 @@ a {
 }
 
 .carousel-SC .list-SC .item-SC .topic-SC {
-  color: #CB8778; /* غيرت اللون هنا لـ #CB8778 */
+  color: #cb8778; /* غيرت اللون هنا لـ #CB8778 */
 }
 
 .carousel-SC .list-SC .item-SC .buttons-SC {
@@ -137,7 +137,7 @@ a {
   position: relative;
   transition: transform 0.2s ease;
   cursor: pointer;
-  box-shadow: 0px 0px 10px 8px rgba(255, 255, 255, 0.2  );
+  box-shadow: 0px 0px 10px 8px rgba(255, 255, 255, 0.2);
   border-radius: 1.5rem;
   background-color: #191919;
   overflow: hidden;
@@ -156,8 +156,6 @@ a {
   opacity: 0.8;
   /* transform: translateX(-60px); */
 }
-
-
 
 .carousel-SC .thumbnail-SC .item-SC .content-SC {
   color: #fff;
@@ -356,7 +354,7 @@ a {
 .start-button-SC {
   margin: 20px 20px 0;
   padding: 5px 20px;
-  background-color: #CB8778;
+  background-color: #cb8778;
   color: #fff;
   border: none;
   border-radius: 40px;

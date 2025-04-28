@@ -4,6 +4,7 @@
 .accordion-body,
 .accordion-button {
   background-color: #202020;
+  /* background-color: #0000006b; */
   color: aliceblue;
   text-align: left !important;
 }
