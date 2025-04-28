@@ -39,7 +39,7 @@ export default function Navbar() {
         //     : { zIndex: 1050 }
         // }
       >
-        <div className=" d-flex justify-content-around align-items-center w-100">
+        <div className=" d-flex justify-content-around align-items-center w-100 px-3">
           <Link to="/" className="navbar-brand">
             <img
               src="/logoAndText.svg"
