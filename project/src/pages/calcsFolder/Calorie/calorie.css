@@ -18,7 +18,7 @@ input::-webkit-input-placeholder {
   font-size: 50px;
   margin-bottom: -10px;
   z-index: 2;
-  color: #ec7e4a;
+  color: #fff;
   font-weight: bold;
   line-height: 65px;
   font-family: "Poppins";
@@ -32,7 +32,7 @@ input::-webkit-input-placeholder {
 }
 .left-panel-C {
   flex: 1;
-  background-color: #202020;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -127,8 +127,8 @@ input::-webkit-input-placeholder {
 }
 
 .gender-selection-C button {
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
   border: none;
   padding: 6px 0;
   border-radius: 50px;
@@ -142,13 +142,13 @@ input::-webkit-input-placeholder {
 }
 
 .gender-selection-C button.active-C {
-  background-color: #ec7e4a;
+  background-color: #CB8778;
   color: white;
   z-index: 1;
 }
 
 .gender-selection-C button:hover {
-  background-color: #ec7e4a;
+  background-color: #CB8778;
   color: white;
   opacity: 1;
 }
@@ -164,7 +164,7 @@ input::-webkit-input-placeholder {
 .input-group-C label,.activity-slider-C label {
   display: block;
   margin-bottom: 10px;
-  color: white;
+  color: #000;
   font-weight: bold;
   letter-spacing: 2px;
 }
@@ -178,7 +178,8 @@ input::-webkit-input-placeholder {
   box-sizing: border-box;
   background-color: #fff;
   color: #000;
-  outline: none;
+  /* outline: #000; */
+  border: 2px solid #000;
 }
 .input-group-C {
   text-align: left;
@@ -187,11 +188,11 @@ input::-webkit-input-placeholder {
   position: relative; /* Added to make it the reference for absolute positioning */
 }
 
-
+/* 
 .input-group-C input:focus {
   border-color: #ff8c00;
   box-shadow: 0 0 8px rgba(255, 140, 0, 0.5);
-}
+} */
 
 .activity-slider-C {
   margin-bottom: 2.5rem;
@@ -218,7 +219,7 @@ input::-webkit-input-placeholder {
   left: 23px;
   width: 90%;
   height: 0.5px;
-  background-color: #fff;
+  background-color: #000;
   transform: translateY(-50%);
   z-index: 1;
   margin-right: 4px;
@@ -235,7 +236,7 @@ input::-webkit-input-placeholder {
 .slider-dot-C {
   width: 25px;
   height: 25px;
-  background-color: #202020;
+  background-color: #919292;
   border: 2px solid #fff;
   border-radius: 50%;
   cursor: pointer;
@@ -245,9 +246,9 @@ input::-webkit-input-placeholder {
 }
 
 .slider-dot-C.active-C {
-  background-color: #ec7e4a;
+  background-color: #CB8778;
   transform: scale(1.2);
-  border: #ec7e4a;
+  border: #CB8778;
 }
 
 .slider-label-C {
@@ -270,7 +271,7 @@ input::-webkit-input-placeholder {
 }
 
 .calculate-btn-C {
-  background-color: #ec7e4a;
+  background-color: #000;
   color: white;
   padding: 14px 40px;
   font-size: 16px;
@@ -284,6 +285,20 @@ input::-webkit-input-placeholder {
   gap: 10px;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
   transition: 0.3s ease;
+}
+.calculate-again-btn-C {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #CB8778;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  opacity: 1;
+  animation: none;
 }
 
 .clear-btn-C,
@@ -308,7 +323,7 @@ p.calories-C {
 }
 
 .calorie-value-C {
-  color: #ec7e4a;
+  color: #CB8778;
   font-weight: bold;
   letter-spacing: 1.5px;
 }
@@ -384,7 +399,7 @@ p.calories-C {
 }
 
 .macronutrients-C .macro-value-C {
-  color: #ec7e4a;
+  color: #CB8778;
   font-weight: bold;
   font-size: 18px;
   margin-right: 20px;
@@ -403,7 +418,7 @@ p.calories-C {
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  background-color: #ec7e4a;
+  background-color: #CB8778;
   color: #fff;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -411,13 +426,13 @@ p.calories-C {
   animation: none;
 }
 
-.calculate-btn-C:hover,
+/* .calculate-btn-C:hover,
 .clear-btn-C:hover,
 .other-calculators-btn-C:hover {
   border-color: #ff8c00;
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
-}
+} */
 
 .meals-toggle-C {
   display: flex;
@@ -474,13 +489,13 @@ p.calories-C {
 }
 
 .meals-toggle-C button.active-C {
-  background-color: rgba(236, 126, 75, 0.3);
+  background-color: rgba(203, 135, 120,0.5);
   color: white;
 }
 
 .meals-toggle-C button:hover {
   opacity: 0.9;
-  background-color: rgba(236, 126, 75, 0.3);
+  background-color: rgba(203, 135, 120,0.5);
 }
 
 .calorie-calculator-C {
@@ -496,7 +511,7 @@ p.calories-C {
 
 .right-panel-C {
   flex: 1;
-  background-color: #202020;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -516,7 +531,7 @@ p.calories-C {
 
 
 /* Circles */
-.Calculator-circles-S1-C::before,
+/* .Calculator-circles-S1-C::before,
 .Calculator-circles-S1-C::after,
 .Calculator-circles-side2-C,
 .Calculator-circles-side2-C::after,
@@ -529,9 +544,9 @@ p.calories-C {
   background: rgba(255, 255, 255, 0.12);
   border-radius: 50%;
   filter: blur(120px);
-}
+} */
 
-.Calculator-circles-S1-C::before { top: 80%; left: 120%; }
+/* .Calculator-circles-S1-C::before { top: 80%; left: 120%; }
 .Calculator-circles-S1-C::after { top: -200px; left: -165px; }
 .Calculator-circles-side2-C { top: 100px; right: 25%; }
 .Calculator-circles-side2-C::after { top: 345px; left: 50%; }
@@ -543,11 +558,11 @@ p.calories-C {
   left: -220px;
   width: 160px;
   height: 160px;
-  background: radial-gradient(circle at top center, #ec7e4a 0%, #0a1b30 80%);
+  background: radial-gradient(circle at top center, #CB8778 0%, #0a1b30 80%);
   border-radius: 50%;
   opacity: 0.9;
   z-index: 1;
-}
+} */
 
 .flex-inputs-C {
   display: flex;
@@ -563,7 +578,7 @@ p.calories-C {
 
 .clear-btn-C {
   background-color: transparent;
-  color: white;
+  color: #000;
   padding: 12px 24px;
   font-size: 20px;
   border-radius: 20px;
@@ -586,15 +601,15 @@ p.calories-C {
   outline: none;
 }
 
-.input-group-C input:focus,
+/* .input-group-C input:focus,
 .activity-level-C select:focus {
   border-color: #ff8c00;
   box-shadow: 0 0 8px rgba(255, 140, 0, 0.5);
-}
+} */
 
 .Calorie-parameters-side2-C,
 .Calorie-parameters-side1-C {
-  color: #fff;
+  color: #000;
   margin-bottom: 30px;
   font-size: 40px;
   font-weight: bold;
@@ -738,7 +753,7 @@ p.calories-C {
   top: 0;
   left: 0;
   width: 100vw;
-  /* height: 100vh; */
+  height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
@@ -763,7 +778,7 @@ p.calories-C {
 }
 
 .popup-close-btn-C {
-  background-color: #ec7e4a;
+  background-color: #CB8778;
   color: white;
   padding: 10px 80px;
   border: none;
@@ -775,7 +790,7 @@ p.calories-C {
 }
 
 .popup-close-btn-C:hover {
-  background-color: #ff8c00;
+  background-color: #CB8778;
 }
 
 @media (max-width:1025px) {

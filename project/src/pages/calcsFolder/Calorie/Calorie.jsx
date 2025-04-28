@@ -577,7 +577,7 @@ const CalorieCalculator = () => {
               )}
               <div className="calorie-buttons-Result-C">
                 <button
-                  className="calculate-btn-C"
+                  className="calculate-again-btn-C"
                   onClick={recalculateFromInputs}
                 >
                   Calculate Again

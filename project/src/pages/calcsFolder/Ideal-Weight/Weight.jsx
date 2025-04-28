@@ -409,7 +409,7 @@ const IdealCalculator = () => {
               </div>
               <div className="ideal-buttons-result-I">
                 <button
-                  className="calculate-btn-I"
+                  className="calculate-again-btn-I"
                   onClick={recalculateFromInputs}
                 >
                   Calculate Again

@@ -28,9 +28,9 @@ a {
 .carousel-SC .list-SC .item-SC img {
   width: 100%;
   height: 100%;
-  /* object-fit: cover; */
-  /* opacity: 0.8; */
-  /* filter: brightness(60%); */
+  object-fit: cover;
+  opacity: 0.8;
+  filter: brightness(60%);
 }
 /* للسلايدر الرئيسي */
 .choose-calc-container-SC {
@@ -40,32 +40,32 @@ a {
 }
 
 .choose-calc-text-SC {
-  color: #ec7e4a; /* اللون بتاع item.color، ممكن تخليه ديناميكي لو عايزة بطريقة تانية */
+  color: #fff; /* اللون بتاع item.color، ممكن تخليه ديناميكي لو عايزة بطريقة تانية */
 }
 
 .get-started-text-SC {
-  color: #fff;
+  color: #CB8778;
   white-space: nowrap; /* بدل textWrap: "nowrap" */
   /* margin-right: -160px; */
 }
 
 /* للـ thumbnails */
 .thumbnail-span-SC {
-  color: #ec7e4a; /* اللون بتاع item.color، هنا بيكون ثابت لكن لو عايزاه ديناميكي شوفي الملاحظة تحت */
+  color: #CB8778; /* اللون بتاع item.color، هنا بيكون ثابت لكن لو عايزاه ديناميكي شوفي الملاحظة تحت */
 }
 
 /* لو عايزة تحافظي على اللون الديناميكي في الـ thumbnails */
 .thumbnail-SC .item-SC[data-id="1"] .thumbnail-span-SC {
-  color: #ec7e4a; /* Calorie */
+  color: #CB8778; /* Calorie */
 }
 .thumbnail-SC .item-SC[data-id="2"] .thumbnail-span-SC {
-  color: #ec7e4a; /* Ideal Weight */
+  color: #CB8778; /* Ideal Weight */
 }
 .thumbnail-SC .item-SC[data-id="3"] .thumbnail-span-SC {
-  color: #ec7e4a; /* BMI */
+  color: #CB8778; /* BMI */
 }
 .thumbnail-SC .item-SC[data-id="4"] .thumbnail-span-SC {
-  color: #ec7e4a; /* Body Fat */
+  color: #CB8778; /* Body Fat */
 }
 .carousel-SC .list-SC .item-SC .content-SC {
   position: absolute;
@@ -93,7 +93,7 @@ a {
 }
 
 .carousel-SC .list-SC .item-SC .topic-SC {
-  color: #ec7e4a; /* غيرت اللون هنا لـ #ec7e4a */
+  color: #CB8778; /* غيرت اللون هنا لـ #CB8778 */
 }
 
 .carousel-SC .list-SC .item-SC .buttons-SC {
@@ -137,8 +137,8 @@ a {
   position: relative;
   transition: transform 0.2s ease;
   cursor: pointer;
-  box-shadow: -25px 25px 6px rgba(0, 0, 0, 0.9);
-  border-radius: 20px;
+  box-shadow: 0px 0px 10px 8px rgba(255, 255, 255, 0.2  );
+  border-radius: 1.5rem;
   background-color: #191919;
   overflow: hidden;
 }
@@ -152,16 +152,12 @@ a {
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
-  filter: brightness(160%);
+  filter: brightness(60%);
+  opacity: 0.8;
   /* transform: translateX(-60px); */
 }
 
-.carousel-SC .thumbnail-SC .item-SC[data-id="1"] img {
-  transform: translateX(-10px);
-  transition: all 0.3s ease;
-  width: 200%;
-  filter: brightness(200%);
-}
+
 
 .carousel-SC .thumbnail-SC .item-SC .content-SC {
   color: #fff;
@@ -360,7 +356,7 @@ a {
 .start-button-SC {
   margin: 20px 20px 0;
   padding: 5px 20px;
-  background-color: #ec7e4a;
+  background-color: #CB8778;
   color: #fff;
   border: none;
   border-radius: 40px;
@@ -374,7 +370,7 @@ a {
 }
 .clear-btn-F:hover,
 .start-button-SC:hover {
-  border-color: #ff8c00;
+  /* border-color: #ff8c00; */
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
 }

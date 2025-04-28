@@ -14,6 +14,7 @@ body {
   background-size: cover;
   z-index: 2;
   margin-bottom: 20px;
+  
 }
 
 /* .result-header-F {
@@ -24,7 +25,7 @@ body {
   font-size: 50px;
   margin-bottom: 10px;
   z-index: 2;
-  color: #ec7e4a;
+  color: #fff;
   font-weight: bold;
 }
 
@@ -42,11 +43,15 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("/public/imgs/Fat.png");
-  background-position: center center;
+  background-image: url("./imgs/Fat.png");
+  background-position: 0% center;
   background-repeat: no-repeat;
+  background-color: #000;
   background-size: cover;
+  opacity: 95%;
   z-index: 1;
+  filter: brightness(30%);
+  /* filter: blur(4px); */
 }
 
 .title-F {
@@ -92,6 +97,7 @@ body {
   background-blend-mode: multiply;
   transform: translateX(0);
   z-index: 1;
+  padding-bottom: 3.7rem;
 }
 
 .input-section-F {
@@ -106,8 +112,8 @@ body {
 }
 
 .gender-selection-F button {
-  background-color: white;
-  color: black;
+  background-color: #000;
+  color: #fff;
   border: none;
   padding: 6px 0;
   border-radius: 50px;
@@ -121,13 +127,13 @@ body {
 }
 
 .gender-selection-F button.active-F {
-  background-color: #ec7e4a;
+  background-color: #CB8778;
   color: white;
   z-index: 1;
 }
 
 .gender-selection-F button:hover {
-  background-color: #ec7e4a;
+  background-color: #CB8778;
   color: white;
   opacity: 1;
 }
@@ -136,7 +142,7 @@ body {
 .input-group-F label {
   display: block;
   margin-bottom: 10px;
-  color: white;
+  color: #000;
   font-weight: bold;
   letter-spacing: 2px;
 }
@@ -144,7 +150,7 @@ body {
 .input-group-F input {
   width: 100%;
   padding: 0.7rem;
-  border: 2px solid #fff;
+  border: 2px solid #000;
   border-radius: 25px;
   font-size: 16px;
   box-sizing: border-box;
@@ -221,7 +227,7 @@ body {
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  background-color: #ec7e4a;
+  background-color: #CB8778;
   color: #fff;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -230,7 +236,7 @@ body {
 }
 
 .calculate-btn-F {
-  background-color: #ec7e4a;
+  background-color: #CB8778;
   color: white;
   padding: 14px 40px;
   font-size: 16px;
@@ -247,25 +253,25 @@ body {
   max-width: 180px;
 }
 
-.calculate-btn-F:hover,
+/* .calculate-btn-F:hover,
 .clear-btn-F:hover,
 .other-calculators-btn-F:hover {
   border-color: #ff8c00;
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
-}
+} */
 
 .calorie-calculator-F {
   display: flex;
   flex-direction: row;
   width: 100vw;
-  background-color: #fff;
+  background-color: #000;
   overflow: hidden;
 }
 
 .left-panel-F {
   flex: 1;
-  background-color: #202020;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -279,7 +285,7 @@ body {
 
 .right-panel-F {
   flex: 1;
-  background-color: #202020;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -368,7 +374,7 @@ body {
 }
 
 .fat-value-F {
-  color: #ec7e4a;
+  color: #CB8778;
   font-weight: bold;
 }
 
@@ -382,7 +388,7 @@ body {
   background-color: transparent;
   padding: 10px 10px;
 }
-
+/* 
 .Calculator-one-circle-F::before {
   content: "";
   position: absolute;
@@ -390,39 +396,39 @@ body {
   left: -180px;
   width: 160px;
   height: 160px;
-  background: radial-gradient(circle at top center, #ec7e4a 0%, #0a1b30 80%);
+  background: radial-gradient(circle at top center, #CB8778 0%, #0a1b30 80%);
   border-radius: 50%;
   opacity: 0.9;
   z-index: 1;
-}
+} */
 
-.Calculator-one-circle-F::after {
+/* .Calculator-one-circle-F::after {
   content: "";
   position: absolute;
   bottom: -150px;
   left: -180px;
   width: 160px;
   height: 160px;
-  background: radial-gradient(circle at top center, #ec7e4a 0%, #0a1b30 80%);
+  background: radial-gradient(circle at top center, #CB8778 0%, #0a1b30 80%);
   border-radius: 50%;
   opacity: 0.9;
   z-index: 1;
-}
+} */
 
-.Calculator-one-circle-s1-F::before {
+/* .Calculator-one-circle-s1-F::before {
   content: "";
   position: absolute;
   top: -210px;
   right: -200px;
   width: 160px;
   height: 160px;
-  background: radial-gradient(circle at top center, #ec7e4a 0%, #0a1b30 80%);
+  background: radial-gradient(circle at top center, #CB8778 0%, #0a1b30 80%);
   border-radius: 50%;
   opacity: 0.9;
   z-index: 1;
-}
+} */
 
-
+/* 
 .Calculator-circles-side2-F::after {
     content: "";
     position: absolute;
@@ -434,9 +440,9 @@ body {
     background: rgba(255, 255, 255, 0.12);
     border-radius: 50%;
     filter: blur(120px);
-}
+} */
 
-.Calculator-circles-side2-F::before {
+/* .Calculator-circles-side2-F::before {
   content: "";
   position: absolute;
   top: -350px;
@@ -447,9 +453,9 @@ body {
   background: rgba(255, 255, 255, 0.12);
   border-radius: 50%;
   filter: blur(60px);
-}
+} */
 
-.Calculator-circles-F::after {
+/* .Calculator-circles-F::after {
   content: "";
   position: absolute;
   transform: translateX(-105%);
@@ -462,7 +468,7 @@ body {
   z-index: -1;
   bottom: 419px;
   z-index: -1;
-}
+} */
 
 .flex-inputs-F {
   display: flex;
@@ -479,7 +485,7 @@ body {
 
 .clear-btn-F {
   background-color: transparent;
-  color: white;
+  color: #000;
   padding: 12px 24px;
   font-size: 20px;
   font-weight: bold;
@@ -519,7 +525,7 @@ body {
 
 .Fat-parameters-side1-F,
 .Fat-parameters-side2-F {
-  color: #fff;
+  color: #000;
   margin-bottom: 30px;
   font-size: 40px;
   font-weight: bold;
@@ -669,12 +675,12 @@ body {
 
 .popup-F p {
   font-size: 20px;
-  color: #fff;
+  color: #000;
   margin-bottom: 20px;
 }
 
 .popup-close-btn-F {
-  background-color: #ec7e4a;
+  background-color: #CB8778;
   color: white;
   padding: 10px 80px;
   border: none;
@@ -720,11 +726,11 @@ body {
 
 
 @media (max-width: 1025px) {
-  .Calculator-one-circle-F::before,
+  /* .Calculator-one-circle-F::before,
   .Calculator-one-circle-s1-F::before,
   .Calculator-one-circle-F::after,
   .Calculator-circles-F,.Calculator-circles-side2-F::before,
-  .Calculator-circles-side2-F::after {display: none;}
+  .Calculator-circles-side2-F::after {display: none;} */
   .right-panel-F {padding-bottom: 10%;padding-top: 7%;}
   .input-section-F {justify-content: flex-end; padding-top: 5%;}
   .input-group-F {margin: 0 0;}

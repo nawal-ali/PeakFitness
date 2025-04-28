@@ -28,7 +28,7 @@
     display: block;
     font-size: 1rem;
     font-weight: bold;
-    color: #fff;
+    color: #000;
     margin: 10px 0;
     text-align: left;
     width: 100%;
@@ -39,7 +39,7 @@
 .Header1-Auth-Main, .Header-1-Auth-Main {
     font-weight: 700;
     margin: 0;
-    color: white;
+    color: #000;
     font-size: 5.5rem;
     letter-spacing: 2px;
     text-align: center;
@@ -48,7 +48,7 @@
 
 /* Sign In and Sign Up Buttons */
 .SignIn-button-Auth-Main, .SignUp-button-Auth-Main {
-    background-color: #EC7E4A;
+    background-color: #000;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -66,6 +66,7 @@
     padding: 10px 50px;
     border-radius: 30px;
     border: none;
+    background-color: #CB8778;
 }
 
 input::placeholder {
@@ -99,6 +100,7 @@ input::placeholder {
     align-items: center;
     transition: all 0.6s ease-in-out;
     z-index: 200;
+    background-color: #fff;
 }
 
 .sign-in-container-Auth-Main {
@@ -111,7 +113,7 @@ input::placeholder {
     transform: translateX(100%);
 }
 
-.signup-circles-Auth-Main {
+/* .signup-circles-Auth-Main {
     content: "";
     position: absolute;
     top: -10%;
@@ -121,8 +123,8 @@ input::placeholder {
     width: 12rem;
     height: 12rem;
     opacity: 0.8;
-}
-
+} */
+/* 
 .signup-circles-Auth-Main::before {
     content: "";
     position: absolute;
@@ -133,9 +135,9 @@ input::placeholder {
     background: radial-gradient(circle at top left, #EC7E4A 10%, #72331F 50%, #0A1B30 90%);
     border-radius: 50%;
     opacity: 0.4;
-}
+} */
 
-.signup-circles-Auth-Main::after {
+/* .signup-circles-Auth-Main::after {
     content: "";
     position: absolute;
     top: -100px;
@@ -146,7 +148,7 @@ input::placeholder {
     background: rgba(255, 255, 255, 0.12);
     border-radius: 50%;
     filter: blur(60px);
-}
+} */
 
 /* Overlay Panels */
 .overlay-panel-Auth-Main {
@@ -159,7 +161,7 @@ input::placeholder {
     height: 100%;
     width: 50%;
     transition: transform 0.6s ease-in-out;
-    background: url('/public/imgs/Home.png') no-repeat center center;
+    background: url('/public/imgs/Login.png') no-repeat center center;
     background-position: 10% center;
     background-size: cover;
 }
@@ -362,7 +364,7 @@ footer a {
     transform: translateY(-50%) scale(1.1);
 }
 
-.login-circles-Auth-Main {
+/* .login-circles-Auth-Main {
     position: absolute;
     top: -10%;
     left: -50px;
@@ -372,9 +374,9 @@ footer a {
     background: radial-gradient(circle at top, #ec7d4aa3 35%, rgba(10, 27, 48, 0.7) 75%);
     opacity: 0.8;
     left: -10%;
-}
+} */
 
-.login-circles-Auth-Main::before {
+/* .login-circles-Auth-Main::before {
     content: "";
     position: absolute;
     top: 360%;
@@ -383,8 +385,8 @@ footer a {
     background: radial-gradient(circle at top left, #ec7d4a 35%, #72321f95 70%, #0A1B30 90%);
     border-radius: 50%;
     opacity: 0.9;
-}
-
+} */
+/* 
 .login-circles-Auth-Main::after {
     content: "";
     position: absolute;
@@ -396,7 +398,7 @@ footer a {
     background: rgba(255, 255, 255, 0.12);
     border-radius: 50%;
     filter: blur(50px);
-}
+} */
 
 .custom-input-Auth-Main.input-error-Auth-Main {
     border: 1px solid #ff4d4f;
@@ -551,9 +553,9 @@ footer a {
         width: 80%;
         font-size: 1.5rem;
     }
-    .signup-circles-Auth-Main::before {
+    /* .signup-circles-Auth-Main::before {
         right: 50%;
-    }
+    } */
 }
 
 @media (max-width: 769px) {
@@ -682,7 +684,7 @@ footer a {
     .Header1-Auth-Main {
         font-size: 2.2rem;
         margin-bottom: 1.5rem;
-        color: #fff;
+        color: #000;
         text-transform: uppercase;
     }
 
