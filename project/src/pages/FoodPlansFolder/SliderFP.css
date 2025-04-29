@@ -9,28 +9,30 @@ body {
   min-height: 100vh;
   width: 100vw;
   /* overflow: visible; */
-  position: relative;
+  /* position: relative; */
   transition: background-image 0.5s ease;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 }
-.carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
-  font-size: 4.5rem;
-}
+/* .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
+  font-size: 4rem !important;
+} */
 
 /* content overlay */
 .carousel-PT.carousel-PT-SFP .content-overlay.content-overlay-SFP {
+  height: 100vh;
   position: absolute;
-  top: 50%;
-  left: 6%;
-  transform: translateY(-50%);
+  top: 20%;
+  /* left: 6%; */
+  /* transform: translateY(-50%); */
   color: #fff;
   text-align: left;
-  max-width: 30%;
+  max-width: 40%;
   z-index: 20;
-  transition: opacity 0.5s ease; /* إخفاء في 2 ثانية */
+  transition: opacity 0.5s ease;
+  margin-left: 2%;
 }
 
 /* animations for content */
@@ -62,8 +64,8 @@ body {
 
 /* تنسيق title */
 .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
-  font-size: 5rem ;
-  width: 100%;
+  font-size: 4rem;
+  /* width: 100%; */
   font-weight: bold;
   /* margin-bottom: 10px; */
   color: #fff;
@@ -71,31 +73,32 @@ body {
 
 /* تنسيق quote و description */
 .carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP {
-  font-size: 1.8rem ;
-  color: #CB8778;
-  width: 80%;
+  font-size: 1.5rem;
+  margin: 2% 0;
+  color: #cb8778;
+  /* width: 80%; */
 }
 .carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP {
-  font-size: 1.8rem ;
-  width: 90%;
+  font-size: 1.8rem;
+  /* width: 90%; */
   color: #fff;
 }
-.carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
+/* .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
   font-size: 5rem;
   width: 70%;
-}
+} */
 .carousel-PT.carousel-PT-SFP .read-more-btn.read-more-btn-SFP {
-  background-color: #CB8778;
+  background-color: #cb8778;
   color: #fff;
   border: none;
-  padding: 2% 3% ;
+  padding: 2% 3%;
   width: 70%;
-  font-size: 1.8rem ;
+  font-size: 1.8rem;
   border-radius: 48px;
   cursor: pointer;
   font-weight: bold;
   opacity: 0;
-  transition: background-color 0.3s ease;
+  transition: all 200ms ease;
   margin-top: 10%;
   font-weight: 500;
   letter-spacing: 0.9px;
@@ -123,12 +126,12 @@ body {
 /* slider container */
 .carousel-PT.carousel-PT-SFP .slider-container.slider-container-SFP {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  left: 0; /* إزالة left: 170px لضمان التمركز */
+  left: 18%; /* إزالة left: 170px لضمان التمركز */
 }
 
 /* list */
@@ -171,12 +174,12 @@ body {
   transition: all 0.5s ease;
 }
 .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP.active-PT.active-PT-SFP {
-  width: 28rem; 
+  width: 28rem;
   height: 28rem;
 }
-.carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
+/* .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
   left: 15%;
-}
+} */
 
 /* thumbnail counter */
 .carousel-PT.carousel-PT-SFP .thumbnail-counter.thumbnail-counter-SFP {
@@ -236,7 +239,7 @@ body {
 .carousel-PT.carousel-PT-SFP .dots-PT.dots-PT-SFP {
   position: absolute;
   bottom: 13%;
-  left: 64%;
+  left: 68%;
   transform: translateX(-50%);
   display: flex;
   gap: 10px;
@@ -286,7 +289,7 @@ body {
   }
 } */
 
-@media (max-width: 1400px) {
+@media (min-width: 1400px) {
   .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
     width: 400px;
     height: 400px;
@@ -319,7 +322,7 @@ body {
   }
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   .carousel-PT.carousel-PT-SFP .content-overlay.content-overlay-SFP {
     top: 35%;
     left: 300px;
@@ -355,7 +358,7 @@ body {
   }
 }
 
-@media (max-width: 920px) {
+@media (min-width: 920px) {
   .carousel-PT.carousel-PT-SFP .content-overlay.content-overlay-SFP {
     left: 250px;
   }
@@ -367,7 +370,7 @@ body {
   }
 }
 
-@media (max-width: 800px) {
+@media (min-width: 800px) {
   .carousel-PT.carousel-PT-SFP .content-overlay.content-overlay-SFP {
     left: 200px;
   }
@@ -382,7 +385,7 @@ body {
   }
 }
 
-@media (max-width: 700px) {
+@media (min-width: 700px) {
   .carousel-PT.carousel-PT-SFP .content-overlay.content-overlay-SFP {
     left: 150px;
   }
@@ -404,7 +407,7 @@ body {
   }
 }
 
-@media (max-width: 600px) {
+@media (min-width: 600px) {
   .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
     width: 300px;
     height: 300px;
@@ -432,7 +435,7 @@ body {
   }
 }
 
-@media (max-width: 590px) {
+@media (min-width: 590px) {
   .carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP {
     font-size: 2rem;
   }
@@ -463,11 +466,10 @@ body {
   }
 }
 
-@media (max-width: 480px) {
+/* @media (min-width: 480px) {
   .carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP {
     font-size: 1.9rem;
     width: 120%;
-    /* margin-left: -70px; */
   }
   .carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP {
     font-size: 1.9rem;
@@ -479,59 +481,73 @@ body {
     margin-left: -60px;
   }
   .carousel-PT.carousel-PT-SFP .read-more-btn.read-more-btn-SFP {
-    /* padding: 10px 140px; */
+    
     font-size: 1.9rem;
   }
   .carousel-PT.carousel-PT-SFP .content-overlay.content-overlay-SFP {
     left: 100px;
   }
   .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
-    width: 300px;
+    width: 200px;
     height: 300px;
     top: 300px;
     left: -150px;
   }
   .carousel-PT.carousel-PT-SFP .dots-PT.dots-PT-SFP {
     bottom: 150px;
-    left: 50%;
+    left: 30%;
   }
-  .carousel-PT.carousel-PT-SFP .logo-FP.logo-FP-SFP {
-    width: 300px;
-  }
-}
+} */
 
-@media (max-width: 480px) {
+@media (min-width: 400px) {
+  .carousel-PT.carousel-PT-SFP .content-overlay.content-overlay-SFP {
+    top: 0;
+    max-width: 100%;
+    margin-top: 20%;
+    text-align: center;
+    height: fit-content !important;
+  }
+  .carousel-PT.carousel-PT-SFP .slider-container.slider-container-SFP {
+    height: 90vh;
+    left: 0;
+  }
+  .carousel-PT.carousel-PT-SFP
+    .item-PT.item-PT-SFP
+    .thumbnail-img.thumbnail-img-SFP {
+    height: 80%;
+  }
+  .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP.active-PT.active-PT-SFP {
+    height: 50% !important;
+    width: 70% !important;
+  }
   .carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP {
     font-size: 1.5rem;
-    width: 95%;
+    /* width: 95%; */
     /* margin-left: -70px; */
   }
   .carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP {
-    font-size: 1.6rem;
-    width: 110%;
-    margin-left: -30px;
+    font-size: 1.5rem;
+    /* width: 110%; */
+    /* margin-left: -30px; */
   }
   .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
-    font-size: 4rem;
-    margin-left: -60px;
+    font-size: 3rem;
+    /* margin-left: -60px; */
   }
   .carousel-PT.carousel-PT-SFP .read-more-btn.read-more-btn-SFP {
     /* padding: 10px 110px; */
     font-size: 1.6rem;
-    margin-left: -90px;
+    /* margin-left: -90px; */
   }
   .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
-    width: 250px;
-    height: 250px;
+    width: 90vw;
+    height: 50vh;
     top: 230px;
-    left: -160px;
+    left: 0;
   }
   .carousel-PT.carousel-PT-SFP .dots-PT.dots-PT-SFP {
-    bottom: 50px;
+    bottom: 5%;
     left: 50%;
-  }
-  .carousel-PT.carousel-PT-SFP .logo-FP.logo-FP-SFP {
-    width: 250px;
   }
   .carousel-PT.carousel-PT-SFP .thumbnail-counter.thumbnail-counter-SFP {
     font-size: 30px;
@@ -544,7 +560,7 @@ body {
   transition: opacity 0.5s ease; /* إخفاء في 2 ثانية */
 }
 .carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP {
-  font-size: 2rem ;
-  color: #CB8778;
+  font-size: 2rem;
+  color: #cb8778;
   width: 95%;
 }

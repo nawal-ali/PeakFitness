@@ -32,7 +32,7 @@ const Slider_FP = () => {
       color: "#4aec7e",
       thumbnailImg: "/public/imgs/Weight-loss.png",
       backgroundImage: "/public/imgs/Food-Plan-W-L.png",
-      link: "/weight-loss-details", // Correct link for Weight Loss
+      link: "/weight-loss-details",
     },
     {
       id: 2,
