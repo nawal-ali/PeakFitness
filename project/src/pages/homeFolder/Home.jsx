@@ -93,14 +93,17 @@ export default function Home() {
       <div className="row container-fluid section-1 margin-top-10 ">
         <div className="col-12 col-md-6 ps-4">
           <p style={{ fontSize: "2rem" }} className="mb-5">
-            <span style={{ color: "#9C2C1A", fontSize: "5rem" }}>Discover</span>{" "}
-            the path to your{" "}
-            <span style={{ color: "#9C2C1A" }}>ideal weight</span>,{" "}
-            <span style={{ color: "#9C2C1A" }}>better health</span>, and a{" "}
-            <span style={{ color: "#9C2C1A" }}>
-              sustainable, healthy lifestyle
-            </span>
-            . At Pure Vitality, we&apos;re here to guide you with fitness
+            <span style={{ color: "#CB8778", fontSize: "5rem" }}>Discover</span>{" "}
+            <br />
+            the path to your <br />
+            <span style={{ color: "#CB8778" }}>ideal weight ,</span>
+            <span style={{ color: "#CB8778" }}>better health ,</span>
+            <br />
+            <span style={{ color: "#CB8778" }}>
+              sustainable,and a healthy lifestyle
+            </span>{" "}
+            . <br />
+            At Pure Vitality, we&apos;re here to guide you with fitness
             programs, nutritional advice, and personalized support to help you
             achieve your goals and thrive every day!
           </p>
@@ -114,7 +117,7 @@ export default function Home() {
         <div className="col-12 col-md-6 text-end mt-5 mt-md-0">
           <model-viewer
             className="w-100 h-100"
-            style={{ height: "400px", minHeight: "300px" }}
+            style={{ height: "700px", minHeight: "700px" }}
             src="/afi.glb"
             alt="plane"
             auto-rotate
