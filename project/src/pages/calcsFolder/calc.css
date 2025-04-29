@@ -456,14 +456,14 @@ a {
   line-height: 1.2;
 }
 
-.logo-SC {
+/* .logo-SC {
   position: absolute;
   top: 15px;
   left: 15px;
   width: 250px;
   height: auto;
   z-index: 1000;
-}
+} */
 
 .carousel-SC.next-SC .logo-SC,
 .carousel-SC.prev-SC .logo-SC {

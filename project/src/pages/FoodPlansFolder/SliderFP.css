@@ -6,7 +6,7 @@ body {
 
 /* carousel */
 .carousel-PT.carousel-PT-SFP {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   /* overflow: visible; */
   position: relative;
@@ -14,8 +14,11 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 }
-
+.carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
+  font-size: 4.5rem;
+}
 
 /* content overlay */
 .carousel-PT.carousel-PT-SFP .content-overlay.content-overlay-SFP {
@@ -59,7 +62,7 @@ body {
 
 /* تنسيق title */
 .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
-  font-size: 5rem !important;
+  font-size: 5rem ;
   width: 100%;
   font-weight: bold;
   /* margin-bottom: 10px; */
@@ -68,25 +71,29 @@ body {
 
 /* تنسيق quote و description */
 .carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP {
-  font-size: 2rem !important;
-  color: #ec7e4a;
+  font-size: 1.8rem ;
+  color: #CB8778;
   width: 80%;
 }
 .carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP {
-  font-size: 2rem !important;
-  width: 120%;
+  font-size: 1.8rem ;
+  width: 90%;
   color: #fff;
 }
-
+.carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
+  font-size: 5rem;
+  width: 70%;
+}
 .carousel-PT.carousel-PT-SFP .read-more-btn.read-more-btn-SFP {
-  background-color: #ec7e4a;
+  background-color: #CB8778;
   color: #fff;
   border: none;
-  padding: 2% 3% !important;
+  padding: 2% 3% ;
   width: 70%;
-  font-size: 2rem !important;
+  font-size: 1.8rem ;
   border-radius: 48px;
   cursor: pointer;
+  font-weight: bold;
   opacity: 0;
   transition: background-color 0.3s ease;
   margin-top: 10%;
@@ -121,7 +128,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  left: 170px;
+  left: 0; /* إزالة left: 170px لضمان التمركز */
 }
 
 /* list */
@@ -135,17 +142,15 @@ body {
 
 /* item */
 .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
-  width: 900px;
-  height: 900px;
+  width: 400px; /* تقليل العرض ليكون مناسبًا للشاشات */
+  height: 400px; /* تقليل الارتفاع */
   position: absolute;
   opacity: 0.6;
   transition: opacity 0.5s ease, transform 0.5s ease;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  overflow: visible;
-  left: 35%;
+  left: 0; /* إزالة left: 35% لضمان التمركز */
 }
-
 /* active item */
 .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP.active-PT.active-PT-SFP {
   opacity: 1;
@@ -253,7 +258,7 @@ body {
 }
 
 /* Media queries */
-@media (max-width: 1800px) {
+/* @media (max-width: 1800px) {
   .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
     width: 500px;
     height: 500px;
@@ -279,7 +284,7 @@ body {
     padding: 10px 100px;
     font-size: 2.8rem;
   }
-}
+} */
 
 @media (max-width: 1400px) {
   .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
@@ -305,7 +310,7 @@ body {
     font-size: 60px;
   }
   .carousel-PT.carousel-PT-SFP .read-more-btn.read-more-btn-SFP {
-    padding: 10px 140px;
+    /* padding: 10px 140px; */
     font-size: 2.3rem;
   }
   .carousel-PT.carousel-PT-SFP .dots-PT.dots-PT-SFP {
@@ -462,7 +467,7 @@ body {
   .carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP {
     font-size: 1.9rem;
     width: 120%;
-    margin-left: -70px;
+    /* margin-left: -70px; */
   }
   .carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP {
     font-size: 1.9rem;
@@ -474,7 +479,7 @@ body {
     margin-left: -60px;
   }
   .carousel-PT.carousel-PT-SFP .read-more-btn.read-more-btn-SFP {
-    padding: 10px 140px;
+    /* padding: 10px 140px; */
     font-size: 1.9rem;
   }
   .carousel-PT.carousel-PT-SFP .content-overlay.content-overlay-SFP {
@@ -499,7 +504,7 @@ body {
   .carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP {
     font-size: 1.5rem;
     width: 95%;
-    margin-left: -70px;
+    /* margin-left: -70px; */
   }
   .carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP {
     font-size: 1.6rem;
@@ -511,7 +516,7 @@ body {
     margin-left: -60px;
   }
   .carousel-PT.carousel-PT-SFP .read-more-btn.read-more-btn-SFP {
-    padding: 10px 110px;
+    /* padding: 10px 110px; */
     font-size: 1.6rem;
     margin-left: -90px;
   }
@@ -539,7 +544,7 @@ body {
   transition: opacity 0.5s ease; /* إخفاء في 2 ثانية */
 }
 .carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP {
-  font-size: 2rem !important;
-  color: #ec7e4a;
+  font-size: 2rem ;
+  color: #CB8778;
   width: 95%;
 }

@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import Navbar from "../../assets/navFolder/Navbar";
+// import Navbar from "../../assets/navFolder/Navbar";
 import { Link } from "react-router-dom";
 import "./calc.css";
 
@@ -225,14 +225,14 @@ const Slider_C = () => {
   return (
     <>
       {/* showSearch={false} showBackground={false}  */}
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="carousel-SC position-relative" ref={carouselRef}>
-        <div
+        {/* <div
           className="position-absolute w-100 h-100 top-0 start-0"
           style={{ backgroundColor: "#0000006b", zIndex: "2" }}
         >
           {" "}
-        </div>
+        </div> */}
         <div className="arrows-SC">
           <button id="prev" onClick={() => showSlider("prev")}>
             {"<"}
@@ -270,7 +270,7 @@ const Slider_C = () => {
                 </div>
                 {item.id !== 0 && (
                   <Link to={item.path} className="start-button-SC">
-                    Let&aposs get started
+                    Let's get started
                   </Link>
                 )}
               </div>
