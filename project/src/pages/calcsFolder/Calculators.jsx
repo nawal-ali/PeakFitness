@@ -227,12 +227,12 @@ const Slider_C = () => {
       {/* showSearch={false} showBackground={false}  */}
       <Navbar />
       <div className="carousel-SC position-relative" ref={carouselRef}>
-        <div
+        {/* <div
           className="position-absolute w-100 h-100 top-0 start-0"
           style={{ backgroundColor: "#0000006b", zIndex: "2" }}
         >
           {" "}
-        </div>
+        </div> */}
         <div className="arrows-SC">
           <button id="prev" onClick={() => showSlider("prev")}>
             {"<"}
