@@ -6,7 +6,7 @@ body {
 
 /* carousel */
 .carousel-PT.carousel-PT-SFP {
-  min-height: 100vh;
+  min-height: 100vmax;
   width: 100vw;
   /* overflow: visible; */
   /* position: relative; */
