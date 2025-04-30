@@ -511,33 +511,21 @@ body {
     height: 90vh;
     left: 0;
   }
-  /* .carousel-PT.carousel-PT-SFP
-    .item-PT.item-PT-SFP
-    .thumbnail-img.thumbnail-img-SFP {
-    height: 80%;
-  } */
   .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP.active-PT.active-PT-SFP {
     height: 50% !important;
     width: 70% !important;
   }
   .carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP {
     font-size: 1rem;
-    /* width: 95%; */
-    /* margin-left: -70px; */
   }
   .carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP {
     font-size: 1rem;
-    /* width: 110%; */
-    /* margin-left: -30px; */
   }
   .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
     font-size: 2rem;
-    /* margin-left: -60px; */
   }
   .carousel-PT.carousel-PT-SFP .read-more-btn.read-more-btn-SFP {
-    /* padding: 10px 110px; */
     font-size: 1rem;
-    /* margin-left: -90px; */
   }
   .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
     width: 90vw;
@@ -561,39 +549,26 @@ body {
     margin: 20%;
     text-align: center;
     height: fit-content !important;
-    /* height: 100vh; */
   }
   .carousel-PT.carousel-PT-SFP .slider-container.slider-container-SFP {
     height: 90vh;
     left: 0;
   }
-  /* .carousel-PT.carousel-PT-SFP
-    .item-PT.item-PT-SFP
-    .thumbnail-img.thumbnail-img-SFP {
-    height: 80%;
-  } */
   .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP.active-PT.active-PT-SFP {
     height: 50% !important;
     width: 70% !important;
   }
   .carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP {
     font-size: 1.5rem;
-    /* width: 95%; */
-    /* margin-left: -70px; */
   }
   .carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP {
     font-size: 1.5rem;
-    /* width: 110%; */
-    /* margin-left: -30px; */
   }
   .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
     font-size: 3rem;
-    /* margin-left: -60px; */
   }
   .carousel-PT.carousel-PT-SFP .read-more-btn.read-more-btn-SFP {
-    /* padding: 10px 110px; */
     font-size: 1.6rem;
-    /* margin-left: -90px; */
   }
   .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
     width: 90vw;
@@ -636,7 +611,6 @@ body {
     color: #fff;
   }
 
-  /* تنسيق quote و description */
   .carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP {
     font-size: 1.5rem;
     margin: 2% 0;
@@ -648,7 +622,6 @@ body {
   }
   .carousel-PT.carousel-PT-SFP .slider-container.slider-container-SFP {
     width: 100%;
-    /* height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -703,9 +676,6 @@ body {
     width: 28rem;
     height: 28rem;
   }
-  /* .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
-    left: 15%;
-  } */
 
   /* thumbnail counter */
   .carousel-PT.carousel-PT-SFP .thumbnail-counter.thumbnail-counter-SFP {
