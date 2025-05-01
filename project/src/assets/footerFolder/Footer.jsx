@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 export default function footer() {
   return (
     <>
-      <div className="custom-footer px-5 pt-0 pb-2 bg-black">
-        <div className="row pt-5 mt-0 mt-md-5  ms-5">
+      <div className="custom-footer px-0 px-md-5 pt-0 pb-2 bg-black">
+        <div className="row pt-5 mt-0 mt-md-5 ms-5">
           {/* <div className="col-12 col-sm-6 col-md-3 col-lg-4 mt-5 p-sm-5 p-md-0">
             <div>
               <img src="/logoAndText.svg" alt="" className="w-50" />
