@@ -6,7 +6,7 @@ export default function UncontrolledExample() {
   return (
     <Carousel>
       <Carousel.Item>
-        <img src="./imgs/slider-img.png" alt="First slide" />
+        <img src="./imgs/angled_bg.png" alt="First slide" />
         <Carousel.Caption>
           <h3>First slide label</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>

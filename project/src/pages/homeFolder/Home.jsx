@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import UncontrolledExample from "../../assets/carousel/Carousel ";
 import { useEffect } from "react";
 export default function Home() {
+  const text_color = "#CB8778";
   useEffect(() => {
     // Load particles.js script dynamically
     const script = document.createElement("script");
@@ -28,14 +29,14 @@ export default function Home() {
       window.particlesJS("particles-js", {
         particles: {
           number: { value: 80 },
-          color: { value: "#9C2C1A" },
+          color: { value: text_color },
           shape: { type: "circle" },
           opacity: { value: 0.5 },
           size: { value: 3 },
           line_linked: {
             enable: true,
             distance: 150,
-            color: "#9C2C1A",
+            color: text_color,
             opacity: 0.4,
             width: 1,
           },
@@ -68,7 +69,7 @@ export default function Home() {
             // position: "fixed",
             width: "100vw",
             height: "100vh",
-            backgroundColor: "#e6e6e6",
+            backgroundColor: "#fff",
           }}
         ></div>
         {/* <img
@@ -86,20 +87,19 @@ export default function Home() {
           style={{ top: "20%" }}
         >
           <h1 style={{ fontSize: "5rem" }}>
-            Welcome to <span style={{ color: "#751a12" }}>PeakFitness</span>
+            Welcome to <span style={{ color: text_color }}>PeakFitness</span>
           </h1>
         </div>
       </div>
       <div className="row container-fluid section-1 margin-top-10 ">
         <div className="col-12 col-md-6 ps-4">
           <p style={{ fontSize: "2rem" }} className="mb-5">
-            <span style={{ color: "#CB8778", fontSize: "5rem" }}>Discover</span>{" "}
-            <br />
+            <span style={{ color: "", fontSize: "5rem" }}>Discover</span> <br />
             the path to your <br />
-            <span style={{ color: "#CB8778" }}>ideal weight ,</span>
-            <span style={{ color: "#CB8778" }}>better health ,</span>
+            <span style={{ color: text_color }}>ideal weight ,</span>
+            <span style={{ color: text_color }}>better health ,</span>
             <br />
-            <span style={{ color: "#CB8778" }}>
+            <span style={{ color: text_color }}>
               sustainable,and a healthy lifestyle
             </span>{" "}
             . <br />
