@@ -2,8 +2,10 @@ import MainBanner from "./components/mainBanner/MainBanner";
 import Sec2 from "./components/sec2/Sec2";
 import Sec3 from "./components/sec3/Sec3";
 import Sec4 from "./components/sec4/Sec4";
+import Sec5 from "./components/sec5/Sec5";
+import Sec6 from "./components/sec6/Sec6";
 import PropTypes from "prop-types";
-import "./Temp.css"; // Import the CSS file
+// import "./Temp.css";
 
 export default function Temp({
   main_banner_bg,
@@ -16,6 +18,10 @@ export default function Temp({
   sec3_cards,
   sec4_title,
   sec4_list,
+  sec5_coloredText,
+  sec5_text,
+  sec6_content,
+  sec6_list,
 }) {
   return (
     <>
@@ -28,7 +34,7 @@ export default function Temp({
         data-bs-smooth-scroll="true"
         tabIndex="0"
       >
-        <hr
+        {/* <hr
           className="hr1"
           style={{
             border: "5px solidrgb(0, 0, 0)",
@@ -43,7 +49,7 @@ export default function Temp({
             width: "50%",
             margin: "auto",
           }}
-        />
+        /> */}
         <div id="scrollspyHeading1">
           <Sec2
             sec2_title={sec2_title}
@@ -60,6 +66,12 @@ export default function Temp({
         </div>
         <div id="scrollspyHeading3">
           <Sec4 sec4_title={sec4_title} sec4_list={sec4_list} />
+        </div>
+        <div id="scrollspyHeading4">
+          <Sec5 sec5_coloredText={sec5_coloredText} sec5_text={sec5_text} />
+        </div>
+        <div id="scrollspyHeading5">
+          <Sec6 sec6_content={sec6_content} sec6_list={sec6_list} />
         </div>
       </div>
     </>
@@ -89,6 +101,22 @@ Temp.propTypes = {
   ).isRequired,
   sec4_title: PropTypes.string.isRequired,
   sec4_list: PropTypes.arrayOf(
+    PropTypes.shape({
+      coloredText: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  sec5_coloredText: PropTypes.arrayOf(PropTypes.string).isRequired,
+  sec5_text: PropTypes.arrayOf(PropTypes.string).isRequired,
+  sec6_content: PropTypes.arrayOf(
+    PropTypes.shape({
+      img: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      coloredText: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  sec6_list: PropTypes.arrayOf(
     PropTypes.shape({
       coloredText: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,

@@ -82,6 +82,31 @@ Healthy fats are essential for weight loss, helping you stay full and boost meta
             text: "Avoid concentrating it in one meal—distribute it evenly for lasting satiety.",
           },
         ]}
+        sec5_coloredText={[
+          "Reduce Simple Carbs:",
+          "Choose Complex Carbohydrates:",
+          "Focus on Timing:",
+        ]}
+        sec5_text={[
+          " Like white sugar and pastries, as they spike blood sugar quickly and increase hunger.",
+          "Such as oats, potatoes, brown rice, and whole grain bread—they digest slowly and keep you full longer",
+          "Eat carbs with main meals or before workouts for energy, and reduce intake in the evening.",
+        ]}
+        sec6_content={{
+          img: "./imgs/loss_sec6_img.png",
+          title: "How to calculate calories",
+        }}
+        sec6_list={[
+          {
+            coloredText: "Calculate Your Maintenance Calories",
+            text: " This is the number of calories your body needs to maintain your current weight. You can estimate it using",
+          },
+          {
+            coloredText:
+              " Then multiply your BMR by an activity factor:-Sedentary (little or no exercise): BMR × 1.2-Light activity (1–3 days/week): BMR × 1.375",
+            text: "-Moderate (3–5 days/week): BMR × 1.55-Active (6–7 days/week): BMR × 1.725-Very active (twice/day training): BMR × 1.9",
+          },
+        ]}
       />
     </>
   );

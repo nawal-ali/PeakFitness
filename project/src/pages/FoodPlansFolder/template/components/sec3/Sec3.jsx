@@ -9,7 +9,7 @@ export default function Sec3({ sec3_title, sec3_description, sec3_cards }) {
         backgroundImage: "url('./imgs/sec3_main_bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        margin: "8% 0",
+        margin: " 15% 0 8% 0",
       }}
     >
       <div
@@ -26,7 +26,7 @@ export default function Sec3({ sec3_title, sec3_description, sec3_cards }) {
       </div>
       <div className="row position-absolute top-50 w-100">
         {cards.map((card, index) => (
-          <div className="col-12 col-md-6 col-xl-3" key={index}>
+          <div className="col-12 col-md-6 my-3 col-xl-3" key={index}>
             <div
               className="d-flex justify-content-center align-items-center flex-column p-3 rounded my-0 my-md-5 text-center"
               style={{ backgroundColor: "#E2E2E2", height: "400px" }}

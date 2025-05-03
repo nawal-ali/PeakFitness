@@ -5,7 +5,7 @@ export default function Sec4({ sec4_title, sec4_list }) {
     i = 1;
   return (
     <>
-      <div className="row sec4" style={{ margin: "35rem 0" }}>
+      <div className="row sec4" style={{ margin: "30rem 0 8rem 0" }}>
         <div className="col-12 col-lg-4">
           <img src="./imgs/sec4_main_bg.png" width={"100%"} alt="" />
         </div>

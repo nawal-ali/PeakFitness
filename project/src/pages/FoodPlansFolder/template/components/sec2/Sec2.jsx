@@ -14,7 +14,7 @@ export default function Sec2({ sec2_title, sec2_description, sec2_cards }) {
   // }
   return (
     <div className="sec2">
-      <h1 style={{ color: text_color, marginTop: "6rem", fontWeight: "bold" }}>
+      <h1 style={{ color: text_color, marginTop: "20rem", fontWeight: "bold" }}>
         {sec2_title}
       </h1>
       <p className="text-black fs-4 w-75 my-4 sec2-desc">{sec2_description}</p>
