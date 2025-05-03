@@ -1,0 +1,11 @@
+@media (max-width: 1500px) {
+  .sec2 {
+    margin-top: 10rem !important;
+  }
+  .sec2-desc {
+    width: 100% !important;
+  }
+  .card {
+    height: 450px !important;
+  }
+}
