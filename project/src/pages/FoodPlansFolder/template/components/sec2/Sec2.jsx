@@ -27,7 +27,10 @@ export default function Sec2({ sec2_title, sec2_description, sec2_cards }) {
             >
               <div className="card" style={{ width: " 100%", height: "400px" }}>
                 <img src={card.img} alt="" className="card-img-top" />
-                <div className="card-body">
+                <div
+                  className="card-body"
+                  style={{ backgroundColor: "#EAE7E7" }}
+                >
                   <h5 className="card-title" style={{ color: text_color }}>
                     {card.coloredText}
                   </h5>
