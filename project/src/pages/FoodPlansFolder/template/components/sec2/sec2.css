@@ -1,0 +1,34 @@
+@media (max-width: 1500px) {
+  .sec2 {
+    margin-top: 50rem !important;
+  }
+  .sec2-desc {
+    width: 100% !important;
+  }
+  .card {
+    height: 450px !important;
+  }
+}
+@media (max-width: 550px) {
+  .sec2 {
+    margin-top: 75rem !important;
+  }
+  .sec2-desc {
+    width: 100% !important;
+  }
+  .card {
+    height: 450px !important;
+  }
+}
+
+/* @media (max-width: 1000px) {
+  .sec2 {
+    margin-top: 20rem !important;
+  }
+  .sec2-desc {
+    width: 100% !important;
+  }
+  .card {
+    height: 450px !important;
+  }
+} */
