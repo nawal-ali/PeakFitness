@@ -38,6 +38,7 @@ a {
   object-fit: cover;
   opacity: 0.8;
   filter: brightness(60%);
+  background-color: #000;
 }
 
 .carousel-SC .list-SC .item-SC .content-SC {
@@ -337,10 +338,11 @@ a {
   transform: translateY(50px) !important;
   z-index: 10 !important;
 }
-
+.clear-btn-F:hover,
 .start-button-SC:hover {
-  background-color: #e05c2c !important;
-}
+  border-color: #ff8c00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);}
 
 .carousel-SC .list-SC .item-SC.active-SC .start-button-SC {
   display: block !important;

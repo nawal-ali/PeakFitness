@@ -1,22 +1,7 @@
-// import Navbar from "../../../assets/navFolder/Navbar";
-// import "./cal.css";
-
-// export default function Calorie() {
-//   return (
-//     <>
-//       <Navbar />
-//       {/* write all code within this div because nav has fixed position
-//        and content will be placed bahind it if it does not have margin top */}
-//       <div style={{ marginTop: "9%" }}>
-//         <p>Calorie works</p>
-//       </div>
-//     </>
-//   );
-// }
-
 import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import Navbar from "../../../assets/navFolder/Navbar";
-import "./cal.css";
+import "./calorie.css";
 
 const CalorieCalculator = () => {
   const [gender, setGender] = useState(() => {
@@ -51,10 +36,11 @@ const CalorieCalculator = () => {
     const savedMeals = localStorage.getItem("meals");
     return savedMeals || "Per Day";
   });
-
   const [ageError, setAgeError] = useState("");
   const [weightError, setWeightError] = useState("");
   const [heightError, setHeightError] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupMessage, setPopupMessage] = useState("");
 
   useEffect(() => {
     localStorage.setItem("gender", gender);
@@ -84,14 +70,22 @@ const CalorieCalculator = () => {
 
   const calculateCalories = (e) => {
     e.preventDefault();
+    if (!gender) {
+      setPopupMessage("Please select a gender before calculating.");
+      setShowPopup(true);
+      return;
+    }
+    if (!age || !height || !weight || !activityLevel) {
+      setPopupMessage("Please fill in all fields correctly.");
+      setShowPopup(true);
+      return;
+    }
+
     let bmr;
     if (gender === "male") {
       bmr = 10 * weight + 6.25 * height - 5 * age + 5;
-    } else if (gender === "female") {
-      bmr = 10 * weight + 6.25 * height - 5 * age - 161;
     } else {
-      alert("Please select a gender before calculating.");
-      return;
+      bmr = 10 * weight + 6.25 * height - 5 * age - 161;
     }
 
     let activityFactor;
@@ -125,67 +119,54 @@ const CalorieCalculator = () => {
   };
 
   const recalculateFromInputs = () => {
-    if (age && height && weight && activityLevel && gender) {
-      let bmr;
-      if (gender === "male") {
-        bmr = 10 * weight + 6.25 * height - 5 * age + 5;
-      } else {
-        bmr = 10 * weight + 6.25 * height - 5 * age - 161;
-      }
-
-      let activityFactor;
-      switch (activityLevel) {
-        case "low":
-          activityFactor = 1.2;
-          break;
-        case "middle":
-          activityFactor = 1.55;
-          break;
-        case "high":
-          activityFactor = 1.725;
-          break;
-        case "very-high":
-          activityFactor = 1.9;
-          break;
-        default:
-          activityFactor = 1.2;
-      }
-
-      const calculatedCalories = Math.round(bmr * activityFactor);
-      const calculatedCarbs = Math.round((calculatedCalories * 0.5) / 4);
-      const calculatedProtein = Math.round((calculatedCalories * 0.3) / 4);
-      const calculatedFats = Math.round((calculatedCalories * 0.2) / 9);
-
-      setCalories(calculatedCalories);
-      setCarbs(calculatedCarbs);
-      setProtein(calculatedProtein);
-      setFats(calculatedFats);
-    } else {
-      alert(
-        "Please fill in all fields, including gender, before recalculating."
-      );
+    if (!age || !height || !weight || !activityLevel || !gender) {
+      setPopupMessage("Please fill in all fields, including gender, before recalculating.");
+      setShowPopup(true);
+      return;
     }
+
+    let bmr;
+    if (gender === "male") {
+      bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+    } else {
+      bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+    }
+
+    let activityFactor;
+    switch (activityLevel) {
+      case "low":
+        activityFactor = 1.2;
+        break;
+      case "middle":
+        activityFactor = 1.55;
+        break;
+      case "high":
+        activityFactor = 1.725;
+        break;
+      case "very-high":
+        activityFactor = 1.9;
+        break;
+      default:
+        activityFactor = 1.2;
+    }
+
+    const calculatedCalories = Math.round(bmr * activityFactor);
+    const calculatedCarbs = Math.round((calculatedCalories * 0.5) / 4);
+    const calculatedProtein = Math.round((calculatedCalories * 0.3) / 4);
+    const calculatedFats = Math.round((calculatedCalories * 0.2) / 9);
+
+    setCalories(calculatedCalories);
+    setCarbs(calculatedCarbs);
+    setProtein(calculatedProtein);
+    setFats(calculatedFats);
   };
-
-  const handleCalculateAgain = () => {
-    const calorieCalculator = document.querySelector(".calorie-calculator-C");
-    calorieCalculator.classList.add("restart-animation-C");
-
-    setTimeout(() => {
-      calorieCalculator.classList.remove("restart-animation-C");
-      recalculateFromInputs();
-    }, 50);
-  };
-
-  // const resetForm = () => {
-  //   recalculateFromInputs();
-  // };
 
   const clearInputs = () => {
     setGender("");
     setAge("");
     setHeight("");
     setWeight("");
+    setActivityLevel("");
     setAgeError("");
     setWeightError("");
     setHeightError("");
@@ -193,6 +174,7 @@ const CalorieCalculator = () => {
     localStorage.removeItem("age");
     localStorage.removeItem("height");
     localStorage.removeItem("weight");
+    localStorage.removeItem("activityLevel");
   };
 
   return (
@@ -210,21 +192,21 @@ const CalorieCalculator = () => {
               <div className="background-image-C"></div>
               <div className="content-C">
                 <div className="small-image-C"></div>
-                <h1>
-                  Calorie <br /> Calculator
+                <h1 className="Calorie-title-C">
+                  <span className="title-C">Calorie</span>
+                  <span className="title-C">Calculator</span>
                 </h1>
                 <p className="under-header-C">
                   Calculate Optimal Macronutrient Ratios For Your Body
+                  Enter Your Age, Height, Weight, And Activity Level
                 </p>
-                <p className="under-header-C">
-                  Enter Your Age, Weight, And Activity Level
-                </p>
+                <div className="Arrow-right-C"></div>
               </div>
             </>
           ) : (
             <form className="input-section-C" onSubmit={calculateCalories}>
               <div className="Calculator-one-circle-C"></div>
-              <h2 className="body-parameters-side2-C">Body Parameters</h2>
+              <h2 className="Calorie-parameters-side2-C">Body Parameters</h2>
               <div className="gender-selection-C">
                 <button
                   className={gender === "male" ? "active-C" : ""}
@@ -261,7 +243,7 @@ const CalorieCalculator = () => {
               </div>
               <div className="flex-inputs-C">
                 <div className="input-group-C">
-                  <label>Weight</label>
+                  <label>weight</label>
                   <input
                     type="text"
                     value={weight}
@@ -280,13 +262,11 @@ const CalorieCalculator = () => {
                     pattern="[0-9]*"
                   />
                   {weightError && (
-                    <p className="error-message-C weight-height-error-C">
-                      {weightError}
-                    </p>
+                    <p className="error-message-C">{weightError}</p>
                   )}
                 </div>
                 <div className="input-group-C">
-                  <label>Height</label>
+                  <label>height</label>
                   <input
                     type="text"
                     value={height}
@@ -305,9 +285,7 @@ const CalorieCalculator = () => {
                     pattern="[0-9]*"
                   />
                   {heightError && (
-                    <p className="error-message-C weight-height-error-C">
-                      {heightError}
-                    </p>
+                    <p className="error-message-C">{heightError}</p>
                   )}
                 </div>
               </div>
@@ -366,22 +344,6 @@ const CalorieCalculator = () => {
                     <span className="slider-label-C">VERY HIGH</span>
                   </div>
                 </div>
-              </div>
-              <div className="buttons-C">
-                <input
-                  type="button"
-                  value="Clear"
-                  className="clear-btn-C"
-                  onClick={clearInputs}
-                />
-                <button className="calculate-btn-C" type="submit">
-                  Calculate{" "}
-                  <img
-                    src="./logo/Arrow right-white.svg"
-                    alt="Arrow"
-                    className="arrow-icon-C"
-                  />
-                </button>
               </div>
             </form>
           )}
@@ -389,8 +351,8 @@ const CalorieCalculator = () => {
         <div className="right-panel-C">
           {!showResults ? (
             <form className="input-section-C" onSubmit={calculateCalories}>
-              <div className="Calculator-circles-C"></div>
-              <h2 className="body-parameters-side1-C">Body Parameters</h2>
+              <div className="Calculator-circles-S1-C"></div>
+              <h2 className="Calorie-parameters-side1-C">Body Parameters</h2>
               <div className="gender-selection-C">
                 <button
                   className={gender === "male" ? "active-C" : ""}
@@ -427,7 +389,7 @@ const CalorieCalculator = () => {
               </div>
               <div className="flex-inputs-C">
                 <div className="input-group-C">
-                  <label>Weight</label>
+                  <label>weight</label>
                   <input
                     type="text"
                     value={weight}
@@ -446,13 +408,11 @@ const CalorieCalculator = () => {
                     pattern="[0-9]*"
                   />
                   {weightError && (
-                    <p className="error-message-C weight-height-error-C">
-                      {weightError}
-                    </p>
+                    <p className="error-message-C">{weightError}</p>
                   )}
                 </div>
                 <div className="input-group-C">
-                  <label>Height</label>
+                  <label>height</label>
                   <input
                     type="text"
                     value={height}
@@ -471,9 +431,7 @@ const CalorieCalculator = () => {
                     pattern="[0-9]*"
                   />
                   {heightError && (
-                    <p className="error-message-C weight-height-error-C">
-                      {heightError}
-                    </p>
+                    <p className="error-message-C">{heightError}</p>
                   )}
                 </div>
               </div>
@@ -533,7 +491,7 @@ const CalorieCalculator = () => {
                   </div>
                 </div>
               </div>
-              <div className="buttons-C">
+              <div className="Calorie-buttons-C">
                 <div className="Calculator-circles-C"></div>
                 <input
                   type="button"
@@ -554,7 +512,7 @@ const CalorieCalculator = () => {
           ) : (
             <div className="result-section-C">
               <div className="Calculator-circles-side2-C"></div>
-              <div className="logo-C"></div>
+              <div className="result-logo-C"></div>
               <div className="result-header-C">
                 <h2>Your Result</h2>
                 <p className="calories-C">
@@ -618,21 +576,38 @@ const CalorieCalculator = () => {
                   Kcal
                 </p>
               )}
-              <div className="result-buttons-C">
+              <div className="calorie-buttons-Result-C">
                 <button
                   className="calculate-btn-C"
                   onClick={recalculateFromInputs}
                 >
                   Calculate Again
                 </button>
-                <button className="other-calculators-btn-C">
-                  Other Calculators
-                </button>
+                <Link to="/Calculators">
+                  <button className="other-calculators-btn-C">
+                    Other Calculators
+                  </button>
+                </Link>
               </div>
             </div>
           )}
         </div>
       </div>
+
+      {/* Popup Component */}
+      {showPopup && (
+        <div className="popup-overlay-C">
+          <div className="popup-C">
+            <p>{popupMessage}</p>
+            <button
+              className="popup-close-btn-C"
+              onClick={() => setShowPopup(false)}
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 };
