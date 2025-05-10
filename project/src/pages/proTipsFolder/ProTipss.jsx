@@ -16,28 +16,33 @@ const Slider_PT = () => {
     {
       id: 0,
       name: "Weight Gain",
+      quote: '"Gain Weight, Stay Strong!"',
       description:
-        "Gaining Weight The Healthy Way Takes More Than Just Eating More. Discover Simple Tips To Increase Your Weight Safely And Effectively",
+        "Explore Key Strategies To Increase Your Weight While Staying Healthy And Active",
       color: "#ec7e4a",
-      thumbnailImg: "/imgs/Pro-Tips-W-G.png",
+      thumbnailImg: "/public/imgs/Weight-gain.png",
+      backgroundImage: "/public/imgs/Food-Plan-W-G.png",
       link: "/weight-gain-details",
     },
     {
       id: 1,
       name: "Weight Loss",
-      description:
-        "Losing Weight Is A Journey—These Simple Tips Make It Easier, Healthier, And More Sustainable",
+      quote: '"Smart Strategies For Shedding Extra Pounds"',
+      description: "Practical Advice TO Help You Reach Your Ideal Weight.",
       color: "#4aec7e",
-      thumbnailImg: "/imgs/Pro-Tips-W-L.png",
+      thumbnailImg: "/public/imgs/Weight-loss.png",
+      backgroundImage: "/public/imgs/Food-Plan-W-L.png",
       link: "/weight-loss-details",
     },
     {
       id: 2,
       name: "Muscle Gain",
+      quote: '"Gain Muscle Boost Strength"',
       description:
-        "Building Muscle Isn't Just About Lifting Weights. These Tips Will Help You Grow Stronger, Faster, And Smarter",
+        'And Transform Your Physique With Science-Backed Strategies"',
       color: "#7e4aec",
-      thumbnailImg: "/imgs/Pro-Tips-M-G.png",
+      thumbnailImg: "/public/imgs/Muscle-gain.png",
+      backgroundImage: "/public/imgs/Food-Plan-M-G.png",
       link: "/muscle-gain-details",
     },
   ];
@@ -68,19 +73,25 @@ const Slider_PT = () => {
 
   const handleReadMore = () => {
     const currentIndex = selectedItem;
+    console.log("Read More clicked, selectedItem:", currentIndex);
     setIsReadMoreClicked(true);
+    console.log("isReadMoreClicked set to true");
 
     setTimeout(() => {
       setMoveLeft(true);
+      console.log("moveLeft set to true");
     }, 1000);
 
     setTimeout(() => {
       setScaleZero(true);
+      console.log("scaleZero set to true");
     }, 1000);
 
     setTimeout(() => {
       const currentLink = items[currentIndex].link;
+      console.log(`Navigating to ${currentLink}`);
       navigate(currentLink, { replace: false });
+      console.log("Navigation completed");
     }, 2500);
   };
 
@@ -92,7 +103,10 @@ const Slider_PT = () => {
   return (
     <>
       <Navbar showSearch={false} showBackground={false} />
-      <div className={`carousel-PT carousel-PT-SPT`}>
+      <div
+        className={`carousel-PT carousel-PT-SPT`}
+        style={{ backgroundImage: `url(/public/imgs/Food-Plan-W-G.png)` }}
+      >
         <div
           className={`content-overlay content-overlay-SPT ${
             isReadMoreClicked ? "hide hide-SPT" : ""
@@ -104,6 +118,13 @@ const Slider_PT = () => {
             }`}
           >
             {currentItem.name}
+          </div>
+          <div
+            className={`quote-PT quote-PT-SPT ${
+              isAnimating ? "animate animate-SPT" : ""
+            }`}
+          >
+            {currentItem.quote}
           </div>
           <div
             className={`description-PT description-PT-SPT ${
@@ -136,29 +157,30 @@ const Slider_PT = () => {
                 if (position === 0) {
                   transformValue = `translateX(0) scale(1)`;
                 } else if (position === 1) {
-                  transformValue = `translateX(450px) scale(0.8)`;
+                  transformValue = `translateX(550px) scale(0.6)`;
                 } else if (position === 2) {
-                  transformValue = `translateX(-450px) scale(0.8)`;
+                  transformValue = `translateX(-550px) scale(0.6)`;
                 } else {
                   transformValue = `translateX(${
-                    position > 1 ? "900px" : "-900px"
+                    position > 1 ? "1100px" : "-1100px"
                   }) scale(0)`;
                 }
               } else {
                 if (position === 0) {
                   transformValue = `translateX(0) scale(1)`;
                 } else if (position === 1) {
-                  transformValue = `translateX(270px) scale(0.7)`;
+                  transformValue = `translateX(280px) scale(0.5)`;
                 } else if (position === 2) {
-                  transformValue = `translateX(-270px) scale(0.7)`;
+                  transformValue = `translateX(-280px) scale(0.5)`;
                 } else {
                   transformValue = `translateX(${
-                    position > 1 ? "640px" : "-640px"
+                    position > 1 ? "600px" : "-600px"
                   }) scale(0)`;
                 }
               }
 
               if (isReadMoreClicked) {
+                console.log("isReadMoreClicked is true, isActive:", isActive);
                 if (isActive) {
                   if (scaleZero) {
                     transformValue = `translateX(-160%) translateY(5%) scaleX(1.45) scaleY(1.8)`;
