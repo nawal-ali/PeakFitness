@@ -1,17 +1,17 @@
 export default function IconsDiv() {
   const divWithIcons = [
     {
-      icon: "./logo/about-experience.svg",
+      icon: "./logo/about_experience.svg",
       number: "+10",
       text: "Years Experience",
     },
     {
-      icon: "./logo/about-customers.svg",
+      icon: "./logo/about_customers.svg",
       number: "+12k",
       text: "Happy Customers",
     },
     {
-      icon: "./logo/about-programs.svg",
+      icon: "./logo/about_programs.svg",
       number: "+50",
       text: "Training programs",
     },
@@ -29,7 +29,7 @@ export default function IconsDiv() {
           />
           <div>
             <p className="fs-1 mb-0">{item.number}</p>
-            <p className="fs-5 mt-0" style={{ color: "#EC7E4A" }}>
+            <p className="fs-5 mt-0" style={{ color: "#CB8778" }}>
               {item.text}
             </p>
           </div>

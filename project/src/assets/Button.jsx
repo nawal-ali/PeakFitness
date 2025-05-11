@@ -7,9 +7,9 @@ export default function button({
   return (
     <>
       <button
-        className="btn rounded-pill text-light"
+        className="btn rounded text-light"
         style={{
-          backgroundColor: "#EC7E4A",
+          backgroundColor: "#000000",
           width: customWidth,
           padding: customPadding,
           fontSize: customFontSize,
