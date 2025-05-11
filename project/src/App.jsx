@@ -17,7 +17,7 @@ import MuscleGain from "./pages/FoodPlansFolder/Muscle-Gain/Muscle-Gain-FP";
 import AuthForm from "./pages/Auth/Login/Login";
 import ForgetPassword from "./pages/Auth/Password/Forget password/Auth-F";
 import NewPassword from "./pages/Auth/Password/New Password/Auth-N";
-import Slider_PT from "./pages/proTipsFolder/ProTipss";
+import Slider_PT from "./pages/proTipsFolder/ProTips";
 // import MuscleGain from "./pages/FoodPlansFolder/Muscle-Gain/Muscle-Gain-FP";
 // import WeightLoss from "./pages/FoodPlansFolder/Weight-Loss/Weight-Loss-FP";
 function App() {
