@@ -8,8 +8,6 @@ const Slider_PT = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [isReadMoreClicked, setIsReadMoreClicked] = useState(false);
-  const [moveLeft, setMoveLeft] = useState(false);
-  const [scaleZero, setScaleZero] = useState(false);
   const navigate = useNavigate();
 
   const items = [
@@ -71,17 +69,9 @@ const Slider_PT = () => {
     setIsReadMoreClicked(true);
 
     setTimeout(() => {
-      setMoveLeft(true);
-    }, 1000);
-
-    setTimeout(() => {
-      setScaleZero(true);
-    }, 1000);
-
-    setTimeout(() => {
       const currentLink = items[currentIndex].link;
       navigate(currentLink, { replace: false });
-    }, 2500);
+    }, 500); // Match fade-out transition duration
   };
 
   const handleDotClick = (index) => {
@@ -158,29 +148,7 @@ const Slider_PT = () => {
                 }
               }
 
-              if (isReadMoreClicked) {
-                if (isActive) {
-                  if (scaleZero) {
-                    transformValue = `translateX(-160%) translateY(5%) scaleX(1.45) scaleY(1.8)`;
-                  } else if (moveLeft) {
-                    transformValue = `translateX(-160%) translateY(5%) scaleX(1.45) scaleY(1.8)`;
-                  } else {
-                    transformValue = `translateX(0) translateY(5%) scaleX(1.45) scaleY(1.8)`;
-                  }
-                } else {
-                  transformValue = `translateX(${
-                    position === 1 ? "200px" : "-200px"
-                  }) scale(0)`;
-                }
-              }
-
-              const transitionValue = isReadMoreClicked
-                ? scaleZero
-                  ? "transform 1s ease 0s"
-                  : moveLeft
-                  ? "transform 1s ease 0s"
-                  : "transform 2s ease 0s"
-                : "transform 0.5s ease, opacity 0.5s ease";
+              const transitionValue = "transform 0.5s ease, opacity 0.5s ease";
 
               return (
                 <div

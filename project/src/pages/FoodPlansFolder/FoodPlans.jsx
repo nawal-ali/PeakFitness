@@ -8,41 +8,32 @@ const Slider_FP = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [isReadMoreClicked, setIsReadMoreClicked] = useState(false);
-  const [moveLeft, setMoveLeft] = useState(false);
-  const [scaleZero, setScaleZero] = useState(false);
   const navigate = useNavigate();
 
   const items = [
     {
       id: 0,
       name: "Weight Gain",
-      quote: '"Gain Weight, Stay Strong!"',
       description:
-        "Explore Key Strategies To Increase Your Weight While Staying Healthy And Active",
+        " \"Gain Weight, Stay Explore Key Strong ! \" Strategies To Increase Your Weight While Staying Healthy And Active",
       color: "#ec7e4a",
       thumbnailImg: "/public/imgs/Weight-gain.png",
-      backgroundImage: "/public/imgs/Food-Plan-W-G.png",
       link: "/weight-gain-details",
     },
     {
       id: 1,
       name: "Weight Loss",
-      quote: '"Smart Strategies For Shedding Extra Pounds"',
-      description: "Practical Advice TO Help You Reach Your Ideal Weight.",
+      description: "\"Smart Strategies For Shedding Extra Pounds!\" Practical Advice To Help You Reach Your Ideal Weight.",
       color: "#4aec7e",
       thumbnailImg: "/public/imgs/Weight-loss.png",
-      backgroundImage: "/public/imgs/Food-Plan-W-L.png",
       link: "/weight-loss-details",
     },
     {
       id: 2,
       name: "Muscle Gain",
-      quote: '"Gain Muscle Boost Strength"',
-      description:
-        'And Transform Your Physique With Science-Backed Strategies"',
+      description:'"Gain Muscle, Boost Strength And Transform Your Physique With Science-Backed Strategies."',
       color: "#7e4aec",
       thumbnailImg: "/public/imgs/Muscle-gain.png",
-      backgroundImage: "/public/imgs/Food-Plan-M-G.png",
       link: "/muscle-gain-details",
     },
   ];
@@ -53,7 +44,7 @@ const Slider_FP = () => {
 
   useEffect(() => {
     setIsAnimating(true);
-    const timer = setTimeout(() => setIsAnimating(false), 2000);
+    const timer = setTimeout(() => setIsAnimating(false), 1000);
     return () => clearTimeout(timer);
   }, [selectedItem]);
 
@@ -73,26 +64,12 @@ const Slider_FP = () => {
 
   const handleReadMore = () => {
     const currentIndex = selectedItem;
-    console.log("Read More clicked, selectedItem:", currentIndex);
     setIsReadMoreClicked(true);
-    console.log("isReadMoreClicked set to true");
-
-    setTimeout(() => {
-      setMoveLeft(true);
-      console.log("moveLeft set to true");
-    }, 1000);
-
-    setTimeout(() => {
-      setScaleZero(true);
-      console.log("scaleZero set to true");
-    }, 1000);
 
     setTimeout(() => {
       const currentLink = items[currentIndex].link;
-      console.log(`Navigating to ${currentLink}`);
       navigate(currentLink, { replace: false });
-      console.log("Navigation completed");
-    }, 2500);
+    }, 500); // Short delay to allow fade-out
   };
 
   const handleDotClick = (index) => {
@@ -103,10 +80,7 @@ const Slider_FP = () => {
   return (
     <>
       <Navbar showSearch={false} showBackground={false} />
-      <div
-        className={`carousel-PT carousel-PT-SFP`}
-        style={{ backgroundImage: `url(${currentItem.backgroundImage})` }}
-      >
+      <div className={`carousel-PT carousel-PT-SFP`}>
         <div
           className={`content-overlay content-overlay-SFP ${
             isReadMoreClicked ? "hide hide-SFP" : ""
@@ -118,13 +92,6 @@ const Slider_FP = () => {
             }`}
           >
             {currentItem.name}
-          </div>
-          <div
-            className={`quote-PT quote-PT-SFP ${
-              isAnimating ? "animate animate-SFP" : ""
-            }`}
-          >
-            {currentItem.quote}
           </div>
           <div
             className={`description-PT description-PT-SFP ${
@@ -180,35 +147,20 @@ const Slider_FP = () => {
               }
 
               if (isReadMoreClicked) {
-                console.log("isReadMoreClicked is true, isActive:", isActive);
-                if (isActive) {
-                  if (scaleZero) {
-                    transformValue = `translateX(-160%) translateY(5%) scaleX(1.45) scaleY(1.8)`;
-                  } else if (moveLeft) {
-                    transformValue = `translateX(-160%) translateY(5%) scaleX(1.45) scaleY(1.8)`;
-                  } else {
-                    transformValue = `translateX(0) translateY(5%) scaleX(1.45) scaleY(1.8)`;
-                  }
-                } else {
-                  transformValue = `translateX(${
-                    position === 1 ? "200px" : "-200px"
-                  }) scale(0)`;
-                }
+                transformValue = isActive
+                  ? `translateX(0) scale(1)`
+                  : `translateX(${position === 1 ? "280px" : "-280px"}) scale(0.5)`;
               }
 
               const transitionValue = isReadMoreClicked
-                ? scaleZero
-                  ? "transform 1s ease 0s"
-                  : moveLeft
-                  ? "transform 1s ease 0s"
-                  : "transform 2s ease 0s"
+                ? "opacity 0.5s ease"
                 : "transform 0.5s ease, opacity 0.5s ease";
 
               return (
                 <div
                   className={`item-PT item-PT-SFP ${
                     isActive ? "active-PT active-PT-SFP" : ""
-                  }`}
+                  } ${isReadMoreClicked ? "hide hide-SFP" : ""}`}
                   key={item.id}
                   style={{
                     transform: transformValue,

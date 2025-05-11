@@ -8,7 +8,7 @@ body {
 .carousel-PT.carousel-PT-SPT {
   min-height: 100vmax;
   width: 100vw;
-  background-image: url("/public/imgs/Food-Plan-W-G.png");
+  background-image: url("/public/imgs/Slider_Home_PT.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -208,8 +208,8 @@ body {
 /* dots */
 .carousel-PT.carousel-PT-SPT .dots-PT.dots-PT-SPT {
   position: absolute;
-  bottom: 13%;
-  left: 68%;
+  bottom: 19%;
+  left: 66%;
   transform: translateX(-50%);
   display: flex;
   gap: 10px;

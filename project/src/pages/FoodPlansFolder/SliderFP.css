@@ -8,25 +8,17 @@ body {
 .carousel-PT.carousel-PT-SFP {
   min-height: 100vmax;
   width: 100vw;
-  /* overflow: visible; */
-  /* position: relative; */
-  transition: background-image 0.5s ease;
+  background-image: url("/public/imgs/Food-Plan-W-G.png"); /* Fixed background image */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 }
-/* .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
-  font-size: 4rem !important;
-} */
 
 /* content overlay */
 .carousel-PT.carousel-PT-SFP .content-overlay.content-overlay-SFP {
-  /* height: 100vh; */
   position: absolute;
   top: 20%;
-  /* left: 6%; */
-  /* transform: translateY(-50%); */
   color: #fff;
   text-align: left;
   max-width: 40%;
@@ -37,7 +29,6 @@ body {
 
 /* animations for content */
 .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP,
-.carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP,
 .carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP,
 .carousel-PT.carousel-PT-SFP .read-more-btn.read-more-btn-SFP {
   opacity: 0;
@@ -46,10 +37,6 @@ body {
 
 .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP.animate.animate-SFP {
   animation: fadeIn 1s ease-out forwards;
-}
-
-.carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP.animate.animate-SFP {
-  animation: fadeIn 1s ease-out 0.5s forwards;
 }
 
 .carousel-PT.carousel-PT-SFP
@@ -65,28 +52,18 @@ body {
 /* تنسيق title */
 .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
   font-size: 4rem;
-  /* width: 100%; */
   font-weight: bold;
-  /* margin-bottom: 10px; */
   color: #fff;
 }
 
-/* تنسيق quote و description */
-.carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP {
-  font-size: 1.5rem;
-  margin: 2% 0;
-  color: #cb8778;
-  /* width: 80%; */
-}
+/* تنسيق description */
 .carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP {
   font-size: 1.8rem;
-  /* width: 90%; */
   color: #fff;
+  width: 80%;
 }
-/* .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
-  font-size: 5rem;
-  width: 70%;
-} */
+
+/* read more button */
 .carousel-PT.carousel-PT-SFP .read-more-btn.read-more-btn-SFP {
   background-color: #cb8778;
   color: #fff;
@@ -131,7 +108,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  left: 18%; /* إزالة left: 170px لضمان التمركز */
+  left: 18%;
 }
 
 /* list */
@@ -145,15 +122,16 @@ body {
 
 /* item */
 .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
-  width: 400px; /* تقليل العرض ليكون مناسبًا للشاشات */
-  height: 400px; /* تقليل الارتفاع */
+  width: 400px;
+  height: 400px;
   position: absolute;
   opacity: 0.6;
   transition: opacity 0.5s ease, transform 0.5s ease;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  left: 0; /* إزالة left: 35% لضمان التمركز */
+  left: 0;
 }
+
 /* active item */
 .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP.active-PT.active-PT-SFP {
   opacity: 1;
@@ -161,6 +139,8 @@ body {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
   transform: translateX(0) scale(1);
   position: relative;
+  width: 28rem;
+  height: 28rem;
 }
 
 /* thumbnail image */
@@ -170,29 +150,21 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(100%) brightness(70%);
   transition: all 0.5s ease;
 }
-.carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP.active-PT.active-PT-SFP {
-  width: 28rem;
-  height: 28rem;
-}
-/* .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
-  left: 15%;
-} */
 
 /* thumbnail counter */
 .carousel-PT.carousel-PT-SFP .thumbnail-counter.thumbnail-counter-SFP {
-  font-size: 80px;
-  color: white;
-  font-weight: bold;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-  transition: opacity 0.5s ease; /* إخفاء في 2 ثانية */
-  z-index: 15;
-  position: absolute;
-  bottom: 25px;
-  left: 30px;
-  font-family: sans-serif;
+        font-size: 60px;
+        color: white;
+        font-weight: bold;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        transition: opacity 0.5s ease;
+        z-index: 15;
+        position: absolute;
+        bottom: 5%;
+        left: 41%;
+        font-family: sans-serif;
 }
 
 /* arrows */
@@ -204,7 +176,7 @@ body {
   justify-content: space-between;
   z-index: 15;
   transform: translateY(-50%);
-  transition: opacity 0.5s ease; /* إخفاء في 2 ثانية */
+  transition: opacity 0.5s ease;
 }
 
 .carousel-PT.carousel-PT-SFP .arrows-PT.arrows-PT-SFP button {
@@ -238,13 +210,13 @@ body {
 /* dots */
 .carousel-PT.carousel-PT-SFP .dots-PT.dots-PT-SFP {
   position: absolute;
-  bottom: 13%;
-  left: 68%;
+  bottom: 25%;
+  left: 66%;
   transform: translateX(-50%);
   display: flex;
   gap: 10px;
   z-index: 10;
-  transition: opacity 0.5s ease; /* إخفاء في 2 ثانية */
+  transition: opacity 0.5s ease;
 }
 
 .carousel-PT.carousel-PT-SFP .dot.dot-SFP {
@@ -260,244 +232,13 @@ body {
   background: #fff;
 }
 
+/* Hide class for overlay, arrows, dots, and counter */
+.hide.hide-SFP {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
 /* Media queries */
-/* @media (max-width: 1800px) {
-  .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
-    width: 500px;
-    height: 500px;
-  }
-  .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
-    font-size: 7.5rem;
-  }
-  .carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP {
-    font-size: 2.8rem;
-    width: 100%;
-  }
-  .carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP {
-    font-size: 2.8rem;
-    width: 150%;
-  }
-  .carousel-PT.carousel-PT-SFP .arrows-PT.arrows-PT-SFP {
-    top: 40%;
-  }
-  .carousel-PT.carousel-PT-SFP .thumbnail-counter.thumbnail-counter-SFP {
-    font-size: 60px;
-  }
-  .carousel-PT.carousel-PT-SFP .read-more-btn.read-more-btn-SFP {
-    padding: 10px 100px;
-    font-size: 2.8rem;
-  }
-} */
-
-/* @media (min-width: 1000px) {
-  .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
-    width: 400px;
-    height: 400px;
-    left: 105px;
-  }
-  .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
-    font-size: 6.5rem;
-  }
-  .carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP {
-    font-size: 2.3rem;
-    width: 120%;
-  }
-  .carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP {
-    font-size: 2.3rem;
-    width: 120%;
-  }
-  .carousel-PT.carousel-PT-SFP .arrows-PT.arrows-PT-SFP {
-    top: 40%;
-  }
-  .carousel-PT.carousel-PT-SFP .thumbnail-counter.thumbnail-counter-SFP {
-    font-size: 60px;
-  }
-  .carousel-PT.carousel-PT-SFP .read-more-btn.read-more-btn-SFP {
-    font-size: 2.3rem;
-  }
-  .carousel-PT.carousel-PT-SFP .dots-PT.dots-PT-SFP {
-    bottom: 250px;
-    left: 69%;
-  }
-} */
-
-/* @media (max-width: 900px) {
-  .carousel-PT.carousel-PT-SFP .content-overlay.content-overlay-SFP {
-    top: 35%;
-    left: 300px;
-    max-width: 401px;
-    z-index: 20;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
-    width: 400px;
-    height: 400px;
-    left: -200px;
-    top: 345px;
-  }
-  .carousel-PT.carousel-PT-SFP .dots-PT.dots-PT-SFP {
-    bottom: 60px;
-    left: 45%;
-  }
-  .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
-    font-size: 7rem;
-    text-wrap: nowrap;
-  }
-  .carousel-PT.carousel-PT-SFP .read-more-btn.read-more-btn-SFP {
-    margin-left: -65px;
-  }
-  .carousel-PT.carousel-PT-SFP .arrows-PT.arrows-PT-SFP button:first-child {
-    left: -35px;
-  }
-  .carousel-PT.carousel-PT-SFP .arrows-PT.arrows-PT-SFP button:last-child {
-    right: -35px;
-  }
-} */
-
-/* @media (min-width: 920px) {
-  .carousel-PT.carousel-PT-SFP .content-overlay.content-overlay-SFP {
-    left: 250px;
-  }
-  .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
-    width: 400px;
-    height: 400px;
-    left: -230px;
-    top: 345px;
-  }
-} */
-
-/* @media (max-width: 800px) {
-  .carousel-PT.carousel-PT-SFP .content-overlay.content-overlay-SFP {
-    left: 200px;
-  }
-  .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
-    left: -170px;
-  }
-  .carousel-PT.carousel-PT-SFP .dots-PT.dots-PT-SFP {
-    left: 50%;
-  }
-  .carousel-PT.carousel-PT-SFP .logo-FP.logo-FP-SFP {
-    width: 350px;
-  }
-} */
-
-/* @media (max-width: 700px) {
-  .carousel-PT.carousel-PT-SFP .content-overlay.content-overlay-SFP {
-    left: 150px;
-  }
-  .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
-    font-size: 6.3rem;
-  }
-  .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
-    width: 400px;
-    height: 400px;
-    top: 335px;
-    left: -150px;
-  }
-  .carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP {
-    font-size: 2.3rem;
-    width: 130%;
-  }
-  .carousel-PT.carousel-PT-SFP .logo-FP.logo-FP-SFP {
-    width: 300px;
-  }
-} */
-/* 
-@media (max-width: 600px) {
-  .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
-    width: 300px;
-    height: 300px;
-    top: 280px;
-    left: -180px;
-  }
-  .carousel-PT.carousel-PT-SFP .content-overlay.content-overlay-SFP {
-    left: 120px;
-  }
-  .carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP {
-    font-size: 2.3rem;
-    width: 123%;
-    margin-left: 10px;
-  }
-  .carousel-PT.carousel-PT-SFP .dots-PT.dots-PT-SFP {
-    bottom: 130px;
-    left: 45%;
-  }
-  .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
-    font-size: 5.8rem;
-    margin-left: -50px;
-  }
-  .carousel-PT.carousel-PT-SFP .logo-FP.logo-FP-SFP {
-    width: 300px;
-  }
-} */
-
-/* @media (max-width: 590px) {
-  .carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP {
-    font-size: 2rem;
-  }
-  .carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP {
-    font-size: 1.9rem;
-    width: 110%;
-    margin-left: -70px;
-  }
-  .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
-    font-size: 4.8rem;
-    margin-left: -60px;
-  }
-  .carousel-PT.carousel-PT-SFP .content-overlay.content-overlay-SFP {
-    left: 100px;
-  }
-  .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
-    width: 300px;
-    height: 300px;
-    top: 300px;
-    left: -150px;
-  }
-  .carousel-PT.carousel-PT-SFP .dots-PT.dots-PT-SFP {
-    bottom: 150px;
-    left: 50%;
-  }
-  .carousel-PT.carousel-PT-SFP .logo-FP.logo-FP-SFP {
-    width: 300px;
-  }
-} */
-
-/* @media (min-width: 480px) {
-  .carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP {
-    font-size: 1.9rem;
-    width: 120%;
-  }
-  .carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP {
-    font-size: 1.9rem;
-    width: 110%;
-    margin-left: -70px;
-  }
-  .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
-    font-size: 4.4rem;
-    margin-left: -60px;
-  }
-  .carousel-PT.carousel-PT-SFP .read-more-btn.read-more-btn-SFP {
-    
-    font-size: 1.9rem;
-  }
-  .carousel-PT.carousel-PT-SFP .content-overlay.content-overlay-SFP {
-    left: 100px;
-  }
-  .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
-    width: 200px;
-    height: 300px;
-    top: 300px;
-    left: -150px;
-  }
-  .carousel-PT.carousel-PT-SFP .dots-PT.dots-PT-SFP {
-    bottom: 150px;
-    left: 30%;
-  }
-} */
-
 @media (min-width: 300px) {
   .carousel-PT.carousel-PT-SFP .content-overlay.content-overlay-SFP {
     top: 0;
@@ -505,7 +246,6 @@ body {
     margin-top: 20%;
     text-align: center;
     height: fit-content !important;
-    /* height: 100vh; */
   }
   .carousel-PT.carousel-PT-SFP .slider-container.slider-container-SFP {
     height: 90vh;
@@ -516,9 +256,6 @@ body {
     width: 70% !important;
   }
   .carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP {
-    font-size: 1rem;
-  }
-  .carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP {
     font-size: 1rem;
   }
   .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
@@ -561,9 +298,6 @@ body {
   .carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP {
     font-size: 1.5rem;
   }
-  .carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP {
-    font-size: 1.5rem;
-  }
   .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
     font-size: 3rem;
   }
@@ -589,7 +323,7 @@ body {
   .carousel-PT.carousel-PT-SFP {
     min-height: 100vh;
     width: 100vw;
-    transition: background-image 0.5s ease;
+    background-image: url("/public/imgs/Food-Plan-W-G.png"); /* Fixed background image */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -610,12 +344,6 @@ body {
     font-weight: bold;
     color: #fff;
   }
-
-  .carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP {
-    font-size: 1.5rem;
-    margin: 2% 0;
-    color: #cb8778;
-  }
   .carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP {
     font-size: 1.8rem;
     color: #fff;
@@ -628,8 +356,6 @@ body {
     position: relative;
     left: 18%;
   }
-
-  /* list */
   .carousel-PT.carousel-PT-SFP .list-PT.list-PT-SFP {
     display: flex;
     position: relative;
@@ -637,20 +363,17 @@ body {
     justify-content: center;
     align-items: center;
   }
-
-  /* item */
   .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
-    width: 400px; /* تقليل العرض ليكون مناسبًا للشاشات */
-    height: 400px; /* تقليل الارتفاع */
+    width: 400px;
+    height: 400px;
     position: absolute;
     opacity: 0.6;
     transition: opacity 0.5s ease, transform 0.5s ease;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     top: 0 !important;
-    left: 0; /* إزالة left: 35% لضمان التمركز */
+    left: 0;
   }
-  /* active item */
   .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP.active-PT.active-PT-SFP {
     opacity: 1;
     z-index: 10;
@@ -661,37 +384,30 @@ body {
     transform: translateX(0) scale(1);
     position: relative;
   }
-
-  /* thumbnail image */
   .carousel-PT.carousel-PT-SFP
     .item-PT.item-PT-SFP
     .thumbnail-img.thumbnail-img-SFP {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(100%) brightness(70%);
     transition: all 0.5s ease;
   }
   .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP.active-PT.active-PT-SFP {
     width: 28rem;
     height: 28rem;
   }
-
-  /* thumbnail counter */
   .carousel-PT.carousel-PT-SFP .thumbnail-counter.thumbnail-counter-SFP {
-    font-size: 80px;
-    color: white;
-    font-weight: bold;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-    transition: opacity 0.5s ease; /* إخفاء في 2 ثانية */
-    z-index: 15;
-    position: absolute;
-    bottom: 25px;
-    left: 30px;
-    font-family: sans-serif;
+        font-size: 60px;
+        color: white;
+        font-weight: bold;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        transition: opacity 0.5s ease;
+        z-index: 15;
+        position: absolute;
+        bottom: 5%;
+        left: 41%;
+        font-family: sans-serif;
   }
-
-  /* arrows */
   .carousel-PT.carousel-PT-SFP .arrows-PT.arrows-PT-SFP {
     position: absolute;
     top: 50%;
@@ -700,9 +416,8 @@ body {
     justify-content: space-between;
     z-index: 15;
     transform: translateY(-50%);
-    transition: opacity 0.5s ease; /* إخفاء في 2 ثانية */
+    transition: opacity 0.5s ease;
   }
-
   .carousel-PT.carousel-PT-SFP .arrows-PT.arrows-PT-SFP button {
     background: transparent;
     color: #fff;
@@ -713,36 +428,30 @@ body {
     transition: color 0.3s ease, transform 0.3s ease;
     line-height: 1;
   }
-
   .carousel-PT.carousel-PT-SFP .arrows-PT.arrows-PT-SFP button:first-child {
     position: absolute;
     left: -50px;
     opacity: 0.6;
   }
-
   .carousel-PT.carousel-PT-SFP .arrows-PT.arrows-PT-SFP button:last-child {
     position: absolute;
     right: -50px;
     opacity: 0.6;
   }
-
   .carousel-PT.carousel-PT-SFP .arrows-PT.arrows-PT-SFP button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
   }
-
-  /* dots */
   .carousel-PT.carousel-PT-SFP .dots-PT.dots-PT-SFP {
     position: absolute;
-    bottom: 13%;
-    left: 68%;
+    bottom: 19%;
+    left: 66%;
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
     z-index: 10;
-    transition: opacity 0.5s ease; /* إخفاء في 2 ثانية */
+    transition: opacity 0.5s ease;
   }
-
   .carousel-PT.carousel-PT-SFP .dot.dot-SFP {
     width: 0.8rem;
     height: 0.8rem;
@@ -751,15 +460,7 @@ body {
     cursor: pointer;
     transition: background 0.3s ease;
   }
-}
-
-/* Hide class for overlay, arrows, dots, and counter */
-.hide.hide-SFP {
-  opacity: 0;
-  transition: opacity 0.5s ease; /* إخفاء في 2 ثانية */
-}
-.carousel-PT.carousel-PT-SFP .quote-PT.quote-PT-SFP {
-  font-size: 2rem;
-  color: #cb8778;
-  width: 95%;
+  .carousel-PT.carousel-PT-SFP .dot.dot-SFP.active-dot.active-dot-SFP {
+    background: #fff;
+  }
 }
