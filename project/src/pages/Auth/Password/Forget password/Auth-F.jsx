@@ -4,10 +4,9 @@ import "./Auth-F.css";
 const ForgetPassword = () => {
     const [email, setEmail] = useState("");
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [modalMessage, setModalMessage] = useState(""); // State for modal message
-    const [showModal, setShowModal] = useState(false); // State to show/hide modal
+    const [modalMessage, setModalMessage] = useState("");
+    const [showModal, setShowModal] = useState(false);
 
-    // Email validation regex
     const validateEmail = (email) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
@@ -15,7 +14,7 @@ const ForgetPassword = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setIsSubmitted(true); // Mark form as submitted
+        setIsSubmitted(true);
 
         if (email.trim() === "") {
             setModalMessage("Please enter an email.");
@@ -26,8 +25,8 @@ const ForgetPassword = () => {
         } else {
             setModalMessage("Check your email for the reset link.");
             setShowModal(true);
-            setEmail(""); // Optional: Clear input after success
-            setIsSubmitted(false); // Reset submission state
+            setEmail("");
+            setIsSubmitted(false);
         }
     };
 
@@ -38,16 +37,23 @@ const ForgetPassword = () => {
 
     return (
         <div className="Main-container-Auth-FP">
-            <img src="/public/imgs/Logo-4.svg" alt="Logo" className="logo-Auth-FP" />
-            <div className="container-Auth-FP">
-                <form onSubmit={handleSubmit} className="forgot-password-box-Auth-FP">
+            {/* First Section: Logo, Header, and Description */}
+            <div className="top-section-Auth-FP">
+                <img src="/public/imgs/Logo-4.svg" alt="Logo" className="logo-Auth-FP" />
+                <div className="header-container-Auth-FP">
                     <div className="svg-container-Auth-FP">
                         <img src="/public/imgs/Lock.svg" alt="Reset Password Icon" />
                     </div>
                     <h2 className="header-Auth-FP">Forgot Password</h2>
                     <div className="Under-header-Auth-FP">
-                        <p>Please enter your <span className="Span-Auth-FP">email</span></p>
+                        <p>please enter your email</p>
                     </div>
+                </div>
+            </div>
+
+            {/* Second Section: Input and Submit Button */}
+            <div className="bottom-section-Auth-FP">
+                <form onSubmit={handleSubmit} className="forgot-password-box-Auth-FP">
                     <div className="input-container-Auth-FP">
                         <input
                             className="input-Auth-FP"

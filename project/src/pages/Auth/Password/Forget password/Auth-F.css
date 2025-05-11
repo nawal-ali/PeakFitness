@@ -7,20 +7,45 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to bottom, rgba(109, 109, 109, 0.6), rgb(27, 23, 23)65%), 
-                url('/public/imgs/Password-image.jpeg') center/cover no-repeat;
+    /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)), 
+                url('/public/imgs/Password-Image.png') center/cover no-repeat; */
     width: 100vw;
-    padding-top: 2.5%;
-    padding-bottom: 2.32%;
+    min-height: 100vh;
+    padding: 0;
 }
 
-/* container-Auth-FP provides space for the form */
-.container-Auth-FP {
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px; /* Added padding to give the form breathing room */
-    width: 100%; /* Ensures it can expand */
-    max-width: 600px; /* Increased max-width to allow form to grow */
+/* Top section: Logo, header, and description */
+.top-section-Auth-FP {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60vh; /* Takes the upper half */
+    background: url('/public/imgs/Password-Image.png') center/cover no-repeat;
+    animation: fadeIn 0.5s ease-in-out;
 }
+
+/* Bottom section: Input and submit button */
+.bottom-section-Auth-FP {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40vh; /* Takes the lower half */
+    animation: slideIn 0.5s ease-in-out;
+}
+
+/* Header container within top section */
+.header-container-Auth-FP {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+/* container-Auth-FP is removed as it's not needed with the new structure */
 
 /* Form styling */
 .forgot-password-box-Auth-FP {
@@ -31,21 +56,23 @@
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    width: 100%; /* Ensures the form takes full available width */
+    width: 100%;
 }
 
 /* Header and text styling */
 .header-Auth-FP {
-    font-size: 2.9rem; /* Slightly larger header */
+    font-size: 2.9rem;
     color: #fff;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     font-weight: bold;
     letter-spacing: 1.5px;
 }
 
 .Under-header-Auth-FP {
-    font-size: 1.8rem; /* Slightly larger text */
-    margin: 1rem auto;
+    font-size: 1.8rem;
+    margin: 0;
+    color: #fff;
+    text-transform: lowercase;
 }
 
 .Span-Auth-FP {
@@ -54,12 +81,11 @@
 }
 
 /* SVG container */
-
 .svg-container-Auth-FP img {
-    width: 180px; /* Slightly larger icon */
-    height: 180px;
+    width: 10rem; /* Smaller lock icon to match screenshot */
+    height: 10rem;
     object-fit: contain;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 /* Adjusted input container */
@@ -68,48 +94,51 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 500px; /* Increased max-width to make the form wider */
+    max-width: 500px;
     font-size: 1.8rem;
-
 }
-
 /* Styling for input and submit */
+
 .input-Auth-FP,
 .submit-Auth-FP {
-    width: 90%; /* Increased from 80% to 90% to make it wider */
-    padding: 13px; /* Increased padding for a larger feel */
+    width: 90%;
+    padding: 13px;
     border-radius: 25px;
-    background-color: #fff;
-    font-size: 18px; /* Increased font size */
+    font-size: 18px;
     outline: none;
     border: none;
-    margin-bottom: 4rem; /* Increased spacing */
+    margin-bottom: 2rem;
+}
+
+
+.input-Auth-FP {
+    background-color: #fff;
+    border: 2px solid black;
 }
 
 /* Specific styling for submit button */
 .submit-Auth-FP {
-    background: #EC7E4A;
+    background: #D4A29C; /* Matches the peach color in the screenshot */
     padding: 10px;
     color: white;
     cursor: pointer;
     transition: background 0.3s, box-shadow 0.3s;
     font-weight: bold;
-    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.3);
+    box-shadow: none; /* Removed shadow to match screenshot */
     font-size: 1.5rem;
 }
 
 .submit-Auth-FP:hover {
-    background: #ff9966;
-    box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.5);
+    background: #E0B0A8; /* Slightly lighter on hover */
+    box-shadow: none;
 }
-
 
 /* Logo styling */
 .logo-Auth-FP {
     position: absolute;
     top: 15px;
     left: 10px;
-    width: 250px;
+    width: 200px; /* Adjusted size to match screenshot */
     height: auto;
 }
 
@@ -123,6 +152,7 @@
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
 /* Modal overlay (background) */
 .modal-overlay-Auth-FP {
     position: fixed;
@@ -130,16 +160,16 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    background: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Ensure it’s above other content */
+    z-index: 1000;
 }
 
 /* Modal content */
 .modal-content-Auth-FP {
-    background: rgba(33, 33, 33,0.9);
+    background: white;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -150,12 +180,12 @@
 .modal-content-Auth-FP p {
     margin: 0 0 15px 0;
     font-size: 16px;
-    color: #fff;
+    color: #000;
 }
 
 /* Close button */
 .modal-close-btn-Auth-FP {
-    background: #EC7E4A;
+    background: #CB8778;
     color: white;
     border: none;
     padding: 8px 50px;
@@ -168,55 +198,188 @@
 .modal-close-btn-Auth-FP:hover {
     background: #ff9966;
 }
-@media (max-width:1250px) {
+
+/* Responsive adjustments */
+@media (max-width: 1250px) {
     .Main-container-Auth-FP {
         padding-top: 0%;
+        padding-bottom: 22%;
+    }
+}
+
+@media (max-width: 1281px) {
+   .forgot-password-box-Auth-FP {
+        padding-top: 10%;
+    }
+    .input-container-Auth-FP {
+        max-width: 400px;
+    }
+    .top-section-Auth-FP {
+        height: 50vh; /* Adjust for smaller screens */
+    }
+    .bottom-section-Auth-FP {
+        height: 50vh;
+    }
+        .forgot-password-box-Auth-FP {
+        padding-bottom: 20%;
+    }
+}
+@media (max-width: 1025px) {
+   .forgot-password-box-Auth-FP {
+        padding-top: 10%;
+    }
+    .input-container-Auth-FP {
+        max-width: 400px;
+    }
+    .top-section-Auth-FP {
+        height: 30vh; /* Adjust for smaller screens */
+    }
+    .bottom-section-Auth-FP {
+        height: 55vh;
+    }
+        .forgot-password-box-Auth-FP {
+        padding-bottom: 60%;
+    }
+}
+
+@media (max-width: 821px) {
+    .forgot-password-box-Auth-FP {
+        padding-top: 10%;
+    }
+    .input-container-Auth-FP {
+        max-width: 400px;
+    }
+    .top-section-Auth-FP {
+        height: 40vh; /* Adjust for smaller screens */
+    }
+    .bottom-section-Auth-FP {
+        height: 45vh;
+    }
+        .forgot-password-box-Auth-FP {
+        padding-bottom: 50%;
+    }
+}
+
+@media (max-width: 769px) {
+    .forgot-password-box-Auth-FP {
+        padding-bottom: 35%;
+    }
+    .top-section-Auth-FP {
+    height: 45vh;
+}
+    .bottom-section-Auth-FP {
+        height: 39vh;
+    }
+}
+@media (max-width: 541px) {
+    .top-section-Auth-FP
+    {
+        height: 60vh;
+    }
+    .bottom-section-Auth-FP
+    {
+        height: 25vh;
+    }
+        .forgot-password-box-Auth-FP {
         padding-bottom: 0%;
     }
 }
-@media (max-width:1025px) {
-    .forgot-password-box-Auth-FP {padding-top: 10%;}
+@media (max-width: 431px) {
+    .top-section-Auth-FP {
+        height: 40vh; /* Adjust for smaller screens */
+    }
+    .bottom-section-Auth-FP {
+        height: 50vh;
+    }
+    .header-Auth-FP {
+        font-size: 2.6rem;
+    }
+    .forgot-password-box-Auth-FP {
+        padding-bottom: 50%;
+    }
+    .svg-container-Auth-FP img {
+        width: 80px;
+        height: 80px;
+    }
+    .logo-Auth-FP {
+        width: 150px;
+    }
+    .modal-content-Auth-FP {
+        top: 25%;
+        position: absolute;
+    }
 }
-@media (max-width:821px) {
-    .forgot-password-box-Auth-FP {padding-top: 10%;}
-    .input-container-Auth-FP {max-width: 400px;}   
+
+
+@media (max-width: 415px) {
+    .header-Auth-FP {
+        font-size: 2.4rem;
+    }
+    .bottom-section-Auth-FP
+{
+        height: 51vh;
+    }
+    .forgot-password-box-Auth-FP {
+        padding-bottom: 40%;
+    }
 }
-@media (max-width:769px) {
-    .forgot-password-box-Auth-FP {padding-top: 10%;}
+
+@media (max-width: 391px) {
+    .header-Auth-FP {
+        font-size: 2.2rem;
+    }
+    .modal-content-Auth-FP {
+        top: 30%;
+    }
+    .svg-container-Auth-FP img {
+        width: 70px;
+        height: 70px;
+    }
+    .Under-header-Auth-FP {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+}
+
+@media (max-width: 376px) {
+    .header-Auth-FP {
+        font-size: 2.1rem;
+    }
+        .forgot-password-box-Auth-FP {
+        padding-bottom: 0%;
+    }
+    .top-section-Auth-FP {
+        height: 60vh;
+    }
+        .bottom-section-Auth-FP {
+        height: 28vh;
+    }
+}
+
+@media (max-width: 361px) {
+    .submit-Auth-FP {
+        font-size: 1.1rem;
+    }
+    .bottom-section-Auth-FP {
+        height: 40vh;
+    }
+        .top-section-Auth-FP {
+        height: 50vh;
+    }
+        .forgot-password-box-Auth-FP {
+        padding-bottom: 15%;
+    }
     
 }
-@media (max-width:431px) {
-    .container-Auth-FP{padding: 20px;}
-    .header-Auth-F {font-size: 2.6rem;}
-    .forgot-password-box-Auth-FP {padding-top: 15%;}
-    .svg-container-Auth-FP img {width: 160px;height: 160px;}
-    .logo-Auth-FP {width: 200px;}
-    .modal-content-Auth-FP {top: 25%;position: absolute;}
-}
-@media (max-width:415px) {
-    .header-Auth-F {font-size: 2.4rem;}
-}
-@media (max-width:391px) {
-    .header-Auth-F {font-size: 2.2rem;}
-    .modal-content-Auth-FP {top: 30%;}
-    .svg-container-Auth-FP img {width: 150px;height: 150px;}
-    .Under-header-Auth-FP {font-size: 1.5rem;margin: 1rem auto;    }
-}
-@media (max-width:376px) {
-    .header-Auth-F {font-size: 2.1rem;}
-    .container-Auth-FP {padding: 31px;}
 
-}
-@media(max-width:361px){
-    .container-Auth-FP {padding: 37px;}
-    .submit-Auth-FP {font-size: 1.1rem;}
-
-@media(max-width:345px){
-    .container-Auth-FP {padding: 37px;}
-    .submit-Auth-FP {font-size: 1.1rem;}
-    .header-Auth-F {font-size: 1.96rem;}
-    .Under-header-Auth-FP {font-size: 1.3rem;}
-    .container-Auth-FP {padding: 38px;}
-
-}
+@media (max-width: 345px) {
+    .submit-Auth-FP {
+        font-size: 1.1rem;
+    }
+    .header-Auth-FP {
+        font-size: 1.96rem;
+    }
+    .Under-header-Auth-FP {
+        font-size: 1.3rem;
+    }
 }
