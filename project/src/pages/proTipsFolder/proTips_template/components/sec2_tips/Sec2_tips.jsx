@@ -8,7 +8,7 @@ export default function Sec2_tips({
   return (
     <div style={{ marginTop: "150px" }}>
       <div className="row">
-        <div className="col-12 col-md-5">
+        <div className="col-12 col-md-5 d-flex justify-content-end align-items-end">
           <img
             src={sec2_tips_img}
             alt=""
@@ -16,7 +16,7 @@ export default function Sec2_tips({
             style={{ border: "3px dashed black", borderRadius: "20%" }}
           />
         </div>
-        <div className="col-12 col-md-7">
+        <div className="col-12 col-md-7 ps-3 ps-md-5">
           <h1 className="text-black fw-bold my-2" style={{ fontSize: "3rem" }}>
             {sec2_tips_title}
           </h1>
