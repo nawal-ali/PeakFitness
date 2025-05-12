@@ -1,12 +1,16 @@
 import Navbar from "../../assets/navFolder/Navbar";
-import Sec2_tips from "./proTips_template/components/sec2_tips/Sec2_tips";
-import Sec3_tips from "./proTips_template/components/sec3_tips/Sec3_tips";
-import Sec4_tips from "./proTips_template/components/sec4_tips/Sec4_tips";
+// import Sec2_tips from "./proTips_template/components/sec2_tips/Sec2_tips";
+// import Sec3_tips from "./proTips_template/components/sec3_tips/Sec3_tips";
+// import Sec4_tips from "./proTips_template/components/sec4_tips/Sec4_tips";
+import ProTipsTemp from "./proTips_template/ProTipsTemp";
 export default function MG_proTips() {
   return (
     <>
       <Navbar />
-      <Sec2_tips
+      <ProTipsTemp
+        sec1_tips_img="./imgs/mg_sec1_tips.png"
+        sec1_tips_title="Muscle Gain"
+        sec1_tips_desc="Looking to gain muscle the right way? These pro tips will help you maximize your workouts, fuel your body properly"
         sec2_tips_img="./imgs/wl_tips_sec1.png"
         sec2_tips_title="Mistakes That Slow Down Muscle Growth"
         sec2_tips_list={[
@@ -31,8 +35,6 @@ export default function MG_proTips() {
             text: "Too much training without enough rest can lead to fatigue and even muscle loss.",
           },
         ]}
-      />
-      <Sec3_tips
         sec3_tips_title="Best Fat-Burning Foods"
         sec3_tips_colredTitle="Adding these foods to your diet can accelerate your weight loss results"
         sec3_tips_text={[
@@ -48,8 +50,6 @@ export default function MG_proTips() {
           "Chili Peppers",
           "Eggs",
         ]}
-      />
-      <Sec4_tips
         sec4_tips_title="When Should You Change Your Workout Program?"
         sec4_tips_img="./imgs/mg_tips_sec4.png"
         sec4_tips_list={[
