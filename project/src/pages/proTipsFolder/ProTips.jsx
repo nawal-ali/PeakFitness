@@ -1,5 +1,5 @@
-import { title } from "framer-motion/client";
 import Navbar from "../../assets/navFolder/Navbar";
+import Sec1_tips from "./proTips_template/components/sec1_tips/Sec1_tips";
 import Sec2_tips from "./proTips_template/components/sec2_tips/Sec2_tips";
 import Sec3_tips from "./proTips_template/components/sec3_tips/Sec3_tips";
 import Sec4_tips from "./proTips_template/components/sec4_tips/Sec4_tips";
@@ -8,9 +8,15 @@ export default function tips() {
   return (
     <>
       <Navbar />
+      {/* <div style={{ marginTop: "9%" }}></div> */}
+      <Sec1_tips
+        sec1_tips_img="./imgs/mg_sec1_tips.png"
+        sec1_tips_title="Muscle Gain"
+        sec1_tips_desc="Looking to gain muscle the right way? These pro tips will help you maximize your workouts, fuel your body properly"
+      />
       <div style={{ marginTop: "9%" }} className="container">
         <Sec2_tips
-          sec2_tips_img="./imgs/wl_tips_sec1.png"
+          sec2_tips_img="./imgs/wl_tips_sec2.png"
           sec2_tips_title="Mistakes That Slow Down Muscle Growth"
           sec2_tips_list={[
             {
