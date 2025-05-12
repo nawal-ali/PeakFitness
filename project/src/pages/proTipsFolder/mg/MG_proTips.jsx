@@ -58,6 +58,26 @@ export default function MG_proTips() {
           "Loss of motivation or boredom.",
           "Constant fatigue or recurring minor injuries.",
         ]}
+        sec5_tips_title="Muscle-Building Foods"
+        sec5_tips_coloredTitle="Your diet is important for building muscles. Proteins, carbohydrates, and healthy fats help speed up growth and recovery. Here are some foods that support this."
+        sec5_tips_list={[
+          {
+            title: "Red meats",
+            text: " help improve the body's ability to build muscle tissue.",
+          },
+          {
+            title: "Oats",
+            text: "Provide complex carbohydrates that help provide long-lasting energy.",
+          },
+          {
+            title: "Avocado",
+            text: "Contains healthy fats that support heart and brain health.",
+          },
+          {
+            title: "Leafy vegetables",
+            text: "Rich in vitamins and minerals that support muscle health.",
+          },
+        ]}
       />
     </>
   );
