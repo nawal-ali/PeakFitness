@@ -10,6 +10,8 @@ import BMI from "./pages/calcsFolder/BMI/BMI";
 import BodyFat from "./pages/calcsFolder/Body-Fat/BodyFat";
 import Calorie from "./pages/calcsFolder/Calorie/Calorie";
 import Weight from "./pages/calcsFolder/Ideal-Weight/Weight";
+import AuthForm from "./pages/Auth/Login/Loginn";
+import ForgetPassword from "./pages/Auth/Password/Forget password/Auth-F";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/login" element={<AuthForm />} />
+            <Route path="/Forget-Password" element={<ForgetPassword />} />
             <Route path="/exercises" element={<Exercises />} />
             <Route path="/ProTips" element={<Tips />} />
             <Route path="/FoodPlans" element={<Plans />} />
