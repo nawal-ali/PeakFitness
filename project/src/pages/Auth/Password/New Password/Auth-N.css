@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap');
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+
+/* Main-container-Auth-NFP carries the background and full layout */
+.Main-container-Auth-NFP {
+    font-family: 'Nunito Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 0;
+}
+
+/* Top section: Logo, Key Icon, Header, Description, and Password Input */
+.top-section-Auth-NFP {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60vh; /* Takes the upper part, adjusted for content */
+    background: url('/public/imgs/Password-Image.png') center/cover no-repeat;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Bottom section: Confirm Password Input and Submit Button */
+.bottom-section-Auth-NFP {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40vh; /* Takes the lower part */
+    animation: slideIn 0.5s ease-in-out;
+}
+
+/* Header container within top section */
+.header-container-Auth-NFP {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: -25%;
+}
+
+/* Form styling */
+.new-password-box-NP {
+    background-color: transparent;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+}
+
+/* Header and text styling */
+.header-Auth-FPN {
+    font-size: 2.9rem;
+    color: #fff;
+    margin-bottom: 25px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.Under-header-Auth-FPN {
+    font-size: 1.8rem;
+    margin: 1rem auto;
+    color: #fff;
+}
+
+/* SVG container */
+.svg-container-NP img {
+    width: 100px; /* Adjusted to match the style of ForgetPassword */
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+}
+
+/* Input container */
+.input-container-Auth-FPN {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    font-size: 1.8rem;
+}
+
+/* Input box */
+.input-box-NP {
+    width: 90%;
+    margin-bottom: 2rem;
+    
+}
+
+/* Unique styling for password input */
+.input-box-NP-child1 {
+margin-bottom: 70%;
+}
+
+/* Unique styling for confirm password input */
+.input-box-NP-child2 {
+margin-top: 5%;
+}
+
+/* Input wrapper for positioning the icon */
+.input-wrapper-NP {
+    position: relative;
+    width: 100%;
+}
+
+/* Input styling */
+.input-Auth-FPN {
+    width: 100%;
+    padding: 13px;
+    border-radius: 25px;
+    background-color: #fff;
+    font-size: 18px;
+    outline: none;
+    border: 2px solid black;
+    margin-bottom: 5%;
+    color: #000;
+}
+
+/* Label styling */
+.input-label-NP {
+    display: block;
+    color: #000;
+    font-size: 16px;
+    margin-bottom: 5px;
+    text-align: left;
+    letter-spacing: 1.5px;
+}
+
+/* Password visibility icon */
+.password-icon-NP {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-100%);
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #000;
+    transition: transform 0.2s ease-in-out;
+}
+
+.password-icon-NP:hover {
+    transform: translateY(-50%) scale(1.2);
+}
+
+/* Submit button */
+.submit-Auth-FPN {
+    background: #D4A29C; /* Matches the peach color from ForgetPassword */
+    color: white;
+    font-weight: bold;
+    box-shadow: none; /* Removed shadow to match ForgetPassword */
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 25px;
+    font-size: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-Auth-FPN:hover {
+    background: #E0B0A8; /* Slightly lighter on hover */
+}
+
+/* Logo styling */
+.logo-NP {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    width: 200px;
+    height: auto;
+    z-index: 1;
+}
+
+/* Modal overlay (background) */
+.modal-overlay-Auth-FPN {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal content */
+.modal-content-Auth-FPN {
+    background:white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content-Auth-FPN p {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    color: #000;
+}
+
+/* Close button */
+.modal-close-btn-Auth-FPN {
+    background: #CB8778;
+    color: white;
+    border: none;
+    padding: 8px 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.modal-close-btn-Auth-FPN:hover {
+    background: #ff9966;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Media Queries */
+@media (max-width: 1281px) {
+.top-section-Auth-NFP {
+        height: 55vh;
+}
+.bottom-section-Auth-NFP {
+        height: 45vh;
+    }
+    .input-box-NP-child2 {
+    margin-top: -25%;
+}
+.input-box-NP-child1 {
+    margin-bottom: 50%;
+}
+}
+@media (max-width: 1025px) {
+.top-section-Auth-NFP {
+        height: 33vh;
+}
+.bottom-section-Auth-NFP {
+        height: 67vh;
+    }
+    .input-box-NP-child2 {
+    margin-top: -89%;
+}
+.input-box-NP-child1 {
+    margin-bottom: 35%;
+}
+}
+@media (max-width: 854px) {
+    .input-box-NP-child2 {
+        margin-top: -82%;
+    }
+}
+@media (max-width: 821px) {
+.top-section-Auth-NFP {
+        height: 38vh;
+}
+.bottom-section-Auth-NFP {
+        height: 62vh;
+    }
+    .input-box-NP-child2 {
+    margin-top: -70%;
+}
+.input-box-NP-child1 {
+    margin-bottom: 35%;
+}
+}
+@media (max-width: 769px) {
+
+.top-section-Auth-NFP {
+        height: 45vh;
+}
+.bottom-section-Auth-NFP {
+        height: 55vh;
+    }
+    .input-box-NP-child2 {
+    margin-top: -62%;
+}
+.input-box-NP-child1 {
+    margin-bottom: 35%;
+}
+}
+@media (max-width: 541px) {
+        .top-section-Auth-NFP {
+        height: 55vh; /* Adjusted for more content in top section */
+    }
+    .bottom-section-Auth-NFP {
+        height: 45vh;
+    }
+    .input-box-NP-child2 {
+    margin-top: -25%;
+}
+.Under-header-Auth-FPN {
+    font-size: 1.8rem;
+    margin: 0rem;
+}
+    .header-Auth-FPN {
+        font-size: 2.1rem;
+        margin: 0rem;
+    }
+        .input-box-NP-child1 {
+        margin-bottom: 10%;
+    }
+    .new-password-box-NP {
+        padding-top: 5%;
+    }
+    .svg-container-NP img {
+        width: 80px;
+        height: 80px;
+    }
+    .logo-NP {
+        width: 150px;
+    }
+    .modal-content-Auth-FPN {
+        top: 25%;
+        position: absolute;
+    }
+    .Under-header-Auth-FPN {
+        font-size: 1.4rem;
+    }
+    .submit-Auth-FPN {
+        padding: 8px;
+        font-size: 1.3rem;
+    }
+
+}
+
+@media (max-width: 431px) {
+    .top-section-Auth-NFP {
+        height: 50vh; /* Adjusted for more content in top section */
+    }
+    .bottom-section-Auth-NFP {
+        height: 50vh;
+    }
+    .input-box-NP-child2 {
+    margin-top: -55%;
+}
+    .header-Auth-FPN {
+        font-size: 1.9rem;
+    }
+    .new-password-box-NP {
+        padding-top: 5%;
+    }
+    .svg-container-NP img {
+        width: 80px;
+        height: 80px;
+    }
+    .logo-NP {
+        width: 150px;
+    }
+    .modal-content-Auth-FPN {
+        top: 25%;
+        position: absolute;
+    }
+    .Under-header-Auth-FPN {
+        font-size: 1.4rem;
+    }
+    .submit-Auth-FPN {
+        padding: 8px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 415px) {
+    .header-Auth-FPN {
+        font-size: 1.8rem;
+    }
+    .svg-container-NP img {
+        width: 70px;
+        height: 70px;
+    }
+    .Main-container-Auth-NFP {
+        padding-bottom: 1%;
+    }
+    .top-section-Auth-NFP {
+        height: 45vh;
+    }
+    .bottom-section-Auth-NFP {
+        height: 55vh;
+    }
+    .input-box-NP-child2 {
+    padding-bottom: 20%;
+}
+}
+
+@media (max-width: 391px) {
+    .header-Auth-FPN {
+        font-size: 1.7rem;
+    }
+    .modal-content-Auth-FPN {
+        top: 30%;
+    }
+    .svg-container-NP img {
+        width: 65px;
+        height: 65px;
+    }
+    .Under-header-Auth-FPN {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 376px) {
+    .header-Auth-FPN {
+        font-size: 1.7rem;
+    }
+    .Under-header-Auth-FPN {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+    .svg-container-NP img {
+        width: 60px;
+        height: 60px;
+    }
+    .top-section-Auth-NFP {
+        height: 55vh;
+    }
+    .bottom-section-Auth-NFP {
+        height: 45vh;
+    }
+            .input-box-NP-child2 {
+        margin-top: -15%;
+    }
+
+}
+
+@media (max-width: 361px) {
+    .header-Auth-FPN {
+        font-size: 1.5rem;
+    }
+    .Under-header-Auth-FPN {
+        font-size: 1.2rem;
+    }
+    .submit-Auth-FPN {
+        font-size: 1.1rem;
+    }
+        .input-box-NP-child2 {
+        margin-top: -15%;
+    }
+}
+
+@media (max-width: 345px) {
+    .submit-Auth-FPN {
+        font-size: 1.1rem;
+    }
+    .header-Auth-FPN {
+        font-size: 1.4rem;
+    }
+    .Under-header-Auth-FPN {
+        font-size: 1.1rem;
+    }
+    .new-password-box-NP {
+        padding-top: 15%;
+        padding-bottom: 20%;
+    }
+        .input-box-NP-child1 {
+        margin-bottom: -30%;
+    }
+        .input-box-NP-child2 {
+        margin-top: -35%;
+    }
+}
