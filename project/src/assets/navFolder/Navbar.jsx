@@ -269,7 +269,9 @@ export default function Navbar() {
                   </NavLink>
                 </li>
               </ul>
-              <button className="btn btn-dark me-3 px-4">Login</button>
+              <Link to="/login" className="btn btn-dark me-3 px-4">
+                Login
+              </Link>
               <button className="btn btn-light me-3 px-4">Sign Up</button>
               {/* <form className="d-flex mt-3 mb-3" role="search">
                 <input
