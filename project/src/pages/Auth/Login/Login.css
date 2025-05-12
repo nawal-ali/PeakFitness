@@ -82,7 +82,7 @@ input::placeholder {
 .container-Auth-Main {
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    background-color: #202020;
+    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     position: relative;
