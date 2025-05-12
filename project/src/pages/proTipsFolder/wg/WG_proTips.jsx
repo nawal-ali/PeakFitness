@@ -53,7 +53,7 @@ export default function WG_proTips() {
           "Relying Only on Low-Calorie, Filling Foods",
         ]}
         sec4_tips_title="High-Calorie Snacks"
-        sec4_tips_img="./imgs/mg_tips_sec4.png"
+        sec4_tips_img="./imgs/wg_tips_sec4.png"
         sec4_tips_list={[
           "Peanut butter with banana slices or dates",
           "Full-fat cheese cubes with nuts",
