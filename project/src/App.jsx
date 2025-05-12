@@ -35,7 +35,7 @@ function App() {
             <Route path="/BodyFat" element={<BodyFat />} />
             <Route path="/Calorie" element={<Calorie />} />
             <Route path="/Weight" element={<Weight />} />
-            <Route path="/login" element={<AuthForm />} />
+            <Route path="/Login" element={<AuthForm />} />
           </Routes>
         </Router>
         {/* <h1>app works!</h1> */}
