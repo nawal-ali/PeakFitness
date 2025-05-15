@@ -1,0 +1,10 @@
+@media (max-width: 770px) {
+  .sec4 {
+    margin-top: 100rem !important;
+  }
+}
+@media (max-width: 1200px) {
+  .sec4 {
+    margin-top: 60rem !important;
+  }
+}

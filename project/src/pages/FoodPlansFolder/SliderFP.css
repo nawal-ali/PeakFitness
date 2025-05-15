@@ -1,0 +1,466 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500&display=swap");
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+/* carousel */
+.carousel-PT.carousel-PT-SFP {
+  min-height: 100vmax;
+  width: 100vw;
+  background-image: url("/public/imgs/Food-Plan-W-G.png"); /* Fixed background image */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* content overlay */
+.carousel-PT.carousel-PT-SFP .content-overlay.content-overlay-SFP {
+  position: absolute;
+  top: 20%;
+  color: #fff;
+  text-align: left;
+  max-width: 40%;
+  z-index: 20;
+  transition: opacity 0.5s ease;
+  margin-left: 2%;
+}
+
+/* animations for content */
+.carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP,
+.carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP,
+.carousel-PT.carousel-PT-SFP .read-more-btn.read-more-btn-SFP {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP.animate.animate-SFP {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.carousel-PT.carousel-PT-SFP
+  .description-PT.description-PT-SFP.animate.animate-SFP {
+  animation: fadeIn 1s ease-out 0.5s forwards;
+}
+
+.carousel-PT.carousel-PT-SFP
+  .read-more-btn.read-more-btn-SFP.animate.animate-SFP {
+  animation: fadeIn 1s ease-out 0.5s forwards;
+}
+
+/* تنسيق title */
+.carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* تنسيق description */
+.carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP {
+  font-size: 1.8rem;
+  color: #fff;
+  width: 80%;
+}
+
+/* read more button */
+.carousel-PT.carousel-PT-SFP .read-more-btn.read-more-btn-SFP {
+  background-color: #cb8778;
+  color: #fff;
+  border: none;
+  padding: 2% 3%;
+  width: 70%;
+  font-size: 1.8rem;
+  border-radius: 48px;
+  cursor: pointer;
+  font-weight: bold;
+  opacity: 0;
+  transition: all 200ms ease;
+  margin-top: 10%;
+  font-weight: 500;
+  letter-spacing: 0.9px;
+  text-wrap: nowrap;
+}
+
+.carousel-PT.carousel-PT-SFP .read-more-btn.read-more-btn-SFP:hover {
+  border-color: #ff8c00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
+}
+
+/* animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* slider container */
+.carousel-PT.carousel-PT-SFP .slider-container.slider-container-SFP {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 18%;
+}
+
+/* list */
+.carousel-PT.carousel-PT-SFP .list-PT.list-PT-SFP {
+  display: flex;
+  position: relative;
+  transition: transform 0.5s ease;
+  justify-content: center;
+  align-items: center;
+}
+
+/* item */
+.carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  opacity: 0.6;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  left: 0;
+}
+
+/* active item */
+.carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP.active-PT.active-PT-SFP {
+  opacity: 1;
+  z-index: 10;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+  transform: translateX(0) scale(1);
+  position: relative;
+  width: 28rem;
+  height: 28rem;
+}
+
+/* thumbnail image */
+.carousel-PT.carousel-PT-SFP
+  .item-PT.item-PT-SFP
+  .thumbnail-img.thumbnail-img-SFP {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+/* thumbnail counter */
+.carousel-PT.carousel-PT-SFP .thumbnail-counter.thumbnail-counter-SFP {
+        font-size: 60px;
+        color: white;
+        font-weight: bold;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        transition: opacity 0.5s ease;
+        z-index: 15;
+        position: absolute;
+        bottom: 5%;
+        left: 41%;
+        font-family: sans-serif;
+}
+
+/* arrows */
+.carousel-PT.carousel-PT-SFP .arrows-PT.arrows-PT-SFP {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 15;
+  transform: translateY(-50%);
+  transition: opacity 0.5s ease;
+}
+
+.carousel-PT.carousel-PT-SFP .arrows-PT.arrows-PT-SFP button {
+  background: transparent;
+  color: #fff;
+  border: none;
+  padding: 0 10px;
+  font-size: 100px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  line-height: 1;
+}
+
+.carousel-PT.carousel-PT-SFP .arrows-PT.arrows-PT-SFP button:first-child {
+  position: absolute;
+  left: -50px;
+  opacity: 0.6;
+}
+
+.carousel-PT.carousel-PT-SFP .arrows-PT.arrows-PT-SFP button:last-child {
+  position: absolute;
+  right: -50px;
+  opacity: 0.6;
+}
+
+.carousel-PT.carousel-PT-SFP .arrows-PT.arrows-PT-SFP button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
+}
+
+/* dots */
+.carousel-PT.carousel-PT-SFP .dots-PT.dots-PT-SFP {
+  position: absolute;
+  bottom: 25%;
+  left: 66%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+  transition: opacity 0.5s ease;
+}
+
+.carousel-PT.carousel-PT-SFP .dot.dot-SFP {
+  width: 0.8rem;
+  height: 0.8rem;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.carousel-PT.carousel-PT-SFP .dot.dot-SFP.active-dot.active-dot-SFP {
+  background: #fff;
+}
+
+/* Hide class for overlay, arrows, dots, and counter */
+.hide.hide-SFP {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Media queries */
+@media (min-width: 300px) {
+  .carousel-PT.carousel-PT-SFP .content-overlay.content-overlay-SFP {
+    top: 0;
+    max-width: 100%;
+    margin-top: 20%;
+    text-align: center;
+    height: fit-content !important;
+  }
+  .carousel-PT.carousel-PT-SFP .slider-container.slider-container-SFP {
+    height: 90vh;
+    left: 0;
+  }
+  .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP.active-PT.active-PT-SFP {
+    height: 50% !important;
+    width: 70% !important;
+  }
+  .carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP {
+    font-size: 1rem;
+  }
+  .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
+    font-size: 2rem;
+  }
+  .carousel-PT.carousel-PT-SFP .read-more-btn.read-more-btn-SFP {
+    font-size: 1rem;
+  }
+  .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
+    width: 90vw;
+    height: 50vh;
+    top: 230px;
+    left: 0;
+  }
+  .carousel-PT.carousel-PT-SFP .dots-PT.dots-PT-SFP {
+    bottom: 5%;
+    left: 50%;
+  }
+  .carousel-PT.carousel-PT-SFP .thumbnail-counter.thumbnail-counter-SFP {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 600px) {
+  .carousel-PT.carousel-PT-SFP .content-overlay.content-overlay-SFP {
+    top: 0;
+    max-width: 100%;
+    margin: 20%;
+    text-align: center;
+    height: fit-content !important;
+  }
+  .carousel-PT.carousel-PT-SFP .slider-container.slider-container-SFP {
+    height: 90vh;
+    left: 0;
+  }
+  .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP.active-PT.active-PT-SFP {
+    height: 50% !important;
+    width: 70% !important;
+  }
+  .carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP {
+    font-size: 1.5rem;
+  }
+  .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
+    font-size: 3rem;
+  }
+  .carousel-PT.carousel-PT-SFP .read-more-btn.read-more-btn-SFP {
+    font-size: 1.6rem;
+  }
+  .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
+    width: 90vw;
+    height: 50vh;
+    top: 230px;
+    left: 0;
+  }
+  .carousel-PT.carousel-PT-SFP .dots-PT.dots-PT-SFP {
+    bottom: 5%;
+    left: 50%;
+  }
+  .carousel-PT.carousel-PT-SFP .thumbnail-counter.thumbnail-counter-SFP {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .carousel-PT.carousel-PT-SFP {
+    min-height: 100vh;
+    width: 100vw;
+    background-image: url("/public/imgs/Food-Plan-W-G.png"); /* Fixed background image */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  .carousel-PT.carousel-PT-SFP .content-overlay.content-overlay-SFP {
+    position: absolute;
+    margin-top: 14% !important;
+    color: #fff;
+    text-align: left;
+    max-width: 40%;
+    z-index: 20;
+    transition: opacity 0.5s ease;
+    margin-left: 2%;
+  }
+  .carousel-PT.carousel-PT-SFP .title-PT.title-PT-SFP {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  .carousel-PT.carousel-PT-SFP .description-PT.description-PT-SFP {
+    font-size: 1.8rem;
+    color: #fff;
+  }
+  .carousel-PT.carousel-PT-SFP .slider-container.slider-container-SFP {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 18%;
+  }
+  .carousel-PT.carousel-PT-SFP .list-PT.list-PT-SFP {
+    display: flex;
+    position: relative;
+    transition: transform 0.5s ease;
+    justify-content: center;
+    align-items: center;
+  }
+  .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    opacity: 0.6;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    top: 0 !important;
+    left: 0;
+  }
+  .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP.active-PT.active-PT-SFP {
+    opacity: 1;
+    z-index: 10;
+    height: 400px !important;
+    width: 400px !important;
+    top: 6% !important;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    transform: translateX(0) scale(1);
+    position: relative;
+  }
+  .carousel-PT.carousel-PT-SFP
+    .item-PT.item-PT-SFP
+    .thumbnail-img.thumbnail-img-SFP {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+  }
+  .carousel-PT.carousel-PT-SFP .item-PT.item-PT-SFP.active-PT.active-PT-SFP {
+    width: 28rem;
+    height: 28rem;
+  }
+  .carousel-PT.carousel-PT-SFP .thumbnail-counter.thumbnail-counter-SFP {
+        font-size: 60px;
+        color: white;
+        font-weight: bold;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        transition: opacity 0.5s ease;
+        z-index: 15;
+        position: absolute;
+        bottom: 5%;
+        left: 41%;
+        font-family: sans-serif;
+  }
+  .carousel-PT.carousel-PT-SFP .arrows-PT.arrows-PT-SFP {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 15;
+    transform: translateY(-50%);
+    transition: opacity 0.5s ease;
+  }
+  .carousel-PT.carousel-PT-SFP .arrows-PT.arrows-PT-SFP button {
+    background: transparent;
+    color: #fff;
+    border: none;
+    padding: 0 10px;
+    font-size: 100px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    line-height: 1;
+  }
+  .carousel-PT.carousel-PT-SFP .arrows-PT.arrows-PT-SFP button:first-child {
+    position: absolute;
+    left: -50px;
+    opacity: 0.6;
+  }
+  .carousel-PT.carousel-PT-SFP .arrows-PT.arrows-PT-SFP button:last-child {
+    position: absolute;
+    right: -50px;
+    opacity: 0.6;
+  }
+  .carousel-PT.carousel-PT-SFP .arrows-PT.arrows-PT-SFP button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
+  }
+  .carousel-PT.carousel-PT-SFP .dots-PT.dots-PT-SFP {
+    position: absolute;
+    bottom: 19%;
+    left: 66%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+    transition: opacity 0.5s ease;
+  }
+  .carousel-PT.carousel-PT-SFP .dot.dot-SFP {
+    width: 0.8rem;
+    height: 0.8rem;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .carousel-PT.carousel-PT-SFP .dot.dot-SFP.active-dot.active-dot-SFP {
+    background: #fff;
+  }
+}

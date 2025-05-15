@@ -1,12 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Jomhuria&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-/* 
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: 'Nunito Sans';
-  overflow: hidden;
-} */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Jomhuria&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"); 
+
 body {
   padding-right: 0;
 }
@@ -21,17 +14,18 @@ body {
   position: relative;
   transition: transform 0.6s ease-in-out;
 }
-.body-parameters-side1-I,
-.body-parameters-side2-I {
-  color: #fff;
-  margin-bottom: 50px;
-  font-size: 32px;
+.Ideal-parameters-side1-I,
+.Ideal-parameters-side2-I {
+  color: #000;
+  margin-bottom: 30px;
+  font-size: 40px;
   font-weight: bold;
   letter-spacing: 1.5px;
+  margin-top: 20px;
 }
 .left-panel-I .small-image-I {
-  width: 130px;
-  height: 130px;
+  width: 110px;
+  height: 110px;
   background-image: url("./logo/IDEAL.svg");
   background-position: 75% center;
   background-repeat: no-repeat;
@@ -48,7 +42,7 @@ body {
   font-size: 50px;
   margin-bottom: 10px;
   z-index: 2;
-  color: #ec7e4a;
+  color: #fff;
   font-weight: bold;
   line-height: 80px;
 }
@@ -62,7 +56,7 @@ body {
 .calorie-calculator-I {
   display: flex;
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   background-color: #fff;
   overflow: hidden;
   position: relative;
@@ -74,15 +68,6 @@ body {
 }
 
 /* Logo in the Left Panel */
-.left-panel-I .logo-I {
-  position: absolute;
-  top: 5px;
-  left: 15px;
-  font-size: 24px;
-  font-weight: bold;
-  z-index: 3;
-  border: none;
-}
 
 /* Background Image in the Left Panel */
 .left-panel-I .background-image-I {
@@ -96,9 +81,9 @@ body {
   background-repeat: no-repeat;
   background-color: #000;
   background-size: cover;
-  opacity: 50%;
+  opacity: 90%;
   z-index: 1;
-  filter: brightness(200%);
+  filter: brightness(60%);
 }
 
 .title-I {
@@ -107,25 +92,33 @@ body {
 
 /* Content in the Left Panel */
 .left-panel-I .content-I {
-  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  /* height: 100vh; */
   text-align: center;
   color: white;
-  border: none;
+  z-index: 2;
+  margin-bottom: -20px;
 }
 
 /* Paragraph in the Left Panel */
 .left-panel-I .under-header-I {
-  font-size: 28px;
+  font-size: 25px;
   color: #fff;
-  width: 90%;
+  width: 70%;
   border: none;
 }
-
+.Arrow-right-I {
+  width: 35px;
+  height: 35px;
+  background-image: url("../../../../public/imgs/Arrow-right.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;
+  margin-top: 60px;
+}
 /* Arrow in the Left Panel */
 .arrow-icon-I {
   width: 20px; /* حجم السهم (يمكن تعديله حسب الحاجة) */
@@ -155,40 +148,36 @@ body {
 
 /* Gender Selection Styling (Updated for Buttons) */
 .gender-selection-I {
+  margin-bottom: 15px;
   display: flex;
-  gap: 50px;
-  position: relative;
-  z-index: 100;
-  border: none;
-  width: 100%; /* Full width of input-section to match inputs */
+  gap: 30px;
 }
 
 .gender-selection-I button {
-  background-color: white;
-  color: black;
-  padding: 10px 0; /* Adjust padding to match input height, keep width full */
+  background-color: #000;
+  color: #fff;
   border: none;
-  border-radius: 20px;
-  font-size: 16px;
+  padding: 6px 0;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 25px;
   font-weight: bold;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-  flex: 1; /* Each button takes equal space, matching input width */
-  width: 100%; /* Ensure full width to match inputs */
-  box-sizing: border-box; /* Ensure padding doesn't affect width */
+  transition: background-color 0.3s ease;
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .gender-selection-I button.active-I {
-  background-color: #ec7e4a;
+  background-color: #CB8778;
   color: white;
-  border: 2px solid #ec7e4a;
   z-index: 1;
 }
 
 .gender-selection-I button:hover {
-  background-color: #ec7e4a;
+  background-color: #CB8778;
   color: white;
   opacity: 1;
-  border: 2px solid #ec7e4a;
 }
 
 /* Input Group Styling */
@@ -206,24 +195,27 @@ body {
 .input-group-I label {
   display: block;
   margin-bottom: 10px;
-  color: white;
-  border: none;
+  color: black;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
 .input-group-I input {
   width: 100%;
-  padding: 10px 15px;
-  border-radius: 25px;
-  font-size: 18px;
+  padding: 13px 20px;
+  border: 2px solid #000;
+  border-radius: 30px !important;
+  font-size: 16px;
+  box-sizing: border-box;
   background-color: #fff;
+  color: #000;
   outline: none;
-  transition: border-color 0.3sease;
 }
 
-.input-group-I input:focus {
+/* .input-group-I input:focus {
   border-color: #ff8c00;
   box-shadow: 0 0 8px rgba(255, 140, 0, 0.5);
-}
+} */
 
 /* Buttons Styling */
 .ideal-buttons-I,
@@ -231,11 +223,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 25px;
-  margin-top: 30px;
+  gap: 50px;
+  /* margin-top: 40px; */
   width: 100%;
-  position: relative;
-  z-index: 1000;
   border: none;
   text-wrap: nowrap;
 }
@@ -250,28 +240,40 @@ body {
   letter-spacing: 2px;
 }
 .calculate-btn-I {
-  background-color: #ec7e4a;
+  background-color: #000;
   color: white;
-  padding: 14px 40px; /* جعل الزر أكبر قليلاً */
+  padding: 14px 40px;
   font-size: 16px;
   font-weight: bold;
   border: none;
-  border-radius: 30px; /* زوايا مستديرة */
+  border-radius: 30px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* مسافة بين النص والسهم */
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3); /* ظل */
+  gap: 10px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
   transition: 0.3s ease;
 }
+.calculate-again-btn-I {
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border:2px solid #CB8778;
+  cursor: pointer;
+  color: #fff;
+  background-color: #CB8778;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.3s ease;
+}
 
-.calculate-btn-I:hover,
+/* .calculate-btn-I:hover,
 .clear-btn-I:hover {
   border-color: #ff8c00;
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
-}
+} */
 
 /* Result Section Styling */
 .result-section-I {
@@ -281,22 +283,8 @@ body {
   flex-direction: column;
   text-align: center;
   color: #fff;
-  margin-left: -150px;
-  margin-top: 40px;
-  border: none;
-}
-
-.result-logo-I {
-  width: 165px;
-  height: 100px;
-  position: absolute;
-  top: -5px;
-  left: 20px;
-  /* background-image: url(/images/Logo-4.svg); */
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 300;
+  /* margin-left: -150px;
+  margin-top: 40px; */
   border: none;
 }
 
@@ -304,14 +292,14 @@ body {
   font-size: 50px;
   font-weight: bold;
   text-align: left;
-  margin-left: 30px;
+  /* margin-left: 30px; */
   border: none;
 }
 
 .result-section-I h3 {
   font-size: 60px;
   text-align: left;
-  margin-left: 45px;
+  /* margin-left: 45px; */
   letter-spacing: 3px;
   border: none;
 }
@@ -329,7 +317,7 @@ body {
   font-weight: bold;
   cursor: pointer;
   color: #fff;
-  background-color: #ec7e4a;
+  background-color: #CB8778;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.3s ease;
 }
@@ -339,17 +327,9 @@ body {
   box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
 }
 
-.calorie-calculator-I {
-  display: flex;
-  flex-direction: row;
-  width: 100vw;
-  height: 100vh;
-  background-color: #fff;
-  overflow: hidden;
-}
 .left-panel-I {
   flex: 1;
-  background-color: #202020;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -359,14 +339,17 @@ body {
 }
 .right-panel-I {
   flex: 1;
-  background-color: #202020;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
   transition: transform 0.6s ease-in-out;
+  padding-bottom: 8.5%;
+  padding-top: 6%;
   z-index: 0; /* لضمان أن الخط يظهر فوق الخلفية */
+  padding-bottom: 10.5%;
 }
 
 .calorie-calculator-I.show-results-I .left-panel-I {
@@ -377,23 +360,10 @@ body {
   transform: translateX(0);
 }
 
-.logo-I {
-  width: 165px;
-  height: 100px;
-  position: absolute;
-  top: -125px;
-  left: -50px;
-  /* background-image: url(/images/Logo-4.svg); */
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 300;
-  border: none;
-}
 
 /* Table */
 .ideal-table-div-I {
-  width: 75%;
+  width: 100%;
 }
 
 .ideal-table-I {
@@ -416,7 +386,7 @@ body {
 }
 
 .ideal-weight-value-I {
-  color: #ec7e4a;
+  color: #CB8778;
   font-weight: bold;
 }
 .ideal-table-I td,
@@ -425,28 +395,28 @@ th {
   background-color: transparent;
 }
 /* Circles (unchanged) */
-.Calculator-one-circle-I::before {
+/* .Calculator-one-circle-I::before ,
+.Calculator-one-circle-I::after {
   content: "";
   position: absolute;
-  top: -220px;
-  left: -200px;
+
   width: 160px;
   height: 160px;
-  background: radial-gradient(circle at top center, #ec7e4a 0%, #0a1b30 80%);
+  background: radial-gradient(circle at top center, #CB8778 0%, #0a1b30 80%);
   border-radius: 50%;
   opacity: 0.9;
   z-index: 1;
   border: none;
-}
+} */
 
+/* .Calculator-one-circle-I::before {
+  top: -220px;
+  left: -200px;
+}
 .Calculator-one-circle-I::after {
-  content: "";
-  position: absolute;
   bottom: -270px;
   left: -200px;
-  width: 160px;
-  height: 160px;
-  background: radial-gradient(circle at top center, #ec7e4a 0%, #0a1b30 80%);
+  background: radial-gradient(circle at top center, #CB8778 0%, #0a1b30 80%);
   border-radius: 50%;
   opacity: 0.9;
   z-index: 1;
@@ -460,111 +430,62 @@ th {
   right: -200px;
   width: 160px;
   height: 160px;
-  background: radial-gradient(circle at top center, #ec7e4a 0%, #0a1b30 80%);
+  background: radial-gradient(circle at top center, #CB8778 0%, #0a1b30 80%);
   border-radius: 50%;
   opacity: 0.9;
   z-index: 1;
   border: none;
 }
 
-/* .Calculator-circles-side2-I {
-  content: "";
-  position: absolute;
-  top: 100px;
-  right: 40%;
-  transform: translateX(-50%);
-  width: 365px;
-  height: 365px;
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 50%;
-  filter: blur(60px);
-  border: none;
-} */
-
-/* .Calculator-circles-side2-I::after {
-  content: "";
-  position: absolute;
-  top: 345px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 365px;
-  height: 365px;
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 50%;
-  filter: blur(60px);
-  border: none;
-} */
-
-.Calculator-circles-side2-I::before {
-  content: "";
-  position: absolute;
-  top: -400px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 365px;
-  height: 365px;
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 50%;
-  filter: blur(60px);
-  border: none;
+.Calculator-circles-S2-I::before,
+.Calculator-circles-S2-I::after 
+  {
+    content: "";
+    position: absolute;
+    transform: translateX(-50%);
+    width: 365px;
+    height: 365px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    filter: blur(120px);
+    border: none;
+  }
+.Calculator-circles-S2-I::after {
+  top: 75%;
+  left: -45%;
 }
 
-.Calculator-circles-I::after {
+.Calculator-circles-S2-I::before {
+  top: -10%;
+  left: -89%;
+  z-index: -1;
+}
+.Calculator-circles-S1-I::before,
+.Calculator-circles-S1-I::after {
   content: "";
   position: absolute;
-  top: -250px;
   transform: translateX(-50%);
   width: 360px;
   height: 360px;
   background: rgba(255, 255, 255, 0.12);
   border-radius: 50%;
-  filter: blur(60px);
-  left: auto;
-  border: none;
+  filter: blur(120px);
 }
-.Calculator-circles-I::before {
-  /* content: ""; */
-  position: absolute;
-  top: -250px;
-  transform: translateX(-50%);
-  width: 360px;
-  height: 360px;
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 50%;
-  filter: blur(60px);
-  left: auto;
-  border: none;
-}
-.Calculator-circles-I {
-  content: "";
-  position: absolute;
-  top: -250px;
-  transform: translateX(-80%);
-  width: 360px;
-  height: 360px;
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 50%;
-  filter: blur(60px);
-  left: auto;
-  border: none;
-}
+.Calculator-circles-S1-I::before { top: 80%; left: 120%; }
+.Calculator-circles-S1-I::after { top: -200px; left: -165px; } */
 
-input,
-select {
-  border-radius: 20px !important;
-}
 
 .clear-btn-I {
   background-color: transparent;
-  color: white;
+  color: black;
   padding: 12px 24px;
   font-size: 20px;
+  border-radius: 30px !important;
   font-weight: bold;
-  transition: 0.3sease, border-color 0.3sease;
+  transition: 0.3s ease, border-color 0.3s ease;
   margin-right: 50px;
   border-top: 0;
   border-left: 0;
-  /* border-right: 0; */
 }
 
 /* Animations (unchanged) */
@@ -651,227 +572,269 @@ select {
 }
 
 .subtext-I {
-  position: relative;
-  left: 30px;
   margin-bottom: 0px;
+}
+/* Error Message Styling */
+.error-message-I {
+  color: #ff0000;
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: left;
+  position: absolute;
+  top: 100%;
+  left: 10px;
+  z-index: 2;
+}
+
+/* .numeric-input-I.error-I {
+  border: 2px solid #ff8c00;
+  outline: none;
+} */
+
+/* Popup Styling */
+.popup-overlay-I {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-I {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 90%;
+}
+
+.popup-I p {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.popup-close-btn-I {
+  background-color: #CB8778;
+  color: white;
+  padding: 10px 80px;
   border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
-/* Media Queries (unchanged except for span styling) */
-@media (max-width: 1400px) {
-  .left-panel-I .under-header-I {
-    font-size: 20px;
-    width: 85%;
-    border: none;
+.popup-close-btn-I:hover {
+  background-color: #ff8c00;
+}
+/* إعدادات عامة للأنيميشن */
+@keyframes fadeInUp-I {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-
-  .ideal-weight-title-I {
-    font-size: 48px;
-    line-height: 70px;
-    border: none;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (max-width: 1134px) {
-  .left-panel-I .under-header-I {
-    font-size: 19px;
-    width: 85%;
-    border: none;
-  }
+/* إعداد العناصر لتبدأ مخفية وتظهر بترتيب */
+.result-section-I h2,
+.result-section-I h3,
+.result-section-I p,
+.ideal-table-div-I,
+.ideal-table-I tbody tr,
+.ideal-buttons-result-I {
+  opacity: 0; /* نخليهم مخفيين في البداية */
+  animation-fill-mode: both; /* عشان يحتفظوا بالحالة النهائية بعد الأنيميشن */
+}
+
+/* تفعيل الأنيميشن لما showResults بيبقى true */
+.calorie-calculator-I.show-results-I .result-section-I h2 {
+  animation: fadeInUp-I 0.6s ease-out forwards;
+  animation-delay: 0.2s; /* h2 يظهر أولاً بعد 0.2 ثانية */
+}
+
+.calorie-calculator-I.show-results-I .result-section-I h3 {
+  animation: fadeInUp-I 0.6s ease-out forwards;
+  animation-delay: 0.4s; /* h3 يظهر بعد 0.4 ثانية */
+}
+
+.calorie-calculator-I.show-results-I .result-section-I p {
+  animation: fadeInUp-I 0.6s ease-out forwards;
+  animation-delay: 0.6s; /* p يظهر بعد 0.6 ثانية */
+}
+
+.calorie-calculator-I.show-results-I .ideal-table-div-I {
+  animation: fadeInUp-I 0.6s ease-out forwards;
+  animation-delay: 0.8s; /* الجدول ككل يظهر بعد 0.8 ثانية */
+}
+
+/* أنيميشن الصفوف في الجدول */
+.calorie-calculator-I.show-results-I .ideal-table-I tbody tr:nth-child(1) {
+  animation: fadeInUp-I 0.6s ease-out forwards;
+  animation-delay: 1s; /* الصف الأول يظهر بعد 1 ثانية */
+}
+
+.calorie-calculator-I.show-results-I .ideal-table-I tbody tr:nth-child(2) {
+  animation: fadeInUp-I 0.6s ease-out forwards;
+  animation-delay: 1.2s; /* الصف الثاني يظهر بعد 1.2 ثانية */
+}
+
+.calorie-calculator-I.show-results-I .ideal-table-I tbody tr:nth-child(3) {
+  animation: fadeInUp-I 0.6s ease-out forwards;
+  animation-delay: 1.4s; /* الصف الثالث يظهر بعد 1.4 ثانية */
+}
+
+.calorie-calculator-I.show-results-I .ideal-table-I tbody tr:nth-child(4) {
+  animation: fadeInUp-I 0.6s ease-out forwards;
+  animation-delay: 1.6s; /* الصف الرابع يظهر بعد 1.6 ثانية */
+}
+
+.calorie-calculator-I.show-results-I .ideal-table-I tbody tr:nth-child(5) {
+  animation: fadeInUp-I 0.6s ease-out forwards;
+  animation-delay: 1.8s; /* الصف الخامس يظهر بعد 1.8 ثانية */
+}
+
+.calorie-calculator-I.show-results-I .ideal-buttons-result-I {
+  animation: fadeInUp-I 0.6s ease-out forwards;
+  animation-delay: 2s; /* الأزرار تظهر أخيرًا بعد 2 ثانية */
 }
 /* Media Queries */
-@media (max-width: 1024px) {
-  .gender-selection-I {
-    gap: 20px;
-    justify-content: center;
-    border: none;
-  }
-  .gender-selection-I button {
-    padding: 10px 100px;
-    font-size: 25px;
-  }
+
+@media (max-width: 1025px) {
+  .Calculator-one-circle-s1-I::before,.Calculator-circles-S1-I::after,.Calculator-one-circle-I::before,.Calculator-one-circle-I::after,.Calculator-circles-S1-I::before,.Calculator-circles-S2-I::after,.Calculator-circles-S2-I::before  {display: none;}
+  .left-panel-I .small-image-I {width: 110px;height: 110px;}
+  .gender-selection-I {gap: 2rem;width: 100%;}
+  .left-panel-I .under-header-I {font-size: 21px;width: 60%;}
+  .ideal-weight-title-I {font-size: 50px;}
+  .Ideal-parameters-side1-I, .Ideal-parameters-side2-I {font-size: 30px;text-wrap: nowrap;}
+  .other-calculators-btn-B ,.clear-btn-I, .calculate-btn-I {font-size: 17px;}
+  .ideal-buttons-I, .ideal-buttons-result-I {margin-top: 15px; gap: 0;}
+  .other-calculators-btn-B, .clear-btn-I, .calculate-btn-I {padding: 10px 10px;}
+  .input-group-I {margin: 1rem 0 !important;}
+  .ideal-table-div-I {width: 100%;}
+  .result-section-I p {font-size: 20px;}
+  .right-panel-I {padding-top: 15% ;}
+  .input-section-I {width: 80%;}
+  .ideal-buttons-result-I {margin-top: 15px;gap: 2rem;}
+  .clear-btn-I {max-width: 6rem;}
+}
+@media (min-width:1000px) {
+  .result-section-I {padding-top: 0.5%;}
+}
+@media (max-width:885px) {
   .calorie-calculator-I {
     flex-direction: column;
-    height: auto;
-  }
-  .left-panel-I,
-  .right-panel-I {
-    width: 100%;
-  }
-  .calorie-calculator-I.show-results-I .left-panel-I {
-    order: 2;
-    border-right: none;
-  }
-  .calorie-calculator-I.show-results-I .right-panel-I {
-    order: 1;
-    border-left: none;
-  }
-  .ideal-weight-title-I {
-    font-size: 50px;
-    line-height: 85px;
-    text-align: center;
-  }
-  .left-panel-I .under-header-I {
-    font-size: 22px;
-    width: 70%;
-    text-align: center;
-  }
-  .left-panel-I .small-image-I {
-    width: 150px;
-    height: 150px;
-  }
+}
+  .left-panel-I .under-header-I {width: 60%;}
+  .ideal-table-div-I {width: 91%;}
+  .result-section-I h2 {font-size: 45px;}
+  .result-section-I h3 {font-size: 55px;}
+  .ideal-buttons-result-I {gap: 46px;}
   .input-section-I {
-    width: 60%;
-  }
-  .input-group-I {
-    padding: 8px;
-    margin: 15px 0;
-  }
-  .input-group-I label {
-    font-size: 25px;
-  }
-  .logo-I {
-    width: 270px;
-    height: 150px;
-  }
-  .input-group-I input {
-    padding: 12px;
-    font-size: 23px;
-  }
-  .gender-btn-I {
-    padding: 10px 0;
-    font-size: 25px;
-    width: 100%;
-  }
-  .ideal-buttons-I,
-  .ideal-buttons-result-I {
-    flex-direction: row;
-    justify-content: center;
-    gap: 30px;
-  }
-  .clear-btn-I,
-  .calculate-btn-I {
-    max-width: 225px;
-    font-size: 25px;
-  }
-  .result-section-I {
-    margin-left: 0;
-    text-align: center;
-  }
-  .result-section-I h2 {
-    font-size: 50px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-  }
-  .result-section-I h3 {
-    font-size: 60px;
-    margin-left: 15px;
-  }
-  .result-logo-I {
-    width: 270px;
-    height: 179px;
-  }
-  .ideal-table-I {
-    font-size: 16px;
-    max-width: 100%;
-  }
-  .ideal-table-I th,
-  .ideal-table-I td {
-    padding: 15px;
-    font-size: 25px;
-    text-wrap: nowrap;
-  }
-  .Calculator-one-circle-I::before,
-  .Calculator-one-circle-I::after,
-  .Calculator-one-circle-s1-I::before,
-  .Calculator-circles-side2-I::before {
-    display: none;
-  }
-  .left-panel-I .content-I,
-  .input-section-I,
-  .result-section-I {
-    height: 47vh;
-    margin-bottom: 100px;
-  }
-  .other-calculators-btn-I {
-    font-size: 25px;
-  }
-  .ideal-table-div-I {
-    width: 100%;
-  }
-  .result-header-I {
-    margin-left: 0px;
-  }
-  p {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    font-size: 27px;
-  }
+    width: 65%!important;
+}
+.left-panel-I{
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
 }
 
-@media (max-width: 840px) {
-  .gender-btn-I {
-    padding: 10px 0;
-    font-size: 25px;
-    border: 2px solid #ec7e4a;
-    width: 100%;
-  }
-  .ideal-table-I th,
-  .ideal-table-I td {
-    padding: 10px;
-    font-size: 25px;
-    border: 2px solid #ec7e4a;
-  }
-  .result-section-I h2 {
-    font-size: 50px;
-    margin-bottom: 20px;
-  }
-  .result-section-I h3 {
-    font-size: 60px;
-    margin-left: 15px;
-  }
-  .result-logo-I {
-    width: 240px;
-    height: 140px;
-    left: -5px;
-  }
+
+@media (max-width:854px) {
+  .right-panel-I {padding-top: 15%;padding-bottom: 75% !important;}
+  .result-section-I {padding-top: 15%;padding-bottom: 5% !important;}
+  .input-section-I {width: 65%;}.left-panel-I {padding-top: 10%;padding-bottom: 15%;}
+}
+@media (max-width:851px) {
+  .right-panel-I {padding-top: 15%;padding-bottom: 5% !important;}
+
+}
+@media (max-width: 821px) {
+  .right-panel-I {padding-bottom: 65% !important;}
+  .left-panel-I {padding-top: 20%;padding-bottom: 20%;}
+  .ideal-buttons-I {gap: 0px;width: 100%;}
+  .ideal-buttons-I {gap: 1.2rem;width: 100%;margin-top: 1.5rem;}
+  .right-panel-I {padding-top: 25% !important;}
+  .input-section-I {width: 65% !important;}
+}
+@media (max-width:800px) {
+  .calorie-calculator-I {flex-direction: column;}
+  .ideal-weight-title-I {font-size: 40px;}
+  .left-panel-I .under-header-I {width: 60%;}
+  .input-group-I {margin: 0px 0;width: 100%;}
+  .gender-selection-I {width: 100%;}
+  .left-panel-I .small-image-I {width: 90px;height: 90px;}
+  .Arrow-right-I {margin-top: 20px;}
+}
+@media(max-width:769px){
+  .right-panel-I {padding-bottom: 50% !important;}
+  .right-panel-I {padding-top: 20% !important;}
+  .input-section-I {width: 66% !important;}
+}
+@media (max-width:767px) {
+  .right-panel-I {padding-top: 15%;padding-bottom: 5% !important;}
 }
 
-@media (max-width: 768px) {
-  .left-panel-I .under-header-I {
-    font-size: 20px;
-  }
-  .ideal-weight-title-I {
-    font-size: 60px;
-  }
-  .gender-btn-I {
-    padding: 10px 0;
-    font-size: 23px;
-    border: 2px solid #ec7e4a;
-    width: 100%;
-  }
-  .ideal-table-I th,
-  .ideal-table-I td {
-    padding: 5px;
-    font-size: 23px;
-    border: 2px solid #ec7e4a;
-  }
-  .result-section-I {
-    height: 48vh;
-  }
-  .result-section-I h3 {
-    font-size: 50px;
-  }
-  .result-section-I h2 {
-    font-size: 50px;
-    margin-bottom: 10px;
-  }
-  .ideal-table-div-I {
-    width: 100%;
-    position: relative;
-    top: -15px;
-  }
-  .ideal-buttons-result-I {
-    margin-top: -20px;
-  }
+@media (max-width:550px) {
+  .ideal-table-I {width: 80%;}
+  .result-header-I {margin-left: 0px;}
+  .result-section-I p {font-size: 1rem;}
+  .ideal-buttons-I, .ideal-buttons-result-I {flex-direction: column;gap: 1rem;width: 100%;}
+  .input-section-I {width: 100%;}.clear-btn-I {max-width: 120px;font-size: 18px;margin:auto;}
+  .input-group-I {width: 100%;}.gender-selection-I {width: 100%;}
+  .gender-selection-I button {padding: 2px 0;}
+  .left-panel-I .under-header-I {width: 100%;}
+  .left-panel-I {padding-top: 20%;}
+  .right-panel-I {padding-bottom: 20% !important;}
+  .ideal-table-div-I {width: 125%;}
 }
+@media (max-width: 431px) {
+  .right-panel-I {padding-bottom: 65% !important;}
+  .left-panel-I {padding-top: 28%;padding-bottom: 28%;}
+  .input-section-I {width: 80% !important;}
+}
+@media (max-width:429px) {
+  .right-panel-I {padding-top: 15%;padding-bottom: 5% !important;}
+
+}
+@media (max-width: 415px) {
+  .right-panel-I {padding-bottom: 60% !important;}
+}
+@media (max-width:411px) {
+  .right-panel-I {padding-top: 15%;padding-bottom: 5% !important;}
+
+}
+@media (max-width: 361px) {
+  .right-panel-I {padding-bottom: 25% !important;}
+}
+@media (max-width: 376px) {
+  .right-panel-I {padding-bottom: 10% !important;}
+}
+@media (max-width: 391px) {
+  .right-panel-I {padding-bottom: 55% !important;}
+}
+@media (max-width: 376px) {
+  .right-panel-I {padding-bottom: 10% !important;}
+}
+@media (max-width: 361px) {
+  .right-panel-I {padding-bottom: 25% !important;}
+}
+@media (max-width: 345px) {
+  .right-panel-I {padding-bottom: 70% !important;}
+  .input-section-I {width: 90% !important;}
+}
+
+
+

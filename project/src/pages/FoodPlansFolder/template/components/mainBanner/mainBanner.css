@@ -1,0 +1,16 @@
+@media (max-width: 1500px) {
+  .main-title {
+    font-size: 6rem !important;
+  }
+  .icon-container {
+    /* width: 70% !important; */
+    margin: 2% auto !important;
+  }
+  .icons-container {
+    margin-top: 15rem !important;
+  }
+}
+a {
+  color: black;
+  text-decoration: none;
+}

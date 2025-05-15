@@ -10,12 +10,16 @@ import BMI from "./pages/calcsFolder/BMI/BMI";
 import BodyFat from "./pages/calcsFolder/Body-Fat/BodyFat";
 import Calorie from "./pages/calcsFolder/Calorie/Calorie";
 import Weight from "./pages/calcsFolder/Ideal-Weight/Weight";
+import Slider_FP from "./pages/FoodPlansFolder/FoodPlans";
+import WeightGain from "./pages/FoodPlansFolder/Weight-Gain/Weight-Gain-FP"
+import WeightLoss from "./pages/FoodPlansFolder/Weight-Loss/Weight-Loss-FP"
+import MuscleGain from "./pages/FoodPlansFolder/Muscle-Gain/Muscle-Gain-FP";
 import AuthForm from "./pages/Auth/Login/Login";
-
-// import AuthForm from "./pages/Auth/Login/Loginn";
 import ForgetPassword from "./pages/Auth/Password/Forget password/Auth-F";
-import NewPassword from "./pages/Auth/Password/New password/Auth-N";
-
+import NewPassword from "./pages/Auth/Password/New Password/Auth-N";
+import Slider_PT from "./pages/proTipsFolder/ProTips";
+// import MuscleGain from "./pages/FoodPlansFolder/Muscle-Gain/Muscle-Gain-FP";
+// import WeightLoss from "./pages/FoodPlansFolder/Weight-Loss/Weight-Loss-FP";
 function App() {
   return (
     <>
@@ -23,9 +27,9 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<AuthForm />} />
-            <Route path="/Forget-Password" element={<ForgetPassword />} />
-            <Route path="/New-Password" element={<NewPassword />} />
+            <Route path="/AuthForm" element={<AuthForm/>} />
+            <Route path="/Forget-Password" element={<ForgetPassword/>} />
+            <Route path="/New-Password" element={<NewPassword/>} />
             <Route path="/exercises" element={<Exercises />} />
             <Route path="/ProTips" element={<Tips />} />
             <Route path="/FoodPlans" element={<Plans />} />
@@ -35,7 +39,14 @@ function App() {
             <Route path="/BodyFat" element={<BodyFat />} />
             <Route path="/Calorie" element={<Calorie />} />
             <Route path="/Weight" element={<Weight />} />
-            <Route path="/Login" element={<AuthForm />} />
+            <Route path="/FoodPlanSlider" element={<Slider_FP/>}/>
+            <Route path="/weight-gain-details" element={<WeightGain />} />
+            <Route path="/weight-loss-details" element={<WeightLoss />} />
+            <Route path="/muscle-gain-details" element={<MuscleGain />} />
+            <Route path="/proTipsSlider" element={<Slider_PT />} />
+            
+            {/* <Route path="/weight-loss-details" element={<WeightLoss />} />
+            <Route path="/Muslce-gain-details" element={<MuscleGain />} /> */}
           </Routes>
         </Router>
         {/* <h1>app works!</h1> */}

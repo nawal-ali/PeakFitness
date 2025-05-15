@@ -1,0 +1,860 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Jomhuria&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Jomhuria&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  padding-right: 0;
+}
+input::-webkit-input-placeholder {
+  letter-spacing: 1px;
+  }
+.calorie-calculator-C {
+  display: flex;
+  width: 100vw;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.Calorie-title-C {
+  font-size: 50px;
+  margin-bottom: -10px;
+  z-index: 2;
+  color: #fff;
+  font-weight: bold;
+  line-height: 65px;
+  font-family: "Poppins";
+}
+.Pargraph-calories-per-meal-C{
+  text-align: center !important;
+}
+.title-C {
+  display: block;
+  line-height: 80px;
+}
+.left-panel-C {
+  flex: 1;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: transform 0.6s ease-in-out;
+  position: relative;
+}
+
+
+.left-panel-C .buttons-C {
+  display: none;
+}
+
+.calorie-calculator-C.show-results-C .left-panel-C {
+  transform: translateX(-100%);
+}
+
+.left-panel-C .background-image-C {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./imgs/Calorie.png");
+  background-position: 78% center;
+  background-repeat: no-repeat;
+  background-color: #000;
+  background-size: cover;
+  opacity: 90%;
+  z-index: 1;
+  filter: brightness(40%);
+}
+.result-section-C{
+  padding-top: 15%;
+  padding-bottom: 10%;
+}
+.left-panel-C .content-C {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* height: 100vh; */
+  text-align: center;
+  color: white;
+  z-index: 2;
+  /* margin-bottom: -20px; */
+}
+
+.left-panel-C .small-image-C {
+  width: 110px;
+  height: 110px;
+  background-position: 75% center;
+  background-image: url("./logo/KCAL.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;
+  margin-bottom: -5px;
+}
+
+.left-panel-C .under-header-C {
+  font-size: 25px;
+  color: #fff;
+  z-index: 2;
+  width: 90%;
+  margin-bottom: 50px;
+}
+
+.left-panel-C .arrow-C {
+  font-size: 24px;
+  margin-top: 20px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+
+.calorie-calculator-C.show-results-C .right-panel-C {
+  background-image: url("./imgs/Calorie.png");
+  background-position: 75% center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-blend-mode: multiply;
+  transform: translateX(0);
+  z-index: 1;
+}
+
+.gender-selection-C {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 30px;
+}
+
+.gender-selection-C button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 6px 0;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gender-selection-C button.active-C {
+  background-color: #CB8778;
+  color: white;
+  z-index: 1;
+}
+
+.gender-selection-C button:hover {
+  background-color: #CB8778;
+  color: white;
+  opacity: 1;
+}
+
+.input-section-C {
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  padding-top:10% ;
+  padding-bottom:12% ;
+}
+
+.input-group-C label,.activity-slider-C label {
+  display: block;
+  margin-bottom: 10px;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.input-group-C input {
+  width: 100%;
+  padding:  0.8rem;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #000;
+  /* outline: #000; */
+  border: 2px solid #000;
+}
+.input-group-C {
+  text-align: left;
+  width: 100%;
+  padding: 10px;
+  position: relative; /* Added to make it the reference for absolute positioning */
+}
+
+/* 
+.input-group-C input:focus {
+  border-color: #ff8c00;
+  box-shadow: 0 0 8px rgba(255, 140, 0, 0.5);
+} */
+
+.activity-slider-C {
+  margin-bottom: 2.5rem;
+  text-align: left;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+
+.slider-track-C {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  gap: 30px;
+  width: 120%;
+  max-width: 450px;
+}
+
+.slider-line-C {
+  flex-grow: 1;
+  position: absolute;
+  top: 30%;
+  left: 23px;
+  width: 90%;
+  height: 0.5px;
+  background-color: #000;
+  transform: translateY(-50%);
+  z-index: 1;
+  margin-right: 4px;
+}
+
+.slider-dot-container-C {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.slider-dot-C {
+  width: 25px;
+  height: 25px;
+  background-color: #919292;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.5s ease, background-color 0.5s ease;
+  z-index: 100;
+}
+
+.slider-dot-C.active-C {
+  background-color: #CB8778;
+  transform: scale(1.2);
+  border: #CB8778;
+}
+
+.slider-label-C {
+  font-size: 12px;
+  color: #fff;
+  margin-top: 5px;
+  text-wrap: nowrap;
+}
+
+.calorie-buttons-Result-C,
+.Calorie-buttons-C {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-top: 30px;
+  width: 100%;
+  border: none;
+  text-wrap: nowrap;
+}
+
+.calculate-btn-C {
+  background-color: #000;
+  color: white;
+  padding: 14px 40px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+  transition: 0.3s ease;
+}
+.calculate-again-btn-C {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #CB8778;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  opacity: 1;
+  animation: none;
+}
+
+.clear-btn-C,
+.calculate-btn-C {
+  flex: 1;
+  max-width: 180px;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+  letter-spacing: 2px;
+}
+
+.result-section-C {
+  text-align: left;
+  color: #fff !important;
+}
+
+p.calories-C {
+  font-size: 50px !important;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.calorie-value-C {
+  color: #CB8778;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.result-section-C h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.result-section-C p {
+  margin-bottom: 10px;
+  font-size: 22px;
+  text-align: left;
+}
+
+.macronutrients-C {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 145%;
+  max-width: 460px;
+  padding: 10px 0;
+}
+
+/* Updated macro-item-C styles for sequential animation */
+.macro-item-C {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  padding-bottom: 0;
+  padding-left: 0;
+  opacity: 0; /* Start hidden */
+  transform: translateY(20px); /* Start below */
+  border-bottom: 2px solid #808080;
+}
+
+.show-results-C .macro-item-C {
+  animation: slideIn 0.5s ease-out forwards; /* 0.5s duration per item */
+}
+
+/* Staggered delays for each macro-item */
+.show-results-C .macro-item-C:nth-child(1) {
+  animation-delay: 0s; /* First item starts immediately */
+}
+
+.show-results-C .macro-item-C:nth-child(2) {
+  animation-delay: 0.5s; /* Second item starts after 0.5s */
+}
+
+.show-results-C .macro-item-C:nth-child(3) {
+  animation-delay: 1s; /* Third item starts after 1s */
+}
+
+/* Define the slideIn animation */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Start below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at normal position */
+  }
+}
+
+.macronutrients-C .macro-label-C {
+  color: #fff;
+  font-size: 20px;
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+.macronutrients-C .macro-value-C {
+  color: #CB8778;
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+.macronutrients-C .macro-percentage-C {
+  color: #fff;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.other-calculators-btn-C {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #CB8778;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  opacity: 1;
+  animation: none;
+}
+
+/* .calculate-btn-C:hover,
+.clear-btn-C:hover,
+.other-calculators-btn-C:hover {
+  border-color: #ff8c00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
+} */
+
+.meals-toggle-C {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.meals-toggle-C button {
+  padding: 5px 10px;
+  border-radius: 20px;
+  outline: none;
+  margin-left: 40px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+  margin-bottom: 10px;
+  cursor: pointer;
+  width: 100px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 0; /* Start hidden */
+  transform: translateX(-20px); /* Start slightly to the left */
+}
+
+.show-results-C .meals-toggle-C button {
+  animation: slideInToggle 0.5s ease-out forwards; /* 0.5s duration per button */
+}
+
+/* Staggered delays for each meals-toggle button */
+.show-results-C .meals-toggle-C button:nth-child(1) {
+  animation-delay: 0s; /* "Per Day" starts immediately */
+}
+
+.show-results-C .meals-toggle-C button:nth-child(2) {
+  animation-delay: 0.5s; /* "3 Meals" starts after 0.5s */
+}
+
+.show-results-C .meals-toggle-C button:nth-child(3) {
+  animation-delay: 1s; /* "4 Meals" starts after 1s */
+}
+
+/* Define the slideInToggle animation */
+@keyframes slideInToggle {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px); /* Start left */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* End at normal position */
+  }
+}
+
+.meals-toggle-C button.active-C {
+  background-color: rgba(203, 135, 120,0.5);
+  color: white;
+}
+
+.meals-toggle-C button:hover {
+  opacity: 0.9;
+  background-color: rgba(203, 135, 120,0.5);
+}
+
+.calorie-calculator-C {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  /* height: 100vh; */
+  background-color: #fff;
+  overflow: hidden;
+}
+
+
+
+.right-panel-C {
+  flex: 1;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0rem 2rem;
+  transition: transform 0.6s ease-in-out;
+  z-index: 0;
+}
+
+.calorie-calculator-C.show-results-C .left-panel-C {
+  transform: translateX(0);
+}
+
+.calorie-calculator-C.show-results-C .right-panel-C {
+  transform: translateX(0);
+}
+
+
+/* Circles */
+/* .Calculator-circles-S1-C::before,
+.Calculator-circles-S1-C::after,
+.Calculator-circles-side2-C,
+.Calculator-circles-side2-C::after,
+.Calculator-circles-side2-C::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-50%);
+  width: 360px;
+  height: 360px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  filter: blur(120px);
+} */
+
+/* .Calculator-circles-S1-C::before { top: 80%; left: 120%; }
+.Calculator-circles-S1-C::after { top: -200px; left: -165px; }
+.Calculator-circles-side2-C { top: 100px; right: 25%; }
+.Calculator-circles-side2-C::after { top: 345px; left: 50%; }
+.Calculator-circles-side2-C::before { top: -400px; left: 50%; }
+.Calculator-one-circle-C::before {
+  content: "";
+  position: absolute;
+  top: -140px;
+  left: -220px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle at top center, #CB8778 0%, #0a1b30 80%);
+  border-radius: 50%;
+  opacity: 0.9;
+  z-index: 1;
+} */
+
+.flex-inputs-C {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.flex-inputs-C div {
+  width: 100%;
+}
+
+
+.clear-btn-C {
+  background-color: transparent;
+  color: #000;
+  padding: 12px 24px;
+  font-size: 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: 0.3s ease, border-color 0.3s ease;
+  margin-right: 50px;
+  border-top: 0;
+  border-left: 0;
+}
+
+.activity-level-C select {
+  width: 100%;
+  padding: 18px;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #000;
+  outline: none;
+}
+
+/* .input-group-C input:focus,
+.activity-level-C select:focus {
+  border-color: #ff8c00;
+  box-shadow: 0 0 8px rgba(255, 140, 0, 0.5);
+} */
+
+.Calorie-parameters-side2-C,
+.Calorie-parameters-side1-C {
+  color: #000;
+  margin-bottom: 30px;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin-top: 20px;
+}
+
+.error-message-C {
+  color: #ff0000;
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: left;
+  position: absolute; /* Changed to absolute */
+  top: 100%; /* Position it directly below the input */
+  left: 10px; /* Align with the padding of the input-group-C */
+  z-index: 2; /* Ensure it appears above other elements */
+}
+
+.error-message-C.weight-height-error-C {
+  display: none; /* Deprecated, no longer needed */
+}
+
+.numeric-input-C.error-C {
+  border: 2px solid #ff8c00;
+  outline: none;
+}
+
+.arrow-icon-C {
+  width: 20px;
+  height: 20px;
+  margin-left: -8px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.calorie-calculator-C.show-results-C .input-section-C {
+  animation: slideLeft 0.6s ease-in-out both;
+  opacity: 1 !important;
+  pointer-events: auto;
+}
+
+.calorie-calculator-C:not(.show-results-C) .input-section-C {
+  animation: slideRight 0.6s ease-in-out both;
+  opacity: 1 !important;
+  pointer-events: auto;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.calorie-calculator-C.show-results-C .result-section-C h2 {
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.calorie-calculator-C.show-results-C .result-section-C p {
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+.calorie-calculator-C.show-results-C .result-section-C .calories-C {
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+.calorie-calculator-C.show-results-C .result-section-C .macronutrients-C {
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
+}
+
+.calorie-calculator-C.show-results-C .result-section-C .calculate-again-C {
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+.result-section-C h2,
+.result-section-C p,
+.result-section-C .calories-C,
+.result-section-C .macronutrients-C,
+.result-section-C .calculate-again-C {
+  opacity: 0;
+  animation-fill-mode: both;
+}
+
+/* .subtext-C {
+  position: relative;
+  left: 30px;
+} */
+
+.Arrow-right-C {
+  width: 35px;
+  height: 35px;
+  background-image: url("../../../../public/imgs/Arrow-right.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;
+}
+
+.calorie-calculator-C.show-results-C .input-section-C .Calorie-buttons-Result-C {
+  display: none;
+}
+.popup-overlay-C {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-C {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 90%;
+}
+
+.popup-C p {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.popup-close-btn-C {
+  background-color: #CB8778;
+  color: white;
+  padding: 10px 80px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.popup-close-btn-C:hover {
+  background-color: #CB8778;
+}
+
+@media (max-width:1025px) {
+  .left-panel-C .under-header-C {font-size: 22px;}
+  
+}
+@media (max-width:913px) {
+  .left-panel-C .under-header-C {font-size: 1.2rem;}
+  .slider-track-C {width: 100%;}
+  .slider-line-C {left: 1rem;width: 88%;}
+}
+@media (max-width:821px) {
+  .Calculator-circles-S1-C::before, 
+  .Calculator-circles-S1-C::after, 
+  .Calculator-circles-side2-C, 
+  .Calculator-circles-side2-C::after, 
+  .Calculator-circles-side2-C::before {display: none;}
+  .calorie-calculator-C {flex-direction: column;}
+  .left-panel-C .background-image-C {background-size: auto;}
+  .left-panel-C .content-C {padding-top: 10%;padding-bottom: 20%;}
+  .right-panel-C {padding-bottom: 55%;}
+  .Pargraph-calories-per-meal-C{text-align: center;}
+  .calorie-buttons-Result-C, .Calorie-buttons-C {margin-top: 0px;}
+}
+@media (max-width: 769px) {
+  .right-panel-C {padding-bottom: 40%;}
+}
+@media (max-width: 541px) {
+  .right-panel-C {padding-bottom: 5%;}
+}
+@media (max-width:431px) {
+  .left-panel-C .content-C {padding-top: 30%;}
+  .left-panel-C .content-C {padding-bottom: 45%;}
+  .right-panel-C {padding-bottom: 45%;}
+  .calorie-buttons-Result-C, .Calorie-buttons-C {margin-top: 0px;flex-direction: column;}
+  .clear-btn-C {margin-right: 0px;}.calorie-buttons-Result-C, .Calorie-buttons-C {gap: 2rem;}
+  .slider-track-C {width: 100%;}.slider-line-C {left: 1rem;}
+  .left-panel-C .under-header-C {font-size: 1.2rem;width: 95%;}
+  .result-section-C {width: 100%;}.macronutrients-C {width: 100%;}
+  .meals-toggle-C button {margin-left: 15px;}
+  .Pargraph-calories-per-meal-C{text-align: center;}
+  .calculate-btn-C , .other-calculators-btn-C {padding: 10px 20px;}
+  .input-section-C {padding-bottom: 25%;}
+  .result-section-C {padding-top: 15%;padding-bottom: 25%;}
+}
+@media (max-width: 361px) {
+  .left-panel-C .under-header-C {font-size: 1.1rem;}
+  .left-panel-C .content-C {padding-bottom: 60%;}
+  .right-panel-C {padding-bottom: 10%;}
+  .slider-line-C {width: 80%;}
+  .meals-toggle-C button {margin-left: 0px;}
+  .calorie-buttons-Result-C, .Calorie-buttons-C {gap: 1.5rem;}
+  .Calorie-parameters-side2-C, .Calorie-parameters-side1-C {font-size: 30px;}
+}
+@media (max-width:391px) {
+  .slider-line-C {width: 81%;}
+}
+@media (max-width:376px) {
+  .result-section-C {padding-bottom: 0%;}
+  .right-panel-C {padding-bottom: 0%;}
+  .left-panel-C .content-C {padding-top: 30%;padding-bottom: 20%;}
+}
+@media (max-width:345px) {
+  .result-section-C {padding-bottom: 25%;}
+  .left-panel-C .content-C {padding-top: 35%;padding-bottom: 25%;}
+  .right-panel-C {padding-bottom: 50%;}
+}

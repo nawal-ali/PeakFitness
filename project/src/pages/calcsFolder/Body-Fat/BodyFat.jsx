@@ -1,20 +1,5 @@
-// import Navbar from "../../../assets/navFolder/Navbar";
-// import "./body.css";
-
-// export default function BodyFat() {
-//   return (
-//     <>
-//       <Navbar />
-//       {/* write all code within this div because nav has fixed position
-//        and content will be placed bahind it if it does not have margin top */}
-//       <div style={{ marginTop: "9%" }}>
-//         <p>body works</p>
-//       </div>
-//     </>
-//   );
-// }
-
 import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import Navbar from "../../../assets/navFolder/Navbar";
 import "./body.css";
 
@@ -50,12 +35,13 @@ const BodyFatCalc = () => {
   });
   const [bodyFatResults, setBodyFatResults] = useState(null);
   const [showResults, setShowResults] = useState(false);
-
   const [ageError, setAgeError] = useState("");
   const [weightError, setWeightError] = useState("");
   const [heightError, setHeightError] = useState("");
   const [neckError, setNeckError] = useState("");
   const [waistError, setWaistError] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupMessage, setPopupMessage] = useState("");
 
   useEffect(() => {
     localStorage.setItem("gender", gender);
@@ -86,11 +72,13 @@ const BodyFatCalc = () => {
   const calculateBodyFat = (e) => {
     e.preventDefault();
     if (!gender) {
-      alert("Please select a gender before calculating.");
+      setPopupMessage("Please select a gender before calculating.");
+      setShowPopup(true);
       return;
     }
     if (!age || !height || !weight || !neck || !waist) {
-      alert("Please fill in all fields before calculating.");
+      setPopupMessage("Please fill in all fields correctly.");
+      setShowPopup(true);
       return;
     }
 
@@ -145,63 +133,59 @@ const BodyFatCalc = () => {
   };
 
   const recalculateFromInputs = () => {
-    if (age && height && weight && gender && neck && waist) {
-      const heightInInches = parseInt(height) / 2.54;
-      const neckInInches = parseInt(neck) / 2.54;
-      const waistInInches = parseInt(waist) / 2.54;
-      const weightInKg = parseInt(weight);
-      let bodyFatPercentage;
-
-      if (gender === "male") {
-        bodyFatPercentage =
-          86.01 * Math.log10(waistInInches - neckInInches) -
-          70.041 * Math.log10(heightInInches) +
-          36.76;
-      } else {
-        const hipInInches = waistInInches;
-        bodyFatPercentage =
-          163.205 * Math.log10(waistInInches + hipInInches - neckInInches) -
-          97.684 * Math.log10(heightInInches) -
-          78.387;
-      }
-
-      bodyFatPercentage = Math.max(0, bodyFatPercentage).toFixed(1);
-      const bodyFatMass = ((bodyFatPercentage / 100) * weightInKg).toFixed(1);
-      const leanBodyMass = (weightInKg - bodyFatMass).toFixed(1);
-
-      let idealBodyFat;
-      if (gender === "male") {
-        idealBodyFat = 8.9;
-      } else {
-        idealBodyFat = 21.8;
-      }
-      idealBodyFat = idealBodyFat.toFixed(1);
-
-      const idealBodyFatMass = ((idealBodyFat / 100) * weightInKg).toFixed(1);
-      const bodyFatToLose = (bodyFatMass - idealBodyFatMass).toFixed(1);
-
-      const bodyFatCategory = getBodyFatStatus(bodyFatPercentage);
-
-      const results = {
-        bodyFatPercentage,
-        bodyFatCategory,
-        bodyFatMass,
-        leanBodyMass,
-        idealBodyFat,
-        bodyFatToLose,
-      };
-
-      setBodyFatResults(results);
-    } else {
-      alert(
-        "Please fill in all fields, including gender, before recalculating."
-      );
+    if (!age || !height || !weight || !gender || !neck || !waist) {
+      setPopupMessage("Please fill in all fields, including gender, before recalculating.");
+      setShowPopup(true);
+      return;
     }
-  };
 
-  // const resetForm = () => {
-  //     recalculateFromInputs();
-  // };
+    const heightInInches = parseInt(height) / 2.54;
+    const neckInInches = parseInt(neck) / 2.54;
+    const waistInInches = parseInt(waist) / 2.54;
+    const weightInKg = parseInt(weight);
+    let bodyFatPercentage;
+
+    if (gender === "male") {
+      bodyFatPercentage =
+        86.01 * Math.log10(waistInInches - neckInInches) -
+        70.041 * Math.log10(heightInInches) +
+        36.76;
+    } else {
+      const hipInInches = waistInInches;
+      bodyFatPercentage =
+        163.205 * Math.log10(waistInInches + hipInInches - neckInInches) -
+        97.684 * Math.log10(heightInInches) -
+        78.387;
+    }
+
+    bodyFatPercentage = Math.max(0, bodyFatPercentage).toFixed(1);
+    const bodyFatMass = ((bodyFatPercentage / 100) * weightInKg).toFixed(1);
+    const leanBodyMass = (weightInKg - bodyFatMass).toFixed(1);
+
+    let idealBodyFat;
+    if (gender === "male") {
+      idealBodyFat = 8.9;
+    } else {
+      idealBodyFat = 21.8;
+    }
+    idealBodyFat = idealBodyFat.toFixed(1);
+
+    const idealBodyFatMass = ((idealBodyFat / 100) * weightInKg).toFixed(1);
+    const bodyFatToLose = (bodyFatMass - idealBodyFatMass).toFixed(1);
+
+    const bodyFatCategory = getBodyFatStatus(bodyFatPercentage);
+
+    const results = {
+      bodyFatPercentage,
+      bodyFatCategory,
+      bodyFatMass,
+      leanBodyMass,
+      idealBodyFat,
+      bodyFatToLose,
+    };
+
+    setBodyFatResults(results);
+  };
 
   const clearInputs = () => {
     setGender("");
@@ -256,26 +240,27 @@ const BodyFatCalc = () => {
         <div className="left-panel-F">
           {!showResults ? (
             <>
-              {/* <div className="logo-F"></div> */}
               <div className="background-image-F"></div>
               <div className="content-F">
                 <div className="small-image-F"></div>
-                <h1 className="bmi-title-F">
+                <h1 className="fat-title-F">
                   <span className="title-F">Body Fat</span>
                   <span className="title-F">Calculator</span>
                 </h1>
                 <div className="under-header-F">
-                  <p>
+                  <p className="under">
                     It Estimates The Percentage Of Fat In Your Body Based On
                     Factors Like Weight, Height, Age, Gender, Neck And Waist.
                   </p>
                 </div>
+                <div className="Arrow-right-F"></div>
+
               </div>
             </>
           ) : (
             <form className="input-section-F" onSubmit={calculateBodyFat}>
               <div className="Calculator-one-circle-F"></div>
-              <h2 className="body-parameters-side2-F">Body Parameters</h2>
+              <h2 className="Fat-parameters-side2-F">Body Parameters</h2>
               <div className="gender-selection-F">
                 <button
                   className={gender === "male" ? "active-F" : ""}
@@ -331,9 +316,7 @@ const BodyFatCalc = () => {
                     pattern="[0-9]*"
                   />
                   {weightError && (
-                    <p className="error-message-F weight-height-error-F">
-                      {weightError}
-                    </p>
+                    <p className="error-message-F">{weightError}</p>
                   )}
                 </div>
                 <div className="input-group-F">
@@ -356,9 +339,7 @@ const BodyFatCalc = () => {
                     pattern="[0-9]*"
                   />
                   {heightError && (
-                    <p className="error-message-F weight-height-error-F">
-                      {heightError}
-                    </p>
+                    <p className="error-message-F">{heightError}</p>
                   )}
                 </div>
               </div>
@@ -381,9 +362,7 @@ const BodyFatCalc = () => {
                     pattern="[0-9]*"
                   />
                   {neckError && (
-                    <p className="error-message-F weight-height-error-F">
-                      {neckError}
-                    </p>
+                    <p className="error-message-F">{neckError}</p>
                   )}
                 </div>
                 <div className="input-group-F">
@@ -404,13 +383,11 @@ const BodyFatCalc = () => {
                     pattern="[0-9]*"
                   />
                   {waistError && (
-                    <p className="error-message-F weight-height-error-F">
-                      {waistError}
-                    </p>
+                    <p className="error-message-F">{waistError}</p>
                   )}
                 </div>
               </div>
-              <div className="bmi-buttons-F">
+              <div className="fat-buttons-F">
                 <input
                   type="button"
                   value="Clear"
@@ -434,7 +411,7 @@ const BodyFatCalc = () => {
             <form className="input-section-F" onSubmit={calculateBodyFat}>
               <div className="Calculator-circles-F"></div>
               <div className="Calculator-one-circle-s1-F"></div>
-              <h2 className="body-parameters-side1-F">Body Parameters</h2>
+              <h2 className="Fat-parameters-side1-F">Body Parameters</h2>
               <div className="gender-selection-F">
                 <button
                   className={gender === "male" ? "active-F" : ""}
@@ -490,9 +467,7 @@ const BodyFatCalc = () => {
                     pattern="[0-9]*"
                   />
                   {weightError && (
-                    <p className="error-message-F weight-height-error-F">
-                      {weightError}
-                    </p>
+                    <p className="error-message-F">{weightError}</p>
                   )}
                 </div>
                 <div className="input-group-F">
@@ -515,9 +490,7 @@ const BodyFatCalc = () => {
                     pattern="[0-9]*"
                   />
                   {heightError && (
-                    <p className="error-message-F weight-height-error-F">
-                      {heightError}
-                    </p>
+                    <p className="error-message-F">{heightError}</p>
                   )}
                 </div>
               </div>
@@ -540,9 +513,7 @@ const BodyFatCalc = () => {
                     pattern="[0-9]*"
                   />
                   {neckError && (
-                    <p className="error-message-F weight-height-error-F">
-                      {neckError}
-                    </p>
+                    <p className="error-message-F">{neckError}</p>
                   )}
                 </div>
                 <div className="input-group-F">
@@ -563,13 +534,11 @@ const BodyFatCalc = () => {
                     pattern="[0-9]*"
                   />
                   {waistError && (
-                    <p className="error-message-F weight-height-error-F">
-                      {waistError}
-                    </p>
+                    <p className="error-message-F">{waistError}</p>
                   )}
                 </div>
               </div>
-              <div className="bmi-buttons-F">
+              <div className="fat-buttons-F">
                 <div className="Calculator-circles-F"></div>
                 <input
                   type="button"
@@ -590,42 +559,41 @@ const BodyFatCalc = () => {
           ) : (
             <div className="result-section-F">
               <div className="Calculator-circles-side2-F"></div>
-              <div className="result-logo-F"></div>
               <div className="result-header-F">
                 <h2>Your Result</h2>
-                <h3 className="bmi-value-F">
+                <h3 className="fat-value-F">
                   Fat: {bodyFatResults?.bodyFatPercentage}%
                 </h3>
               </div>
-              <div className="bmi-table-div-F">
-                <table className="bmi-table-F">
+              <div className="fat-table-div-F">
+                <table className="fat-table-F">
                   <tbody>
                     <tr>
-                      <td className="bmi-value-F">
+                      <td className="fat-value-F">
                         Body Fat (U.S. Navy Method)
                       </td>
                       <td>{bodyFatResults?.bodyFatPercentage}%</td>
                     </tr>
                     <tr>
-                      <td className="bmi-value-F">Body Fat Category</td>
+                      <td className="fat-value-F">Body Fat Category</td>
                       <td>{bodyFatResults?.bodyFatCategory}</td>
                     </tr>
                     <tr>
-                      <td className="bmi-value-F">Body Fat Mass</td>
+                      <td className="fat-value-F">Body Fat Mass</td>
                       <td>{bodyFatResults?.bodyFatMass} kg</td>
                     </tr>
                     <tr>
-                      <td className="bmi-value-F">Lean Body Mass</td>
+                      <td className="fat-value-F">Lean Body Mass</td>
                       <td>{bodyFatResults?.leanBodyMass} kg</td>
                     </tr>
                     <tr>
-                      <td className="bmi-value-F">
+                      <td className="fat-value-F">
                         Ideal Body Fat For Given Age (Jackson & Pollock)
                       </td>
                       <td>{bodyFatResults?.idealBodyFat}%</td>
                     </tr>
                     <tr>
-                      <td className="bmi-value-F">
+                      <td className="fat-value-F">
                         Body Fat To Lose To Reach Ideal
                       </td>
                       <td>{bodyFatResults?.bodyFatToLose} kg</td>
@@ -633,21 +601,38 @@ const BodyFatCalc = () => {
                   </tbody>
                 </table>
               </div>
-              <div className="bmi-buttons-result-F">
+              <div className="fat-buttons-result-F">
                 <button
                   className="calculate-btn-F"
                   onClick={recalculateFromInputs}
                 >
                   Calculate Again
                 </button>
-                <button className="other-calculators-btn-F">
-                  Other Calculators
-                </button>
+                <Link to="/Calculators">
+                  <button className="other-calculators-btn-F">
+                    Other Calculators
+                  </button>
+                </Link>
               </div>
             </div>
           )}
         </div>
       </div>
+
+      {/* Popup Component */}
+      {showPopup && (
+        <div className="popup-overlay-F">
+          <div className="popup-F">
+            <p>{popupMessage}</p>
+            <button
+              className="popup-close-btn-F"
+              onClick={() => setShowPopup(false)}
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 };
