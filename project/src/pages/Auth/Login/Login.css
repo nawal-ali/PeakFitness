@@ -113,42 +113,6 @@ input::placeholder {
     transform: translateX(100%);
 }
 
-/* .signup-circles-Auth-Main {
-    content: "";
-    position: absolute;
-    top: -10%;
-    right: -10%;
-    background: radial-gradient(circle at top, #EC7E4A 10%, rgba(10, 27, 48, 0.9) 80%);
-    border-radius: 50%;
-    width: 12rem;
-    height: 12rem;
-    opacity: 0.8;
-} */
-/* 
-.signup-circles-Auth-Main::before {
-    content: "";
-    position: absolute;
-    top: 330%;
-    right: 120%;
-    width: 18rem;
-    height: 18rem;
-    background: radial-gradient(circle at top left, #EC7E4A 10%, #72331F 50%, #0A1B30 90%);
-    border-radius: 50%;
-    opacity: 0.4;
-} */
-
-/* .signup-circles-Auth-Main::after {
-    content: "";
-    position: absolute;
-    top: -100px;
-    right: 70%;
-    transform: translateX(-50%);
-    width: 360px;
-    height: 360px;
-    background: rgba(255, 255, 255, 0.12);
-    border-radius: 50%;
-    filter: blur(60px);
-} */
 
 /* Overlay Panels */
 .overlay-panel-Auth-Main {
@@ -351,7 +315,7 @@ footer a {
 .custom-input-Auth-Main:focus {
     color: black;
     background: white;
-    border: 1px solid #EC7E4A;
+    border: 1px solid #CB8778;
     outline: none;
 }
 
@@ -360,7 +324,7 @@ footer a {
 }
 
 .password-icon-Auth-Main:hover {
-    color: #EC7E4A;
+    color: #CB8778;
     transform: translateY(-50%) scale(1.1);
 }
 
@@ -590,7 +554,7 @@ footer a {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background: #202020;
+        background: #fff;
         overflow-y: auto; /* Allow scrolling if content overflows */
         position: relative;
         padding: 6rem 0;
@@ -711,7 +675,7 @@ footer a {
     }
 
     .custom-input-Auth-Main:focus {
-        border: 1px solid #EC7E4A;
+        border: 1px solid #CB8778;
         outline: none;
     }
 
@@ -745,7 +709,7 @@ footer a {
     }
 
     .password-icon-Auth-Main:hover {
-        color: #EC7E4A;
+        color: #CB8778;
     }
 
     /* Password hint popup */
@@ -788,7 +752,7 @@ footer a {
     /* Buttons */
     .SignUp-button-Auth-Main,
     .SignIn-button-Auth-Main {
-        background-color: #EC7E4A;
+        background-color: #CB8778;
         color: #fff;
         padding: 12px;
         border: none;
@@ -842,7 +806,7 @@ footer a {
     .switch-button-Auth-Main {
         background: none;
         border: none;
-        color: #EC7E4A;
+        color: #CB8778;
         font-size: 0.8rem;
         cursor: pointer;
         padding: 0;
@@ -968,43 +932,6 @@ input::placeholder {
     transform: translateX(100%);
 }
 
-/* .signup-circles-Auth-Main {
-    content: "";
-    position: absolute;
-    top: -10%;
-    right: -10%;
-    background: radial-gradient(circle at top, #EC7E4A 10%, rgba(10, 27, 48, 0.9) 80%);
-    border-radius: 50%;
-    width: 12rem;
-    height: 12rem;
-    opacity: 0.8;
-} */
-/* 
-.signup-circles-Auth-Main::before {
-    content: "";
-    position: absolute;
-    top: 330%;
-    right: 120%;
-    width: 18rem;
-    height: 18rem;
-    background: radial-gradient(circle at top left, #EC7E4A 10%, #72331F 50%, #0A1B30 90%);
-    border-radius: 50%;
-    opacity: 0.4;
-} */
-
-/* .signup-circles-Auth-Main::after {
-    content: "";
-    position: absolute;
-    top: -100px;
-    right: 70%;
-    transform: translateX(-50%);
-    width: 360px;
-    height: 360px;
-    background: rgba(255, 255, 255, 0.12);
-    border-radius: 50%;
-    filter: blur(60px);
-} */
-
 /* Overlay Panels */
 .overlay-panel-Auth-Main {
     position: absolute;
@@ -1206,7 +1133,7 @@ footer a {
 .custom-input-Auth-Main:focus {
     color: black;
     background: white;
-    border: 1px solid #EC7E4A;
+    border: 1px solid #CB8778;
     outline: none;
 }
 
@@ -1215,45 +1142,10 @@ footer a {
 }
 
 .password-icon-Auth-Main:hover {
-    color: #EC7E4A;
+    color: #CB8778;
     transform: translateY(-50%) scale(1.1);
 }
 
-/* .login-circles-Auth-Main {
-    position: absolute;
-    top: -10%;
-    left: -50px;
-    width: 12rem;
-    height: 12rem;
-    border-radius: 50%;
-    background: radial-gradient(circle at top, #ec7d4aa3 35%, rgba(10, 27, 48, 0.7) 75%);
-    opacity: 0.8;
-    left: -10%;
-} */
-
-/* .login-circles-Auth-Main::before {
-    content: "";
-    position: absolute;
-    top: 360%;
-    width: 12rem;
-    height: 12rem;
-    background: radial-gradient(circle at top left, #ec7d4a 35%, #72321f95 70%, #0A1B30 90%);
-    border-radius: 50%;
-    opacity: 0.9;
-} */
-/* 
-.login-circles-Auth-Main::after {
-    content: "";
-    position: absolute;
-    top: 150%;
-    left: 90%;
-    transform: translateX(-50%);
-    width: 23.75rem;
-    height: 23.75rem;
-    background: rgba(255, 255, 255, 0.12);
-    border-radius: 50%;
-    filter: blur(50px);
-} */
 
 .custom-input-Auth-Main.input-error-Auth-Main {
     border: 1px solid #ff4d4f;
@@ -1445,10 +1337,10 @@ footer a {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background: #202020;
+        background: #FFF;
         overflow-y: auto; /* Allow scrolling if content overflows */
         position: relative;
-        padding: 6rem 0;
+        padding: 6.5rem 0;
         min-height: 0;
     }
 
@@ -1526,7 +1418,7 @@ footer a {
     .SignIn-Form-Auth-Main {
         width: 100%;
         margin: 0;
-        padding: 20px;
+        padding: 0px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1548,7 +1440,7 @@ footer a {
     .SignIn-Form-Auth-Main label {
         font-size: 0.9rem;
         margin: 8px 0;
-        color: #fff;
+        color: #000;
         text-align: left;
         width: 100%;
     }
@@ -1566,7 +1458,7 @@ footer a {
     }
 
     .custom-input-Auth-Main:focus {
-        border: 1px solid #EC7E4A;
+        border: 1px solid #CB8778;
         outline: none;
     }
 
@@ -1600,7 +1492,7 @@ footer a {
     }
 
     .password-icon-Auth-Main:hover {
-        color: #EC7E4A;
+        color: #CB8778;
     }
 
     /* Password hint popup */
@@ -1643,7 +1535,7 @@ footer a {
     /* Buttons */
     .SignUp-button-Auth-Main,
     .SignIn-button-Auth-Main {
-        background-color: #EC7E4A;
+        background-color: #CB8778;
         color: #fff;
         padding: 12px;
         border: none;
@@ -1657,12 +1549,12 @@ footer a {
 
     .SignUp-button-Auth-Main:hover,
     .SignIn-button-Auth-Main:hover {
-        background-color: #d66b3f;
+        background-color: #CB8778;
     }
 
     /* Forget password link */
     .Forget-Auth-anchor {
-        color: #fff;
+        color: #000;
         text-decoration: none;
         font-size: 0.8rem;
         align-self: flex-end;
@@ -1690,14 +1582,14 @@ footer a {
     }
 
     .form-switch-link span {
-        color: #fff;
+        color: #000;
         font-size: 0.8rem;
     }
 
     .switch-button-Auth-Main {
         background: none;
         border: none;
-        color: #EC7E4A;
+        color: #CB8778;
         font-size: 0.8rem;
         cursor: pointer;
         padding: 0;
