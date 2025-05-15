@@ -27,7 +27,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/AuthForm" element={<AuthForm/>} />
+            <Route path="/Login" element={<AuthForm/>} />
             <Route path="/Forget-Password" element={<ForgetPassword/>} />
             <Route path="/New-Password" element={<NewPassword/>} />
             <Route path="/exercises" element={<Exercises />} />
