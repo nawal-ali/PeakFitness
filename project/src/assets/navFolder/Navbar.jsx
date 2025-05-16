@@ -1,6 +1,5 @@
 import "../navFolder/nav.css";
-import { Link } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 // eslint-disable-next-line react/prop-types
 //{ showSearch = true, showBackground = true }
@@ -25,8 +24,12 @@ export default function Navbar({ islogged, setIsLogged }) {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos]);
+
+  const navigate = useNavigate();
   const handleLogOut = () => {
     localStorage.setItem("islogged", "false");
+    setIsLogged(false);
+    navigate("/");
   };
 
   return (
