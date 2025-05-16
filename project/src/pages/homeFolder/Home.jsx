@@ -9,8 +9,15 @@ import "../homeFolder/home.css";
 import { Link } from "react-router-dom";
 import UncontrolledExample from "../../assets/carousel/Carousel ";
 import { useEffect } from "react";
+import axios from "axios";
 export default function Home() {
   const text_color = "#CB8778";
+  const baseUrl = "http://localhost:5000/api";
+
+  const gettingComments = async () => {
+    const comments = await axios.get(`${baseUrl}/comments`);
+    console.log(comments.data);
+  };
   useEffect(() => {
     // Load particles.js script dynamically
     const script = document.createElement("script");
@@ -18,6 +25,7 @@ export default function Home() {
     script.async = true;
     script.onload = initializeParticles;
     document.body.appendChild(script);
+    gettingComments();
 
     return () => {
       document.body.removeChild(script);
