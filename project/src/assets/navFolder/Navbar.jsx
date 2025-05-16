@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 // eslint-disable-next-line react/prop-types
 //{ showSearch = true, showBackground = true }
-export default function Navbar() {
+export default function Navbar({ islogged }) {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
 
@@ -25,6 +25,9 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos]);
+  const handleLogOut = () => {
+    localStorage.setItem("islogged", "false");
+  };
 
   return (
     <>
@@ -269,10 +272,38 @@ export default function Navbar() {
                   </NavLink>
                 </li>
               </ul>
-              <NavLink to="/Login" className="btn btn-dark me-3 px-4">
-                Login
-              </NavLink>
-              <button className="btn btn-light me-3 px-4">Sign Up</button>
+              {islogged && (
+                <div>
+                  <NavLink to="/Login" className="btn btn-dark me-3 px-4">
+                    Login
+                  </NavLink>
+                  <button className="btn btn-light me-3 px-4">Sign Up</button>
+                </div>
+              )}
+              {!islogged && (
+                <div className="nav-item dropdown me-5">
+                  <a
+                    className="nav-link dropdown-toggle fs-5 custom-link-color mx-1"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Welcome
+                  </a>
+                  <ul className="dropdown-menu dropdown-menu-dark">
+                    <li>
+                      <NavLink className="dropdown-item" to="/Calorie">
+                        My Profile
+                      </NavLink>
+                    </li>
+                    <li className="dropdown-item" onClick={handleLogOut}>
+                      Log Out
+                    </li>
+                  </ul>
+                </div>
+              )}
               {/* <form className="d-flex mt-3 mb-3" role="search">
                 <input
                   className="form-control me-2 rounded-pill"

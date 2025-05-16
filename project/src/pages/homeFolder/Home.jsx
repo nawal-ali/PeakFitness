@@ -8,9 +8,10 @@ import ToTop from "../../assets/toTopBtn/toTop";
 import "../homeFolder/home.css";
 import { Link } from "react-router-dom";
 import UncontrolledExample from "../../assets/carousel/Carousel ";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 export default function Home() {
   const text_color = "#CB8778";
+  let isLogged = localStorage.getItem("islogged");
   useEffect(() => {
     // Load particles.js script dynamically
     const script = document.createElement("script");
@@ -23,7 +24,15 @@ export default function Home() {
       document.body.removeChild(script);
     };
   }, []);
+  const [islogged, setIslogged] = useState(localStorage.getItem("islogged"));
+  useEffect(() => {
+    const checkLogin = () => {
+      setIslogged(localStorage.getItem("islogged"));
+    };
 
+    window.addEventListener("storage", checkLogin);
+    return () => window.removeEventListener("storage", checkLogin);
+  }, []);
   const initializeParticles = () => {
     if (window.particlesJS) {
       window.particlesJS("particles-js", {
@@ -61,7 +70,7 @@ export default function Home() {
   return (
     <>
       <ToTop />
-      <Navbar />
+      <Navbar islogged={isLogged} setIslogged={setIslogged} />
       <div className="min-vw-100 min-vh-100 position-relative">
         <div
           id="particles-js"

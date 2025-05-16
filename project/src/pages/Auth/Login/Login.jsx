@@ -91,6 +91,7 @@ const AuthForm = () => {
 
   const BASE_URL = "http://localhost:5000/api/auth";
   const navigate = useNavigate();
+  let isLoged;
   const handleSignUpSubmit = async (e) => {
     e.preventDefault();
     if (validateSignUp()) {
@@ -99,6 +100,7 @@ const AuthForm = () => {
       const response = await axios.post(`${BASE_URL}/signup`, signUpData);
       const message = response.data.message;
       if (message === "User registered successfully!") {
+        isLoged = localStorage.setItem("islogged", "true");
         navigate("/");
       }
     }
@@ -111,6 +113,7 @@ const AuthForm = () => {
       console.log("Sign In Data:", sanitizedData);
       const response = await axios.post(`${BASE_URL}/login`, signInData);
       if (response.data.action === "success") {
+        isLoged = localStorage.setItem("islogged", "true");
         navigate("/");
       }
     }
@@ -218,7 +221,6 @@ const AuthForm = () => {
                   <span>{signUpErrors.email}</span>
                 </div>
               )}
-
               <label htmlFor="password-signup">Password</label>
               <div className="password-container-Auth-Main">
                 <InputText
