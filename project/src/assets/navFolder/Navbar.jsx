@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 // eslint-disable-next-line react/prop-types
 //{ showSearch = true, showBackground = true }
-export default function Navbar({ islogged }) {
+export default function Navbar({ islogged, setIsLogged }) {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
 
@@ -272,7 +272,7 @@ export default function Navbar({ islogged }) {
                   </NavLink>
                 </li>
               </ul>
-              {islogged && (
+              {!islogged && (
                 <div>
                   <NavLink to="/Login" className="btn btn-dark me-3 px-4">
                     Login
@@ -280,7 +280,7 @@ export default function Navbar({ islogged }) {
                   <button className="btn btn-light me-3 px-4">Sign Up</button>
                 </div>
               )}
-              {!islogged && (
+              {islogged && (
                 <div className="nav-item dropdown me-5">
                   <a
                     className="nav-link dropdown-toggle fs-5 custom-link-color mx-1"

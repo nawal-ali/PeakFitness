@@ -24,15 +24,13 @@ export default function Home() {
       document.body.removeChild(script);
     };
   }, []);
-  const [islogged, setIslogged] = useState(localStorage.getItem("islogged"));
-  useEffect(() => {
-    const checkLogin = () => {
-      setIslogged(localStorage.getItem("islogged"));
-    };
+  const [islogged, setIsLogged] = useState(() => {
+    return localStorage.getItem("islogged") === "true";
+  });
 
-    window.addEventListener("storage", checkLogin);
-    return () => window.removeEventListener("storage", checkLogin);
-  }, []);
+  useEffect(() => {
+    localStorage.setItem("islogged", islogged);
+  }, [islogged]);
   const initializeParticles = () => {
     if (window.particlesJS) {
       window.particlesJS("particles-js", {
@@ -70,7 +68,7 @@ export default function Home() {
   return (
     <>
       <ToTop />
-      <Navbar islogged={isLogged} setIslogged={setIslogged} />
+      <Navbar islogged={islogged} setIsLogged={setIsLogged} />
       <div className="min-vw-100 min-vh-100 position-relative">
         <div
           id="particles-js"
