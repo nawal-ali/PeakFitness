@@ -14,10 +14,12 @@ import Slider_FP from "./pages/FoodPlansFolder/FoodPlans";
 import WeightGain from "./pages/FoodPlansFolder/Weight-Gain/Weight-Gain-FP"
 import WeightLoss from "./pages/FoodPlansFolder/Weight-Loss/Weight-Loss-FP"
 import MuscleGain from "./pages/FoodPlansFolder/Muscle-Gain/Muscle-Gain-FP";
-import Login from "./pages/Auth/Login/Login";
+// import Login from "./pages/Auth/Login/Login";
 import ForgetPassword from "./pages/Auth/Password/Forget password/Auth-F";
 import NewPassword from "./pages/Auth/Password/New Password/Auth-N";
 import Slider_PT from "./pages/proTipsFolder/ProTips";
+import Login1 from "./pages/Auth/Login/Login1";
+// import SignUp1 from "./pages/Auth/SignUp/SignUp1";
 // import MuscleGain from "./pages/FoodPlansFolder/Muscle-Gain/Muscle-Gain-FP";
 // import WeightLoss from "./pages/FoodPlansFolder/Weight-Loss/Weight-Loss-FP";
 function App() {
@@ -27,7 +29,9 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/Login" element={<Login/>} />
+            {/* <Route path="/SignUp" element={<SignUp1 />} /> */}
+            <Route path="/Login1" element={<Login1 />} />
+            {/* <Route path="/Login" element={<Login/>} /> */}
             <Route path="/Forget-Password" element={<ForgetPassword/>} />
             <Route path="/New-Password" element={<NewPassword/>} />
             <Route path="/exercises" element={<Exercises />} />
