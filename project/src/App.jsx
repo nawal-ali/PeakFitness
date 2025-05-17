@@ -15,6 +15,7 @@ import WeightGain from "./pages/FoodPlansFolder/Weight-Gain/Weight-Gain-FP"
 import WeightLoss from "./pages/FoodPlansFolder/Weight-Loss/Weight-Loss-FP"
 import MuscleGain from "./pages/FoodPlansFolder/Muscle-Gain/Muscle-Gain-FP";
 import Login from "./pages/Auth/Login/Login";
+import Profile from "./pages/profile/Profile";
 import ForgetPassword from "./pages/Auth/Password/Forget password/Auth-F";
 import NewPassword from "./pages/Auth/Password/New Password/Auth-N";
 import Slider_PT from "./pages/proTipsFolder/ProTips";
@@ -44,6 +45,7 @@ function App() {
             <Route path="/weight-loss-details" element={<WeightLoss />} />
             <Route path="/muscle-gain-details" element={<MuscleGain />} />
             <Route path="/proTipsSlider" element={<Slider_PT />} />
+            <Route path="/profile" element={<Profile />} />
             
             {/* <Route path="/weight-loss-details" element={<WeightLoss />} />
             <Route path="/Muslce-gain-details" element={<MuscleGain />} /> */}

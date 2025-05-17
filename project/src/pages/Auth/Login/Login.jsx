@@ -98,10 +98,11 @@ const AuthForm = () => {
       const sanitizedData = signUpData;
       console.log("Sign Up Data:", sanitizedData);
       const response = await axios.post(`${BASE_URL}/signup`, signUpData);
-      const message = response.data.message;
-      if (message === "User registered successfully!") {
-        isLoged = localStorage.setItem("islogged", "true");
-        navigate("/");
+      // const message = response.data.message;
+      if (response.data.message === "User registered successfully!") {
+        // isLoged = localStorage.setItem("islogged", "true");
+        // localStorage.setItem('token',response.data.token)
+        navigate("/Login");
       }
     }
   };
@@ -114,6 +115,7 @@ const AuthForm = () => {
       const response = await axios.post(`${BASE_URL}/login`, signInData);
       if (response.data.action === "success") {
         isLoged = localStorage.setItem("islogged", "true");
+        localStorage.setItem('token',response.data.token)
         navigate("/");
       }
     }
