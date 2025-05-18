@@ -1,4 +1,3 @@
-
 import Navbar from "../../../assets/navFolder/Navbar";
 import ProTipsTemp from "../proTips_template/ProTipsTemp";
 
