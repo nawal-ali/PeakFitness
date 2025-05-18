@@ -74,8 +74,8 @@ const SignUp = () => {
       const response = await axios.post(`${BASE_URL}/signup`, signUpData);
       const message = response.data.message;
       if (message === "User registered successfully!") {
-        isLoged = localStorage.setItem("islogged", "true");
-        navigate("/");
+        // isLoged = localStorage.setItem("islogged", "true");
+        navigate("/Login");
       }
     }
   };

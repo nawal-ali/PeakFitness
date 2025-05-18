@@ -35,19 +35,17 @@ const Login = () => {
   const BASE_URL = "http://localhost:5000/api/auth";
   const navigate = useNavigate();
   let isLoged;
-  const handleSignUpSubmit = async (e) => {
-    e.preventDefault();
-    if (validateSignUp()) {
-      const sanitizedData = signUpData;
-      console.log("Sign Up Data:", sanitizedData);
-      const response = await axios.post(`${BASE_URL}/signup`, signUpData);
-      // const message = response.data.message;
-      if (response.data.message === "User registered successfully!") {
-        // isLoged = localStorage.setItem("islogged", "true");
-        navigate("/Login");
-      }
-    }
-  };
+  // const handleSignUpSubmit = async (e) => {
+  //   e.preventDefault();
+  //   if (validateSignUp()) {
+  //     const sanitizedData = signUpData;
+  //     console.log("Sign Up Data:", sanitizedData);
+  //     const response = await axios.post(`${BASE_URL}/signup`, signUpData);
+  //     if (response.data.message === "User registered successfully!") {
+  //       navigate("/Login");
+  //     }
+  //   }
+  // };
 
   const handleSignInSubmit = async (e) => {
     e.preventDefault();
