@@ -44,6 +44,7 @@ const Login = () => {
       // const message = response.data.message;
       if (response.data.message === "User registered successfully!") {
         // isLoged = localStorage.setItem("islogged", "true");
+        // localStorage.setItem('token',response.data.token)
         navigate("/Login");
       }
     }
@@ -56,7 +57,8 @@ const Login = () => {
       console.log("Sign In Data:", sanitizedData);
       const response = await axios.post(`${BASE_URL}/login`, signInData);
       if (response.data.action === "success") {
-        localStorage.setItem("islogged", "true");
+        isLoged = localStorage.setItem("islogged", "true");
+        localStorage.setItem('token',response.data.token)
         navigate("/");
       }
     }
