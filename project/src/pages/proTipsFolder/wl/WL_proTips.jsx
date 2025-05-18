@@ -7,39 +7,39 @@ export default function WL_proTips() {
       <Navbar />
       <ProTipsTemp
         sec1_tips_img="./imgs/wg_sec1_tips.png"
-        sec1_tips_title="Weight Gain"
-        sec1_tips_desc="This section will guide you with smart, healthy strategies to add mass and build strength the right way."
+        sec1_tips_title="Weight Loss"
+        sec1_tips_desc="In this section, you’ll find expert tips to help you effectively and sustainably reach your weight loss goals"
         sec2_tips_img="./imgs/wg_tips_sec2.png"
-        sec2_tips_title="Tips to Overcome Loss of Appetite"
+        sec2_tips_title="Effective Fat-Burning Workouts"
         sec2_tips_list={[
           {
             img: "./logo/mg_tips_sec2_logo1.svg",
-            coloredText: "Eat small, frequent meals:",
-            text: "Instead of 3 large meals, go for 5–6 small, easy-to-digest ones throughout the day.",
+            coloredText: "Running or Brisk Walking",
+            text: "Burns calories and increases heart rate.",
           },
           {
             img: "./logo/mg_tips_sec2_logo1.svg",
-            coloredText: "Focus on calorie-dense, small portions :",
-            text: "Add foods like nut butters, cheese, and avocado—high in energy without feeling too full.",
+            coloredText: "HIIT",
+            text: "Combines intense activity with short rest periods for fast fat burning.",
           },
           {
             img: "./logo/mg_tips_sec2_logo1.svg",
-            coloredText: "Drink your calories :",
-            text: "Smoothies made with whole milk, fruits, and nuts are easier on the stomach and filling.",
+            coloredText: "Swimming",
+            text: "A full-body workout that burns fat and builds muscle.",
           },
           {
             img: "./logo/mg_tips_sec2_logo1.svg",
-            coloredText: "Eat with others or during entertainment :",
-            text: "A pleasant environment makes eating feel lighter and more enjoyable.",
+            coloredText: "Strength Training",
+            text: "Builds muscle, increasing fat burn even at rest.",
           },
         ]}
-        sec3_tips_title="Common Mistakes That Prevent Weight Gain"
-        sec3_tips_colredTitle="(Even If You're Eating More)"
+        sec3_tips_title="Best Fat-Burning Foods"
+        sec3_tips_colredTitle="Adding these foods to your diet can accelerate your weight loss results"
         sec3_tips_text={[
-          "You might think you're eating a lot, but without tracking, you could still be under your needs.",
-          "Skipping or delaying meals lowers your daily intake, keeping your weight stagnant.",
-          "Eating without resistance training leads to fat gain, not lean muscle.",
-          "Like salads and veggies—great for health, but you need calorie-dense foods too (nuts, healthy oils).",
+          "Contains antioxidants that enhance metabolism and help burn fat.",
+          "Rich in healthy fats that promote satiety and improve fat burning.",
+          "Contain capsaicin, which stimulates the body to burn fat.",
+          "Rich in protein, they support muscle building and increase fat burning.",
         ]}
         sec3_tips_imgs={[
           "./imgs/mg_tips_sec31.png",
@@ -48,38 +48,38 @@ export default function WL_proTips() {
           "./imgs/mg_tips_sec31.png",
         ]}
         sec3_tips_coloredText={[
-          "Not Tracking Your Calories",
-          "Inconsistent Meal Timing",
-          "Neglecting Strength Training",
-          "Relying Only on Low-Calorie, Filling Foods",
+          "Green Tea",
+          "Avocado",
+          "Chili Peppers",
+          "Eggs",
         ]}
-        sec4_tips_title="High-Calorie Snacks"
+        sec4_tips_title="Water's Role in Weight Loss"
         sec4_tips_img="./imgs/wg_tips_sec4.png"
         sec4_tips_list={[
-          "Peanut butter with banana slices or dates",
-          "Full-fat cheese cubes with nuts",
-          "Whole grain toast with avocado and olive oil",
-          "Roasted sweet potato with spices and olive oil",
-          "Boiled or pan-fried eggs in olive oil",
+          "Curbs Appetite: Drinking water before meals reduces hunger.",
+          "Boosts Calorie Burn: Water enhances metabolism and burns more calories.",
+          "Improves Exercise Performance: Hydration helps improve workout performance.",
+          "Detoxifies the Body: Aids in flushing out toxins and improving body function.",
+          //   "Boiled or pan-fried eggs in olive oil",
         ]}
-        sec5_tips_title="Best Times to Eat for Effective Weight Gain"
-        sec5_tips_coloredTitle="Timing your meals right can boost weight gain effectively and support muscle growth."
+        sec5_tips_title="Important General Tips for Weight Loss"
+        sec5_tips_coloredTitle="Follow These Tips to See Faster Weight Loss Results"
         sec5_tips_list={[
           {
-            title: "01",
-            text: "Breakfast within the first hour of waking up",
+            title: "Anti-inflammatory Foods",
+            text: "helps reduce inflammation that may negatively impact fat burning.",
           },
           {
-            title: "02",
-            text: "Eat every 3 hours",
+            title: "Probiotic-rich Meals",
+            text: "uch as yogurt, kefir, and pickles",
           },
           {
-            title: "03",
-            text: "A filling snack before your workout",
+            title: "Low-Carb Foods",
+            text: "Like leafy vegetables, broccoli, and mushrooms",
           },
           {
-            title: "04",
-            text: "A protein-rich meal right after your workout",
+            title: "Calcium-Rich Foods",
+            text: "can help regulate fat in the body and improve metabolism.",
           },
         ]}
       />
