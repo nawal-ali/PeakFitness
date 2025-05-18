@@ -6,7 +6,7 @@ import Footer from "../../assets/footerFolder/Footer";
 import CommentCard from "../../assets/comments/CommentCard";
 import ToTop from "../../assets/toTopBtn/toTop";
 import "../homeFolder/home.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 // import UncontrolledExample from "../../assets/carousel/Carousel ";
 import { useState, useEffect } from "react";
 export default function Home() {
@@ -40,9 +40,12 @@ export default function Home() {
               The journey of a thousand miles begins with a single step! Take
               your first step towards better fitness and join us today.
             </h3>
-            <button className="btn btn-dark text-light px-4 fs-4 mt-5">
+            <NavLink
+              to="/signup"
+              className="btn btn-dark text-light px-4 fs-4 mt-5"
+            >
               Join Us Now
-            </button>
+            </NavLink>
           </div>
         </div>
       </div>
@@ -81,9 +84,9 @@ export default function Home() {
           ></model-viewer>
         </div>
       </div>
-      <div style={{ marginTop: "20%" }}>{/* <UncontrolledExample /> */}</div>
+      {/* <div style={{ marginTop: "20%" }}><UncontrolledExample /></div> */}
       <div>
-        <div className="angled-background margin-top-10 flex-column flex-md-row">
+        <div className="angled-background margin-top-10 flex-column flex-md-row px-0">
           <div className="mt-5 custom-card card-3">
             <Link
               to="/Calculators"
