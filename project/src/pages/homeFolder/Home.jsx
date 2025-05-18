@@ -7,23 +7,12 @@ import CommentCard from "../../assets/comments/CommentCard";
 import ToTop from "../../assets/toTopBtn/toTop";
 import "../homeFolder/home.css";
 import { Link } from "react-router-dom";
-import UncontrolledExample from "../../assets/carousel/Carousel ";
+// import UncontrolledExample from "../../assets/carousel/Carousel ";
 import { useState, useEffect } from "react";
 export default function Home() {
   const text_color = "#CB8778";
   let isLogged = localStorage.getItem("islogged");
-  useEffect(() => {
-    // Load particles.js script dynamically
-    const script = document.createElement("script");
-    script.src = "https://cdn.jsdelivr.net/npm/particles.js";
-    script.async = true;
-    script.onload = initializeParticles;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
+  // useEffect(() => {}, []);
   const [islogged, setIsLogged] = useState(() => {
     return localStorage.getItem("islogged") === "true";
   });
@@ -31,71 +20,30 @@ export default function Home() {
   useEffect(() => {
     localStorage.setItem("islogged", islogged);
   }, [islogged]);
-  const initializeParticles = () => {
-    if (window.particlesJS) {
-      window.particlesJS("particles-js", {
-        particles: {
-          number: { value: 80 },
-          color: { value: text_color },
-          shape: { type: "circle" },
-          opacity: { value: 0.5 },
-          size: { value: 3 },
-          line_linked: {
-            enable: true,
-            distance: 150,
-            color: text_color,
-            opacity: 0.4,
-            width: 1,
-          },
-          move: { enable: true, speed: 2 },
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            // onhover: { enable: true, mode: 'repulse' },
-            // onclick: { enable: true, mode: 'push' }
-          },
-          modes: {
-            repulse: { distance: 100 },
-            push: { particles_nb: 4 },
-          },
-        },
-        retina_detect: true,
-      });
-    }
-  };
 
   return (
     <>
       <ToTop />
       <Navbar islogged={islogged} setIsLogged={setIsLogged} />
-      <div className="min-vw-100 min-vh-100 position-relative">
-        <div
-          id="particles-js"
-          style={{
-            // position: "fixed",
-            width: "100vw",
-            height: "100vh",
-            backgroundColor: "#fff",
-          }}
-        ></div>
-        {/* <img
-          // src="./imgs/Rectangle 84.png"
-          src="./imgs/main-bg.jpg"
-          alt="Rectangle 84 the top section img"
-          className="vw-100 min-vh-100 object-fit-cover"
-        /> */}
-        {/* <div
-          className="position-absolute top-0 start-0 w-100 h-100"
-          style={{ backgroundColor: "rgba(92, 91, 91, 0.4)" }} // Light white overlay
-        ></div> */}
-        <div
-          className="position-absolute m-auto w-100 d-flex justify-content-center align-items-center"
-          style={{ top: "20%" }}
-        >
-          <h1 style={{ fontSize: "5rem" }}>
-            Welcome to <span style={{ color: text_color }}>PeakFitness</span>
-          </h1>
+      <div
+        className="min-vw-100 min-vh-100 position-relative"
+        style={{ marginTop: "9%" }}
+      >
+        <div className="row">
+          <div className="col-12 col-md-4">
+            <img src="./imgs/home_main_img.png" alt="" className="w-100" />
+          </div>
+          <div className="col-12 col-md-8">
+            <h1 style={{ fontSize: "6rem" }}>Welcome to</h1>
+            <h1 style={{ color: "#CB8778", fontSize: "6rem" }}>PeakFitness</h1>
+            <h3 className="w-75 mt-5">
+              The journey of a thousand miles begins with a single step! Take
+              your first step towards better fitness and join us today.
+            </h3>
+            <button className="btn btn-dark text-light px-4 fs-4 mt-5">
+              Join Us Now
+            </button>
+          </div>
         </div>
       </div>
       <div className="row container-fluid section-1 margin-top-10 ">
@@ -133,9 +81,7 @@ export default function Home() {
           ></model-viewer>
         </div>
       </div>
-      <div style={{ marginTop: "20%" }}>
-        <UncontrolledExample />
-      </div>
+      <div style={{ marginTop: "20%" }}>{/* <UncontrolledExample /> */}</div>
       <div>
         <div className="angled-background margin-top-10 flex-column flex-md-row">
           <div className="mt-5 custom-card card-3">
