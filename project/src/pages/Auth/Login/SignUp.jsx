@@ -381,7 +381,7 @@ const SignUp = () => {
               )}
             </div>
             <div className="col-12">
-              <button className="SignUp-button-Auth-Main" type="submit">
+              <button className="SignUp-button-Auth-Main-1" type="submit">
                 Sign Up
               </button>
             </div>
