@@ -1,5 +1,7 @@
-import Navbar from "../../assets/navFolder/Navbar";
-import ProTipsTemp from "./proTips_template/ProTipsTemp";
+
+import Navbar from "../../../assets/navFolder/Navbar";
+import ProTipsTemp from "../proTips_template/ProTipsTemp";
+
 export default function WG_proTips() {
   return (
     <>

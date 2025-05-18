@@ -8,20 +8,25 @@
   display: flex;
   align-items: end;
   /* Contains the bubble + carousel */
-  min-height: 540px; /* Enough space for bubble & carousel */
+  min-height: 340px; /* Enough space for bubble & carousel */
 }
-.custom-color {
+/* .custom-color {
   color: #ec7e4a;
-}
+} */
 .carousel-wrapper {
-  flex: 1 1 auto; /* Prevents flexbox from shrinking it */
-  width: 100%; /* Ensures proper width */
+  /* flex: 1 1 auto; Prevents flexbox from shrinking it */
+  /* width: 100%; Ensures proper width */
 }
-
 /* Orange bubble styling */
 .orange-bubble {
-  background-color: #ec7e4a;
+  background-color: #000000;
   border-radius: 1rem;
+}
+
+@media screen and (max-width: 870px) {
+  .orange-bubble {
+    height: 110% !important;
+  }
 }
 
 .speech-icon {
@@ -32,7 +37,7 @@
 
 /* Tweak the card styling if desired */
 .card {
-  min-width: 350px;
+  min-width: 400px;
 }
 .card:hover {
   transform: none;

@@ -61,9 +61,10 @@ const NewPassword = () => {
 
     return (
         <div className="Main-container-Auth-NFP">
-            <img src="/public/imgs/Logo-4.svg" alt="Logo" className="logo-NP" />
-            <div className="container-NP">
-                <form onSubmit={handleSubmit} className="new-password-box-NP" noValidate>
+            {/* Top Section: Logo, Key Icon, Header, Description, and Password Input */}
+            <div className="top-section-Auth-NFP">
+                <img src="/public/imgs/Logo-4.svg" alt="Logo" className="logo-NP" />
+                <div className="header-container-Auth-NFP">
                     <div className="svg-container-NP">
                         <img src="/public/imgs/Key.svg" alt="Key Icon" className="Logo-Key" />
                     </div>
@@ -73,30 +74,39 @@ const NewPassword = () => {
                             Please enter your <span className="Span-Auth-FPN">new password</span>
                         </p>
                     </div>
-                    <div className="input-container-Auth-FPN">
-                        {/* Password Field */}
-                        <div className="input-box-NP">
-                            <label htmlFor="password" className="input-label-NP">
-                                Password
-                            </label>
-                            <div className="input-wrapper-NP">
-                                <input
-                                    className="input-Auth-FPN"
-                                    type={showPassword ? "text" : "password"}
-                                    id="password"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    placeholder="Enter your password"
-                                />
-                                <i
-                                    className={`bx ${showPassword ? "bx-show" : "bx-low-vision"} password-icon-NP`}
-                                    onClick={togglePasswordVisibility}
-                                ></i>
+                    <form onSubmit={handleSubmit} className="new-password-box-NP" noValidate>
+                        <div className="input-container-Auth-FPN">
+                            {/* Password Field */}
+                            <div className="input-box-NP input-box-NP-child1">
+                                <label htmlFor="password" className="input-label-NP">
+                                    Password
+                                </label>
+                                <div className="input-wrapper-NP">
+                                    <input
+                                        className="input-Auth-FPN"
+                                        type={showPassword ? "text" : "password"}
+                                        id="password"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        placeholder="Enter your password"
+                                    />
+                                    <i
+                                        className={`bx ${showPassword ? "bx-show" : "bx-low-vision"} password-icon-NP`}
+                                        onClick={togglePasswordVisibility}
+                                    ></i>
+                                </div>
                             </div>
                         </div>
+                    </form>
+                </div>
+            </div>
 
+            {/* Bottom Section: Confirm Password Input and Submit Button */}
+            <div className="bottom-section-Auth-NFP">
+                <form onSubmit={handleSubmit} className="new-password-box-NP" noValidate>
+                    <div className="input-container-Auth-FPN">
                         {/* Confirm Password Field */}
-                        <div className="input-box-NP">
+                        <div className="input-box-NP input-box-NP-child2">
                             <label htmlFor="confirm-password" className="input-label-NP">
                                 Confirm Password
                             </label>
@@ -114,24 +124,23 @@ const NewPassword = () => {
                                     onClick={toggleConfirmPasswordVisibility}
                                 ></i>
                             </div>
+                            <input type="submit" className="submit-Auth-FPN" value="Reset Password" />
                         </div>
-
-                        <input type="submit" className="submit-Auth-FPN" value="Reset Password" />
                     </div>
                 </form>
-
-                {/* Modal Popup */}
-                {showModal && (
-                    <div className="modal-overlay-Auth-FPN">
-                        <div className="modal-content-Auth-FPN">
-                            <p>{modalMessage}</p>
-                            <button className="modal-close-btn-Auth-FPN" onClick={closeModal}>
-                                OK
-                            </button>
-                        </div>
-                    </div>
-                )}
             </div>
+
+            {/* Modal Popup */}
+            {showModal && (
+                <div className="modal-overlay-Auth-FPN">
+                    <div className="modal-content-Auth-FPN">
+                        <p>{modalMessage}</p>
+                        <button className="modal-close-btn-Auth-FPN" onClick={closeModal}>
+                            OK
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

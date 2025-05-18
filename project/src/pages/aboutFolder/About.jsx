@@ -6,7 +6,7 @@ import ChooseUs from "./about-components/ChooseUs";
 export default function about() {
   return (
     <>
-      <Navbar showBackground={false} />
+      <Navbar />
       <MainDiv />
       <div className="row mt-5 w-100">
         <div className="col-12">
@@ -18,10 +18,10 @@ export default function about() {
       </div>
       <div className="row" style={{ width: "90%", margin: "6% auto" }}>
         <div className="col-12 col-md-6">
-          <img src="./imgs/our-story.png" alt="" className="w-100 rounded" />
+          <img src="./imgs/our_story.png" alt="" className="w-100 rounded" />
         </div>
         <div className="col-12 col-md-6">
-          <h1 style={{ color: "#EC7E4A" }}>OUR STORY</h1>
+          <h1 style={{ color: "#CB8778" }}>OUR STORY</h1>
           <p className="fs-2">
             &quot;PeakFitness was born from a passion for strength, endurance,
             and transformation. What started as a small training space has grown

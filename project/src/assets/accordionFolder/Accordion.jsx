@@ -24,7 +24,7 @@ export default function accordion() {
             id="panelsStayOpen-collapseOne"
             className="accordion-collapse collapse show"
           >
-            <div className="accordion-body">
+            <div className="accordion-body" style={{ color: "#CB8778" }}>
               Pure Vitality is a personalized fitness platform designed to help
               you achieve your goals through tailored workout plans and
               nutrition guidance. Whether you&apos;re aiming for weight loss,

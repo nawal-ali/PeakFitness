@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import { div } from "framer-motion/client";
 import { Carousel } from "nuka-carousel";
 import "../comments/comments.css";
 
@@ -16,15 +15,15 @@ export default function Comments() {
       .catch((error) => console.error("Error fetching comments:", error));
   }, []);
 
+  //wrapAround: true,
   const carouselSettings = {
-    wrapAround: true,
     autoplay: true,
     autoplayInterval: 3000,
     pauseOnHover: true,
     slidesToScroll: 1,
     defaultControlsConfig: {
       pagingDotsStyle: {
-        fill: "#EC7E4A",
+        fill: "#CB8778",
       },
     },
   };
@@ -33,13 +32,15 @@ export default function Comments() {
   return (
     <section className="customer-reviews-section my-5">
       {/* 3️⃣ Heading */}
-      <h1 className="text-center mb-4">
-        What Our <span className="custom-color">Customers Say</span>
-      </h1>
+      <h1 className="text-center mb-4 text-black">What Our Customers Say</h1>
 
       <div className="reviews-container position-relative ">
         {/* 4️⃣ Orange Speech Bubble */}
-        <div className="orange-bubble position-absolute top-50 start-50 w-75 h-100 translate-middle d-flex align-items-start gap-2 p-4">
+        {/* w-75 */}
+        <div
+          className="orange-bubble position-absolute top-50 start-50 h-100 translate-middle d-flex align-items-start gap-2 p-4"
+          style={{ width: "80%" }}
+        >
           <img
             src="/imgs/Vector.png"
             alt="Speech Icon"
@@ -52,15 +53,19 @@ export default function Comments() {
         </div>
 
         {/* 5️⃣ Nuka Carousel with Fetched Comments */}
-        <div className="carousel-wrapper pt-5 mt-5">
+        <div className="carousel-wrapper pt-5 mt-5 w-100 ">
           <Carousel {...carouselSettings}>
             {comments.map((item) => (
               <div
                 key={item.id}
                 className="card text-center mx-1 p-3 text-light"
-                style={{ backgroundColor: "#303030" }}
+                style={{
+                  backgroundColor: "#FFFFFF",
+                  border: "6px solid #CB8778",
+                  borderRadius: "20px",
+                }}
               >
-                <div className="card-body">
+                <div className="card-body text-black">
                   <h5 className="card-title">{item.name}</h5>
                   <p className="card-text">{item.body}</p>
                   <p className="text-muted">{item.email}</p>
@@ -73,24 +78,3 @@ export default function Comments() {
     </section>
   );
 }
-
-// import { motion } from "framer-motion";
-// export default function CommentCard({ id, name, email, body }) {
-//   return (
-//     <>
-//       <div className="card w-25 text-center">
-//         <div className="card-body">
-//           {/* <img src={postId} alt={name} className="profile-img" /> */}
-//           <h5 className="card-title">{name} hi</h5>
-//           {/* <div className="stars">
-//             {"★".repeat(stars)}
-//             {"☆".repeat(5 - stars)}
-//           </div> */}
-//           <p>{id}</p>
-//           <p className="card-text">{body} body</p>
-//           <p className="card-text">{email} email</p>
-//         </div>
-//       </div>
-//     </>
-//   );
-// }

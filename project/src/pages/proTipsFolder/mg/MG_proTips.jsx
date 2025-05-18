@@ -1,8 +1,9 @@
-import Navbar from "../../assets/navFolder/Navbar";
+
+import Navbar from "../../../assets/navFolder/Navbar";
 // import Sec2_tips from "./proTips_template/components/sec2_tips/Sec2_tips";
 // import Sec3_tips from "./proTips_template/components/sec3_tips/Sec3_tips";
 // import Sec4_tips from "./proTips_template/components/sec4_tips/Sec4_tips";
-import ProTipsTemp from "./proTips_template/ProTipsTemp";
+import ProTipsTemp from "../proTips_template/ProTipsTemp";
 export default function MG_proTips() {
   return (
     <>
