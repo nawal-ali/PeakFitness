@@ -12,6 +12,7 @@ const SignUp = () => {
     age: "",
     weight: "",
     height: "",
+    gender: "",
   });
   const [signUpErrors, setSignUpErrors] = useState({});
   const [showSignUpPasswordHint, setShowSignUpPasswordHint] = useState(false);
@@ -85,7 +86,7 @@ const SignUp = () => {
         <div className="signup-form">
           <h1 className="header-1">Sign Up</h1>
           <form onSubmit={handleSignUpSubmit} className="row">
-            <div className="col-12 col-md-6">
+            <div className="col-12">
               <label htmlFor="Username">Username</label>
               <InputText
                 id="Username"
@@ -138,6 +139,34 @@ const SignUp = () => {
                     style={{ fontSize: "16px", color: "#ff4d4f" }}
                   ></i>
                   <span>{signUpErrors.age}</span>
+                </div>
+              )}
+            </div>
+            <div className="col-12 col-md-6">
+              <label htmlFor="gender">Gender</label>
+              <InputText
+                id="gender"
+                value={signUpData.gender}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  setSignUpData({ ...signUpData, gender: value });
+                  if (signUpErrors.gender) {
+                    setSignUpErrors((prev) => ({ ...prev, gender: "" }));
+                  }
+                }}
+                className={`custom-input ${
+                  signUpErrors.gender ? "input-error" : ""
+                }`}
+                placeholder="gender"
+                maxLength={6}
+              />
+              {signUpErrors.gender && (
+                <div className="error-message">
+                  <i
+                    className="bx bxs-error-circle"
+                    style={{ fontSize: "16px", color: "#ff4d4f" }}
+                  ></i>
+                  <span>{signUpErrors.gender}</span>
                 </div>
               )}
             </div>
@@ -239,9 +268,9 @@ const SignUp = () => {
                       password,
                       setSignUpPasswordRequirements
                     );
-                    const allRequirementsMet = Object.values(requirements).every(
-                      (req) => req
-                    );
+                    const allRequirementsMet = Object.values(
+                      requirements
+                    ).every((req) => req);
                     setShowSignUpPasswordHint(
                       password.length > 0 && !allRequirementsMet
                     );
