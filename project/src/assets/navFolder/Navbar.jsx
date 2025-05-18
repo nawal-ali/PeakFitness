@@ -280,7 +280,9 @@ export default function Navbar({ islogged, setIsLogged }) {
                   <NavLink to="/Login" className="btn btn-dark me-3 px-4">
                     Login
                   </NavLink>
-                  <button className="btn btn-light me-3 px-4">Sign Up</button>
+                  <NavLink to="/signup" className="btn btn-light me-3 px-4">
+                    Sign Up
+                  </NavLink>
                 </div>
               )}
               {islogged && (
