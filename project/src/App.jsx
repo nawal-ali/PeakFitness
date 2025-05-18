@@ -24,11 +24,14 @@ import Slider_PT from "./pages/proTipsFolder/ProTips";
 import MG_proTips from "./pages/proTipsFolder/mg/MG_proTips";
 import WL_proTips from "./pages/proTipsFolder/wl/WL_proTips";
 import WG_proTips from "./pages/proTipsFolder/wg/WG_proTips";
+// import Footer from "./assets/footerFolder/Footer";
+import ToTop from "./assets/toTopBtn/toTop";
 // import MuscleGain from "./pages/FoodPlansFolder/Muscle-Gain/Muscle-Gain-FP";
 // import WeightLoss from "./pages/FoodPlansFolder/Weight-Loss/Weight-Loss-FP";
 function App() {
   return (
     <>
+      <ToTop />
       <div className="container-fluid p-0">
         <Router>
           <Routes>
