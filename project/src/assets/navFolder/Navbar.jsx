@@ -297,7 +297,7 @@ export default function Navbar({ islogged, setIsLogged }) {
                   </a>
                   <ul className="dropdown-menu dropdown-menu-dark">
                     <li>
-                      <NavLink className="dropdown-item" to="/Calorie">
+                      <NavLink className="dropdown-item" to="/profile">
                         My Profile
                       </NavLink>
                     </li>

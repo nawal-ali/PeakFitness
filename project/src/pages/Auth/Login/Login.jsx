@@ -35,17 +35,6 @@ const Login = () => {
   const BASE_URL = "http://localhost:5000/api/auth";
   const navigate = useNavigate();
   let isLoged;
-  // const handleSignUpSubmit = async (e) => {
-  //   e.preventDefault();
-  //   if (validateSignUp()) {
-  //     const sanitizedData = signUpData;
-  //     console.log("Sign Up Data:", sanitizedData);
-  //     const response = await axios.post(`${BASE_URL}/signup`, signUpData);
-  //     if (response.data.message === "User registered successfully!") {
-  //       navigate("/Login");
-  //     }
-  //   }
-  // };
 
   const handleSignInSubmit = async (e) => {
     e.preventDefault();
@@ -54,7 +43,8 @@ const Login = () => {
       console.log("Sign In Data:", sanitizedData);
       const response = await axios.post(`${BASE_URL}/login`, signInData);
       if (response.data.action === "success") {
-        localStorage.setItem("islogged", "true");
+        isLoged = localStorage.setItem("islogged", "true");
+        localStorage.setItem("token", response.data.token);
         navigate("/");
       }
     }
