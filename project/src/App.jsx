@@ -11,8 +11,8 @@ import BodyFat from "./pages/calcsFolder/Body-Fat/BodyFat";
 import Calorie from "./pages/calcsFolder/Calorie/Calorie";
 import Weight from "./pages/calcsFolder/Ideal-Weight/Weight";
 import Slider_FP from "./pages/FoodPlansFolder/FoodPlans";
-import WeightGain from "./pages/FoodPlansFolder/Weight-Gain/Weight-Gain-FP"
-import WeightLoss from "./pages/FoodPlansFolder/Weight-Loss/Weight-Loss-FP"
+import WeightGain from "./pages/FoodPlansFolder/Weight-Gain/Weight-Gain-FP";
+import WeightLoss from "./pages/FoodPlansFolder/Weight-Loss/Weight-Loss-FP";
 import MuscleGain from "./pages/FoodPlansFolder/Muscle-Gain/Muscle-Gain-FP";
 // import Login from "./pages/Auth/Login/Refrence";
 import Login from "./pages/Auth/Login/Login";
@@ -33,10 +33,10 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/Login" element={<Login/>} />
-            <Route path="/SignUp" element={<SignUp/>} />
-            <Route path="/Forget-Password" element={<ForgetPassword/>} />
-            <Route path="/New-Password" element={<NewPassword/>} />
+            <Route path="/Login" element={<Login />} />
+            <Route path="/SignUp" element={<SignUp />} />
+            <Route path="/Forget-Password" element={<ForgetPassword />} />
+            <Route path="/New-Password" element={<NewPassword />} />
             <Route path="/exercises" element={<Exercises />} />
             <Route path="/ProTips" element={<Tips />} />
             <Route path="/FoodPlans" element={<Plans />} />
@@ -46,15 +46,22 @@ function App() {
             <Route path="/BodyFat" element={<BodyFat />} />
             <Route path="/Calorie" element={<Calorie />} />
             <Route path="/Weight" element={<Weight />} />
-            <Route path="/FoodPlanSlider" element={<Slider_FP/>}/>
+            <Route path="/FoodPlanSlider" element={<Slider_FP />} />
             <Route path="/weight-gain-details" element={<WeightGain />} />
             <Route path="/weight-loss-details" element={<WeightLoss />} />
             <Route path="/muscle-gain-details" element={<MuscleGain />} />
             <Route path="/proTipsSlider" element={<Slider_PT />} />
-            <Route path="/weight-gain-details-Pro-tips" element={<WG_proTips />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route
+              path="/weight-gain-details-Pro-tips"
+              element={<WG_proTips />}
+            />
             {/* <Route path="/weight-loss-details-Pro-tips" element={<WL_proTips />} /> */}
-            <Route path="/muscle-gain-details-Pro-tips" element={<MG_proTips />} />
-            
+            <Route
+              path="/muscle-gain-details-Pro-tips"
+              element={<MG_proTips />}
+            />
+
             {/* <Route path="/weight-loss-details" element={<WeightLoss />} />
             <Route path="/Muslce-gain-details" element={<MuscleGain />} /> */}
           </Routes>
