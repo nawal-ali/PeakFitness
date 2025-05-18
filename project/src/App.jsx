@@ -21,6 +21,9 @@ import SignUp from "./pages/Auth/Login/SignUp";
 import ForgetPassword from "./pages/Auth/Password/Forget password/Auth-F";
 import NewPassword from "./pages/Auth/Password/New Password/Auth-N";
 import Slider_PT from "./pages/proTipsFolder/ProTips";
+import MG_proTips from "./pages/proTipsFolder/mg/MG_proTips";
+// import WL_proTips from "./pages/proTipsFolder/wl/WL_proTips";
+import WG_proTips from "./pages/proTipsFolder/wg/WG_proTips";
 // import MuscleGain from "./pages/FoodPlansFolder/Muscle-Gain/Muscle-Gain-FP";
 // import WeightLoss from "./pages/FoodPlansFolder/Weight-Loss/Weight-Loss-FP";
 function App() {
@@ -48,7 +51,9 @@ function App() {
             <Route path="/weight-loss-details" element={<WeightLoss />} />
             <Route path="/muscle-gain-details" element={<MuscleGain />} />
             <Route path="/proTipsSlider" element={<Slider_PT />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/weight-gain-details-Pro-tips" element={<WG_proTips />} />
+            {/* <Route path="/weight-loss-details-Pro-tips" element={<WL_proTips />} /> */}
+            <Route path="/muscle-gain-details-Pro-tips" element={<MG_proTips />} />
             
             {/* <Route path="/weight-loss-details" element={<WeightLoss />} />
             <Route path="/Muslce-gain-details" element={<MuscleGain />} /> */}

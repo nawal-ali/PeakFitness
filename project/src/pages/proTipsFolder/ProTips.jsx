@@ -18,7 +18,7 @@ const Slider_PT = () => {
         "Gaining Weight The Healthy Way Takes More Than Just Eating More. Discover Simple Tips To Increase Your Weight Safely And Effectively",
       color: "#ec7e4a",
       thumbnailImg: "/imgs/Pro-Tips-W-G.png",
-      // link: "/weight-gain-details",
+      link: "/weight-gain-details-Pro-tips",
     },
     {
       id: 1,
@@ -27,7 +27,7 @@ const Slider_PT = () => {
         "Losing Weight Is A Journey—These Simple Tips Make It Easier, Healthier, And More Sustainable",
       color: "#4aec7e",
       thumbnailImg: "/imgs/Pro-Tips-W-L.png",
-      // link: "/weight-loss-details",
+      link: "/weight-loss-details-Pro-tips",
     },
     {
       id: 2,
@@ -36,7 +36,7 @@ const Slider_PT = () => {
         "Building Muscle Isn't Just About Lifting Weights. These Tips Will Help You Grow Stronger, Faster, And Smarter",
       color: "#7e4aec",
       thumbnailImg: "/imgs/Pro-Tips-M-G.png",
-      // link: "/muscle-gain-details",
+      link: "/muscle-gain-details-Pro-tips",
     },
   ];
 

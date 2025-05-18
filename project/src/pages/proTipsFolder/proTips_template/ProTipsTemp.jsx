@@ -1,8 +1,8 @@
-import Sec1_tips from "./proTips_template/components/sec1_tips/Sec1_tips";
-import Sec2_tips from "./proTips_template/components/sec2_tips/Sec2_tips";
-import Sec3_tips from "./proTips_template/components/sec3_tips/Sec3_tips";
-import Sec4_tips from "./proTips_template/components/sec4_tips/Sec4_tips";
-import Sec5_tips from "./proTips_template/components/sec5_tips/Sec5_tips";
+import Sec1_tips from "../proTips_template/components/sec1_tips/Sec1_tips";
+import Sec2_tips from "../proTips_template/components/sec2_tips/Sec2_tips";
+import Sec3_tips from "../proTips_template/components/sec3_tips/Sec3_tips";
+import Sec4_tips from "../proTips_template/components/sec4_tips/Sec4_tips";
+import Sec5_tips from "../proTips_template/components/sec5_tips/Sec5_tips";
 export default function MProTipsTemp({
   sec2_tips_img,
   sec2_tips_title,
