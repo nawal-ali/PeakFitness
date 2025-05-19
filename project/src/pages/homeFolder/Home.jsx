@@ -127,7 +127,7 @@ export default function Home() {
         </div>
       </div>
       <div className="comments-section margin-top-10 text-center w-75 m-auto">
-        <CommentCard />
+        <CommentCard islogged={islogged} setIsLogged={setIsLogged} />
       </div>
       <div className="container-fluid margin-top-10 text-center">
         <h1 className="mb-3 text-black">Any questions? We got you</h1>

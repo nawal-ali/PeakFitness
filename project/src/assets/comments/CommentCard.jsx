@@ -3,7 +3,7 @@ import { Carousel } from "nuka-carousel";
 import axios from "axios";
 import "../comments/comments.css";
 
-export default function Comments() {
+export default function Comments({ islogged, setIsLogged }) {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
@@ -81,6 +81,7 @@ export default function Comments() {
           </Carousel>
         </div>
       </div>
+        {islogged && (<button className="btn btn-dark text-light px-4 my-5">ADD COMMENT</button>)}
     </section>
   );
 }
