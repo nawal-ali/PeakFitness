@@ -4,7 +4,7 @@ export default function card({ textContent, img }) {
     <>
       <div className="mt-5 h-100">
         <div
-          className="card text-center text-light p-3 rounded-0 position-relative h-75 mt-5"
+          className="cardd m-auto text-center text-light p-3 rounded-0 position-relative h-75 mt-5"
           style={{
             border: "3px solid #000000",
             width: "18rem",

@@ -86,8 +86,8 @@ export default function Home() {
       </div>
       {/* <div style={{ marginTop: "20%" }}><UncontrolledExample /></div> */}
       <div>
-        <div className="angled-background margin-top-10 flex-column flex-md-row px-0">
-          <div className="mt-5 custom-card card-3">
+        <div className="angled-background  margin-top-10 row px-0">
+          <div className="col-12 col-md-4 custom-card card-3">
             <Link
               to="/Calculators"
               className="link-underline link-underline-opacity-0"
@@ -98,7 +98,7 @@ export default function Home() {
               />
             </Link>
           </div>
-          <div className="mt-5 custom-card card-2">
+          <div className="col-12 col-md-4 custom-card card-2">
             <Link
               to="/FoodPlans"
               className="link-underline link-underline-opacity-0"
@@ -109,7 +109,7 @@ export default function Home() {
               />
             </Link>
           </div>
-          <div className="mt-5 custom-card card-1">
+          <div className="col-12 col-md-4 custom-card card-1">
             <Link
               to="/exercises"
               className="link-underline link-underline-opacity-0"

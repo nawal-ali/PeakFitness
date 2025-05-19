@@ -63,8 +63,8 @@ export default function Comments() {
           <Carousel {...carouselSettings}>
             {comments.map((item) => (
               <div
-                key={item.id}
-                className="card text-center mx-1 p-3 text-light"
+                key={item._id}
+                className="cardd text-center mx-1 p-3 text-light"
                 style={{
                   backgroundColor: "#FFFFFF",
                   border: "6px solid #CB8778",
@@ -72,7 +72,7 @@ export default function Comments() {
                 }}
               >
                 <div className="card-body text-black">
-                  <h5 className="card-title">{item.user.username}</h5>
+                  <h4 className="card-title mb-3">{item.user.username}</h4>
                   <p className="card-text">{item.text}</p>
                   {/* <p className="text-muted">{item.email}</p> */}
                 </div>
