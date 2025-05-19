@@ -3,13 +3,16 @@
 }
 .custom-bg-dark {
   background-color: #202020;
+  /* background-color: #00000087; */
 }
 .custom-color {
   color: #ec7e4a;
 }
 .angled-background {
   /* margin-top: 10%; */
-  background: url("/imgs/angled_bg.png") center/cover no-repeat;
+  background: url("/imgs/angled_bg.png");
+  background-size: cover;
+  background-position: center;
   /* height: 80vh; */
   /* clip-path: polygon(0 90%, 100% 100%, 100% 10%, 0 0); */
   /* clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%); */

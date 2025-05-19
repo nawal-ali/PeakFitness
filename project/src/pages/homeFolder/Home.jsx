@@ -86,7 +86,11 @@ export default function Home() {
       </div>
       {/* <div style={{ marginTop: "20%" }}><UncontrolledExample /></div> */}
       <div>
-        <div className="angled-background  margin-top-10 row px-0">
+        <div className="angled-background margin-top-10 row p-5 position-relative">
+          <div
+            className="overlay position-absolute top-0 start-0 w-100 h-100"
+            style={{ backgroundColor: "#00000087" }}
+          ></div>
           <div className="col-12 col-md-4 custom-card card-3">
             <Link
               to="/Calculators"
