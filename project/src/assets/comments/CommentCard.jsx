@@ -5,9 +5,11 @@ import "../comments/comments.css";
 
 export default function Comments({ islogged, setIsLogged }) {
   const [comments, setComments] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [newComment, setNewComment] = useState("");
 
+  const BASE_URL = "http://localhost:5000/api";
   useEffect(() => {
-    const BASE_URL = "http://localhost:5000/api";
     const fetchComments = async () => {
       try {
         const response = await axios.get(`${BASE_URL}/comments`);
@@ -20,6 +22,30 @@ export default function Comments({ islogged, setIsLogged }) {
 
     fetchComments();
   }, []);
+
+
+  const handleAddComment = async () => {
+    try {
+      const token = localStorage.getItem("token"); // Adjust if you store token differently
+
+      const response = await axios.post(
+        `${BASE_URL}/comments`,
+        { text: newComment },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+const updated = await axios.get(`${BASE_URL}/comments`);
+    setComments(updated.data);
+      // setComments([...comments, response.data]);
+      setNewComment("");
+      setShowModal(false);
+    } catch (error) {
+      console.error("Error adding comment:", error);
+    }
+  };
 
   //wrapAround: true,
   const carouselSettings = {
@@ -81,7 +107,50 @@ export default function Comments({ islogged, setIsLogged }) {
           </Carousel>
         </div>
       </div>
-        {islogged && (<button className="btn btn-dark text-light px-4 my-5">ADD COMMENT</button>)}
+        {islogged && (<button className="btn btn-dark text-light px-4 my-5"  onClick={() => setShowModal(true)}>ADD COMMENT</button>)}
+        {showModal && (
+        <div className="modal fade show d-block" tabIndex="-1">
+          <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">Add Your Comment</h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  onClick={() => setShowModal(false)}
+                ></button>
+              </div>
+              <div className="modal-body">
+                <textarea
+                  className="form-control"
+                  rows="4"
+                  value={newComment}
+                  onChange={(e) => setNewComment(e.target.value)}
+                  placeholder="Write your comment..."
+                />
+              </div>
+              <div className="modal-footer">
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  onClick={() => setShowModal(false)}
+                >
+                  Cancel
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={handleAddComment}
+                >
+                  Add Comment
+                </button>
+              </div>
+            </div>
+          </div>
+          {/* Background Overlay */}
+          <div className="modal-backdrop fade show" style={{zIndex:-1}}></div>
+        </div>
+      )}
     </section>
   );
 }
