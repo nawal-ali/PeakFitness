@@ -1,18 +1,24 @@
 import { useState, useEffect } from "react";
 import { Carousel } from "nuka-carousel";
+import axios from "axios";
 import "../comments/comments.css";
 
 export default function Comments() {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    // Fetch data from API
-    fetch("https://jsonplaceholder.typicode.com/comments?_limit=20")
-      .then((response) => response.json())
-      .then((data) => {
-        setComments(data);
-      })
-      .catch((error) => console.error("Error fetching comments:", error));
+    const BASE_URL = "http://localhost:5000/api";
+    const fetchComments = async () => {
+      try {
+        const response = await axios.get(`${BASE_URL}/comments`);
+        console.log(response.data);
+        setComments(response.data);
+      } catch (error) {
+        console.error("Error fetching comments:", error);
+      }
+    };
+
+    fetchComments();
   }, []);
 
   //wrapAround: true,
@@ -66,9 +72,9 @@ export default function Comments() {
                 }}
               >
                 <div className="card-body text-black">
-                  <h5 className="card-title">{item.name}</h5>
-                  <p className="card-text">{item.body}</p>
-                  <p className="text-muted">{item.email}</p>
+                  <h5 className="card-title">{item.user.username}</h5>
+                  <p className="card-text">{item.text}</p>
+                  {/* <p className="text-muted">{item.email}</p> */}
                 </div>
               </div>
             ))}

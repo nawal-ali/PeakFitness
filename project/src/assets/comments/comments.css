@@ -37,7 +37,7 @@
 
 /* Tweak the card styling if desired */
 .card {
-  min-width: 400px;
+  min-width: 300px;
 }
 .card:hover {
   transform: none;
