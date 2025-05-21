@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { toast } from "react-toastify"; // Added for toast notification
 // eslint-disable-next-line react/prop-types
 //{ showSearch = true, showBackground = true }
-export default function Navbar({ islogged, setIsLogged }) {
+export default function Navbar({ islogged, setIsLogged,showBackground,isExpanded ,darkmenu }) {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
 
@@ -40,15 +40,17 @@ export default function Navbar({ islogged, setIsLogged }) {
   return (
     <>
       <nav
-        className={`navbar navbar-dark navbar-expand-xl p-4 fixed-top w-100 ${
+        className={`navbar navbar-dark p-4 fixed-top w-100 ${
           visible ? "nav-visible" : "nav-hidden"
+        }  ${
+          isExpanded ? " " : "navbar-expand-xl "
         }`}
-        style={{ backgroundColor: "#000000", zIndex: 1050 }}
-        // style={
-        //   showBackground
-        //     ? { backgroundColor: "#5f150e", zIndex: 1050 }
-        //     : { zIndex: 1050 }
-        // }
+        // style={{ backgroundColor: "#000000", zIndex: 1050 }}
+        style={
+          showBackground
+            ? { backgroundColor: "#000000", zIndex: 1050 }
+            : { zIndex: 1050 }
+        }
       >
         <div className=" d-flex justify-content-around align-items-center w-100 px-3">
           <Link to="/" className="navbar-brand">
@@ -77,7 +79,8 @@ export default function Navbar({ islogged, setIsLogged }) {
             aria-controls="offcanvasDarkNavbar"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            {/* <span className="navbar-toggler-icon"></span> */}
+            <i className="fa-solid fa-bars text-dark">MENU</i> 
           </button>
           {/*  */}
           <div

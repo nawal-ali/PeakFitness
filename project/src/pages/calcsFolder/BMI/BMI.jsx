@@ -92,7 +92,7 @@ const BMICalculator = () => {
 
   return (
     <>
-      <Navbar showSearch={false} showBackground={false} />
+      <Navbar showBackground={false} isExpanded={true} />
       <div className={`calorie-calculator-B ${showResults ? "show-results-B" : ""}`}>
         <div className="left-panel-B">
           {!showResults ? (

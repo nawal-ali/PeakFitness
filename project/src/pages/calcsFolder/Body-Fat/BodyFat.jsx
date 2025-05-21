@@ -218,7 +218,7 @@ const BodyFatCalc = () => {
 
   return (
     <>
-      <Navbar showSearch={false} showBackground={false} />
+      <Navbar showBackground={false} isExpanded={true}/>
 
       <div
         className={`calorie-calculator-F ${
