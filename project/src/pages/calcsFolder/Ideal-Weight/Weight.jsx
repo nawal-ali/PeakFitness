@@ -173,7 +173,7 @@ const IdealCalculator = () => {
 
   return (
     <>
-      <Navbar showSearch={false} showBackground={false} />
+      <Navbar showBackground={false}  isExpanded={true}/>
       <div
         className={`calorie-calculator-I ${
           showResults ? "show-results-I" : ""

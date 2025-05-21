@@ -48,7 +48,7 @@ export default function Home() {
   return (
     <>
       <ToTop />
-      <Navbar islogged={islogged} setIsLogged={setIsLogged} />
+      <Navbar islogged={islogged} setIsLogged={setIsLogged} showBackground={true} isExpanded={false} />
       <div
         className="min-vw-100 min-vh-100 position-relative"
         style={{ marginTop: "9%" }}

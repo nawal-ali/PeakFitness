@@ -179,7 +179,7 @@ const CalorieCalculator = () => {
 
   return (
     <>
-      <Navbar showSearch={false} showBackground={false} />
+      <Navbar showBackground={false} isExpanded={true} />
       <div
         className={`calorie-calculator-C ${
           showResults ? "show-results-C" : ""
