@@ -28,6 +28,10 @@ const Profile = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       const token = localStorage.getItem("token");
+      if(!token){
+        navigate("/"); 
+        return;
+      }
       try {
         const response = await axios.get("http://localhost:5000/api/profile", {
           headers: {
@@ -41,10 +45,11 @@ const Profile = () => {
       }
     };
     fetchProfile();
-  }, []);
+  }, [navigate]);
 
   const handleLogOut = () => {
     localStorage.setItem("islogged", "false");
+    localStorage.removeItem("token")
     setIsLogged(false);
     navigate("/");
   };
