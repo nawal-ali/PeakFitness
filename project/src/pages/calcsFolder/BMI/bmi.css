@@ -19,7 +19,7 @@ body {
 .left-panel-B .small-image-B {
   width: 110px;
   height: 110px;
-  background-image: url("./logo/BMI.svg");
+  background-image: url("../../../../public/logo/BMI.svg");
   background-position: 75% center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -68,7 +68,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("./imgs/BMI.png");
+  background-image: url("../../../../public/imgs/BMI-image.png");
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 90%;
@@ -113,7 +113,7 @@ body {
 }
 
 .calorie-calculator-B.show-results-B .right-panel-B {
-  background-image: url("./imgs/BMI.png");
+  background-image: url("../../../../public/imgs/BMI-image.png");
   background-position: 75% center;
   background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, 0.5);
@@ -185,7 +185,7 @@ body {
 }
 
 .input-group-B input:focus {
-  border-color: #ff8c00;
+  border-color: #CB8778;
   box-shadow: 0 0 8px rgba(255, 140, 0, 0.5);
 }
 
@@ -269,13 +269,7 @@ body {
   color: white;
 }
 
-/* .clear-btn-B:hover,
-.calculate-btn-B:hover,
-.other-calculators-btn-B:hover {
-  border-color: #ff8c00;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
-} */
+
 .left-panel-B {
   flex: 1;
   background-color: white;
@@ -376,31 +370,7 @@ body {
 
 }
 
-/* .Calculator-circles-S1-B::before,
-.Calculator-circles-S1-B::after {
-  content: "";
-  position: absolute;
-  transform: translateX(-50%);
-  width: 360px;
-  height: 360px;
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 50%;
-  filter: blur(60px);
-} */
-/* .Calculator-circles-S1-B::before {top: 80%;left: 120%;}
-.Calculator-circles-S1-B::after {top: -200px;left: -165px;}
-.Calculator-one-circle-s1-B::before {
-  content: "";
-  position: absolute;
-  top: -180px;
-  right: -175px;
-  width: 160px;
-  height: 160px;
-  background: radial-gradient(circle at top center, #CB8778 0%, #0a1b30 80%);
-  border-radius: 50%;
-  opacity: 0.9;
-  z-index: 1;
-} */
+
 .flex-inputs-B {
   display: flex;
   gap: 30px;
@@ -617,7 +587,7 @@ body {
 }
 
 .popup-close-btn-B:hover {
-  background-color: #ff8c00;
+  background-color: #CB8778;
 }
 @media (min-width:1000px) {
   .right-panel-B {
@@ -702,7 +672,7 @@ body {
   .left-panel-B .under-header-B {font-size: 18px !important;width: 100%;}
 }
 @media (max-width: 391px) {
-  .result-header-B {text-wrap: nowrap;}
+  /* .result-header-B {text-wrap: nowrap;} */
   .result-header-B h3 , .result-header-B h2{font-size: 2rem;}
   .left-panel-B .under-header-B {font-size: 1.2rem;}
 }

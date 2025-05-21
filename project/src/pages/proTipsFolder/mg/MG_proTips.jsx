@@ -21,17 +21,17 @@ export default function MG_proTips() {
             text: "Random workouts aren’t enough—you need a structured program with goals and progression.",
           },
           {
-            img: "./logo/mg_tips_sec2_logo1.svg",
+            img: "./logo/mg_tips_sec2_logo2.svg",
             coloredText: "Focus on Complete Protein Sources:",
             text: "If you’re not eating enough, especially protein, your body won’t build muscle even with solid training.",
           },
           {
-            img: "./logo/mg_tips_sec2_logo1.svg",
+            img: "./logo/mg_tips_sec2_logo3.svg",
             coloredText: "Combine Protein with Extra Calories:",
             text: "Muscles grow during rest, not during the workout. Less than 7 hours of sleep slows down your results.",
           },
           {
-            img: "./logo/mg_tips_sec2_logo1.svg",
+            img: "./logo/mg_tips_sec2_logo4.svg",
             coloredText: "Don't Skip Protein Before Bed:",
             text: "Too much training without enough rest can lead to fatigue and even muscle loss.",
           },
@@ -46,9 +46,9 @@ export default function MG_proTips() {
         ]}
         sec3_tips_imgs={[
           "./imgs/mg_tips_sec31.png",
-          "./imgs/mg_tips_sec31.png",
-          "./imgs/mg_tips_sec31.png",
-          "./imgs/mg_tips_sec31.png",
+          "./imgs/mg_tips_sec33.png",
+          "./imgs/mg_tips_sec34.png",
+          "./imgs/mg_tips_sec32.png",
         ]}
         sec3_tips_coloredText={[
           "Green Tea",

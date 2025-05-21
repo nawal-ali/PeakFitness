@@ -8,7 +8,7 @@ body {
 .left-panel-F .small-image-F {
   width: 110px;
   height: 110px;
-  background-image: url("/public/logo/Fat.svg");
+  background-image: url("../../../../public/logo/Fat.svg");
   background-position: 75% center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -43,7 +43,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("./imgs/Fat.png");
+  background-image: url("../../../../imgs/Fat.png");
   background-position: 0% center;
   background-repeat: no-repeat;
   background-color: #000;
@@ -76,7 +76,7 @@ body {
 .Arrow-right-F {
   width: 35px;
   height: 35px;
-  background-image: url("/public/imgs/Arrow-right.svg");
+  background-image: url("../../../../public/imgs/Arrow-right.svg");
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 2;
@@ -89,9 +89,9 @@ body {
 }
 
 .calorie-calculator-F.show-results-F .right-panel-F {
-  background-image: url("./imgs/BMI.png");
-  background-position: 75% center;
-  background-repeat: no-repeat;
+  background-image: url("../../../../public/imgs/Fat.png");
+  /* background-position: 75% center; */
+  /* background-repeat: no-repeat; */
   background-color: rgba(0, 0, 0, 0.5);
   background-size: cover;
   background-blend-mode: multiply;
@@ -511,7 +511,7 @@ body {
 
 
 .numeric-input-F.error-F {
-  border: 2px solid #ff8c00;
+  border: 2px solid #CB8778;
   outline: none;
 }
 
@@ -675,7 +675,7 @@ body {
 
 .popup-F p {
   font-size: 20px;
-  color: #000;
+  color: #fff;
   margin-bottom: 20px;
 }
 
@@ -692,7 +692,7 @@ body {
 }
 
 .popup-close-btn-F:hover {
-  background-color: #ff8c00;
+  background-color: #CB8778;
 }
 
 /* Error Message Styles */
@@ -719,7 +719,7 @@ body {
 }
 
 .numeric-input-F.error-F {
-  border: 2px solid #ff8c00;
+  border: 2px solid #CB8778;
   outline: none;
 }
 

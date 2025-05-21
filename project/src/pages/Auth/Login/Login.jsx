@@ -46,19 +46,19 @@ const Login = () => {
     if (validateSignIn()) {
       try {
         const response = await axios.post(`${BASE_URL}/login`, signInData);
-        if (response.data.action === "success") {
+        if (response.data.token) { // Updated to check for token instead of action
           localStorage.setItem("islogged", "true");
           localStorage.setItem("token", response.data.token);
-          toast.success("Login successful!");
+          localStorage.setItem("showLoginSuccess", "true"); // Set flag for home page toast
           setTimeout(() => {
             navigate("/");
-          }, 1500); // wait a little before redirecting
+          }, 1500); // Wait a little before redirecting
         } else {
           toast.error("Login failed. Please try again.");
         }
       } catch (error) {
         toast.error("Server error. Please try again later.");
-        console.error(error);
+        console.error("Login error:", error.response ? error.response.data : error.message); // Improved error logging
       }
     }
   };
