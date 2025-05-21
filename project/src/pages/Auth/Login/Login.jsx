@@ -46,19 +46,18 @@ const Login = () => {
     if (validateSignIn()) {
       try {
         const response = await axios.post(`${BASE_URL}/login`, signInData);
-        if (response.data.token) { // Updated to check for token instead of action
+        if (response.data.token) {
           localStorage.setItem("islogged", "true");
           localStorage.setItem("token", response.data.token);
-          localStorage.setItem("showLoginSuccess", "true"); // Set flag for home page toast
-          setTimeout(() => {
-            navigate("/");
-          }, 1500); // Wait a little before redirecting
+          localStorage.setItem("showLoginSuccess", "true");
+          console.log("showLoginSuccess set to true"); // Debug to confirm
+          navigate("/"); // Navigate immediately
         } else {
           toast.error("Login failed. Please try again.");
         }
       } catch (error) {
         toast.error("Server error. Please try again later.");
-        console.error("Login error:", error.response ? error.response.data : error.message); // Improved error logging
+        console.error("Login error:", error.response ? error.response.data : error.message);
       }
     }
   };
@@ -151,8 +150,6 @@ const Login = () => {
           </button>
         </form>
       </div>
-
-      {/* Toast container to render toasts globally */}
       <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );

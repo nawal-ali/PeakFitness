@@ -21,12 +21,19 @@ export default function Home() {
 
   useEffect(() => {
     localStorage.setItem("islogged", islogged);
-    const showLoginSuccess = localStorage.getItem("showLoginSuccess");
-    if (showLoginSuccess === "true") {
-      toast.success("انت دخلت بنجاح"); // Updated to Arabic message
-      localStorage.removeItem("showLoginSuccess");
-    }
   }, [islogged]);
+
+  useEffect(() => {
+    // Add a slight delay to ensure localStorage is ready
+    setTimeout(() => {
+      const showLoginSuccess = localStorage.getItem("showLoginSuccess");
+      console.log("showLoginSuccess:", showLoginSuccess); // Debug to check if flag is set
+      if (showLoginSuccess === "true") {
+        toast.success("You have logged in successfully!"); // English success message
+        localStorage.removeItem("showLoginSuccess");
+      }
+    }, 100); // 100ms delay
+  }, []); // Empty dependency array to run once on mount
 
   useEffect(() => {
     if (!islogged && isLogged === "true") {
