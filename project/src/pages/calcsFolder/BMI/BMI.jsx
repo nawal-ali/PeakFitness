@@ -1,28 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from 'react-router-dom';
 import Navbar from "../../../assets/navFolder/Navbar";
 import "./bmi.css";
 
 const BMICalculator = () => {
-  const [gender, setGender] = useState(() => {
-    const savedGender = localStorage.getItem("gender");
-    return savedGender || "";
-  });
-  const [age, setAge] = useState(() => {
-    const savedAge = localStorage.getItem("age");
-    const parsedAge = parseInt(savedAge) || "";
-    return parsedAge >= 0 ? parsedAge.toString() : "";
-  });
-  const [height, setHeight] = useState(() => {
-    const savedHeight = localStorage.getItem("height");
-    const parsedHeight = parseInt(savedHeight) || "";
-    return parsedHeight >= 0 ? parsedHeight.toString() : "";
-  });
-  const [weight, setWeight] = useState(() => {
-    const savedWeight = localStorage.getItem("weight");
-    const parsedWeight = parseInt(savedWeight) || "";
-    return parsedWeight >= 0 ? parsedWeight.toString() : "";
-  });
+  const [gender, setGender] = useState("");
+  const [age, setAge] = useState("");
+  const [height, setHeight] = useState("");
+  const [weight, setWeight] = useState("");
   const [bmi, setBmi] = useState(null);
   const [showResults, setShowResults] = useState(false);
   const [ageError, setAgeError] = useState("");
@@ -31,14 +16,11 @@ const BMICalculator = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
 
-  useEffect(() => {
-    localStorage.setItem("gender", gender);
-    localStorage.setItem("age", age === "" ? "" : age.toString());
-    localStorage.setItem("height", height === "" ? "" : height.toString());
-    localStorage.setItem("weight", weight === "" ? "" : weight.toString());
-  }, [gender, age, height, weight]);
+  const handleNumericInputChange = (value, setter) => {
+    setter(value); // Update the input value as the user types
+  };
 
-  const handleNumericInput = (value, setter, prevValue, errorSetter) => {
+  const handleNumericInputBlur = (value, setter, errorSetter) => {
     if (value === "") {
       setter("");
       errorSetter("");
@@ -47,7 +29,7 @@ const BMICalculator = () => {
 
     const numericValue = parseInt(value);
     if (isNaN(numericValue) || numericValue < 0) {
-      errorSetter("Please enter a positive number.");
+      errorSetter("invalid");
       setter("");
     } else {
       errorSetter("");
@@ -96,10 +78,6 @@ const BMICalculator = () => {
     setWeightError("");
     setHeightError("");
     setBmi(null);
-    localStorage.removeItem("gender");
-    localStorage.removeItem("age");
-    localStorage.removeItem("height");
-    localStorage.removeItem("weight");
   };
 
   const getWeightStatus = (bmi) => {
@@ -119,7 +97,6 @@ const BMICalculator = () => {
         <div className="left-panel-B">
           {!showResults ? (
             <>
-              {/* <div className="logo-B"></div> */}
               <div className="background-image-B"></div>
               <div className="content-B">
                 <div className="small-image-B"></div>
@@ -166,14 +143,12 @@ const BMICalculator = () => {
                 <input
                   type="text"
                   value={age}
-                  onChange={(e) =>
-                    handleNumericInput(e.target.value, setAge, age, setAgeError)
-                  }
+                  onChange={(e) => handleNumericInputChange(e.target.value, setAge)}
+                  onBlur={(e) => handleNumericInputBlur(e.target.value, setAge, setAgeError)}
                   placeholder="21"
                   className={`numeric-input-B ${ageError ? "error-B" : ""}`}
                   pattern="[0-9]*"
                 />
-                {ageError && <p className="error-message-B">{ageError}</p>}
               </div>
               <div className="flex-inputs-B">
                 <div className="input-group-B">
@@ -181,38 +156,24 @@ const BMICalculator = () => {
                   <input
                     type="text"
                     value={weight}
-                    onChange={(e) =>
-                      handleNumericInput(
-                        e.target.value,
-                        setWeight,
-                        weight,
-                        setWeightError
-                      )
-                    }
+                    onChange={(e) => handleNumericInputChange(e.target.value, setWeight)}
+                    onBlur={(e) => handleNumericInputBlur(e.target.value, setWeight, setWeightError)}
                     placeholder="65kg"
                     className={`numeric-input-B ${weightError ? "error-B" : ""}`}
                     pattern="[0-9]*"
                   />
-                  {weightError && <p className="error-message-B">{weightError}</p>}
                 </div>
                 <div className="input-group-B">
                   <label>Height</label>
                   <input
                     type="text"
                     value={height}
-                    onChange={(e) =>
-                      handleNumericInput(
-                        e.target.value,
-                        setHeight,
-                        height,
-                        setHeightError
-                      )
-                    }
+                    onChange={(e) => handleNumericInputChange(e.target.value, setHeight)}
+                    onBlur={(e) => handleNumericInputBlur(e.target.value, setHeight, setHeightError)}
                     placeholder="180cm"
                     className={`numeric-input-B ${heightError ? "error-B" : ""}`}
                     pattern="[0-9]*"
                   />
-                  {heightError && <p className="error-message-B">{heightError}</p>}
                 </div>
               </div>
               <div className="bmi-buttons-B">
@@ -265,53 +226,37 @@ const BMICalculator = () => {
                 <input
                   type="text"
                   value={age}
-                  onChange={(e) =>
-                    handleNumericInput(e.target.value, setAge, age, setAgeError)
-                  }
+                  onChange={(e) => handleNumericInputChange(e.target.value, setAge)}
+                  onBlur={(e) => handleNumericInputBlur(e.target.value, setAge, setAgeError)}
                   placeholder="21"
                   className={`numeric-input-B ${ageError ? "error-B" : ""}`}
                   pattern="[0-9]*"
                 />
-                {ageError && <p className="error-message-B">{ageError}</p>}
               </div>
               <div className="flex-inputs-B">
                 <div className="input-group-B">
-                  <label>weight</label>
+                  <label>Weight</label>
                   <input
                     type="text"
                     value={weight}
-                    onChange={(e) =>
-                      handleNumericInput(
-                        e.target.value,
-                        setWeight,
-                        weight,
-                        setWeightError
-                      )
-                    }
+                    onChange={(e) => handleNumericInputChange(e.target.value, setWeight)}
+                    onBlur={(e) => handleNumericInputBlur(e.target.value, setWeight, setWeightError)}
                     placeholder="65kg"
                     className={`numeric-input-B ${weightError ? "error-B" : ""}`}
                     pattern="[0-9]*"
                   />
-                  {weightError && <p className="error-message-B">{weightError}</p>}
                 </div>
                 <div className="input-group-B">
-                  <label>height</label>
+                  <label>Height</label>
                   <input
                     type="text"
                     value={height}
-                    onChange={(e) =>
-                      handleNumericInput(
-                        e.target.value,
-                        setHeight,
-                        height,
-                        setHeightError
-                      )
-                    }
+                    onChange={(e) => handleNumericInputChange(e.target.value, setHeight)}
+                    onBlur={(e) => handleNumericInputBlur(e.target.value, setHeight, setHeightError)}
                     placeholder="180cm"
                     className={`numeric-input-B ${heightError ? "error-B" : ""}`}
                     pattern="[0-9]*"
                   />
-                  {heightError && <p className="error-message-B">{heightError}</p>}
                 </div>
               </div>
               <div className="bmi-buttons-B">
@@ -335,19 +280,18 @@ const BMICalculator = () => {
           ) : (
             <div className="result-section-B">
               <div className="Calculator-circles-side2-B"></div>
-              {/* <div className="result-logo-B"></div> */}
               <div className="result-header-B">
                 <h2>Your Result</h2>
                 <h3 className="bmi-value-B">
                   {bmi} kg/M<sup>2</sup>
                 </h3>
-              <p className="subtext-B">
-                {bmi
-                  ? `You Have A ${weightStatus} Body Weight, ${
-                      weightStatus === "Healthy" ? "Great Job!" : ""
-                    }`
-                  : ""}
-              </p>
+                <p className="subtext-B">
+                  {bmi
+                    ? `You Have A ${weightStatus} Body Weight, ${
+                        weightStatus === "Healthy" ? "Great Job!" : ""
+                      }`
+                    : ""}
+                </p>
               </div>
               <div className="bmi-table-div-B">
                 <table className="bmi-table-B">
@@ -379,7 +323,7 @@ const BMICalculator = () => {
               </div>
               <div className="bmi-buttons-result-B">
                 <button
-                  className="calculate-btn-B"
+                  className="calculate-again-btn-B"
                   onClick={recalculateFromInputs}
                 >
                   Calculate Again

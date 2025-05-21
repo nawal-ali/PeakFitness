@@ -1,22 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../../../assets/navFolder/Navbar";
 import "./weight.css";
 
 const IdealCalculator = () => {
-  const [gender, setGender] = useState(() => {
-    const savedGender = localStorage.getItem("gender");
-    return savedGender || "";
-  });
-  const [age, setAge] = useState(() => {
-    const savedAge = localStorage.getItem("age");
-    return savedAge || "";
-  });
-  const [height, setHeight] = useState(() => {
-    const savedHeight = localStorage.getItem("height");
-    const parsedHeight = parseInt(savedHeight) || "";
-    return parsedHeight >= 0 ? parsedHeight.toString() : "";
-  });
+  const [gender, setGender] = useState("");
+  const [age, setAge] = useState("");
+  const [height, setHeight] = useState("");
   const [idealWeight, setIdealWeight] = useState(null);
   const [formulaWeights, setFormulaWeights] = useState(null);
   const [showResults, setShowResults] = useState(false);
@@ -26,21 +16,20 @@ const IdealCalculator = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
 
-  useEffect(() => {
-    localStorage.setItem("gender", gender);
-    localStorage.setItem("age", age === "" ? "" : age.toString());
-    localStorage.setItem("height", height === "" ? "" : height.toString());
-  }, [gender, age, height]);
+  const handleNumericInputChange = (value, setter) => {
+    setter(value); // Update the input value as the user types
+  };
 
-  const handleNumericInput = (value, setter, prevValue, errorSetter) => {
+  const handleNumericInputBlur = (value, setter, errorSetter) => {
     if (value === "") {
       setter("");
       errorSetter("");
       return;
     }
+
     const numericValue = parseInt(value);
     if (isNaN(numericValue) || numericValue < 0) {
-      errorSetter("Please enter a positive number.");
+      errorSetter("invalid");
       setter("");
     } else {
       errorSetter("");
@@ -166,9 +155,6 @@ const IdealCalculator = () => {
     setHeightError("");
     setIdealWeight(null);
     setFormulaWeights(null);
-    localStorage.removeItem("gender");
-    localStorage.removeItem("age");
-    localStorage.removeItem("height");
   };
 
   return (
@@ -182,7 +168,6 @@ const IdealCalculator = () => {
         <div className="left-panel-I">
           {!showResults ? (
             <>
-              {/* <div className="logo-I"></div> */}
               <div className="background-image-I"></div>
               <div className="content-I">
                 <div className="small-image-I"></div>
@@ -232,35 +217,24 @@ const IdealCalculator = () => {
                 <input
                   type="text"
                   value={age}
-                  onChange={(e) =>
-                    handleNumericInput(e.target.value, setAge, age, setAgeError)
-                  }
+                  onChange={(e) => handleNumericInputChange(e.target.value, setAge)}
+                  onBlur={(e) => handleNumericInputBlur(e.target.value, setAge, setAgeError)}
                   placeholder="21"
                   className={`numeric-input-I ${ageError ? "error-I" : ""}`}
                   pattern="[0-9]*"
                 />
-                {ageError && <p className="error-message-I">{ageError}</p>}
               </div>
               <div className="input-group-I">
                 <label>Height</label>
                 <input
                   type="text"
                   value={height}
-                  onChange={(e) =>
-                    handleNumericInput(
-                      e.target.value,
-                      setHeight,
-                      height,
-                      setHeightError
-                    )
-                  }
+                  onChange={(e) => handleNumericInputChange(e.target.value, setHeight)}
+                  onBlur={(e) => handleNumericInputBlur(e.target.value, setHeight, setHeightError)}
                   placeholder="180cm"
                   className={`numeric-input-I ${heightError ? "error-I" : ""}`}
                   pattern="[0-9]*"
                 />
-                {heightError && (
-                  <p className="error-message-I">{heightError}</p>
-                )}
               </div>
               <div className="ideal-buttons-I">
                 <input
@@ -316,35 +290,24 @@ const IdealCalculator = () => {
                 <input
                   type="text"
                   value={age}
-                  onChange={(e) =>
-                    handleNumericInput(e.target.value, setAge, age, setAgeError)
-                  }
+                  onChange={(e) => handleNumericInputChange(e.target.value, setAge)}
+                  onBlur={(e) => handleNumericInputBlur(e.target.value, setAge, setAgeError)}
                   placeholder="21"
                   className={`numeric-input-I ${ageError ? "error-I" : ""}`}
                   pattern="[0-9]*"
                 />
-                {ageError && <p className="error-message-I">{ageError}</p>}
               </div>
               <div className="input-group-I">
                 <label>Height</label>
                 <input
                   type="text"
                   value={height}
-                  onChange={(e) =>
-                    handleNumericInput(
-                      e.target.value,
-                      setHeight,
-                      height,
-                      setHeightError
-                    )
-                  }
+                  onChange={(e) => handleNumericInputChange(e.target.value, setHeight)}
+                  onBlur={(e) => handleNumericInputBlur(e.target.value, setHeight, setHeightError)}
                   placeholder="180cm"
                   className={`numeric-input-I ${heightError ? "error-I" : ""}`}
                   pattern="[0-9]*"
                 />
-                {heightError && (
-                  <p className="error-message-I">{heightError}</p>
-                )}
               </div>
               <div className="ideal-buttons-I">
                 <div className="Calculator-circles-I"></div>
@@ -367,7 +330,6 @@ const IdealCalculator = () => {
           ) : (
             <div className="result-section-I">
               <div className="Calculator-circles-S2-I"></div>
-              {/* <div className="result-logo-I"></div> */}
               <div className="result-header-I">
                 <h2>Your Result</h2>
                 <h3 className="ideal-weight-value-I">≈{idealWeight}kg</h3>

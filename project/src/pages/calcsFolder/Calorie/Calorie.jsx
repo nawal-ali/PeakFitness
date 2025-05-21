@@ -51,7 +51,11 @@ const CalorieCalculator = () => {
     localStorage.setItem("meals", meals);
   }, [gender, age, height, weight, activityLevel, meals]);
 
-  const handleNumericInput = (value, setter, prevValue, errorSetter) => {
+  const handleNumericInputChange = (value, setter) => {
+    setter(value); // Update the input value as the user types
+  };
+
+  const handleNumericInputBlur = (value, setter, errorSetter) => {
     if (value === "") {
       setter("");
       errorSetter("");
@@ -60,7 +64,7 @@ const CalorieCalculator = () => {
 
     const numericValue = parseInt(value);
     if (isNaN(numericValue) || numericValue < 0) {
-      errorSetter("Please enter a positive number.");
+      errorSetter("invalid");
       setter("");
     } else {
       errorSetter("");
@@ -231,61 +235,37 @@ const CalorieCalculator = () => {
                 <input
                   type="text"
                   value={age}
-                  onChange={(e) =>
-                    handleNumericInput(e.target.value, setAge, age, setAgeError)
-                  }
+                  onChange={(e) => handleNumericInputChange(e.target.value, setAge)}
+                  onBlur={(e) => handleNumericInputBlur(e.target.value, setAge, setAgeError)}
                   placeholder="21"
                   className={`numeric-input-C ${ageError ? "error-C" : ""}`}
                   pattern="[0-9]*"
                 />
-                {ageError && <p className="error-message-C">{ageError}</p>}
               </div>
               <div className="flex-inputs-C">
                 <div className="input-group-C">
-                  <label>weight</label>
+                  <label>Weight</label>
                   <input
                     type="text"
                     value={weight}
-                    onChange={(e) =>
-                      handleNumericInput(
-                        e.target.value,
-                        setWeight,
-                        weight,
-                        setWeightError
-                      )
-                    }
+                    onChange={(e) => handleNumericInputChange(e.target.value, setWeight)}
+                    onBlur={(e) => handleNumericInputBlur(e.target.value, setWeight, setWeightError)}
                     placeholder="65kg"
-                    className={`numeric-input-C ${
-                      weightError ? "error-C" : ""
-                    }`}
+                    className={`numeric-input-C ${weightError ? "error-C" : ""}`}
                     pattern="[0-9]*"
                   />
-                  {weightError && (
-                    <p className="error-message-C">{weightError}</p>
-                  )}
                 </div>
                 <div className="input-group-C">
-                  <label>height</label>
+                  <label>Height</label>
                   <input
                     type="text"
                     value={height}
-                    onChange={(e) =>
-                      handleNumericInput(
-                        e.target.value,
-                        setHeight,
-                        height,
-                        setHeightError
-                      )
-                    }
+                    onChange={(e) => handleNumericInputChange(e.target.value, setHeight)}
+                    onBlur={(e) => handleNumericInputBlur(e.target.value, setHeight, setHeightError)}
                     placeholder="180cm"
-                    className={`numeric-input-C ${
-                      heightError ? "error-C" : ""
-                    }`}
+                    className={`numeric-input-C ${heightError ? "error-C" : ""}`}
                     pattern="[0-9]*"
                   />
-                  {heightError && (
-                    <p className="error-message-C">{heightError}</p>
-                  )}
                 </div>
               </div>
               <div className="activity-slider-C">
@@ -377,61 +357,37 @@ const CalorieCalculator = () => {
                 <input
                   type="text"
                   value={age}
-                  onChange={(e) =>
-                    handleNumericInput(e.target.value, setAge, age, setAgeError)
-                  }
+                  onChange={(e) => handleNumericInputChange(e.target.value, setAge)}
+                  onBlur={(e) => handleNumericInputBlur(e.target.value, setAge, setAgeError)}
                   placeholder="21"
                   className={`numeric-input-C ${ageError ? "error-C" : ""}`}
                   pattern="[0-9]*"
                 />
-                {ageError && <p className="error-message-C">{ageError}</p>}
               </div>
               <div className="flex-inputs-C">
                 <div className="input-group-C">
-                  <label>weight</label>
+                  <label>Weight</label>
                   <input
                     type="text"
                     value={weight}
-                    onChange={(e) =>
-                      handleNumericInput(
-                        e.target.value,
-                        setWeight,
-                        weight,
-                        setWeightError
-                      )
-                    }
+                    onChange={(e) => handleNumericInputChange(e.target.value, setWeight)}
+                    onBlur={(e) => handleNumericInputBlur(e.target.value, setWeight, setWeightError)}
                     placeholder="65kg"
-                    className={`numeric-input-C ${
-                      weightError ? "error-C" : ""
-                    }`}
+                    className={`numeric-input-C ${weightError ? "error-C" : ""}`}
                     pattern="[0-9]*"
                   />
-                  {weightError && (
-                    <p className="error-message-C">{weightError}</p>
-                  )}
                 </div>
                 <div className="input-group-C">
-                  <label>height</label>
+                  <label>Height</label>
                   <input
                     type="text"
                     value={height}
-                    onChange={(e) =>
-                      handleNumericInput(
-                        e.target.value,
-                        setHeight,
-                        height,
-                        setHeightError
-                      )
-                    }
+                    onChange={(e) => handleNumericInputChange(e.target.value, setHeight)}
+                    onBlur={(e) => handleNumericInputBlur(e.target.value, setHeight, setHeightError)}
                     placeholder="180cm"
-                    className={`numeric-input-C ${
-                      heightError ? "error-C" : ""
-                    }`}
+                    className={`numeric-input-C ${heightError ? "error-C" : ""}`}
                     pattern="[0-9]*"
                   />
-                  {heightError && (
-                    <p className="error-message-C">{heightError}</p>
-                  )}
                 </div>
               </div>
               <div className="activity-slider-C">
@@ -511,7 +467,6 @@ const CalorieCalculator = () => {
           ) : (
             <div className="result-section-C">
               <div className="Calculator-circles-side2-C"></div>
-              {/* <div className="result-logo-C"></div> */}
               <div className="result-header-C">
                 <h2>Your Result</h2>
                 <p className="calories-C">

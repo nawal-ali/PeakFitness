@@ -4,9 +4,11 @@
 body {
   padding-right: 0;
 }
+
 input::-webkit-input-placeholder {
   letter-spacing: 1px;
-  }
+}
+
 .calorie-calculator-C {
   display: flex;
   width: 100vw;
@@ -23,13 +25,16 @@ input::-webkit-input-placeholder {
   line-height: 65px;
   font-family: "Poppins";
 }
-.Pargraph-calories-per-meal-C{
+
+.Pargraph-calories-per-meal-C {
   text-align: center !important;
 }
+
 .title-C {
   display: block;
   line-height: 80px;
 }
+
 .left-panel-C {
   flex: 1;
   background-color: #fff;
@@ -41,7 +46,6 @@ input::-webkit-input-placeholder {
   transition: transform 0.6s ease-in-out;
   position: relative;
 }
-
 
 .left-panel-C .buttons-C {
   display: none;
@@ -66,20 +70,20 @@ input::-webkit-input-placeholder {
   z-index: 1;
   filter: brightness(40%);
 }
-.result-section-C{
+
+.result-section-C {
   padding-top: 15%;
   padding-bottom: 10%;
 }
+
 .left-panel-C .content-C {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* height: 100vh; */
   text-align: center;
   color: white;
   z-index: 2;
-  /* margin-bottom: -20px; */
 }
 
 .left-panel-C .small-image-C {
@@ -107,7 +111,6 @@ input::-webkit-input-placeholder {
   cursor: pointer;
   z-index: 2;
 }
-
 
 .calorie-calculator-C.show-results-C .right-panel-C {
   background-image: url("../../../../public/imgs/Calorie.png");
@@ -157,42 +160,37 @@ input::-webkit-input-placeholder {
   width: 100%;
   max-width: 450px;
   text-align: center;
-  padding-top:10% ;
-  padding-bottom:12% ;
+  padding-top: 10%;
+  padding-bottom: 12%;
 }
 
-.input-group-C label,.activity-slider-C label {
+.input-group-C label,
+.activity-slider-C label {
   display: block;
   margin-bottom: 10px;
   color: #000;
   font-weight: bold;
   letter-spacing: 2px;
+  text-align: left;
 }
 
 .input-group-C input {
   width: 100%;
-  padding:  0.8rem;
-  border: 2px solid #fff;
+  padding: 0.8rem;
+  border: 2px solid #000;
   border-radius: 25px;
   font-size: 16px;
   box-sizing: border-box;
   background-color: #fff;
   color: #000;
-  /* outline: #000; */
-  border: 2px solid #000;
-}
-.input-group-C {
-  text-align: left;
-  width: 100%;
-  padding: 10px;
-  position: relative; /* Added to make it the reference for absolute positioning */
+  outline: none;
+  margin-bottom: 7%;
 }
 
-/* 
 .input-group-C input:focus {
-  border-color: #ff8c00;
+  border: 2px solid #CB8778;
   box-shadow: 0 0 8px rgba(255, 140, 0, 0.5);
-} */
+}
 
 .activity-slider-C {
   margin-bottom: 2.5rem;
@@ -200,7 +198,6 @@ input::-webkit-input-placeholder {
   margin-top: 30px;
   margin-left: 10px;
 }
-
 
 .slider-track-C {
   display: flex;
@@ -253,8 +250,9 @@ input::-webkit-input-placeholder {
 
 .slider-label-C {
   font-size: 12px;
-  color: #fff;
+  color: #000;
   margin-top: 5px;
+  font-weight: bold;
   text-wrap: nowrap;
 }
 
@@ -286,6 +284,7 @@ input::-webkit-input-placeholder {
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
   transition: 0.3s ease;
 }
+
 .calculate-again-btn-C {
   padding: 12px 24px;
   border: none;
@@ -349,7 +348,6 @@ p.calories-C {
   padding: 10px 0;
 }
 
-/* Updated macro-item-C styles for sequential animation */
 .macro-item-C {
   display: flex;
   justify-content: space-between;
@@ -357,37 +355,35 @@ p.calories-C {
   padding: 10px;
   padding-bottom: 0;
   padding-left: 0;
-  opacity: 0; /* Start hidden */
-  transform: translateY(20px); /* Start below */
+  opacity: 0;
+  transform: translateY(20px);
   border-bottom: 2px solid #808080;
 }
 
 .show-results-C .macro-item-C {
-  animation: slideIn 0.5s ease-out forwards; /* 0.5s duration per item */
+  animation: slideIn 0.5s ease-out forwards;
 }
 
-/* Staggered delays for each macro-item */
 .show-results-C .macro-item-C:nth-child(1) {
-  animation-delay: 0s; /* First item starts immediately */
+  animation-delay: 0s;
 }
 
 .show-results-C .macro-item-C:nth-child(2) {
-  animation-delay: 0.5s; /* Second item starts after 0.5s */
+  animation-delay: 0.5s;
 }
 
 .show-results-C .macro-item-C:nth-child(3) {
-  animation-delay: 1s; /* Third item starts after 1s */
+  animation-delay: 1s;
 }
 
-/* Define the slideIn animation */
 @keyframes slideIn {
   0% {
     opacity: 0;
-    transform: translateY(20px); /* Start below */
+    transform: translateY(20px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0); /* End at normal position */
+    transform: translateY(0);
   }
 }
 
@@ -426,14 +422,6 @@ p.calories-C {
   animation: none;
 }
 
-/* .calculate-btn-C:hover,
-.clear-btn-C:hover,
-.other-calculators-btn-C:hover {
-  border-color: #ff8c00;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
-} */
-
 .meals-toggle-C {
   display: flex;
   gap: 10px;
@@ -455,59 +443,54 @@ p.calories-C {
   text-align: center;
   font-size: 16px;
   font-weight: bold;
-  opacity: 0; /* Start hidden */
-  transform: translateX(-20px); /* Start slightly to the left */
+  opacity: 0;
+  transform: translateX(-20px);
 }
 
 .show-results-C .meals-toggle-C button {
-  animation: slideInToggle 0.5s ease-out forwards; /* 0.5s duration per button */
+  animation: slideInToggle 0.5s ease-out forwards;
 }
 
-/* Staggered delays for each meals-toggle button */
 .show-results-C .meals-toggle-C button:nth-child(1) {
-  animation-delay: 0s; /* "Per Day" starts immediately */
+  animation-delay: 0s;
 }
 
 .show-results-C .meals-toggle-C button:nth-child(2) {
-  animation-delay: 0.5s; /* "3 Meals" starts after 0.5s */
+  animation-delay: 0.5s;
 }
 
 .show-results-C .meals-toggle-C button:nth-child(3) {
-  animation-delay: 1s; /* "4 Meals" starts after 1s */
+  animation-delay: 1s;
 }
 
-/* Define the slideInToggle animation */
 @keyframes slideInToggle {
   0% {
     opacity: 0;
-    transform: translateX(-20px); /* Start left */
+    transform: translateX(-20px);
   }
   100% {
     opacity: 1;
-    transform: translateX(0); /* End at normal position */
+    transform: translateX(0);
   }
 }
 
 .meals-toggle-C button.active-C {
-  background-color: rgba(203, 135, 120,0.5);
+  background-color: rgba(203, 135, 120, 0.5);
   color: white;
 }
 
 .meals-toggle-C button:hover {
   opacity: 0.9;
-  background-color: rgba(203, 135, 120,0.5);
+  background-color: rgba(203, 135, 120, 0.5);
 }
 
 .calorie-calculator-C {
   display: flex;
   flex-direction: row;
   width: 100vw;
-  /* height: 100vh; */
   background-color: #fff;
   overflow: hidden;
 }
-
-
 
 .right-panel-C {
   flex: 1;
@@ -529,41 +512,6 @@ p.calories-C {
   transform: translateX(0);
 }
 
-
-/* Circles */
-/* .Calculator-circles-S1-C::before,
-.Calculator-circles-S1-C::after,
-.Calculator-circles-side2-C,
-.Calculator-circles-side2-C::after,
-.Calculator-circles-side2-C::before {
-  content: "";
-  position: absolute;
-  transform: translateX(-50%);
-  width: 360px;
-  height: 360px;
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 50%;
-  filter: blur(120px);
-} */
-
-/* .Calculator-circles-S1-C::before { top: 80%; left: 120%; }
-.Calculator-circles-S1-C::after { top: -200px; left: -165px; }
-.Calculator-circles-side2-C { top: 100px; right: 25%; }
-.Calculator-circles-side2-C::after { top: 345px; left: 50%; }
-.Calculator-circles-side2-C::before { top: -400px; left: 50%; }
-.Calculator-one-circle-C::before {
-  content: "";
-  position: absolute;
-  top: -140px;
-  left: -220px;
-  width: 160px;
-  height: 160px;
-  background: radial-gradient(circle at top center, #CB8778 0%, #0a1b30 80%);
-  border-radius: 50%;
-  opacity: 0.9;
-  z-index: 1;
-} */
-
 .flex-inputs-C {
   display: flex;
   gap: 30px;
@@ -574,7 +522,6 @@ p.calories-C {
 .flex-inputs-C div {
   width: 100%;
 }
-
 
 .clear-btn-C {
   background-color: transparent;
@@ -601,12 +548,6 @@ p.calories-C {
   outline: none;
 }
 
-/* .input-group-C input:focus,
-.activity-level-C select:focus {
-  border-color: #ff8c00;
-  box-shadow: 0 0 8px rgba(255, 140, 0, 0.5);
-} */
-
 .Calorie-parameters-side2-C,
 .Calorie-parameters-side1-C {
   color: #000;
@@ -618,23 +559,11 @@ p.calories-C {
 }
 
 .error-message-C {
-  color: #ff0000;
-  font-size: 12px;
-  margin-top: 5px;
-  text-align: left;
-  position: absolute; /* Changed to absolute */
-  top: 100%; /* Position it directly below the input */
-  left: 10px; /* Align with the padding of the input-group-C */
-  z-index: 2; /* Ensure it appears above other elements */
-}
-
-.error-message-C.weight-height-error-C {
-  display: none; /* Deprecated, no longer needed */
+  display: none;
 }
 
 .numeric-input-C.error-C {
-  border: 2px solid #ff8c00;
-  outline: none;
+  border: 2px solid #ff0000;
 }
 
 .arrow-icon-C {
@@ -644,8 +573,6 @@ p.calories-C {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-
 
 @keyframes slideLeft {
   from {
@@ -731,11 +658,6 @@ p.calories-C {
   animation-fill-mode: both;
 }
 
-/* .subtext-C {
-  position: relative;
-  left: 30px;
-} */
-
 .Arrow-right-C {
   width: 35px;
   height: 35px;
@@ -748,6 +670,7 @@ p.calories-C {
 .calorie-calculator-C.show-results-C .input-section-C .Calorie-buttons-Result-C {
   display: none;
 }
+
 .popup-overlay-C {
   position: fixed;
   top: 0;
@@ -793,68 +716,178 @@ p.calories-C {
   background-color: #CB8778;
 }
 
-@media (max-width:1025px) {
-  .left-panel-C .under-header-C {font-size: 22px;}
-  
+@media (max-width: 1025px) {
+  .left-panel-C .under-header-C {
+    font-size: 22px;
+  }
 }
-@media (max-width:913px) {
-  .left-panel-C .under-header-C {font-size: 1.2rem;}
-  .slider-track-C {width: 100%;}
-  .slider-line-C {left: 1rem;width: 88%;}
+
+@media (max-width: 913px) {
+  .left-panel-C .under-header-C {
+    font-size: 1.2rem;
+  }
+  .slider-track-C {
+    width: 100%;
+  }
+  .slider-line-C {
+    left: 1rem;
+    width: 88%;
+  }
 }
-@media (max-width:821px) {
-  .Calculator-circles-S1-C::before, 
-  .Calculator-circles-S1-C::after, 
-  .Calculator-circles-side2-C, 
-  .Calculator-circles-side2-C::after, 
-  .Calculator-circles-side2-C::before {display: none;}
-  .calorie-calculator-C {flex-direction: column;}
-  .left-panel-C .background-image-C {background-size: auto;}
-  .left-panel-C .content-C {padding-top: 10%;padding-bottom: 20%;}
-  .right-panel-C {padding-bottom: 55%;}
-  .Pargraph-calories-per-meal-C{text-align: center;}
-  .calorie-buttons-Result-C, .Calorie-buttons-C {margin-top: 0px;}
+
+@media (max-width: 821px) {
+  .Calculator-circles-S1-C::before,
+  .Calculator-circles-S1-C::after,
+  .Calculator-circles-side2-C,
+  .Calculator-circles-side2-C::after,
+  .Calculator-circles-side2-C::before {
+    display: none;
+  }
+  .calorie-calculator-C {
+    flex-direction: column;
+  }
+  .left-panel-C .background-image-C {
+    background-size: auto;
+  }
+  .left-panel-C .content-C {
+    padding-top: 10%;
+    padding-bottom: 20%;
+  }
+  .right-panel-C {
+    padding-bottom: 55%;
+  }
+  .Pargraph-calories-per-meal-C {
+    text-align: center;
+  }
+  .calorie-buttons-Result-C,
+  .Calorie-buttons-C {
+    margin-top: 0px;
+  }
 }
+
 @media (max-width: 769px) {
-  .right-panel-C {padding-bottom: 40%;}
+  .right-panel-C {
+    padding-bottom: 40%;
+  }
 }
+
 @media (max-width: 541px) {
-  .right-panel-C {padding-bottom: 5%;}
+  .right-panel-C {
+    padding-bottom: 5%;
+  }
 }
-@media (max-width:431px) {
-  .left-panel-C .content-C {padding-top: 30%;}
-  .left-panel-C .content-C {padding-bottom: 45%;}
-  .right-panel-C {padding-bottom: 45%;}
-  .calorie-buttons-Result-C, .Calorie-buttons-C {margin-top: 0px;flex-direction: column;}
-  .clear-btn-C {margin-right: 0px;}.calorie-buttons-Result-C, .Calorie-buttons-C {gap: 2rem;}
-  .slider-track-C {width: 100%;}.slider-line-C {left: 1rem;}
-  .left-panel-C .under-header-C {font-size: 1.2rem;width: 95%;}
-  .result-section-C {width: 100%;}.macronutrients-C {width: 100%;}
-  .meals-toggle-C button {margin-left: 15px;}
-  .Pargraph-calories-per-meal-C{text-align: center;}
-  .calculate-btn-C , .other-calculators-btn-C {padding: 10px 20px;}
-  .input-section-C {padding-bottom: 25%;}
-  .result-section-C {padding-top: 15%;padding-bottom: 25%;}
+
+@media (max-width: 431px) {
+  .left-panel-C .content-C {
+    padding-top: 30%;
+  }
+  .left-panel-C .content-C {
+    padding-bottom: 45%;
+  }
+  .right-panel-C {
+    padding-bottom: 45%;
+  }
+  .calorie-buttons-Result-C,
+  .Calorie-buttons-C {
+    margin-top: 0px;
+    flex-direction: column;
+  }
+  .clear-btn-C {
+    margin-right: 0px;
+  }
+  .calorie-buttons-Result-C,
+  .Calorie-buttons-C {
+    gap: 2rem;
+  }
+  .slider-track-C {
+    width: 100%;
+  }
+  .slider-line-C {
+    left: 1rem;
+  }
+  .left-panel-C .under-header-C {
+    font-size: 1.2rem;
+    width: 95%;
+  }
+  .result-section-C {
+    width: 100%;
+  }
+  .macronutrients-C {
+    width: 100%;
+  }
+  .meals-toggle-C button {
+    margin-left: 15px;
+  }
+  .Pargraph-calories-per-meal-C {
+    text-align: center;
+  }
+  .calculate-btn-C,
+  .other-calculators-btn-C {
+    padding: 10px 20px;
+  }
+  .input-section-C {
+    padding-bottom: 25%;
+  }
+  .result-section-C {
+    padding-top: 15%;
+    padding-bottom: 25%;
+  }
 }
+
 @media (max-width: 361px) {
-  .left-panel-C .under-header-C {font-size: 1.1rem;}
-  .left-panel-C .content-C {padding-bottom: 60%;}
-  .right-panel-C {padding-bottom: 10%;}
-  .slider-line-C {width: 80%;}
-  .meals-toggle-C button {margin-left: 0px;}
-  .calorie-buttons-Result-C, .Calorie-buttons-C {gap: 1.5rem;}
-  .Calorie-parameters-side2-C, .Calorie-parameters-side1-C {font-size: 30px;}
+  .left-panel-C .under-header-C {
+    font-size: 1.1rem;
+  }
+  .left-panel-C .content-C {
+    padding-bottom: 60%;
+  }
+  .right-panel-C {
+    padding-bottom: 10%;
+  }
+  .slider-line-C {
+    width: 80%;
+  }
+  .meals-toggle-C button {
+    margin-left: 0px;
+  }
+  .calorie-buttons-Result-C,
+  .Calorie-buttons-C {
+    gap: 1.5rem;
+  }
+  .Calorie-parameters-side2-C,
+  .Calorie-parameters-side1-C {
+    font-size: 30px;
+  }
 }
-@media (max-width:391px) {
-  .slider-line-C {width: 81%;}
+
+@media (max-width: 391px) {
+  .slider-line-C {
+    width: 81%;
+  }
 }
-@media (max-width:376px) {
-  .result-section-C {padding-bottom: 0%;}
-  .right-panel-C {padding-bottom: 0%;}
-  .left-panel-C .content-C {padding-top: 30%;padding-bottom: 20%;}
+
+@media (max-width: 376px) {
+  .result-section-C {
+    padding-bottom: 0%;
+  }
+  .right-panel-C {
+    padding-bottom: 0%;
+  }
+  .left-panel-C .content-C {
+    padding-top: 30%;
+    padding-bottom: 20%;
+  }
 }
-@media (max-width:345px) {
-  .result-section-C {padding-bottom: 25%;}
-  .left-panel-C .content-C {padding-top: 35%;padding-bottom: 25%;}
-  .right-panel-C {padding-bottom: 50%;}
+
+@media (max-width: 345px) {
+  .result-section-C {
+    padding-bottom: 25%;
+  }
+  .left-panel-C .content-C {
+    padding-top: 35%;
+    padding-bottom: 25%;
+  }
+  .right-panel-C {
+    padding-bottom: 50%;
+  }
 }
