@@ -1,3 +1,7 @@
+import { useState, useEffect } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Navbar from "../../assets/navFolder/Navbar";
 import Button from "../../assets/Button";
 import Card from "../../assets/cardFolder/Card";
@@ -6,20 +10,33 @@ import Footer from "../../assets/footerFolder/Footer";
 import CommentCard from "../../assets/comments/CommentCard";
 import ToTop from "../../assets/toTopBtn/toTop";
 import "../homeFolder/home.css";
-import { Link, NavLink } from "react-router-dom";
-// import UncontrolledExample from "../../assets/carousel/Carousel ";
-import { useState, useEffect } from "react";
+
 export default function Home() {
   const text_color = "#CB8778";
   let isLogged = localStorage.getItem("islogged");
-  // useEffect(() => {}, []);
   const [islogged, setIsLogged] = useState(() => {
     return localStorage.getItem("islogged") === "true";
   });
+  const navigate = useNavigate();
 
   useEffect(() => {
     localStorage.setItem("islogged", islogged);
+    const showLoginSuccess = localStorage.getItem("showLoginSuccess");
+    if (showLoginSuccess === "true") {
+      toast.success("انت دخلت بنجاح"); // Updated to Arabic message
+      localStorage.removeItem("showLoginSuccess");
+    }
   }, [islogged]);
+
+  useEffect(() => {
+    if (!islogged && isLogged === "true") {
+      toast.info("You have been logged out successfully!");
+      localStorage.removeItem("token");
+      setTimeout(() => {
+        navigate("/");
+      }, 1500);
+    }
+  }, [islogged, navigate]);
 
   return (
     <>
@@ -61,7 +78,7 @@ export default function Home() {
               sustainable,and a healthy lifestyle
             </span>{" "}
             . <br />
-            At Pure Vitality, we&apos;re here to guide you with fitness
+            At Pure Vitality, we're here to guide you with fitness
             programs, nutritional advice, and personalized support to help you
             achieve your goals and thrive every day!
           </p>
@@ -84,7 +101,6 @@ export default function Home() {
           ></model-viewer>
         </div>
       </div>
-      {/* <div style={{ marginTop: "20%" }}><UncontrolledExample /></div> */}
       <div>
         <div className="angled-background margin-top-10 row p-5 position-relative">
           <div
@@ -93,7 +109,7 @@ export default function Home() {
           ></div>
           <div className="col-12 col-md-4 custom-card card-3">
             <Link
-              to="/Calculators"
+              to="/Calcul propulsors"
               className="link-underline link-underline-opacity-0"
             >
               <Card
@@ -148,6 +164,7 @@ export default function Home() {
       <div className="margin-top-10">
         <Footer />
       </div>
+      <ToastContainer position="top-right" autoClose={3000} />
     </>
   );
 }

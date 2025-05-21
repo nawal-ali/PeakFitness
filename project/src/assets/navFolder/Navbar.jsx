@@ -1,6 +1,7 @@
 import "../navFolder/nav.css";
 import { NavLink, useNavigate, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { toast } from "react-toastify"; // Added for toast notification
 // eslint-disable-next-line react/prop-types
 //{ showSearch = true, showBackground = true }
 export default function Navbar({ islogged, setIsLogged }) {
@@ -30,7 +31,10 @@ export default function Navbar({ islogged, setIsLogged }) {
     localStorage.setItem("islogged", "false");
     localStorage.removeItem("token")
     setIsLogged(false);
-    navigate("/");
+    toast.info("You have been logged out successfully!"); // Added toast notification
+    setTimeout(() => {
+      navigate("/");
+    }, 1500); // Delay navigation to show toast
   };
 
   return (
