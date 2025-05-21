@@ -323,7 +323,7 @@ const BMICalculator = () => {
               </div>
               <div className="bmi-buttons-result-B">
                 <button
-                  className="calculate-btn-B"
+                  className="calculate-again-btn-B"
                   onClick={recalculateFromInputs}
                 >
                   Calculate Again
