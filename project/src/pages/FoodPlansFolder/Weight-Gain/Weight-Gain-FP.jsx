@@ -2,7 +2,7 @@
 import "./Weight-Gain-FP.css"; // Import the CSS file
 import Navbar from "../../../assets/navFolder/Navbar";
 import Temp from "../template/Temp";
-
+import Footer from "../../../assets/footerFolder/Footer";
 const WeightGain = () => {
   return (
     <>
@@ -102,6 +102,9 @@ const WeightGain = () => {
           },
         ]}
       />
+      <div className="margin-top-10">
+                          <Footer />
+                        </div>
     </>
   );
 };

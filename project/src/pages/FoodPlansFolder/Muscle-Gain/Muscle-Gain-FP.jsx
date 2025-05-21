@@ -2,7 +2,7 @@
 import "./Muscle-Gain-FP.css";
 import Temp from "../template/Temp";
 import Navbar from "../../../assets/navFolder/Navbar";
-
+import Footer from "../../../assets/footerFolder/Footer";
 const MuscleGain = () => {
   return (
     <>
@@ -111,6 +111,9 @@ Healthy fats do more than just add calories — they support hormones, recovery,
           },
         ]}
       />
+      <div className="margin-top-10">
+                          <Footer />
+                        </div>
     </>
   );
 };

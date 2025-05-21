@@ -2,7 +2,7 @@
 import "./Weight-Loss-FP.css";
 import Navbar from "../../../assets/navFolder/Navbar";
 import Temp from "../template/Temp";
-
+import Footer from "../../../assets/footerFolder/Footer";
 const WeightLoss = () => {
   return (
     <>
@@ -108,6 +108,9 @@ Healthy fats are essential for weight loss, helping you stay full and boost meta
           },
         ]}
       />
+      <div className="margin-top-10">
+                          <Footer />
+                        </div>
     </>
   );
 };

@@ -1,5 +1,6 @@
 import Navbar from "../../../assets/navFolder/Navbar";
 import ProTipsTemp from "../proTips_template/ProTipsTemp";
+import Footer from "../../../assets/footerFolder/Footer";
 
 export default function WL_proTips() {
   return (
@@ -83,6 +84,9 @@ export default function WL_proTips() {
           },
         ]}
       />
+             <div className="margin-top-10">
+                          <Footer />
+                        </div>
     </>
   );
 }
