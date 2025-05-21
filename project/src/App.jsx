@@ -54,9 +54,6 @@ function App() {
             <Route path="/weight-loss-details" element={<WeightLoss />} />
             <Route path="/muscle-gain-details" element={<MuscleGain />} />
             <Route path="/proTipsSlider" element={<Slider_PT />} />
-            <Route path="/weight-gain-protips" element={<WG_proTips />} />
-            <Route path="/weight-loss-protips" element={<WL_proTips />} />
-            <Route path="/muscle-gain-protips" element={<MG_proTips />} />
             <Route path="/profile" element={<Profile />} />
             <Route
               path="/weight-gain-details-Pro-tips"
