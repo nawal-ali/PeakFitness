@@ -59,7 +59,7 @@ const Profile = () => {
           </div>
           <img src="./imgs/profile_img.png" alt="" className="w-100" />
         </div>
-        <div className="col-12 col-md-8" style={{ marginTop: "10%" }}>
+        <div className="col-12 col-md-8 text-center text-md-start" style={{ marginTop: "10%" }}>
           <h1 className="fw-bold text-black mb-5" style={{ fontSize: "4rem" }}>
             Profile
           </h1>
@@ -69,7 +69,7 @@ const Profile = () => {
                 User Name
               </h3>
               <p
-                className="rounded-4 p-3 w-75"
+                className="rounded-4 p-3 w-75 m-auto mb-4 m-md-0 mb-md-4"
                 style={{ backgroundColor: "#EFEFEF" }}
               >
                 {user.username}
@@ -80,7 +80,7 @@ const Profile = () => {
                 Age
               </h3>
               <p
-                className="rounded-4 p-3 w-75"
+                className="rounded-4 p-3 w-75 m-auto mb-4 m-md-0 mb-md-4"
                 style={{ backgroundColor: "#EFEFEF" }}
               >
                 {user.age}
@@ -91,7 +91,7 @@ const Profile = () => {
                 Email
               </h3>
               <p
-                className="rounded-4 p-3 w-75"
+                className="rounded-4 p-3 w-75 m-auto mb-4 m-md-0 mb-md-4"
                 style={{ backgroundColor: "#EFEFEF" }}
               >
                 {user.email}
@@ -102,7 +102,7 @@ const Profile = () => {
                 weight (in kg)
               </h3>
               <p
-                className="rounded-4 p-3 w-75"
+                className="rounded-4 p-3 w-75 m-auto mb-4 m-md-0 mb-md-4"
                 style={{ backgroundColor: "#EFEFEF" }}
               >
                 {user.weight}
@@ -113,7 +113,7 @@ const Profile = () => {
                 height (in cm)
               </h3>
               <p
-                className="rounded-4 p-3 w-75"
+                className="rounded-4 p-3 w-75 m-auto mb-4 m-md-0 mb-md-4"
                 style={{ backgroundColor: "#EFEFEF" }}
               >
                 {user.height}
@@ -121,17 +121,17 @@ const Profile = () => {
             </div>
             <div className="col-12 col-md-6">
               <h3 style={{ color: "#CB8778" }} className="mb-3">
-                User Name
+                Gender
               </h3>
               <p
-                className="rounded-4 p-3 w-75"
+                className="rounded-4 p-3 w-75 m-auto m-md-0 mb-md-4"
                 style={{ backgroundColor: "#EFEFEF" }}
               >
-                {user.username}
+                {user.gender}
               </p>
             </div>
           </div>
-          <div className="mt-5 d-flex justify-content-center me-5 gap-5">
+          <div className="mt-5 d-flex justify-content-center me-0 me-md-5 gap-5">
             <button
               className="btn btn-dark text-dark fw-bold px-5 mx-2 fs-4"
               style={{ backgroundColor: "#CB8778" }}
