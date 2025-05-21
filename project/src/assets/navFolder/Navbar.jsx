@@ -80,7 +80,7 @@ export default function Navbar({ islogged, setIsLogged,showBackground,isExpanded
             aria-label="Toggle navigation"
           >
             {/* <span className="navbar-toggler-icon"></span> */}
-            <i className="fa-solid fa-bars text-dark"></i> 
+            <i className="fa-solid fa-bars text-dark">MENU</i> 
           </button>
           {/*  */}
           <div
