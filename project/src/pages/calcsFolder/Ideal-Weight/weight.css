@@ -56,7 +56,6 @@ body {
 .calorie-calculator-I {
   display: flex;
   width: 100vw;
-  /* height: 100vh; */
   background-color: #fff;
   overflow: hidden;
   position: relative;
@@ -66,8 +65,6 @@ body {
 .calorie-calculator-I.show-results-I .left-panel-I {
   transform: translateX(0);
 }
-
-/* Logo in the Left Panel */
 
 /* Background Image in the Left Panel */
 .left-panel-I .background-image-I {
@@ -96,7 +93,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* height: 100vh; */
   text-align: center;
   color: white;
   z-index: 2;
@@ -121,9 +117,9 @@ body {
 }
 /* Arrow in the Left Panel */
 .arrow-icon-I {
-  width: 20px; /* حجم السهم (يمكن تعديله حسب الحاجة) */
-  height: 20px; /* ارتفاع السهم */
-  margin-left: -8px; /* مسافة بين النص والسهم */
+  width: 20px;
+  height: 20px;
+  margin-left: -8px;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -212,10 +208,10 @@ body {
   outline: none;
 }
 
-/* .input-group-I input:focus {
-  border-color: #ff8c00;
+.input-group-I input:focus {
+  border: 2px solid #CB8778;
   box-shadow: 0 0 8px rgba(255, 140, 0, 0.5);
-} */
+}
 
 /* Buttons Styling */
 .ideal-buttons-I,
@@ -224,7 +220,6 @@ body {
   justify-content: center;
   align-items: center;
   gap: 50px;
-  /* margin-top: 40px; */
   width: 100%;
   border: none;
   text-wrap: nowrap;
@@ -232,8 +227,8 @@ body {
 
 .clear-btn-I,
 .calculate-btn-I {
-  flex: 1; /* يجعل كلا الزرين يأخذان نفس المساحة */
-  max-width: 180px; /* منع التمدد الزائد */
+  flex: 1;
+  max-width: 180px;
   text-align: center;
   position: relative;
   z-index: 100;
@@ -260,20 +255,13 @@ body {
   border-radius: 30px;
   font-size: 16px;
   font-weight: bold;
-  border:2px solid #CB8778;
+  border: 2px solid #CB8778;
   cursor: pointer;
   color: #fff;
   background-color: #CB8778;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.3s ease;
 }
-
-/* .calculate-btn-I:hover,
-.clear-btn-I:hover {
-  border-color: #ff8c00;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
-} */
 
 /* Result Section Styling */
 .result-section-I {
@@ -283,8 +271,6 @@ body {
   flex-direction: column;
   text-align: center;
   color: #fff;
-  /* margin-left: -150px;
-  margin-top: 40px; */
   border: none;
 }
 
@@ -292,14 +278,12 @@ body {
   font-size: 50px;
   font-weight: bold;
   text-align: left;
-  /* margin-left: 30px; */
   border: none;
 }
 
 .result-section-I h3 {
   font-size: 60px;
   text-align: left;
-  /* margin-left: 45px; */
   letter-spacing: 3px;
   border: none;
 }
@@ -348,7 +332,7 @@ body {
   transition: transform 0.6s ease-in-out;
   padding-bottom: 8.5%;
   padding-top: 6%;
-  z-index: 0; /* لضمان أن الخط يظهر فوق الخلفية */
+  z-index: 0;
   padding-bottom: 10.5%;
 }
 
@@ -359,7 +343,6 @@ body {
 .calorie-calculator-I.show-results-I .right-panel-I {
   transform: translateX(0);
 }
-
 
 /* Table */
 .ideal-table-div-I {
@@ -394,87 +377,8 @@ th {
   border: 2px solid #808080;
   background-color: transparent;
 }
-/* Circles (unchanged) */
-/* .Calculator-one-circle-I::before ,
-.Calculator-one-circle-I::after {
-  content: "";
-  position: absolute;
 
-  width: 160px;
-  height: 160px;
-  background: radial-gradient(circle at top center, #CB8778 0%, #0a1b30 80%);
-  border-radius: 50%;
-  opacity: 0.9;
-  z-index: 1;
-  border: none;
-} */
-
-/* .Calculator-one-circle-I::before {
-  top: -220px;
-  left: -200px;
-}
-.Calculator-one-circle-I::after {
-  bottom: -270px;
-  left: -200px;
-  background: radial-gradient(circle at top center, #CB8778 0%, #0a1b30 80%);
-  border-radius: 50%;
-  opacity: 0.9;
-  z-index: 1;
-  border: none;
-}
-
-.Calculator-one-circle-s1-I::before {
-  content: "";
-  position: absolute;
-  top: -210px;
-  right: -200px;
-  width: 160px;
-  height: 160px;
-  background: radial-gradient(circle at top center, #CB8778 0%, #0a1b30 80%);
-  border-radius: 50%;
-  opacity: 0.9;
-  z-index: 1;
-  border: none;
-}
-
-.Calculator-circles-S2-I::before,
-.Calculator-circles-S2-I::after 
-  {
-    content: "";
-    position: absolute;
-    transform: translateX(-50%);
-    width: 365px;
-    height: 365px;
-    background: rgba(255, 255, 255, 0.12);
-    border-radius: 50%;
-    filter: blur(120px);
-    border: none;
-  }
-.Calculator-circles-S2-I::after {
-  top: 75%;
-  left: -45%;
-}
-
-.Calculator-circles-S2-I::before {
-  top: -10%;
-  left: -89%;
-  z-index: -1;
-}
-.Calculator-circles-S1-I::before,
-.Calculator-circles-S1-I::after {
-  content: "";
-  position: absolute;
-  transform: translateX(-50%);
-  width: 360px;
-  height: 360px;
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 50%;
-  filter: blur(120px);
-}
-.Calculator-circles-S1-I::before { top: 80%; left: 120%; }
-.Calculator-circles-S1-I::after { top: -200px; left: -165px; } */
-
-
+/* Clear Button */
 .clear-btn-I {
   background-color: transparent;
   color: black;
@@ -488,7 +392,7 @@ th {
   border-left: 0;
 }
 
-/* Animations (unchanged) */
+/* Animations */
 @keyframes slideLeft-I {
   from {
     opacity: 0;
@@ -574,22 +478,15 @@ th {
 .subtext-I {
   margin-bottom: 0px;
 }
+
 /* Error Message Styling */
 .error-message-I {
-  color: #ff0000;
-  font-size: 12px;
-  margin-top: 5px;
-  text-align: left;
-  position: absolute;
-  top: 100%;
-  left: 10px;
-  z-index: 2;
+  display: none;
 }
 
-/* .numeric-input-I.error-I {
-  border: 2px solid #ff8c00;
-  outline: none;
-} */
+.numeric-input-I.error-I {
+  border: 2px solid #ff0000;
+}
 
 /* Popup Styling */
 .popup-overlay-I {
@@ -636,82 +533,69 @@ th {
 .popup-close-btn-I:hover {
   background-color: #ff8c00;
 }
-/* إعدادات عامة للأنيميشن */
-@keyframes fadeInUp-I {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-/* إعداد العناصر لتبدأ مخفية وتظهر بترتيب */
+/* Animation for Result Section */
 .result-section-I h2,
 .result-section-I h3,
 .result-section-I p,
 .ideal-table-div-I,
 .ideal-table-I tbody tr,
 .ideal-buttons-result-I {
-  opacity: 0; /* نخليهم مخفيين في البداية */
-  animation-fill-mode: both; /* عشان يحتفظوا بالحالة النهائية بعد الأنيميشن */
+  opacity: 0;
+  animation-fill-mode: both;
 }
 
-/* تفعيل الأنيميشن لما showResults بيبقى true */
 .calorie-calculator-I.show-results-I .result-section-I h2 {
   animation: fadeInUp-I 0.6s ease-out forwards;
-  animation-delay: 0.2s; /* h2 يظهر أولاً بعد 0.2 ثانية */
+  animation-delay: 0.2s;
 }
 
 .calorie-calculator-I.show-results-I .result-section-I h3 {
   animation: fadeInUp-I 0.6s ease-out forwards;
-  animation-delay: 0.4s; /* h3 يظهر بعد 0.4 ثانية */
+  animation-delay: 0.4s;
 }
 
 .calorie-calculator-I.show-results-I .result-section-I p {
   animation: fadeInUp-I 0.6s ease-out forwards;
-  animation-delay: 0.6s; /* p يظهر بعد 0.6 ثانية */
+  animation-delay: 0.6s;
 }
 
 .calorie-calculator-I.show-results-I .ideal-table-div-I {
   animation: fadeInUp-I 0.6s ease-out forwards;
-  animation-delay: 0.8s; /* الجدول ككل يظهر بعد 0.8 ثانية */
+  animation-delay: 0.8s;
 }
 
-/* أنيميشن الصفوف في الجدول */
 .calorie-calculator-I.show-results-I .ideal-table-I tbody tr:nth-child(1) {
   animation: fadeInUp-I 0.6s ease-out forwards;
-  animation-delay: 1s; /* الصف الأول يظهر بعد 1 ثانية */
+  animation-delay: 1s;
 }
 
 .calorie-calculator-I.show-results-I .ideal-table-I tbody tr:nth-child(2) {
   animation: fadeInUp-I 0.6s ease-out forwards;
-  animation-delay: 1.2s; /* الصف الثاني يظهر بعد 1.2 ثانية */
+  animation-delay: 1.2s;
 }
 
 .calorie-calculator-I.show-results-I .ideal-table-I tbody tr:nth-child(3) {
   animation: fadeInUp-I 0.6s ease-out forwards;
-  animation-delay: 1.4s; /* الصف الثالث يظهر بعد 1.4 ثانية */
+  animation-delay: 1.4s;
 }
 
 .calorie-calculator-I.show-results-I .ideal-table-I tbody tr:nth-child(4) {
   animation: fadeInUp-I 0.6s ease-out forwards;
-  animation-delay: 1.6s; /* الصف الرابع يظهر بعد 1.6 ثانية */
+  animation-delay: 1.6s;
 }
 
 .calorie-calculator-I.show-results-I .ideal-table-I tbody tr:nth-child(5) {
   animation: fadeInUp-I 0.6s ease-out forwards;
-  animation-delay: 1.8s; /* الصف الخامس يظهر بعد 1.8 ثانية */
+  animation-delay: 1.8s;
 }
 
 .calorie-calculator-I.show-results-I .ideal-buttons-result-I {
   animation: fadeInUp-I 0.6s ease-out forwards;
-  animation-delay: 2s; /* الأزرار تظهر أخيرًا بعد 2 ثانية */
+  animation-delay: 2s;
 }
-/* Media Queries */
 
+/* Media Queries */
 @media (max-width: 1025px) {
   .Calculator-one-circle-s1-I::before,.Calculator-circles-S1-I::after,.Calculator-one-circle-I::before,.Calculator-one-circle-I::after,.Calculator-circles-S1-I::before,.Calculator-circles-S2-I::after,.Calculator-circles-S2-I::before  {display: none;}
   .left-panel-I .small-image-I {width: 110px;height: 110px;}
@@ -750,8 +634,6 @@ th {
   padding-bottom: 10%;
 }
 }
-
-
 @media (max-width:854px) {
   .right-panel-I {padding-top: 15%;padding-bottom: 75% !important;}
   .result-section-I {padding-top: 15%;padding-bottom: 5% !important;}
@@ -759,7 +641,6 @@ th {
 }
 @media (max-width:851px) {
   .right-panel-I {padding-top: 15%;padding-bottom: 5% !important;}
-
 }
 @media (max-width: 821px) {
   .right-panel-I {padding-bottom: 65% !important;}
@@ -786,7 +667,6 @@ th {
 @media (max-width:767px) {
   .right-panel-I {padding-top: 15%;padding-bottom: 5% !important;}
 }
-
 @media (max-width:550px) {
   .ideal-table-I {width: 80%;}
   .result-header-I {margin-left: 0px;}
@@ -807,14 +687,12 @@ th {
 }
 @media (max-width:429px) {
   .right-panel-I {padding-top: 15%;padding-bottom: 5% !important;}
-
 }
 @media (max-width: 415px) {
   .right-panel-I {padding-bottom: 60% !important;}
 }
 @media (max-width:411px) {
   .right-panel-I {padding-top: 15%;padding-bottom: 5% !important;}
-
 }
 @media (max-width: 361px) {
   .right-panel-I {padding-bottom: 25% !important;}
@@ -835,6 +713,3 @@ th {
   .right-panel-I {padding-bottom: 70% !important;}
   .input-section-I {width: 90% !important;}
 }
-
-
-

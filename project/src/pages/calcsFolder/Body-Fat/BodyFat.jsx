@@ -4,35 +4,12 @@ import Navbar from "../../../assets/navFolder/Navbar";
 import "./body.css";
 
 const BodyFatCalc = () => {
-  const [gender, setGender] = useState(() => {
-    const savedGender = localStorage.getItem("gender");
-    return savedGender || "";
-  });
-  const [age, setAge] = useState(() => {
-    const savedAge = localStorage.getItem("age");
-    const parsedAge = parseInt(savedAge) || "";
-    return parsedAge >= 0 ? parsedAge.toString() : "";
-  });
-  const [height, setHeight] = useState(() => {
-    const savedHeight = localStorage.getItem("height");
-    const parsedHeight = parseInt(savedHeight) || "";
-    return parsedHeight >= 0 ? parsedHeight.toString() : "";
-  });
-  const [weight, setWeight] = useState(() => {
-    const savedWeight = localStorage.getItem("weight");
-    const parsedWeight = parseInt(savedWeight) || "";
-    return parsedWeight >= 0 ? parsedWeight.toString() : "";
-  });
-  const [neck, setNeck] = useState(() => {
-    const savedNeck = localStorage.getItem("neck");
-    const parsedNeck = parseInt(savedNeck) || "";
-    return parsedNeck >= 0 ? parsedNeck.toString() : "";
-  });
-  const [waist, setWaist] = useState(() => {
-    const savedWaist = localStorage.getItem("waist");
-    const parsedWaist = parseInt(savedWaist) || "";
-    return parsedWaist >= 0 ? parsedWaist.toString() : "";
-  });
+  const [gender, setGender] = useState("");
+  const [age, setAge] = useState("");
+  const [height, setHeight] = useState("");
+  const [weight, setWeight] = useState("");
+  const [neck, setNeck] = useState("");
+  const [waist, setWaist] = useState("");
   const [bodyFatResults, setBodyFatResults] = useState(null);
   const [showResults, setShowResults] = useState(false);
   const [ageError, setAgeError] = useState("");
@@ -43,16 +20,27 @@ const BodyFatCalc = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
 
+  // Clear localStorage and reset state on page refresh
   useEffect(() => {
-    localStorage.setItem("gender", gender);
-    localStorage.setItem("age", age === "" ? "" : age.toString());
-    localStorage.setItem("height", height === "" ? "" : height.toString());
-    localStorage.setItem("weight", weight === "" ? "" : weight.toString());
-    localStorage.setItem("neck", neck === "" ? "" : neck.toString());
-    localStorage.setItem("waist", waist === "" ? "" : waist.toString());
-  }, [gender, age, height, weight, neck, waist]);
+    localStorage.removeItem("gender");
+    localStorage.removeItem("age");
+    localStorage.removeItem("height");
+    localStorage.removeItem("weight");
+    localStorage.removeItem("neck");
+    localStorage.removeItem("waist");
+    setGender("");
+    setAge("");
+    setHeight("");
+    setWeight("");
+    setNeck("");
+    setWaist("");
+  }, []); // Empty dependency array to run once on mount
 
-  const handleNumericInput = (value, setter, prevValue, errorSetter) => {
+  const handleNumericInputChange = (value, setter) => {
+    setter(value); // Update the input value as the user types
+  };
+
+  const handleNumericInputBlur = (value, setter, errorSetter) => {
     if (value === "") {
       setter("");
       errorSetter("");
@@ -61,7 +49,7 @@ const BodyFatCalc = () => {
 
     const numericValue = parseInt(value);
     if (isNaN(numericValue) || numericValue < 0) {
-      errorSetter("Please enter a positive number.");
+      errorSetter("invalid");
       setter("");
     } else {
       errorSetter("");
@@ -254,7 +242,6 @@ const BodyFatCalc = () => {
                   </p>
                 </div>
                 <div className="Arrow-right-F"></div>
-
               </div>
             </>
           ) : (
@@ -286,14 +273,12 @@ const BodyFatCalc = () => {
                 <input
                   type="text"
                   value={age}
-                  onChange={(e) =>
-                    handleNumericInput(e.target.value, setAge, age, setAgeError)
-                  }
+                  onChange={(e) => handleNumericInputChange(e.target.value, setAge)}
+                  onBlur={(e) => handleNumericInputBlur(e.target.value, setAge, setAgeError)}
                   placeholder="21"
                   className={`numeric-input-F ${ageError ? "error-F" : ""}`}
                   pattern="[0-9]*"
                 />
-                {ageError && <p className="error-message-F">{ageError}</p>}
               </div>
               <div className="flex-inputs-F">
                 <div className="input-group-F">
@@ -301,46 +286,24 @@ const BodyFatCalc = () => {
                   <input
                     type="text"
                     value={weight}
-                    onChange={(e) =>
-                      handleNumericInput(
-                        e.target.value,
-                        setWeight,
-                        weight,
-                        setWeightError
-                      )
-                    }
+                    onChange={(e) => handleNumericInputChange(e.target.value, setWeight)}
+                    onBlur={(e) => handleNumericInputBlur(e.target.value, setWeight, setWeightError)}
                     placeholder="65kg"
-                    className={`numeric-input-F ${
-                      weightError ? "error-F" : ""
-                    }`}
+                    className={`numeric-input-F ${weightError ? "error-F" : ""}`}
                     pattern="[0-9]*"
                   />
-                  {weightError && (
-                    <p className="error-message-F">{weightError}</p>
-                  )}
                 </div>
                 <div className="input-group-F">
                   <label>Height</label>
                   <input
                     type="text"
                     value={height}
-                    onChange={(e) =>
-                      handleNumericInput(
-                        e.target.value,
-                        setHeight,
-                        height,
-                        setHeightError
-                      )
-                    }
+                    onChange={(e) => handleNumericInputChange(e.target.value, setHeight)}
+                    onBlur={(e) => handleNumericInputBlur(e.target.value, setHeight, setHeightError)}
                     placeholder="180cm"
-                    className={`numeric-input-F ${
-                      heightError ? "error-F" : ""
-                    }`}
+                    className={`numeric-input-F ${heightError ? "error-F" : ""}`}
                     pattern="[0-9]*"
                   />
-                  {heightError && (
-                    <p className="error-message-F">{heightError}</p>
-                  )}
                 </div>
               </div>
               <div className="flex-inputs-F">
@@ -349,42 +312,24 @@ const BodyFatCalc = () => {
                   <input
                     type="text"
                     value={neck}
-                    onChange={(e) =>
-                      handleNumericInput(
-                        e.target.value,
-                        setNeck,
-                        neck,
-                        setNeckError
-                      )
-                    }
+                    onChange={(e) => handleNumericInputChange(e.target.value, setNeck)}
+                    onBlur={(e) => handleNumericInputBlur(e.target.value, setNeck, setNeckError)}
                     placeholder="40cm"
                     className={`numeric-input-F ${neckError ? "error-F" : ""}`}
                     pattern="[0-9]*"
                   />
-                  {neckError && (
-                    <p className="error-message-F">{neckError}</p>
-                  )}
                 </div>
                 <div className="input-group-F">
                   <label>Waist</label>
                   <input
                     type="text"
                     value={waist}
-                    onChange={(e) =>
-                      handleNumericInput(
-                        e.target.value,
-                        setWaist,
-                        waist,
-                        setWaistError
-                      )
-                    }
+                    onChange={(e) => handleNumericInputChange(e.target.value, setWaist)}
+                    onBlur={(e) => handleNumericInputBlur(e.target.value, setWaist, setWaistError)}
                     placeholder="94cm"
                     className={`numeric-input-F ${waistError ? "error-F" : ""}`}
                     pattern="[0-9]*"
                   />
-                  {waistError && (
-                    <p className="error-message-F">{waistError}</p>
-                  )}
                 </div>
               </div>
               <div className="fat-buttons-F">
@@ -437,14 +382,12 @@ const BodyFatCalc = () => {
                 <input
                   type="text"
                   value={age}
-                  onChange={(e) =>
-                    handleNumericInput(e.target.value, setAge, age, setAgeError)
-                  }
+                  onChange={(e) => handleNumericInputChange(e.target.value, setAge)}
+                  onBlur={(e) => handleNumericInputBlur(e.target.value, setAge, setAgeError)}
                   placeholder="21"
                   className={`numeric-input-F ${ageError ? "error-F" : ""}`}
                   pattern="[0-9]*"
                 />
-                {ageError && <p className="error-message-F">{ageError}</p>}
               </div>
               <div className="flex-inputs-F">
                 <div className="input-group-F">
@@ -452,46 +395,24 @@ const BodyFatCalc = () => {
                   <input
                     type="text"
                     value={weight}
-                    onChange={(e) =>
-                      handleNumericInput(
-                        e.target.value,
-                        setWeight,
-                        weight,
-                        setWeightError
-                      )
-                    }
+                    onChange={(e) => handleNumericInputChange(e.target.value, setWeight)}
+                    onBlur={(e) => handleNumericInputBlur(e.target.value, setWeight, setWeightError)}
                     placeholder="65kg"
-                    className={`numeric-input-F ${
-                      weightError ? "error-F" : ""
-                    }`}
+                    className={`numeric-input-F ${weightError ? "error-F" : ""}`}
                     pattern="[0-9]*"
                   />
-                  {weightError && (
-                    <p className="error-message-F">{weightError}</p>
-                  )}
                 </div>
                 <div className="input-group-F">
                   <label>Height</label>
                   <input
                     type="text"
                     value={height}
-                    onChange={(e) =>
-                      handleNumericInput(
-                        e.target.value,
-                        setHeight,
-                        height,
-                        setHeightError
-                      )
-                    }
+                    onChange={(e) => handleNumericInputChange(e.target.value, setHeight)}
+                    onBlur={(e) => handleNumericInputBlur(e.target.value, setHeight, setHeightError)}
                     placeholder="180cm"
-                    className={`numeric-input-F ${
-                      heightError ? "error-F" : ""
-                    }`}
+                    className={`numeric-input-F ${heightError ? "error-F" : ""}`}
                     pattern="[0-9]*"
                   />
-                  {heightError && (
-                    <p className="error-message-F">{heightError}</p>
-                  )}
                 </div>
               </div>
               <div className="flex-inputs-F">
@@ -500,42 +421,24 @@ const BodyFatCalc = () => {
                   <input
                     type="text"
                     value={neck}
-                    onChange={(e) =>
-                      handleNumericInput(
-                        e.target.value,
-                        setNeck,
-                        neck,
-                        setNeckError
-                      )
-                    }
+                    onChange={(e) => handleNumericInputChange(e.target.value, setNeck)}
+                    onBlur={(e) => handleNumericInputBlur(e.target.value, setNeck, setNeckError)}
                     placeholder="40cm"
                     className={`numeric-input-F ${neckError ? "error-F" : ""}`}
                     pattern="[0-9]*"
                   />
-                  {neckError && (
-                    <p className="error-message-F">{neckError}</p>
-                  )}
                 </div>
                 <div className="input-group-F">
                   <label>Waist</label>
                   <input
                     type="text"
                     value={waist}
-                    onChange={(e) =>
-                      handleNumericInput(
-                        e.target.value,
-                        setWaist,
-                        waist,
-                        setWaistError
-                      )
-                    }
+                    onChange={(e) => handleNumericInputChange(e.target.value, setWaist)}
+                    onBlur={(e) => handleNumericInputBlur(e.target.value, setWaist, setWaistError)}
                     placeholder="94cm"
                     className={`numeric-input-F ${waistError ? "error-F" : ""}`}
                     pattern="[0-9]*"
                   />
-                  {waistError && (
-                    <p className="error-message-F">{waistError}</p>
-                  )}
                 </div>
               </div>
               <div className="fat-buttons-F">
