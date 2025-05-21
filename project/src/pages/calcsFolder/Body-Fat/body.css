@@ -4,9 +4,9 @@ body {
   padding-right: 0;
 }
 
-.left
 
--panel-F .small-image-F {
+
+ .small-image-F {
   width: 110px;
   height: 110px;
   background-image: url("../../../../public/logo/Fat.svg");
