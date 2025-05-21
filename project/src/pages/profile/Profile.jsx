@@ -61,7 +61,7 @@ const Profile = () => {
           Authorization: `Bearer ${token}`,
         },
       });
-      setUser(response.data);
+      setUser(response.data.user);
       setShowModal(false);
     } catch (error) {
       console.error("Failed to update profile:", error);
