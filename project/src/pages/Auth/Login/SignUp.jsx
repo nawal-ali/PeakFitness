@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { InputText } from "primereact/inputtext";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./SignUp.css";
 
 const SignUp = () => {
@@ -16,7 +18,6 @@ const SignUp = () => {
   });
   const [signUpErrors, setSignUpErrors] = useState({});
   const [showSignUpPasswordHint, setShowSignUpPasswordHint] = useState(false);
-
   const [signUpPasswordRequirements, setSignUpPasswordRequirements] = useState({
     length: false,
     number: false,
@@ -59,29 +60,36 @@ const SignUp = () => {
     }
 
     setSignUpErrors(errors);
+    if (Object.keys(errors).length > 0) {
+      toast.error("Please fix the errors in the form");
+    }
     return Object.keys(errors).length === 0;
   };
 
   const BASE_URL = "http://localhost:5000/api/auth";
   const navigate = useNavigate();
-  let isLoged;
 
   const handleSignUpSubmit = async (e) => {
     e.preventDefault();
     if (validateSignUp()) {
-      const sanitizedData = signUpData;
-      console.log("Sign Up Data:", sanitizedData);
-      const response = await axios.post(`${BASE_URL}/signup`, signUpData);
-      const message = response.data.message;
-      if (message === "User registered successfully!") {
-        // isLoged = localStorage.setItem("islogged", "true");
-        navigate("/Login");
+      try {
+        const response = await axios.post(`${BASE_URL}/signup`, signUpData);
+        const message = response.data.message;
+        if (message === "User registered successfully!") {
+          toast.success("Sign up successful! Redirecting to login...");
+          setTimeout(() => navigate("/Login"), 2000); // Redirect after 2 seconds
+        }
+      } catch (error) {
+        toast.error(
+          error.response?.data?.message || "An error occurred during signup"
+        );
       }
     }
   };
 
   return (
     <div className="container-signup">
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} />
       <div className="left-panel-signup">
         <div className="signup-form">
           <h1 className="header-1">Sign Up</h1>
@@ -234,7 +242,7 @@ const SignUp = () => {
                 onChange={(e) => {
                   const value = e.target.value;
                   setSignUpData({ ...signUpData, email: value });
-                  if (signInErrors.email) {
+                  if (signUpErrors.email) {
                     setSignUpErrors((prev) => ({ ...prev, email: "" }));
                   }
                 }}

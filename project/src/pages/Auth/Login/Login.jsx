@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { InputText } from "primereact/inputtext";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./Login.css";
 
 const Login = () => {
@@ -10,7 +12,6 @@ const Login = () => {
     password: "",
   });
   const [signInErrors, setSignInErrors] = useState({});
-
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -29,23 +30,35 @@ const Login = () => {
     }
 
     setSignInErrors(errors);
+
+    if (Object.keys(errors).length > 0) {
+      toast.warning("Please fix the highlighted errors");
+    }
+
     return Object.keys(errors).length === 0;
   };
 
   const BASE_URL = "http://localhost:5000/api/auth";
   const navigate = useNavigate();
-  let isLoged;
 
   const handleSignInSubmit = async (e) => {
     e.preventDefault();
     if (validateSignIn()) {
-      const sanitizedData = signInData;
-      console.log("Sign In Data:", sanitizedData);
-      const response = await axios.post(`${BASE_URL}/login`, signInData);
-      if (response.data.action === "success") {
-        isLoged = localStorage.setItem("islogged", "true");
-        localStorage.setItem("token", response.data.token);
-        navigate("/");
+      try {
+        const response = await axios.post(`${BASE_URL}/login`, signInData);
+        if (response.data.action === "success") {
+          localStorage.setItem("islogged", "true");
+          localStorage.setItem("token", response.data.token);
+          toast.success("Login successful!");
+          setTimeout(() => {
+            navigate("/");
+          }, 1500); // wait a little before redirecting
+        } else {
+          toast.error("Login failed. Please try again.");
+        }
+      } catch (error) {
+        toast.error("Server error. Please try again later.");
+        console.error(error);
       }
     }
   };
@@ -138,6 +151,9 @@ const Login = () => {
           </button>
         </form>
       </div>
+
+      {/* Toast container to render toasts globally */}
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 };
