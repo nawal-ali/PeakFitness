@@ -28,6 +28,7 @@ export default function Navbar({ islogged, setIsLogged }) {
   const navigate = useNavigate();
   const handleLogOut = () => {
     localStorage.setItem("islogged", "false");
+    localStorage.removeItem("token")
     setIsLogged(false);
     navigate("/");
   };
