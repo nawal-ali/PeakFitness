@@ -17,8 +17,8 @@ const Slider_PT = () => {
       description:
         "Gaining Weight The Healthy Way Takes More Than Just Eating More. Discover Simple Tips To Increase Your Weight Safely And Effectively",
       color: "#ec7e4a",
-      thumbnailImg: "./imgs/Pro-Tips-W-G.png",
-      link: "./weight-gain-details-Pro-tips",
+      thumbnailImg: "/imgs/Pro-Tips-W-G.png",
+      link: "/weight-gain-details-Pro-tips",
     },
     {
       id: 1,
