@@ -14,22 +14,22 @@ export default function WG_proTips() {
         sec2_tips_title="Tips to Overcome Loss of Appetite"
         sec2_tips_list={[
           {
-            img: "./logo/mg_tips_sec2_logo1.svg",
+            img: "./logo/wg_tips_sec2_logo1.svg",
             coloredText: "Eat small, frequent meals:",
             text: "Instead of 3 large meals, go for 5–6 small, easy-to-digest ones throughout the day.",
           },
           {
-            img: "./logo/mg_tips_sec2_logo1.svg",
+            img: "./logo/wg_tips_sec2_logo2.svg",
             coloredText: "Focus on calorie-dense, small portions :",
             text: "Add foods like nut butters, cheese, and avocado—high in energy without feeling too full.",
           },
           {
-            img: "./logo/mg_tips_sec2_logo1.svg",
+            img: "./logo/wg_tips_sec2_logo3.svg",
             coloredText: "Drink your calories :",
             text: "Smoothies made with whole milk, fruits, and nuts are easier on the stomach and filling.",
           },
           {
-            img: "./logo/mg_tips_sec2_logo1.svg",
+            img: "./logo/wg_tips_sec2_logo4.svg",
             coloredText: "Eat with others or during entertainment :",
             text: "A pleasant environment makes eating feel lighter and more enjoyable.",
           },
@@ -43,10 +43,10 @@ export default function WG_proTips() {
           "Like salads and veggies—great for health, but you need calorie-dense foods too (nuts, healthy oils).",
         ]}
         sec3_tips_imgs={[
-          "./imgs/mg_tips_sec31.png",
-          "./imgs/mg_tips_sec31.png",
-          "./imgs/mg_tips_sec31.png",
-          "./imgs/mg_tips_sec31.png",
+          "./imgs/wg_tips_sec31.png",
+          "./imgs/wg_tips_sec32.png",
+          "./imgs/wg_tips_sec34.png",
+          "./imgs/wg_tips_sec33.png",
         ]}
         sec3_tips_coloredText={[
           "Not Tracking Your Calories",
