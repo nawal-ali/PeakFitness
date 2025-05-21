@@ -102,7 +102,7 @@ body {
 }
 
 .gender-selection-F button {
-  background-color: #000;
+  background-color: #CB8778;
   color: #fff;
   border: none;
   padding: 6px 0;
@@ -117,13 +117,13 @@ body {
 }
 
 .gender-selection-F button.active-F {
-  background-color: #CB8778;
+  background-color: #000;
   color: white;
   z-index: 1;
 }
 
 .gender-selection-F button:hover {
-  background-color: #CB8778;
+  background-color: #000;
   color: white;
   opacity: 1;
 }

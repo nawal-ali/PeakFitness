@@ -130,7 +130,7 @@ body {
 }
 
 .gender-selection-B button {
-  background-color: #000;
+  background-color: #CB8778;
   color: white;
   border: none;
   padding: 6px 0;
@@ -145,13 +145,13 @@ body {
 }
 
 .gender-selection-B button.active-B {
-  background-color: #CB8778;
+  background-color: #000;
   color: white;
   z-index: 1;
 }
 
 .gender-selection-B button:hover {
-  background-color: #CB8778;
+  background-color: #000;
   color: white;
   opacity: 1;
 }
