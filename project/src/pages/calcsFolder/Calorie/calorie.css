@@ -57,7 +57,7 @@ input::-webkit-input-placeholder {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("./imgs/Calorie.png");
+  background-image: url("../../../../public/imgs/Calorie.png");
   background-position: 78% center;
   background-repeat: no-repeat;
   background-color: #000;
@@ -86,7 +86,7 @@ input::-webkit-input-placeholder {
   width: 110px;
   height: 110px;
   background-position: 75% center;
-  background-image: url("./logo/KCAL.svg");
+  background-image: url("../../../../public/logo/KCAL.svg");
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 2;
@@ -110,7 +110,7 @@ input::-webkit-input-placeholder {
 
 
 .calorie-calculator-C.show-results-C .right-panel-C {
-  background-image: url("./imgs/Calorie.png");
+  background-image: url("../../../../public/imgs/Calorie.png");
   background-position: 75% center;
   background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, 0.5);

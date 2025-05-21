@@ -26,7 +26,7 @@ body {
 .left-panel-I .small-image-I {
   width: 110px;
   height: 110px;
-  background-image: url("./logo/IDEAL.svg");
+  background-image: url("../../../../public/logo/IDEAL.svg");
   background-position: 75% center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -76,8 +76,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(./imgs/Ideal-weight.png);
-  background-position: 78% center;
+  background-image: url('../../../../public/imgs/Ideal-weight.png');
+  background-position: 75% center;
   background-repeat: no-repeat;
   background-color: #000;
   background-size: cover;
@@ -130,7 +130,7 @@ body {
 
 /* Right Panel - When Showing Results */
 .calorie-calculator-I.show-results-I .right-panel-I {
-  background-image: url("./imgs/Ideal-weight.png");
+  background-image: url("../../../../public/imgs/Ideal-weight.png");
   background-position: 75% center;
   background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, 0.9);
