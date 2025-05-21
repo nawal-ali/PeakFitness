@@ -64,11 +64,11 @@ input::-webkit-input-placeholder {
   background-image: url("../../../../public/imgs/Calorie.png");
   background-position: 78% center;
   background-repeat: no-repeat;
-  background-color: #000;
+  /* background-color: #000; */
   background-size: cover;
-  opacity: 90%;
+  /* opacity: 90%; */
   z-index: 1;
-  filter: brightness(40%);
+  /* filter: brightness(40%); */
 }
 
 .result-section-C {
@@ -116,10 +116,10 @@ input::-webkit-input-placeholder {
   background-image: url("../../../../public/imgs/Calorie.png");
   background-position: 75% center;
   background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
   background-size: cover;
-  background-blend-mode: multiply;
-  transform: translateX(0);
+  /* background-blend-mode: multiply; */
+  /* transform: translateX(0); */
   z-index: 1;
 }
 
