@@ -506,7 +506,7 @@ const BodyFatCalc = () => {
               </div>
               <div className="fat-buttons-result-F">
                 <button
-                  className="calculate-btn-F"
+                  className="calculate-again-btn-F"
                   onClick={recalculateFromInputs}
                 >
                   Calculate Again
