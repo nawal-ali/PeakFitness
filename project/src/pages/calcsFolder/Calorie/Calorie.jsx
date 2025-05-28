@@ -4,44 +4,51 @@ import Navbar from "../../../assets/navFolder/Navbar";
 import "./calorie.css";
 
 const CalorieCalculator = () => {
-  const [gender, setGender] = useState(() => {
-    const savedGender = localStorage.getItem("gender");
-    return savedGender || "";
-  });
-  const [age, setAge] = useState(() => {
-    const savedAge = localStorage.getItem("age");
-    const parsedAge = parseInt(savedAge) || "";
-    return parsedAge >= 0 ? parsedAge.toString() : "";
-  });
-  const [height, setHeight] = useState(() => {
-    const savedHeight = localStorage.getItem("height");
-    const parsedHeight = parseInt(savedHeight) || "";
-    return parsedHeight >= 0 ? parsedHeight.toString() : "";
-  });
-  const [weight, setWeight] = useState(() => {
-    const savedWeight = localStorage.getItem("weight");
-    const parsedWeight = parseInt(savedWeight) || "";
-    return parsedWeight >= 0 ? parsedWeight.toString() : "";
-  });
-  const [activityLevel, setActivityLevel] = useState(() => {
-    const savedActivity = localStorage.getItem("activityLevel");
-    return savedActivity || "";
-  });
+  const [gender, setGender] = useState("");
+  const [age, setAge] = useState("");
+  const [height, setHeight] = useState("");
+  const [weight, setWeight] = useState("");
+  const [activityLevel, setActivityLevel] = useState("");
   const [calories, setCalories] = useState(null);
   const [carbs, setCarbs] = useState(null);
   const [protein, setProtein] = useState(null);
   const [fats, setFats] = useState(null);
   const [showResults, setShowResults] = useState(false);
-  const [meals, setMeals] = useState(() => {
-    const savedMeals = localStorage.getItem("meals");
-    return savedMeals || "Per Day";
-  });
+  const [meals, setMeals] = useState("Per Day");
   const [ageError, setAgeError] = useState("");
   const [weightError, setWeightError] = useState("");
   const [heightError, setHeightError] = useState("");
   const [showPopup, setShowPopup] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
 
+  // Clear localStorage and reset state on mount (page refresh)
+  useEffect(() => {
+    setGender("");
+    setAge("");
+    setHeight("");
+    setWeight("");
+    setActivityLevel("");
+    setMeals("Per Day");
+    setCalories(null);
+    setCarbs(null);
+    setProtein(null);
+    setFats(null);
+    setShowResults(false);
+    setAgeError("");
+    setWeightError("");
+    setHeightError("");
+    setShowPopup(false);
+    setPopupMessage("");
+
+    localStorage.removeItem("gender");
+    localStorage.removeItem("age");
+    localStorage.removeItem("height");
+    localStorage.removeItem("weight");
+    localStorage.removeItem("activityLevel");
+    localStorage.removeItem("meals");
+  }, []); // Empty dependency array to run once on mount
+
+  // Save state to localStorage when it changes
   useEffect(() => {
     localStorage.setItem("gender", gender);
     localStorage.setItem("age", age === "" ? "" : age.toString());

@@ -116,10 +116,10 @@ body {
   background-image: url("../../../../public/imgs/BMI-image.png");
   background-position: 75% center;
   background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
   background-size: cover;
-  background-blend-mode: multiply;
-  transform: translateX(0);
+  /* background-blend-mode: multiply; */
+  /* transform: translateX(0); */
   z-index: 1;
 }
 
@@ -130,7 +130,7 @@ body {
 }
 
 .gender-selection-B button {
-  background-color: #000;
+  background-color: #CB8778;
   color: white;
   border: none;
   padding: 6px 0;
@@ -145,13 +145,13 @@ body {
 }
 
 .gender-selection-B button.active-B {
-  background-color: #CB8778;
+  background-color: #000;
   color: white;
   z-index: 1;
 }
 
 .gender-selection-B button:hover {
-  background-color: #CB8778;
+  background-color: #000;
   color: white;
   opacity: 1;
 }
