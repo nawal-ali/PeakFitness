@@ -44,24 +44,24 @@ model-viewer {
   /* position: absolute; */
   /* top: -2rem; */
   /* left: 50%; */
-  transform: translateX(-50%);
+  /* transform: translateX(-50%); */
   background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 4px 8px;
-  border-radius: 4px;
-  white-space: nowrap;
-  font-size: 0.8rem;
-  pointer-events: none;
-  z-index: 10;
-  transition: opacity 0.2s ease;
+  /* color: white; */
+  /* padding: 4px 8px; */
+  /* border-radius: 4px; */
+  /* white-space: nowrap; */
+  /* font-size: 0.8rem; */
+  /* pointer-events: none; */
+  /* z-index: 10; */
+  /* transition: opacity 0.2s ease; */
 }
 
 /* Show on hover */
-.view-button:hover  {
+/* .view-button:hover  {
   display: block;
-}
+} */
 
 /* Keep visible after click */
-.view-button.clicked  {
-  display: block; /* Optional: highlight it */
-}
+/* .view-button.clicked  {
+  display: block; 
+} */
