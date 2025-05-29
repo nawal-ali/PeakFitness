@@ -1,9 +1,14 @@
 import Navbar from "../../assets/navFolder/Navbar";
 import Model from "./Model";
 import "./exer.css";
+import { useState } from "react";
 export default function exercises() {
+
+  const [clickedOn, setClickedOn] = useState("lowerAbs");
+
   const content={
-    sec1:{    title: "lower Abs",
+    lowerAbs:{sec1:{
+    title: "lower Abs",
     colored_description: "supports the body during movements and forward bends.",
     description: "The lower abdominal muscles (Lower Abs) are a part of the rectus abdominis muscle, which extends from the rib cage down to the pelvis.",
     image: "./imgs/exer_main_img.png"}
@@ -28,7 +33,35 @@ export default function exercises() {
     desc2:"Cause: Doing lower abs exercises without stabilizing your lower back can lead to muscle strain or spinal issues.",
     colored3:"Hip or Pelvic Injuries: ",
     desc3:"Cause: Exercises like mountain climbers or leg raises without controlled movement can lead to hip or pelvic strain.",
-  }};
+  }},
+    upperAbs:{sec1:{
+    title: "Upper Abs",
+    colored_description: "Supports The Body During Core Movements And Stabilization.",
+    description: "The upper abdominal muscles are part of the rectus abdominis, running from the lower chest to the navel, crucial for flexing the spine and stabilizing the core.",
+    image: "./imgs/exer_main_img.png"}
+  , sec2:{
+    title1:"Crunches:",
+    title2:"Cable Crunches:",
+    title3:"Decline Sit-Ups:",
+    desc1:"Lie on your back with knees bent, lift your shoulders off the ground while engaging the upper abs.",
+    desc2:" Kneel in front of a cable machine, grip the rope, and crunch forward,focusing on the upper abs. ",
+    desc3:"Sit on a decline bench, anchor your feet, and perform a sit-up while engaging the upper abs."
+  }, sec3:{
+    card_t1:"Standing Ab Stretch",
+    card_t2:"Upward Dog",
+    card_t3:"Overhead Reach",
+    card_d1:"Stand with feet shoulder-width apart, extend your arms overhead and lean back slightly.",
+    card_d2:"Lie face down, place hands under your shoulders, and press your chest upward, stretching the abdominal area.",
+    card_d3:"Stand or sit, extend your arms overhead and stretch upward,elongating the abs."
+  }, sec4:{
+    colored1:"Neck Strain:",
+    desc1:"Prevention: Keep the chin slightly tucked and use the abs to lift the torso rather than pulling with the neck.",
+    colored2:"Lower Back Arching: ",
+    desc2:"Cause: Engaging the hip flexors too much during sit-ups can cause the lower back to arch excessively.",
+    colored3:"Poor Range of Motion: ",
+    desc3:"Cause: Rushing through reps without fully engaging the upper abs can limit muscle activation and effectiveness.",
+  }},
+    };
   return (
     <>
         <Navbar  showBackground={true} isExpanded={false}/>
@@ -58,14 +91,14 @@ export default function exercises() {
           </div>
         </div>
         <div className="col-12 col-md-8">
-          <Model/>
+          <Model setClickedOn={setClickedOn} onLabelClick={setClickedOn}/>
         </div>
         <div className="p-5 rounded-3 w-75" style={{backgroundColor:"#D9D9D9", margin:"10rem auto"}}>
           <div className="row">
             <div className="col-12 col-md-6 p-3">
-                <h1 style={{fontSize:"4rem"}}>{content.sec1.title}</h1>
+                <h1 style={{fontSize:"4rem"}}>{content[clickedOn].sec1.title}</h1>
                 <p className="fs-3 mt-5">
-                <span style={{color:"#CB8778"}}>{content.sec1.colored_description}</span><br /> {content.sec1.description}
+                <span style={{color:"#CB8778"}}>{content[clickedOn].sec1.colored_description}</span><br /> {content[clickedOn].sec1.description}
                 </p>
             </div>
             <div className="col-12 col-md-6">
@@ -78,22 +111,22 @@ export default function exercises() {
             <div className="d-flex justify-content-center align-items-start gap-3 p-3" style={{border:"3px dashed black", borderLeft:"none"}}>
               <div style={{backgroundColor:"#CB8778"}} className="rounded-circle p-3 fs-3 text-light align-self-center">01</div>
               <div className="fs-3">
-              <p style={{ color:"#CB8778",marginBottom:"0"}}>{content.sec2.title1}</p>
-              <p>{content.sec2.desc1}</p>
+              <p style={{ color:"#CB8778",marginBottom:"0"}}>{content[clickedOn].sec2.title1}</p>
+              <p>{content[clickedOn].sec2.desc1}</p>
               </div>
             </div>
             <div className="d-flex justify-content-center align-items-start gap-3 p-3" style={{borderLeft:"3px dashed black", }}>
               <div className="fs-3">
-              <p style={{ color:"#CB8778",marginBottom:"0"}} className="text-end">{content.sec2.title2}</p>
-              <p>{content.sec2.desc2}</p>
+              <p style={{ color:"#CB8778",marginBottom:"0"}} className="text-end">{content[clickedOn].sec2.title2}</p>
+              <p>{content[clickedOn].sec2.desc2}</p>
               </div>
               <div style={{backgroundColor:"#CB8778"}} className="rounded-circle p-3 fs-3 text-light align-self-center">02</div>
             </div>
             <div className="d-flex justify-content-center align-items-start gap-3 p-3" style={{border:"3px dashed black", borderLeft:"none"}}>
               <div style={{backgroundColor:"#CB8778"}} className="rounded-circle p-3 fs-3 text-light align-self-center">03</div>
               <div className="fs-3">
-              <p style={{ color:"#CB8778",marginBottom:"0"}}>{content.sec2.title3}</p>
-              <p>{content.sec2.desc3}</p>
+              <p style={{ color:"#CB8778",marginBottom:"0"}}>{content[clickedOn].sec2.title3}</p>
+              <p>{content[clickedOn].sec2.desc3}</p>
               </div>
             </div>
           </div>
@@ -119,8 +152,8 @@ export default function exercises() {
               <div className="card m-auto my-4 my-md-0" style={{width: "18rem",backgroundColor:"#EAEAEA", height:"100%"}}>
                 <img src="./imgs/exer_stretch_img1.png" className="card-img-top" alt="..."></img>
                 <div className="card-body text-center">
-                    <h5 className="card-title" style={{color:"#CB8778"}}>{content.sec3.card_t1}</h5>
-                    <p className="card-text">{content.sec3.card_d1}</p>
+                    <h5 className="card-title" style={{color:"#CB8778"}}>{content[clickedOn].sec3.card_t1}</h5>
+                    <p className="card-text">{content[clickedOn].sec3.card_d1}</p>
                     {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
                 </div>
               </div>
@@ -129,8 +162,8 @@ export default function exercises() {
               <div className="card m-auto my-4 my-md-0" style={{width: "18rem",backgroundColor:"#EAEAEA", height:"100%"}}>
                 <img src="./imgs/exer_stretch_img2.png" className="card-img-top" alt="..."></img>
                 <div className="card-body text-center">
-                    <h5 className="card-title" style={{color:"#CB8778"}}>{content.sec3.card_t2}</h5>
-                    <p className="card-text">{content.sec3.card_d2}</p>
+                    <h5 className="card-title" style={{color:"#CB8778"}}>{content[clickedOn].sec3.card_t2}</h5>
+                    <p className="card-text">{content[clickedOn].sec3.card_d2}</p>
                     {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
                 </div>
               </div>
@@ -139,8 +172,8 @@ export default function exercises() {
               <div className="card m-auto my-4 my-md-0" style={{width: "18rem",backgroundColor:"#EAEAEA", height:"100%"}}>
                 <img src="./imgs/exer_stretch_img3.png" className="card-img-top" alt="..."></img>
                 <div className="card-body text-center">
-                    <h5 className="card-title" style={{color:"#CB8778"}}>{content.sec3.card_t3}</h5>
-                    <p className="card-text">{content.sec3.card_d3}</p>
+                    <h5 className="card-title" style={{color:"#CB8778"}}>{content[clickedOn].sec3.card_t3}</h5>
+                    <p className="card-text">{content[clickedOn].sec3.card_d3}</p>
                     {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
                 </div>
               </div>
@@ -151,9 +184,9 @@ export default function exercises() {
           <div className="col-12 col-md-6">
             <h1 className="fw-bold ps-4 mb-5" style={{borderLeft:"10px solid #CB8778"}}>Common Mistakes</h1>
             <ul className="fs-3 ps-4">
-              <li className="fw-bold" style={{color:"#CB8778"}}>{content.sec4.colored1}</li> {content.sec4.desc1}<br /><br />
-              <li className="fw-bold" style={{color:"#CB8778"}}>{content.sec4.colored2}</li> {content.sec4.desc2}<br /><br />
-              <li className="fw-bold" style={{color:"#CB8778"}}>{content.sec4.colored3}</li> {content.sec4.desc3} </ul>
+              <li className="fw-bold" style={{color:"#CB8778"}}>{content[clickedOn].sec4.colored1}</li> {content[clickedOn].sec4.desc1}<br /><br />
+              <li className="fw-bold" style={{color:"#CB8778"}}>{content[clickedOn].sec4.colored2}</li> {content[clickedOn].sec4.desc2}<br /><br />
+              <li className="fw-bold" style={{color:"#CB8778"}}>{content[clickedOn].sec4.colored3}</li> {content[clickedOn].sec4.desc3} </ul>
           </div>
           <div className="col-12 col-md-6">
             <img src="./imgs/exer_mistake_img.png" className="w-100" alt="" />
