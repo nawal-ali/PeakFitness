@@ -1,0 +1,17 @@
+@media (max-width: 600px) {
+    .best-exercises-title {
+        font-size: 4rem;
+    }
+}
+@media (min-width: 200px) {
+    .best-exercises-title {
+        font-size: 4rem;
+    }
+}
+@media (min-width: 700px) {
+    .best-exercises-title {
+        font-size: 6rem;
+    }
+}
+
+

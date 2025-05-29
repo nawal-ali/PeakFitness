@@ -136,37 +136,46 @@
 // }
 
 
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 import './model.css';
 
 export default function Model() {
-  useEffect(() => {
-    const modelViewer = document.querySelector('#hotspot-camera-view-demo');
+ const [clickedon, setClickedon] = useState(null);
 
-    const annotationClicked = (annotation) => {
-      const dataset = annotation.dataset;
-      modelViewer.cameraTarget = dataset.target;
-      modelViewer.cameraOrbit = dataset.orbit;
-      modelViewer.fieldOfView = '45deg';
+useEffect(() => {
+  const modelViewer = document.querySelector('#hotspot-camera-view-demo');
 
-      // Remove 'clicked' class from all buttons
-      modelViewer.querySelectorAll('.view-button').forEach(btn => btn.classList.remove('clicked'));
-      // Add 'clicked' to the current one
-      annotation.classList.add('clicked');
-    };
+  const annotationClicked = (annotation) => {
+    const dataset = annotation.dataset;
+    modelViewer.cameraTarget = dataset.target;
+    modelViewer.cameraOrbit = dataset.orbit;
+    modelViewer.fieldOfView = '45deg';
 
-    const buttons = modelViewer.querySelectorAll('.view-button');
-    buttons.forEach((hotspot) => {
-      hotspot.addEventListener('click', () => annotationClicked(hotspot));
+    modelViewer.querySelectorAll('.view-button').forEach(btn => btn.classList.remove('clicked'));
+    annotation.classList.add('clicked');
+
+    const label = dataset.label || null;
+    setClickedon(label);
+  };
+
+  const buttons = modelViewer.querySelectorAll('.view-button');
+
+  const listeners = [];
+
+  buttons.forEach((hotspot) => {
+    const listener = () => annotationClicked(hotspot);
+    hotspot.addEventListener('click', listener);
+    listeners.push({ hotspot, listener });
+  });
+
+  return () => {
+    listeners.forEach(({ hotspot, listener }) => {
+      hotspot.removeEventListener('click', listener);
     });
+  };
+}, []);
 
-    // Clean up
-    return () => {
-      buttons.forEach((hotspot) => {
-        hotspot.removeEventListener('click', () => annotationClicked(hotspot));
-      });
-    };
-  }, []);
+
 
   const hotspots = [
     { label: 'upper abs', position: '0m 2.4m 0.1m', normal: '0m 2.4m 0.1m', orbit: '0deg 84.56856deg 0.0004000m', target: '0m 2.2m -2.5m' },
