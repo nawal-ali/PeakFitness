@@ -1,5 +1,6 @@
 import Navbar from "../../assets/navFolder/Navbar";
 import Model from "./Model";
+import Footer from "../../assets/footerFolder/Footer";
 import "./exer.css";
 import { useState } from "react";
 export default function exercises() {
@@ -192,6 +193,9 @@ export default function exercises() {
             <img src="./imgs/exer_mistake_img.png" className="w-100" alt="" />
           </div>
         </div>
+      </div>
+      <div className="margin-top-10">
+        <Footer />
       </div>
     </>
   );
