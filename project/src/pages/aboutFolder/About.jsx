@@ -10,7 +10,7 @@ export default function about() {
   });
   return (
     <>
-      <Navbar islogged={islogged} setIsLogged={setIsLogged}  showBackground={false} isExpanded={false}/>
+      <Navbar islogged={islogged} setIsLogged={setIsLogged}  showBackground={true} isExpanded={false}/>
       <MainDiv />
       <div className="row mt-5 w-100">
         <div className="col-12">

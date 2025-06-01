@@ -3,10 +3,14 @@ import "./Weight-Loss-FP.css";
 import Navbar from "../../../assets/navFolder/Navbar";
 import Temp from "../template/Temp";
 import Footer from "../../../assets/footerFolder/Footer";
+import { useState } from "react";
 const WeightLoss = () => {
+  const [islogged, setIsLogged] = useState(() => {
+        return localStorage.getItem("islogged") === "true";
+      });
   return (
     <>
-      <Navbar />
+      <Navbar islogged={islogged} setIsLogged={setIsLogged}  showBackground={true} isExpanded={false}/>
       <Temp
         main_banner_bg="./imgs/weight_loss_main_bg.png"
         main_banner_title="Weight Loss"

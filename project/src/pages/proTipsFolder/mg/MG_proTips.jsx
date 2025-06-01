@@ -4,10 +4,14 @@ import Navbar from "../../../assets/navFolder/Navbar";
 // import Sec4_tips from "./proTips_template/components/sec4_tips/Sec4_tips";
 import ProTipsTemp from "../proTips_template/ProTipsTemp";
 import Footer from "../../../assets/footerFolder/Footer";
+import { useState } from "react";
 export default function MG_proTips() {
+  const [islogged, setIsLogged] = useState(() => {
+      return localStorage.getItem("islogged") === "true";
+    });
   return (
     <>
-      <Navbar />
+      <Navbar  islogged={islogged} setIsLogged={setIsLogged}  showBackground={true} isExpanded={false}/>
       <ProTipsTemp
         sec1_tips_img="./imgs/mg_sec1_tips.png"
         sec1_tips_title="Muscle Gain"

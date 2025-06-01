@@ -3,10 +3,14 @@ import "./Muscle-Gain-FP.css";
 import Temp from "../template/Temp";
 import Navbar from "../../../assets/navFolder/Navbar";
 import Footer from "../../../assets/footerFolder/Footer";
+import { useState } from "react";
 const MuscleGain = () => {
+  const [islogged, setIsLogged] = useState(() => {
+        return localStorage.getItem("islogged") === "true";
+      });
   return (
     <>
-      <Navbar />
+      <Navbar islogged={islogged} setIsLogged={setIsLogged}  showBackground={true} isExpanded={false}/>
       <Temp
         main_banner_bg="./imgs/muscle_gain_main_bg.png"
         main_banner_title="Muscle Gain"
