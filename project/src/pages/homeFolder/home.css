@@ -34,3 +34,19 @@
 .card-3 {
   translate: 0 120px;
 } */
+
+@media (max-width: 600px) {
+    .wellcome-text {
+        font-size: 4rem;
+    }
+}
+@media (min-width: 200px) {
+    .wellcome-text {
+        font-size: 4rem;
+    }
+}
+@media (min-width: 700px) {
+    .wellcome-text {
+        font-size: 6rem;
+    }
+}

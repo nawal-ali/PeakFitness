@@ -50,7 +50,7 @@ export default function Home() {
       <ToTop />
       <Navbar islogged={islogged} setIsLogged={setIsLogged} showBackground={true} isExpanded={false} />
       <div
-        className="min-vw-100 min-vh-100 position-relative"
+        className="min-vw-100  position-relative"
         style={{ marginTop: "9%" }}
       >
         <div className="row">
@@ -58,8 +58,8 @@ export default function Home() {
             <img src="./imgs/home_main_img.png" alt="" className="w-100" />
           </div>
           <div className="col-12 col-md-8">
-            <h1 style={{ fontSize: "6rem" }}>Welcome to</h1>
-            <h1 style={{ color: "#CB8778", fontSize: "6rem" }}>PeakFitness</h1>
+            <h1 style={{  }} className="wellcome-text">Welcome to</h1>
+            <h1 style={{ color: "#CB8778", }} className="wellcome-text">PeakFitness</h1>
             <h3 className="w-75 mt-5">
               The journey of a thousand miles begins with a single step! Take
               your first step towards better fitness and join us today.
