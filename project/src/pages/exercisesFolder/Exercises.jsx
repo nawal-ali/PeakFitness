@@ -26,16 +26,20 @@ export default function exercises() {
         <div className="col-12 col-md-4">
           <h1 style={{fontSize:"3rem",marginBottom:'2rem'}}>Pick the muscle </h1>
           <div className="d-flex justify-content-center align-items-center p-3 gap-2 rounded-3 mb-4" style={{backgroundColor:"#D9D9D9"}}>
-            <img src="./imgs/exer_img1.png" alt="" className="w-25"/>
-            <h3>To start your journey with a smart step based on real understanding </h3>
+            {/* <img src="./imgs/exer_img1.png" alt="" className="w-25"/>
+            <h3>To start your journey with a smart step based on real understanding </h3> */}
+            <img src="./imgs/lower_abs.png" alt="" className="w-25"/>
+            <h1>{content[clickedOn].sec1.title} </h1>
           </div>
           <div className="d-flex justify-content-center align-items-center p-3 gap-2 rounded-3 mb-4" style={{backgroundColor:"#D9D9D9"}}>
-            <img src="./imgs/exer_img2.png" alt="" className="w-25"/>
-            <h3>To start your journey with a smart step based on real understanding </h3>
+            {/* <img src="./imgs/exer_img2.png" alt="" className="w-25"/>
+            <h3>To start your journey with a smart step based on real understanding </h3> */}
+            <h3 className="text-center" style={{color:"#CB8778"}}>{content[clickedOn].sec1.colored_description} </h3>
           </div>
           <div className="d-flex justify-content-center align-items-center p-3 gap-2 rounded-3 mb-4" style={{backgroundColor:"#D9D9D9"}}>
-            <img src="./imgs/exer_img3.png" alt="" className="w-25"/>
-            <h3>To start your journey with a smart step based on real understanding </h3>
+            {/* <img src="./imgs/exer_img3.png" alt="" className="w-25"/>
+            <h3>To start your journey with a smart step based on real understanding </h3> */}
+            <h3 className="text-center">{content[clickedOn].sec1.description} </h3>
           </div>
         </div>
         <div className="col-12 col-md-8">
