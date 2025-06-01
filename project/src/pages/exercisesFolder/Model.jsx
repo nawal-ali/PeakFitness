@@ -276,7 +276,7 @@ export default function Model({ onLabelClick,setClickedOn }) {
     { label: 'upperAbs', position: '0m 2.4m 0.1m', normal: '0m 2.4m 0.1m', orbit: '0deg 84.56856deg 0.0004000m', target: '0m 2.2m -2.5m' },
     { label: 'lowerAbs', position: '0m 2.0m 0.1m', normal: '0m 2.0m 0.1m', orbit: '0deg 84.56856deg 0.0004000m', target: '0m 1.89m -2.5m' },
     { label: 'quadriceps', position: '-0.3m 1.6m 0.1m', normal: '-0.3m 1.6m 0.1m', orbit: '0deg 84.74043deg 0.07104211m', target: '0m 1.4m -1.8m' },
-    { label: 'calves', position: '0.3m 0.5m 0.05m', normal: '0.3m 0.5m 0.05m', orbit: '-180deg 88.17818deg 0.07090651m', target: '0m 0.5m 1m' },
+    { label: 'calves', position: '0.3m 0.5m -0.05m', normal: '0.3m 0.5m -0.05m', orbit: '-180deg 88.17818deg 0.07090651m', target: '0m 0.5m 1m' },
     { label: 'hamstrings', position: '0.3m 1.5m -0.1m', normal: '0.3m 1.5m -0.1m', orbit: '-180deg 80.83521deg 0.07090651m', target: '0m 1m 2m' },
     { label: 'glutes', position: '0m 2.0m -0.15m', normal: '0m 2.0m -0.15m', orbit: '-180deg 90.1798deg 0.04504082m', target: '0m 1.9m 2m' },
     { label: 'pectoralisMajor', position: '0m 2.8m 0.1m', normal: '0m 2.8m 0.1m', orbit: '0deg 90.56856deg 0.0004000m', target: '0m 3m -2.5m' },
@@ -286,8 +286,8 @@ export default function Model({ onLabelClick,setClickedOn }) {
     { label: 'deltoid', position: '0.65m 3m 0.1m', normal: '0.65m 3m 0.1m', orbit: '-50deg 70deg 0.6m', target: '1.2m 3m -2.5m' },
     { label: 'forearm', position: '0.8m 2.4m 0.05m', normal: '0.8m 2.4m 0.05m', orbit: '-60deg 80deg 0.8m', target: '1.5m 2.5m -2.5m' },
     { label: 'latissimus', position: '-0.3m 2.4m -0.15m', normal: '-0.3m 2.4m -0.15m', orbit: '-160deg 70deg 0.5m', target: '0m 2.5m 2m' },
-    { label: 'soleus', position: '-0.3m 0.3m 0.1m', normal: '-0.3m 0.3m 0.1m', orbit: '-180deg 90deg 0.6m', target: '0m 0.3m 2m' },
-    { label: 'adductors', position: '0m 1.4m 0.1m', normal: '0m 1.4m 0.1m', orbit: '-180deg 90deg 0.6m', target: '0m 1.4m 2m' }
+    // { label: 'soleus', position: '-0.3m 0.3m 0.1m', normal: '-0.3m 0.3m 0.1m', orbit: '-180deg 90deg 0.6m', target: '0m 0.3m 2m' },
+    // { label: 'adductors', position: '0m 1.4m 0.1m', normal: '0m 1.4m 0.1m', orbit: '-180deg 90deg 0.6m', target: '0m 1.4m 2m' }
   ];
 
   return (

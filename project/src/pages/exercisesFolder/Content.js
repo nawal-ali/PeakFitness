@@ -1,7 +1,7 @@
 const content = {
     lowerAbs: {
         sec1: {
-            title: "lower Abs",
+            title: "Lower Abs",
             colored_description: "supports the body during movements and forward bends.",
             description: "The lower abdominal muscles (Lower Abs) are a part of the rectus abdominis muscle, which extends from the rib cage down to the pelvis.",
             image: "./imgs/exer_main_img.png"
@@ -248,7 +248,138 @@ const content = {
             colored3: "Elbow Movement:",
             desc3: "Cause: Letting the elbows move reduces isolation of the biceps."
         }
+    },
+    calves: {
+        sec1: {
+            title: "Calves",
+            colored_description: "Supports The Body During Walking, Running, And Jumping.",
+            description: "The calf muscles consist of the gastrocnemius and soleus, located at the back of the lower leg,responsible for plantar flexion and stabilizing the ankle.",
+            image: "./imgs/exer_main_img.png"
+        },
+        sec2: {
+            title1: "Standing Calf Raises",
+            title2: "Seated Calf Raises",
+            title3: "Jump Rope",
+            desc1: "Stand with feet hip-width apart, rise onto the balls of your feet,then slowly lower back down.",
+            desc2: "Sit on a bench, place weights on your thighs, and lift your heels while keeping your toes on the ground.",
+            desc3: "Jump continuously while landing on the balls of your feet to engage the calf muscles."
+        },
+        sec3: {
+            card_t1: "Standing Calf Stretch",
+            card_t2: "Downward Dog",
+            card_t3: "Foam Roll Calf Stretch",
+            card_d1: "Place your hands against a wall, extend one leg back, and press the heel into the floor.",
+            card_d2: "Start in a plank position, lift your hips, and press your heels toward the ground to stretch the calves.",
+            card_d3: " Sit with your legs extended, place a foam roller under the calves, and roll back and forth."
+        },
+        sec4: {
+            colored1: "Bouncing Reps:",
+            desc1: "Prevention: Perform calf raises with a controlled tempo to maximize muscle engagement.",
+            colored2: "Insufficient Range of Motion:",
+            desc2: "Cause: Not lowering the heel completely can limit calf activation and development.",
+            colored3: "Overloading Weight:",
+            desc3: "Cause: Adding too much weight during calf exercises can shift the focus to other muscles, reducing calf activation."
+        }
+    },
+    latissimus: {
+        sec1: {
+            title: "Latissimus Dorsi",
+            colored_description: "Supports The Body During Shoulder Adduction, Extension, And Internal Rotation.",
+            description: "The latissimus dorsi is a large, flat muscle covering the middle and lower back, crucial for pulling movements and stabilizing the spine.",
+            image: "./imgs/exer_main_img.png"
+        },
+        sec2: {
+            title1: "Pull-Ups",
+            title2: "Lat Pulldown",
+            title3: "Bent-Over Rows",
+            desc1: "Grab a pull-up bar with a wide grip, pull your body upward until your chin clears the bar, then lower with control.",
+            desc2: "Sit at a lat pulldown machine, grasp the bar with a wide grip, pull it down to your chest, and slowly release.",
+            desc3: "Hold a barbell or dumbbells, bend at the hips with a straight back, pull the weight toward your lower chest, then lower."
+        },
+        sec3: {
+            card_t1: "Child’s Pose Stretch",
+            card_t2: "Overhead Lat Stretch",
+            card_t3: "Doorway Lat Stretch",
+            card_d1: "From a kneeling position, extend your arms forward and lower your chest toward the ground.",
+            card_d2: "Reach one arm overhead and lean to the opposite side to stretch the side and lats.",
+            card_d3: "Place your hands on a doorway frame and lean forward to feel the stretch along your back."
+        },
+        sec4: {
+            colored1: "Using Momentum:",
+            desc1: "Prevention: Avoid swinging during pull-ups or rows to maintain strict form.",
+            colored2: "Rounded Back:",
+            desc2: "Cause: Bending the back during rows reduces lat engagement and risks injury.",
+            colored3: "Incomplete Range Of Motion:",
+            desc3: "Cause: Not fully pulling or releasing limits muscle activation."
+        }
+    },
+    triceps: {
+        sec1: {
+            title: "Triceps",
+            colored_description: "Supports The Body During Pushing Movements And Arm Extension.",
+            description: "The triceps brachii is a three-headed muscle located at the back of the upper arm, responsible for elbow extension and shoulder stabilization.",
+            image: "./imgs/exer_main_img.png"
+        },
+        sec2: {
+            title1: "Triceps Dips",
+            title2: "Skull Crushers",
+            title3: "Cable Triceps Pushdown",
+            desc1: "Place hands on a bench behind you, lower the body by bending the elbows, then push back up.",
+            desc2: "Lie on a bench with a barbell or EZ bar, lower it toward your forehead, and extend the arms back up.",
+            desc3: "Stand in front of a cable machine, grasp the rope or bar, and push downward while keeping elbows stationary."
+        },
+        sec3: {
+            card_t1: "Overhead Triceps Stretch",
+            card_t2: "Cross-Body Arm Stretch",
+            card_t3: "Wall Triceps Stretch",
+            card_d1: "Raise one arm overhead, bend the elbow, and gently pull the elbow back with the opposite hand.",
+            card_d2: "Bring one arm across your chest and use the opposite arm to gently pull it closer.",
+            card_d3: "Stand facing a wall, place the palm against it with the elbow bent, and lean forward to stretch the triceps."
+        },
+        sec4: {
+            colored1: "Elbow Flaring:",
+            desc1: "Prevention: Keep elbows tucked in during exercises like skull crushers to prevent shoulder strain.",
+            colored2: "Incomplete Range of Motion:",
+            desc2: "Cause: Lowering the weight only halfway during dips reduces triceps activation.",
+            colored3: "Overusing Shoulders:",
+            desc3: "Cause: Engaging the shoulders instead of isolating the triceps can limit muscle engagement."
+        }
+    },
+    forearm: {
+        sec1: {
+            title: "Forearm",
+            colored_description: "Supports The Body During Gripping And Wrist Movements.",
+            description: "The forearm muscles are divided into flexors and extensors, responsible for wrist flexion, extension, and forearm rotation.",
+            image: "./imgs/exer_main_img.png"
+        },
+        sec2: {
+            title1: "Wrist Curls",
+            title2: "Reverse Wrist Curls",
+            title3: "Farmer's Walk",
+            desc1: "Sit on a bench, hold a barbell with palms up, rest forearms on thighs, and curl the wrists upward.",
+            desc2: "Hold a barbell with palms facing down, rest forearms on thighs, and lift the wrists.",
+            desc3: "Hold heavy dumbbells at your sides and walk for a set distance, focusing on maintaining a strong grip."
+        },
+        sec3: {
+            card_t1: "Wrist Flexor Stretch",
+            card_t2: "Wrist Extensor Stretch",
+            card_t3: "Forearm Wall Stretch",
+            card_d1: "Extend one arm forward, palm up, and gently pull back on the fingers with the opposite hand.",
+            card_d2: "Extend one arm forward, palm down, and gently pull back on the fingers with the opposite hand.",
+            card_d3: "Place your palm against a wall with fingers facing downward and lean slightly to stretch the forearm."
+        },
+        sec4: {
+            colored1: "Overgripping Weights:",
+            desc1: "Prevention: Maintain a moderate grip to avoid excessive forearm fatigue during compound lifts.",
+            colored2: "Elbow Discomfort:",
+            desc2: "Cause: Using too much weight during wrist curls can strain the elbow joint.",
+            colored3: "Neglecting Extensors:",
+            desc3: "Cause: Focusing solely on wrist curls without balancing with reverse curls can lead to muscle imbalances."
+        }
     }
+
+
+
 };
 
 export default content;
