@@ -5,11 +5,14 @@
 .accordion-body,
 .accordion-button {
   background-color: #ffffff;
-  color: #000000;
+  color: #000000 !important;
   background-color: #ffffff ;
   /* background-color: #0000006b; */
   color: aliceblue;
   text-align: left !important;
+}
+.accordion-body{
+  color:#CB8778 !important;
 }
 
 .accordion-button::after {
