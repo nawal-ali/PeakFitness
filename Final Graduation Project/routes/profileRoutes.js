@@ -3,7 +3,7 @@ const router = express.Router();
 const authMiddleware = require("../middleware/authMiddleware");
 const { User } = require('../models'); // Fix path if needed
 
-// ✅ Remove "/profile" prefix since it's already in app.js
+// Remove "/profile" prefix since it's already in app.js
 router.get("/", authMiddleware, async (req, res) => {
   try {
     const user = await User.findById(req.user.userId).select("-password"); // Note: req.user.userId
@@ -28,4 +28,3 @@ router.put("/", authMiddleware, async (req, res) => {
 });
 
 module.exports = router;
-  
