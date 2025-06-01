@@ -77,7 +77,7 @@ const Profile = () => {
 
   return (
     <div className="">
-      <Navbar islogged={islogged} setIsLogged={setIsLogged} />
+      <Navbar islogged={islogged} setIsLogged={setIsLogged} showBackground={true} isExpanded={false} />
       <div className="row">
         <div className="col-12 col-md-4 position-relative">
           <div className="position-absolute top-50 start-50 translate-middle text-white w-100 text-center">

@@ -85,16 +85,20 @@ export default function Home() {
               sustainable,and a healthy lifestyle
             </span>{" "}
             . <br />
-            At Pure Vitality, we're here to guide you with fitness
+            At Pure Vitality, we&apos;re here to guide you with fitness
             programs, nutritional advice, and personalized support to help you
             achieve your goals and thrive every day!
           </p>
+          <NavLink
+            to="/exercises"
+            >
           <Button
             content="Let's get started"
             customWidth="70%"
             customPadding="2%"
             customFontSize="1.4rem"
           />
+          </NavLink>
         </div>
         <div className="col-12 col-md-6 text-end mt-5 mt-md-0">
           <model-viewer
@@ -142,7 +146,7 @@ export default function Home() {
               className="link-underline link-underline-opacity-0"
             >
               <Card
-                img="/logo/gym-white-logo.svg"
+                img="/logo/gym_black_logo.svg"
                 textContent="Find the best exercises for your goals"
               />
             </Link>

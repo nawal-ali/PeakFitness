@@ -12,6 +12,7 @@
 }
 .custom-link-color {
   color: white !important;
+  /* color: black !important; */
 }
 .nav-item {
   transition: all 400ms ease-in-out;

@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import "./protips_slider.css";
 
 const Slider_PT = () => {
+    const [islogged, setIsLogged] = useState(() => {
+    return localStorage.getItem("islogged") === "true";
+  });
   const [selectedItem, setSelectedItem] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -81,7 +84,7 @@ const Slider_PT = () => {
   const currentItem = items[selectedItem];
   return (
     <>
-      <Navbar showSearch={false} showBackground={false} />
+      <Navbar showSearch={false} showBackground={false} islogged={islogged} setIsLogged={setIsLogged} />
       <div className={`carousel-PT carousel-PT-SPT`}>
         <div
           className={`content-overlay content-overlay-SPT ${

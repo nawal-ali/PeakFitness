@@ -104,7 +104,7 @@ export default function Navbar({ islogged, setIsLogged,showBackground,isExpanded
               ></button>
             </div>
             <div className="offcanvas-body">
-              <ul className="navbar-nav flex-grow-1">
+              <ul className="navbar-nav flex-grow-1 text-dark">
                 {/* start of nav body */}
                 <li className="nav-item">
                   <NavLink

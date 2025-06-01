@@ -7,6 +7,9 @@ const Slider_C = () => {
   const carouselRef = useRef(null);
   const sliderRef = useRef(null);
   const thumbnailRef = useRef(null);
+    const [islogged, setIsLogged] = useState(() => {
+    return localStorage.getItem("islogged") === "true";
+  });
 
   const items = [
     {
@@ -225,7 +228,7 @@ const Slider_C = () => {
   return (
     <>
       {/* showSearch={false} showBackground={false}  */}
-      <Navbar showBackground={false}  isExpanded={true}/>
+      <Navbar showBackground={false}  isExpanded={false} islogged={islogged} setIsLogged={setIsLogged}/>
       <div className="carousel-SC position-relative" ref={carouselRef}>
         {/* <div
           className="position-absolute w-100 h-100 top-0 start-0"

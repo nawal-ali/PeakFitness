@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import "./SliderFP.css";
 
 const Slider_FP = () => {
+    const [islogged, setIsLogged] = useState(() => {
+    return localStorage.getItem("islogged") === "true";
+  });
   const [selectedItem, setSelectedItem] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -79,7 +82,7 @@ const Slider_FP = () => {
   const currentItem = items[selectedItem];
   return (
     <>
-      <Navbar showSearch={false} showBackground={false} />
+      <Navbar showSearch={false} showBackground={false} islogged={islogged} setIsLogged={setIsLogged} />
       <div className={`carousel-PT carousel-PT-SFP`}>
         <div
           className={`content-overlay content-overlay-SFP ${

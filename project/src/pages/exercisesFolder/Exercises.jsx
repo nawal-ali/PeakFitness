@@ -2,70 +2,17 @@ import Navbar from "../../assets/navFolder/Navbar";
 import Model from "./Model";
 import Footer from "../../assets/footerFolder/Footer";
 import "./exer.css";
+import content from "./Content";
 import { useState } from "react";
 export default function exercises() {
 
   const [clickedOn, setClickedOn] = useState("lowerAbs");
-
-  const content={
-    lowerAbs:{sec1:{
-    title: "lower Abs",
-    colored_description: "supports the body during movements and forward bends.",
-    description: "The lower abdominal muscles (Lower Abs) are a part of the rectus abdominis muscle, which extends from the rib cage down to the pelvis.",
-    image: "./imgs/exer_main_img.png"}
-  , sec2:{
-    title1:"Leg Raises",
-    title2:"Reverse Crunches",
-    title3:"Mountain Climbers",
-    desc1:"Lie on your back, raise your legs until they're perpendicular to the ground",
-    desc2:"Lie on your back, place your hands beside you, then raise your legs upwards ",
-    desc3:"Start in a push-up position, then alternate bringing each knee toward your chest."
-  }, sec3:{
-    card_t1:"Pelvic Tilts",
-    card_t2:"Kneeling Hip Flexor Stretch",
-    card_t3:"Seated Forward Fold",
-    card_d1:"Helps stretch and increase flexibility in the lower abdomen.",
-    card_d2:"Stretches the lower abs and hip muscles.",
-    card_d3:"Sit with your legs extended straight in front of you, then slowly bend forward, trying to reach your toes."
-  }, sec4:{
-    colored1:"Lower Abdominal Muscle Strains:",
-    desc1:"Prevention: Stick to correct form, avoid sudden or heavy movements on under-trained muscles.",
-    colored2:"Lower Back Injuries:",
-    desc2:"Cause: Doing lower abs exercises without stabilizing your lower back can lead to muscle strain or spinal issues.",
-    colored3:"Hip or Pelvic Injuries: ",
-    desc3:"Cause: Exercises like mountain climbers or leg raises without controlled movement can lead to hip or pelvic strain.",
-  }},
-    upperAbs:{sec1:{
-    title: "Upper Abs",
-    colored_description: "Supports The Body During Core Movements And Stabilization.",
-    description: "The upper abdominal muscles are part of the rectus abdominis, running from the lower chest to the navel, crucial for flexing the spine and stabilizing the core.",
-    image: "./imgs/exer_main_img.png"}
-  , sec2:{
-    title1:"Crunches:",
-    title2:"Cable Crunches:",
-    title3:"Decline Sit-Ups:",
-    desc1:"Lie on your back with knees bent, lift your shoulders off the ground while engaging the upper abs.",
-    desc2:" Kneel in front of a cable machine, grip the rope, and crunch forward,focusing on the upper abs. ",
-    desc3:"Sit on a decline bench, anchor your feet, and perform a sit-up while engaging the upper abs."
-  }, sec3:{
-    card_t1:"Standing Ab Stretch",
-    card_t2:"Upward Dog",
-    card_t3:"Overhead Reach",
-    card_d1:"Stand with feet shoulder-width apart, extend your arms overhead and lean back slightly.",
-    card_d2:"Lie face down, place hands under your shoulders, and press your chest upward, stretching the abdominal area.",
-    card_d3:"Stand or sit, extend your arms overhead and stretch upward,elongating the abs."
-  }, sec4:{
-    colored1:"Neck Strain:",
-    desc1:"Prevention: Keep the chin slightly tucked and use the abs to lift the torso rather than pulling with the neck.",
-    colored2:"Lower Back Arching: ",
-    desc2:"Cause: Engaging the hip flexors too much during sit-ups can cause the lower back to arch excessively.",
-    colored3:"Poor Range of Motion: ",
-    desc3:"Cause: Rushing through reps without fully engaging the upper abs can limit muscle activation and effectiveness.",
-  }},
-    };
+    const [islogged, setIsLogged] = useState(() => {
+    return localStorage.getItem("islogged") === "true";
+  });
   return (
     <>
-        <Navbar  showBackground={true} isExpanded={false}/>
+        <Navbar islogged={islogged} setIsLogged={setIsLogged}  showBackground={true} isExpanded={false}/>
       <div className="row">
         <div className="col-12 col-md-6 p-5">
           <h1 style={{fontSize:"4rem", marginTop:"15rem", color:"#CB8778",marginBottom:"2rem"}}>To reach your goal </h1>

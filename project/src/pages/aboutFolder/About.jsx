@@ -3,10 +3,14 @@ import Footer from "../../assets/footerFolder/Footer";
 import MainDiv from "./about-components/MainDiv";
 import IconsDiv from "./about-components/IconsDiv";
 import ChooseUs from "./about-components/ChooseUs";
+import { useState } from "react";
 export default function about() {
+    const [islogged, setIsLogged] = useState(() => {
+    return localStorage.getItem("islogged") === "true";
+  });
   return (
     <>
-      <Navbar />
+      <Navbar islogged={islogged} setIsLogged={setIsLogged}  showBackground={false} isExpanded={false}/>
       <MainDiv />
       <div className="row mt-5 w-100">
         <div className="col-12">
