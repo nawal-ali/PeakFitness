@@ -40,7 +40,8 @@ function App() {
             <Route path="/Login" element={<Login />} />
             <Route path="/SignUp" element={<SignUp />} />
             <Route path="/Forget-Password" element={<ForgetPassword />} />
-            <Route path="/New-Password" element={<NewPassword />} />
+            <Route path="/reset-password/:token" element={<NewPassword />} />
+            {/* <Route path="/New-Password" element={<NewPassword />} /> */}
             <Route path="/exercises" element={<Exercises />} />
             <Route path="/ProTips" element={<Tips />} />
             <Route path="/FoodPlans" element={<Plans />} />
