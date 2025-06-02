@@ -92,7 +92,7 @@ const SignUp = () => {
       <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} />
       <div className="left-panel-signup">
         <div className="signup-form">
-          <h1 className="header-1">Sign Up</h1>
+          <h1 className="header-1 mt-4">Sign Up</h1>
           <form onSubmit={handleSignUpSubmit} className="row">
             <div className="col-12">
               <label htmlFor="Username">Username</label>
