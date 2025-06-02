@@ -8,7 +8,7 @@
   background-color: #fff;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   padding: 0;
   flex-direction: row;
   width: 100%;
@@ -28,18 +28,18 @@
 
 /* SignUp form */
 .signup-form {
-  flex-direction: column;
-  flex: 1;
+  /* flex-direction: column; */
+  /* flex: 1; */
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 200;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* z-index: 200; */
   background-color: #fff;
-  padding: 25px;
-  margin-left: 5rem;
-  margin-right: 5rem;
+  padding: 0 8rem;
+  /* margin-left: 5rem; */
+  /* margin-right: 5rem; */
 }
 
 /* Form heading */
@@ -61,8 +61,8 @@
   margin: 10px 0;
   text-align: left;
   width: 80%; /* Match the input width */
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
   letter-spacing: 1.5px;
 }
 
@@ -70,7 +70,7 @@
 .custom-input {
   width: 100%; /* Default width for most inputs */
   display: block; /* Ensure it behaves as a block element for centering */
-  margin: 5px auto 15px; /* Center the input and maintain vertical spacing */
+  /* margin: 5px auto 15px; */
   padding: 10px 20px;
   box-sizing: border-box;
   border-radius: 25px;
@@ -81,23 +81,24 @@
 }
 
 /* Specific adjustment for Weight and Height inputs */
-#weight.custom-input,
+/* #weight.custom-input,
 #height.custom-input {
-  width: 90%; /* Increased width for Weight and Height */
-}
+  width: 90%; 
+} */
+/* Increased width for Weight and Height */
 
 /* Adjust column padding to reduce gap between Weight and Height */
-.signup-form .row {
+/* .signup-form .row {
   display: flex;
   flex-wrap: wrap;
   margin-left: -5px;
   margin-right: -5px;
-}
+} */
 
-.signup-form .col-md-6 {
+/* .signup-form .col-md-6 {
   padding-left: 0px;
   padding-right: 10px;
-}
+} */
 
 .custom-input:focus {
   border: 1px solid #ec7e4a;
@@ -119,8 +120,8 @@ input::placeholder {
 /* Password container */
 .password-container {
   position: relative;
-  width: 80%; /* Match the input width */
-  margin: 0 auto; /* Center the container */
+  /* width: 80%; */
+  /* margin: 0 auto; */
 }
 
 .password-container .custom-input {
