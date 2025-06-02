@@ -1,18 +1,26 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import "./Auth-N.css";
 
 const NewPassword = () => {
-    const location = useLocation();
-    const token = location.pathname.split("/").pop(); // gets the token from URL like /reset-password/:token
-    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+
+    const [searchParams] = useSearchParams();
+    const resetLink = searchParams.get("link");
+
+
+    const [newPassword, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [modalMessage, setModalMessage] = useState("");
     const [showModal, setShowModal] = useState(false);
+    const [redirectToLogin, setRedirectToLogin] = useState(false);
+
 
     const togglePasswordVisibility = () => setShowPassword(!showPassword);
     const toggleConfirmPasswordVisibility = () => setShowConfirmPassword(!showConfirmPassword);
@@ -58,29 +66,72 @@ const NewPassword = () => {
     //     }
     // };
 
-    const handleSubmit = async (e) => {
+//     const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     setIsSubmitted(true);
+
+//     if (!password || !confirmPassword) {
+//         setModalMessage("Please enter your new password and confirm it.");
+//         setShowModal(true);
+//         return;
+//     }
+
+//     if (password !== confirmPassword) {
+//         setModalMessage("Passwords do not match.");
+//         setShowModal(true);
+//         return;
+//     }
+
+//     try {
+//         const response = await fetch(`http://localhost:5000/api/auth/reset-password/${token}`, {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json",
+//             },
+//             body: JSON.stringify({ password }),
+//         });
+
+//         if (!response.ok) {
+//             const errorData = await response.json();
+//             throw new Error(errorData.message || "Failed to reset password.");
+//         }
+
+//         const data = await response.json();
+//         setModalMessage(data.message || "Password reset successfully!");
+//         setShowModal(true);
+//         setPassword("");
+//         setConfirmPassword("");
+//         setIsSubmitted(false);
+//     } catch (error) {
+//         setModalMessage("Error: " + error.message);
+//         setShowModal(true);
+//     }
+// };
+
+
+const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitted(true);
 
-    if (!password || !confirmPassword) {
+    if (!newPassword || !confirmPassword) {
         setModalMessage("Please enter your new password and confirm it.");
         setShowModal(true);
         return;
     }
 
-    if (password !== confirmPassword) {
+    if (newPassword !== confirmPassword) {
         setModalMessage("Passwords do not match.");
         setShowModal(true);
         return;
     }
 
     try {
-        const response = await fetch(`http://localhost:5000/api/auth/reset-password/${token}`, {
+        const response = await fetch(resetLink, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ password }),
+            body: JSON.stringify({ newPassword }),
         });
 
         if (!response.ok) {
@@ -94,6 +145,8 @@ const NewPassword = () => {
         setPassword("");
         setConfirmPassword("");
         setIsSubmitted(false);
+        // navigate('/Login');
+        setRedirectToLogin(true); // So we wait until modal is closed
     } catch (error) {
         setModalMessage("Error: " + error.message);
         setShowModal(true);
@@ -102,9 +155,14 @@ const NewPassword = () => {
 
 
     const closeModal = () => {
-        setShowModal(false);
-        setModalMessage("");
-    };
+    setShowModal(false);
+    setModalMessage("");
+    
+    if (redirectToLogin) {
+        navigate("/Login");
+    }
+};
+
 
     return (
         <div className="Main-container-Auth-NFP">
@@ -133,7 +191,7 @@ const NewPassword = () => {
                                         className="input-Auth-FPN"
                                         type={showPassword ? "text" : "password"}
                                         id="password"
-                                        value={password}
+                                        value={newPassword}
                                         onChange={(e) => setPassword(e.target.value)}
                                         placeholder="Enter your password"
                                     />

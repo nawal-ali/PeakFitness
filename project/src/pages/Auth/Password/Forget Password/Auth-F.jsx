@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 import "./Auth-F.css";
 
 const ForgetPassword = () => {
@@ -34,7 +35,7 @@ const ForgetPassword = () => {
     //     }
     // };
 
-   const handleSubmit = async (e) => {
+const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitted(true);
 
@@ -63,8 +64,8 @@ const ForgetPassword = () => {
         const resetLink = data.resetLink;
 
         if (resetLink) {
-            const token = resetLink.split("/").pop();
-            navigate(`/reset-password/${token}`);
+            const encoded = encodeURIComponent(resetLink);
+            navigate(`/reset-password?link=${encoded}`);
         } else {
             setModalMessage(data.message || "Check your email for the reset link.");
             setShowModal(true);
