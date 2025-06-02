@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,NavLink } from "react-router-dom";
 
 
 import "./Auth-F.css";
@@ -91,7 +91,9 @@ const handleSubmit = async (e) => {
         <div className="Main-container-Auth-FP">
             {/* First Section: Logo, Header, and Description */}
             <div className="top-section-Auth-FP">
+                <NavLink to="/">
                 <img src="./imgs/Logo-4.svg" alt="Logo" className="logo-Auth-FP" />
+                </NavLink>
                 <div className="header-container-Auth-FP">
                     <div className="svg-container-Auth-FP">
                         <img src="./imgs/Lock.svg" alt="Reset Password Icon" />

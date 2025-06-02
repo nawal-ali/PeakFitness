@@ -1,7 +1,7 @@
 import { useState } from "react";
 // import { useLocation } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,NavLink,Link } from "react-router-dom"
 
 import "./Auth-N.css";
 
@@ -168,7 +168,9 @@ const handleSubmit = async (e) => {
         <div className="Main-container-Auth-NFP">
             {/* Top Section: Logo, Key Icon, Header, Description, and Password Input */}
             <div className="top-section-Auth-NFP">
+                <NavLink to="/">
                 <img src="/logoAndText.svg" alt="Logo" className="logo-NP" />
+                </NavLink>
                 <div className="header-container-Auth-NFP">
                     <div className="svg-container-NP">
                         <img src="/public/imgs/Key.svg" alt="Key Icon" className="Logo-Key" />
