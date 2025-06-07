@@ -21,6 +21,10 @@ const CalorieCalculator = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
 
+  const [islogged, setIsLogged] = useState(() => {
+        return localStorage.getItem("islogged") === "true";
+      });
+
   // Clear localStorage and reset state on mount (page refresh)
   useEffect(() => {
     setGender("");
@@ -190,7 +194,7 @@ const CalorieCalculator = () => {
 
   return (
     <>
-      <Navbar showBackground={false} isExpanded={true} />
+      <Navbar showBackground={false} isExpanded={true}  islogged={islogged} setIsLogged={setIsLogged}/>
       <div
         className={`calorie-calculator-C ${
           showResults ? "show-results-C" : ""

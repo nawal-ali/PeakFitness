@@ -2,6 +2,7 @@ import "../navFolder/nav.css";
 import { NavLink, useNavigate, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify"; // Added for toast notification
+import { FaBars } from 'react-icons/fa';
 // eslint-disable-next-line react/prop-types
 //{ showSearch = true, showBackground = true }
 export default function Navbar({ islogged, setIsLogged,showBackground,isExpanded ,darkmenu }) {
@@ -80,7 +81,10 @@ export default function Navbar({ islogged, setIsLogged,showBackground,isExpanded
             aria-label="Toggle navigation"
           >
             {/* <span className="navbar-toggler-icon"></span> */}
-            <i className="fa-solid fa-bars text-dark">MENU</i> 
+            {/* <i className="fa-solid fa-bars text-dark">MENU</i>  */}
+              {/* <button> */}
+                <FaBars size={24} color={"black"} />
+              {/* </button> */}
           </button>
           {/*  */}
           <div

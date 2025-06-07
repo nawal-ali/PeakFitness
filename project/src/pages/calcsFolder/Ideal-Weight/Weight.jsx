@@ -16,6 +16,10 @@ const IdealCalculator = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
 
+  const [islogged, setIsLogged] = useState(() => {
+        return localStorage.getItem("islogged") === "true";
+      });
+
   const handleNumericInputChange = (value, setter) => {
     setter(value); // Update the input value as the user types
   };
@@ -159,7 +163,7 @@ const IdealCalculator = () => {
 
   return (
     <>
-      <Navbar showBackground={false}  isExpanded={true}/>
+      <Navbar showBackground={false}  isExpanded={true}  islogged={islogged} setIsLogged={setIsLogged}/>
       <div
         className={`calorie-calculator-I ${
           showResults ? "show-results-I" : ""

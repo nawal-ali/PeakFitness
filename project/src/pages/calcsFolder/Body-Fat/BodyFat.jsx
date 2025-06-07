@@ -20,6 +20,10 @@ const BodyFatCalc = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
 
+  const [islogged, setIsLogged] = useState(() => {
+        return localStorage.getItem("islogged") === "true";
+      });
+
   // Clear localStorage and reset state on page refresh
   useEffect(() => {
     localStorage.removeItem("gender");
@@ -218,7 +222,7 @@ const BodyFatCalc = () => {
 
   return (
     <>
-      <Navbar showBackground={false} isExpanded={true}/>
+      <Navbar showBackground={false} isExpanded={true}  islogged={islogged} setIsLogged={setIsLogged}/>
 
       <div
         className={`calorie-calculator-F ${

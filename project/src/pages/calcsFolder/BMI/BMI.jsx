@@ -20,6 +20,10 @@ const BMICalculator = () => {
     setter(value); // Update the input value as the user types
   };
 
+  const [islogged, setIsLogged] = useState(() => {
+        return localStorage.getItem("islogged") === "true";
+      });
+
   const handleNumericInputBlur = (value, setter, errorSetter) => {
     if (value === "") {
       setter("");
@@ -92,7 +96,7 @@ const BMICalculator = () => {
 
   return (
     <>
-      <Navbar showBackground={false} isExpanded={true} />
+      <Navbar showBackground={false} isExpanded={true}  islogged={islogged} setIsLogged={setIsLogged}/>
       <div className={`calorie-calculator-B ${showResults ? "show-results-B" : ""}`}>
         <div className="left-panel-B">
           {!showResults ? (
