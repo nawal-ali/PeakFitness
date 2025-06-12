@@ -1,5 +1,4 @@
 .customer-reviews-section {
-  /* position: relative; */
   padding-top: 2rem;
   padding-bottom: 4rem;
 }
@@ -7,16 +6,12 @@
   margin-top: 4rem;
   display: flex;
   align-items: end;
-  /* Contains the bubble + carousel */
-  min-height: 340px; /* Enough space for bubble & carousel */
+  min-height: 340px; 
 }
 /* .custom-color {
   color: #ec7e4a;
 } */
-.carousel-wrapper {
-  /* flex: 1 1 auto; Prevents flexbox from shrinking it */
-  /* width: 100%; Ensures proper width */
-}
+
 /* Orange bubble styling */
 .orange-bubble {
   background-color: #000000;
@@ -36,9 +31,51 @@
 }
 
 /* Tweak the card styling if desired */
-.cardd {
+/* .cardd {
   min-width: 200px;
 }
 .card:hover {
   transform: none;
+} */
+
+
+
+
+
+
+
+.comments-marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.comments-marquee {
+  display: flex;
+  gap: 1rem;
+  animation: scroll-left 30s linear infinite;
+}
+
+.comments-marquee-wrapper:hover .comments-marquee {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.comment-card {
+  min-width: 300px;
+  max-width: 300px;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.comment-card:hover {
+  transform: scale(1.05);
 }
