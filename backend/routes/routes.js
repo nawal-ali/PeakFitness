@@ -4,6 +4,9 @@ const jwt = require('jsonwebtoken');
 const crypto = require("crypto");
 // const User = require('../models'); 
 const { User } = require('../models');
+const verifyAdmin = require("../middleware/verifyAdmin");
+const router = express.Router();
+
 
 const authenticateToken = require('../middleware/authMiddleware');
 const { blacklistToken } = require("../middleware/tokenBlacklist");
@@ -11,7 +14,77 @@ const { blacklistToken } = require("../middleware/tokenBlacklist");
 
 require('dotenv').config();
 
-const router = express.Router();
+// get all users
+router.get('/users', authenticateToken, async (req, res) => {
+  try {
+    const users = await User.find({}, '-password -__v  -weight -height -gender -age -resetPasswordToken'); // Exclude password other information
+    res.json({ number: users.length, users });
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    res.status(500).json({ message: 'Server Error' });
+  }
+});
+
+// Get single user
+router.get('/users/:id', async (req, res) => {
+  const userId = req.params.id;
+
+  try {
+    const user = await User.findById(userId)
+      .select('-password -__v -role -weight -height -age -gender -resetPasswordToken'); // Exclude sensitive fields
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    res.json(user);
+  } catch (err) {
+    console.error("Error fetching user:", err);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+//delete user
+router.delete('/users/:id', authenticateToken, async (req, res) => {
+  const userId = req.params.id;
+  try {
+    const user = await User.findByIdAndDelete(userId);
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    res.json({ message: 'User deleted successfully' });
+  } catch (err) {
+    console.error("Error deleting user:", err);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+//add or remove article to saved articles
+router.post('/users/:id/saved-articles', authenticateToken, async (req, res) => {
+  const userId = req.params.id;
+  const { articleId } = req.body;
+  try {
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    // Check if articleId is already in savedArticles
+    const articleIndex = user.savedArticles.indexOf(articleId);
+    if (articleIndex > -1) {
+      // If it exists, remove it
+      user.savedArticles.splice(articleIndex, 1);
+      res.json({ message: 'Article removed from saved articles', savedArticles: user.savedArticles });
+    } else {
+      // If it doesn't exist, add it
+      user.savedArticles.push(articleId);
+      res.json({ message: 'Article added to saved articles', savedArticles: user.savedArticles });
+    }
+    await user.save();
+  } catch (err) {
+    console.error("Error updating saved articles:", err);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
 
 // **Sign-Up**
 router.post('/signup', async (req, res) => {
@@ -56,12 +129,12 @@ router.post("/login", async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(400).json({ message: "Invalid credentials" });
 
-    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
+    const token = jwt.sign({ userId: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: "1h" });
 
     console.log("Login Route - JWT_SECRET:", process.env.JWT_SECRET, "Token:", token);
 
     res.cookie('token', token, { httpOnly: true })
-      .json({ action: 'success', token, userId: user._id });
+      .json({ action: 'success', token, userId: user._id, role: user.role });
 
   } catch (error) {
     console.error("Login error:", error);
@@ -135,6 +208,59 @@ router.post('/reset-password/:token', async (req, res) => {
   }
 });
 
+//add admin route
+// router.post('/registeradmin', async (req, res) => {
+//   try {
+//     const { username, email, password } = req.body;
+//     const existingUser = await User.findOne({ email });
+//     if (existingUser) return res.status(400).json({ message: "Email already exists" });
 
+//     const hashedPassword = await bcrypt.hash(password, 10);
+//     const newAdmin = new User({
+//       username,
+//       email,
+//       password: hashedPassword,
+//       role: "admin"
+//     });
+
+//     await newAdmin.save();
+//     res.status(201).json({ message: "Admin user created" });
+//   } catch (err) {
+//     res.status(500).json({ message: "Server error" });
+//   }
+// });
+router.post('/register-admin', async (req, res) => {
+  console.log("Register admin endpoint hit!"); // Debug line
+  try {
+    const { username, email, password } = req.body;
+    console.log("Received data:", { username, email }); // Don't log password
+
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      console.log("Email already exists:", email);
+      return res.status(400).json({ message: "Email already exists" });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newAdmin = new User({
+      username,
+      email,
+      password: hashedPassword,
+      role: "admin"
+    });
+
+    await newAdmin.save();
+    console.log("New admin created:", email);
+    res.status(201).json({ message: "Admin user created" });
+  } catch (err) {
+    console.error("Admin registration error:", err);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
+//admin route
+router.get("/admin/dashboard", verifyAdmin, (req, res) => {
+  res.json({ message: "Hello Admin" });
+});
 
 module.exports = router;

@@ -194,7 +194,7 @@ const CalorieCalculator = () => {
 
   return (
     <>
-      <Navbar showBackground={false} isExpanded={true}  islogged={islogged} setIsLogged={setIsLogged}/>
+      <Navbar showBackground={false} isExpanded={true}  islogged={islogged} setIsLogged={setIsLogged} darkmenu={"black"}/>
       <div
         className={`calorie-calculator-C ${
           showResults ? "show-results-C" : ""

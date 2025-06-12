@@ -84,7 +84,7 @@ const Slider_PT = () => {
   const currentItem = items[selectedItem];
   return (
     <>
-      <Navbar showSearch={false} showBackground={false} islogged={islogged} setIsLogged={setIsLogged} />
+      <Navbar showSearch={false} showBackground={false} islogged={islogged} setIsLogged={setIsLogged} darkmenu={"black"}/>
       <div className={`carousel-PT carousel-PT-SPT`}>
         <div
           className={`content-overlay content-overlay-SPT ${
