@@ -16,6 +16,7 @@
 .carousel-wrapper {
   /* flex: 1 1 auto; Prevents flexbox from shrinking it */
   /* width: 100%; Ensures proper width */
+  overflow: hidden;
 }
 /* Orange bubble styling */
 .orange-bubble {

@@ -50,14 +50,15 @@ const updated = await axios.get(`${BASE_URL}/comments`);
   //wrapAround: true,
   const carouselSettings = {
     autoplay: true,
-    autoplayInterval: 3000,
-    pauseOnHover: true,
+    autoplayInterval: 300,
+    // pauseOnHover: true,
     slidesToScroll: 1,
-    defaultControlsConfig: {
-      pagingDotsStyle: {
-        fill: "#CB8778",
-      },
-    },
+    wrapAround: true,
+    // defaultControlsConfig: {
+    //   pagingDotsStyle: {
+    //     fill: "#CB8778",
+    //   },
+    // },
   };
 
   //<Carousel autoplay showDots> </Carousel>
@@ -85,7 +86,7 @@ const updated = await axios.get(`${BASE_URL}/comments`);
         </div>
 
         {/* 5️⃣ Nuka Carousel with Fetched Comments */}
-        <div className="carousel-wrapper pt-5 mt-5 w-100 ">
+        <div className="carousel-wrapper pt-5 mt-5 ">
           <Carousel {...carouselSettings}>
             {comments.map((item) => (
               <div
