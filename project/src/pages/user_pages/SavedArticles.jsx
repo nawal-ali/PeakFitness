@@ -119,7 +119,7 @@ export default function SavedArticles() {
                           />
                         </div>
                         <div className="col-md-9">
-                          <div className="card-body d-flex flex-column h-100">
+                          <div className="card-body d-flex flex-column ">
                             <div className="d-flex justify-content-between align-items-start">
                               <div>
                                 <h5 className="card-title">{article.title}</h5>
