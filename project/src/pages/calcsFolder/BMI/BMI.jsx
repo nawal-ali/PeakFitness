@@ -96,7 +96,7 @@ const BMICalculator = () => {
 
   return (
     <>
-      <Navbar showBackground={false} isExpanded={true}  islogged={islogged} setIsLogged={setIsLogged}/>
+      <Navbar showBackground={false} isExpanded={true}  islogged={islogged} setIsLogged={setIsLogged} darkmenu={"back"}/>
       <div className={`calorie-calculator-B ${showResults ? "show-results-B" : ""}`}>
         <div className="left-panel-B">
           {!showResults ? (

@@ -82,7 +82,7 @@ const Slider_FP = () => {
   const currentItem = items[selectedItem];
   return (
     <>
-      <Navbar showSearch={false} showBackground={false} islogged={islogged} setIsLogged={setIsLogged} />
+      <Navbar showSearch={false} showBackground={false} islogged={islogged} setIsLogged={setIsLogged} darkmenu={"white"} />
       <div className={`carousel-PT carousel-PT-SFP`}>
         <div
           className={`content-overlay content-overlay-SFP ${

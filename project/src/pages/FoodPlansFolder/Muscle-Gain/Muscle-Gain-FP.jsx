@@ -10,7 +10,7 @@ const MuscleGain = () => {
       });
   return (
     <>
-      <Navbar islogged={islogged} setIsLogged={setIsLogged}  showBackground={true} isExpanded={false}/>
+      <Navbar islogged={islogged} setIsLogged={setIsLogged}  showBackground={true} isExpanded={false} darkmenu={"white"}/>
       <Temp
         main_banner_bg="./imgs/muscle_gain_main_bg.png"
         main_banner_title="Muscle Gain"

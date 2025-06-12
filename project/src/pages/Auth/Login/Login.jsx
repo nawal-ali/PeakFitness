@@ -49,6 +49,15 @@ const Login = () => {
         if (response.data.token) {
           localStorage.setItem("islogged", "true");
           localStorage.setItem("token", response.data.token);
+          //|| "user"
+          localStorage.setItem("role", response.data.role );
+          localStorage.setItem("userId", response.data.userId );
+//           localStorage.setItem("user", JSON.stringify({
+//   token: response.data.token,
+//   role: response.data.role
+// }));
+
+
           localStorage.setItem("showLoginSuccess", "true");
           console.log("showLoginSuccess set to true"); // Debug to confirm
           navigate("/"); // Navigate immediately

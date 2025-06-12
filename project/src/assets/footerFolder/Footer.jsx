@@ -82,7 +82,10 @@ export default function footer() {
               <span className="me-2">
                 <img src="/logo/mail.svg" alt="location" />
               </span>
-              Pure Vitality@gmail.com
+              <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=PureVitality@gmail.com`}
+                  target="_blank" rel="noopener noreferrer" className="link-underline link-underline-opacity-0 link-light">
+                    PureVitality@gmail.com
+                </a>
             </p>
           </div>
           <div className="col-12 col-md-3 mt-5">

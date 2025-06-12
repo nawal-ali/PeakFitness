@@ -11,7 +11,7 @@ export default function MG_proTips() {
     });
   return (
     <>
-      <Navbar  islogged={islogged} setIsLogged={setIsLogged}  showBackground={true} isExpanded={false}/>
+      <Navbar  islogged={islogged} setIsLogged={setIsLogged}  showBackground={true} isExpanded={false} darkmenu={"white"}/>
       <ProTipsTemp
         sec1_tips_img="./imgs/mg_sec1_tips.png"
         sec1_tips_title="Muscle Gain"

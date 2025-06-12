@@ -8,7 +8,7 @@ export default function WG_proTips() {
     });
   return (
     <>
-      <Navbar islogged={islogged} setIsLogged={setIsLogged}  showBackground={true} isExpanded={false}/>
+      <Navbar islogged={islogged} setIsLogged={setIsLogged}  showBackground={true} isExpanded={false} darkmenu={"white"}/>
       <ProTipsTemp
         sec1_tips_img="./imgs/wg_sec1_tips.png"
         sec1_tips_title="Weight Gain"

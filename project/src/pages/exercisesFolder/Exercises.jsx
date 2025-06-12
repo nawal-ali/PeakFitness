@@ -12,7 +12,7 @@ export default function exercises() {
   });
   return (
     <>
-        <Navbar islogged={islogged} setIsLogged={setIsLogged}  showBackground={true} isExpanded={false}/>
+        <Navbar islogged={islogged} setIsLogged={setIsLogged}  showBackground={true} isExpanded={false} darkmenu={"white"}/>
       <div className="row">
         <div className="col-12 col-md-6 p-5">
           <h1 style={{fontSize:"4rem", marginTop:"15rem", color:"#CB8778",marginBottom:"2rem"}}>To reach your goal </h1>
@@ -63,13 +63,13 @@ export default function exercises() {
             <div className="d-flex justify-content-center align-items-start gap-3 p-3" style={{border:"3px dashed black", borderLeft:"none"}}>
               <div style={{backgroundColor:"#CB8778"}} className="rounded-circle p-3 fs-3 text-light align-self-center">01</div>
               <div className="fs-3">
-              <p style={{ color:"#CB8778",marginBottom:"0"}}>{content[clickedOn].sec2.title1}</p>
+              <a href={content[clickedOn].sec2.link1} target='_blank' style={{ color:"#CB8778",marginBottom:"0"}}>{content[clickedOn].sec2.title1}</a>
               <p>{content[clickedOn].sec2.desc1}</p>
               </div>
             </div>
             <div className="d-flex justify-content-center align-items-start gap-3 p-3" style={{borderLeft:"3px dashed black", }}>
               <div className="fs-3">
-              <p style={{ color:"#CB8778",marginBottom:"0"}} className="text-end">{content[clickedOn].sec2.title2}</p>
+              <a href={content[clickedOn].sec2.link2} target='_blank' style={{ color:"#CB8778",marginBottom:"0"}} className="text-end">{content[clickedOn].sec2.title2}</a>
               <p>{content[clickedOn].sec2.desc2}</p>
               </div>
               <div style={{backgroundColor:"#CB8778"}} className="rounded-circle p-3 fs-3 text-light align-self-center">02</div>
@@ -77,7 +77,7 @@ export default function exercises() {
             <div className="d-flex justify-content-center align-items-start gap-3 p-3" style={{border:"3px dashed black", borderLeft:"none"}}>
               <div style={{backgroundColor:"#CB8778"}} className="rounded-circle p-3 fs-3 text-light align-self-center">03</div>
               <div className="fs-3">
-              <p style={{ color:"#CB8778",marginBottom:"0"}}>{content[clickedOn].sec2.title3}</p>
+              <a href={content[clickedOn].sec2.link3} target='_blank' style={{ color:"#CB8778",marginBottom:"0"}}>{content[clickedOn].sec2.title3}</a>
               <p>{content[clickedOn].sec2.desc3}</p>
               </div>
             </div>
@@ -101,6 +101,7 @@ export default function exercises() {
           </div>
           <div className="row p-3 mb-5">
             <div className="col-12 col-md-4">
+              <a href={content[clickedOn].sec3.link1} target='_blank'>
               <div className="card m-auto my-4 my-md-0" style={{width: "18rem",backgroundColor:"#EAEAEA", height:"100%"}}>
                 <img src="./imgs/exer_stretch_img1.png" className="card-img-top" alt="..."></img>
                 <div className="card-body text-center">
@@ -109,8 +110,10 @@ export default function exercises() {
                     {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
                 </div>
               </div>
+              </a>
             </div>
             <div className="col-12 col-md-4">
+              <a href={content[clickedOn].sec3.link2} target='_blank'>
               <div className="card m-auto my-4 my-md-0" style={{width: "18rem",backgroundColor:"#EAEAEA", height:"100%"}}>
                 <img src="./imgs/exer_stretch_img2.png" className="card-img-top" alt="..."></img>
                 <div className="card-body text-center">
@@ -119,8 +122,10 @@ export default function exercises() {
                     {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
                 </div>
               </div>
+              </a>
             </div>
             <div className="col-12 col-md-4">
+              <a href={content[clickedOn].sec3.link3} target='_blank'>
               <div className="card m-auto my-4 my-md-0" style={{width: "18rem",backgroundColor:"#EAEAEA", height:"100%"}}>
                 <img src="./imgs/exer_stretch_img3.png" className="card-img-top" alt="..."></img>
                 <div className="card-body text-center">
@@ -129,6 +134,7 @@ export default function exercises() {
                     {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
                 </div>
               </div>
+              </a>
             </div>
           </div>
         </div>
