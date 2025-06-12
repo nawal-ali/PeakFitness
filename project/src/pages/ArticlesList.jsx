@@ -94,19 +94,24 @@ export default function ArticlesList() {
         </div>
         <div className="row" >
           {articles.map(article => (
-            <div className="col-12 col-md-6 col-lg-4 my-5" key={article._id}>
+            <div className="col-12 my-5" key={article._id}>
               <div className="w-100 border border-1 border-dark rounded-5 shadow-sm">
-                <img src={article.coverImg.url} className="card-img-top rounded-top-5" alt={article.title} />
-                <div className='card-body p-3'>
-                  <h2 className='card-title mb-3'>{article.title}</h2>
+                <div className="row">
+                  <div className="col-12 col-md-4 p-5 text-center d-flex align-items-center justify-content-center">
+                <img src={article.coverImg.url} className="img-fluid rounded-5" alt={article.title} />
+                </div>
+                <div className='col-12 col-md-8 p-5 p-md-3 d-flex align-items-center justify-content-center'>
+                  <div>
+                  <h1 className='card-title mb-3'>{article.title}</h1>
                   <p className='card-text'>{article.desc}</p>
-                  <div className='d-flex justify-content-between align-items-center mx-4'>
+                  <div className='d-flex justify-content-between align-items-center'>
                     <Link to={`/articles/${article._id}`} className="read-more">
                       <button className='btn btn-dark'>Read Article</button>
                     </Link>
                     <div
                       onClick={() => handleSaveToggle(article._id)}
                       style={{ cursor: 'pointer' }}
+                      className='me-5'
                     >
                       {savedArticles.includes(article._id) ? (
                         <FaBookmark color="#ec7e4a" />
@@ -115,6 +120,8 @@ export default function ArticlesList() {
                       )}
                     </div>
                   </div>
+                  </div>
+                </div>
                 </div>
               </div>
             </div>
