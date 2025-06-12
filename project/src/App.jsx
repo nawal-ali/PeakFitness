@@ -17,18 +17,20 @@ import WeightLoss from "./pages/FoodPlansFolder/Weight-Loss/Weight-Loss-FP";
 import MuscleGain from "./pages/FoodPlansFolder/Muscle-Gain/Muscle-Gain-FP";
 // import Login from "./pages/Auth/Login/Refrence";
 import Login from "./pages/Auth/Login/Login";
-import Profile from "./pages/profile/Profile";
+import Profile from "./pages/user_pages/Profile";
+import SavedArticles from "./pages/user_pages/SavedArticles";
 import SignUp from "./pages/Auth/Login/SignUp";
 import ForgetPassword from "./pages/Auth/Password/Forget password/Auth-F";
+import AdminRoute from "./pages/Auth/AdminRoute";
+import AdminDashboard from "./pages/AdminDashboard";
 import NewPassword from "./pages/Auth/Password/New Password/Auth-N";
 import Slider_PT from "./pages/proTipsFolder/ProTips";
 import MG_proTips from "./pages/proTipsFolder/mg/MG_proTips";
 import WL_proTips from "./pages/proTipsFolder/wl/WL_proTips";
 import WG_proTips from "./pages/proTipsFolder/wg/WG_proTips";
-// import Footer from "./assets/footerFolder/Footer";
 import ToTop from "./assets/toTopBtn/toTop";
-// import MuscleGain from "./pages/FoodPlansFolder/Muscle-Gain/Muscle-Gain-FP";
-// import WeightLoss from "./pages/FoodPlansFolder/Weight-Loss/Weight-Loss-FP";
+import ArticlesList from "./pages/ArticlesList";
+import ArticleDetail from "./pages/ArticleDetail";
 function App() {
   return (
     <>
@@ -58,6 +60,7 @@ function App() {
             <Route path="/muscle-gain-details" element={<MuscleGain />} />
             <Route path="/proTipsSlider" element={<Slider_PT />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/saved" element={<SavedArticles />} />
             <Route
               path="/weight-gain-details-Pro-tips"
               element={<WG_proTips />}
@@ -70,12 +73,15 @@ function App() {
               path="/muscle-gain-details-Pro-tips"
               element={<MG_proTips />}
             />
-
-            {/* <Route path="/weight-loss-details" element={<WeightLoss />} />
-            <Route path="/Muslce-gain-details" element={<MuscleGain />} /> */}
+            <Route path="/articles" element={<ArticlesList />} />
+            <Route path="/articles/:id" element={<ArticleDetail />} />
+            <Route path="/admin-dashboard" element={
+                  <AdminRoute>
+                    <AdminDashboard />
+                  </AdminRoute>
+} />
           </Routes>
         </Router>
-        {/* <h1>app works!</h1> */}
       </div>
     </>
   );

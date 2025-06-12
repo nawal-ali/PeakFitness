@@ -7,7 +7,10 @@ import { FaBars } from 'react-icons/fa';
 //{ showSearch = true, showBackground = true }
 export default function Navbar({ islogged, setIsLogged,showBackground,isExpanded ,darkmenu }) {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [username, setUsername] = useState("");
   const [visible, setVisible] = useState(true);
+
+  const adminLogged = localStorage.getItem('role') === "admin"
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,10 +30,29 @@ export default function Navbar({ islogged, setIsLogged,showBackground,isExpanded
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos]);
 
+  useEffect(() => {
+  const fetchUsername = async () => {
+    const userId = localStorage.getItem("userId");
+    if (userId) {
+      try {
+        const response = await fetch(`http://localhost:5000/api/auth/users/${userId}`);
+        const data = await response.json();
+        setUsername(data.username); // or data.name depending on backend
+      } catch (err) {
+        console.error("Failed to fetch username:", err);
+      }
+    }
+  };
+  fetchUsername();
+}, []);
+
   const navigate = useNavigate();
   const handleLogOut = () => {
     localStorage.setItem("islogged", "false");
-    localStorage.removeItem("token")
+    // localStorage.removeItem("token")
+    // localStorage.removeItem("role")
+    // localStorage.removeItem("userId")
+    localStorage.clear();
     setIsLogged(false);
     toast.info("You have been logged out successfully!"); // Added toast notification
     setTimeout(() => {
@@ -83,7 +105,7 @@ export default function Navbar({ islogged, setIsLogged,showBackground,isExpanded
             {/* <span className="navbar-toggler-icon"></span> */}
             {/* <i className="fa-solid fa-bars text-dark">MENU</i>  */}
               {/* <button> */}
-                <FaBars size={24} color={"black"} />
+                <FaBars size={24} color={darkmenu} />
               {/* </button> */}
           </button>
           {/*  */}
@@ -274,6 +296,20 @@ export default function Navbar({ islogged, setIsLogged,showBackground,isExpanded
                 {/* -------------------- end of Calculators dropdown ----------------------- */}
                 <li className="nav-item">
                   <NavLink
+                    to="/articles"
+                    className={"nav-link fs-5 custom-link-color mb-2 mx-1"}
+                  >
+                    {/* <img
+                      src="/logo/aboutLogo.svg"
+                      width="30"
+                      height="40"
+                      className="me-3"
+                    /> */}
+                    Articles
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
                     to="/About"
                     className={"nav-link fs-5 custom-link-color mb-2 mx-1"}
                   >
@@ -307,7 +343,7 @@ export default function Navbar({ islogged, setIsLogged,showBackground,isExpanded
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    Welcome
+                    Welcome <span style={{color:"brown"}}>{username || ''}</span>
                   </a>
                   <ul className="dropdown-menu dropdown-menu-dark">
                     <li>
@@ -315,6 +351,16 @@ export default function Navbar({ islogged, setIsLogged,showBackground,isExpanded
                         My Profile
                       </NavLink>
                     </li>
+                    <li>
+                      <NavLink className="dropdown-item" to="/saved">
+                        My Saved Articles
+                      </NavLink>
+                    </li>
+                    {adminLogged && (<li>
+                      <NavLink className="dropdown-item" to="/admin-dashboard">
+                        Dashboard
+                      </NavLink>
+                    </li>)}
                     <li className="dropdown-item" onClick={handleLogOut}>
                       Log Out
                     </li>

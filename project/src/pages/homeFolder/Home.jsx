@@ -48,7 +48,7 @@ export default function Home() {
   return (
     <>
       <ToTop />
-      <Navbar islogged={islogged} setIsLogged={setIsLogged} showBackground={true} isExpanded={false} />
+      <Navbar islogged={islogged} setIsLogged={setIsLogged} showBackground={true} isExpanded={false} darkmenu={"white"} />
       <div
         className="min-vw-100  position-relative"
         style={{ marginTop: "9%" }}
@@ -156,7 +156,7 @@ export default function Home() {
       <div className="comments-section margin-top-10 text-center w-75 m-auto">
         <CommentCard islogged={islogged} setIsLogged={setIsLogged} />
       </div>
-      <div className="container-fluid margin-top-10 text-center">
+      <div className="container-fluid  text-center">
         <h1 className="mb-3 text-black">Any questions? We got you</h1>
         <p className="fs-4 w-75 m-auto mb-5">
           Before you start your journey with us, we’ve gathered the most

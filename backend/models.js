@@ -17,13 +17,21 @@ const UserSchema = new mongoose.Schema({
   password: { type: String, required: true },
   //isVerified: { type: Boolean, default: false },
   // verificationToken: { type: String },
+  role: {
+    type: String,
+    enum: ["user", "admin"],
+    default: "user"
+  },
   resetPasswordToken: { type: String },
   resetPasswordExpires: { type: Date },
-
   weight: { type: Number, default: null },
   height: { type: Number, default: null },
   gender: { type: String, enum: ["male", "female"], default: null },
-  age: { type: Number, default: null }
+  age: { type: Number, default: null },
+  savedArticles: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Articles'
+  }]
 });
 
 
@@ -64,13 +72,60 @@ const FitnessDataSchema = new mongoose.Schema({
   bodyFat: { type: Number }
 }, { timestamps: true });
 
+// Articles Schema 
+const ArticlesSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  coverImg: {
+    url: { type: String, required: true },
+  },
+  desc: { type: String, required: true },
+  content: [
+    {
+      subtitle: {
+        type: String,
+        required: false
+      },
+      paragraphs: [
+        {
+          type: String,
+          required: true
+        }
+      ], images: [
+        {
+          url: String,
+          caption: String
+        }
+      ]
+    }
+  ],
+  author: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  // save: { type: Boolean, default: false },
+  likes: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+  }],
+  likesCount: {
+    type: Number,
+    default: 0
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  },
+});
 
 const User = mongoose.model('User', UserSchema);
 const Comment = mongoose.model('Comment', CommentSchema);
 const FitnessData = mongoose.model('FitnessData', FitnessDataSchema);
+const Article = mongoose.model('Article', ArticlesSchema);
 
 module.exports = {
   User,
   Comment,
-  FitnessData
+  FitnessData,
+  Article
 };

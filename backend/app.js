@@ -8,6 +8,7 @@ const authRoutes = require('./routes/routes');
 const profileRoutes = require("./routes/profileRoutes");
 const commentRoutes = require('./routes/comments');
 const fitnessDataRoutes = require('./routes/calculations');
+const articleRoutes = require('./routes/articles');
 
 const authMiddleware = require("./middleware/authMiddleware");
 
@@ -32,6 +33,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/profile", authMiddleware, profileRoutes);
 app.use('/api/comments', commentRoutes);
 app.use('/api/calculations', fitnessDataRoutes);
+app.use('/api/article', articleRoutes);
 
 
 

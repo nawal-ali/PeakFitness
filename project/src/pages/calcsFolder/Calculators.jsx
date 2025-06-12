@@ -228,7 +228,7 @@ const Slider_C = () => {
   return (
     <>
       {/* showSearch={false} showBackground={false}  */}
-      <Navbar showBackground={false}  isExpanded={false} islogged={islogged} setIsLogged={setIsLogged}/>
+      <Navbar showBackground={false}  isExpanded={false} islogged={islogged} setIsLogged={setIsLogged} darkmenu={"black"}/>
       <div className="carousel-SC position-relative" ref={carouselRef}>
         {/* <div
           className="position-absolute w-100 h-100 top-0 start-0"
