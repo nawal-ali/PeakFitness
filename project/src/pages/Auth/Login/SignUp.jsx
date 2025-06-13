@@ -96,12 +96,9 @@ const SignUp = () => {
           <form onSubmit={handleSignUpSubmit} className="row">
             <div className="col-12">
               <label htmlFor="Username">Username</label>
-              <div className="input-with-icon">
+              <div className="input-wrapper">
                 {signUpErrors.username && (
-                  <i
-                    className="bx bxs-error-circle"
-                    style={{ fontSize: "16px", color: "#ff4d4f", marginRight: "8px" }}
-                  ></i>
+                  <i className="error-icon-left bx bxs-error-circle"></i>
                 )}
                 <InputText
                   id="Username"
@@ -121,12 +118,9 @@ const SignUp = () => {
             </div>
             <div className="col-12 col-md-6">
               <label htmlFor="age">Age</label>
-              <div className="input-with-icon">
+              <div className="input-wrapper">
                 {signUpErrors.age && (
-                  <i
-                    className="bx bxs-error-circle"
-                    style={{ fontSize: "16px", color: "#ff4d4f", marginRight: "8px" }}
-                  ></i>
+                  <i className="error-icon-left bx bxs-error-circle"></i>
                 )}
                 <InputText
                   id="age"
@@ -146,12 +140,9 @@ const SignUp = () => {
             </div>
             <div className="col-12 col-md-6">
               <label htmlFor="gender">Gender</label>
-              <div className="input-with-icon">
+              <div className="input-wrapper">
                 {signUpErrors.gender && (
-                  <i
-                    className="bx bxs-error-circle"
-                    style={{ fontSize: "16px", color: "#ff4d4f", marginRight: "8px" }}
-                  ></i>
+                  <i className="error-icon-left bx bxs-error-circle"></i>
                 )}
                 <InputText
                   id="gender"
@@ -171,12 +162,9 @@ const SignUp = () => {
             </div>
             <div className="col-12 col-md-6">
               <label htmlFor="weight">Weight</label>
-              <div className="input-with-icon">
+              <div className="input-wrapper">
                 {signUpErrors.weight && (
-                  <i
-                    className="bx bxs-error-circle"
-                    style={{ fontSize: "16px", color: "#ff4d4f", marginRight: "8px" }}
-                  ></i>
+                  <i className="error-icon-left bx bxs-error-circle"></i>
                 )}
                 <InputText
                   id="weight"
@@ -196,12 +184,9 @@ const SignUp = () => {
             </div>
             <div className="col-12 col-md-6">
               <label htmlFor="height">Height</label>
-              <div className="input-with-icon">
+              <div className="input-wrapper">
                 {signUpErrors.height && (
-                  <i
-                    className="bx bxs-error-circle"
-                    style={{ fontSize: "16px", color: "#ff4d4f", marginRight: "8px" }}
-                  ></i>
+                  <i className="error-icon-left bx bxs-error-circle"></i>
                 )}
                 <InputText
                   id="height"
@@ -221,12 +206,9 @@ const SignUp = () => {
             </div>
             <div className="col-12">
               <label htmlFor="email-signup">Email</label>
-              <div className="input-with-icon">
+              <div className="input-wrapper">
                 {signUpErrors.email && (
-                  <i
-                    className="bx bxs-error-circle"
-                    style={{ fontSize: "16px", color: "#ff4d4f", marginRight: "8px" }}
-                  ></i>
+                  <i className="error-icon-left bx bxs-error-circle"></i>
                 )}
                 <InputText
                   id="email-signup"
@@ -246,12 +228,9 @@ const SignUp = () => {
             </div>
             <div className="col-12">
               <label htmlFor="password-signup">Password</label>
-              <div className="password-container">
+              <div className="input-wrapper">
                 {signUpErrors.password && (
-                  <i
-                    className="bx bxs-error-circle"
-                    style={{ fontSize: "16px", color: "#ff4d4f", marginRight: "8px" }}
-                  ></i>
+                  <i className="error-icon-left bx bxs-error-circle"></i>
                 )}
                 <InputText
                   id="password-signup"

@@ -8,7 +8,6 @@
   background-color: #fff;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   padding: 0;
   flex-direction: row;
   width: 100%;
@@ -28,14 +27,8 @@
 
 /* SignUp form */
 .signup-form {
-  /* flex-direction: column; */
-  /* flex: 1; */
   width: 100%;
   height: 100%;
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* z-index: 200; */
   background-color: #fff;
   padding: 0 8rem;
 }
@@ -92,27 +85,37 @@ input::placeholder {
   letter-spacing: 3px;
 }
 
-/* Input with icon container */
-.input-with-icon {
-  display: flex;
-  align-items: center;
+/* Input wrapper */
+.input-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 5px 0 3px;
+}
+.input-wrapper .custom-input {
+  display: block;
   width: 100%;
 }
 
-.input-with-icon .custom-input {
-  flex: 1;
-  margin: 5px 0 15px;
+/* Error icon on the left outside the input */
+.error-icon-left {
+  position: absolute;
+  left: -40px; /* زيادة المسافة إلى -40px كما طلبت */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: #ff4d4f;
 }
 
 /* Password container */
-.password-container {
-  position: relative;
+.input-wrapper.password-wrapper {
+  display: flex;
+  align-items: center;
 }
 
-.password-container .custom-input {
+.password-wrapper .custom-input {
+  flex: 1;
   padding-right: 45px;
-  width: 100%;
-  margin: 5px 0 15px;
 }
 
 .password-icon {
@@ -312,6 +315,10 @@ input::placeholder {
     max-width: 400px;
     padding: 30px;
   }
+    .container-signup {
+    flex-direction: column-reverse;
+    /* padding: 20px; */
+  }
 
   .header-1 {
     font-size: 2.5rem;
@@ -338,9 +345,17 @@ input::placeholder {
 
 @media (max-width: 431px) {
   .container-signup {
-    padding: 4rem 15px;
+    /* padding: 4rem 15px; */
   }
-
+  .welcome-text-signup {
+    
+    margin-top: 40%;
+}
+    .left-panel-signup, .right-panel-signup {
+        /* flex: 0 0 100%; */
+        min-height: 500px;
+        padding-bottom: 65%
+    }
   .signup-form {
     max-width: 350px;
     padding: 20px;
@@ -357,7 +372,7 @@ input::placeholder {
   .signup-form label {
     font-size: 0.9rem;
     margin: 8px 0;
-    color: #fff;
+    /* color: #fff; */
   }
 
   .custom-input {
@@ -376,12 +391,11 @@ input::placeholder {
     width: 95%;
   }
 
-  .password-container {
+  .input-wrapper {
     width: 90%;
   }
 
-  .signup-form label,
-  .input-with-icon {
+  .password-wrapper {
     width: 90%;
   }
 
@@ -415,11 +429,11 @@ input::placeholder {
   }
 
   .welcome-text-signup h1 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
 
   .welcome-text-signup .child-1 {
-    font-size: 0.7rem;
+    font-size: 1.4rem;
   }
 
   .welcome-text-signup .child-2 {

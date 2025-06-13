@@ -87,7 +87,6 @@ const Login = () => {
         </div>
       </div>
       <div className="form-container-Auth-Main sign-in-container-Auth-Main">
-        <div className="login-circles-Auth-Main"></div>
         <form onSubmit={handleSignInSubmit} className="SignIn-Form-Auth-Main">
           <h1 className="Header1-Auth-Main">Login</h1>
           <label htmlFor="email-login">Email</label>
