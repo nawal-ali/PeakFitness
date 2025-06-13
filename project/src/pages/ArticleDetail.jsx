@@ -151,10 +151,10 @@ export default function ArticleDetail() {
                     
                     {/* Sidebar Column */}
                     <div className="col-12 col-lg-4">
-                        <div className="sticky-top" style={{ marginTop: '10rem' }}>
-                            <div className="card border-0 shadow-sm rounded-4 mb-4">
+                        <div className="sticky-top bg-secondary-subtle p-5 rounded-5 mt-5">
+                            <div className="bg-light p-3 border-0 shadow-sm rounded-4 mb-4">
                                 <div className="card-body">
-                                    <h5 className="card-title fw-bold mb-4">More Articles</h5>
+                                    <h3 className="card-title fw-bold pb-3 mb-4 border-bottom">More Articles You May Like</h3>
                                     
                                     {nextArticles.length > 0 ? (
                                         nextArticles.map((art, idx) => (
@@ -188,7 +188,7 @@ export default function ArticleDetail() {
                 
                 <div className='d-flex justify-content-center my-5 py-4'>
                     <Link to="/articles" className="text-decoration-none">
-                        <button className="btn btn-dark px-4 py-3 rounded-pill fw-semibold">
+                        <button className="btn btn-dark px-4 py-3 mt-5 rounded-pill fw-semibold">
                             <i className="bi bi-arrow-left me-2"></i> Back to all articles
                         </button>
                     </Link>

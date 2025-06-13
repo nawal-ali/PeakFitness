@@ -33,7 +33,8 @@ export default function Navbar({ islogged, setIsLogged,showBackground,isExpanded
   useEffect(() => {
   const fetchUsername = async () => {
     const userId = localStorage.getItem("userId");
-    if (userId) {
+    const token = localStorage.getItem("token");
+    if (token && userId) {
       try {
         const response = await fetch(`http://localhost:5000/api/auth/users/${userId}`);
         const data = await response.json();
