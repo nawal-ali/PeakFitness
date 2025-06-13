@@ -38,8 +38,6 @@
   /* z-index: 200; */
   background-color: #fff;
   padding: 0 8rem;
-  /* margin-left: 5rem; */
-  /* margin-right: 5rem; */
 }
 
 /* Form heading */
@@ -60,17 +58,14 @@
   color: #000;
   margin: 10px 0;
   text-align: left;
-  width: 80%; /* Match the input width */
-  /* margin-left: auto; */
-  /* margin-right: auto; */
+  width: 80%;
   letter-spacing: 1.5px;
 }
 
 /* Input fields */
 .custom-input {
-  width: 100%; /* Default width for most inputs */
-  display: block; /* Ensure it behaves as a block element for centering */
-  /* margin: 5px auto 15px; */
+  width: 100%;
+  display: block;
   padding: 10px 20px;
   box-sizing: border-box;
   border-radius: 25px;
@@ -79,26 +74,6 @@
   color: black;
   font-size: 16px;
 }
-
-/* Specific adjustment for Weight and Height inputs */
-/* #weight.custom-input,
-#height.custom-input {
-  width: 90%; 
-} */
-/* Increased width for Weight and Height */
-
-/* Adjust column padding to reduce gap between Weight and Height */
-/* .signup-form .row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -5px;
-  margin-right: -5px;
-} */
-
-/* .signup-form .col-md-6 {
-  padding-left: 0px;
-  padding-right: 10px;
-} */
 
 .custom-input:focus {
   border: 1px solid #ec7e4a;
@@ -117,17 +92,27 @@ input::placeholder {
   letter-spacing: 3px;
 }
 
+/* Input with icon container */
+.input-with-icon {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-with-icon .custom-input {
+  flex: 1;
+  margin: 5px 0 15px;
+}
+
 /* Password container */
 .password-container {
   position: relative;
-  /* width: 80%; */
-  /* margin: 0 auto; */
 }
 
 .password-container .custom-input {
   padding-right: 45px;
-  width: 100%; /* Input takes full width of the container */
-  margin: 5px 0 15px; /* Remove auto margin since it's already centered by parent */
+  width: 100%;
+  margin: 5px 0 15px;
 }
 
 .password-icon {
@@ -186,20 +171,6 @@ input::placeholder {
   color: #00cc00;
 }
 
-/* Error messages */
-.error-message {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  color: #ff4d4f;
-  font-size: 12px;
-  align-self: flex-start;
-  margin-top: -0.5rem;
-  width: 80%; /* Match the input width */
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /* Sign Up Button */
 .SignUp-button-Auth-Main-1 {
   background-color: #000;
@@ -208,9 +179,9 @@ input::placeholder {
   border: none;
   border-radius: 30px;
   font-size: 1.5rem;
-  width: 80%; /* Match the password input container width */
-  margin: 0 auto; /* Center the button */
-  display: block; /* Ensure it behaves as a block element for centering */
+  width: 80%;
+  margin: 0 auto;
+  display: block;
   font-weight: bold;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
@@ -271,7 +242,7 @@ input::placeholder {
 @media (max-width: 1025px) {
   .container-signup {
     /* flex-direction: column; */
-    padding: 20px;
+    /* padding: 20px; */
   }
 
   .left-panel-signup,
@@ -289,11 +260,11 @@ input::placeholder {
   }
 
   .welcome-text-signup h1 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .welcome-text-signup .child-1 {
-    font-size: 1rem;
+    font-size: 1.9rem;
   }
 
   .welcome-text-signup .child-2 {
@@ -344,10 +315,6 @@ input::placeholder {
 
   .header-1 {
     font-size: 2.5rem;
-  }
-
-  .error-message {
-    font-size: 11px;
   }
 
   .welcome-text-signup h1 {
@@ -401,32 +368,21 @@ input::placeholder {
     border: 1px solid #ccc;
     background: #fff;
     color: #000;
-    width: 90%; /* Slightly wider on small screens for usability */
+    width: 90%;
   }
 
   #weight.custom-input,
   #height.custom-input {
-    width: 95%; /* Increased width for Weight and Height on small screens */
+    width: 95%;
   }
 
   .password-container {
-    width: 90%; /* Match the input width on small screens */
+    width: 90%;
   }
 
   .signup-form label,
-  .error-message {
-    width: 90%; /* Match the input width on small screens */
-  }
-
-  .error-message {
-    font-size: 11px;
-    margin-top: -8px;
-    margin-bottom: 8px;
-  }
-
-  .password-container {
-    position: relative;
-    width: 100%;
+  .input-with-icon {
+    width: 90%;
   }
 
   .password-icon {
@@ -450,7 +406,7 @@ input::placeholder {
   .SignUp-button-Auth-Main-1 {
     padding: 12px;
     font-size: 1.1rem;
-    width: 90%; /* Match the password input container width on small screens */
+    width: 90%;
   }
 
   .Login-button-Auth-Main {

@@ -50,13 +50,13 @@ const SignUp = () => {
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{8,}$/;
 
     if (!signUpData.username || signUpData.username.length < 3) {
-      errors.username = "Username must be at least 3 characters";
+      errors.username = true;
     }
     if (!emailRegex.test(signUpData.email)) {
-      errors.email = "Invalid email format";
+      errors.email = true;
     }
     if (!passwordRegex.test(signUpData.password)) {
-      errors.password = "Password does not meet requirements";
+      errors.password = true;
     }
 
     setSignUpErrors(errors);
@@ -96,175 +96,163 @@ const SignUp = () => {
           <form onSubmit={handleSignUpSubmit} className="row">
             <div className="col-12">
               <label htmlFor="Username">Username</label>
-              <InputText
-                id="Username"
-                value={signUpData.username}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  setSignUpData({ ...signUpData, username: value });
-                  if (signUpErrors.username) {
-                    setSignUpErrors((prev) => ({ ...prev, username: "" }));
-                  }
-                }}
-                className={`custom-input ${
-                  signUpErrors.username ? "input-error" : ""
-                }`}
-                placeholder="Full name"
-                maxLength={50}
-              />
-              {signUpErrors.username && (
-                <div className="error-message">
+              <div className="input-with-icon">
+                {signUpErrors.username && (
                   <i
                     className="bx bxs-error-circle"
-                    style={{ fontSize: "16px", color: "#ff4d4f" }}
+                    style={{ fontSize: "16px", color: "#ff4d4f", marginRight: "8px" }}
                   ></i>
-                  <span>{signUpErrors.username}</span>
-                </div>
-              )}
+                )}
+                <InputText
+                  id="Username"
+                  value={signUpData.username}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setSignUpData({ ...signUpData, username: value });
+                    if (signUpErrors.username) {
+                      setSignUpErrors((prev) => ({ ...prev, username: "" }));
+                    }
+                  }}
+                  className={`custom-input ${signUpErrors.username ? "input-error" : ""}`}
+                  placeholder="Full name"
+                  maxLength={50}
+                />
+              </div>
             </div>
             <div className="col-12 col-md-6">
               <label htmlFor="age">Age</label>
-              <InputText
-                id="age"
-                value={signUpData.age}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  setSignUpData({ ...signUpData, age: value });
-                  if (signUpErrors.age) {
-                    setSignUpErrors((prev) => ({ ...prev, age: "" }));
-                  }
-                }}
-                className={`custom-input ${
-                  signUpErrors.age ? "input-error" : ""
-                }`}
-                placeholder="Age"
-                maxLength={2}
-              />
-              {signUpErrors.age && (
-                <div className="error-message">
+              <div className="input-with-icon">
+                {signUpErrors.age && (
                   <i
                     className="bx bxs-error-circle"
-                    style={{ fontSize: "16px", color: "#ff4d4f" }}
+                    style={{ fontSize: "16px", color: "#ff4d4f", marginRight: "8px" }}
                   ></i>
-                  <span>{signUpErrors.age}</span>
-                </div>
-              )}
+                )}
+                <InputText
+                  id="age"
+                  value={signUpData.age}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setSignUpData({ ...signUpData, age: value });
+                    if (signUpErrors.age) {
+                      setSignUpErrors((prev) => ({ ...prev, age: "" }));
+                    }
+                  }}
+                  className={`custom-input ${signUpErrors.age ? "input-error" : ""}`}
+                  placeholder="Age"
+                  maxLength={2}
+                />
+              </div>
             </div>
             <div className="col-12 col-md-6">
               <label htmlFor="gender">Gender</label>
-              <InputText
-                id="gender"
-                value={signUpData.gender}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  setSignUpData({ ...signUpData, gender: value });
-                  if (signUpErrors.gender) {
-                    setSignUpErrors((prev) => ({ ...prev, gender: "" }));
-                  }
-                }}
-                className={`custom-input ${
-                  signUpErrors.gender ? "input-error" : ""
-                }`}
-                placeholder="gender"
-                maxLength={6}
-              />
-              {signUpErrors.gender && (
-                <div className="error-message">
+              <div className="input-with-icon">
+                {signUpErrors.gender && (
                   <i
                     className="bx bxs-error-circle"
-                    style={{ fontSize: "16px", color: "#ff4d4f" }}
+                    style={{ fontSize: "16px", color: "#ff4d4f", marginRight: "8px" }}
                   ></i>
-                  <span>{signUpErrors.gender}</span>
-                </div>
-              )}
+                )}
+                <InputText
+                  id="gender"
+                  value={signUpData.gender}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setSignUpData({ ...signUpData, gender: value });
+                    if (signUpErrors.gender) {
+                      setSignUpErrors((prev) => ({ ...prev, gender: "" }));
+                    }
+                  }}
+                  className={`custom-input ${signUpErrors.gender ? "input-error" : ""}`}
+                  placeholder="gender"
+                  maxLength={6}
+                />
+              </div>
             </div>
             <div className="col-12 col-md-6">
               <label htmlFor="weight">Weight</label>
-              <InputText
-                id="weight"
-                value={signUpData.weight}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  setSignUpData({ ...signUpData, weight: value });
-                  if (signUpErrors.weight) {
-                    setSignUpErrors((prev) => ({ ...prev, weight: "" }));
-                  }
-                }}
-                className={`custom-input ${
-                  signUpErrors.weight ? "input-error" : ""
-                }`}
-                placeholder="ex. 40 kg"
-                maxLength={3}
-              />
-              {signUpErrors.weight && (
-                <div className="error-message">
+              <div className="input-with-icon">
+                {signUpErrors.weight && (
                   <i
                     className="bx bxs-error-circle"
-                    style={{ fontSize: "16px", color: "#ff4d4f" }}
+                    style={{ fontSize: "16px", color: "#ff4d4f", marginRight: "8px" }}
                   ></i>
-                  <span>{signUpErrors.weight}</span>
-                </div>
-              )}
+                )}
+                <InputText
+                  id="weight"
+                  value={signUpData.weight}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setSignUpData({ ...signUpData, weight: value });
+                    if (signUpErrors.weight) {
+                      setSignUpErrors((prev) => ({ ...prev, weight: "" }));
+                    }
+                  }}
+                  className={`custom-input ${signUpErrors.weight ? "input-error" : ""}`}
+                  placeholder="ex. 40 kg"
+                  maxLength={3}
+                />
+              </div>
             </div>
             <div className="col-12 col-md-6">
               <label htmlFor="height">Height</label>
-              <InputText
-                id="height"
-                value={signUpData.height}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  setSignUpData({ ...signUpData, height: value });
-                  if (signUpErrors.height) {
-                    setSignUpErrors((prev) => ({ ...prev, height: "" }));
-                  }
-                }}
-                className={`custom-input ${
-                  signUpErrors.height ? "input-error" : ""
-                }`}
-                placeholder="ex. 160 cm"
-                maxLength={3}
-              />
-              {signUpErrors.height && (
-                <div className="error-message">
+              <div className="input-with-icon">
+                {signUpErrors.height && (
                   <i
                     className="bx bxs-error-circle"
-                    style={{ fontSize: "16px", color: "#ff4d4f" }}
+                    style={{ fontSize: "16px", color: "#ff4d4f", marginRight: "8px" }}
                   ></i>
-                  <span>{signUpErrors.height}</span>
-                </div>
-              )}
+                )}
+                <InputText
+                  id="height"
+                  value={signUpData.height}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setSignUpData({ ...signUpData, height: value });
+                    if (signUpErrors.height) {
+                      setSignUpErrors((prev) => ({ ...prev, height: "" }));
+                    }
+                  }}
+                  className={`custom-input ${signUpErrors.height ? "input-error" : ""}`}
+                  placeholder="ex. 160 cm"
+                  maxLength={3}
+                />
+              </div>
             </div>
             <div className="col-12">
               <label htmlFor="email-signup">Email</label>
-              <InputText
-                id="email-signup"
-                value={signUpData.email}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  setSignUpData({ ...signUpData, email: value });
-                  if (signUpErrors.email) {
-                    setSignUpErrors((prev) => ({ ...prev, email: "" }));
-                  }
-                }}
-                className={`custom-input ${
-                  signUpErrors.email ? "input-error" : ""
-                }`}
-                placeholder="*******@gmail.com"
-                maxLength={100}
-              />
-              {signUpErrors.email && (
-                <div className="error-message">
+              <div className="input-with-icon">
+                {signUpErrors.email && (
                   <i
                     className="bx bxs-error-circle"
-                    style={{ fontSize: "16px", color: "#ff4d4f" }}
+                    style={{ fontSize: "16px", color: "#ff4d4f", marginRight: "8px" }}
                   ></i>
-                  <span>{signUpErrors.email}</span>
-                </div>
-              )}
+                )}
+                <InputText
+                  id="email-signup"
+                  value={signUpData.email}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setSignUpData({ ...signUpData, email: value });
+                    if (signUpErrors.email) {
+                      setSignUpErrors((prev) => ({ ...prev, email: "" }));
+                    }
+                  }}
+                  className={`custom-input ${signUpErrors.email ? "input-error" : ""}`}
+                  placeholder="*******@gmail.com"
+                  maxLength={100}
+                />
+              </div>
             </div>
             <div className="col-12">
               <label htmlFor="password-signup">Password</label>
               <div className="password-container">
+                {signUpErrors.password && (
+                  <i
+                    className="bx bxs-error-circle"
+                    style={{ fontSize: "16px", color: "#ff4d4f", marginRight: "8px" }}
+                  ></i>
+                )}
                 <InputText
                   id="password-signup"
                   type={showPassword ? "text" : "password"}
@@ -287,9 +275,7 @@ const SignUp = () => {
                     }
                   }}
                   onBlur={() => setShowSignUpPasswordHint(false)}
-                  className={`custom-input ${
-                    signUpErrors.password ? "input-error" : ""
-                  }`}
+                  className={`custom-input ${signUpErrors.password ? "input-error" : ""}`}
                   placeholder="●●●●●●"
                   maxLength={50}
                 />
@@ -407,15 +393,6 @@ const SignUp = () => {
                   </div>
                 )}
               </div>
-              {signUpErrors.password && (
-                <div className="error-message">
-                  <i
-                    className="bx bxs-error-circle"
-                    style={{ fontSize: "16px", color: "#ff4d4f" }}
-                  ></i>
-                  <span>{signUpErrors.password}</span>
-                </div>
-              )}
             </div>
             <div className="col-12 mt-4">
               <button className="SignUp-button-Auth-Main-1" type="submit">
