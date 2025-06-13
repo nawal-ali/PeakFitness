@@ -259,9 +259,9 @@ export default function AdminDashboard() {
                         }}>
                           <FaTrash />
                         </button>
-                        <button className="btn btn-secondary btn-sm">
+                        {/* <button className="btn btn-secondary btn-sm">
                           <FaPen />
-                        </button>
+                        </button> */}
                       </td>
                     </tr>
                   ))}
