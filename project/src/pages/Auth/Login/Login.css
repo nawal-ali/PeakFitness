@@ -254,18 +254,26 @@ footer a {
 /* Media Queries */
 @media (max-width: 1025px) {
   .container-Auth-Main {
-    flex-direction: column;
-    padding: 20px;
+    /* flex-direction: column; */
+    /* padding: 20px; */
+    height: 50vh;
   }
+  .welcome-text-Auth-Main h1 {
+    font-size: 4rem;
+
+}
+.welcome-text-Auth-Main .child-1 {
+    font-size: 1.9rem;
+}
   .left-panel-Auth-Main {
-    min-height: 200px;
+    /* min-height: 200px; */
     width: 100%;
   }
   .SignIn-Form-Auth-Main {
     width: 350px;
   }
   .Header1-Auth-Main {
-    font-size: 2.5rem;
+    font-size: 4.5rem;
   }
   .form-container-Auth-Main {
     max-width: 100%;

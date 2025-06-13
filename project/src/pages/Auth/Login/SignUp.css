@@ -270,13 +270,13 @@ input::placeholder {
 /* Media Queries */
 @media (max-width: 1025px) {
   .container-signup {
-    flex-direction: column;
+    /* flex-direction: column; */
     padding: 20px;
   }
 
   .left-panel-signup,
   .right-panel-signup {
-    flex: 0 0 100%;
+    /* flex: 0 0 100%; */
     min-height: 200px;
   }
 
