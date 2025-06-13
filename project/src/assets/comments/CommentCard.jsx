@@ -48,22 +48,21 @@ const updated = await axios.get(`${BASE_URL}/comments`);
   };
 
   //wrapAround: true,
-  const carouselSettings = {
-    autoplay: true,
-    autoplayInterval: 300,
-    // pauseOnHover: true,
-    slidesToScroll: 1,
-    wrapAround: true,
-    // defaultControlsConfig: {
-    //   pagingDotsStyle: {
-    //     fill: "#CB8778",
-    //   },
-    // },
-  };
+  // const carouselSettings = {
+  //   autoplay: true,
+  //   autoplayInterval: 3000,
+  //   pauseOnHover: true,
+  //   slidesToScroll: 1,
+  //   defaultControlsConfig: {
+  //     pagingDotsStyle: {
+  //       fill: "#CB8778",
+  //     },
+  //   },
+  // };
 
   //<Carousel autoplay showDots> </Carousel>
   return (
-    <section className="customer-reviews-section my-5">
+    <section className="customer-reviews-section" style={{ marginTop: "12rem" }}>
       {/* 3️⃣ Heading */}
       <h1 className="text-center mb-4 text-black">What Our Customers Say</h1>
 
@@ -71,7 +70,7 @@ const updated = await axios.get(`${BASE_URL}/comments`);
         {/* 4️⃣ Orange Speech Bubble */}
         {/* w-75 */}
         <div
-          className="orange-bubble position-absolute top-50 start-50 h-100 translate-middle d-flex align-items-start gap-2 p-4"
+          className="orange-bubble position-absolute top-50 start-50 h-100 translate-middle d-flex align-items-start justify-content-evenly p-4"
           style={{ width: "80%" }}
         >
           <img
@@ -86,8 +85,30 @@ const updated = await axios.get(`${BASE_URL}/comments`);
         </div>
 
         {/* 5️⃣ Nuka Carousel with Fetched Comments */}
-        <div className="carousel-wrapper pt-5 mt-5 ">
-          <Carousel {...carouselSettings}>
+        {/* <div className="carousel-wrapper pt-5 mt-5 w-100 "> */}
+          <div className="comments-marquee-wrapper pt-5 mt-5 w-100">
+  <div className="comments-marquee">
+    {[...comments, ...comments].map((item, index) => (
+      <div
+        key={index}
+        className="comment-card mx-2 p-3 text-black"
+        style={{
+          backgroundColor: "#FFFFFF",
+          border: "6px solid #CB8778",
+          borderRadius: "20px",
+          minWidth: "300px",
+          maxWidth: "300px",
+          flexShrink: 0,
+        }}
+      >
+        <h4 className="mb-2">{item.user.username}</h4>
+        <p className="m-0">{item.text}</p>
+      </div>
+    ))}
+  </div>
+</div>
+
+          {/* <Carousel {...carouselSettings}>
             {comments.map((item) => (
               <div
                 key={item._id}
@@ -101,12 +122,11 @@ const updated = await axios.get(`${BASE_URL}/comments`);
                 <div className="card-body text-black">
                   <h4 className="card-title mb-3">{item.user.username}</h4>
                   <p className="card-text">{item.text}</p>
-                  {/* <p className="text-muted">{item.email}</p> */}
                 </div>
               </div>
             ))}
-          </Carousel>
-        </div>
+          </Carousel> */}
+        {/* </div> */}
       </div>
         {islogged && (<button className="btn btn-dark text-light px-4 my-5"  onClick={() => setShowModal(true)}>ADD COMMENT</button>)}
         {showModal && (

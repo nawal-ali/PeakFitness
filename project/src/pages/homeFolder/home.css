@@ -1,5 +1,5 @@
 .margin-top-10 {
-  margin-top: 10%;
+  margin-top: 12rem;
 }
 .custom-bg-dark {
   background-color: #202020;
@@ -34,6 +34,166 @@
 .card-3 {
   translate: 0 120px;
 } */
+
+
+
+/* Section Container */
+.section-1 {
+  min-height: 80vh;
+  align-items: center;
+}
+
+/* Text Styles */
+.hero-text {
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+.hero-main-word {
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.highlight-text {
+  color: #CB8778; /* Your existing color variable */
+  font-weight: 600;
+}
+
+.hero-subtext {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  line-height: 1.5;
+}
+
+/* 3D Model Viewer */
+.hero-model {
+  width: 100%;
+  height: 700px;
+  max-height: 80vh;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .hero-main-word {
+    font-size: 4rem;
+  }
+  
+  .hero-text {
+    font-size: 1.8rem;
+  }
+  
+  .hero-subtext {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-1 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .hero-model {
+    height: 500px;
+    margin-top: 2rem;
+  }
+  
+  .hero-main-word {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-text {
+    font-size: 1.5rem;
+  }
+  
+  .hero-main-word {
+    font-size: 3rem;
+  }
+  
+  .hero-subtext {
+    font-size: 1.1rem;
+  }
+}
+
+/* lines beside headings */
+.parallel-lines-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem 0;
+  gap: 20px;
+}
+.parallel-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.parallel-lines::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 2px;
+  background-color: #000;
+}
+/* .parallel-lines::before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background-color: #000;
+} */
+.article-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  /* color: #2c3e50; */
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  white-space: nowrap;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .parallel-lines::before,
+  .parallel-lines::after {
+    width: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .article-heading{
+    font-size: 1.5rem;
+    white-space: normal;
+    text-align: center;
+  }
+  
+  .parallel-lines-heading {
+    flex-wrap: wrap;
+  }
+  
+  .parallel-lines::before,
+  .parallel-lines::after {
+    width: 30px;
+    height: 1.5px;
+  }
+}
+
+
+
+
+
 
 @media (max-width: 600px) {
     .wellcome-text {
