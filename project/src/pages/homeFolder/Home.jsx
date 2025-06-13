@@ -10,9 +10,11 @@ import Footer from "../../assets/footerFolder/Footer";
 import CommentCard from "../../assets/comments/CommentCard";
 import ToTop from "../../assets/toTopBtn/toTop";
 import "../homeFolder/home.css";
+import  UncontrolledExample  from "../../assets/carousel/Carousel";
+
 
 export default function Home() {
-  const text_color = "#CB8778";
+  // const text_color = "#CB8778";
   let isLogged = localStorage.getItem("islogged");
   const [islogged, setIsLogged] = useState(() => {
     return localStorage.getItem("islogged") === "true";
@@ -73,7 +75,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="row container-fluid section-1 margin-top-10 ">
+      {/* <div className="row container-fluid section-1 margin-top-10 ">
         <div className="col-12 col-md-6 ps-4">
           <p style={{ fontSize: "2rem" }} className="mb-5">
             <span style={{ color: "", fontSize: "5rem" }}>Discover</span> <br />
@@ -111,9 +113,60 @@ export default function Home() {
             ar
           ></model-viewer>
         </div>
+      </div> */}
+      <div className="row container-fluid section-1 py-5">
+  <div className="col-12 col-md-6 d-flex flex-column justify-content-center ps-lg-5">
+    <div className="hero-text">
+      <p className="mb-4">
+        <span className="hero-main-word">Discover</span> <br />
+        the path to your <br />
+        <span className="highlight-text">ideal weight,</span>
+        <span className="highlight-text">better health,</span>
+        <br />
+        <span className="highlight-text">sustainability, and a healthy lifestyle</span>.
+      </p>
+      <p className="hero-subtext">
+        At Pure Vitality, we&apos;re here to guide you with fitness programs,
+        nutritional advice, and personalized support to help you achieve your
+        goals and thrive every day!
+      </p>
+    </div>
+    <NavLink to="/exercises" className="mt-4">
+      <Button
+        content="Let's get started"
+        customWidth="70%"
+        customPadding="15px"
+        customFontSize="1.4rem"
+      />
+    </NavLink>
+  </div>
+  <div className="col-12 col-md-6 d-flex align-items-center justify-content-end pe-lg-5">
+    <model-viewer
+      className="hero-model"
+      src="/afi.glb"
+      alt="3D fitness model"
+      auto-rotate
+      camera-controls
+      ar
+    ></model-viewer>
+  </div>
+</div>
+      <div className=" margin-top-10">
+        {/* <h1 className="my-5 text-center">Fresh From Our Blog</h1> */}
+        <div className="parallel-lines-heading">
+  <div className="parallel-lines"></div>
+  <h1 className="article-heading">Fresh From Our Blog</h1>
+  <div className="parallel-lines"></div>
+</div>
+        <UncontrolledExample/>
       </div>
-      <div>
-        <div className="angled-background margin-top-10 row p-5 position-relative">
+      <div className="margin-top-10">
+        <div className="parallel-lines-heading ">
+  <div className="parallel-lines"></div>
+  <h1 className="article-heading">Get Things Done Faster</h1>
+  <div className="parallel-lines"></div>
+</div>
+        <div className="angled-background  row p-5 position-relative">
           <div
             className="overlay position-absolute top-0 start-0 w-100 h-100"
             style={{ backgroundColor: "#00000087" }}
@@ -153,10 +206,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="comments-section margin-top-10 text-center  m-auto">
+      <div className="comments-section text-center  m-auto">
         <CommentCard islogged={islogged} setIsLogged={setIsLogged} />
       </div>
-      <div className="container-fluid  text-center">
+      <div className="container-fluid margin-top-10 text-center">
         <h1 className="mb-3 text-black">Any questions? We got you</h1>
         <p className="fs-4 w-75 m-auto mb-5">
           Before you start your journey with us, we’ve gathered the most

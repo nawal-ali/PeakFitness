@@ -62,7 +62,7 @@ const updated = await axios.get(`${BASE_URL}/comments`);
 
   //<Carousel autoplay showDots> </Carousel>
   return (
-    <section className="customer-reviews-section my-5">
+    <section className="customer-reviews-section" style={{ marginTop: "12rem" }}>
       {/* 3️⃣ Heading */}
       <h1 className="text-center mb-4 text-black">What Our Customers Say</h1>
 
