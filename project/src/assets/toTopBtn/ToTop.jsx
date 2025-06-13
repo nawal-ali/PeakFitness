@@ -24,7 +24,7 @@ export default function ToTop() {
     <div className={`to-top-button ${isVisible ? "visible" : "hidden"}`}>
       <button
         className="btn text-light shadow-lg"
-        style={{ zIndex: 1000 }}
+        style={{ zIndex: 1000 , borderRadius: "50%" }}
         onClick={() => {
           window.scrollTo({ top: 0, behavior: "smooth" });
         }}
