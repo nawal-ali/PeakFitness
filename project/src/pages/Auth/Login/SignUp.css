@@ -315,6 +315,10 @@ input::placeholder {
     max-width: 400px;
     padding: 30px;
   }
+      .left-panel-signup, .right-panel-signup {
+        /* flex: 0 0 100%; */
+        min-height: 750px;
+    }
     .container-signup {
     flex-direction: column-reverse;
     /* padding: 20px; */
@@ -325,21 +329,21 @@ input::placeholder {
   }
 
   .welcome-text-signup h1 {
-    font-size: 1.6rem;
+    font-size: 3.6rem;
   }
 
   .welcome-text-signup .child-1 {
-    font-size: 0.8rem;
+    font-size: 1.8rem;
   }
 
   .welcome-text-signup .child-2 {
-    font-size: 0.8rem;
-    margin-top: 1rem;
+    font-size: 1.8rem;
+    margin-top: 4rem;
   }
 
   .SignUp-button-Auth-Main,
   .Login-button-Auth-Main {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 }
 
