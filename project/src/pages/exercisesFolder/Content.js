@@ -4,7 +4,7 @@ const content = {
             title: "Lower Abs",
             colored_description: "supports the body during movements and forward bends.",
             description: "The lower abdominal muscles (Lower Abs) are a part of the rectus abdominis muscle, which extends from the rib cage down to the pelvis.",
-            image: "./imgs/exer_main_img.png"
+            image: "./imgs/lower_abs.png"
         }
         , sec2: {
             title1: "Leg Raises",

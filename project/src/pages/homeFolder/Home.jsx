@@ -151,7 +151,7 @@ export default function Home() {
     ></model-viewer>
   </div>
 </div>
-      <div className=" margin-top-10">
+      <div className="margin-top-10">
         {/* <h1 className="my-5 text-center">Fresh From Our Blog</h1> */}
         <div className="parallel-lines-heading">
   <div className="parallel-lines"></div>
@@ -173,7 +173,7 @@ export default function Home() {
           ></div>
           <div className="col-12 col-md-4 custom-card card-3">
             <Link
-              to="/Calcul propulsors"
+              to="/Calculators"
               className="link-underline link-underline-opacity-0"
             >
               <Card

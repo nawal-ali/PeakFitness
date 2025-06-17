@@ -28,7 +28,7 @@ export default function exercises() {
           <div className="d-flex justify-content-center align-items-center p-3 gap-2 rounded-3 mb-4" style={{backgroundColor:"#D9D9D9"}}>
             {/* <img src="./imgs/exer_img1.png" alt="" className="w-25"/>
             <h3>To start your journey with a smart step based on real understanding </h3> */}
-            <img src="./imgs/lower_abs.png" alt="" className="w-25"/>
+            <img src={content[clickedOn].sec1.image} alt="" className="w-25"/>
             <h1>{content[clickedOn].sec1.title} </h1>
           </div>
           <div className="d-flex justify-content-center align-items-center p-3 gap-2 rounded-3 mb-4" style={{backgroundColor:"#D9D9D9"}}>
