@@ -377,9 +377,6 @@ const content = {
             desc3: "Cause: Focusing solely on wrist curls without balancing with reverse curls can lead to muscle imbalances."
         }
     }
-
-
-
 };
 
 export default content;
