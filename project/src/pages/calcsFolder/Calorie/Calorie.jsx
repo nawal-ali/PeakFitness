@@ -150,7 +150,7 @@ const CalorieCalculator = () => {
     let activityFactor;
     switch (activityLevel) {
       case "low":
-        activityFactor = 1.2;
+        activityFactor = 1.375;
         break;
       case "middle":
         activityFactor = 1.55;

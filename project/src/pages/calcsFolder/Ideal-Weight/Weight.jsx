@@ -108,19 +108,19 @@ const IdealCalculator = () => {
 
     const heightInCm = parseInt(height);
     const heightInMeters = heightInCm / 100;
-    const heightInInches = heightInCm / 2.54;
+    // const heightInInches = heightInCm / 2.54;
     let robinson, miller, devine, hamwi;
 
     if (gender === "male") {
-      robinson = 52 + 1.9 * (heightInInches - 60);
-      miller = 56.2 + 1.41 * (heightInInches - 60);
-      devine = 50 + 2.3 * (heightInInches - 60);
-      hamwi = 48 + 2.7 * (heightInInches - 60);
+      robinson = 52 + 1.9 * (heightInCm - 152.4)/ 2.54; // Convert cm to inches
+      miller = 56.2 + 1.41 * (heightInCm -152.4) / 2.54; // Convert cm to inches
+      devine = 50 + 2.3 * (heightInCm -152.4) / 2.54; // Convert cm to inches);
+      hamwi = 48 + 2.7 * (heightInCm - 152.4) / 2.54; // Convert cm to inches);
     } else {
-      robinson = 49 + 1.7 * (heightInInches - 60);
-      miller = 53.1 + 1.36 * (heightInInches - 60);
-      devine = 45.5 + 2.3 * (heightInInches - 60);
-      hamwi = 45.5 + 2.2 * (heightInInches - 60);
+      robinson = 49 + 1.7 * (heightInCm - 152.4) / 2.54; // Convert cm to inches
+      miller = 53.1 + 1.36 * (heightInCm - 152.4) / 2.54; // Convert cm to inches
+      devine = 45.5 + 2.3 * (heightInCm - 152.4) / 2.54; // Convert cm to inches
+      hamwi = 45.5 + 2.2 * (heightInCm - 152.4) / 2.54; // Convert cm to inches
     }
 
     robinson = robinson.toFixed(1);

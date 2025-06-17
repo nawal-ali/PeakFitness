@@ -10,6 +10,7 @@ const BodyFatCalc = () => {
   const [weight, setWeight] = useState("");
   const [neck, setNeck] = useState("");
   const [waist, setWaist] = useState("");
+  const [hip, setHip] = useState(""); // Added hip measurement for females
   const [bodyFatResults, setBodyFatResults] = useState(null);
   const [showResults, setShowResults] = useState(false);
   const [ageError, setAgeError] = useState("");
@@ -17,12 +18,13 @@ const BodyFatCalc = () => {
   const [heightError, setHeightError] = useState("");
   const [neckError, setNeckError] = useState("");
   const [waistError, setWaistError] = useState("");
+  const [hipError, setHipError] = useState(""); // Added hip error state
   const [showPopup, setShowPopup] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
 
   const [islogged, setIsLogged] = useState(() => {
-        return localStorage.getItem("islogged") === "true";
-      });
+    return localStorage.getItem("islogged") === "true";
+  });
 
   // Clear localStorage and reset state on page refresh
   useEffect(() => {
@@ -32,12 +34,14 @@ const BodyFatCalc = () => {
     localStorage.removeItem("weight");
     localStorage.removeItem("neck");
     localStorage.removeItem("waist");
+    localStorage.removeItem("hip");
     setGender("");
     setAge("");
     setHeight("");
     setWeight("");
     setNeck("");
     setWaist("");
+    setHip("");
   }, []); // Empty dependency array to run once on mount
 
   const handleNumericInputChange = (value, setter) => {
@@ -51,7 +55,7 @@ const BodyFatCalc = () => {
       return;
     }
 
-    const numericValue = parseInt(value);
+    const numericValue = parseFloat(value);
     if (isNaN(numericValue) || numericValue < 0) {
       errorSetter("invalid");
       setter("");
@@ -73,41 +77,53 @@ const BodyFatCalc = () => {
       setShowPopup(true);
       return;
     }
+    
+    // For females, hip measurement is required
+    if (gender === "female" && !hip) {
+      setPopupMessage("Hip measurement is required for female calculation.");
+      setShowPopup(true);
+      return;
+    }
 
-    const heightInInches = parseInt(height) / 2.54;
-    const neckInInches = parseInt(neck) / 2.54;
-    const waistInInches = parseInt(waist) / 2.54;
-    const weightInKg = parseInt(weight);
+    // Using metric units directly (no conversion to inches)
+    const heightCm = parseFloat(height);
+    const neckCm = parseFloat(neck);
+    const waistCm = parseFloat(waist);
+    const hipCm = gender === "female" ? parseFloat(hip) : 0;
+    const weightKg = parseFloat(weight);
 
     let bodyFatPercentage;
 
-    if (gender === "male") {
-      bodyFatPercentage =
-        86.01 * Math.log10(waistInInches - neckInInches) -
-        70.041 * Math.log10(heightInInches) +
-        36.76;
-    } else {
-      const hipInInches = waistInInches;
-      bodyFatPercentage =
-        163.205 * Math.log10(waistInInches + hipInInches - neckInInches) -
-        97.684 * Math.log10(heightInInches) -
-        78.387;
+    try {
+      if (gender === "male") {
+        // U.S. Navy Method for males (Metric Units):
+        // BFP = 495 / (1.0324 - 0.19077 * log10(waist - neck) + 0.15456 * log10(height)) - 450
+        bodyFatPercentage = 495 / (1.0324 - 0.19077 * Math.log10(waistCm - neckCm) + 0.15456 * Math.log10(heightCm)) - 450;
+      } else {
+        // U.S. Navy Method for females (Metric Units):
+        // BFP = 495 / (1.29579 - 0.35004 * log10(waist + hip - neck) + 0.22100 * log10(height)) - 450
+        bodyFatPercentage = 495 / (1.29579 - 0.35004 * Math.log10(waistCm + hipCm - neckCm) + 0.22100 * Math.log10(heightCm)) - 450;
+      }
+    } catch (error) {
+      setPopupMessage("Invalid measurements. Please check your inputs.");
+      setShowPopup(true);
+      return;
     }
 
     bodyFatPercentage = Math.max(0, bodyFatPercentage).toFixed(1);
-    const bodyFatMass = ((bodyFatPercentage / 100) * weightInKg).toFixed(1);
-    const leanBodyMass = (weightInKg - bodyFatMass).toFixed(1);
+    const bodyFatMass = ((bodyFatPercentage / 100) * weightKg).toFixed(1);
+    const leanBodyMass = (weightKg - bodyFatMass).toFixed(1);
 
     let idealBodyFat;
     if (gender === "male") {
       idealBodyFat = 8.9;
     } else {
-      idealBodyFat = 21.8;
+      idealBodyFat = 17.7;
     }
     idealBodyFat = idealBodyFat.toFixed(1);
 
-    const idealBodyFatMass = ((idealBodyFat / 100) * weightInKg).toFixed(1);
-    const bodyFatToLose = (bodyFatMass - idealBodyFatMass).toFixed(1);
+    const idealBodyFatMass = ((idealBodyFat / 100) * weightKg).toFixed(1);
+    const bodyFatToLose = Math.max(0, (bodyFatMass - idealBodyFatMass)).toFixed(1);
 
     const bodyFatCategory = getBodyFatStatus(bodyFatPercentage);
 
@@ -131,39 +147,48 @@ const BodyFatCalc = () => {
       return;
     }
 
-    const heightInInches = parseInt(height) / 2.54;
-    const neckInInches = parseInt(neck) / 2.54;
-    const waistInInches = parseInt(waist) / 2.54;
-    const weightInKg = parseInt(weight);
+    // For females, hip measurement is required
+    if (gender === "female" && !hip) {
+      setPopupMessage("Hip measurement is required for female calculation.");
+      setShowPopup(true);
+      return;
+    }
+
+    // Using metric units directly (no conversion to inches)
+    const heightCm = parseFloat(height);
+    const neckCm = parseFloat(neck);
+    const waistCm = parseFloat(waist);
+    const hipCm = gender === "female" ? parseFloat(hip) : 0;
+    const weightKg = parseFloat(weight);
+
     let bodyFatPercentage;
 
-    if (gender === "male") {
-      bodyFatPercentage =
-        86.01 * Math.log10(waistInInches - neckInInches) -
-        70.041 * Math.log10(heightInInches) +
-        36.76;
-    } else {
-      const hipInInches = waistInInches;
-      bodyFatPercentage =
-        163.205 * Math.log10(waistInInches + hipInInches - neckInInches) -
-        97.684 * Math.log10(heightInInches) -
-        78.387;
+    try {
+      if (gender === "male") {
+        bodyFatPercentage = 495 / (1.0324 - 0.19077 * Math.log10(waistCm - neckCm) + 0.15456 * Math.log10(heightCm)) - 450;
+      } else {
+        bodyFatPercentage = 495 / (1.29579 - 0.35004 * Math.log10(waistCm + hipCm - neckCm) + 0.22100 * Math.log10(heightCm)) - 450;
+      }
+    } catch (error) {
+      setPopupMessage("Invalid measurements. Please check your inputs.");
+      setShowPopup(true);
+      return;
     }
 
     bodyFatPercentage = Math.max(0, bodyFatPercentage).toFixed(1);
-    const bodyFatMass = ((bodyFatPercentage / 100) * weightInKg).toFixed(1);
-    const leanBodyMass = (weightInKg - bodyFatMass).toFixed(1);
+    const bodyFatMass = ((bodyFatPercentage / 100) * weightKg).toFixed(1);
+    const leanBodyMass = (weightKg - bodyFatMass).toFixed(1);
 
     let idealBodyFat;
     if (gender === "male") {
       idealBodyFat = 8.9;
     } else {
-      idealBodyFat = 21.8;
+      idealBodyFat = 17.7;
     }
     idealBodyFat = idealBodyFat.toFixed(1);
 
-    const idealBodyFatMass = ((idealBodyFat / 100) * weightInKg).toFixed(1);
-    const bodyFatToLose = (bodyFatMass - idealBodyFatMass).toFixed(1);
+    const idealBodyFatMass = ((idealBodyFat / 100) * weightKg).toFixed(1);
+    const bodyFatToLose = Math.max(0, (bodyFatMass - idealBodyFatMass)).toFixed(1);
 
     const bodyFatCategory = getBodyFatStatus(bodyFatPercentage);
 
@@ -186,11 +211,13 @@ const BodyFatCalc = () => {
     setWeight("");
     setNeck("");
     setWaist("");
+    setHip("");
     setAgeError("");
     setWeightError("");
     setHeightError("");
     setNeckError("");
     setWaistError("");
+    setHipError("");
     setBodyFatResults(null);
     localStorage.removeItem("gender");
     localStorage.removeItem("age");
@@ -198,6 +225,7 @@ const BodyFatCalc = () => {
     localStorage.removeItem("weight");
     localStorage.removeItem("neck");
     localStorage.removeItem("waist");
+    localStorage.removeItem("hip");
   };
 
   const getBodyFatStatus = (bodyFat) => {
@@ -205,24 +233,24 @@ const BodyFatCalc = () => {
     const fat = parseFloat(bodyFat);
     if (gender === "male") {
       if (fat < 2) return "Essential Fat";
-      if (fat <= 5) return "Athlete";
+      if (fat <= 5) return "Athletes";
       if (fat <= 13) return "Fitness";
       if (fat <= 17) return "Average";
       if (fat <= 25) return "Obese";
       return "Extreme Obesity";
     } else {
       if (fat < 10) return "Essential Fat";
-      if (fat <= 14) return "Athlete";
-      if (fat <= 21) return "Fitness";
-      if (fat <= 25) return "Average";
-      if (fat <= 32) return "Obese";
+      if (fat <= 13) return "Athletes";
+      if (fat <= 20) return "Fitness";
+      if (fat <= 24) return "Average";
+      if (fat <= 31) return "Obese";
       return "Extreme Obesity";
     }
   };
 
   return (
     <>
-      <Navbar showBackground={false} isExpanded={true}  islogged={islogged} setIsLogged={setIsLogged} darkmenu={"black"}/>
+      <Navbar showBackground={false} isExpanded={true} islogged={islogged} setIsLogged={setIsLogged} darkmenu={"black"}/>
 
       <div
         className={`calorie-calculator-F ${
@@ -286,25 +314,25 @@ const BodyFatCalc = () => {
               </div>
               <div className="flex-inputs-F">
                 <div className="input-group-F">
-                  <label>Weight</label>
+                  <label>Weight (kg)</label>
                   <input
                     type="text"
                     value={weight}
                     onChange={(e) => handleNumericInputChange(e.target.value, setWeight)}
                     onBlur={(e) => handleNumericInputBlur(e.target.value, setWeight, setWeightError)}
-                    placeholder="65kg"
+                    placeholder="65"
                     className={`numeric-input-F ${weightError ? "error-F" : ""}`}
                     pattern="[0-9]*"
                   />
                 </div>
                 <div className="input-group-F">
-                  <label>Height</label>
+                  <label>Height (cm)</label>
                   <input
                     type="text"
                     value={height}
                     onChange={(e) => handleNumericInputChange(e.target.value, setHeight)}
                     onBlur={(e) => handleNumericInputBlur(e.target.value, setHeight, setHeightError)}
-                    placeholder="180cm"
+                    placeholder="180"
                     className={`numeric-input-F ${heightError ? "error-F" : ""}`}
                     pattern="[0-9]*"
                   />
@@ -312,30 +340,44 @@ const BodyFatCalc = () => {
               </div>
               <div className="flex-inputs-F">
                 <div className="input-group-F">
-                  <label>Neck</label>
+                  <label>Neck (cm)</label>
                   <input
                     type="text"
                     value={neck}
                     onChange={(e) => handleNumericInputChange(e.target.value, setNeck)}
                     onBlur={(e) => handleNumericInputBlur(e.target.value, setNeck, setNeckError)}
-                    placeholder="40cm"
+                    placeholder="40"
                     className={`numeric-input-F ${neckError ? "error-F" : ""}`}
                     pattern="[0-9]*"
                   />
                 </div>
                 <div className="input-group-F">
-                  <label>Waist</label>
+                  <label>Waist (cm)</label>
                   <input
                     type="text"
                     value={waist}
                     onChange={(e) => handleNumericInputChange(e.target.value, setWaist)}
                     onBlur={(e) => handleNumericInputBlur(e.target.value, setWaist, setWaistError)}
-                    placeholder="94cm"
+                    placeholder="94"
                     className={`numeric-input-F ${waistError ? "error-F" : ""}`}
                     pattern="[0-9]*"
                   />
                 </div>
               </div>
+              {gender === "female" && (
+                <div className="input-group-F">
+                  <label>Hip (cm)</label>
+                  <input
+                    type="text"
+                    value={hip}
+                    onChange={(e) => handleNumericInputChange(e.target.value, setHip)}
+                    onBlur={(e) => handleNumericInputBlur(e.target.value, setHip, setHipError)}
+                    placeholder="95"
+                    className={`numeric-input-F ${hipError ? "error-F" : ""}`}
+                    pattern="[0-9]*"
+                  />
+                </div>
+              )}
               <div className="fat-buttons-F">
                 <input
                   type="button"
@@ -395,25 +437,25 @@ const BodyFatCalc = () => {
               </div>
               <div className="flex-inputs-F">
                 <div className="input-group-F">
-                  <label>Weight</label>
+                  <label>Weight (kg)</label>
                   <input
                     type="text"
                     value={weight}
                     onChange={(e) => handleNumericInputChange(e.target.value, setWeight)}
                     onBlur={(e) => handleNumericInputBlur(e.target.value, setWeight, setWeightError)}
-                    placeholder="65kg"
+                    placeholder="65"
                     className={`numeric-input-F ${weightError ? "error-F" : ""}`}
                     pattern="[0-9]*"
                   />
                 </div>
                 <div className="input-group-F">
-                  <label>Height</label>
+                  <label>Height (cm)</label>
                   <input
                     type="text"
                     value={height}
                     onChange={(e) => handleNumericInputChange(e.target.value, setHeight)}
                     onBlur={(e) => handleNumericInputBlur(e.target.value, setHeight, setHeightError)}
-                    placeholder="180cm"
+                    placeholder="180"
                     className={`numeric-input-F ${heightError ? "error-F" : ""}`}
                     pattern="[0-9]*"
                   />
@@ -421,30 +463,44 @@ const BodyFatCalc = () => {
               </div>
               <div className="flex-inputs-F">
                 <div className="input-group-F">
-                  <label>Neck</label>
+                  <label>Neck (cm)</label>
                   <input
                     type="text"
                     value={neck}
                     onChange={(e) => handleNumericInputChange(e.target.value, setNeck)}
                     onBlur={(e) => handleNumericInputBlur(e.target.value, setNeck, setNeckError)}
-                    placeholder="40cm"
+                    placeholder="40"
                     className={`numeric-input-F ${neckError ? "error-F" : ""}`}
                     pattern="[0-9]*"
                   />
                 </div>
                 <div className="input-group-F">
-                  <label>Waist</label>
+                  <label>Waist (cm)</label>
                   <input
                     type="text"
                     value={waist}
                     onChange={(e) => handleNumericInputChange(e.target.value, setWaist)}
                     onBlur={(e) => handleNumericInputBlur(e.target.value, setWaist, setWaistError)}
-                    placeholder="94cm"
+                    placeholder="94"
                     className={`numeric-input-F ${waistError ? "error-F" : ""}`}
                     pattern="[0-9]*"
                   />
                 </div>
               </div>
+              {gender === "female" && (
+                <div className="input-group-F">
+                  <label>Hip (cm)</label>
+                  <input
+                    type="text"
+                    value={hip}
+                    onChange={(e) => handleNumericInputChange(e.target.value, setHip)}
+                    onBlur={(e) => handleNumericInputBlur(e.target.value, setHip, setHipError)}
+                    placeholder="95"
+                    className={`numeric-input-F ${hipError ? "error-F" : ""}`}
+                    pattern="[0-9]*"
+                  />
+                </div>
+              )}
               <div className="fat-buttons-F">
                 <div className="Calculator-circles-F"></div>
                 <input
