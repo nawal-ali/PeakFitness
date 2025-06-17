@@ -34,7 +34,7 @@ const content = {
             title: "Upper Abs",
             colored_description: "Supports The Body During Core Movements And Stabilization.",
             description: "The upper abdominal muscles are part of the rectus abdominis, running from the lower chest to the navel, crucial for flexing the spine and stabilizing the core.",
-            image: "../../../public/imgs/upper_abs.png"
+            image: "./imgs/upper_abs.png"
         }
         , sec2: {
             title1: "Crunches:",
@@ -64,7 +64,7 @@ const content = {
             title: "Quadriceps",
             colored_description: "Supports The Body During Movements Like Squatting And Walking.",
             description: "The quadriceps, or quads, are a group of four muscles located at the front of the thigh. They extend the knee joint and help stabilize the pelvis.",
-            image: "./imgs/exer_main_img.png"
+            image: "./imgs/quadriceps.png"
         }
         , sec2: {
             title1: "Squats:",
@@ -94,7 +94,7 @@ const content = {
             title: "Hamstrings",
             colored_description: "Supports the body during hip extension and knee flexion.",
             description: "The hamstrings are a group of three muscles located at the back of the thigh, crucial for bending the knee and extending the hip.",
-            image: "./imgs/exer_main_img.png"
+            image: "./imgs/hamsstrings.png"
         },
         sec2: {
             title1: "Romanian Deadlifts",
@@ -126,7 +126,7 @@ const content = {
             title: "Glutes",
             colored_description: "Supports the body during hip extension, rotation, and stability.",
             description: "The glutes are composed of three muscles – gluteus maximus, medius, and minimus – essential for hip movement, posture, and overall lower body strength.",
-            image: "./imgs/exer_main_img.png"
+            image: "./imgs/gluts.png"
         },
         sec2: {
             title1: "Hip Thrusts",
@@ -158,7 +158,7 @@ const content = {
             title: "Pectoralis Major",
             colored_description: "Supports the body during pushing movements and upper body strength.",
             description: "The pectoral muscles, consisting of the pectoralis major and minor, are located at the front of the chest and are responsible for arm flexion, adduction, and internal rotation.",
-            image: "./imgs/exer_main_img.png"
+            image: "./imgs/posterior_deltoid.png"
         },
         sec2: {
             title1: "Bench Press",
@@ -190,7 +190,7 @@ const content = {
             title: "Trapezius",
             colored_description: "Supports the body during scapular movement and neck stability.",
             description: "The trapezius is a large, triangular muscle responsible for moving, rotating, and stabilizing the scapula and supporting neck posture.",
-            image: "./imgs/exer_main_img.png"
+            image: "./imgs/trapezius.png"
         },
         sec2: {
             title1: "Barbell Shrugs",
@@ -222,7 +222,7 @@ const content = {
             title: "Biceps",
             colored_description: "Supports the body during elbow flexion and forearm supination.",
             description: "The biceps brachii is a two-headed muscle responsible for bending the elbow and rotating the forearm.",
-            image: "./imgs/exer_main_img.png"
+            image: "./imgs/biceps.png"
         },
         sec2: {
             title1: "Barbell Curls",
@@ -254,7 +254,7 @@ const content = {
             title: "Calves",
             colored_description: "Supports The Body During Walking, Running, And Jumping.",
             description: "The calf muscles consist of the gastrocnemius and soleus, located at the back of the lower leg,responsible for plantar flexion and stabilizing the ankle.",
-            image: "./imgs/exer_main_img.png"
+            image: "./imgs/calves.png"
         },
         sec2: {
             title1: "Standing Calf Raises",
@@ -318,7 +318,7 @@ const content = {
             title: "Triceps",
             colored_description: "Supports The Body During Pushing Movements And Arm Extension.",
             description: "The triceps brachii is a three-headed muscle located at the back of the upper arm, responsible for elbow extension and shoulder stabilization.",
-            image: "./imgs/exer_main_img.png"
+            image: "./imgs/triceps.png"
         },
         sec2: {
             title1: "Triceps Dips",
@@ -350,7 +350,7 @@ const content = {
             title: "Forearm",
             colored_description: "Supports The Body During Gripping And Wrist Movements.",
             description: "The forearm muscles are divided into flexors and extensors, responsible for wrist flexion, extension, and forearm rotation.",
-            image: "./imgs/exer_main_img.png"
+            image: "./imgs/forearm.png"
         },
         sec2: {
             title1: "Wrist Curls",
