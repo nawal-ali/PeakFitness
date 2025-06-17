@@ -34,7 +34,7 @@ const content = {
             title: "Upper Abs",
             colored_description: "Supports The Body During Core Movements And Stabilization.",
             description: "The upper abdominal muscles are part of the rectus abdominis, running from the lower chest to the navel, crucial for flexing the spine and stabilizing the core.",
-            image: "./imgs/exer_main_img.png"
+            image: "../../../public/imgs/upper_abs.png"
         }
         , sec2: {
             title1: "Crunches:",
