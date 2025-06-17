@@ -42,9 +42,10 @@ input::-webkit-input-placeholder {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  /* padding: 20px; */
   transition: transform 0.6s ease-in-out;
   position: relative;
+  height: 100vh;
 }
 
 .left-panel-C .buttons-C {
@@ -65,7 +66,7 @@ input::-webkit-input-placeholder {
   background-position: 78% center;
   background-repeat: no-repeat;
   /* background-color: #000; */
-  background-size: cover;
+  background-size: cover !important;
   /* opacity: 90%; */
   z-index: 1;
   /* filter: brightness(40%); */
@@ -160,8 +161,9 @@ input::-webkit-input-placeholder {
   width: 100%;
   max-width: 450px;
   text-align: center;
-  padding-top: 10%;
-  padding-bottom: 12%;
+  padding: 20px;
+  /* padding-top: 10%; */
+  /* padding-bottom: 12%; */
 }
 
 .input-group-C label,
@@ -499,7 +501,7 @@ p.calories-C {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0rem 2rem;
+  /* padding: 0rem 2rem; */
   transition: transform 0.6s ease-in-out;
   z-index: 0;
 }
@@ -720,6 +722,11 @@ p.calories-C {
   .left-panel-C .under-header-C {
     font-size: 22px;
   }
+  .right-panel-C {
+  height: 50vh;  }
+  .left-panel-C {
+height: 50vh;  }
+  
 }
 
 @media (max-width: 913px) {
@@ -754,7 +761,7 @@ p.calories-C {
     padding-bottom: 20%;
   }
   .right-panel-C {
-    padding-bottom: 55%;
+    padding-bottom: 65%;
   }
   .Pargraph-calories-per-meal-C {
     text-align: center;
@@ -767,7 +774,7 @@ p.calories-C {
 
 @media (max-width: 769px) {
   .right-panel-C {
-    padding-bottom: 40%;
+    padding-bottom: 48%;
   }
 }
 

@@ -10,9 +10,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  /* padding: 20px; */
   position: relative;
   transition: transform 0.6s ease-in-out;
+    height: 100vh;
+
 }
 .Ideal-parameters-side1-I,
 .Ideal-parameters-side2-I {
@@ -318,7 +320,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  /* padding: 20px; */
   transition: transform 0.6s ease-in-out;
 }
 .right-panel-I {
@@ -328,12 +330,12 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  /* padding: 20px; */
   transition: transform 0.6s ease-in-out;
-  padding-bottom: 8.5%;
-  padding-top: 6%;
+  /* padding-bottom: 8.5%; */
+  /* padding-top: 6%; */
   z-index: 0;
-  padding-bottom: 10.5%;
+  /* padding-bottom: 10.5%; */
 }
 
 .calorie-calculator-I.show-results-I .left-panel-I {
@@ -613,6 +615,11 @@ th {
   .input-section-I {width: 80%;}
   .ideal-buttons-result-I {margin-top: 15px;gap: 2rem;}
   .clear-btn-I {max-width: 6rem;}
+  .left-panel-I  {height: 50vh;}
+   .right-panel-I {
+    padding-bottom:15%;
+    height: 50vh;
+   }
 }
 @media (min-width:1000px) {
   .result-section-I {padding-top: 0.5%;}
@@ -643,7 +650,7 @@ th {
   .right-panel-I {padding-top: 15%;padding-bottom: 5% !important;}
 }
 @media (max-width: 821px) {
-  .right-panel-I {padding-bottom: 65% !important;}
+  .right-panel-I {padding-bottom: 70% !important;}
   .left-panel-I {padding-top: 20%;padding-bottom: 20%;}
   .ideal-buttons-I {gap: 0px;width: 100%;}
   .ideal-buttons-I {gap: 1.2rem;width: 100%;margin-top: 1.5rem;}
@@ -681,21 +688,23 @@ th {
   .ideal-table-div-I {width: 125%;}
 }
 @media (max-width: 431px) {
-  .right-panel-I {padding-bottom: 65% !important;}
+  .right-panel-I {padding-bottom: 70% !important;}
   .left-panel-I {padding-top: 28%;padding-bottom: 28%;}
   .input-section-I {width: 80% !important;}
+    /* .right-panel-I , .left-panel-I {height: 100vh;} */
+
 }
 @media (max-width:429px) {
   .right-panel-I {padding-top: 15%;padding-bottom: 5% !important;}
 }
 @media (max-width: 415px) {
-  .right-panel-I {padding-bottom: 60% !important;}
+  .right-panel-I {padding-bottom: 70% !important;}
 }
 @media (max-width:411px) {
   .right-panel-I {padding-top: 15%;padding-bottom: 5% !important;}
 }
 @media (max-width: 361px) {
-  .right-panel-I {padding-bottom: 25% !important;}
+  .right-panel-I {padding-bottom: 30% !important;}
 }
 @media (max-width: 376px) {
   .right-panel-I {padding-bottom: 10% !important;}
