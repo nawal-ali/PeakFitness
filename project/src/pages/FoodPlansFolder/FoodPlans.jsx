@@ -52,7 +52,9 @@ const Slider_FP = () => {
   }, [selectedItem]);
 
   useEffect(() => {
-    const handleResize = () => setScreenWidth(window.innerWidth);
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -123,6 +125,7 @@ const Slider_FP = () => {
               let transformValue = "";
               let isActive = index === selectedItem;
 
+              // Responsive transform values based on screen width
               if (screenWidth >= 2500) {
                 if (position === 0) {
                   transformValue = `translateX(0) scale(1)`;
@@ -135,7 +138,7 @@ const Slider_FP = () => {
                     position > 1 ? "1100px" : "-1100px"
                   }) scale(0)`;
                 }
-              } else {
+              } else if (screenWidth >= 1440) {
                 if (position === 0) {
                   transformValue = `translateX(0) scale(1)`;
                 } else if (position === 1) {
@@ -145,6 +148,54 @@ const Slider_FP = () => {
                 } else {
                   transformValue = `translateX(${
                     position > 1 ? "600px" : "-600px"
+                  }) scale(0)`;
+                }
+              } else if (screenWidth >= 1024) {
+                if (position === 0) {
+                  transformValue = `translateX(0) scale(1)`;
+                } else if (position === 1) {
+                  transformValue = `translateX(240px) scale(0.5)`;
+                } else if (position === 2) {
+                  transformValue = `translateX(-240px) scale(0.5)`;
+                } else {
+                  transformValue = `translateX(${
+                    position > 1 ? "500px" : "-500px"
+                  }) scale(0)`;
+                }
+              } else if (screenWidth >= 768) {
+                if (position === 0) {
+                  transformValue = `translateX(0) scale(1)`;
+                } else if (position === 1) {
+                  transformValue = `translateX(200px) scale(0.5)`;
+                } else if (position === 2) {
+                  transformValue = `translateX(-200px) scale(0.5)`;
+                } else {
+                  transformValue = `translateX(${
+                    position > 1 ? "400px" : "-400px"
+                  }) scale(0)`;
+                }
+              } else if (screenWidth >= 425) {
+                if (position === 0) {
+                  transformValue = `translateX(0) scale(1)`;
+                } else if (position === 1) {
+                  transformValue = `translateX(160px) scale(0.5)`;
+                } else if (position === 2) {
+                  transformValue = `translateX(-160px) scale(0.5)`;
+                } else {
+                  transformValue = `translateX(${
+                    position > 1 ? "320px" : "-320px"
+                  }) scale(0)`;
+                }
+              } else {
+                if (position === 0) {
+                  transformValue = `translateX(0) scale(1)`;
+                } else if (position === 1) {
+                  transformValue = `translateX(120px) scale(0.5)`;
+                } else if (position === 2) {
+                  transformValue = `translateX(-120px) scale(0.5)`;
+                } else {
+                  transformValue = `translateX(${
+                    position > 1 ? "240px" : "-240px"
                   }) scale(0)`;
                 }
               }
@@ -181,11 +232,11 @@ const Slider_FP = () => {
                 >
                   <div className={`content-PT content-PT-SFP`}>
                     <div
-                      className={`thumbnail-counter thumbnail-counter-SFP ${
-                        isReadMoreClicked ? "hide hide-SFP" : ""
-                      }`}
+                      // className={`thumbnail-counter thumbnail-counter-SFP ${
+                      //   isReadMoreClicked ? "hide hide-SFP" : ""
+                      // }`}
                     >
-                      {String(index + 1).padStart(2, "0")}
+                      {/* {String(index + 1).padStart(2, "0")} */}
                     </div>
                   </div>
                   <img
@@ -203,26 +254,32 @@ const Slider_FP = () => {
                       <button onClick={handleNext}>›</button>
                     </div>
                   )}
+                  
+                  {/* Dots are placed inside each active item */}
+                  {isActive && (
+                    <div
+                      className={`dots-PT dots-PT-SFP ${
+                        isReadMoreClicked ? "hide hide-SFP" : ""
+                      }`}
+                    >
+                      {items.map((_, dotIndex) => (
+                        <span
+                          key={dotIndex}
+                          className={`dot dot-SFP ${
+                            dotIndex === selectedItem ? "active-dot active-dot-SFP" : ""
+                          }`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleDotClick(dotIndex);
+                          }}
+                        ></span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               );
             })}
           </div>
-        </div>
-
-        <div
-          className={`dots-PT dots-PT-SFP ${
-            isReadMoreClicked ? "hide hide-SFP" : ""
-          }`}
-        >
-          {items.map((_, index) => (
-            <span
-              key={index}
-              className={`dot dot-SFP ${
-                index === selectedItem ? "active-dot active-dot-SFP" : ""
-              }`}
-              onClick={() => handleDotClick(index)}
-            ></span>
-          ))}
         </div>
       </div>
     </>
