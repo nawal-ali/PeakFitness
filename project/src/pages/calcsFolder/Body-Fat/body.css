@@ -717,9 +717,10 @@ body {
 }
 
 @media (max-width: 821px) {
-  .cal  .calorie-calculator-F {
-    flex-direction: column;
-  }
+  .calorie-calculator-F {
+    flex-direction: column ;
+
+}
   .left-panel-F {
     padding-top: 15%;
     padding-bottom: 15%;
