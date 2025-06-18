@@ -480,6 +480,7 @@ a {
     width: 100%;
     height: auto;
   }
+
   .carousel-SC .list-SC .item-SC .content-SC {
     top: 12%;
   }
@@ -545,6 +546,7 @@ a {
   .carousel-SC .list-SC .item-SC .content-SC {
     top: 12%;
   }
+
   .carousel-SC .thumbnail-SC {
     top: 35%;
     left: 55%;
@@ -578,6 +580,7 @@ a {
   .carousel-SC .list-SC .item-SC .content-SC {
     top: 12%;
   }
+
   .carousel-SC .thumbnail-SC {
     top: 40%;
     left: 55%;
@@ -628,6 +631,7 @@ a {
     top: 40%;
     left: 60%;
   }
+
   .carousel-SC .arrows-SC {
     top: 55%;
   }
@@ -667,6 +671,7 @@ a {
   .carousel-SC .list-SC .item-SC .content-SC .title-SC {
     font-size: 40px;
   }
+
   .start-button-SC {
     margin: 20px 0px 0px;
   }
@@ -688,6 +693,7 @@ a {
     object-fit: cover;
     height: 100%;
   }
+
   .carousel-SC .arrows-SC {
     right: 60%;
   }
@@ -712,6 +718,11 @@ a {
   .carousel-SC .arrows-SC {
     top: 65%;
   }
+
+
+.input-section-C {
+        padding-bottom: 30% ;
+    }
   .carousel-SC .list-SC .item-SC img {
     object-fit: cover;
     height: 100%;

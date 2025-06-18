@@ -722,6 +722,9 @@ p.calories-C {
   .left-panel-C .under-header-C {
     font-size: 22px;
   }
+    .popup-overlay-C {
+    top: -25% ;
+}
   .right-panel-C {
   height: 50vh;  }
   .left-panel-C {
@@ -743,13 +746,9 @@ height: 50vh;  }
 }
 
 @media (max-width: 821px) {
-  .Calculator-circles-S1-C::before,
-  .Calculator-circles-S1-C::after,
-  .Calculator-circles-side2-C,
-  .Calculator-circles-side2-C::after,
-  .Calculator-circles-side2-C::before {
-    display: none;
-  }
+  .popup-overlay-C {
+    top: -20% ;
+}
   .calorie-calculator-C {
     flex-direction: column;
   }
@@ -776,6 +775,10 @@ height: 50vh;  }
   .right-panel-C {
     padding-bottom: 48%;
   }
+  .input-section-C {
+
+    margin-top: 10%;
+}
 }
 
 @media (max-width: 541px) {
@@ -788,6 +791,9 @@ height: 50vh;  }
   .left-panel-C .content-C {
     padding-top: 30%;
   }
+    .popup-overlay-C {
+    top: -16%
+}
   .left-panel-C .content-C {
     padding-bottom: 45%;
   }
@@ -818,6 +824,7 @@ height: 50vh;  }
   }
   .result-section-C {
     width: 100%;
+            padding: 10px;
   }
   .macronutrients-C {
     width: 100%;
@@ -834,17 +841,25 @@ height: 50vh;  }
   }
   .input-section-C {
     padding-bottom: 25%;
+    margin-top: 10%;
   }
   .result-section-C {
     padding-top: 15%;
     padding-bottom: 25%;
   }
 }
-
+@media( max-width: 415px) {
+  .popup-overlay-C {
+    top: -15% ;
+}
+}
 @media (max-width: 361px) {
   .left-panel-C .under-header-C {
     font-size: 1.1rem;
   }
+    .popup-overlay-C {
+    top: -13%
+}
   .left-panel-C .content-C {
     padding-bottom: 60%;
   }
@@ -875,8 +890,11 @@ height: 50vh;  }
 
 @media (max-width: 376px) {
   .result-section-C {
-    padding-bottom: 0%;
+    padding-bottom: 35%;
   }
+    .popup-overlay-C {
+    top: -4% ;
+}
   .right-panel-C {
     padding-bottom: 0%;
   }

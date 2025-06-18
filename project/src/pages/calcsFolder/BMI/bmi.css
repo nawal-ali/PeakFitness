@@ -11,7 +11,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* padding: 20px; */
+  padding: 20px;
   height: 100vh;
   position: relative;
   transition: transform 0.6s ease-in-out;
@@ -295,7 +295,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* padding: 40px; */
+  padding: 20px;
   height: 100vh;
   transition: transform 0.6s ease-in-out;
   z-index: 0;
@@ -722,7 +722,7 @@ body {
     width: 100%;
   }
   .left-panel-B {
-    /* padding-top: 30%; */
+    padding-top: 30%;
   }
   .left-panel-B .under-header-B {
     font-size: 1rem !important;
@@ -773,7 +773,7 @@ body {
 
 @media (max-width: 376px) {
   .right-panel-B {
-    /* padding-bottom: 10%; */
+    padding-bottom: 10%;
   }
   .left-panel-B {
     /* padding-top: 30%; */
@@ -803,6 +803,6 @@ body {
     /* padding-bottom: 55%; */
   }
   .right-panel-B {
-    /* padding-bottom: 65% !important; */
+    padding-bottom: 65% ;
   }
 }
