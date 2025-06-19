@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import ReactPlayer from 'react-player';
 import Navbar from '../../../../assets/navFolder/Navbar';
 import Footer from '../../../../assets/footerFolder/Footer';
-import video from '../../../../../public/ExerciseVideos/Chest/male-Machine-machine-pec-fly-front.mp4'
+// import video from '../../../../../public/ExerciseVideos/Chest/male-Machine-machine-pec-fly-front.mp4'
 import './chest.css';
 
 const Card = ({ title, level, steps, children }) => {
@@ -89,26 +89,34 @@ function Chest() {
             ]}
           >
             <ReactPlayer
-              url="/public/ExerciseVideos/Chest/plate-deficit-pushup-front.mp4"
+  url={'./ExerciseVideos/Chest/male-Machine-machine-pec-fly-front.mp4'}
+  playing={false}
+  loop={true}
+  controls={true}
+  width="100%"
+  height="auto"
+/>
+            {/* <ReactPlayer
+              url="./ExerciseVideos/Chest/plate-deficit-pushup-front.mp4"
               playing={false}
               loop={true}
               className="video-player"
               width="100%"
               height="auto"
               controls={true}
-            />
-            <video
-              src={video}
+            /> */}
+            {/* <video
+              src="./ExerciseVideos/Chest/plate-deficit-pushup-front.mp4"
               loop={true}
               className="video-player"
               // width="100%"
               // height="auto"
               controls={true}
-            ></video>
+            ></video> */}
           </Card>
           {/* الكاردز التانية متجمدةش لحد ما نحل المشكلة */}
         </div>
-        <EquipmentPanel />
+        {/* <EquipmentPanel /> */}
       </div>
       <div className="margin-top-10">
         <Footer />

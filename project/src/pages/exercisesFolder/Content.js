@@ -27,7 +27,33 @@ const content = {
             desc2: "Cause: Doing lower abs exercises without stabilizing your lower back can lead to muscle strain or spinal issues.",
             colored3: "Hip or Pelvic Injuries: ",
             desc3: "Cause: Exercises like mountain climbers or leg raises without controlled movement can lead to hip or pelvic strain.",
-        }
+        },
+        sec5: [
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            }
+        ]
     },
     upperAbs: {
         sec1: {
@@ -57,7 +83,33 @@ const content = {
             desc2: "Cause: Engaging the hip flexors too much during sit-ups can cause the lower back to arch excessively.",
             colored3: "Poor Range of Motion: ",
             desc3: "Cause: Rushing through reps without fully engaging the upper abs can limit muscle activation and effectiveness.",
-        }
+        },
+        sec5: [
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            }
+        ]
     },
     quadriceps: {
         sec1: {
@@ -87,7 +139,33 @@ const content = {
             desc2: "Cause: Arching the lower back during leg presses or squats can lead to strain. Maintain a neutral spine",
             colored3: "Muscle Imbalances: ",
             desc3: "Cause: Focusing too much on quadriceps without balancing with hamstring exercises can cause instability.",
-        }
+        },
+        sec5: [
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            }
+        ]
     },
     hamstrings: {
         sec1: {
@@ -119,7 +197,33 @@ const content = {
             desc2: "Cause: Overextending the knees during leg curls can lead to ligament strain.",
             colored3: "Imbalanced Training:",
             desc3: "Cause: Neglecting hamstring exercises can lead to muscle imbalances, increasing the risk of knee injuries."
-        }
+        },
+        sec5: [
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            }
+        ]
     },
     glutes: {
         sec1: {
@@ -151,7 +255,33 @@ const content = {
             desc2: "Cause: Focusing on one side more than the other during single-leg exercises can lead to muscle imbalances.",
             colored3: "Overusing Hip Flexors:",
             desc3: "Cause: Engaging the hip flexors too much instead of isolating the glutes can limit the effectiveness of the workout."
-        }
+        },
+        sec5: [
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            }
+        ]
     },
     pectoralisMajor: {
         sec1: {
@@ -183,7 +313,33 @@ const content = {
             desc2: "Cause: Lowering the bar or dumbbells halfway reduces chest engagement.",
             colored3: "Flared Elbows:",
             desc3: "Cause: Keeping elbows too wide during push-ups or bench presses can stress the shoulder joints."
-        }
+        },
+        sec5: [
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            }
+        ]
     },
     trapezius: {
         sec1: {
@@ -215,7 +371,33 @@ const content = {
             desc2: "Cause: Excessive load can cause momentum and reduce trap isolation.",
             colored3: "Poor Posture During Exercises:",
             desc3: "Cause: Rounded shoulders or forward head posture limit trap activation and can cause discomfort."
-        }
+        },
+        sec5: [
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            }
+        ]
     },
     biceps: {
         sec1: {
@@ -247,7 +429,33 @@ const content = {
             desc2: "Cause: Not fully extending or curling reduces muscle activation.",
             colored3: "Elbow Movement:",
             desc3: "Cause: Letting the elbows move reduces isolation of the biceps."
-        }
+        },
+        sec5: [
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            }
+        ]
     },
     calves: {
         sec1: {
@@ -279,7 +487,33 @@ const content = {
             desc2: "Cause: Not lowering the heel completely can limit calf activation and development.",
             colored3: "Overloading Weight:",
             desc3: "Cause: Adding too much weight during calf exercises can shift the focus to other muscles, reducing calf activation."
-        }
+        },
+        sec5: [
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            }
+        ]
     },
     latissimus: {
         sec1: {
@@ -311,7 +545,33 @@ const content = {
             desc2: "Cause: Bending the back during rows reduces lat engagement and risks injury.",
             colored3: "Incomplete Range Of Motion:",
             desc3: "Cause: Not fully pulling or releasing limits muscle activation."
-        }
+        },
+        sec5: [
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            }
+        ]
     },
     triceps: {
         sec1: {
@@ -343,7 +603,33 @@ const content = {
             desc2: "Cause: Lowering the weight only halfway during dips reduces triceps activation.",
             colored3: "Overusing Shoulders:",
             desc3: "Cause: Engaging the shoulders instead of isolating the triceps can limit muscle engagement."
-        }
+        },
+        sec5: [
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            }
+        ]
     },
     forearm: {
         sec1: {
@@ -375,7 +661,33 @@ const content = {
             desc2: "Cause: Using too much weight during wrist curls can strain the elbow joint.",
             colored3: "Neglecting Extensors:",
             desc3: "Cause: Focusing solely on wrist curls without balancing with reverse curls can lead to muscle imbalances."
-        }
+        },
+        sec5: [
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            }
+        ]
     }
 };
 
