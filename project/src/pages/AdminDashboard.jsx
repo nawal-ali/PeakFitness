@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "../assets/navFolder/Navbar";
-import { FaTrash, FaPen, FaPlus } from "react-icons/fa";
+import { FaTrash, FaPlus } from "react-icons/fa"; //FaPen
 import { useNavigate } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
