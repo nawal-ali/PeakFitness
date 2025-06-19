@@ -31,6 +31,7 @@ import WG_proTips from "./pages/proTipsFolder/wg/WG_proTips";
 import ToTop from "./assets/toTopBtn/toTop";
 import ArticlesList from "./pages/ArticlesList";
 import ArticleDetail from "./pages/ArticleDetail";
+import Chest from "./pages/exercisesFolder/Exercises/Chest/chest";
 function App() {
   return (
     <>
@@ -61,6 +62,7 @@ function App() {
             <Route path="/proTipsSlider" element={<Slider_PT />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/saved" element={<SavedArticles />} />
+
             <Route
               path="/weight-gain-details-Pro-tips"
               element={<WG_proTips />}
@@ -73,6 +75,7 @@ function App() {
               path="/muscle-gain-details-Pro-tips"
               element={<MG_proTips />}
             />
+            <Route path="/chest" element={<Chest />} />
             <Route path="/articles" element={<ArticlesList />} />
             <Route path="/articles/:id" element={<ArticleDetail />} />
             <Route path="/admin-dashboard" element={

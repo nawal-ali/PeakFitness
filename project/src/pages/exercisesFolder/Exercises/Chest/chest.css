@@ -1,0 +1,160 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+}
+
+.full-width {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  margin-top: 15%;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 3;
+}
+
+.card {
+  width: 100%;
+  max-width: 70%;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.header {
+  background-color: rgb(203 135 120);
+  color: white;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.header span {
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.beginner {
+  background-color: #28a745;
+  color: white;
+}
+
+.advanced {
+  background-color: #dc3545;
+  color: white;
+}
+
+.novice {
+  background-color: #ffc107;
+  color: white;
+}
+
+.video-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  background-color: #000; /* خلفية سوداء لتجنب التداخل */
+  overflow: hidden;
+}
+
+.video-player {
+  width: 49%;
+  height: auto;
+  border: none;
+  border-radius: 0 0 5% 5%;
+  background-color: transparent;
+  /* width: 100%; */
+  /* height: auto; */
+  /* max-width: 100%; */
+  display: block;
+}
+
+.video-player::-webkit-media-controls {
+  background-color: #333;
+}
+
+.steps {
+  padding: 15px;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(203 135 120);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+.step-text {
+  color: #6c757d;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.equipment-panel {
+  width: 100%;
+  max-width: 200px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  flex: 1;
+}
+
+.equipment-panel h3 {
+  color: #1da1f2;
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.equipment-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.equipment-item input {
+  margin-right: 10px;
+}
+
+.equipment-item label {
+  color: #343a40;
+  font-size: 14px;
+}
+
+.margin-top-10 {
+  margin-top: 10px;
+}
