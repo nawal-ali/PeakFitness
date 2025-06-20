@@ -637,6 +637,32 @@ const content = {
                 steps: "",
                 videoPath: ""
             }
+        ],
+        tab2 : [
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            },
+            {
+                title: "",
+                level: "",
+                steps: "",
+                videoPath: ""
+            }
         ]
     },
     trapezius: {
@@ -671,30 +697,86 @@ const content = {
             desc3: "Cause: Rounded shoulders or forward head posture limit trap activation and can cause discomfort."
         },
         sec5: [
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            }
+             {
+        title: "Barbell Silverback Shrug",
+        level: "Intermediate",
+        steps: [
+            "Stand with your feet shoulder width apart holding the Barbell with both hands in front just past shoulder width.",
+            "Bend forward at the hips with a slight bend in your knees, keeping your back straight.",
+            "Engage your shoulder blades, as if you are trying to touch them together.",
+            "Release the shrug."
+        ],
+        videoPath: "./Exercise/Trapezius/Tab 1/Video 1/male-barbell-silverback-shrug-front.mp4"
+    },
+    {
+        title: "Cable 30 Degree Shrug",
+        level: "Beginner",
+        steps: [
+            "Use a handle attachment on both sides of crossover. With cable attachment set all the way to the bottom.",
+            "Grab both handles and make sure you are centered in the machine. Let your arms hang freely.",
+            "Pull your shoulder blades up and in towards your ears. Let your shoulder blades depress back to the starting position."
+        ],
+        videoPath: "./Exercise/Trapezius/Tab 1/Video 2/male-cable-30-degree-shrug-front.mp4"
+    },
+    {
+        title: "Dumbbell Shrug",
+        level: "Novice",
+        steps: [
+            "Stand tall with two dumbbells. Pull your shoulder blades up. Give a one second squeeze at the top."
+        ],
+        videoPath: "./Exercise/Trapezius/Tab 1/Video 3/male-dumbbell-shrug-front.mp4"
+    },
+    {
+        title: "Barbell Upright Row",
+        level: "Advanced",
+        steps: [
+            "Take a double overhand roughly shoulder width grip.",
+            "Pull your elbows straight up the ceiling. Aim to get the bar to chin level or slightly higher."
+        ],
+        videoPath: "./Exercise/Trapezius/Tab 1/Video 4/male-barbell-upright-row-front.mp4"
+    }
+        ],
+        tab2 : [
+{
+        title: "Smith Machine Standing Shrugs",
+        level: "Beginner",
+        steps: [
+            "Place the bar on a lower rung so that when gripped your arms are fully extended and your back is straight.",
+            "Grip at shoulder width, raise the bar with your shoulders and pause at the contracted position.",
+            "Slowly lower the bar back to starting position."
+        ],
+        videoPath: "./Exercise/Trapezius/Tab 2/Video 1/male-smith-machine-standing-shrugs-front.mp4"
+    },
+    {
+        title: "Kettlebell Incline Shrug",
+        level: "Beginner",
+        steps: [
+            "Leaning across the back section of the bench, with feet firmly on the floor and with arms hanging to the sides.",
+            "Holding the kettlebell in both hands engage your shoulder blades, as if you are trying to touch them together. Release the shrug."
+        ],
+        videoPath: "./Exercise/Trapezius/Tab 2/Video 2/male-kettlebell-incline-shrug-front.mp4"
+    },
+    {
+        title: "Elevated Pike Press",
+        level: "Intermediate",
+        steps: [
+            "Use a bench or an object to elevate your feet.",
+            "Lower your head towards the floor by bending your elbows.",
+            "Push through your hands and return to the starting pike position.",
+            "Repeat."
+        ],
+        videoPath: "./Exercise/Trapezius/Tab 2/Video 3/male-elevated-pike-press-front.mp4"
+    },
+    {
+        title: "Traps Stretch Variation One",
+        level: "Novice",
+        steps: [
+            "Stand upright with your feet shoulder width apart.",
+            "Place your left hand on your head and gently pull your head down towards your left shoulder. Then return to centre point.",
+            "Repeat, using your right hand pulling towards your right shoulder."
+        ],
+        videoPath: "./Exercise/Trapezius/Tab 2/Video 4/male-traps-stretch-variation-one-front.mp4"
+    }
         ]
     },
     biceps: {
