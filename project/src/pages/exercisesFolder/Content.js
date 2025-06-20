@@ -926,30 +926,90 @@ const content = {
             desc3: "Cause: Adding too much weight during calf exercises can shift the focus to other muscles, reducing calf activation."
         },
         sec5: [
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            }
+           {
+            title: "Machine Standing Calf Raises",
+            level: "Novice",
+            steps: [
+                "Adjust the machine in accordance with your height and place your shoulders underneath the padded lever.",
+                "The balls of your feet should be supporting your weight on the calve block, your heels extending off of it.",
+                "Extend your heels upwards while keeping your knees stationary, and pause at the contracted position.",
+                "Slowly return to the starting position. Repeat."
+            ],
+            videoPath: "./Exercise/Calves/Tab 1/Video 1/male-machine-standing-calf-raises-front.mp4"
+        },
+        {
+            title: "Machine Seated Calf Raises",
+            level: "Novice",
+            steps: [
+                "Get comfortable on the machine, then place your lower thighs beneath the padded lever. Place your toes and the balls of your feet onto the foot supports.",
+                "Prevent the weight from slipping forward by gripping the handles, and release the safety bar. Lower the weight until your calves are extended.",
+                "Push your heels up to lift the padded lever and hold the contracted position, then slowly lower back down to the starting position. Repeat."
+            ],
+            videoPath: "./Exercise/Calves/Tab 1/Video 2/male-machine-seated-calf-raises-front.mp4"
+        },
+        {
+            title: "Barbell Calf Raises",
+            level: "Intermediate",
+            steps: [
+                "Place the bar on your back.",
+                "Start with feet flat on the ground.",
+                "Extend your heels upwards while keeping your knees stationary, and pause at the contracted position.",
+                "Slowly return to the starting position. Repeat."
+            ],
+            videoPath: "./Exercise/Calves/Tab 1/Video 3/male-barbell-calf-raises-front.mp4"
+        },
+        {
+            title: "Calves Stretch Variation One",
+            level: "Beginner",
+            steps: [
+                "Place the ball of your foot against the wall with your heel on the ground. Place your hands on the wall in front of your shoulders.",
+                "Keeping your knee straight, slowly lean towards the wall, pause for a few seconds when you feel the stretch extending through your calf muscle.",
+                "Return to the starting position, and repeat the stretch with your other leg."
+            ],
+            videoPath: "./Exercise/Calves/Tab 1/Video 4/male-calves-stretch-variation-one-front.mp4"
+        }
+    ],
+    tab2: [
+        {
+            title: "Calves Stretch Variation Two",
+            level: "Beginner",
+            steps: [
+                "With both feet flat on the ground, place one leg in front of your shoulder, your other leg should mirror this position behind your other shoulder. In the starting position both of your knees should be straight.",
+                "Place the palms of your hands against the wall at shoulder height in front of you, lean towards the wall and bend your front leg at the knee while keeping your back leg straight.",
+                "Pause at the apex of the stretch and return to the starting position. Switch the position of your legs and repeat."
+            ],
+            videoPath: "./Exercise/Calves/Tab 2/Video 1/male-calves-stretch-variation-two-front.mp4"
+        },
+        {
+            title: "Calves Stretch Variation Three",
+            level: "Beginner",
+            steps: [
+                "Balance the balls of your feet on the platform, leaning forward to use the wall to assist with balance. Engage your calves so that your feet are flat before beginning the stretch.",
+                "Lower the heels of your feet towards the ground and pause, then push through the balls of your feet like you are standing tip toe, pausing at the apex of the stretch.",
+                "Repeat as necessary."
+            ],
+            videoPath: "./Exercise/Calves/Tab 2/Video 2/male-calves-stretch-variation-three-front.mp4"
+        },
+        {
+            title: "Kettlebell Seated Calf Raise",
+            level: "Novice",
+            steps: [
+                "Sitting comfortably on a chair with your core stomach muscles engaged, place your feet on the floor.",
+                "Place the kettlebell on your legs, just above the knees and raise your heels upwards off the floor.",
+                "Pause when your heels are fully extended and then slowly return to the starting position and repeat."
+            ],
+            videoPath: "./Exercise/Calves/Tab 2/Video 3/male-kettlebell-seated-calf-raise-front.mp4"
+        },
+        {
+            title: "Calf Raises",
+            level: "Novice",
+            steps: [
+                "Balance on the balls of your feet on the platform or plates, leaning forward to use the wall to assist with balance.",
+                "Lower the heels of your feet towards the ground and pause, then push through the balls of your feet like you are standing tip toe, pausing at the apex of the motion.",
+                "Repeat as necessary."
+            ],
+            videoPath: "./Exercise/Calves/Tab 2/Video 4/male-calf-raises-front.mp4"
+        }
         ]
     },
     latissimus: {
@@ -985,29 +1045,86 @@ const content = {
         },
         sec5: [
             {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            }
+            title: "Hand Side Plank",
+            level: "Beginner",
+            steps: [
+                "Press your hand into the ground and pick up your hip off the ground.",
+                "Open your chest and maintain this position for the allotted amount of time."
+            ],
+            videoPath: "./Exercise/Latissimus/Tab 1/Video 1/male-hand-side-plank-front.mp4"
+        },
+        {
+            title: "Elbow Side Plank",
+            level: "Novice",
+            steps: [
+                "Press your elbow into the floor.",
+                "Pick your hips up off the ground and maintain this position for the allotted amount of time.",
+                "Make sure you don't let your chest fall forward or backward."
+            ],
+            videoPath: "./Exercise/Latissimus/Tab 1/Video 2/male-elbow-side-plank-front.mp4"
+        },
+        {
+            title: "Dumbbell Russian Twist",
+            level: "Intermediate",
+            steps: [
+                "Sit on the floor and flex your knees and hips to a 90 degree angle.",
+                "Your feet should be hovering off the ground. (If that's too hard start with heels on the floor.)",
+                "Rotate your upper spine to engage your obliques."
+            ],
+            videoPath: "./Exercise/Latissimus/Tab 1/Video 3/male-dumbbell-russian-twist-front.mp4"
+        },
+        {
+            title: "Kettlebell Windmill",
+            level: "Advanced",
+            steps: [
+                "Stand with feet slightly wider than shoulder width apart. Hold the kettlebell in one hand and extend your arm above your head.",
+                "Keeping your legs straight and the kettlebell above your head, lower the relaxed arm towards the ground, twisting your body towards the side of the raised arm.",
+                "Return to the starting potion, tilt your pelvis forward and repeat."
+            ],
+            videoPath: "./Exercise/Latissimus/Tab 1/Video 4/male-kettlebell-windmill-front.mp4"
+        }
+    ],
+    tab2: [
+        {
+            title: "Cable Wood Chopper",
+            level: "Beginner",
+            steps: [
+                "Set the cable at about nipple level. Use a handle attachment.",
+                "Face sideways, then rotate your torso with your arms extended against the resistance.",
+                "After completing your given number of reps, face the opposite direction and repeat."
+            ],
+            videoPath: "./Exercise/Latissimus/Tab 2/Video 1/male-cable-wood-chopper-front.mp4"
+        },
+        {
+            title: "Band Pallof Press",
+            level: "Beginner",
+            steps: [
+                "Place the band at an anchor point that is shoulder height. Take a few steps away until the band is taut.",
+                "Start with your fingers interlocked around the band and your fists connected to your chest.",
+                "Extend at the elbows pressing the band away from your body until your elbows are fully extended."
+            ],
+            videoPath: "./Exercise/Latissimus/Tab 2/Video 2/male-band-pallof-press-front.mp4"
+        },
+        {
+            title: "Kettlebell Wood Chopper",
+            level: "Beginner",
+            steps: [
+                "Stand with feet slightly wider than shoulder width apart and hold the kettle bell with both hands against your hip.",
+                "Keeping your arms straight, swing the kettlebell upwards and across your body towards your shoulder, raising the kettlebell to head height rotating your hips as you do so.",
+                "Return to the starting position and repeat."
+            ],
+            videoPath: "./Exercise/Latissimus/Tab 2/Video 3/male-kettlebell-wood-chopper-front.mp4"
+        },
+        {
+            title: "Cable Pallof Press",
+            level: "Beginner",
+            steps: [
+                "Use a handle attachment, set the cable at nipple level, walk a few steps away, and face sideways.",
+                "Start with both hands on the handle and your fists against your chest.",
+                "Press the handle forward until your elbows are fully extended, then pull the handle back to your chest."
+            ],
+            videoPath: "./Exercise/Latissimus/Tab 2/Video 4/male-cable-pallof-press-front.mp4"
+        }
         ]
     },
     triceps: {
@@ -1043,29 +1160,88 @@ const content = {
         },
         sec5: [
             {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            }
+            title: "Cable Rope Pushdown",
+            level: "Novice",
+            steps: [
+                "The cable should be set all the way at the top of the machine.",
+                "Make sure to keep your upper arm glued at your side. Extend your elbows until you feel your triceps contract."
+            ],
+            videoPath: "./Exercise/Triceps/Tab 1/Video 1/male-Cables-push-down-front.mp4"
+        },
+        {
+            title: "Barbell Close Grip Bench Press",
+            level: "Intermediate",
+            steps: [
+                "Lay flat on the bench with your feet on the ground. With a narrow grip on the bar, straighten your arms.",
+                "Lower the bar to your lower-mid chest.",
+                "Slowly raise the bar until you've locked your elbows."
+            ],
+            videoPath: "./Exercise/Triceps/Tab 1/Video 2/male-barbell-close-grip-bench-press-front.mp4"
+        },
+        {
+            title: "Dumbbell Skullcrusher",
+            level: "Beginner",
+            steps: [
+                "Lay flat on the floor or a bench with your fists extended to the ceiling and a neutral grip.",
+                "Break at the elbows until your fists are by your temples. Then extend your elbows and flex your triceps at the top."
+            ],
+            videoPath: "./Exercise/Triceps/Tab 1/Video 3/male-dumbbell-skullcrusher-front.mp4"
+        },
+        {
+            title: "Bench Dips",
+            level: "Novice",
+            steps: [
+                "Grip the edge of the bench with your hands, Keep your feet together and legs straight.",
+                "Lower your body straight down.",
+                "Slowly press back up to the starting point.",
+                "TIP: Make this harder by raising your feet off the floor and adding weight."
+            ],
+            videoPath: "./Exercise/Triceps/Tab 1/Video 4/male-bench-dips-front.mp4"
+        }
+    ],
+    tab2: [
+        {
+            title: "Cable Rope Overhead Tricep Extension",
+            level: "Beginner",
+            steps: [
+                "You can use any attachment. The cable should be all the way to the bottom of the machine. Face away from the machine.",
+                "Point your elbows straight up toward the ceiling.",
+                "From there, extend your elbows until your fists are pointed straight toward the ceiling."
+            ],
+            videoPath: "./Exercise/Triceps/Tab 2/Video 1/male-cable-rope-overhead-tricep-extension-front.mp4"
+        },
+        {
+            title: "Diamond Push Ups",
+            level: "Beginner",
+            steps: [
+                "Position your index fingers and thumbs so they are touching, forming a diamond shape.",
+                "Use a standard push up position.",
+                "Lower your chest towards your hands, keep your elbows close to your body.",
+                "Stop just before your chest touches the floor, then push back up to the starting position."
+            ],
+            videoPath: "./Exercise/Triceps/Tab 2/Video 2/male-diamond-push-ups-front.mp4"
+        },
+        {
+            title: "Kettlebell Decline Skull Crusher",
+            level: "Advanced",
+            steps: [
+                "Lie on the floor with your upper back and soles of feet on the floor, knees bent, and pelvis and lower back suspended in the air.",
+                "Hold the kettlebell in both hands directly above your chest.",
+                "Keeping your upper arms in place, bend your elbows to bring the kettlebell to the floor above your head.",
+                "Return the kettlebell to the starting position and repeat."
+            ],
+            videoPath: "./Exercise/Triceps/Tab 2/Video 3/male-kettlebell-decline-skull-crusher-front.mp4"
+        },
+        {
+            title: "Triceps Stretch Variation One",
+            level: "Novice",
+            steps: [
+                "Raise your left arm above your head, and bend at the elbow so your hand is resting at the top of your back.",
+                "Use the opposite hand to gently apply pressure to the elbow.",
+                "Hold the stretch for a few seconds then repeat with the other arm."
+            ],
+            videoPath: "./Exercise/Triceps/Tab 2/Video 4/male-triceps-stretch-variation-one-front.mp4"
+        }
         ]
     },
     forearm: {
