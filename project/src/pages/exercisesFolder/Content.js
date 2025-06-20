@@ -1276,30 +1276,89 @@ const content = {
             desc3: "Cause: Focusing solely on wrist curls without balancing with reverse curls can lead to muscle imbalances."
         },
         sec5: [
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            }
+{
+            title: "Chin Ups",
+            level: "Intermediate",
+            steps: [
+                "Grab the bar shoulder width apart with a",
+                "supinated grip (palms facing you).",
+                "With your body hanging and arms fully extended, pull yourself",
+                "up until your chin is below the bar.",
+                "Slowly return to starting position."
+            ],
+            videoPath: "./Exercise/Forearm/Tab 1/Video 1/male-chin-ups-front.mp4"
+        },
+        {
+            title: "Dumbbell Row Unilateral",
+            level: "Novice",
+            steps: [
+                "Brace your off arm against something stable (bench, box). Stagger your stance so your leg on the side of your working arm is back.",
+                "Try to get your torso to parallel with the ground. That will extend your range of motion.",
+                "Let your arm hang freely and then pull your elbow back. Imagine you've got a tennis ball in your armpit and squeeze it each rep."
+            ],
+            videoPath: "./Exercise/Forearm/Tab 1/Video 2/male-dumbbell-row-unilateral-front.mp4"
+        },
+        {
+            title: "Dumbbell Reverse Curl",
+            level: "Novice",
+            steps: [
+                "Grab the dumbbells with a pronated (overhand) grip. You can do this exercise thumbless if it's more comfortable on your wrists.",
+                "Flex at the elbows until your biceps touch your forearms. Try not to let your elbows flair outward."
+            ],
+            videoPath: "./Exercise/Forearm/Tab 1/Video 3/male-dumbbell-reverse-curl-front.mp4"
+        },
+        {
+            title: "Barbell Reverse Curl",
+            level: "Advanced",
+            steps: [
+                "Take a double overhand grip that's about shoulder width. Flex your elbows while keeping your elbows tucked in. Try not to let them flare out.",
+                "Curl until your forearm presses into your bicep. Then fully extend your elbows at the bottom of each rep."
+            ],
+            videoPath: "./Exercise/Forearm/Tab 1/Video 4/male-barbell-reverse-curl-front.mp4"
+        }
+    ],
+    tab2: [
+        {
+            title: "Barbell Bent Over Row",
+            level: "Intermediate",
+            steps: [
+                "Grab a barbell with a shoulder width pronated or supinated grip.",
+                "Bend forward at your hips while maintaining a flat back.",
+                "Pull the weight toward your upper abdomen.",
+                "Lower the weight in a controlled manner and repeat."
+            ],
+            videoPath: "./Exercise/Forearm/Tab 2/Video 1/male-barbell-bent-over-row-front.mp4"
+        },
+        {
+            title: "Inverted Row",
+            level: "Beginner",
+            steps: [
+                "Lay underneath a fixed horizontal bar and grab the bar with a wide overhand grip.",
+                "Pull your body straight up to the bar.",
+                "Return to the starting position, your arms fully extended. Repeat."
+            ],
+            videoPath: "./Exercise/Forearm/Tab 2/Video 2/male-inverted-row-front.mp4"
+        },
+        {
+            title: "Kettlebell Farmers Carry",
+            level: "Beginner",
+            steps: [
+                "Hold two kettlebells in each hand.",
+                "Keep your shoulders blades pulled back and walk for a specified duration."
+            ],
+            videoPath: "./Exercise/Forearm/Tab 2/Video 3/male-kettlebell-farmers-carry-front.mp4"
+        },
+        {
+            title: "Forearms Stretch Variation One",
+            level: "Novice",
+            steps: [
+                "Place your palm flush against the wall.",
+                "Take one step forward and straighten your arm slowly to extend your bicep.",
+                "Hold at the peak of the stretch.",
+                "Return to starting position."
+            ],
+            videoPath: "./Exercise/Forearm/Tab 2/Video 4/male-forearms-stretch-variation-one-front.mp4"
+        }
         ]
     }
 };
