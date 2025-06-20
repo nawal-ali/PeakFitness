@@ -45,7 +45,7 @@ export default function exercises() {
         <div className="col-12 col-md-8">
           <Model setClickedOn={setClickedOn} onLabelClick={setClickedOn}/>
         </div>
-        <div className="p-5 rounded-3 w-75" style={{backgroundColor:"#D9D9D9", margin:"10rem auto"}}>
+        {/* <div className="p-5 rounded-3 w-75" style={{backgroundColor:"#D9D9D9", margin:"10rem auto"}}>
           <div className="row">
             <div className="col-12 col-md-6 p-3">
                 <h1 style={{fontSize:"4rem"}}>{content[clickedOn].sec1.title}</h1>
@@ -57,6 +57,9 @@ export default function exercises() {
               <img src="./imgs/lower_abs.png" alt="" className="w-100" />
             </div>
           </div>
+        </div> */}
+        <div>
+          
         </div>
         <div className="row ps-5" style={{marginBottom:"10rem"}}>
           <div className="col-12 col-lg-6 pe-5">

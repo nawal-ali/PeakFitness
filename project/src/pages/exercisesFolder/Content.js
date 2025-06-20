@@ -28,32 +28,90 @@ const content = {
             colored3: "Hip or Pelvic Injuries: ",
             desc3: "Cause: Exercises like mountain climbers or leg raises without controlled movement can lead to hip or pelvic strain.",
         },
-        sec5: [
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
+        sec5: {
+            tab1: [{
+                title: "Hanging Knee Raises",
+                level: "Beginner",
+                steps: [
+                    "Grab the bar and hang, your body still and your legs straight.",
+                    "Grab the bar and hang, your body still and your legs straight.Slowly draw your knees up to your chestGrab the bar and hang, your body still and your legs straight.",
+                    "Once you have raised your knees as high as possible, lower your legs and repeat. Duration of these movements should be slow so that you do not utilize momentum, enabling you to get the most out of the exercise.",
+                    "Duration of these movements should be slow so that you do not utilize momentum, enabling you to get the most out of the exercise."
+                ],
+                videoPath: "./Exercise/Lower Abs/Tab 1/Video 1/male-bodyweight-hanging-knee-raises-front.mp4"
             },
             {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
+                title: "TRX Mountain Climber",
+                level: "Beginner",
+                steps: [
+                    "Start in a plank position with the TRX straps adjusted to mid-calf length. Place your feet in the TRX stirrups.",
+                    "Keep your abs engaged, and bring one knee towards your chest while keeping the other leg extended behind you.",
+                    "Switch legs, bringing the opposite knee towards your chest while keeping your abs engaged and your back straight."
+                ],
+                videoPath: "./Exercise/Lower Abs/Tab 1/Video 3/male-trx-mountain-climber-front.mp4"
             },
             {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
+                title: "Laying Leg Raises",
+                level: "Novice",
+                steps: [
+                    "Lay on your back with your arms palms down on either side.",
+                    "Keep your legs together and as straight as possible.",
+                    "Slowly raise your legs to a 90° angle, pause at this position, or as high as you can reach your legs, and then slowly lower your legs back down.",
+                    "Duration of these movements should be slow so that you do not utilize momentum, enabling you to get the most out of the exercise."
+                ],
+                videoPath: "./Exercise/Lower Abs/Tab 1/vidoe 2/male-Bodyweight-laying-leg-raises-front.mp4"
             },
             {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            }
-        ]
+                title: "Mountain Climber",
+                level: "Novice",
+                steps: [
+                    "To perform a bodyweight mountain climber, start in a plank position with your hands placed directly under your shoulders.",
+                    "Bring your right knee towards your chest, keeping your foot close to your hand. Quickly switch legs, bringing your left knee towards your chest.",
+                    "Continue this movement, alternating legs, at a quick pace for a set amount of time or repetitions."
+                ],
+                videoPath: "./Exercise/Lower Abs/Tab 1/Video 4/male-bodyweight-mountain-climber-front.mp4"
+            }],
+            tab2: [
+                {
+                    title: "TRX Pike",
+                    level: "Intermediate",
+                    steps: [
+                        "Place your feet in the stirrups and get in to a plank position.",
+                        "Pull your hips straight up toward the ceiling.",
+                        "Lower your hips until you're back in a plank position."
+                    ],
+                    videoPath: "./Exercise/Lower Abs/Tab 2/Video 1/male-trx-pike-front.mp4"
+                },
+                {
+                    title: "TRX Knee Tuck",
+                    level: "Beginner",
+                    steps: [
+                        "Place your feet in the TRX stirrups and get in to a hand plank position.",
+                        "Pull your knees to your chest and flex your abs.",
+                    ],
+                    videoPath: "./Exercise/Lower Abs/Tab 2/vidoe 2/male-trx-knee-tuck-front.mp4"
+                },
+                {
+                    title: "Barbell Larsen Bench Press",
+                    level: "Advanced",
+                    steps: [
+                        "Start in a bench press position with your legs elevated. Try to keep your knees with a slight bend in them.",
+                        "Unrack the bar then initiate the rep.",
+                        "Bring the bar to your torso and tap your ribcage before pressing back to the ceiling."
+                    ],
+                    videoPath: "./Exercise/Lower Abs/Tab 2/Video 3/male-barbell-larsen-bench-press-front.mp4"
+                },
+                {
+                    title: "Hand Plank",
+                    level: "Novice",
+                    steps: [
+                        "Start in a kneeling position with your hands planted on the ground.",
+                        "Pick your knees up off the ground. Hold in this position with a flat back.",
+                        "Once you have raised your leration of these movements should be slow so that you do not utilize momentum, enabling you to get the most out of the exercise."
+                    ],
+                    videoPath: "./Exercise/Lower Abs/Tab 2/Video 4/male-bodyweight-hand-plank-front_ZnMlFBF.mp4"
+                }]
+        }
     },
     upperAbs: {
         sec1: {
