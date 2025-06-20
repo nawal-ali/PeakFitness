@@ -812,29 +812,86 @@ const content = {
         },
         sec5: [
             {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            }
+            title: "Chin Ups",
+            level: "Intermediate",
+            steps: [
+                "Grab the bar shoulder width apart with a supinated grip (palms facing you).",
+                "With your body hanging and arms fully extended, pull yourself up until your chin is past the bar.",
+                "Slowly return to starting position. Repeat."
+            ],
+            videoPath: "./Exercise/Biceps/Tab 1/Video 1/male-chin-ups-front.mp4"
+        },
+        {
+            title: "Cable Bayesian Curl",
+            level: "Beginner",
+            steps: [
+                "Use a handle attachment. The cable should be set all the way to the bottom of the machine.",
+                "Face away from the cable machine.",
+                "Stagger your stance so you have a better base of support. Face your palm forward. Flex at the elbow and extend."
+            ],
+            videoPath: "./Exercise/Biceps/Tab 1/Video 2/male-cable-bayesian-curl-front.mp4"
+        },
+        {
+            title: "Dumbbell Curl",
+            level: "Novice",
+            steps: [
+                "Stand up straight with a dumbbell in each hand at arm's length.",
+                "Raise one dumbbell and twist your forearm until it is vertical and your palm faces the shoulder.",
+                "Lower to original position and repeat with opposite arm."
+            ],
+            videoPath: "./Exercise/Biceps/Tab 1/Video 3/male-dumbbell-curl-front.mp4"
+        },
+        {
+            title: "Dumbbell Hammer Curl",
+            level: "Novice",
+            steps: [
+                "Hold the dumbbells with a neutral grip (thumbs facing the ceiling).",
+                "Slowly lift the dumbbell up to chest height.",
+                "Return to starting position and repeat."
+            ],
+            videoPath: "./Exercise/Biceps/Tab 1/Video 4/male-dumbbell-hammer-curl-front.mp4"
+        }
+    ],
+    tab2: [
+        {
+            title: "Dumbbell Reverse Curl",
+            level: "Novice",
+            steps: [
+                "Grab the dumbbells with a pronated (overhand) grip. You can do this exercise thumbless if it's more comfortable on your wrists.",
+                "Flex at the elbows until your biceps touch your forearms. Try not to let your elbows flair outward."
+            ],
+            videoPath: "./Exercise/Biceps/Tab 2/Video 1/male-dumbbell-reverse-curl-front.mp4"
+        },
+        {
+            title: "Cable Twisting Curl",
+            level: "Advanced",
+            steps: [
+                "Use a handle attachment. The cable should be set all the way to the bottom of the machine.",
+                "Face away from the cable machine. Stagger your stance so you have a better base of support.",
+                "Start with a neutral grip. Flex at the elbow. While flexing twist your palm. When you hit the top of the movement your palm should be facing upward."
+            ],
+            videoPath: "./Exercise/Biceps/Tab 2/Video 2/male-cable-twisting-curl-front.mp4"
+        },
+        {
+            title: "Barbell Reverse Curl",
+            level: "Advanced",
+            steps: [
+                "Take a double overhand grip that's about shoulder width. Flex your elbows while keeping your elbows tucked in. Try not to let them flare out.",
+                "Curl until your forearm presses into your bicep. Then fully extend your elbows at the bottom of each rep."
+            ],
+            videoPath: "./Exercise/Biceps/Tab 2/Video 3/male-barbell-reverse-curl-front.mp4"
+        },
+        {
+            title: "Barbell Bent Over Row",
+            level: "Intermediate",
+            steps: [
+                "Grab a barbell with a shoulder width pronated or supinated grip.",
+                "Bend forward at your hips while maintaining a flat back.",
+                "Pull the weight toward your upper abdomen.",
+                "Lower the weight in a controlled manner and repeat."
+            ],
+            videoPath: "./Exercise/Biceps/Tab 2/Video 4/male-barbell-bent-over-row-front.mp4"
+        }
         ]
     },
     calves: {
