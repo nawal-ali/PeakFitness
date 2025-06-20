@@ -1166,7 +1166,7 @@ const content = {
                 "The cable should be set all the way at the top of the machine.",
                 "Make sure to keep your upper arm glued at your side. Extend your elbows until you feel your triceps contract."
             ],
-            videoPath: "./Exercise/Triceps/Tab 1/Video 1/male-Cables-push-down-front.mp4"
+            videoPath: "./Exercise/Triceps/Tab 1/Video 1/male-Cables-cable-push-down-front.mp4"
         },
         {
             title: "Barbell Close Grip Bench Press",
@@ -1176,7 +1176,7 @@ const content = {
                 "Lower the bar to your lower-mid chest.",
                 "Slowly raise the bar until you've locked your elbows."
             ],
-            videoPath: "./Exercise/Triceps/Tab 1/Video 2/male-barbell-close-grip-bench-press-front.mp4"
+            videoPath: "./Exercise/Triceps/Tab 1/Video 2/male-Barbell-barbell-close-grip-bench-press-front.mp4"
         },
         {
             title: "Dumbbell Skullcrusher",
@@ -1185,7 +1185,7 @@ const content = {
                 "Lay flat on the floor or a bench with your fists extended to the ceiling and a neutral grip.",
                 "Break at the elbows until your fists are by your temples. Then extend your elbows and flex your triceps at the top."
             ],
-            videoPath: "./Exercise/Triceps/Tab 1/Video 3/male-dumbbell-skullcrusher-front.mp4"
+            videoPath: "./Exercise/Triceps/Tab 1/Video 3/male-dumbbell-skullcrusher-front_hgKANkM.mp4"
         },
         {
             title: "Bench Dips",
@@ -1196,7 +1196,7 @@ const content = {
                 "Slowly press back up to the starting point.",
                 "TIP: Make this harder by raising your feet off the floor and adding weight."
             ],
-            videoPath: "./Exercise/Triceps/Tab 1/Video 4/male-bench-dips-front.mp4"
+            videoPath: "./Exercise/Triceps/Tab 1/Video 4/male-Bodyweight-bench-dips-front.mp4"
         }
     ],
     tab2: [
@@ -1208,7 +1208,7 @@ const content = {
                 "Point your elbows straight up toward the ceiling.",
                 "From there, extend your elbows until your fists are pointed straight toward the ceiling."
             ],
-            videoPath: "./Exercise/Triceps/Tab 2/Video 1/male-cable-rope-overhead-tricep-extension-front.mp4"
+            videoPath: "./Exercise/Triceps/Tab 2/Video 1/male-Cables-cable-overhead-tricep-extension-front.mp4"
         },
         {
             title: "Diamond Push Ups",
@@ -1219,7 +1219,7 @@ const content = {
                 "Lower your chest towards your hands, keep your elbows close to your body.",
                 "Stop just before your chest touches the floor, then push back up to the starting position."
             ],
-            videoPath: "./Exercise/Triceps/Tab 2/Video 2/male-diamond-push-ups-front.mp4"
+            videoPath: "./Exercise/Triceps/Tab 2/Video 2/male-Bodyweight-diamond-push-ups-front.mp4"
         },
         {
             title: "Kettlebell Decline Skull Crusher",
@@ -1230,7 +1230,7 @@ const content = {
                 "Keeping your upper arms in place, bend your elbows to bring the kettlebell to the floor above your head.",
                 "Return the kettlebell to the starting position and repeat."
             ],
-            videoPath: "./Exercise/Triceps/Tab 2/Video 3/male-kettlebell-decline-skull-crusher-front.mp4"
+            videoPath: "./Exercise/Triceps/Tab 2/Video 3/male-Kettlebells-kettlebell-decline-skull-crusher-front.mp4"
         },
         {
             title: "Triceps Stretch Variation One",
@@ -1240,7 +1240,7 @@ const content = {
                 "Use the opposite hand to gently apply pressure to the elbow.",
                 "Hold the stretch for a few seconds then repeat with the other arm."
             ],
-            videoPath: "./Exercise/Triceps/Tab 2/Video 4/male-triceps-stretch-variation-one-front.mp4"
+            videoPath: "./Exercise/Triceps/Tab 2/Video 4/male-triceps-stretch-variation-1-front.mp4"
         }
         ]
     },
