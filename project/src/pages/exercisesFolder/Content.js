@@ -1286,7 +1286,7 @@ const content = {
                 "up until your chin is below the bar.",
                 "Slowly return to starting position."
             ],
-            videoPath: "./Exercise/Forearm/Tab 1/Video 1/male-chin-ups-front.mp4"
+            videoPath: "./Exercise/Forearm/Tab 1/Video 1/male-bodyweight-chinup-front.mp4"
         },
         {
             title: "Dumbbell Row Unilateral",
@@ -1296,7 +1296,7 @@ const content = {
                 "Try to get your torso to parallel with the ground. That will extend your range of motion.",
                 "Let your arm hang freely and then pull your elbow back. Imagine you've got a tennis ball in your armpit and squeeze it each rep."
             ],
-            videoPath: "./Exercise/Forearm/Tab 1/Video 2/male-dumbbell-row-unilateral-front.mp4"
+            videoPath: "./Exercise/Forearm/Tab 1/Video 2/male-Dumbbells-dumbbell-row-unilateral-front.mp4"
         },
         {
             title: "Dumbbell Reverse Curl",
@@ -1305,7 +1305,7 @@ const content = {
                 "Grab the dumbbells with a pronated (overhand) grip. You can do this exercise thumbless if it's more comfortable on your wrists.",
                 "Flex at the elbows until your biceps touch your forearms. Try not to let your elbows flair outward."
             ],
-            videoPath: "./Exercise/Forearm/Tab 1/Video 3/male-dumbbell-reverse-curl-front.mp4"
+            videoPath: "./Exercise/Forearm/Tab 1/Video 3/male-Dumbbells-dumbbell-reverse-curl-front.mp4"
         },
         {
             title: "Barbell Reverse Curl",
@@ -1314,7 +1314,7 @@ const content = {
                 "Take a double overhand grip that's about shoulder width. Flex your elbows while keeping your elbows tucked in. Try not to let them flare out.",
                 "Curl until your forearm presses into your bicep. Then fully extend your elbows at the bottom of each rep."
             ],
-            videoPath: "./Exercise/Forearm/Tab 1/Video 4/male-barbell-reverse-curl-front.mp4"
+            videoPath: "./Exercise/Forearm/Tab 1/Video 4/male-Barbell-barbell-reverse-curl-front.mp4"
         }
     ],
     tab2: [
@@ -1337,7 +1337,7 @@ const content = {
                 "Pull your body straight up to the bar.",
                 "Return to the starting position, your arms fully extended. Repeat."
             ],
-            videoPath: "./Exercise/Forearm/Tab 2/Video 2/male-inverted-row-front.mp4"
+            videoPath: "./Exercise/Forearm/Tab 2/Video 2/male-bodyweight-reverse-row-front.mp4"
         },
         {
             title: "Kettlebell Farmers Carry",
@@ -1346,7 +1346,7 @@ const content = {
                 "Hold two kettlebells in each hand.",
                 "Keep your shoulders blades pulled back and walk for a specified duration."
             ],
-            videoPath: "./Exercise/Forearm/Tab 2/Video 3/male-kettlebell-farmers-carry-front.mp4"
+            videoPath: "./Exercise/Forearm/Tab 2/Video 3/male-Kettlebells-kettlebell-farmers-carry-front.mp4"
         },
         {
             title: "Forearms Stretch Variation One",
@@ -1357,7 +1357,7 @@ const content = {
                 "Hold at the peak of the stretch.",
                 "Return to starting position."
             ],
-            videoPath: "./Exercise/Forearm/Tab 2/Video 4/male-forearms-stretch-variation-one-front.mp4"
+            videoPath: "./Exercise/Forearm/Tab 2/Video 4/male-forearms-stretch-variation-I -front.mp4"
         }
         ]
     }
