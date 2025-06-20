@@ -417,8 +417,47 @@ const content = {
     }
         ],
         tab2: [
-            
-        ]
+        {
+        title: "Dumbbell Goblet Good Morning",
+        level: "Beginner",
+        steps: [
+            "Hold the dumbbell in a goblet position. With your elbows directly under your fists.",
+            "Push your hips back while leaving your knees MOSTLY extended. You should feel a stretch in your hamstrings.",
+            "When you feel the stretch push your hips forward until you're back in a standing position."
+        ],
+        videoPath: "./Exercise/Hamstrings/Tab 2/Video 1/male-dumbbell-goblet-good-morning-front.mp4"
+    },
+    {
+        title: "Nordic Hamstring Curl",
+        level: "Intermediate",
+        steps: [
+            "Go to your knees and ask someone to hold your ankles.",
+            "Put your hands in front of you.",
+            "With a slight bend in your knees slowly bring your body to the ground (slower is better).",
+            "Push up and reset to the starting position."
+        ],
+        videoPath: "./Exercise/Hamstrings/Tab 2/Video 2/male-nordic-hamstring-curl-front.mp4"
+    },
+    {
+        title: "Dumbbell Romanian Deadlift",
+        level: "Beginner",
+        steps: [
+            "Stand with a shoulder width stance. Push your butt back while leaving your knees MOSTLY extended.",
+            "You should feel a stretch in your hamstrings. When you feel the stretch, push your hips forward to complete the rep.",
+            "Do not push your hips all the way forward. This will hyperextend your spine. Just go to a normal standing position."
+        ],
+        videoPath: "./Exercise/Hamstrings/Tab 2/Video 3/male-dumbbell-romanian-deadlift-front.mp4"
+    },
+    {
+        title: "Kettlebell Swing",
+        level: "Intermediate",
+        steps: [
+            "Stand with your feet slightly wider than shoulder width apart holding the kettlebell between your legs, with your knees slightly bent.",
+            "Keeping your back straight, swing the kettlebell upwards until the kettlebell is level with your chest and carefully lower.",
+            "Repeat."
+        ],
+        videoPath: "./Exercise/Hamstrings/Tab 2/Video 4/male-kettlebell-swing-front.mp4"
+    }]
     },
     glutes: {
         sec1: {
@@ -452,30 +491,94 @@ const content = {
             desc3: "Cause: Engaging the hip flexors too much instead of isolating the glutes can limit the effectiveness of the workout."
         },
         sec5: [
+   {
+        title: "Barbell Squat",
+        level: "Intermediate",
+        steps: [
+            "Stand with your feet shoulder-width apart. Maintain the natural arch in your back, squeezing your shoulder blades and raising your chest.",
+            "Grip the bar across your shoulders and support it on your upper back. Unwrack the bar by straightening your legs, and take a step back.",
+            "Bend your knees as you lower the weight without altering the form of your back until your hips are below your knees.",
+            "Raise the bar back to starting position, lift with your legs and exhale at the top."
+        ],
+        videoPath: "./Exercise/Glutes/Tab 1/Video 1/male-barbell-squat-front.mp4"
+    },
+    {
+        title: "Barbell Stiff Leg Deadlifts",
+        level: "Intermediate",
+        steps: [
+            "Stand with a barbell at your shins with your feet shoulder width apart.",
+            "Bend forward at your hips and keep your knees as fully extended as possible.",
+            "Grab the barbell and then extend your hips while maintaining a straight back.",
+            "From the standing position, lower the weight in a controlled manner.",
+            "You can either lower the weight to the floor or before you touch the floor, depending on your mobility."
+        ],
+        videoPath: "./Exercise/Glutes/Tab 1/Video 2/male-barbell-stiff-leg-deadlift-front.mp4"
+    },
+    {
+        title: "Barbell Hip Thrust",
+        level: "Beginner",
+        steps: [
+            "Sit on the ground with a bench behind you. Have the barbell over your legs just above your hips.",
+            "Lean back against the bench so that your shoulders are resting upon it, stretch your arms out to either side using the bench as support.",
+            "Raise the weight by driving through your feet and extending your hips upwards. Support the weight with your shoulders and feet.",
+            "Slowly extend as far as you can, and then slowly return to the starting position."
+        ],
+        videoPath: "./Exercise/Glutes/Tab 1/Video 3/male-barbell-hip-thrust-front.mp4"
+    },
+    {
+        title: "Dumbbell Goblet Squat",
+        level: "Novice",
+        steps: [
+            "Hold the weight tucked into your upper chest area, keeping your elbows in. Your feet should be slightly wider than shoulder width.",
+            "Sink down into the squat, keeping your elbows inside the track of your knees.",
+            "Push through your heels while keeping your chest up and return to starting position."
+        ],
+        videoPath: "./Exercise/Glutes/Tab 1/Video 4/male-dumbbell-goblet-squat-front.mp4"
+    }
+        ],
+        tab2 : [
             {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            }
+        title: "Barbell Deadlift",
+        level: "Intermediate",
+        steps: [
+            "Stand with your mid-foot under the bar and grip the bar with your hands, about a shoulder width apart.",
+            "Bend your knees, then lift the bar by straightening your back. It is important to keep your back straight.",
+            "Stand to your full height and hold.",
+            "Lower the bar to the floor by bending your knees and keeping your back straight."
+        ],
+        videoPath: "./Exercise/Glutes/Tab 2/Video 1/male-Barbell-barbell-deadlift-front.mp4"
+    },
+    {
+        title: "Barbell Low Bar Good Morning",
+        level: "Advanced",
+        steps: [
+            "Place the bar between your traps and rear delts. Pull your shoulder blades back to give the bar a shelf to sit on.",
+            "Push your hips back until you feel a stretch in your hamstrings. This means you're nearing the end of your Range of Motion with out rounding your spine.",
+            "When you feel the stretch push your hips forward until you're in a standing position."
+        ],
+        videoPath: "./Exercise/Glutes/Tab 2/vidoe 2/male-Barbell-barbell-low-bar-good-morning-front.mp4"
+    },
+    {
+        title: "Barbell Step Up",
+        level: "Beginner",
+        steps: [
+            "Begin by standing in front of a sturdy box or bench that is about knee-height, holding a barbell across your upper back and shoulders, using an overhand grip.",
+            "Place your right foot on the box and push through the heel to lift your body up and onto the box.",
+            "Step back down with your right foot."
+        ],
+        videoPath: "./Exercise/Glutes/Tab 2/Video 3/male-barbell-step-up-front.mp4"
+    },
+    {
+        title: "Machine Leg Press",
+        level: "Novice",
+        steps: [
+            "Place your legs on the platform with your feet at shoulder width.",
+            "Release the weight and extend your legs fully, without locking your knees.",
+            "Lower the weight until your legs are at a 90° angle (but DO NOT allow your butt and lower back to rise off of the pad. This will put your lower back in a rounded position, which is very dangerous.)",
+            "Raise the weight back to starting position."
+        ],
+        videoPath: "./Exercise/Glutes/Tab 2/Video 4/male-machine-leg-press-front.mp4"
+    }
         ]
     },
     pectoralisMajor: {
