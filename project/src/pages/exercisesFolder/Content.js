@@ -1051,7 +1051,7 @@ const content = {
                 "Press your hand into the ground and pick up your hip off the ground.",
                 "Open your chest and maintain this position for the allotted amount of time."
             ],
-            videoPath: "./Exercise/Latissimus/Tab 1/Video 1/male-hand-side-plank-front.mp4"
+            videoPath: "./Exercise/Latissimus Dorsi/Tab 1/Video 1/male-bodyweight-hand-side-plank-frontmp4"
         },
         {
             title: "Elbow Side Plank",
@@ -1061,7 +1061,7 @@ const content = {
                 "Pick your hips up off the ground and maintain this position for the allotted amount of time.",
                 "Make sure you don't let your chest fall forward or backward."
             ],
-            videoPath: "./Exercise/Latissimus/Tab 1/Video 2/male-elbow-side-plank-front.mp4"
+            videoPath: "./Exercise/Latissimus Dorsi/Tab 1/Video 2/male-bodyweight-elbow-side-plank-front.mp4"
         },
         {
             title: "Dumbbell Russian Twist",
@@ -1071,7 +1071,7 @@ const content = {
                 "Your feet should be hovering off the ground. (If that's too hard start with heels on the floor.)",
                 "Rotate your upper spine to engage your obliques."
             ],
-            videoPath: "./Exercise/Latissimus/Tab 1/Video 3/male-dumbbell-russian-twist-front.mp4"
+            videoPath: "./Exercise/Latissimus Dorsi/Tab 1/Video 3/male-Dumbbells-dumbbell-russian-twist-front.mp4"
         },
         {
             title: "Kettlebell Windmill",
@@ -1081,51 +1081,51 @@ const content = {
                 "Keeping your legs straight and the kettlebell above your head, lower the relaxed arm towards the ground, twisting your body towards the side of the raised arm.",
                 "Return to the starting potion, tilt your pelvis forward and repeat."
             ],
-            videoPath: "./Exercise/Latissimus/Tab 1/Video 4/male-kettlebell-windmill-front.mp4"
+            videoPath: "./Exercise/Latissimus Dorsi/Tab 1/Video 4/male-Kettlebells-kettlebell-windmill-front.mp4"
         }
     ],
-    tab2: [
-        {
-            title: "Cable Wood Chopper",
-            level: "Beginner",
-            steps: [
-                "Set the cable at about nipple level. Use a handle attachment.",
-                "Face sideways, then rotate your torso with your arms extended against the resistance.",
-                "After completing your given number of reps, face the opposite direction and repeat."
-            ],
-            videoPath: "./Exercise/Latissimus/Tab 2/Video 1/male-cable-wood-chopper-front.mp4"
-        },
-        {
-            title: "Band Pallof Press",
-            level: "Beginner",
-            steps: [
-                "Place the band at an anchor point that is shoulder height. Take a few steps away until the band is taut.",
-                "Start with your fingers interlocked around the band and your fists connected to your chest.",
-                "Extend at the elbows pressing the band away from your body until your elbows are fully extended."
-            ],
-            videoPath: "./Exercise/Latissimus/Tab 2/Video 2/male-band-pallof-press-front.mp4"
-        },
-        {
-            title: "Kettlebell Wood Chopper",
-            level: "Beginner",
-            steps: [
-                "Stand with feet slightly wider than shoulder width apart and hold the kettle bell with both hands against your hip.",
-                "Keeping your arms straight, swing the kettlebell upwards and across your body towards your shoulder, raising the kettlebell to head height rotating your hips as you do so.",
-                "Return to the starting position and repeat."
-            ],
-            videoPath: "./Exercise/Latissimus/Tab 2/Video 3/male-kettlebell-wood-chopper-front.mp4"
-        },
-        {
-            title: "Cable Pallof Press",
-            level: "Beginner",
-            steps: [
-                "Use a handle attachment, set the cable at nipple level, walk a few steps away, and face sideways.",
-                "Start with both hands on the handle and your fists against your chest.",
-                "Press the handle forward until your elbows are fully extended, then pull the handle back to your chest."
-            ],
-            videoPath: "./Exercise/Latissimus/Tab 2/Video 4/male-cable-pallof-press-front.mp4"
-        }
-        ]
+    // tab2: [
+    //     {
+    //         title: "Cable Wood Chopper",
+    //         level: "Beginner",
+    //         steps: [
+    //             "Set the cable at about nipple level. Use a handle attachment.",
+    //             "Face sideways, then rotate your torso with your arms extended against the resistance.",
+    //             "After completing your given number of reps, face the opposite direction and repeat."
+    //         ],
+    //         videoPath: "./Exercise/Latissimus/Tab 2/Video 1/male-cable-wood-chopper-front.mp4"
+    //     },
+    //     {
+    //         title: "Band Pallof Press",
+    //         level: "Beginner",
+    //         steps: [
+    //             "Place the band at an anchor point that is shoulder height. Take a few steps away until the band is taut.",
+    //             "Start with your fingers interlocked around the band and your fists connected to your chest.",
+    //             "Extend at the elbows pressing the band away from your body until your elbows are fully extended."
+    //         ],
+    //         videoPath: "./Exercise/Latissimus/Tab 2/Video 2/male-band-pallof-press-front.mp4"
+    //     },
+    //     {
+    //         title: "Kettlebell Wood Chopper",
+    //         level: "Beginner",
+    //         steps: [
+    //             "Stand with feet slightly wider than shoulder width apart and hold the kettle bell with both hands against your hip.",
+    //             "Keeping your arms straight, swing the kettlebell upwards and across your body towards your shoulder, raising the kettlebell to head height rotating your hips as you do so.",
+    //             "Return to the starting position and repeat."
+    //         ],
+    //         videoPath: "./Exercise/Latissimus/Tab 2/Video 3/male-kettlebell-wood-chopper-front.mp4"
+    //     },
+    //     {
+    //         title: "Cable Pallof Press",
+    //         level: "Beginner",
+    //         steps: [
+    //             "Use a handle attachment, set the cable at nipple level, walk a few steps away, and face sideways.",
+    //             "Start with both hands on the handle and your fists against your chest.",
+    //             "Press the handle forward until your elbows are fully extended, then pull the handle back to your chest."
+    //         ],
+    //         videoPath: "./Exercise/Latissimus/Tab 2/Video 4/male-cable-pallof-press-front.mp4"
+    //     }
+    //     ]
     },
     triceps: {
         sec1: {
