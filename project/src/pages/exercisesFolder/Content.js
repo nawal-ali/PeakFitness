@@ -258,30 +258,85 @@ const content = {
         },
         sec5: [
             {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
+                title: "Barbell Squat",
+                level: "Intermediate",
+                steps: ["Stand with your feet shoulder-width apart. Maintain the natural arch in your back, squeezing your shoulder blades and raising your chest.",
+                "Grip the bar across your shoulders and support it on your upper back. Unwrack the bar by straightening your legs, and take a step back.",
+                "Bend your knees as you lower the weight without altering the form of your back until your hips are below your knees.",
+                "Raise the bar back to starting position, lift with your legs and exhale at the top."],
+                videoPath: "./Exercise/Quadriceps/Tab 1/Video 1/male-Barbell-barbell-squat-front.mp4"
             },
             {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
+                title: "Dumbbell Goblet Squat",
+                level: "Novice",
+                steps: ["Hold the weight tucked into your upper chest area, keeping your elbows in. Your feet should be slightly wider than shoulder width."
+                    ,"Sink down into the squat, keeping your elbows inside the track of your knees.",
+                    "Push through your heels while keeping your chest up and return to starting position."
+                ],
+                videoPath: "./Exercise/Quadriceps/Tab 1/vidoe 2/male-dumbbell-goblet-squat-front.mp4"
             },
             {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
+                title: "Machine Leg Extension",
+                level: "Novice",
+                steps: ["Sit on the machine with your back against the cushion and adjust the machine you are using so that your knees are at a 90 degree angle at the starting position.",
+                        "Raise the weight by extending your knees outward, then lower your leg to the starting position. Both movements should be done in a slow, controlled motion."
+                ],
+                videoPath: "./Exercise/Quadriceps/Tab 1/Video 3/male-machine-leg-extension-front.mp4"
             },
             {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
+                title: "Barbell Step Up",
+                level: "Beginner",
+                steps: ["Begin by standing in front of a sturdy box or bench that is about knee-height, holding a barbell across your upper back and shoulders, using an overhand grip.",
+                        "Place your right foot on the box and push through the heel to lift your body up and onto the box.",
+                        "Step back down with your right foot."
+                ],
+                videoPath: "./Exercise/Quadriceps/Tab 1/Video 4/male-barbell-step-up-front.mp4"
             }
-        ]
+        ], tab2: [
+            {
+                    title: "Machine Leg Press",
+                    level: "Novice",
+                    steps: [
+                        "Place your legs on the platform with your feet at shoulder width.",
+                        "Release the weight and extend your legs fully, without locking your knees.",
+                        "Lower the weight until your legs are at a 90° angle (but DO NOT allow your butt and lower back to rise off of the pad. This will put your lower back in a rounded position, which is very dangerous.)",
+                        "Raise the weight back to starting position."
+                    ],
+                    videoPath: "./Exercise/Quadriceps/Tab 2/Video 1/male-machine-leg-press-front.mp4"
+                },
+                {
+                    title: "Forward Lunges",
+                    level: "Novice",
+                    steps: [
+                        "Step forward with one leg.",
+                        "Release the weight and extend your legs fully, without locking your knees.",
+                        "Lower the weight until your legs are at a 90° angle (but DO NOT allow your butt and lower back to rise off of the pad. This will put your lower back in a rounded position, which is very dangerous.)",
+                        "Raise the weight back to starting position."
+                    ],
+                    videoPath: "./Exercise/Quadriceps/Tab 2/vidoe 2/male-Bodyweight-forward-lunges-front.mp4"
+                },
+                {
+                    title: "Bodyweight Squat",
+                    level: "Novice",
+                    steps: [
+                        "Stand with your feet shoulder width apart.",
+                        "flex your knees and hips and sit back into the squat while lowering your body",
+                        "Continue down to full depth",
+                        "Return to starting position."
+                    ],
+                    videoPath: "./Exercise/Quadriceps/Tab 2/Video 3/male-Bodyweight-bodyweight-squat-front.mp4"
+                },
+                {
+                    title: "Barbell Curtsy Lunge",
+                    level: "Advanced",
+                    steps: [
+                        "Place the barbell on your back",
+                        "Step your foot back and around while simultaneously bringing the weight down.",
+                        "Return to start and repeat on other leg."
+                    ],
+                    videoPath: "./Exercise/Quadriceps/Tab 2/Video 4/male-Barbell-barbell-curtsy-lunge-front.mp4"
+                }]
+        
     },
     hamstrings: {
         sec1: {
@@ -316,29 +371,53 @@ const content = {
         },
         sec5: [
             {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
+                title: "Barbell Stiff Leg Deadlifts",
+                level: "intermediate",
+                steps: 
+                ["Stand with a barbell at your shins with your feet shoulder width apart.",
+                "Bend forward at your hips and keep your knees as fully extended as possible.",
+                "Grab the barbell and then extend your hips while maintaining a straight back.",
+                "From the standing position, lower the weight in a controlled manner.",
+                "You can either lower the weight to the floor or before you touch the floor, depending on your mobility."
+                    
+                ],
+                videoPath: "./Exercise/Hamstrings/Tab 1/Video 1/male-barbell-stiff-leg-deadlift-front.mp4"
             },
             {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            }
+        title: "Glute Ham Raise",
+        level: "Intermediate",
+        steps: [
+            "Position yourself on a glute ham raise machine or find a suitable substitute like a stability ball or bench.",
+            "Adjust the equipment to fit your body by setting the footplate at an appropriate height and making sure your feet are securely anchored.",
+            "Begin the movement by slowly lowering your upper body towards the ground while keeping your torso and legs aligned.",
+            "Once you reach the lowest point where your body is parallel to the ground or as far as you can comfortably go, pause briefly.",
+            "Engage your glutes and hamstrings again as you push yourself back up to the starting position, using the strength of your posterior chain muscles."
+        ],
+        videoPath: "./Exercise/Hamstrings/Tab 1/Video 2/male-glute-ham-raise-front.mp4"
+    },
+    {
+        title: "Machine Hamstring Curl",
+        level: "Novice",
+        steps: [
+            "Lay down on the machine, placing your legs beneath the padded lever. Position your legs so that the padded lever is below your calve muscles.",
+            "Support yourself by grabbing the side handles of the machine, and slowly raise the weight with your legs, toes pointed straight.",
+            "Pause at the apex of the motion, then slowly return to starting position."
+        ],
+        videoPath: "./Exercise/Hamstrings/Tab 1/Video 3/male-machine-hamstring-curl-front.mp4"
+    },
+    {
+        title: "Barbell Low Bar Good Morning",
+        level: "Advanced",
+        steps: [
+            "Place the bar between your traps and rear delts. Pull your shoulder blades back to give the bar a shelf to sit on.",
+            "Push your hips back until you feel a stretch in your hamstrings. This means you're nearing the end of your Range of Motion with out rounding your spine.",
+            "When you feel the stretch push your hips forward until you'e in a standing position."
+        ],
+        videoPath: "./Exercise/Hamstrings/Tab 1/Video 4/male-barbell-low-bar-good-morning-front.mp4"
+    }
+        ],
+        tab2: [
+            
         ]
     },
     glutes: {
