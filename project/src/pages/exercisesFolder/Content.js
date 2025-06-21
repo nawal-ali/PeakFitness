@@ -28,32 +28,90 @@ const content = {
             colored3: "Hip or Pelvic Injuries: ",
             desc3: "Cause: Exercises like mountain climbers or leg raises without controlled movement can lead to hip or pelvic strain.",
         },
-        sec5: [
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
+        sec5: {
+            tab1: [{
+                title: "Hanging Knee Raises",
+                level: "Beginner",
+                steps: [
+                    "Grab the bar and hang, your body still and your legs straight.",
+                    "Grab the bar and hang, your body still and your legs straight.Slowly draw your knees up to your chestGrab the bar and hang, your body still and your legs straight.",
+                    "Once you have raised your knees as high as possible, lower your legs and repeat. Duration of these movements should be slow so that you do not utilize momentum, enabling you to get the most out of the exercise.",
+                    "Duration of these movements should be slow so that you do not utilize momentum, enabling you to get the most out of the exercise."
+                ],
+                videoPath: "./Exercise/Lower Abs/Tab 1/Video 1/male-bodyweight-hanging-knee-raises-front.mp4"
             },
             {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
+                title: "TRX Mountain Climber",
+                level: "Beginner",
+                steps: [
+                    "Start in a plank position with the TRX straps adjusted to mid-calf length. Place your feet in the TRX stirrups.",
+                    "Keep your abs engaged, and bring one knee towards your chest while keeping the other leg extended behind you.",
+                    "Switch legs, bringing the opposite knee towards your chest while keeping your abs engaged and your back straight."
+                ],
+                videoPath: "./Exercise/Lower Abs/Tab 1/Video 3/male-trx-mountain-climber-front.mp4"
             },
             {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
+                title: "Laying Leg Raises",
+                level: "Novice",
+                steps: [
+                    "Lay on your back with your arms palms down on either side.",
+                    "Keep your legs together and as straight as possible.",
+                    "Slowly raise your legs to a 90° angle, pause at this position, or as high as you can reach your legs, and then slowly lower your legs back down.",
+                    "Duration of these movements should be slow so that you do not utilize momentum, enabling you to get the most out of the exercise."
+                ],
+                videoPath: "./Exercise/Lower Abs/Tab 1/vidoe 2/male-Bodyweight-laying-leg-raises-front.mp4"
             },
             {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            }
-        ]
+                title: "Mountain Climber",
+                level: "Novice",
+                steps: [
+                    "To perform a bodyweight mountain climber, start in a plank position with your hands placed directly under your shoulders.",
+                    "Bring your right knee towards your chest, keeping your foot close to your hand. Quickly switch legs, bringing your left knee towards your chest.",
+                    "Continue this movement, alternating legs, at a quick pace for a set amount of time or repetitions."
+                ],
+                videoPath: "./Exercise/Lower Abs/Tab 1/Video 4/male-bodyweight-mountain-climber-front.mp4"
+            }],
+            tab2: [
+                {
+                    title: "TRX Pike",
+                    level: "Intermediate",
+                    steps: [
+                        "Place your feet in the stirrups and get in to a plank position.",
+                        "Pull your hips straight up toward the ceiling.",
+                        "Lower your hips until you're back in a plank position."
+                    ],
+                    videoPath: "./Exercise/Lower Abs/Tab 2/Video 1/male-trx-pike-front.mp4"
+                },
+                {
+                    title: "TRX Knee Tuck",
+                    level: "Beginner",
+                    steps: [
+                        "Place your feet in the TRX stirrups and get in to a hand plank position.",
+                        "Pull your knees to your chest and flex your abs.",
+                    ],
+                    videoPath: "./Exercise/Lower Abs/Tab 2/vidoe 2/male-trx-knee-tuck-front.mp4"
+                },
+                {
+                    title: "Barbell Larsen Bench Press",
+                    level: "Advanced",
+                    steps: [
+                        "Start in a bench press position with your legs elevated. Try to keep your knees with a slight bend in them.",
+                        "Unrack the bar then initiate the rep.",
+                        "Bring the bar to your torso and tap your ribcage before pressing back to the ceiling."
+                    ],
+                    videoPath: "./Exercise/Lower Abs/Tab 2/Video 3/male-barbell-larsen-bench-press-front.mp4"
+                },
+                {
+                    title: "Hand Plank",
+                    level: "Novice",
+                    steps: [
+                        "Start in a kneeling position with your hands planted on the ground.",
+                        "Pick your knees up off the ground. Hold in this position with a flat back.",
+                        "Once you have raised your leration of these movements should be slow so that you do not utilize momentum, enabling you to get the most out of the exercise."
+                    ],
+                    videoPath: "./Exercise/Lower Abs/Tab 2/Video 4/male-bodyweight-hand-plank-front_ZnMlFBF.mp4"
+                }]
+        }
     },
     upperAbs: {
         sec1: {
@@ -84,32 +142,90 @@ const content = {
             colored3: "Poor Range of Motion: ",
             desc3: "Cause: Rushing through reps without fully engaging the upper abs can limit muscle activation and effectiveness.",
         },
-        sec5: [
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
+        sec5: {
+            tab1: [{
+                title: "Hanging Knee Raises",
+                level: "Beginner",
+                steps: [
+                    "Grab the bar and hang, your body still and your legs straight.",
+                    "Grab the bar and hang, your body still and your legs straight.Slowly draw your knees up to your chestGrab the bar and hang, your body still and your legs straight.",
+                    "Once you have raised your knees as high as possible, lower your legs and repeat. Duration of these movements should be slow so that you do not utilize momentum, enabling you to get the most out of the exercise.",
+                    "Duration of these movements should be slow so that you do not utilize momentum, enabling you to get the most out of the exercise."
+                ],
+                videoPath: "./Exercise/Upper Abs/Tab 1/Video 1/male-Cables-cable-kneeling-crunch-front.mp4"
             },
             {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
+                title: "TRX Mountain Climber",
+                level: "Beginner",
+                steps: [
+                    "Start in a plank position with the TRX straps adjusted to mid-calf length. Place your feet in the TRX stirrups.",
+                    "Keep your abs engaged, and bring one knee towards your chest while keeping the other leg extended behind you.",
+                    "Switch legs, bringing the opposite knee towards your chest while keeping your abs engaged and your back straight."
+                ],
+                videoPath: "./Exercise/Upper Abs/Tab 1/Video 2/male-bodyweight-crunch-front.mp4"
             },
             {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
+                title: "Laying Leg Raises",
+                level: "Novice",
+                steps: [
+                    "Lay on your back with your arms palms down on either side.",
+                    "Keep your legs together and as straight as possible.",
+                    "Slowly raise your legs to a 90° angle, pause at this position, or as high as you can reach your legs, and then slowly lower your legs back down.",
+                    "Duration of these movements should be slow so that you do not utilize momentum, enabling you to get the most out of the exercise."
+                ],
+                videoPath: "./Exercise/Upper Abs/Tab 1/Video 3/male-Barbell-barbell-situp-front.mp4"
             },
             {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            }
-        ]
+                title: "Mountain Climber",
+                level: "Novice",
+                steps: [
+                    "To perform a bodyweight mountain climber, start in a plank position with your hands placed directly under your shoulders.",
+                    "Bring your right knee towards your chest, keeping your foot close to your hand. Quickly switch legs, bringing your left knee towards your chest.",
+                    "Continue this movement, alternating legs, at a quick pace for a set amount of time or repetitions."
+                ],
+                videoPath: "./Exercise/Upper Abs/Tab 1/Video 4/male-Dumbbells-dumbbell-situp-front.mp4"
+            }],
+            tab2: [
+                {
+                    title: "TRX Pike",
+                    level: "Intermediate",
+                    steps: [
+                        "Place your feet in the stirrups and get in to a plank position.",
+                        "Pull your hips straight up toward the ceiling.",
+                        "Lower your hips until you're back in a plank position."
+                    ],
+                    videoPath: "./Exercise/Lower Abs/Tab 2/Video 1/male-trx-pike-front.mp4"
+                },
+                {
+                    title: "TRX Knee Tuck",
+                    level: "Beginner",
+                    steps: [
+                        "Place your feet in the TRX stirrups and get in to a hand plank position.",
+                        "Pull your knees to your chest and flex your abs.",
+                    ],
+                    videoPath: "./Exercise/Lower Abs/Tab 2/vidoe 2/male-trx-knee-tuck-front.mp4"
+                },
+                {
+                    title: "Barbell Larsen Bench Press",
+                    level: "Advanced",
+                    steps: [
+                        "Start in a bench press position with your legs elevated. Try to keep your knees with a slight bend in them.",
+                        "Unrack the bar then initiate the rep.",
+                        "Bring the bar to your torso and tap your ribcage before pressing back to the ceiling."
+                    ],
+                    videoPath: "./Exercise/Lower Abs/Tab 2/Video 3/male-barbell-larsen-bench-press-front.mp4"
+                },
+                {
+                    title: "Hand Plank",
+                    level: "Novice",
+                    steps: [
+                        "Start in a kneeling position with your hands planted on the ground.",
+                        "Pick your knees up off the ground. Hold in this position with a flat back.",
+                        "Once you have raised your leration of these movements should be slow so that you do not utilize momentum, enabling you to get the most out of the exercise."
+                    ],
+                    videoPath: "./Exercise/Lower Abs/Tab 2/Video 4/male-bodyweight-hand-plank-front_ZnMlFBF.mp4"
+                }]
+        }
     },
     quadriceps: {
         sec1: {
@@ -140,32 +256,89 @@ const content = {
             colored3: "Muscle Imbalances: ",
             desc3: "Cause: Focusing too much on quadriceps without balancing with hamstring exercises can cause instability.",
         },
-        sec5: [
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            }
-        ]
+        sec5: {
+            tab1: [
+                {
+                    title: "Barbell Squat",
+                    level: "Intermediate",
+                    steps: ["Stand with your feet shoulder-width apart. Maintain the natural arch in your back, squeezing your shoulder blades and raising your chest.",
+                        "Grip the bar across your shoulders and support it on your upper back. Unwrack the bar by straightening your legs, and take a step back.",
+                        "Bend your knees as you lower the weight without altering the form of your back until your hips are below your knees.",
+                        "Raise the bar back to starting position, lift with your legs and exhale at the top."],
+                    videoPath: "./Exercise/Quadriceps/Tab 1/Video 1/male-Barbell-barbell-squat-front.mp4"
+                },
+                {
+                    title: "Dumbbell Goblet Squat",
+                    level: "Novice",
+                    steps: ["Hold the weight tucked into your upper chest area, keeping your elbows in. Your feet should be slightly wider than shoulder width."
+                        , "Sink down into the squat, keeping your elbows inside the track of your knees.",
+                        "Push through your heels while keeping your chest up and return to starting position."
+                    ],
+                    videoPath: "./Exercise/Quadriceps/Tab 1/vidoe 2/male-dumbbell-goblet-squat-front.mp4"
+                },
+                {
+                    title: "Machine Leg Extension",
+                    level: "Novice",
+                    steps: ["Sit on the machine with your back against the cushion and adjust the machine you are using so that your knees are at a 90 degree angle at the starting position.",
+                        "Raise the weight by extending your knees outward, then lower your leg to the starting position. Both movements should be done in a slow, controlled motion."
+                    ],
+                    videoPath: "./Exercise/Quadriceps/Tab 1/Video 3/male-machine-leg-extension-front.mp4"
+                },
+                {
+                    title: "Barbell Step Up",
+                    level: "Beginner",
+                    steps: ["Begin by standing in front of a sturdy box or bench that is about knee-height, holding a barbell across your upper back and shoulders, using an overhand grip.",
+                        "Place your right foot on the box and push through the heel to lift your body up and onto the box.",
+                        "Step back down with your right foot."
+                    ],
+                    videoPath: "./Exercise/Quadriceps/Tab 1/Video 4/male-barbell-step-up-front.mp4"
+                }
+            ],
+            tab2: [
+                {
+                    title: "Machine Leg Press",
+                    level: "Novice",
+                    steps: [
+                        "Place your legs on the platform with your feet at shoulder width.",
+                        "Release the weight and extend your legs fully, without locking your knees.",
+                        "Lower the weight until your legs are at a 90° angle (but DO NOT allow your butt and lower back to rise off of the pad. This will put your lower back in a rounded position, which is very dangerous.)",
+                        "Raise the weight back to starting position."
+                    ],
+                    videoPath: "./Exercise/Quadriceps/Tab 2/Video 1/male-machine-leg-press-front.mp4"
+                },
+                {
+                    title: "Forward Lunges",
+                    level: "Novice",
+                    steps: [
+                        "Step forward with one leg.",
+                        "Release the weight and extend your legs fully, without locking your knees.",
+                        "Lower the weight until your legs are at a 90° angle (but DO NOT allow your butt and lower back to rise off of the pad. This will put your lower back in a rounded position, which is very dangerous.)",
+                        "Raise the weight back to starting position."
+                    ],
+                    videoPath: "./Exercise/Quadriceps/Tab 2/vidoe 2/male-Bodyweight-forward-lunges-front.mp4"
+                },
+                {
+                    title: "Bodyweight Squat",
+                    level: "Novice",
+                    steps: [
+                        "Stand with your feet shoulder width apart.",
+                        "flex your knees and hips and sit back into the squat while lowering your body",
+                        "Continue down to full depth",
+                        "Return to starting position."
+                    ],
+                    videoPath: "./Exercise/Quadriceps/Tab 2/Video 3/male-Bodyweight-bodyweight-squat-front.mp4"
+                },
+                {
+                    title: "Barbell Curtsy Lunge",
+                    level: "Advanced",
+                    steps: [
+                        "Place the barbell on your back",
+                        "Step your foot back and around while simultaneously bringing the weight down.",
+                        "Return to start and repeat on other leg."
+                    ],
+                    videoPath: "./Exercise/Quadriceps/Tab 2/Video 4/male-Barbell-barbell-curtsy-lunge-front.mp4"
+                }]
+        }
     },
     hamstrings: {
         sec1: {
@@ -198,32 +371,97 @@ const content = {
             colored3: "Imbalanced Training:",
             desc3: "Cause: Neglecting hamstring exercises can lead to muscle imbalances, increasing the risk of knee injuries."
         },
-        sec5: [
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            }
-        ]
+        sec5: {
+            tab1: [
+                {
+                    title: "Barbell Stiff Leg Deadlifts",
+                    level: "intermediate",
+                    steps:
+                        ["Stand with a barbell at your shins with your feet shoulder width apart.",
+                            "Bend forward at your hips and keep your knees as fully extended as possible.",
+                            "Grab the barbell and then extend your hips while maintaining a straight back.",
+                            "From the standing position, lower the weight in a controlled manner.",
+                            "You can either lower the weight to the floor or before you touch the floor, depending on your mobility."
+
+                        ],
+                    videoPath: "./Exercise/Hamstrings/Tab 1/Video 1/male-barbell-stiff-leg-deadlift-front.mp4"
+                },
+                {
+                    title: "Glute Ham Raise",
+                    level: "Intermediate",
+                    steps: [
+                        "Position yourself on a glute ham raise machine or find a suitable substitute like a stability ball or bench.",
+                        "Adjust the equipment to fit your body by setting the footplate at an appropriate height and making sure your feet are securely anchored.",
+                        "Begin the movement by slowly lowering your upper body towards the ground while keeping your torso and legs aligned.",
+                        "Once you reach the lowest point where your body is parallel to the ground or as far as you can comfortably go, pause briefly.",
+                        "Engage your glutes and hamstrings again as you push yourself back up to the starting position, using the strength of your posterior chain muscles."
+                    ],
+                    videoPath: "./Exercise/Hamstrings/Tab 1/Video 2/male-glute-ham-raise-front.mp4"
+                },
+                {
+                    title: "Machine Hamstring Curl",
+                    level: "Novice",
+                    steps: [
+                        "Lay down on the machine, placing your legs beneath the padded lever. Position your legs so that the padded lever is below your calve muscles.",
+                        "Support yourself by grabbing the side handles of the machine, and slowly raise the weight with your legs, toes pointed straight.",
+                        "Pause at the apex of the motion, then slowly return to starting position."
+                    ],
+                    videoPath: "./Exercise/Hamstrings/Tab 1/Video 3/male-machine-hamstring-curl-front.mp4"
+                },
+                {
+                    title: "Barbell Low Bar Good Morning",
+                    level: "Advanced",
+                    steps: [
+                        "Place the bar between your traps and rear delts. Pull your shoulder blades back to give the bar a shelf to sit on.",
+                        "Push your hips back until you feel a stretch in your hamstrings. This means you're nearing the end of your Range of Motion with out rounding your spine.",
+                        "When you feel the stretch push your hips forward until you'e in a standing position."
+                    ],
+                    videoPath: "./Exercise/Hamstrings/Tab 1/Video 4/male-barbell-low-bar-good-morning-front.mp4"
+                }
+            ],
+            tab2: [
+                {
+                    title: "Dumbbell Goblet Good Morning",
+                    level: "Beginner",
+                    steps: [
+                        "Hold the dumbbell in a goblet position. With your elbows directly under your fists.",
+                        "Push your hips back while leaving your knees MOSTLY extended. You should feel a stretch in your hamstrings.",
+                        "When you feel the stretch push your hips forward until you're back in a standing position."
+                    ],
+                    videoPath: "./Exercise/Hamstrings/Tab 2/Video 1/male-dumbbell-goblet-good-morning-front.mp4"
+                },
+                {
+                    title: "Nordic Hamstring Curl",
+                    level: "Intermediate",
+                    steps: [
+                        "Go to your knees and ask someone to hold your ankles.",
+                        "Put your hands in front of you.",
+                        "With a slight bend in your knees slowly bring your body to the ground (slower is better).",
+                        "Push up and reset to the starting position."
+                    ],
+                    videoPath: "./Exercise/Hamstrings/Tab 2/Video 2/male-nordic-hamstring-curl-front.mp4"
+                },
+                {
+                    title: "Dumbbell Romanian Deadlift",
+                    level: "Beginner",
+                    steps: [
+                        "Stand with a shoulder width stance. Push your butt back while leaving your knees MOSTLY extended.",
+                        "You should feel a stretch in your hamstrings. When you feel the stretch, push your hips forward to complete the rep.",
+                        "Do not push your hips all the way forward. This will hyperextend your spine. Just go to a normal standing position."
+                    ],
+                    videoPath: "./Exercise/Hamstrings/Tab 2/Video 3/male-dumbbell-romanian-deadlift-front.mp4"
+                },
+                {
+                    title: "Kettlebell Swing",
+                    level: "Intermediate",
+                    steps: [
+                        "Stand with your feet slightly wider than shoulder width apart holding the kettlebell between your legs, with your knees slightly bent.",
+                        "Keeping your back straight, swing the kettlebell upwards until the kettlebell is level with your chest and carefully lower.",
+                        "Repeat."
+                    ],
+                    videoPath: "./Exercise/Hamstrings/Tab 2/Video 4/male-kettlebell-swing-front.mp4"
+                }]
+        }
     },
     glutes: {
         sec1: {
@@ -256,32 +494,98 @@ const content = {
             colored3: "Overusing Hip Flexors:",
             desc3: "Cause: Engaging the hip flexors too much instead of isolating the glutes can limit the effectiveness of the workout."
         },
-        sec5: [
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            }
-        ]
+        sec5: {
+            tab1: [
+                {
+                    title: "Barbell Squat",
+                    level: "Intermediate",
+                    steps: [
+                        "Stand with your feet shoulder-width apart. Maintain the natural arch in your back, squeezing your shoulder blades and raising your chest.",
+                        "Grip the bar across your shoulders and support it on your upper back. Unwrack the bar by straightening your legs, and take a step back.",
+                        "Bend your knees as you lower the weight without altering the form of your back until your hips are below your knees.",
+                        "Raise the bar back to starting position, lift with your legs and exhale at the top."
+                    ],
+                    videoPath: "./Exercise/Glutes/Tab 1/Video 1/male-barbell-squat-front.mp4"
+                },
+                {
+                    title: "Barbell Stiff Leg Deadlifts",
+                    level: "Intermediate",
+                    steps: [
+                        "Stand with a barbell at your shins with your feet shoulder width apart.",
+                        "Bend forward at your hips and keep your knees as fully extended as possible.",
+                        "Grab the barbell and then extend your hips while maintaining a straight back.",
+                        "From the standing position, lower the weight in a controlled manner.",
+                        "You can either lower the weight to the floor or before you touch the floor, depending on your mobility."
+                    ],
+                    videoPath: "./Exercise/Glutes/Tab 1/Video 2/male-barbell-stiff-leg-deadlift-front.mp4"
+                },
+                {
+                    title: "Barbell Hip Thrust",
+                    level: "Beginner",
+                    steps: [
+                        "Sit on the ground with a bench behind you. Have the barbell over your legs just above your hips.",
+                        "Lean back against the bench so that your shoulders are resting upon it, stretch your arms out to either side using the bench as support.",
+                        "Raise the weight by driving through your feet and extending your hips upwards. Support the weight with your shoulders and feet.",
+                        "Slowly extend as far as you can, and then slowly return to the starting position."
+                    ],
+                    videoPath: "./Exercise/Glutes/Tab 1/Video 3/male-barbell-hip-thrust-front.mp4"
+                },
+                {
+                    title: "Dumbbell Goblet Squat",
+                    level: "Novice",
+                    steps: [
+                        "Hold the weight tucked into your upper chest area, keeping your elbows in. Your feet should be slightly wider than shoulder width.",
+                        "Sink down into the squat, keeping your elbows inside the track of your knees.",
+                        "Push through your heels while keeping your chest up and return to starting position."
+                    ],
+                    videoPath: "./Exercise/Glutes/Tab 1/Video 4/male-dumbbell-goblet-squat-front.mp4"
+                }
+            ],
+            tab2: [
+                {
+                    title: "Barbell Deadlift",
+                    level: "Intermediate",
+                    steps: [
+                        "Stand with your mid-foot under the bar and grip the bar with your hands, about a shoulder width apart.",
+                        "Bend your knees, then lift the bar by straightening your back. It is important to keep your back straight.",
+                        "Stand to your full height and hold.",
+                        "Lower the bar to the floor by bending your knees and keeping your back straight."
+                    ],
+                    videoPath: "./Exercise/Glutes/Tab 2/Video 1/male-Barbell-barbell-deadlift-front.mp4"
+                },
+                {
+                    title: "Barbell Low Bar Good Morning",
+                    level: "Advanced",
+                    steps: [
+                        "Place the bar between your traps and rear delts. Pull your shoulder blades back to give the bar a shelf to sit on.",
+                        "Push your hips back until you feel a stretch in your hamstrings. This means you're nearing the end of your Range of Motion with out rounding your spine.",
+                        "When you feel the stretch push your hips forward until you're in a standing position."
+                    ],
+                    videoPath: "./Exercise/Glutes/Tab 2/vidoe 2/male-Barbell-barbell-low-bar-good-morning-front.mp4"
+                },
+                {
+                    title: "Barbell Step Up",
+                    level: "Beginner",
+                    steps: [
+                        "Begin by standing in front of a sturdy box or bench that is about knee-height, holding a barbell across your upper back and shoulders, using an overhand grip.",
+                        "Place your right foot on the box and push through the heel to lift your body up and onto the box.",
+                        "Step back down with your right foot."
+                    ],
+                    videoPath: "./Exercise/Glutes/Tab 2/Video 3/male-barbell-step-up-front.mp4"
+                },
+                {
+                    title: "Machine Leg Press",
+                    level: "Novice",
+                    steps: [
+                        "Place your legs on the platform with your feet at shoulder width.",
+                        "Release the weight and extend your legs fully, without locking your knees.",
+                        "Lower the weight until your legs are at a 90° angle (but DO NOT allow your butt and lower back to rise off of the pad. This will put your lower back in a rounded position, which is very dangerous.)",
+                        "Raise the weight back to starting position."
+                    ],
+                    videoPath: "./Exercise/Glutes/Tab 2/Video 4/male-machine-leg-press-front.mp4"
+                }
+            ]
+        }
     },
     pectoralisMajor: {
         sec1: {
@@ -314,32 +618,60 @@ const content = {
             colored3: "Flared Elbows:",
             desc3: "Cause: Keeping elbows too wide during push-ups or bench presses can stress the shoulder joints."
         },
-        sec5: [
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            }
-        ]
+        sec5: {
+            tab1: [
+                {
+                    title: "",
+                    level: "",
+                    steps: "",
+                    videoPath: ""
+                },
+                {
+                    title: "",
+                    level: "",
+                    steps: "",
+                    videoPath: ""
+                },
+                {
+                    title: "",
+                    level: "",
+                    steps: "",
+                    videoPath: ""
+                },
+                {
+                    title: "",
+                    level: "",
+                    steps: "",
+                    videoPath: ""
+                }
+            ],
+            tab2: [
+                {
+                    title: "",
+                    level: "",
+                    steps: "",
+                    videoPath: ""
+                },
+                {
+                    title: "",
+                    level: "",
+                    steps: "",
+                    videoPath: ""
+                },
+                {
+                    title: "",
+                    level: "",
+                    steps: "",
+                    videoPath: ""
+                },
+                {
+                    title: "",
+                    level: "",
+                    steps: "",
+                    videoPath: ""
+                }
+            ]
+        }
     },
     trapezius: {
         sec1: {
@@ -372,32 +704,91 @@ const content = {
             colored3: "Poor Posture During Exercises:",
             desc3: "Cause: Rounded shoulders or forward head posture limit trap activation and can cause discomfort."
         },
-        sec5: [
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            }
-        ]
+        sec5:
+        {
+            tab1: [
+                {
+                    title: "Barbell Silverback Shrug",
+                    level: "Intermediate",
+                    steps: [
+                        "Stand with your feet shoulder width apart holding the Barbell with both hands in front just past shoulder width.",
+                        "Bend forward at the hips with a slight bend in your knees, keeping your back straight.",
+                        "Engage your shoulder blades, as if you are trying to touch them together.",
+                        "Release the shrug."
+                    ],
+                    videoPath: "./Exercise/Trapezius/Tab 1/Video 1/male-barbell-silverback-shrug-front.mp4"
+                },
+                {
+                    title: "Cable 30 Degree Shrug",
+                    level: "Beginner",
+                    steps: [
+                        "Use a handle attachment on both sides of crossover. With cable attachment set all the way to the bottom.",
+                        "Grab both handles and make sure you are centered in the machine. Let your arms hang freely.",
+                        "Pull your shoulder blades up and in towards your ears. Let your shoulder blades depress back to the starting position."
+                    ],
+                    videoPath: "./Exercise/Trapezius/Tab 1/Video 2/male-cable-30-degree-shrug-front.mp4"
+                },
+                {
+                    title: "Dumbbell Shrug",
+                    level: "Novice",
+                    steps: [
+                        "Stand tall with two dumbbells. Pull your shoulder blades up. Give a one second squeeze at the top."
+                    ],
+                    videoPath: "./Exercise/Trapezius/Tab 1/Video 3/male-dumbbell-shrug-front.mp4"
+                },
+                {
+                    title: "Barbell Upright Row",
+                    level: "Advanced",
+                    steps: [
+                        "Take a double overhand roughly shoulder width grip.",
+                        "Pull your elbows straight up the ceiling. Aim to get the bar to chin level or slightly higher."
+                    ],
+                    videoPath: "./Exercise/Trapezius/Tab 1/Video 4/male-barbell-upright-row-front.mp4"
+                }
+            ],
+            tab2: [
+                {
+                    title: "Smith Machine Standing Shrugs",
+                    level: "Beginner",
+                    steps: [
+                        "Place the bar on a lower rung so that when gripped your arms are fully extended and your back is straight.",
+                        "Grip at shoulder width, raise the bar with your shoulders and pause at the contracted position.",
+                        "Slowly lower the bar back to starting position."
+                    ],
+                    videoPath: "./Exercise/Trapezius/Tab 2/Video 1/male-smith-machine-standing-shrugs-front.mp4"
+                },
+                {
+                    title: "Kettlebell Incline Shrug",
+                    level: "Beginner",
+                    steps: [
+                        "Leaning across the back section of the bench, with feet firmly on the floor and with arms hanging to the sides.",
+                        "Holding the kettlebell in both hands engage your shoulder blades, as if you are trying to touch them together. Release the shrug."
+                    ],
+                    videoPath: "./Exercise/Trapezius/Tab 2/Video 2/male-kettlebell-incline-shrug-front.mp4"
+                },
+                {
+                    title: "Elevated Pike Press",
+                    level: "Intermediate",
+                    steps: [
+                        "Use a bench or an object to elevate your feet.",
+                        "Lower your head towards the floor by bending your elbows.",
+                        "Push through your hands and return to the starting pike position.",
+                        "Repeat."
+                    ],
+                    videoPath: "./Exercise/Trapezius/Tab 2/Video 3/male-elevated-pike-press-front.mp4"
+                },
+                {
+                    title: "Traps Stretch Variation One",
+                    level: "Novice",
+                    steps: [
+                        "Stand upright with your feet shoulder width apart.",
+                        "Place your left hand on your head and gently pull your head down towards your left shoulder. Then return to centre point.",
+                        "Repeat, using your right hand pulling towards your right shoulder."
+                    ],
+                    videoPath: "./Exercise/Trapezius/Tab 2/Video 4/male-traps-stretch-variation-one-front.mp4"
+                }
+            ]
+        }
     },
     biceps: {
         sec1: {
@@ -430,32 +821,92 @@ const content = {
             colored3: "Elbow Movement:",
             desc3: "Cause: Letting the elbows move reduces isolation of the biceps."
         },
-        sec5: [
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            }
-        ]
+        sec5:
+        {
+            tab1: [
+                {
+                    title: "Chin Ups",
+                    level: "Intermediate",
+                    steps: [
+                        "Grab the bar shoulder width apart with a supinated grip (palms facing you).",
+                        "With your body hanging and arms fully extended, pull yourself up until your chin is past the bar.",
+                        "Slowly return to starting position. Repeat."
+                    ],
+                    videoPath: "./Exercise/Biceps/Tab 1/Video 1/male-chin-ups-front.mp4"
+                },
+                {
+                    title: "Cable Bayesian Curl",
+                    level: "Beginner",
+                    steps: [
+                        "Use a handle attachment. The cable should be set all the way to the bottom of the machine.",
+                        "Face away from the cable machine.",
+                        "Stagger your stance so you have a better base of support. Face your palm forward. Flex at the elbow and extend."
+                    ],
+                    videoPath: "./Exercise/Biceps/Tab 1/Video 2/male-cable-bayesian-curl-front.mp4"
+                },
+                {
+                    title: "Dumbbell Curl",
+                    level: "Novice",
+                    steps: [
+                        "Stand up straight with a dumbbell in each hand at arm's length.",
+                        "Raise one dumbbell and twist your forearm until it is vertical and your palm faces the shoulder.",
+                        "Lower to original position and repeat with opposite arm."
+                    ],
+                    videoPath: "./Exercise/Biceps/Tab 1/Video 3/male-dumbbell-curl-front.mp4"
+                },
+                {
+                    title: "Dumbbell Hammer Curl",
+                    level: "Novice",
+                    steps: [
+                        "Hold the dumbbells with a neutral grip (thumbs facing the ceiling).",
+                        "Slowly lift the dumbbell up to chest height.",
+                        "Return to starting position and repeat."
+                    ],
+                    videoPath: "./Exercise/Biceps/Tab 1/Video 4/male-dumbbell-hammer-curl-front.mp4"
+                }
+            ],
+            tab2: [
+                {
+                    title: "Dumbbell Reverse Curl",
+                    level: "Novice",
+                    steps: [
+                        "Grab the dumbbells with a pronated (overhand) grip. You can do this exercise thumbless if it's more comfortable on your wrists.",
+                        "Flex at the elbows until your biceps touch your forearms. Try not to let your elbows flair outward."
+                    ],
+                    videoPath: "./Exercise/Biceps/Tab 2/Video 1/male-dumbbell-reverse-curl-front.mp4"
+                },
+                {
+                    title: "Cable Twisting Curl",
+                    level: "Advanced",
+                    steps: [
+                        "Use a handle attachment. The cable should be set all the way to the bottom of the machine.",
+                        "Face away from the cable machine. Stagger your stance so you have a better base of support.",
+                        "Start with a neutral grip. Flex at the elbow. While flexing twist your palm. When you hit the top of the movement your palm should be facing upward."
+                    ],
+                    videoPath: "./Exercise/Biceps/Tab 2/Video 2/male-cable-twisting-curl-front.mp4"
+                },
+                {
+                    title: "Barbell Reverse Curl",
+                    level: "Advanced",
+                    steps: [
+                        "Take a double overhand grip that's about shoulder width. Flex your elbows while keeping your elbows tucked in. Try not to let them flare out.",
+                        "Curl until your forearm presses into your bicep. Then fully extend your elbows at the bottom of each rep."
+                    ],
+                    videoPath: "./Exercise/Biceps/Tab 2/Video 3/male-barbell-reverse-curl-front.mp4"
+                },
+                {
+                    title: "Barbell Bent Over Row",
+                    level: "Intermediate",
+                    steps: [
+                        "Grab a barbell with a shoulder width pronated or supinated grip.",
+                        "Bend forward at your hips while maintaining a flat back.",
+                        "Pull the weight toward your upper abdomen.",
+                        "Lower the weight in a controlled manner and repeat."
+                    ],
+                    videoPath: "./Exercise/Biceps/Tab 2/Video 4/male-barbell-bent-over-row-front.mp4"
+                }
+            ]
+        }
     },
     calves: {
         sec1: {
@@ -488,32 +939,95 @@ const content = {
             colored3: "Overloading Weight:",
             desc3: "Cause: Adding too much weight during calf exercises can shift the focus to other muscles, reducing calf activation."
         },
-        sec5: [
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            }
-        ]
+        sec5:
+        {
+            tab1: [
+                {
+                    title: "Machine Standing Calf Raises",
+                    level: "Novice",
+                    steps: [
+                        "Adjust the machine in accordance with your height and place your shoulders underneath the padded lever.",
+                        "The balls of your feet should be supporting your weight on the calve block, your heels extending off of it.",
+                        "Extend your heels upwards while keeping your knees stationary, and pause at the contracted position.",
+                        "Slowly return to the starting position. Repeat."
+                    ],
+                    videoPath: "./Exercise/Calves/Tab 1/Video 1/male-machine-standing-calf-raises-front.mp4"
+                },
+                {
+                    title: "Machine Seated Calf Raises",
+                    level: "Novice",
+                    steps: [
+                        "Get comfortable on the machine, then place your lower thighs beneath the padded lever. Place your toes and the balls of your feet onto the foot supports.",
+                        "Prevent the weight from slipping forward by gripping the handles, and release the safety bar. Lower the weight until your calves are extended.",
+                        "Push your heels up to lift the padded lever and hold the contracted position, then slowly lower back down to the starting position. Repeat."
+                    ],
+                    videoPath: "./Exercise/Calves/Tab 1/Video 2/male-machine-seated-calf-raises-front.mp4"
+                },
+                {
+                    title: "Barbell Calf Raises",
+                    level: "Intermediate",
+                    steps: [
+                        "Place the bar on your back.",
+                        "Start with feet flat on the ground.",
+                        "Extend your heels upwards while keeping your knees stationary, and pause at the contracted position.",
+                        "Slowly return to the starting position. Repeat."
+                    ],
+                    videoPath: "./Exercise/Calves/Tab 1/Video 3/male-barbell-calf-raises-front.mp4"
+                },
+                {
+                    title: "Calves Stretch Variation One",
+                    level: "Beginner",
+                    steps: [
+                        "Place the ball of your foot against the wall with your heel on the ground. Place your hands on the wall in front of your shoulders.",
+                        "Keeping your knee straight, slowly lean towards the wall, pause for a few seconds when you feel the stretch extending through your calf muscle.",
+                        "Return to the starting position, and repeat the stretch with your other leg."
+                    ],
+                    videoPath: "./Exercise/Calves/Tab 1/Video 4/male-calves-stretch-variation-one-front.mp4"
+                }
+            ],
+            tab2: [
+                {
+                    title: "Calves Stretch Variation Two",
+                    level: "Beginner",
+                    steps: [
+                        "With both feet flat on the ground, place one leg in front of your shoulder, your other leg should mirror this position behind your other shoulder. In the starting position both of your knees should be straight.",
+                        "Place the palms of your hands against the wall at shoulder height in front of you, lean towards the wall and bend your front leg at the knee while keeping your back leg straight.",
+                        "Pause at the apex of the stretch and return to the starting position. Switch the position of your legs and repeat."
+                    ],
+                    videoPath: "./Exercise/Calves/Tab 2/Video 1/male-calves-stretch-variation-two-front.mp4"
+                },
+                {
+                    title: "Calves Stretch Variation Three",
+                    level: "Beginner",
+                    steps: [
+                        "Balance the balls of your feet on the platform, leaning forward to use the wall to assist with balance. Engage your calves so that your feet are flat before beginning the stretch.",
+                        "Lower the heels of your feet towards the ground and pause, then push through the balls of your feet like you are standing tip toe, pausing at the apex of the stretch.",
+                        "Repeat as necessary."
+                    ],
+                    videoPath: "./Exercise/Calves/Tab 2/Video 2/male-calves-stretch-variation-three-front.mp4"
+                },
+                {
+                    title: "Kettlebell Seated Calf Raise",
+                    level: "Novice",
+                    steps: [
+                        "Sitting comfortably on a chair with your core stomach muscles engaged, place your feet on the floor.",
+                        "Place the kettlebell on your legs, just above the knees and raise your heels upwards off the floor.",
+                        "Pause when your heels are fully extended and then slowly return to the starting position and repeat."
+                    ],
+                    videoPath: "./Exercise/Calves/Tab 2/Video 3/male-kettlebell-seated-calf-raise-front.mp4"
+                },
+                {
+                    title: "Calf Raises",
+                    level: "Novice",
+                    steps: [
+                        "Balance on the balls of your feet on the platform or plates, leaning forward to use the wall to assist with balance.",
+                        "Lower the heels of your feet towards the ground and pause, then push through the balls of your feet like you are standing tip toe, pausing at the apex of the motion.",
+                        "Repeat as necessary."
+                    ],
+                    videoPath: "./Exercise/Calves/Tab 2/Video 4/male-calf-raises-front.mp4"
+                }
+            ]
+        }
     },
     latissimus: {
         sec1: {
@@ -546,32 +1060,92 @@ const content = {
             colored3: "Incomplete Range Of Motion:",
             desc3: "Cause: Not fully pulling or releasing limits muscle activation."
         },
-        sec5: [
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            }
-        ]
+        sec5:
+        {
+            tab1: [
+                {
+                    title: "Hand Side Plank",
+                    level: "Beginner",
+                    steps: [
+                        "Press your hand into the ground and pick up your hip off the ground.",
+                        "Open your chest and maintain this position for the allotted amount of time."
+                    ],
+                    videoPath: "./Exercise/Latissimus Dorsi/Tab 1/Video 1/male-bodyweight-hand-side-plank-frontmp4"
+                },
+                {
+                    title: "Elbow Side Plank",
+                    level: "Novice",
+                    steps: [
+                        "Press your elbow into the floor.",
+                        "Pick your hips up off the ground and maintain this position for the allotted amount of time.",
+                        "Make sure you don't let your chest fall forward or backward."
+                    ],
+                    videoPath: "./Exercise/Latissimus Dorsi/Tab 1/Video 2/male-bodyweight-elbow-side-plank-front.mp4"
+                },
+                {
+                    title: "Dumbbell Russian Twist",
+                    level: "Intermediate",
+                    steps: [
+                        "Sit on the floor and flex your knees and hips to a 90 degree angle.",
+                        "Your feet should be hovering off the ground. (If that's too hard start with heels on the floor.)",
+                        "Rotate your upper spine to engage your obliques."
+                    ],
+                    videoPath: "./Exercise/Latissimus Dorsi/Tab 1/Video 3/male-Dumbbells-dumbbell-russian-twist-front.mp4"
+                },
+                {
+                    title: "Kettlebell Windmill",
+                    level: "Advanced",
+                    steps: [
+                        "Stand with feet slightly wider than shoulder width apart. Hold the kettlebell in one hand and extend your arm above your head.",
+                        "Keeping your legs straight and the kettlebell above your head, lower the relaxed arm towards the ground, twisting your body towards the side of the raised arm.",
+                        "Return to the starting potion, tilt your pelvis forward and repeat."
+                    ],
+                    videoPath: "./Exercise/Latissimus Dorsi/Tab 1/Video 4/male-Kettlebells-kettlebell-windmill-front.mp4"
+                }
+            ],
+            // tab2: [
+            //     {
+            //         title: "Cable Wood Chopper",
+            //         level: "Beginner",
+            //         steps: [
+            //             "Set the cable at about nipple level. Use a handle attachment.",
+            //             "Face sideways, then rotate your torso with your arms extended against the resistance.",
+            //             "After completing your given number of reps, face the opposite direction and repeat."
+            //         ],
+            //         videoPath: "./Exercise/Latissimus/Tab 2/Video 1/male-cable-wood-chopper-front.mp4"
+            //     },
+            //     {
+            //         title: "Band Pallof Press",
+            //         level: "Beginner",
+            //         steps: [
+            //             "Place the band at an anchor point that is shoulder height. Take a few steps away until the band is taut.",
+            //             "Start with your fingers interlocked around the band and your fists connected to your chest.",
+            //             "Extend at the elbows pressing the band away from your body until your elbows are fully extended."
+            //         ],
+            //         videoPath: "./Exercise/Latissimus/Tab 2/Video 2/male-band-pallof-press-front.mp4"
+            //     },
+            //     {
+            //         title: "Kettlebell Wood Chopper",
+            //         level: "Beginner",
+            //         steps: [
+            //             "Stand with feet slightly wider than shoulder width apart and hold the kettle bell with both hands against your hip.",
+            //             "Keeping your arms straight, swing the kettlebell upwards and across your body towards your shoulder, raising the kettlebell to head height rotating your hips as you do so.",
+            //             "Return to the starting position and repeat."
+            //         ],
+            //         videoPath: "./Exercise/Latissimus/Tab 2/Video 3/male-kettlebell-wood-chopper-front.mp4"
+            //     },
+            //     {
+            //         title: "Cable Pallof Press",
+            //         level: "Beginner",
+            //         steps: [
+            //             "Use a handle attachment, set the cable at nipple level, walk a few steps away, and face sideways.",
+            //             "Start with both hands on the handle and your fists against your chest.",
+            //             "Press the handle forward until your elbows are fully extended, then pull the handle back to your chest."
+            //         ],
+            //         videoPath: "./Exercise/Latissimus/Tab 2/Video 4/male-cable-pallof-press-front.mp4"
+            //     }
+            //     ]
+        }
     },
     triceps: {
         sec1: {
@@ -604,32 +1178,93 @@ const content = {
             colored3: "Overusing Shoulders:",
             desc3: "Cause: Engaging the shoulders instead of isolating the triceps can limit muscle engagement."
         },
-        sec5: [
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            }
-        ]
+        sec5: {
+            tab1: [
+                {
+                    title: "Cable Rope Pushdown",
+                    level: "Novice",
+                    steps: [
+                        "The cable should be set all the way at the top of the machine.",
+                        "Make sure to keep your upper arm glued at your side. Extend your elbows until you feel your triceps contract."
+                    ],
+                    videoPath: "./Exercise/Triceps/Tab 1/Video 1/male-Cables-cable-push-down-front.mp4"
+                },
+                {
+                    title: "Barbell Close Grip Bench Press",
+                    level: "Intermediate",
+                    steps: [
+                        "Lay flat on the bench with your feet on the ground. With a narrow grip on the bar, straighten your arms.",
+                        "Lower the bar to your lower-mid chest.",
+                        "Slowly raise the bar until you've locked your elbows."
+                    ],
+                    videoPath: "./Exercise/Triceps/Tab 1/Video 2/male-Barbell-barbell-close-grip-bench-press-front.mp4"
+                },
+                {
+                    title: "Dumbbell Skullcrusher",
+                    level: "Beginner",
+                    steps: [
+                        "Lay flat on the floor or a bench with your fists extended to the ceiling and a neutral grip.",
+                        "Break at the elbows until your fists are by your temples. Then extend your elbows and flex your triceps at the top."
+                    ],
+                    videoPath: "./Exercise/Triceps/Tab 1/Video 3/male-dumbbell-skullcrusher-front_hgKANkM.mp4"
+                },
+                {
+                    title: "Bench Dips",
+                    level: "Novice",
+                    steps: [
+                        "Grip the edge of the bench with your hands, Keep your feet together and legs straight.",
+                        "Lower your body straight down.",
+                        "Slowly press back up to the starting point.",
+                        "TIP: Make this harder by raising your feet off the floor and adding weight."
+                    ],
+                    videoPath: "./Exercise/Triceps/Tab 1/Video 4/male-Bodyweight-bench-dips-front.mp4"
+                }
+            ],
+            tab2: [
+                {
+                    title: "Cable Rope Overhead Tricep Extension",
+                    level: "Beginner",
+                    steps: [
+                        "You can use any attachment. The cable should be all the way to the bottom of the machine. Face away from the machine.",
+                        "Point your elbows straight up toward the ceiling.",
+                        "From there, extend your elbows until your fists are pointed straight toward the ceiling."
+                    ],
+                    videoPath: "./Exercise/Triceps/Tab 2/Video 1/male-Cables-cable-overhead-tricep-extension-front.mp4"
+                },
+                {
+                    title: "Diamond Push Ups",
+                    level: "Beginner",
+                    steps: [
+                        "Position your index fingers and thumbs so they are touching, forming a diamond shape.",
+                        "Use a standard push up position.",
+                        "Lower your chest towards your hands, keep your elbows close to your body.",
+                        "Stop just before your chest touches the floor, then push back up to the starting position."
+                    ],
+                    videoPath: "./Exercise/Triceps/Tab 2/Video 2/male-Bodyweight-diamond-push-ups-front.mp4"
+                },
+                {
+                    title: "Kettlebell Decline Skull Crusher",
+                    level: "Advanced",
+                    steps: [
+                        "Lie on the floor with your upper back and soles of feet on the floor, knees bent, and pelvis and lower back suspended in the air.",
+                        "Hold the kettlebell in both hands directly above your chest.",
+                        "Keeping your upper arms in place, bend your elbows to bring the kettlebell to the floor above your head.",
+                        "Return the kettlebell to the starting position and repeat."
+                    ],
+                    videoPath: "./Exercise/Triceps/Tab 2/Video 3/male-Kettlebells-kettlebell-decline-skull-crusher-front.mp4"
+                },
+                {
+                    title: "Triceps Stretch Variation One",
+                    level: "Novice",
+                    steps: [
+                        "Raise your left arm above your head, and bend at the elbow so your hand is resting at the top of your back.",
+                        "Use the opposite hand to gently apply pressure to the elbow.",
+                        "Hold the stretch for a few seconds then repeat with the other arm."
+                    ],
+                    videoPath: "./Exercise/Triceps/Tab 2/Video 4/male-triceps-stretch-variation-1-front.mp4"
+                }
+            ]
+        }
     },
     forearm: {
         sec1: {
@@ -662,32 +1297,94 @@ const content = {
             colored3: "Neglecting Extensors:",
             desc3: "Cause: Focusing solely on wrist curls without balancing with reverse curls can lead to muscle imbalances."
         },
-        sec5: [
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            },
-            {
-                title: "",
-                level: "",
-                steps: "",
-                videoPath: ""
-            }
-        ]
+        sec5:
+        {
+            tab1: [
+                {
+                    title: "Chin Ups",
+                    level: "Intermediate",
+                    steps: [
+                        "Grab the bar shoulder width apart with a",
+                        "supinated grip (palms facing you).",
+                        "With your body hanging and arms fully extended, pull yourself",
+                        "up until your chin is below the bar.",
+                        "Slowly return to starting position."
+                    ],
+                    videoPath: "./Exercise/Forearm/Tab 1/Video 1/male-bodyweight-chinup-front.mp4"
+                },
+                {
+                    title: "Dumbbell Row Unilateral",
+                    level: "Novice",
+                    steps: [
+                        "Brace your off arm against something stable (bench, box). Stagger your stance so your leg on the side of your working arm is back.",
+                        "Try to get your torso to parallel with the ground. That will extend your range of motion.",
+                        "Let your arm hang freely and then pull your elbow back. Imagine you've got a tennis ball in your armpit and squeeze it each rep."
+                    ],
+                    videoPath: "./Exercise/Forearm/Tab 1/Video 2/male-Dumbbells-dumbbell-row-unilateral-front.mp4"
+                },
+                {
+                    title: "Dumbbell Reverse Curl",
+                    level: "Novice",
+                    steps: [
+                        "Grab the dumbbells with a pronated (overhand) grip. You can do this exercise thumbless if it's more comfortable on your wrists.",
+                        "Flex at the elbows until your biceps touch your forearms. Try not to let your elbows flair outward."
+                    ],
+                    videoPath: "./Exercise/Forearm/Tab 1/Video 3/male-Dumbbells-dumbbell-reverse-curl-front.mp4"
+                },
+                {
+                    title: "Barbell Reverse Curl",
+                    level: "Advanced",
+                    steps: [
+                        "Take a double overhand grip that's about shoulder width. Flex your elbows while keeping your elbows tucked in. Try not to let them flare out.",
+                        "Curl until your forearm presses into your bicep. Then fully extend your elbows at the bottom of each rep."
+                    ],
+                    videoPath: "./Exercise/Forearm/Tab 1/Video 4/male-Barbell-barbell-reverse-curl-front.mp4"
+                }
+            ],
+            tab2: [
+                {
+                    title: "Barbell Bent Over Row",
+                    level: "Intermediate",
+                    steps: [
+                        "Grab a barbell with a shoulder width pronated or supinated grip.",
+                        "Bend forward at your hips while maintaining a flat back.",
+                        "Pull the weight toward your upper abdomen.",
+                        "Lower the weight in a controlled manner and repeat."
+                    ],
+                    videoPath: "./Exercise/Forearm/Tab 2/Video 1/male-barbell-bent-over-row-front.mp4"
+                },
+                {
+                    title: "Inverted Row",
+                    level: "Beginner",
+                    steps: [
+                        "Lay underneath a fixed horizontal bar and grab the bar with a wide overhand grip.",
+                        "Pull your body straight up to the bar.",
+                        "Return to the starting position, your arms fully extended. Repeat."
+                    ],
+                    videoPath: "./Exercise/Forearm/Tab 2/Video 2/male-bodyweight-reverse-row-front.mp4"
+                },
+                {
+                    title: "Kettlebell Farmers Carry",
+                    level: "Beginner",
+                    steps: [
+                        "Hold two kettlebells in each hand.",
+                        "Keep your shoulders blades pulled back and walk for a specified duration."
+                    ],
+                    videoPath: "./Exercise/Forearm/Tab 2/Video 3/male-Kettlebells-kettlebell-farmers-carry-front.mp4"
+                },
+                {
+                    title: "Forearms Stretch Variation One",
+                    level: "Novice",
+                    steps: [
+                        "Place your palm flush against the wall.",
+                        "Take one step forward and straighten your arm slowly to extend your bicep.",
+                        "Hold at the peak of the stretch.",
+                        "Return to starting position."
+                    ],
+                    videoPath: "./Exercise/Forearm/Tab 2/Video 4/male-forearms-stretch-variation-I -front.mp4"
+                }
+            ]
+        }
     }
 };
 
