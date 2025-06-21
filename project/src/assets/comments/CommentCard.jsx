@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
-import { Carousel } from "nuka-carousel";
+// import { Carousel } from "nuka-carousel";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "../comments/comments.css";
 
 export default function Comments({ islogged, setIsLogged }) {
@@ -42,6 +44,7 @@ const updated = await axios.get(`${BASE_URL}/comments`);
       // setComments([...comments, response.data]);
       setNewComment("");
       setShowModal(false);
+      toast.success("Comment added successfully!");
     } catch (error) {
       console.error("Error adding comment:", error);
     }
@@ -172,6 +175,7 @@ const updated = await axios.get(`${BASE_URL}/comments`);
           <div className="modal-backdrop fade show" style={{zIndex:-1}}></div>
         </div>
       )}
+    <ToastContainer position="top-right" autoClose={3000} />
     </section>
   );
 }
