@@ -31,9 +31,9 @@ export default function Sec3_tips({
           />
         </div>
         <div className="col-12 col-md-6 col-lg-3 text-center d-flex justify-content-center align-items-center">
-          <p className="p-0 ps-sm-3 p-md-3 fs-3 fs-md-1">
-            <h3 style={{ color: text_color }}>{coloredText[1]} </h3> {text[1]}
-          </p>
+          {/* <p className="p-0 ps-sm-3 p-md-3 fs-3 fs-md-1"> */}
+            <h3 className="p-0 ps-sm-3 p-md-3 fs-3 fs-md-1" style={{ color: text_color }}>{coloredText[1]} </h3> {text[1]}
+          {/* </p> */}
         </div>
         <div className="col-12 col-md-6 col-lg-3">
           <img
@@ -44,15 +44,15 @@ export default function Sec3_tips({
           />
         </div>
         <div className="col-12 col-md-6 col-lg-3 text-center d-flex justify-content-center align-items-center">
-          <p className="p-0 ps-sm-3 p-md-3 fs-3 fs-md-1">
-            <h3 style={{ color: text_color }}>{coloredText[3]} </h3> {text[3]}
-          </p>
+          {/* <p className="p-0 ps-sm-3 p-md-3 fs-3 fs-md-1"> */}
+            <h3 className="p-0 ps-sm-3 p-md-3 fs-3 fs-md-1" style={{ color: text_color }}>{coloredText[3]} </h3> {text[3]}
+          {/* </p> */}
         </div>
         <div className="col-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center">
-          <p className="p-0 ps-sm-3 p-md-3 fs-3 fs-md-1 text-center ">
+          <div className="p-0 ps-sm-3 p-md-3 fs-3 fs-md-1 text-center ">
             <h3 style={{ color: text_color }}>{coloredText[0]} </h3>{" "}
             <p>{text[0]}</p>
-          </p>
+          </div>
         </div>
         <div className="col-12 col-md-6 col-lg-3">
           <img
@@ -63,10 +63,10 @@ export default function Sec3_tips({
           />
         </div>
         <div className="col-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center">
-          <p className="p-0 ps-sm-3 p-md-3 fs-3 fs-md-1 text-center">
+          <div className="p-0 ps-sm-3 p-md-3 fs-3 fs-md-1 text-center">
             <h3 style={{ color: text_color }}>{coloredText[2]} </h3>
             <p>{text[2]}</p>
-          </p>
+          </div>
         </div>
         <div className="col-12 col-md-6 col-lg-3">
           <img
