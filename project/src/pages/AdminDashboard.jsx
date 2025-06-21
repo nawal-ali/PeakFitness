@@ -3,6 +3,8 @@ import axios from "axios";
 import Navbar from "../assets/navFolder/Navbar";
 import { FaTrash, FaPlus } from "react-icons/fa"; //FaPen
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -84,10 +86,10 @@ export default function AdminDashboard() {
         if (selectedUser._id === loggedInAdminId) {
           localStorage.clear();
           setIsLogged(false);
-          navigate("/");
         } else {
           setUsers(users.filter(u => u._id !== selectedUser._id));
           setShowDeleteModal(false);
+          toast.warning("You have deleted admin successfully!"); // Added toast notification
           setConfirmUsername("");
         }
       } catch (err) {
@@ -106,7 +108,7 @@ export default function AdminDashboard() {
       await axios.post("http://localhost:5000/api/auth/register-admin", newAdminData);
       setShowAddAdminModal(false);
       setNewAdminData({ username: "", email: "", password: "" });
-      alert("Admin added successfully");
+      toast.success("Admin added successfully"); // Added toast notification
     } catch (err) {
       alert("Error adding admin");
       console.error(err);
@@ -540,6 +542,7 @@ export default function AdminDashboard() {
     </Button>
   </Modal.Footer>
 </Modal>
+<ToastContainer position="top-right" autoClose={3000} />
     </>
   );
 }
