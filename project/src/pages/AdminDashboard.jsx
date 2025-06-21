@@ -3,6 +3,8 @@ import axios from "axios";
 import Navbar from "../assets/navFolder/Navbar";
 import { FaTrash, FaPlus } from "react-icons/fa"; //FaPen
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -38,8 +40,86 @@ export default function AdminDashboard() {
     },
   ],
 });
+const [validationErrors, setValidationErrors] = useState({
+    username: "",
+    email: "",
+    password: ""
+  });
 
   const token = localStorage.getItem("token");
+
+  // useEffect(() => {
+  //   if (activeTab === "users" || activeTab === "admins") {
+  //     const fetchUsers = async () => {
+  //       try {
+  //         const res = await axios.get("http://localhost:5000/api/auth/users", {
+  //           headers: {
+  //             Authorization: `Bearer ${token}`,
+  //           },
+  //         });
+  //         setUsers(res.data.users);
+  //       } catch (err) {
+  //         setError("Failed to fetch users");
+  //         console.error(err);
+  //       } finally {
+  //         setLoading(false);
+  //       }
+  //     };
+  //     fetchUsers();
+  //   } else if (activeTab === "articles") {
+  //     const fetchArticles = async () => {
+  //       try {
+  //         const res = await axios.get("http://localhost:5000/api/article");
+  //         setArticles(res.data.articles);
+  //       } catch (err) {
+  //         console.error("Failed to fetch articles", err);
+  //       }
+  //     };
+  //     fetchArticles();
+  //   }
+  // }, [token, activeTab]);
+
+  // const handleDelete = async () => {
+  //   if (selectedUser && confirmUsername === selectedUser.username) {
+  //     try {
+  //       await axios.delete(`http://localhost:5000/api/auth/users/${selectedUser._id}`, {
+  //         headers: {
+  //           Authorization: `Bearer ${token}`,
+  //         },
+  //       });
+  //       const loggedInAdminId = localStorage.getItem("userId");
+  //       if (selectedUser._id === loggedInAdminId) {
+  //         localStorage.clear();
+  //         setIsLogged(false);
+  //       } else {
+  //         setUsers(users.filter(u => u._id !== selectedUser._id));
+  //         setShowDeleteModal(false);
+  //         toast.warning("You have deleted admin successfully!"); // Added toast notification
+  //         setConfirmUsername("");
+  //       }
+  //     } catch (err) {
+  //       console.error("Delete failed", err);
+  //     }
+  //   }
+  // };
+
+  // const openDeleteModal = (user) => {
+  //   setSelectedUser(user);
+  //   setShowDeleteModal(true);
+  // };
+
+  // const handleAddAdmin = async () => {
+  //   try {
+  //     await axios.post("http://localhost:5000/api/auth/register-admin", newAdminData);
+  //     setShowAddAdminModal(false);
+  //     setNewAdminData({ username: "", email: "", password: "" });
+  //     toast.success("Admin added successfully"); // Added toast notification
+  //   } catch (err) {
+  //     alert("Error adding admin");
+  //     console.error(err);
+  //   }
+  // };
+
 
   useEffect(() => {
     if (activeTab === "users" || activeTab === "admins") {
@@ -72,6 +152,58 @@ export default function AdminDashboard() {
     }
   }, [token, activeTab]);
 
+  // Input validation functions
+  const validateUsername = (username) => {
+    if (!username) return "Username is required";
+    if (username.length < 3) return "Username must be at least 3 characters";
+    return "";
+  };
+
+  const validateEmail = (email) => {
+    if (!email) return "Email is required";
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) return "Please enter a valid email";
+    return "";
+  };
+
+  const validatePassword = (password) => {
+    if (!password) return "Password is required";
+    if (password.length < 8) return "Password must be at least 8 characters";
+    if (!/[A-Z]/.test(password)) return "Password must contain at least one capital letter";
+    if (!/[0-9]/.test(password)) return "Password must contain at least one number";
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) return "Password must contain at least one special character";
+    return "";
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewAdminData({ ...newAdminData, [name]: value });
+    
+    // Validate on change
+    switch (name) {
+      case "username":
+        setValidationErrors({ 
+          ...validationErrors, 
+          username: validateUsername(value) 
+        });
+        break;
+      case "email":
+        setValidationErrors({ 
+          ...validationErrors, 
+          email: validateEmail(value) 
+        });
+        break;
+      case "password":
+        setValidationErrors({ 
+          ...validationErrors, 
+          password: validatePassword(value) 
+        });
+        break;
+      default:
+        break;
+    }
+  };
+
   const handleDelete = async () => {
     if (selectedUser && confirmUsername === selectedUser.username) {
       try {
@@ -84,14 +216,17 @@ export default function AdminDashboard() {
         if (selectedUser._id === loggedInAdminId) {
           localStorage.clear();
           setIsLogged(false);
-          navigate("/");
+          toast.warning("You have deleted admin successfully!");
+          setTimeout(() => navigate("/"), 1500);
         } else {
           setUsers(users.filter(u => u._id !== selectedUser._id));
           setShowDeleteModal(false);
+          toast.success("Admin deleted successfully!");
           setConfirmUsername("");
         }
       } catch (err) {
-        console.error("Delete failed", err);
+        toast.error("Failed to delete admin");
+        console.error(err);
       }
     }
   };
@@ -102,13 +237,35 @@ export default function AdminDashboard() {
   };
 
   const handleAddAdmin = async () => {
+    // Validate all fields before submitting
+    const errors = {
+      username: validateUsername(newAdminData.username),
+      email: validateEmail(newAdminData.email),
+      password: validatePassword(newAdminData.password)
+    };
+    
+    setValidationErrors(errors);
+    
+    // Check if there are any errors
+    if (Object.values(errors).some(error => error !== "")) {
+      toast.error("Please fix the form errors");
+      return;
+    }
+
     try {
-      await axios.post("http://localhost:5000/api/auth/register-admin", newAdminData);
+      const response = await axios.post(
+        "http://localhost:5000/api/auth/register-admin", 
+        newAdminData
+      );
+      
+      // Update the local state with the new admin
+      setUsers([...users, response.data.user]);
+      
       setShowAddAdminModal(false);
       setNewAdminData({ username: "", email: "", password: "" });
-      alert("Admin added successfully");
+      toast.success("Admin added successfully");
     } catch (err) {
-      alert("Error adding admin");
+      toast.error(err.response?.data?.message || "Error adding admin");
       console.error(err);
     }
   };
@@ -318,7 +475,7 @@ export default function AdminDashboard() {
       </Modal>
 
       {/* Add Admin Modal */}
-      <Modal show={showAddAdminModal} onHide={() => setShowAddAdminModal(false)}>
+      {/* <Modal show={showAddAdminModal} onHide={() => setShowAddAdminModal(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Add Admin</Modal.Title>
         </Modal.Header>
@@ -347,6 +504,73 @@ export default function AdminDashboard() {
                 value={newAdminData.password}
                 onChange={(e) => setNewAdminData({ ...newAdminData, password: e.target.value })}
               />
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowAddAdminModal(false)}>
+            Cancel
+          </Button>
+          <Button variant="primary" onClick={handleAddAdmin}>
+            Add Admin
+          </Button>
+        </Modal.Footer>
+      </Modal> */}
+      <Modal show={showAddAdminModal} onHide={() => setShowAddAdminModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Add Admin</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group className="mb-3">
+              <Form.Label>Username</Form.Label>
+              <Form.Control
+                type="text"
+                name="username"
+                value={newAdminData.username}
+                onChange={handleInputChange}
+                isInvalid={!!validationErrors.username}
+              />
+              <Form.Control.Feedback type="invalid">
+                {validationErrors.username}
+              </Form.Control.Feedback>
+            </Form.Group>
+            
+            <Form.Group className="mb-3">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                name="email"
+                value={newAdminData.email}
+                onChange={handleInputChange}
+                isInvalid={!!validationErrors.email}
+              />
+              <Form.Control.Feedback type="invalid">
+                {validationErrors.email}
+              </Form.Control.Feedback>
+            </Form.Group>
+            
+            <Form.Group className="mb-3">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                name="password"
+                value={newAdminData.password}
+                onChange={handleInputChange}
+                isInvalid={!!validationErrors.password}
+              />
+              <Form.Control.Feedback type="invalid">
+                {validationErrors.password}
+              </Form.Control.Feedback>
+              <Form.Text muted>
+                Password must contain:
+                <ul>
+                  <li>At least 8 characters</li>
+                  <li>1 capital letter</li>
+                  <li>1 number</li>
+                  <li>1 special character</li>
+                </ul>
+              </Form.Text>
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -540,6 +764,7 @@ export default function AdminDashboard() {
     </Button>
   </Modal.Footer>
 </Modal>
+<ToastContainer position="top-right" autoClose={3000} />
     </>
   );
 }

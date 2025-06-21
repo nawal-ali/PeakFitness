@@ -283,8 +283,8 @@ export default function Model({ onLabelClick,setClickedOn }) {
     { label: 'trapezius', position: '0m 3.0m -0.1m', normal: '0m 3.0m -0.1m', orbit: '-180deg 50deg 0.07090651m', target: '0m 1.3m 1.9m' },
     { label: 'biceps', position: '0.7m 2.7m 0.05m', normal: '0.7m 2.7m 0.05m', orbit: '-18deg 100deg 1m', target: '1.5m 3.25m -2.5m' },
     { label: 'triceps', position: '-0.7m 2.7m -0.05m', normal: '-0.7m 2.7m -0.05m', orbit: '-70deg 55deg 0.06213665m', target: '1.7m 1m -0.8m' },
-    { label: 'forearm', position: '0.8m 2.4m 0.05m', normal: '0.8m 2.4m 0.05m', orbit: '-60deg 80deg 0.8m', target: '1.5m 2.5m -2.5m' },
     // { label: 'deltoid', position: '0.65m 3m 0.1m', normal: '0.65m 3m 0.1m', orbit: '-50deg 70deg 0.6m', target: '1.2m 3m -2.5m' },
+    { label: 'forearm', position: '0.8m 2.4m 0.05m', normal: '0.8m 2.4m 0.05m', orbit: '60deg 80deg 0.01m', target: '0.8m 2.4m 0.05m' },
     { label: 'latissimus', position: '-0.3m 2.4m -0.15m', normal: '-0.3m 2.4m -0.15m', orbit: '-160deg 70deg 0.5m', target: '0m 2.5m 2m' },
     // { label: 'soleus', position: '-0.3m 0.3m 0.1m', normal: '-0.3m 0.3m 0.1m', orbit: '-180deg 90deg 0.6m', target: '0m 0.3m 2m' },
     // { label: 'adductors', position: '0m 1.4m 0.1m', normal: '0m 1.4m 0.1m', orbit: '-180deg 90deg 0.6m', target: '0m 1.4m 2m' }
