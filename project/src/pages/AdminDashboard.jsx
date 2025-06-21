@@ -221,8 +221,8 @@ const [validationErrors, setValidationErrors] = useState({
         } else {
           setUsers(users.filter(u => u._id !== selectedUser._id));
           setShowDeleteModal(false);
-          setConfirmUsername("");
           toast.success("Admin deleted successfully!");
+          setConfirmUsername("");
         }
       } catch (err) {
         toast.error("Failed to delete admin");
