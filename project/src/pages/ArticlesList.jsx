@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import Navbar from "../assets/navFolder/Navbar";
 import Footer from '../assets/footerFolder/Footer';
 import ToTop from '../assets/toTopBtn/toTop';
-import { FaRegBookmark, FaBookmark } from 'react-icons/fa';
+import { FaRegBookmark, FaBookmark,FaHeart,FaRegHeart } from 'react-icons/fa';
 
 export default function ArticlesList() {
   const [islogged, setIsLogged] = useState(() => {
@@ -54,10 +56,9 @@ export default function ArticlesList() {
 
   const handleSaveToggle = async (articleId) => {
     if (!islogged) {
-      alert("Please login or sign up to save articles.");
+      toast.warning("Please login or sign up to save articles.");
       return;
     }
-
     try {
       const res = await axios.post(
         `http://localhost:5000/api/auth/users/${userId}/saved-articles`,
@@ -72,6 +73,42 @@ export default function ArticlesList() {
       setSavedArticles(res.data.savedArticles || []);
     } catch (error) {
       console.error("Error saving/removing article:", error);
+    }
+  };
+
+
+
+  const handleLikeToggle = async (articleId) => {
+    if (!islogged) {
+      toast.warning("Please login to like articles.");
+      return;
+    }
+
+    try {
+      const res = await axios.post(
+        `http://localhost:5000/api/article/${articleId}/like`,
+        {userId  }
+        // {
+        //   headers: {
+        //     Authorization: `Bearer ${token}`,
+        //   },
+        // }
+      );
+
+      // Update the articles state with the new like information
+      setArticles(articles.map(article => {
+        if (article._id === articleId) {
+          return {
+            ...article,
+            likes: res.data.likes,
+            likesCount: res.data.likesCount
+          };
+        }
+        return article;
+      }));
+    } catch (error) {
+      console.error("Error liking/unliking article:", error);
+      toast.error("Failed to update like status");
     }
   };
 
@@ -108,7 +145,33 @@ export default function ArticlesList() {
                     <Link to={`/articles/${article._id}`} className="read-more">
                       <button className='btn btn-dark'>Read Article</button>
                     </Link>
-                    <div
+                    <div className='d-flex align-items-center me-5'>
+          <div
+            onClick={() => handleLikeToggle(article._id)}
+            style={{ cursor: 'pointer', marginRight: '15px' }}
+            title={islogged ? '' : 'Login to like'}
+          >
+            {article.likes.includes(userId) ? (
+              <FaHeart color="red" />
+            ) : (
+              <FaRegHeart />
+            )}
+            <span className="ms-2">{article.likesCount}</span>
+          </div>
+          <div
+            onClick={() => handleSaveToggle(article._id)}
+            style={{ cursor: 'pointer' }}
+            title={islogged ? '' : 'Login to save'}
+          >
+            {savedArticles.includes(article._id) ? (
+              <FaBookmark color="#ec7e4a" />
+            ) : (
+              <FaRegBookmark />
+            )}
+          </div>
+        </div>
+      {/* </div> */}
+                    {/* <div
                       onClick={() => handleSaveToggle(article._id)}
                       style={{ cursor: 'pointer' }}
                       className='me-5'
@@ -118,7 +181,7 @@ export default function ArticlesList() {
                       ) : (
                         <FaRegBookmark />
                       )}
-                    </div>
+                    </div> */}
                   </div>
                   </div>
                 </div>
@@ -130,6 +193,7 @@ export default function ArticlesList() {
       </div>
       <ToTop />
       <Footer />
+      <ToastContainer position="top-right" autoClose={3000} />
     </>
   );
 }

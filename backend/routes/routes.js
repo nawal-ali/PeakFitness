@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const crypto = require("crypto");
 // const User = require('../models'); 
-const { User } = require('../models');
+const { User, Article } = require('../models');
 const verifyAdmin = require("../middleware/verifyAdmin");
 const router = express.Router();
 
@@ -262,5 +262,36 @@ router.post('/register-admin', async (req, res) => {
 router.get("/admin/dashboard", verifyAdmin, (req, res) => {
   res.json({ message: "Hello Admin" });
 });
+
+
+// router.post('/:id/like', authenticateToken, async (req, res) => {
+//   try {
+//     const article = await Article.findById(req.params.id);
+//     if (!article) {
+//       return res.status(404).send({ message: 'Article not found' });
+//     }
+
+//     const userId = req.user._id;
+//     const likeIndex = article.likes.indexOf(userId);
+
+//     if (likeIndex === -1) {
+//       // Like the article
+//       article.likes.push(userId);
+//     } else {
+//       // Unlike the article
+//       article.likes.splice(likeIndex, 1);
+//     }
+
+//     article.likesCount = article.likes.length;
+//     await article.save();
+
+//     res.send({
+//       likes: article.likes,
+//       likesCount: article.likesCount
+//     });
+//   } catch (error) {
+//     res.status(500).send({ message: 'Error updating like status', error });
+//   }
+// });
 
 module.exports = router;

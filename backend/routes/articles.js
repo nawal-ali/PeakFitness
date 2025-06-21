@@ -41,6 +41,73 @@ router.post("/", async (req, res) => {
     }
 });
 
+
+//get the likes
+// router.post('/:id/like', async (req, res) => {
+//     try {
+//         const article = await Article.findById(req.params.id);
+//         if (!article) {
+//             return res.status(404).send({ message: 'Article not found' });
+//         }
+
+//         const userId = req.user._id;
+//         const likeIndex = article.likes.indexOf(userId);
+
+//         if (likeIndex === -1) {
+//             // Like the article
+//             article.likes.push(userId);
+//         } else {
+//             // Unlike the article
+//             article.likes.splice(likeIndex, 1);
+//         }
+
+//         article.likesCount = article.likes.length;
+//         await article.save();
+
+//         res.send({
+//             likes: article.likes,
+//             likesCount: article.likesCount
+//         });
+//     } catch (error) {
+//         res.status(500).send({ message: 'Error updating like status', error });
+//     }
+// });
+
+router.post('/:id/like', async (req, res) => {
+    try {
+        const article = await Article.findById(req.params.id);
+        if (!article) {
+            return res.status(404).send({ message: 'Article not found' });
+        }
+
+        const userId = req.body.userId;
+        if (!userId) {
+            return res.status(400).send({ message: 'User ID is required' });
+        }
+
+        const likeIndex = article.likes.indexOf(userId);
+
+        if (likeIndex === -1) {
+            // Like the article
+            article.likes.push(userId);
+        } else {
+            // Unlike the article
+            article.likes.splice(likeIndex, 1);
+        }
+
+        article.likesCount = article.likes.length;
+        await article.save();
+
+        res.send({
+            likes: article.likes,
+            likesCount: article.likesCount
+        });
+    } catch (error) {
+        res.status(500).send({ message: 'Error updating like status', error });
+    }
+});
+
+
 //edit article
 // router.put("/:id", async (req, res) => {
 //     try {
