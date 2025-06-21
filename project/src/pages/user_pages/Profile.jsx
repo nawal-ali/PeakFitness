@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import Navbar from "../../assets/navFolder/Navbar";
 
@@ -48,10 +50,14 @@ const Profile = () => {
   }, [navigate]);
 
   const handleLogOut = () => {
-    localStorage.setItem("islogged", "false");
-    localStorage.removeItem("token")
+    // localStorage.setItem("islogged", "false");
+    // localStorage.removeItem("token")
+    localStorage.clear(); // Clear all localStorage items
     setIsLogged(false);
-    navigate("/");
+    toast.info("You have been logged out successfully!"); // Added toast notification
+    setTimeout(() => {
+      navigate("/");
+    }, 1500);
   };
 
   const handleEditChange = (e) => {
@@ -157,6 +163,7 @@ const Profile = () => {
           </Button>
         </Modal.Footer>
       </Modal>
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 };
