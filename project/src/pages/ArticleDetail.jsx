@@ -14,6 +14,7 @@ export default function ArticleDetail() {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     const [allArticles, setAllArticles] = useState([]);
+    const [randomArticles, setRandomArticles] = useState([]);
 
     useEffect(() => {
         const fetchArticle = async () => {
@@ -43,6 +44,7 @@ export default function ArticleDetail() {
             try {
                 const response = await axios.get(`http://localhost:5000/api/article`);
                 setAllArticles(response.data.articles);
+                getRandomArticles(response.data.articles, id);
             } catch (err) {
                 console.error("Failed to fetch all articles", err);
             }
@@ -51,6 +53,17 @@ export default function ArticleDetail() {
         fetchArticle();
         fetchAllArticles();
     }, [id]);
+
+    const getRandomArticles = (articles, currentId) => {
+        if (articles.length <= 1) {
+            setRandomArticles([]);
+            return;
+        }
+        
+        const otherArticles = articles.filter(a => a._id !== currentId);
+        const shuffled = [...otherArticles].sort(() => 0.5 - Math.random());
+        setRandomArticles(shuffled.slice(0, 3));
+    };
 
     if (loading) return (
         <div className="d-flex justify-content-center align-items-center vh-100">
@@ -72,9 +85,6 @@ export default function ArticleDetail() {
         </div>
     );
 
-    const currentIndex = allArticles.findIndex(a => a._id === id);
-    const nextArticles = allArticles.slice(currentIndex + 1, currentIndex + 4);
-
     return (
         <>
             <div className="container" style={{ marginTop: '10rem' }}>
@@ -83,12 +93,22 @@ export default function ArticleDetail() {
                 <div className="row">
                     {/* Main Article Image */}
                     <div className="col-12">
-                        <img 
-                            src={article.coverImg.url} 
-                            className='img-fluid mb-4 rounded-4 shadow-sm' 
-                            alt={article.title} 
-                            style={{ maxHeight: '500px', objectFit: 'cover', width: '100%' }}
-                        />
+                        {article.coverImg?.url ? (
+                            <img 
+                                src={article.coverImg.url} 
+                                className='img-fluid mb-4 rounded-4 shadow-sm' 
+                                alt={article.title} 
+                                style={{ maxHeight: '500px', objectFit: 'cover', width: '100%' }}
+                                onError={(e) => {
+                                    e.target.src = "https://via.placeholder.com/800x400?text=Image+Not+Available";
+                                }}
+                            />
+                        ) : (
+                            <div className="img-fluid mb-4 rounded-4 shadow-sm bg-light d-flex justify-content-center align-items-center" 
+                                style={{ height: '500px', width: '100%' }}>
+                                <span className="text-muted">No image available</span>
+                            </div>
+                        )}
                     </div>
                     
                     {/* Main Content Column */}
@@ -96,13 +116,21 @@ export default function ArticleDetail() {
                         <h1 className="display-4 fw-bold mb-4">{article.title}</h1>
                         
                         <div className="d-flex align-items-center mb-5">
-                            {auther?.avatar && (
+                            {auther?.avatar ? (
                                 <img 
                                     src={auther.avatar} 
                                     alt={auther.username} 
                                     className="rounded-circle me-3" 
                                     style={{ width: '50px', height: '50px', objectFit: 'cover' }}
+                                    onError={(e) => {
+                                        e.target.src = "https://via.placeholder.com/50?text=No+Avatar";
+                                    }}
                                 />
+                            ) : (
+                                <div className="rounded-circle me-3 bg-secondary d-flex justify-content-center align-items-center" 
+                                    style={{ width: '50px', height: '50px' }}>
+                                    <span className="text-white small">No Avatar</span>
+                                </div>
                             )}
                             <div>
                                 <p className="mb-0 text-muted">
@@ -130,11 +158,21 @@ export default function ArticleDetail() {
                                         <div className="row g-3 my-4">
                                             {section.images.map((img, j) => (
                                                 <figure className={`col-12 ${section.images.length > 1 ? 'col-md-6' : ''}`} key={j}>
-                                                    <img 
-                                                        src={img.url} 
-                                                        alt={img.caption} 
-                                                        className="img-fluid rounded-3 shadow-sm" 
-                                                    />
+                                                    {img.url ? (
+                                                        <img 
+                                                            src={img.url} 
+                                                            alt={img.caption || 'Article image'} 
+                                                            className="img-fluid rounded-3 shadow-sm"
+                                                            onError={(e) => {
+                                                                e.target.src = "https://via.placeholder.com/600x400?text=Image+Not+Available";
+                                                            }}
+                                                        />
+                                                    ) : (
+                                                        <div className="img-fluid rounded-3 shadow-sm bg-light d-flex justify-content-center align-items-center" 
+                                                            style={{ height: '300px', width: '100%' }}>
+                                                            <span className="text-muted">No image</span>
+                                                        </div>
+                                                    )}
                                                     {img.caption && (
                                                         <figcaption className="text-center text-muted mt-2">
                                                             <small>{img.caption}</small>
@@ -156,19 +194,26 @@ export default function ArticleDetail() {
                                 <div className="card-body">
                                     <h3 className="card-title fw-bold pb-3 mb-4 border-bottom">More Articles You May Like</h3>
                                     
-                                    {nextArticles.length > 0 ? (
-                                        nextArticles.map((art, idx) => (
+                                    {randomArticles.length > 0 ? (
+                                        randomArticles.map((art, idx) => (
                                             <div className="mb-4 pb-3 border-bottom" key={idx}>
-                                                {art.coverImg?.url && (
+                                                {art.coverImg?.url ? (
                                                     <img 
                                                         src={art.coverImg.url} 
                                                         alt={art.title} 
                                                         className="img-fluid rounded-3 mb-3" 
                                                         style={{ height: '120px', width: '100%', objectFit: 'cover' }}
+                                                        onError={(e) => {
+                                                            e.target.src = "https://via.placeholder.com/300x150?text=Image+Not+Available";
+                                                        }}
                                                     />
+                                                ) : (
+                                                    <div className="img-fluid rounded-3 mb-3 bg-light d-flex justify-content-center align-items-center" 
+                                                        style={{ height: '120px', width: '100%' }}>
+                                                        <span className="text-muted small">No image</span>
+                                                    </div>
                                                 )}
                                                 <h6 className="fw-bold">{art.title}</h6>
-                                                <p className="text-muted small">By {art.author || 'Unknown'}</p>
                                                 <Link 
                                                     to={`/articles/${art._id}`} 
                                                     className="text-decoration-none fw-semibold d-flex align-items-center"

@@ -51,15 +51,7 @@ export default function accordion() {
             className="accordion-collapse collapse"
           >
             <div className="accordion-body">
-              <strong>This is the second item&apos;s accordion body.</strong> It
-              is hidden by default, until the collapse plugin adds the
-              appropriate classes that we use to style each element. These
-              classes control the overall appearance, as well as the showing and
-              hiding via CSS transitions. You can modify any of this with custom
-              CSS or overriding our default variables. It&apos;s also worth
-              noting that just about any HTML can go within the{" "}
-              <code>.accordion-body</code>, though the transition does limit
-              overflow.
+              <strong>Yes,</strong>  many of the workout routines are designed to be done at home using just your body weight or minimal equipment. However, for certain exercises, having basic gym tools can enhance the results.
             </div>
           </div>
         </div>
@@ -73,7 +65,7 @@ export default function accordion() {
               aria-expanded="false"
               aria-controls="panelsStayOpen-collapseThree"
             >
-              Can I access the platform from my smartphone or computer?
+              How do I know which workout is right for my fitness goal?
             </button>
           </h2>
           <div
@@ -81,15 +73,7 @@ export default function accordion() {
             className="accordion-collapse collapse"
           >
             <div className="accordion-body">
-              <strong>This is the third item&apos;s accordion body.</strong> It
-              is hidden by default, until the collapse plugin adds the
-              appropriate classes that we use to style each element. These
-              classes control the overall appearance, as well as the showing and
-              hiding via CSS transitions. You can modify any of this with custom
-              CSS or overriding our default variables. It&apos;s also worth
-              noting that just about any HTML can go within the{" "}
-              <code>.accordion-body</code>, though the transition does limit
-              overflow.
+              <strong>Our platform helps guide you</strong>  by categorizing exercises based on different fitness goals like weight loss, muscle gain, or general health. You can explore exercises by muscle group and read descriptions to choose what suits you best.
             </div>
           </div>
         </div>
@@ -113,15 +97,7 @@ export default function accordion() {
             className="accordion-collapse collapse"
           >
             <div className="accordion-body">
-              <strong>This is the third item&apos;s accordion body.</strong> It
-              is hidden by default, until the collapse plugin adds the
-              appropriate classes that we use to style each element. These
-              classes control the overall appearance, as well as the showing and
-              hiding via CSS transitions. You can modify any of this with custom
-              CSS or overriding our default variables. It&apos;s also worth
-              noting that just about any HTML can go within the{" "}
-              <code>.accordion-body</code>, though the transition does limit
-              overflow.
+              <strong>Currently,</strong>  we don’t offer specialized plans for medical conditions or injuries, but we’re working on adding them soon to better support all users.
             </div>
           </div>
         </div>
