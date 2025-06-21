@@ -1356,7 +1356,7 @@ const content = {
                         "Try to get your torso to parallel with the ground. That will extend your range of motion.",
                         "Let your arm hang freely and then pull your elbow back. Imagine you've got a tennis ball in your armpit and squeeze it each rep."
                     ],
-                    videoPath: "./Exercise/Forearm/Tab 1/Video 2/male-Dumbbells-dumbbell-row-unilateral-front.mp4"
+                    videoPath: "public/Exercise/Forearm/Tab 1/vidoe 2/male-Dumbbells-dumbbell-row-unilateral-front.mp4"
                 },
                 {
                     title: "Dumbbell Reverse Curl",
@@ -1397,7 +1397,7 @@ const content = {
                         "Pull your body straight up to the bar.",
                         "Return to the starting position, your arms fully extended. Repeat."
                     ],
-                    videoPath: "./Exercise/Forearm/Tab 2/Video 2/male-bodyweight-reverse-row-front.mp4"
+                    videoPath: "public/Exercise/Forearm/Tab 2/vidoe 2/male-bodyweight-reverse-row-front.mp4"
                 },
                 {
                     title: "Kettlebell Farmers Carry",
@@ -1417,7 +1417,7 @@ const content = {
                         "Hold at the peak of the stretch.",
                         "Return to starting position."
                     ],
-                    videoPath: "./Exercise/Forearm/Tab 2/Video 4/male-forearms-stretch-variation-I -front.mp4"
+                    videoPath: "public/Exercise/Forearm/Tab 2/Video 4/male-forearms-stretch-variation-1-front.mp4"
                 }
             ]
         }
