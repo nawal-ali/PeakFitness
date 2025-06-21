@@ -370,7 +370,7 @@ const [validationErrors, setValidationErrors] = useState({
                   </tr>
                 </thead>
                 <tbody>
-                  {users.filter(u => u.role === "admin").map((admin, idx) => (
+                  {users.filter(u => u && u.role === "admin").map((admin, idx) => (
                     <tr key={admin._id}>
                       <td>{idx + 1}</td>
                       <td>{admin.username}</td>
