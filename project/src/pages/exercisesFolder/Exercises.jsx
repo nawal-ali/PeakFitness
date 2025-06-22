@@ -104,7 +104,8 @@ export default function Exercises() {
           </div>
           <div className="row p-3 mb-5">
             <div className="col-12 col-md-4">
-              <a href={content[clickedOn].sec3.link1} target='_blank'>
+              {/* href={content[clickedOn].sec3.link1} */}
+              <a href='https://www.youtube.com/watch?v=hVM6VG8uzPw' target='_blank'>
                 <div className="p-5 rounded-3 m-auto my-4 my-md-0" style={{width: "18rem",backgroundColor:"#EAEAEA", height:"100%"}}>
                   {/* <img src="./imgs/exer_stretch_img1.png" className="card-img-top" alt="..."></img> */}
                   <div className="card-body text-center">
@@ -115,7 +116,8 @@ export default function Exercises() {
               </a>
             </div>
             <div className="col-12 col-md-4">
-              <a href={content[clickedOn].sec3.link2} target='_blank'>
+              {/* href={content[clickedOn].sec3.link2} */}
+              <a href='https://www.youtube.com/watch?v=Hmec1bQBQOE' target='_blank'>
                 <div className="p-5 rounded-3 m-auto my-4 my-md-0" style={{width: "18rem",backgroundColor:"#EAEAEA", height:"100%"}}>
                   {/* <img src="./imgs/exer_stretch_img2.png" className="card-img-top" alt="..."></img> */}
                   <div className="card-body text-center">
@@ -126,7 +128,8 @@ export default function Exercises() {
               </a>
             </div>
             <div className="col-12 col-md-4">
-              <a href={content[clickedOn].sec3.link3} target='_blank'>
+              {/* href={content[clickedOn].sec3.link3} */}
+              <a href='https://www.youtube.com/watch?v=oJX8EKF3TqM' target='_blank'>
                 <div className="p-5 rounded-3 m-auto my-4 my-md-0" style={{width: "18rem",backgroundColor:"#EAEAEA", height:"100%"}}>
                   {/* <img src="./imgs/exer_stretch_img3.png" className="card-img-top" alt="..."></img> */}
                   <div className="card-body text-center">
@@ -144,13 +147,15 @@ export default function Exercises() {
             <div className="d-flex justify-content-center align-items-start gap-3 p-3" style={{border:"3px dashed black", borderLeft:"none"}}>
               <div style={{backgroundColor:"#CB8778"}} className="rounded-circle p-3 fs-3 text-light align-self-center">01</div>
               <div className="fs-3">
-                <a href={content[clickedOn].sec2.link1} target='_blank' style={{ color:"#CB8778",marginBottom:"0"}}>{content[clickedOn].sec2.title1}</a>
+                {/* href={content[clickedOn].sec2.link1} */}
+                <a href='https://www.youtube.com/watch?v=Cwuxy8eo7iw' target='_blank' style={{ color:"#CB8778",marginBottom:"0"}}>{content[clickedOn].sec2.title1}</a>
                 <p>{content[clickedOn].sec2.desc1}</p>
               </div>
             </div>
             <div className="d-flex justify-content-center align-items-start gap-3 p-3" style={{borderLeft:"3px dashed black"}}>
               <div className="fs-3">
-                <a href={content[clickedOn].sec2.link2} target='_blank' style={{ color:"#CB8778",marginBottom:"0"}} className="text-end">{content[clickedOn].sec2.title2}</a>
+                {/* content[clickedOn].sec2.link2} */}
+                <a href='https://www.youtube.com/watch?v=TJO19eOmax0' target='_blank' style={{ color:"#CB8778",marginBottom:"0"}} className="text-end">{content[clickedOn].sec2.title2}</a>
                 <p>{content[clickedOn].sec2.desc2}</p>
               </div>
               <div style={{backgroundColor:"#CB8778"}} className="rounded-circle p-3 fs-3 text-light align-self-center">02</div>
@@ -158,7 +163,8 @@ export default function Exercises() {
             <div className="d-flex justify-content-center align-items-start gap-3 p-3" style={{border:"3px dashed black", borderLeft:"none"}}>
               <div style={{backgroundColor:"#CB8778"}} className="rounded-circle p-3 fs-3 text-light align-self-center">03</div>
               <div className="fs-3">
-                <a href={content[clickedOn].sec2.link3} target='_blank' style={{ color:"#CB8778",marginBottom:"0"}}>{content[clickedOn].sec2.title3}</a>
+                {/* href={content[clickedOn].sec2.link3} */}
+                <a href='https://www.youtube.com/watch?v=7LmA4zSitc4' target='_blank' style={{ color:"#CB8778",marginBottom:"0"}}>{content[clickedOn].sec2.title3}</a>
                 <p>{content[clickedOn].sec2.desc3}</p>
               </div>
             </div>
